@@ -1,0 +1,260 @@
+[
+{
+"sc": "sun_hook",
+"en": "My dear, no! I am not a mango, I am the Sun!",
+"hi": "अरे बेटा, मैं आम नहीं हूँ, मैं सूरज हूँ!",
+"hl": "Arre beta, main aam nahi hoon, main Suraj hoon!"
+},
+{
+"sc": "quiet_morning",
+"en": "And that morning had started so quietly.",
+"hi": "और वो सुबह कितनी शांति से शुरू हुई थी।",
+"hl": "Aur woh subah kitni shaanti se shuru hui thi."
+},
+{
+"sc": "baby_wakes",
+"en": "A little baby opens his eyes.",
+"hi": "एक नन्हा सा बच्चा अपनी आँखें खोलता है।",
+"hl": "Ek nanha sa bachcha apni aankhen kholta hai."
+},
+{
+"sc": "baby_wakes",
+"en": "Maa Anjana has gone to bring fruit.",
+"hi": "माँ अंजना फल लेने गई हैं।",
+"hl": "Maa Anjana phal lene gayi hain."
+},
+{
+"sc": "hungry",
+"en": "Eyes open, tummy open.",
+"hi": "आँखें खुलीं, और भूख भी जाग गई।",
+"hl": "Aankhen khulin, aur bhookh bhi jaag gayi."
+},
+{
+"sc": "hungry",
+"en": "Maa, maa, hungry!",
+"hi": "माँ, माँ, भूख लगी!",
+"hl": "Maa, maa, bhookh lagi!"
+},
+{
+"sc": "raw_mangoes",
+"en": "No Maa. And the mangoes on the tree, all raw.",
+"hi": "माँ यहाँ नहीं हैं, और पेड़ के सारे आम अभी कच्चे हैं।",
+"hl": "Maa yahan nahi hain, aur ped ke saare aam abhi kachche hain."
+},
+{
+"sc": "sky_mango",
+"en": "But up in the sky, the biggest, ripest mango he has ever seen.",
+"hi": "लेकिन ऊपर आसमान में दिखा, अब तक का सबसे बड़ा, सबसे पका हुआ आम।",
+"hl": "Lekin upar aasmaan mein dikha, ab tak ka sabse bada, sabse paka hua aam."
+},
+{
+"sc": "sky_mango",
+"en": "Mango!",
+"hi": "आम!",
+"hl": "Aam!"
+},
+{
+"sc": "jump",
+"en": "He jumps. Trees gone, clouds gone.",
+"hi": "वो छलांग लगाता है। पेड़ पीछे छूटे, बादल पीछे छूटे।",
+"hl": "Woh chhalaang lagaata hai. Ped peeche chhoote, baadal peeche chhoote."
+},
+{
+"sc": "vayu_follow",
+"en": "Vayu Dev flies right behind, fanning him cool,",
+"hi": "वायु देव ठीक पीछे उड़ते हैं, उसे ठंडी हवा करते हुए,",
+"hl": "Vayu Dev theek peeche udte hain, use thandi hawa karte hue,"
+},
+{
+"sc": "vayu_follow",
+"en": "like a father running behind his child's first cycle.",
+"hi": "जैसे कोई पापा बच्चे की पहली साइकिल के पीछे भाग रहे हों।",
+"hl": "jaise koi papa bachche ki pehli cycle ke peeche bhaag rahe hon."
+},
+{
+"sc": "surya_duty",
+"en": "Surya Dev is doing his morning duty.",
+"hi": "सूर्य देव अपनी सुबह की ड्यूटी कर रहे हैं।",
+"hl": "Surya Dev apni subah ki duty kar rahe hain."
+},
+{
+"sc": "surya_duty",
+"en": "Then he sees a tiny mouth, getting bigger and bigger.",
+"hi": "तभी उन्हें एक छोटा सा मुँह दिखता है, जो बड़ा, और बड़ा होता जा रहा है।",
+"hl": "Tabhi unhe ek chhota sa munh dikhta hai, jo bada, aur bada hota ja raha hai."
+},
+{
+"sc": "blackout",
+"en": "Lights off in all three worlds.",
+"hi": "तीनों लोकों की बत्ती गुल।",
+"hl": "Teenon lokon ki batti gul."
+},
+{
+"sc": "blackout",
+"en": "Somewhere, somebody says, power gone?",
+"hi": "कहीं कोई पूछता है, बिजली गई क्या?",
+"hl": "Kahin koi poochhta hai, bijli gayi kya?"
+},
+{
+"sc": "glow",
+"en": "The only light left: two little cheeks, glowing like diyas.",
+"hi": "बस एक ही रोशनी बची, दो छोटे छोटे गाल, दीयों जैसे चमकते हुए।",
+"hl": "Bas ek hi roshni bachi, do chhote chhote gaal, diyon jaise chamakte hue."
+},
+{
+"sc": "rahu_arrives",
+"en": "That day, Rahu had a booking. An eclipse.",
+"hi": "उस दिन राहु की बुकिंग थी, ग्रहण की।",
+"hl": "Us din Rahu ki booking thi, grahan ki."
+},
+{
+"sc": "rahu_arrives",
+"en": "He arrives. No sun. Only a baby, looking at him.",
+"hi": "वो पहुँचता है, पर सूरज गायब। सामने बस एक बच्चा, जो उसे ही घूर रहा है।",
+"hl": "Woh pahunchta hai, par Suraj gaayab. Saamne bas ek bachcha, jo use hi ghoor raha hai."
+},
+{
+"sc": "rahu_flees",
+"en": "Jamun!",
+"hi": "जामुन!",
+"hl": "Jamun!"
+},
+{
+"sc": "rahu_flees",
+"en": "Rahu has never flown so fast.",
+"hi": "राहु इतनी तेज़ कभी नहीं भागा।",
+"hl": "Rahu itni tez kabhi nahi bhaaga."
+},
+{
+"sc": "rahu_complains",
+"en": "Indra Dev! The kid ate the Sun!",
+"hi": "इंद्र देव! बच्चा सूरज खा गया!",
+"hl": "Indra Dev! Bachcha Suraj kha gaya!"
+},
+{
+"sc": "airavat",
+"en": "Indra Dev comes on Airavat.",
+"hi": "इंद्र देव ऐरावत पर आते हैं।",
+"hl": "Indra Dev Airavat par aate hain."
+},
+{
+"sc": "airavat",
+"en": "Big. White. Round.",
+"hi": "बड़ा, सफ़ेद, गोल मटोल।",
+"hl": "Bada, safed, gol matol."
+},
+{
+"sc": "rasgulla",
+"en": "The baby's eyes light up.",
+"hi": "बच्चे की आँखें चमक उठती हैं।",
+"hl": "Bachche ki aankhen chamak uthti hain."
+},
+{
+"sc": "rasgulla",
+"en": "Rasgulla!",
+"hi": "रसगुल्ला!",
+"hl": "Rasgulla!"
+},
+{
+"sc": "vajra",
+"en": "Indra panics. Vajra! Tuk! Right on the chin.",
+"hi": "इंद्र घबरा जाते हैं। वज्र! टक! सीधा ठोड़ी पर।",
+"hl": "Indra ghabra jaate hain. Vajra! Tak! Seedha thodi par."
+},
+{
+"sc": "vajra",
+"en": "Hic!",
+"hi": "हिक!",
+"hl": "Hic!"
+},
+{
+"sc": "sun_back",
+"en": "And the sun is back. Good morning, again.",
+"hi": "और सूरज वापस आ गया। गुड मॉर्निंग, फिर से।",
+"hl": "Aur Suraj wapas aa gaya. Good morning, phir se."
+},
+{
+"sc": "falling",
+"en": "But the little one is falling.",
+"hi": "पर नन्हा बच्चा नीचे गिर रहा है।",
+"hl": "Par nanha bachcha neeche gir raha hai."
+},
+{
+"sc": "falling",
+"en": "Vayu Dev catches him. Beta? No answer.",
+"hi": "वायु देव उसे पकड़ लेते हैं। बेटा? कोई जवाब नहीं।",
+"hl": "Vayu Dev use pakad lete hain. Beta? Koi jawaab nahi."
+},
+{
+"sc": "wind_stops",
+"en": "Vayu Dev looks up at Indra, and the wind stops.",
+"hi": "वायु देव इंद्र की तरफ़ देखते हैं, और हवा रुक जाती है।",
+"hl": "Vayu Dev Indra ki taraf dekhte hain, aur hawa ruk jaati hai."
+},
+{
+"sc": "wind_stops",
+"en": "Until my son laughs, nobody breathes.",
+"hi": "जब तक मेरा बेटा नहीं हँसेगा, कोई साँस नहीं लेगा।",
+"hl": "Jab tak mera beta nahi hansega, koi saans nahi lega."
+},
+{
+"sc": "gods_come",
+"en": "The gods come running. Nobody empty-handed.",
+"hi": "सारे देवता दौड़े चले आते हैं, कोई खाली हाथ नहीं।",
+"hl": "Saare devta daude chale aate hain, koi khaali haath nahi."
+},
+{
+"sc": "gods_come",
+"en": "Brahma ji: no weapon will ever hurt him.",
+"hi": "ब्रह्मा जी बोले, कोई भी अस्त्र इसे कभी चोट नहीं पहुँचाएगा।",
+"hl": "Brahma ji bole, koi bhi astra ise kabhi chot nahi pahunchayega."
+},
+{
+"sc": "indra_sorry",
+"en": "Indra Dev, very sorry: he will be stronger than my Vajra.",
+"hi": "इंद्र देव, बहुत शर्मिंदा, बोले, ये मेरे वज्र से भी ज़्यादा मज़बूत होगा।",
+"hl": "Indra Dev, bahut sharminda, bole, yeh mere vajra se bhi zyada mazboot hoga."
+},
+{
+"sc": "surya_teach",
+"en": "Surya Dev, still a little shaken: I will teach him.",
+"hi": "सूर्य देव, अभी भी थोड़े घबराए हुए, बोले, मैं इसे पढ़ाऊँगा।",
+"hl": "Surya Dev, abhi bhi thode ghabraaye hue, bole, main ise padhaunga."
+},
+{
+"sc": "name",
+"en": "And that small mark on his chin, his hanu, gives him his name.",
+"hi": "और ठोड़ी पर वो छोटा सा निशान, यानी उसकी हनु, उसी से उसे नाम मिलता है।",
+"hl": "Aur thodi par woh chhota sa nishaan, yaani uski hanu, usi se use naam milta hai."
+},
+{
+"sc": "name",
+"en": "Hanuman.",
+"hi": "हनुमान।",
+"hl": "Hanuman."
+},
+{
+"sc": "smiles",
+"en": "The baby smiles. Vayu Dev smiles. And everybody breathes.",
+"hi": "बच्चा मुस्कुराता है। वायु देव मुस्कुराते हैं। और सबकी साँस लौट आती है।",
+"hl": "Bachcha muskurata hai. Vayu Dev muskurate hain. Aur sabki saans laut aati hai."
+},
+{
+"sc": "more",
+"en": "Son, do you want anything else?",
+"hi": "बेटा, और कुछ चाहिए?",
+"hl": "Beta, aur kuch chahiye?"
+},
+{
+"sc": "sun_hides",
+"en": "And Surya Dev quietly slips behind a cloud.",
+"hi": "और सूर्य देव चुपचाप एक बादल के पीछे छिप जाते हैं।",
+"hl": "Aur Surya Dev chupchaap ek baadal ke peeche chhip jaate hain."
+},
+{
+"sc": "outro",
+"en": "Liked the story? Follow for more.",
+"hi": "कथा पसंद आई? तो ऐसी और कथाओं के लिए फ़ॉलो करो।",
+"hl": "Katha pasand aayi? Toh aisi aur kathaon ke liye follow karo."
+}
+]
