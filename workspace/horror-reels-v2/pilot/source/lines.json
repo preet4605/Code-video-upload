@@ -1,0 +1,105 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.8,
+ "tempo": 0.96,
+ "lead_s": 0.15,
+ "gap": 0.45,
+ "tail_s": 1.7,
+ "lines": [
+  {
+   "sc": "s1_hook",
+   "hi": "हमारे हॉस्टल में रात दो बजे गिनती होती थी। उस रात, एक लड़का ज़्यादा निकला।",
+   "hl": "Hamare hostel mein raat 2 baje ginti hoti thi. Us raat, ek ladka zyada nikla.",
+   "gap": 0.6
+  },
+  {
+   "sc": "s2_dorm",
+   "hi": "अट्ठाईस बेड, अट्ठाईस लड़के। वार्डन हर चेहरे पर टॉर्च मारकर गिनता था।",
+   "hl": "28 bed, 28 ladke. Warden har chehre pe torch maar kar ginta tha.",
+   "gap": 0.5
+  },
+  {
+   "sc": "s4_wall",
+   "hi": "मैं कोने वाले बेड पर, दीवार की तरफ़ मुँह करके लेटा था।",
+   "hl": "Main kone wale bed pe, deewar ki taraf muh karke leta tha.",
+   "gap": 0.4
+  },
+  {
+   "sc": "s4_wall",
+   "hi": "टॉर्च मेरे बेड पर आकर, देर तक रुकी रही।",
+   "hl": "Torch mere bed pe aakar, der tak ruki rahi.",
+   "gap": 0.9
+  },
+  {
+   "sc": "s5_count",
+   "hi": "फिर वार्डन बोला, उनतीस।",
+   "hl": "Phir warden bola... 29.",
+   "gap": 0.7
+  },
+  {
+   "sc": "s5_count",
+   "hi": "उसने दोबारा गिना। फिर से उनतीस।",
+   "hl": "Usne dobara gina. Phir se 29.",
+   "gap": 0.6
+  },
+  {
+   "sc": "s6_door",
+   "hi": "काँपती आवाज़ में बोला, जो इस कमरे का नहीं है, वो बाहर चला जाए।",
+   "hl": "Kaanpti awaaz mein bola, jo is kamre ka nahi hai, wo bahar chala jaaye.",
+   "gap": 1.2
+  },
+  {
+   "sc": "s7_relief",
+   "hi": "कोई नहीं उठा। दरवाज़ा बंद हुआ, और मुझे लगा, गिनती में गलती हुई है।",
+   "hl": "Koi nahi utha. Darwaza band hua, aur mujhe laga, ginti mein galti hui hai.",
+   "gap": 1.1
+  },
+  {
+   "sc": "s8_breath",
+   "hi": "तभी मेरी गर्दन पर ठंडी साँस लगी। पीछे से। मेरे ही बिस्तर में।",
+   "hl": "Tabhi meri gardan pe thandi saans lagi. Peeche se. Mere hi bistar mein.",
+   "gap": 1.2
+  },
+  {
+   "sc": "s9_whisper",
+   "hi": "वार्डन ने सही गिना था।",
+   "hl": "Warden ne sahi gina tha.",
+   "gap": 1.2,
+   "whisper": true
+  },
+  {
+   "sc": "s10_loop",
+   "hi": "अगली रात, गिनती में पूरे अट्ठाईस लड़के आए। बस, मैं उनमें नहीं था।",
+   "hl": "Agli raat, ginti mein poore 28 ladke aaye. Bas... main unmein nahi tha."
+  }
+ ],
+ "scenes_meta": {
+  "s1_hook": {
+   "mood": "suspense"
+  },
+  "s2_dorm": {
+   "mood": "suspense"
+  },
+  "s4_wall": {
+   "mood": "suspense"
+  },
+  "s5_count": {
+   "mood": "tension"
+  },
+  "s6_door": {
+   "mood": "tension"
+  },
+  "s7_relief": {
+   "mood": "suspense"
+  },
+  "s8_breath": {
+   "mood": "tension"
+  },
+  "s9_whisper": {
+   "mood": "climax"
+  },
+  "s10_loop": {
+   "mood": "suspense"
+  }
+ }
+}

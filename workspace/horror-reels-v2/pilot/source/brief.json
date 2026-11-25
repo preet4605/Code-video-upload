@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Hindi-speaking college and hostel students, 17-25, scrolling at night",
+ "hook": "Ginti counter flips 28 to red 29 while a torch beam sweeps a dark dorm",
+ "payoff": "The 29th was lying behind the narrator in his own bed. Next night the count is a clean 28, and the narrator is not in it.",
+ "cta": "",
+ "target_duration_s": 58, "loop": true,
+ "sources": ["Original story (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS (Aman), sound design synthesized in code. No third-party footage or audio."]
+}
