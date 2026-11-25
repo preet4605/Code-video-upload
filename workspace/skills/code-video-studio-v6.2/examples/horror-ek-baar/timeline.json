@@ -1,0 +1,1253 @@
+{
+  "version": "1.0",
+  "slug": "project",
+  "aspect": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_s": 74.658,
+  "target_lufs": -16,
+  "true_peak_dbtp": -1.5,
+  "audio_file": null,
+  "alignment": {
+    "method": "wpm-estimate"
+  },
+  "voice_style": {
+    "tempo": 0.95,
+    "temperature": 0.8,
+    "lineGapS": 0.5,
+    "sceneTailS": 0.3,
+    "perLine": true
+  },
+  "silences": [
+    {
+      "start_s": 44.814,
+      "end_s": 45.814,
+      "dur_s": 1
+    },
+    {
+      "start_s": 66.289,
+      "end_s": 67.289,
+      "dur_s": 1
+    }
+  ],
+  "lines": [
+    {
+      "index": 0,
+      "speaker": "NARRATOR",
+      "text": "रात को कोई एक बार पुकारे... तो जवाब मत देना।",
+      "start_s": 0.25,
+      "dur_s": 4.688
+    },
+    {
+      "index": 1,
+      "speaker": "NARRATOR",
+      "text": "नानी कहती थीं, इंसान हमेशा दो बार पुकारता है।",
+      "start_s": 5.988,
+      "dur_s": 4.219
+    },
+    {
+      "index": 2,
+      "speaker": "NARRATOR",
+      "text": "जो सिर्फ़ एक बार पुकारे, वो इंसान नहीं होता।",
+      "start_s": 10.707,
+      "dur_s": 4.219
+    },
+    {
+      "index": 3,
+      "speaker": "NARRATOR",
+      "text": "तीन बजकर सात मिनट। माँ बगल में सो रही थीं।",
+      "start_s": 15.976,
+      "dur_s": 4.688
+    },
+    {
+      "index": 4,
+      "speaker": "NARRATOR",
+      "text": "तभी रसोई से माँ की आवाज़ आई। \"बेटा।\" बस एक बार।",
+      "start_s": 21.164,
+      "dur_s": 5.156
+    },
+    {
+      "index": 5,
+      "speaker": "NARRATOR",
+      "text": "मैंने जवाब नहीं दिया। पर नींद में माँ बुदबुदाईं...",
+      "start_s": 27.37,
+      "dur_s": 4.219
+    },
+    {
+      "index": 6,
+      "speaker": "WHISPER",
+      "text": "हाँ...?",
+      "start_s": 32.089,
+      "dur_s": 0.8
+    },
+    {
+      "index": 7,
+      "speaker": "NARRATOR",
+      "text": "माँ उठीं। चप्पलें रसोई की ओर गईं।",
+      "start_s": 33.939,
+      "dur_s": 3.281
+    },
+    {
+      "index": 8,
+      "speaker": "NARRATOR",
+      "text": "दरवाज़े के नीचे की रोशनी में दो पैर रुके।",
+      "start_s": 37.72,
+      "dur_s": 4.219
+    },
+    {
+      "index": 9,
+      "speaker": "NARRATOR",
+      "text": "फिर रोशनी बुझ गई।",
+      "start_s": 42.439,
+      "dur_s": 1.875
+    },
+    {
+      "index": 10,
+      "speaker": "NARRATOR",
+      "text": "कुछ देर बाद चप्पलें लौटीं। माँ चुपचाप बगल में लेट गईं।",
+      "start_s": 46.364,
+      "dur_s": 5.156
+    },
+    {
+      "index": 11,
+      "speaker": "NARRATOR",
+      "text": "मैं सो गया।",
+      "start_s": 52.02,
+      "dur_s": 1.406
+    },
+    {
+      "index": 12,
+      "speaker": "NARRATOR",
+      "text": "सुबह रसोई से माँ ने पुकारा। \"बेटा! बेटा!\"",
+      "start_s": 54.476,
+      "dur_s": 3.75
+    },
+    {
+      "index": 13,
+      "speaker": "NARRATOR",
+      "text": "दो बार। माँ रात भर रसोई में थीं।",
+      "start_s": 58.726,
+      "dur_s": 3.75
+    },
+    {
+      "index": 14,
+      "speaker": "NARRATOR",
+      "text": "तो बगल में जो लेटा था...",
+      "start_s": 62.976,
+      "dur_s": 2.813
+    },
+    {
+      "index": 15,
+      "speaker": "NARRATOR",
+      "text": "कंबल हिला। उसने मेरी तरफ़ मुँह किया।",
+      "start_s": 67.839,
+      "dur_s": 3.281
+    },
+    {
+      "index": 16,
+      "speaker": "WHISPER",
+      "text": "\"बेटा।\"",
+      "start_s": 71.62,
+      "dur_s": 0.8
+    },
+    {
+      "index": 17,
+      "speaker": "NARRATOR",
+      "text": "एक बार।",
+      "start_s": 72.92,
+      "dur_s": 0.938
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "start_s": 0,
+      "end_s": 5.738,
+      "mood": "suspense",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 0,
+          "dur_s": 5.738,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nani",
+      "start_s": 5.738,
+      "end_s": 15.726,
+      "mood": "calm",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 5.738,
+          "dur_s": 9.988,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wake",
+      "start_s": 15.726,
+      "end_s": 27.12,
+      "mood": "suspense",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 15.726,
+          "dur_s": 11.394,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "still",
+      "start_s": 27.12,
+      "end_s": 33.689,
+      "mood": "suspense",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 27.12,
+          "dur_s": 6.569,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "start_s": 33.689,
+      "end_s": 46.114,
+      "mood": "climax",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 33.689,
+          "dur_s": 12.425,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "start_s": 46.114,
+      "end_s": 54.226,
+      "mood": "calm",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 46.114,
+          "dur_s": 8.112,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morning",
+      "start_s": 54.226,
+      "end_s": 67.589,
+      "mood": "suspense",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 54.226,
+          "dur_s": 13.363,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reveal_callback",
+      "start_s": 67.589,
+      "end_s": 74.658,
+      "mood": "climax",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 67.589,
+          "dur_s": 7.069,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "word": "रात",
+      "start_s": 0.25,
+      "end_s": 0.719,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "को",
+      "start_s": 0.719,
+      "end_s": 1.188,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "कोई",
+      "start_s": 1.188,
+      "end_s": 1.656,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "एक",
+      "start_s": 1.656,
+      "end_s": 2.125,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बार",
+      "start_s": 2.125,
+      "end_s": 2.594,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "पुकारे...",
+      "start_s": 2.594,
+      "end_s": 3.063,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "तो",
+      "start_s": 3.063,
+      "end_s": 3.531,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "जवाब",
+      "start_s": 3.531,
+      "end_s": 4,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "मत",
+      "start_s": 4,
+      "end_s": 4.469,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "देना।",
+      "start_s": 4.469,
+      "end_s": 4.938,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "नानी",
+      "start_s": 5.988,
+      "end_s": 6.457,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "कहती",
+      "start_s": 6.457,
+      "end_s": 6.926,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "थीं,",
+      "start_s": 6.926,
+      "end_s": 7.394,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "इंसान",
+      "start_s": 7.394,
+      "end_s": 7.863,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "हमेशा",
+      "start_s": 7.863,
+      "end_s": 8.332,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "दो",
+      "start_s": 8.332,
+      "end_s": 8.801,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बार",
+      "start_s": 8.801,
+      "end_s": 9.269,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "पुकारता",
+      "start_s": 9.269,
+      "end_s": 9.738,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "है।",
+      "start_s": 9.738,
+      "end_s": 10.207,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "जो",
+      "start_s": 10.707,
+      "end_s": 11.176,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "सिर्फ़",
+      "start_s": 11.176,
+      "end_s": 11.644,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "एक",
+      "start_s": 11.644,
+      "end_s": 12.113,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बार",
+      "start_s": 12.113,
+      "end_s": 12.582,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "पुकारे,",
+      "start_s": 12.582,
+      "end_s": 13.051,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "वो",
+      "start_s": 13.051,
+      "end_s": 13.519,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "इंसान",
+      "start_s": 13.519,
+      "end_s": 13.988,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "नहीं",
+      "start_s": 13.988,
+      "end_s": 14.457,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "होता।",
+      "start_s": 14.457,
+      "end_s": 14.926,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "तीन",
+      "start_s": 15.976,
+      "end_s": 16.445,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बजकर",
+      "start_s": 16.445,
+      "end_s": 16.914,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "सात",
+      "start_s": 16.914,
+      "end_s": 17.382,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "मिनट।",
+      "start_s": 17.382,
+      "end_s": 17.851,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "माँ",
+      "start_s": 17.851,
+      "end_s": 18.32,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बगल",
+      "start_s": 18.32,
+      "end_s": 18.789,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "में",
+      "start_s": 18.789,
+      "end_s": 19.257,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "सो",
+      "start_s": 19.257,
+      "end_s": 19.726,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रही",
+      "start_s": 19.726,
+      "end_s": 20.195,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "थीं।",
+      "start_s": 20.195,
+      "end_s": 20.664,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "तभी",
+      "start_s": 21.164,
+      "end_s": 21.632,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रसोई",
+      "start_s": 21.632,
+      "end_s": 22.101,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "से",
+      "start_s": 22.101,
+      "end_s": 22.57,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "माँ",
+      "start_s": 22.57,
+      "end_s": 23.039,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "की",
+      "start_s": 23.039,
+      "end_s": 23.507,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "आवाज़",
+      "start_s": 23.507,
+      "end_s": 23.976,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "आई।",
+      "start_s": 23.976,
+      "end_s": 24.445,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "\"बेटा।\"",
+      "start_s": 24.445,
+      "end_s": 24.914,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बस",
+      "start_s": 24.914,
+      "end_s": 25.382,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "एक",
+      "start_s": 25.382,
+      "end_s": 25.851,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बार।",
+      "start_s": 25.851,
+      "end_s": 26.32,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "मैंने",
+      "start_s": 27.37,
+      "end_s": 27.839,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "जवाब",
+      "start_s": 27.839,
+      "end_s": 28.308,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "नहीं",
+      "start_s": 28.308,
+      "end_s": 28.776,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "दिया।",
+      "start_s": 28.776,
+      "end_s": 29.245,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "पर",
+      "start_s": 29.245,
+      "end_s": 29.714,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "नींद",
+      "start_s": 29.714,
+      "end_s": 30.183,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "में",
+      "start_s": 30.183,
+      "end_s": 30.651,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "माँ",
+      "start_s": 30.651,
+      "end_s": 31.12,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बुदबुदाईं...",
+      "start_s": 31.12,
+      "end_s": 31.589,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "हाँ...?",
+      "start_s": 32.089,
+      "end_s": 32.889,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "माँ",
+      "start_s": 33.939,
+      "end_s": 34.408,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "उठीं।",
+      "start_s": 34.408,
+      "end_s": 34.877,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "चप्पलें",
+      "start_s": 34.877,
+      "end_s": 35.345,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रसोई",
+      "start_s": 35.345,
+      "end_s": 35.814,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "की",
+      "start_s": 35.814,
+      "end_s": 36.283,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "ओर",
+      "start_s": 36.283,
+      "end_s": 36.752,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "गईं।",
+      "start_s": 36.752,
+      "end_s": 37.22,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "दरवाज़े",
+      "start_s": 37.72,
+      "end_s": 38.189,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "के",
+      "start_s": 38.189,
+      "end_s": 38.658,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "नीचे",
+      "start_s": 38.658,
+      "end_s": 39.127,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "की",
+      "start_s": 39.127,
+      "end_s": 39.595,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रोशनी",
+      "start_s": 39.595,
+      "end_s": 40.064,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "में",
+      "start_s": 40.064,
+      "end_s": 40.533,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "दो",
+      "start_s": 40.533,
+      "end_s": 41.002,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "पैर",
+      "start_s": 41.002,
+      "end_s": 41.47,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रुके।",
+      "start_s": 41.47,
+      "end_s": 41.939,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "फिर",
+      "start_s": 42.439,
+      "end_s": 42.908,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रोशनी",
+      "start_s": 42.908,
+      "end_s": 43.377,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बुझ",
+      "start_s": 43.377,
+      "end_s": 43.845,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "गई।",
+      "start_s": 43.845,
+      "end_s": 44.314,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "कुछ",
+      "start_s": 46.364,
+      "end_s": 46.833,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "देर",
+      "start_s": 46.833,
+      "end_s": 47.302,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बाद",
+      "start_s": 47.302,
+      "end_s": 47.77,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "चप्पलें",
+      "start_s": 47.77,
+      "end_s": 48.239,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "लौटीं।",
+      "start_s": 48.239,
+      "end_s": 48.708,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "माँ",
+      "start_s": 48.708,
+      "end_s": 49.177,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "चुपचाप",
+      "start_s": 49.177,
+      "end_s": 49.645,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बगल",
+      "start_s": 49.645,
+      "end_s": 50.114,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "में",
+      "start_s": 50.114,
+      "end_s": 50.583,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "लेट",
+      "start_s": 50.583,
+      "end_s": 51.052,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "गईं।",
+      "start_s": 51.052,
+      "end_s": 51.52,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "मैं",
+      "start_s": 52.02,
+      "end_s": 52.489,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "सो",
+      "start_s": 52.489,
+      "end_s": 52.958,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "गया।",
+      "start_s": 52.958,
+      "end_s": 53.427,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "सुबह",
+      "start_s": 54.476,
+      "end_s": 54.945,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रसोई",
+      "start_s": 54.945,
+      "end_s": 55.414,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "से",
+      "start_s": 55.414,
+      "end_s": 55.882,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "माँ",
+      "start_s": 55.882,
+      "end_s": 56.351,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "ने",
+      "start_s": 56.351,
+      "end_s": 56.82,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "पुकारा।",
+      "start_s": 56.82,
+      "end_s": 57.289,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "\"बेटा!",
+      "start_s": 57.289,
+      "end_s": 57.757,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बेटा!\"",
+      "start_s": 57.757,
+      "end_s": 58.226,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "दो",
+      "start_s": 58.726,
+      "end_s": 59.195,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बार।",
+      "start_s": 59.195,
+      "end_s": 59.664,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "माँ",
+      "start_s": 59.664,
+      "end_s": 60.132,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रात",
+      "start_s": 60.132,
+      "end_s": 60.601,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "भर",
+      "start_s": 60.601,
+      "end_s": 61.07,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रसोई",
+      "start_s": 61.07,
+      "end_s": 61.539,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "में",
+      "start_s": 61.539,
+      "end_s": 62.007,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "थीं।",
+      "start_s": 62.007,
+      "end_s": 62.476,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "तो",
+      "start_s": 62.976,
+      "end_s": 63.445,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बगल",
+      "start_s": 63.445,
+      "end_s": 63.914,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "में",
+      "start_s": 63.914,
+      "end_s": 64.382,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "जो",
+      "start_s": 64.382,
+      "end_s": 64.851,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "लेटा",
+      "start_s": 64.851,
+      "end_s": 65.32,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "था...",
+      "start_s": 65.32,
+      "end_s": 65.789,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "कंबल",
+      "start_s": 67.839,
+      "end_s": 68.308,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "हिला।",
+      "start_s": 68.308,
+      "end_s": 68.777,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "उसने",
+      "start_s": 68.777,
+      "end_s": 69.245,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "मेरी",
+      "start_s": 69.245,
+      "end_s": 69.714,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "तरफ़",
+      "start_s": 69.714,
+      "end_s": 70.183,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "मुँह",
+      "start_s": 70.183,
+      "end_s": 70.652,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "किया।",
+      "start_s": 70.652,
+      "end_s": 71.12,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "\"बेटा।\"",
+      "start_s": 71.62,
+      "end_s": 72.42,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "एक",
+      "start_s": 72.92,
+      "end_s": 73.389,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बार।",
+      "start_s": 73.389,
+      "end_s": 73.858,
+      "speaker": "NARRATOR"
+    }
+  ],
+  "captions": [
+    {
+      "speaker": "NARRATOR",
+      "text": "रात को कोई एक बार पुकारे... तो जवाब मत देना।",
+      "start_s": 0.25,
+      "end_s": 4.938,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "नानी कहती थीं, इंसान हमेशा दो बार पुकारता है।",
+      "start_s": 5.988,
+      "end_s": 10.207,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "जो सिर्फ़ एक बार पुकारे, वो इंसान नहीं होता।",
+      "start_s": 10.707,
+      "end_s": 14.926,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "तीन बजकर सात मिनट। माँ बगल में सो रही थीं।",
+      "start_s": 15.976,
+      "end_s": 20.664,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "तभी रसोई से माँ की आवाज़ आई। \"बेटा।\" बस एक बार।",
+      "start_s": 21.164,
+      "end_s": 26.32,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "मैंने जवाब नहीं दिया। पर नींद में माँ बुदबुदाईं...",
+      "start_s": 27.37,
+      "end_s": 31.589,
+      "safe_zone": true
+    },
+    {
+      "speaker": "WHISPER",
+      "text": "हाँ...?",
+      "start_s": 32.089,
+      "end_s": 32.889,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "माँ उठीं। चप्पलें रसोई की ओर गईं।",
+      "start_s": 33.939,
+      "end_s": 37.22,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "दरवाज़े के नीचे की रोशनी में दो पैर रुके।",
+      "start_s": 37.72,
+      "end_s": 41.939,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "फिर रोशनी बुझ गई।",
+      "start_s": 42.439,
+      "end_s": 44.314,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "कुछ देर बाद चप्पलें लौटीं। माँ चुपचाप बगल में लेट गईं।",
+      "start_s": 46.364,
+      "end_s": 51.52,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "मैं सो गया।",
+      "start_s": 52.02,
+      "end_s": 53.427,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "सुबह रसोई से माँ ने पुकारा। \"बेटा! बेटा!\"",
+      "start_s": 54.476,
+      "end_s": 58.226,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "दो बार। माँ रात भर रसोई में थीं।",
+      "start_s": 58.726,
+      "end_s": 62.476,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "तो बगल में जो लेटा था...",
+      "start_s": 62.976,
+      "end_s": 65.789,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "कंबल हिला। उसने मेरी तरफ़ मुँह किया।",
+      "start_s": 67.839,
+      "end_s": 71.12,
+      "safe_zone": true
+    },
+    {
+      "speaker": "WHISPER",
+      "text": "\"बेटा।\"",
+      "start_s": 71.62,
+      "end_s": 72.42,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "एक बार।",
+      "start_s": 72.92,
+      "end_s": 73.858,
+      "safe_zone": true
+    }
+  ],
+  "audio_cues": [
+    {
+      "type": "sfx",
+      "name": "fan_hum",
+      "t_s": 0.25,
+      "gain_db": -6
+    },
+    {
+      "type": "sfx",
+      "name": "slippers",
+      "t_s": 33.939,
+      "gain_db": -6
+    },
+    {
+      "type": "sfx",
+      "name": "thud",
+      "t_s": 42.439,
+      "gain_db": -6
+    },
+    {
+      "type": "silence",
+      "t_s": 44.814,
+      "dur_s": 1
+    },
+    {
+      "type": "sfx",
+      "name": "door_creak",
+      "t_s": 46.364,
+      "gain_db": -6
+    },
+    {
+      "type": "sfx",
+      "name": "whisper_gust",
+      "t_s": 54.476,
+      "gain_db": -6
+    },
+    {
+      "type": "silence",
+      "t_s": 66.289,
+      "dur_s": 1
+    },
+    {
+      "type": "sfx",
+      "name": "violin_stinger",
+      "t_s": 67.289,
+      "gain_db": -6,
+      "scare": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Hindi-speaking 16-30 year olds who watched Ranga Part 1 and were promised Part 2",
+ "hook": "Ranga pehle dayan nahi thi, wo ek dulhan thi. (over a frozen, cracking screen)",
+ "payoff": "The village threw the jilted bride out into the snow; next morning only a trail led to every door.",
+ "cta": "Haan ya Na comment karo. Part 3: Ranga se kaise bachein.",
+ "target_duration_s": 50, "loop": true,
+ "sources": ["Original story built on the account's own Ranga character (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS (Aman), studio-synthesized SFX/BGM. No third-party footage or audio."]
+}

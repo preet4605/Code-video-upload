@@ -1,0 +1,37 @@
+{
+ "scene_allow": {
+  "s1_hook": [
+   "bright"
+  ],
+  "s3_circle": [
+   "bright"
+  ],
+  "s4_minute": [
+   "bright"
+  ],
+  "s5_hand": [
+   "bright"
+  ],
+  "s6_raju": [
+   "bright"
+  ],
+  "s7_whisper": [
+   "bright"
+  ],
+  "s8_relief": [
+   "bright"
+  ],
+  "s9_twist": [
+   "bright"
+  ],
+  "s10_gate": [
+   "bright"
+  ],
+  "s11_loop": [
+   "bright"
+  ],
+  "s2_dadi": [
+   "bright"
+  ]
+ }
+}

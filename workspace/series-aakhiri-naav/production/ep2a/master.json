@@ -1,0 +1,290 @@
+{
+  "ok": true,
+  "verdict": "FIX",
+  "ship": {
+    "verdict": "FIX",
+    "fails": [
+      "visual-loop: not converged (iteration 3: metrics fail, critique min missing). Run scripts/visual_loop.mjs until LOOP PASS"
+    ],
+    "warns": [
+      "captions: word timings aligned by voiced-span weighting (approximate: +/-0.15s typical); use provider timestamps for frame-accurate highlights",
+      "horror: SHIP means no measured defect was found. It does not measure fear; watch it with sound on a phone in a dark room.",
+      "horror-script: short_lines: median line is 15 words; use clipped lines for dread",
+      "horror-script: story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\"",
+      "horror-script: story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\"",
+      "horror-visual: bright_cabin: scene \"cabin\" mean luma 50.4 is on the bright side (> 45)",
+      "horror-visual: escalation: weak escalation 1.27 (< 1.4)"
+    ],
+    "human_review": {
+      "required": true,
+      "checklist": [
+        "Watch the whole master once on a phone with sound ON, then once muted.",
+        "First 2 seconds: would a stranger stop scrolling? Is the hook understood without sound?",
+        "Listen for mispronounced words, harsh SFX, music masking speech, clicks at cuts.",
+        "Open qa_safezone_sheet.png: no caption, face or badge under the red bands.",
+        "Every on-screen claim/number matches the voiceover and a source.",
+        "Last second: does it loop or land a payoff, not fade into nothing?"
+      ]
+    },
+    "measured": {
+      "flashes": {
+        "series_len": 2511,
+        "max_per_sec": 0,
+        "worst_t": 0,
+        "transitions": 0
+      },
+      "hook": {
+        "frames": 18,
+        "motion": 0.01262
+      },
+      "mix": {
+        "vo_lufs": -20.1,
+        "bed_gain_db": -6,
+        "bed_lufs_after_gain": -35.3,
+        "vo_to_bed_lu": 15.2
+      },
+      "duration_s": 83.797
+    },
+    "safe_zone_sheet": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2a/out/qa_safezone_sheet.png",
+    "safe_profile": "universal",
+    "platform": "reels",
+    "horror": {
+      "script": {
+        "pass": true,
+        "fails": [],
+        "warns": [
+          "short_lines: median line is 15 words; use clipped lines for dread",
+          "story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\"",
+          "story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\""
+        ]
+      },
+      "story": {
+        "format": "serial",
+        "errors": [],
+        "warns": [
+          "story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\""
+        ]
+      },
+      "measured": {
+        "per_scene": [
+          {
+            "id": "hook",
+            "motion": 0.0067,
+            "camera_px_s": 1.8,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "breath",
+            "motion": 0.0249,
+            "camera_px_s": 38.1,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "calls",
+            "motion": 0.0174,
+            "camera_px_s": 12.3,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "warm",
+            "motion": 0.0122,
+            "camera_px_s": 6.4,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "cabin",
+            "motion": 0.0149,
+            "camera_px_s": 12.7,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "jacket",
+            "motion": 0.0246,
+            "camera_px_s": 96.9,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "relief",
+            "motion": 0.0074,
+            "camera_px_s": 29,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "voice",
+            "motion": 0.0124,
+            "camera_px_s": 46.1,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "break",
+            "motion": 0.0125,
+            "camera_px_s": 34.3,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "grip",
+            "motion": 0.0227,
+            "camera_px_s": 88.9,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "push",
+            "motion": 0.0383,
+            "camera_px_s": 54.9,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          }
+        ],
+        "dark_share": 0.003,
+        "scares": [
+          {
+            "t": 73.479,
+            "context_db": -12.5,
+            "quiet_db": -76.4,
+            "drop_db": 63.8,
+            "stinger_peak_db": -4.8,
+            "rise_db": 71.6
+          }
+        ],
+        "note": "Measured gates catch static, black and undropped scares. SHIP does not measure fear: watch it with sound on a phone."
+      },
+      "visual": {
+        "pass": true,
+        "fails": [],
+        "warns": [
+          "bright_cabin: scene \"cabin\" mean luma 50.4 is on the bright side (> 45)",
+          "escalation: weak escalation 1.27 (< 1.4)"
+        ],
+        "per_scene": [
+          {
+            "id": "hook",
+            "mean": 42.8,
+            "p98": 119.3,
+            "edge": 0.0554,
+            "motion": 0.0067
+          },
+          {
+            "id": "breath",
+            "mean": 39.2,
+            "p98": 129.8,
+            "edge": 0.0594,
+            "motion": 0.0249
+          },
+          {
+            "id": "calls",
+            "mean": 23.5,
+            "p98": 68.5,
+            "edge": 0.0172,
+            "motion": 0.0174
+          },
+          {
+            "id": "warm",
+            "mean": 43.4,
+            "p98": 167.6,
+            "edge": 0.0418,
+            "motion": 0.0122
+          },
+          {
+            "id": "cabin",
+            "mean": 50.4,
+            "p98": 165.5,
+            "edge": 0.0439,
+            "motion": 0.0149
+          },
+          {
+            "id": "jacket",
+            "mean": 38.9,
+            "p98": 105.9,
+            "edge": 0.0347,
+            "motion": 0.0242
+          },
+          {
+            "id": "relief",
+            "mean": 30,
+            "p98": 64.6,
+            "edge": 0.0253,
+            "motion": 0.0074
+          },
+          {
+            "id": "voice",
+            "mean": 34.8,
+            "p98": 92.8,
+            "edge": 0.0222,
+            "motion": 0.0123
+          },
+          {
+            "id": "break",
+            "mean": 44.3,
+            "p98": 122.8,
+            "edge": 0.0261,
+            "motion": 0.0125
+          },
+          {
+            "id": "grip",
+            "mean": 23.6,
+            "p98": 49.1,
+            "edge": 0.0111,
+            "motion": 0.0227
+          },
+          {
+            "id": "push",
+            "mean": 23,
+            "p98": 64.1,
+            "edge": 0.0639,
+            "motion": 0.0383
+          }
+        ],
+        "escalation": 1.27,
+        "scene_sheet": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2a/out/qa_scene_sheet.png"
+      }
+    },
+    "visual_loop": {
+      "iterations": 3,
+      "last_pass": false,
+      "critique_min": null,
+      "mean_score": 0.469
+    }
+  },
+  "stitch_mode": "stream-copy",
+  "outMp4": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2a/out/ep2a.mp4",
+  "horror_bed": null,
+  "loudness_mode": "linear (gain + limiter)",
+  "contactSheet": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2a/out/qa_contact_sheet.png",
+  "preset": "reel-vocal",
+  "audioMood": "none",
+  "bgm": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2a/sound_bed.wav",
+  "sfxCount": 0,
+  "audio_qa": {
+    "integrated_lufs": -14.1,
+    "target_lufs": -14,
+    "lufs_tolerance_lu": 2,
+    "true_peak_dbtp": -1.8,
+    "true_peak_limit_dbtp": -1.5,
+    "loudness_retries": 1,
+    "pass": true
+  },
+  "ffprobe": {
+    "duration": 83.797,
+    "size_bytes": 42578823,
+    "video": {
+      "codec": "h264",
+      "pix_fmt": "yuv420p",
+      "width": 1080,
+      "height": 1920
+    },
+    "audio": {
+      "codec": "aac",
+      "sample_rate": "48000"
+    }
+  }
+}

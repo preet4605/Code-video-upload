@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Hindi-speaking 16-30 year olds who like late-night challenges",
+ "hook": "A reflection blinks a beat late. Tumhara reflection, tumse thoda der se palak jhapkata hai?",
+ "payoff": "Neha's reflection blinked late, then smiled while she did not; now it wakes before her.",
+ "cta": "Test karke comment karo: Normal ya Der se.",
+ "target_duration_s": 35, "loop": true,
+ "sources": ["Original story (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS (Aman), studio-synthesized SFX/BGM. No third-party footage or audio."]
+}

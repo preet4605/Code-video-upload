@@ -1,0 +1,71 @@
+[SCENE id=sun_hook mood=funny]
+Arre beta, main aam nahi hoon, main Suraj hoon!
+[SCENE id=quiet_morning mood=calm]
+Aur woh subah kitni shaanti se shuru hui thi.
+[SCENE id=baby_wakes mood=playful]
+Ek nanha sa bachcha apni aankhen kholta hai.
+Maa Anjana phal lene gayi hain.
+[SCENE id=hungry mood=playful]
+Aankhen khulin, aur bhookh bhi jaag gayi.
+Maa, maa, bhookh lagi!
+[SCENE id=raw_mangoes mood=playful]
+Maa yahan nahi hain, aur ped ke saare aam abhi kachche hain.
+[SCENE id=sky_mango mood=playful]
+Lekin upar aasmaan mein dikha, ab tak ka sabse bada, sabse paka hua aam.
+Aam!
+[SCENE id=jump mood=playful]
+Woh chhalaang lagaata hai. Ped peeche chhoote, baadal peeche chhoote.
+[SCENE id=vayu_follow mood=playful]
+Vayu Dev theek peeche udte hain, use thandi hawa karte hue,
+jaise koi papa bachche ki pehli cycle ke peeche bhaag rahe hon.
+[SCENE id=surya_duty mood=playful]
+Surya Dev apni subah ki duty kar rahe hain.
+Tabhi unhe ek chhota sa munh dikhta hai, jo bada, aur bada hota ja raha hai.
+[SCENE id=blackout mood=suspense]
+Teenon lokon ki batti gul.
+Kahin koi poochhta hai, bijli gayi kya?
+[SCENE id=glow mood=wonder]
+Bas ek hi roshni bachi, do chhote chhote gaal, diyon jaise chamakte hue.
+[SCENE id=rahu_arrives mood=suspense]
+Us din Rahu ki booking thi, grahan ki.
+Woh pahunchta hai, par Suraj gaayab. Saamne bas ek bachcha, jo use hi ghoor raha hai.
+[SCENE id=rahu_flees mood=playful]
+Jamun!
+Rahu itni tez kabhi nahi bhaaga.
+[SCENE id=rahu_complains mood=playful]
+Indra Dev! Bachcha Suraj kha gaya!
+[SCENE id=airavat mood=playful]
+Indra Dev Airavat par aate hain.
+Bada, safed, gol matol.
+[SCENE id=rasgulla mood=playful]
+Bachche ki aankhen chamak uthti hain.
+Rasgulla!
+[SCENE id=vajra mood=playful]
+Indra ghabra jaate hain. Vajra! Tak! Seedha thodi par.
+Hic!
+[SCENE id=sun_back mood=playful]
+Aur Suraj wapas aa gaya. Good morning, phir se.
+[SCENE id=falling mood=tense]
+Par nanha bachcha neeche gir raha hai.
+Vayu Dev use pakad lete hain. Beta? Koi jawaab nahi.
+[SCENE id=wind_stops mood=tense]
+Vayu Dev Indra ki taraf dekhte hain, aur hawa ruk jaati hai.
+Jab tak mera beta nahi hansega, koi saans nahi lega.
+[SCENE id=gods_come mood=playful]
+Saare devta daude chale aate hain, koi khaali haath nahi.
+Brahma ji bole, koi bhi astra ise kabhi chot nahi pahunchayega.
+[SCENE id=indra_sorry mood=playful]
+Indra Dev, bahut sharminda, bole, yeh mere vajra se bhi zyada mazboot hoga.
+[SCENE id=surya_teach mood=playful]
+Surya Dev, abhi bhi thode ghabraaye hue, bole, main ise padhaunga.
+[SCENE id=name mood=playful]
+Aur thodi par woh chhota sa nishaan, yaani uski hanu, usi se use naam milta hai.
+Hanuman.
+[SCENE id=smiles mood=playful]
+Bachcha muskurata hai. Vayu Dev muskurate hain. Aur sabki saans laut aati hai.
+[SCENE id=more mood=playful]
+Beta, aur kuch chahiye?
+[SCENE id=sun_hides mood=playful]
+Aur Surya Dev chupchaap ek baadal ke peeche chhip jaate hain.
+[SCENE id=outro mood=warm]
+Katha pasand aayi? Toh aisi aur kathaon ke liye follow karo.

@@ -1,0 +1,16 @@
+{ "shots": [
+  { "id": "room", "seen": "Now it feels like horror: cold dark room, cold moon in the window, red 3:07 clock, warm strip under the door, the doll facing the wall in the door light. But the wall dressing (cracks, peeling paper, cobweb, photo, calendar) is crushed to black and the room reads as mud.",
+    "problems": ["detail lost in darkness", "contrast 19.7", "top corners and right side are dead"],
+    "fix": "Keep the darkness mask but add a moonlit line pass: re-draw the drawing's edges as faint cold lines over the dark, so cracks, stripes and props stay readable as thin lines on black.",
+    "regression_note": "Scores dropped because the horror grade removed brightness and colour, which is the requested change of look; detail is the part to recover, not the brightness.",
+    "scores": { "subject": 3, "depth": 2, "detail": 2, "light": 4, "character": 3, "composition": 3 } },
+  { "id": "door", "seen": "Strip of warm light under the door with two feet shadows and the doll silhouetted in the pool; scratches and the handprint are barely visible; upper door and walls are black.",
+    "problems": ["door surface detail invisible", "large dead areas"],
+    "fix": "Same moonlit line pass so the claw scratches, handprint and panels read; widen the strip glow up the door face.",
+    "regression_note": "Brightness drop is the intended horror grade; detail must come back through lines, not by lifting the blacks.",
+    "scores": { "subject": 4, "depth": 2, "detail": 2, "light": 4, "character": 2, "composition": 3 } },
+  { "id": "face", "seen": "Pale scared face lit from the door side, rest falls to black; good mood, but headboard and blanket are flat dark shapes and the frame edges are empty.",
+    "problems": ["blanket and headboard detail lost", "edges dead"],
+    "fix": "Moonlit line pass to bring back blanket folds, pillow and headboard carving; keep the face as the brightest area.",
+    "regression_note": "Intended: the face lost brightness and colour to the horror grade; focal improved (3.46) because only the face is lit.",
+    "scores": { "subject": 4, "depth": 2, "detail": 3, "light": 4, "character": 3, "composition": 3 } } ] }

@@ -1,0 +1,138 @@
+{
+  "iter": 1,
+  "pass": false,
+  "mean_score": 0.837,
+  "regressions": [],
+  "shots": [
+    {
+      "id": "room",
+      "pass": false,
+      "score": 0.93,
+      "delta": null,
+      "metrics": {
+        "sharp_edges": 0.0584,
+        "contrast": 36.5,
+        "mean_luma": 72.2,
+        "color_bins": 35.6667,
+        "saturation": 0.4913,
+        "ink": 0.044,
+        "focal": 4.49,
+        "hue_families": 3.6667,
+        "empty_cells": 3
+      },
+      "empty_where": [
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "color_bins",
+          "value": 35.6667,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        },
+        {
+          "metric": "mean_luma",
+          "value": 72.2,
+          "target": "<= 59.2",
+          "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
+        },
+        {
+          "metric": "hue_families",
+          "value": 3.6667,
+          "target": "<= 3",
+          "hint": "too many colours for this look: grade to one cold base hue plus at most one or two accent hues (warm door light, red clock)"
+        }
+      ]
+    },
+    {
+      "id": "door",
+      "pass": false,
+      "score": 0.766,
+      "delta": null,
+      "metrics": {
+        "sharp_edges": 0.0297,
+        "contrast": 33.8333,
+        "mean_luma": 82,
+        "color_bins": 28.6667,
+        "saturation": 0.4683,
+        "ink": 0.022,
+        "focal": 3.09,
+        "hue_families": 3,
+        "empty_cells": 4
+      },
+      "empty_where": [
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right",
+        "lower-left"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0297,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "color_bins",
+          "value": 28.6667,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        },
+        {
+          "metric": "mean_luma",
+          "value": 82,
+          "target": "<= 59.2",
+          "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
+        }
+      ]
+    },
+    {
+      "id": "face",
+      "pass": false,
+      "score": 0.816,
+      "delta": null,
+      "metrics": {
+        "sharp_edges": 0.0327,
+        "contrast": 57.4333,
+        "mean_luma": 90.3333,
+        "color_bins": 38,
+        "saturation": 0.467,
+        "ink": 0.0227,
+        "focal": 2.4967,
+        "hue_families": 3,
+        "empty_cells": 4
+      },
+      "empty_where": [
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0327,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "color_bins",
+          "value": 38,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        },
+        {
+          "metric": "mean_luma",
+          "value": 90.3333,
+          "target": "<= 59.2",
+          "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
+        }
+      ]
+    }
+  ],
+  "targets": "horror-dark"
+}

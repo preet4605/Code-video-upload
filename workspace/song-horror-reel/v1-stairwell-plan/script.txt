@@ -1,0 +1,36 @@
+[SCENE id=hook mood=suspense]
+[SFX name=bulb_buzz_two_shadows]
+[NARRATOR] रात के दो बजे, सीढ़ियों पर मेरे पीछे कोई चल रहा था।
+[SCENE id=climb mood=suspense]
+[NARRATOR] लिफ्ट बंद, घर पाँचवीं मंज़िल पर।
+[SCENE id=rule mood=suspense]
+[SFX name=key_bunch_jingle]
+[NARRATOR] तीन साल पहले गुज़री दादी चाबियाँ छनकाते हुए कहती थीं, पीछे कोई चले, तो मुड़कर मत देखना।
+[SCENE id=prints mood=suspense]
+[NARRATOR] गेट से गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।
+[SCENE id=chase1 mood=suspense]
+[SFX name=key_bunch_jingle]
+[NARRATOR] हर क़दम पर पीछे चाबियाँ छनक रही थीं।
+[SCENE id=blackout mood=suspense]
+[SFX name=timer_light_click]
+[NARRATOR] बत्ती हर मंज़िल पर बुझती, और आवाज़ एक क़दम पास आ जाती।
+[SCENE id=above mood=suspense]
+[SFX name=drip_slow]
+[NARRATOR] ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पैरों से पानी टपकता हुआ।
+[SCENE id=sandwich mood=suspense]
+[NARRATOR] आगे वो, पीछे वो, नीचे जाने का रास्ता नहीं।
+[SCENE id=turn mood=climax]
+[SILENCE dur=1.0]
+[SCARE name=turn_and_keys_drop]
+[NARRATOR] मैंने मुड़कर देख लिया।
+[SCENE id=relief mood=calm]
+[NARRATOR] पीछे दादी की परछाईं थी, और छनकती चाबियाँ।
+[SCENE id=twist mood=suspense]
+[SFX name=keys_fall_on_stone]
+[NARRATOR] देखते ही वो चली गईं। वो मुझे घर छोड़ने आई थीं, ऊपर वाले से बचाकर।
+[SCENE id=chase2 mood=climax]
+[SFX name=wet_step_descend]
+[NARRATOR] मेरे और उसके बीच कोई नहीं था। मैंने चाबियाँ उठाईं, भागा।
+[SCENE id=door_loop mood=suspense]
+[SFX name=door_bolt_drip_under_door]
+[NARRATOR] अब सीढ़ियों पर मेरे पीछे कोई नहीं चलता। वो दरवाज़े के बाहर खड़ा रहता है।

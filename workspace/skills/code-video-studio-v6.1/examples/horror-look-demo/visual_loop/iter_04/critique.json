@@ -1,0 +1,13 @@
+{ "shots": [
+  { "id": "room", "seen": "Cold dark room reads clearly: moon window with stars, red 3:07, tilted frames, bed with two sleepers and warm door strip. The bottom 40 percent of the frame is empty black floor and the caption bar floats on nothing.",
+    "problems": ["bottom of frame is dead black", "contrast just under floor"],
+    "fix": "Pull the camera down and zoom so the bed sits near frame centre and the plank floor with a moon-lit rug fills the lower third; add rim light on the bed edge.",
+    "scores": { "subject": 4, "depth": 3, "detail": 4, "light": 4, "character": 3, "composition": 2 } },
+  { "id": "door", "seen": "Door with claw scratches, red handprint, warm strip and two foot shadows with a small doll. The door face is flat dark and the bottom third is black.",
+    "problems": ["door top and bottom corners empty", "few crisp edges on the door"],
+    "fix": "Add door panel mouldings, a hinge set, a brass knob and skirting board, and light the floor planks in the strip spill so lines show in the lower third.",
+    "scores": { "subject": 4, "depth": 3, "detail": 3, "light": 4, "character": 3, "composition": 3 } },
+  { "id": "face", "seen": "Pale child face with hands gripping the blanket, lit from the right. Blanket quilting is visible but the upper corners and the bottom third are black.",
+    "problems": ["nine empty cells", "bottom third dead"],
+    "fix": "Zoom further into the face and move it lower in frame, add a window-light shaft and wallpaper pattern behind the headboard so top cells carry detail.",
+    "scores": { "subject": 4, "depth": 3, "detail": 3, "light": 4, "character": 3, "composition": 2 } } ] }

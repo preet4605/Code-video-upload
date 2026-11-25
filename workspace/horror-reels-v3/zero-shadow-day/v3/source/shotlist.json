@@ -1,0 +1,311 @@
+{
+ "scenes": [
+  {
+   "id": "s1_hook",
+   "subject": "Foot-level view across a white-hot school courtyard: a line of children holding hands, none casting a shadow, a trail of wet bare footprints in front",
+   "layers": {
+    "foreground": "wet bare footprints evaporating on hot cracked concrete",
+    "midground": "line of schoolchildren holding hands in a shallow arc",
+    "background": "whitewashed school wall, neem tree, blown-out sky"
+   },
+   "light_source": "noon sun at the zenith, bleached flat light with sun glare",
+   "focal_point": [
+    540,
+    820
+   ],
+   "motion": "slow low dolly along the trail, heat shimmer, footprints fading in sequence",
+   "details": [
+    "wet footprints with toes and heel",
+    "ZERO SHADOW DAY stamp fading out",
+    "children's contact shadows reduced to faint dots",
+    "cracked concrete paving joints",
+    "barred school windows"
+   ],
+   "withheld": "who left the wet footprints",
+   "intensity": 1,
+   "camera": "low dolly forward along the footprint trail with a slow handheld drift",
+   "sound_cue": "cicada drone + loo wind from frame one, nothing else",
+   "sync_word": "परछाईं"
+  },
+  {
+   "id": "s2_dadi",
+   "subject": "Dark mud-plaster kitchen, Dadi's silhouette rim-lit by the blown-out doorway, then her old hand letting go of the boy's wrist",
+   "layers": {
+    "foreground": "dust motes drifting in the light shaft",
+    "midground": "Dadi's silhouette with hair bun, the boy small in the foreground",
+    "background": "shelf of steel thalis, matka, chulha embers glowing"
+   },
+   "light_source": "blinding white doorway on the right, ember glow on the left",
+   "focal_point": [
+    540,
+    860
+   ],
+   "motion": "slow push-in, embers pulse, dust drifts, her fingers loosen on the wrist",
+   "details": [
+    "steel thalis on a shelf",
+    "clay matka",
+    "chulha embers glow",
+    "bangles on her wrist",
+    "wrinkled hand with gold and red bangles",
+    "light shaft across the floor"
+   ],
+   "withheld": "what Dadi is afraid of",
+   "intensity": 2,
+   "camera": "slow push-in with a tiny handheld sway, then a tight push on the hands",
+   "sound_cue": "muffled cicadas through the doorway, ember crackles, bangles jingle as she lets go",
+   "sync_word": "पकड़ना"
+  },
+  {
+   "id": "s3_circle",
+   "subject": "Courtyard from a rising crane: master ji lines the children up and makes them hold hands by a chalk arc, the rope-fenced well behind",
+   "layers": {
+    "foreground": "chalk arc on the ground",
+    "midground": "children walking into a line, master ji gesturing",
+    "background": "rope-fenced well, neem tree and school wall"
+   },
+   "light_source": "hard noon sun, shadows still long and shrinking",
+   "focal_point": [
+    540,
+    840
+   ],
+   "motion": "crane rising and turning toward the well, children walking into formation",
+   "details": [
+    "chalk arc",
+    "rope fence around the well",
+    "master ji in khaki",
+    "children's long shadows pointing toward the camera",
+    "barred windows and a gate arch",
+    "neem tree with canopy shade"
+   ],
+   "withheld": "what is down the well",
+   "intensity": 3,
+   "camera": "crane up and turn toward the well, handheld",
+   "sound_cue": "far school bell, shuffling feet, chalk scrape, cicadas swelling",
+   "sync_word": "राजू"
+  },
+  {
+   "id": "s4_minute",
+   "subject": "Overhead view of the arc of children holding hands as every shadow retreats into their feet and a thirteenth head appears at the end of the line",
+   "layers": {
+    "foreground": "paving cracks and stains seen from above",
+    "midground": "arc of children's heads and shoulders joined by hands",
+    "background": "round well mouth with a black centre"
+   },
+   "light_source": "sun overhead, flat bleaching light that blooms",
+   "focal_point": [
+    540,
+    880
+   ],
+   "motion": "camera drifts down and rotates, shadows shrink one by one, the sun glare blooms",
+   "details": [
+    "shadows shrinking into feet",
+    "chalk arc seen from above",
+    "well mouth black circle",
+    "joined hands between heads",
+    "damp ring under the new head",
+    "cracks in the stone"
+   ],
+   "withheld": "how the extra child got there",
+   "intensity": 4,
+   "camera": "overhead drift down with a slow rotate",
+   "sound_cue": "cicadas and a rising ring that cut dead as the last shadow goes",
+   "sync_word": "गायब"
+  },
+  {
+   "id": "s5_hand",
+   "subject": "Extreme close-up: a warm small hand held by a pale grey wet hand, steam rising off the skin in the heat",
+   "layers": {
+    "foreground": "steam curling off wet skin",
+    "midground": "two clasped hands, water beads on the grey one",
+    "background": "blown-out hot stone with heat bokeh"
+   },
+   "light_source": "white-hot daylight, backlit glare",
+   "focal_point": [
+    540,
+    960
+   ],
+   "motion": "slow push-in, steam rises, drops fall from the knuckles",
+   "details": [
+    "pale grey wet hand with bluish nails",
+    "water beads on knuckles",
+    "steam wisps in the heat",
+    "warm brown boy's hand",
+    "shirt cuff of the other child",
+    "heat bokeh circles"
+   ],
+   "withheld": "the face of the one holding on",
+   "intensity": 4,
+   "camera": "slow push-in, handheld tremble",
+   "sound_cue": "total dead zone: sub pressure, a heartbeat, a wet grip",
+   "sync_word": "ठंडा"
+  },
+  {
+   "id": "s6_raju",
+   "subject": "Raju's wet-haired face bowed in the glare, a drop forming at a strand and falling onto hot stone",
+   "layers": {
+    "foreground": "hot cracked stone slab",
+    "midground": "Raju's bowed head and wet fringe",
+    "background": "blown-out courtyard haze"
+   },
+   "light_source": "white backlight with heat bokeh",
+   "focal_point": [
+    540,
+    700
+   ],
+   "motion": "slow push-in, the drop forms falls and sizzles into steam in a loop",
+   "details": [
+    "wet locks of hair",
+    "drop falling to stone",
+    "steam puff on impact",
+    "grey bluish skin",
+    "collar of a soaked white shirt",
+    "water running down the cheek"
+   ],
+   "withheld": "his eyes",
+   "intensity": 4,
+   "camera": "slow push-in on the face, handheld",
+   "sound_cue": "dripping onto hot stone with a sizzle, heartbeat rising",
+   "sync_word": "पानी"
+  },
+  {
+   "id": "s7_whisper",
+   "subject": "Close-up of Raju's face in total silence, his eyes slowly opening on the last word of the whisper",
+   "layers": {
+    "foreground": "blown-out stone haze",
+    "midground": "Raju's face filling the frame",
+    "background": "white glare with a dark edge vignette"
+   },
+   "light_source": "hard white backlight with a dark rim vignette",
+   "focal_point": [
+    540,
+    760
+   ],
+   "motion": "slow push-in, his mouth moves, eyes lift open on the last words",
+   "details": [
+    "wet fringe locks",
+    "blue-grey lips",
+    "water streak on the face",
+    "eyes opening with a highlight",
+    "dark rim vignette closing in",
+    "soaked collar"
+   ],
+   "withheld": "what he wants",
+   "intensity": 5,
+   "camera": "slow push-in, dutch drift",
+   "sound_cue": "a true silence, then a sub thud, the whisper and a stinger as his eyes open",
+   "sync_word": "परछाईं"
+  },
+  {
+   "id": "s8_relief",
+   "subject": "Wide courtyard: the wind and cicadas return, shadows grow back from every pair of feet, the narrator breathes out beside a pale boy",
+   "layers": {
+    "foreground": "long returning shadows on the ground",
+    "midground": "narrator and the pale boy at the end of the line",
+    "background": "neem tree and school wall"
+   },
+   "light_source": "afternoon sun dropping to a lower angle",
+   "focal_point": [
+    540,
+    860
+   ],
+   "motion": "camera creeps in, shadows regrow, leaves move, shimmer",
+   "details": [
+    "shadows growing back from the feet",
+    "narrator's red bag",
+    "pale boy at the end of the line",
+    "chalk arc",
+    "joined hands along the line",
+    "tree canopy"
+   ],
+   "withheld": "that the shadow is not the narrator's",
+   "intensity": 3,
+   "camera": "creeping handheld move toward the pair",
+   "sound_cue": "wind and cicadas return in a gust, murmur of children",
+   "sync_word": "साँस"
+  },
+  {
+   "id": "s9_twist",
+   "subject": "High-angle view of the two boys: the narrator steps back and his shadow stays and slides to the pale boy's feet",
+   "layers": {
+    "foreground": "long ground shadows toward the camera",
+    "midground": "narrator stepping back, the pale boy standing still",
+    "background": "the line of children behind"
+   },
+   "light_source": "lowered sun, hard long shadows",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "camera drifts down, the narrator steps away, the shadow slides to the other boy",
+   "details": [
+    "shadow with a bag bump",
+    "narrator stepping back",
+    "pale boy with a stolen shadow",
+    "line of children unaware",
+    "tree shade on the left",
+    "joined hands behind them"
+   ],
+   "withheld": "how the shadow moved",
+   "intensity": 5,
+   "camera": "high-angle drift down and in, handheld",
+   "sound_cue": "dry scrape as the shadow slides, sub swell into a hit",
+   "sync_word": "जुड़ी"
+  },
+  {
+   "id": "s10_gate",
+   "subject": "The narrator in the foreground alone and shadowless while Mummy hugs the pale boy at the gate and the other children walk off to a door",
+   "layers": {
+    "foreground": "narrator seen from behind with no shadow",
+    "midground": "the pale boy walking to Mummy in a pink sari, children leaving",
+    "background": "school wall with a gate arch and a wooden door"
+   },
+   "light_source": "low afternoon sun, long shadows on everyone but the narrator",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "slow push, children walk away, the boy walks to the gate, the hug",
+   "details": [
+    "Mummy in a pink sari",
+    "gate arch",
+    "the boy carrying the narrator's red bag",
+    "children's long shadows",
+    "narrator with no shadow",
+    "wooden side door"
+   ],
+   "withheld": "his face as nobody sees him",
+   "intensity": 4,
+   "camera": "slow push from behind the narrator, handheld",
+   "sound_cue": "wet bare footslaps, children walking away, cloth rustle at the hug",
+   "sync_word": "चीखा"
+  },
+  {
+   "id": "s11_loop",
+   "subject": "The narrator alone in the empty courtyard with no shadow, his hand raised, wet footprints appearing and evaporating at his feet",
+   "layers": {
+    "foreground": "wet footprints at his feet",
+    "midground": "the narrator facing the camera, hand raised",
+    "background": "empty courtyard wall and window"
+   },
+   "light_source": "low bleached afternoon sun with no shadow cast",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "low crawl tilting up to reveal him, footprints appear and evaporate, shimmer",
+   "details": [
+    "raised hand",
+    "wet footprints at his feet",
+    "no shadow under him",
+    "empty courtyard",
+    "tree in the corner",
+    "school wall with windows"
+   ],
+   "withheld": "who he will take next",
+   "intensity": 4,
+   "camera": "low crawl tilting up, handheld",
+   "sound_cue": "drips and hiss on hot stone, a reversed swell into the loop",
+   "sync_word": "हाथ"
+  }
+ ]
+}

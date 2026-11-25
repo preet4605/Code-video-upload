@@ -1,0 +1,158 @@
+{
+ "shots": [
+  {
+   "id": "hook",
+   "seen": "lit boat on dusk water with stars and rim-lit ridge (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "still soft in the water; contrast below floor",
+   "fix": "S-curve overlay pass over the whole frame for darker darks and brighter keys",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "breath",
+   "seen": "closer boat, ripple rings and steam (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "steam is soft; water dashes faint",
+   "fix": "overlay contrast pass plus brighter ring strokes",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "calls",
+   "seen": "post lamp, reeds, footprints, village windows (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "still the weakest shot: dim bank",
+   "fix": "overlay contrast pass and brighter village windows already added",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "warm",
+   "seen": "amber steam around the hull, crisp planks (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "steam blur dominates edges",
+   "fix": "contrast overlay sharpens the hull against steam",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 3,
+    "composition": 4
+   }
+  },
+  {
+   "id": "cabin",
+   "seen": "four-pane window with palm smears, rope coil, oar (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "good prop detail; frame bottom empty",
+   "fix": "overlay pass and stronger lantern halo",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 4,
+    "composition": 4
+   }
+  },
+  {
+   "id": "jacket",
+   "seen": "jacket with stitching, hood and sleeves, his hand (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "hull plank mass is large",
+   "fix": "overlay pass so plank lines read",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 4,
+    "composition": 3
+   }
+  },
+  {
+   "id": "relief",
+   "seen": "jacket closer, sky included (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "jacket and hull only",
+   "fix": "overlay pass and pitched-up framing already present",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "voice",
+   "seen": "whole lit boat against sky from further back (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "window glow is the only key light",
+   "fix": "contrast overlay and brighter ripples",
+   "scores": {
+    "subject": 4,
+    "depth": 4,
+    "detail": 3,
+    "light": 4,
+    "character": 3,
+    "composition": 4
+   }
+  },
+  {
+   "id": "break",
+   "seen": "whole boat, steam puff, window (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "steam is a blob",
+   "fix": "contrast overlay on the whole frame",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "grip",
+   "seen": "dark frame, pale fingers around him, stars (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "low colour count by design",
+   "fix": "brighter finger strokes through the overlay",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 2,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "push",
+   "seen": "dark frame, handprint, spray, lamp ahead (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "dark by design",
+   "fix": "overlay and brighter lamp",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 2,
+    "character": 3,
+    "composition": 3
+   }
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "slug": "smoke-physics-orbit",
+  "aspect": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_s": 10.0,
+  "target_lufs": -16,
+  "true_peak_dbtp": -1.5,
+  "audio_file": null,
+  "scenes": [
+    {
+      "id": "circular_orbit",
+      "start_s": 0.0,
+      "end_s": 3.4,
+      "mood": "energetic",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 0.0,
+          "dur_s": 1.7,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["cannon.recoil", "orbit.theta"]
+        },
+        {
+          "t_s": 1.7,
+          "dur_s": 1.7,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["orbit.theta", "formula.alpha"]
+        }
+      ]
+    },
+    {
+      "id": "elliptical_transfer",
+      "start_s": 3.4,
+      "end_s": 6.7,
+      "mood": "neutral",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 3.4,
+          "dur_s": 1.65,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["orbit.eccentricity", "camera.zoom"]
+        },
+        {
+          "t_s": 5.05,
+          "dur_s": 1.65,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["projectile.pos", "camera.pan"]
+        }
+      ]
+    },
+    {
+      "id": "escape_velocity",
+      "start_s": 6.7,
+      "end_s": 10.0,
+      "mood": "energetic",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 6.7,
+          "dur_s": 1.65,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["escape.trajectory", "camera.zoom"]
+        },
+        {
+          "t_s": 8.35,
+          "dur_s": 1.65,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["formula.glow", "camera.zoom"]
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "speaker": "NARRATOR",
+      "text": "7.9 km/s: gravity bends\nthe path into a circle.",
+      "highlight": "7.9",
+      "start_s": 0.2,
+      "end_s": 3.2,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "10.5 km/s stretches the path\ninto a wide ellipse.",
+      "highlight": "10.5",
+      "start_s": 3.6,
+      "end_s": 6.5,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "11.2 km/s: escape velocity\nbreaks free of Earth!",
+      "highlight": "11.2",
+      "start_s": 6.9,
+      "end_s": 9.8,
+      "safe_zone": true
+    }
+  ],
+  "audio_cues": [
+    { "type": "bgm", "name": "space_synth", "t_s": 0.0, "gain_db": -25 },
+    { "type": "sfx", "name": "cannon_launch", "t_s": 0.1, "gain_db": -10 },
+    { "type": "sfx", "name": "thruster_boost", "t_s": 6.7, "gain_db": -10 }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "assets": [
+    {
+      "id": "peet_editorial_widgets",
+      "tier": 1,
+      "type": "procedural_canvas",
+      "license": "MIT"
+    }
+  ]
+}

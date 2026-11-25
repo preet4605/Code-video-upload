@@ -1,0 +1,13 @@
+{ "shots": [
+  { "id": "room", "seen": "Dark cold room now readable through thin cold lines: wallpaper stripes, cracks, peeling paper, cobweb, tilted photo, calendar, red 3:07, the doll facing the wall in the door light. Faces still touch the caption top and the bottom third is black floor.",
+    "problems": ["faces at the caption edge", "dead floor in the lower third", "pink curtain adds a 4th hue"],
+    "fix": "Raise the bed 50 px and reframe tighter (zoom 1.16) to cut the empty floor; grade the curtains to grey; add floor nails for texture.",
+    "scores": { "subject": 3, "depth": 3, "detail": 4, "light": 4, "character": 3, "composition": 3 } },
+  { "id": "door", "seen": "Warm strip under the door with two long foot shadows and the doll silhouetted; claw scratches and the red handprint now visible; upper door is flat dark with little texture.",
+    "problems": ["door surface still bare", "contrast just under target"],
+    "fix": "Add wood-grain lines on the door, widen and lift the second light pool up the door face so the handprint and scratches catch light.",
+    "scores": { "subject": 4, "depth": 3, "detail": 3, "light": 4, "character": 3, "composition": 4 } },
+  { "id": "face", "seen": "Pale kid face lit from the door side, cold lines on the blanket and headboard; blush still makes it look cute, and the frame corners are empty dark.",
+    "problems": ["blush reads cute", "empty corners"],
+    "fix": "Remove blush in the horror theme, frame slightly wider and add two small hands gripping the blanket under the chin so the lower frame carries story detail.",
+    "scores": { "subject": 4, "depth": 3, "detail": 3, "light": 4, "character": 3, "composition": 3 } } ] }

@@ -1,0 +1,17 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.7, "tempo": 1.1, "gap": 0.32, "tail_s": 2.0,
+ "scenes_meta": { "hook": {"mood":"suspense","props":["button.glow"]}, "cta_loop": {"mood":"suspense","props":["choice.cards","button.glow"]} },
+ "extra_sfx": [ {"name":"chime","t_s":"end","before_end":1.6,"gain_db":-8} ],
+ "lines": [
+  {"sc":"hook","hi":"अगर लिफ़्ट में तेरह का बटन दिखे, तो उसे दबाना मत।","hl":"Agar lift mein 13 ka button dikhe, to use dabaana mat.","gap":0.5,"sfx":[{"name":"stamp_slam","dt":-0.08,"gain_db":-6}]},
+  {"sc":"setup","hi":"हमारी बिल्डिंग में बारह के बाद सीधा चौदह आता है, ये सबको पता है।","hl":"Hamari building mein 12 ke baad seedha 14 aata hai, ye sabko pata hai.","gap":0.45},
+  {"sc":"lift","hi":"एक रात, करीब एक बजे, मैं लिफ़्ट में अकेला था।","hl":"Ek raat, kareeb 1 baje, main lift mein akela tha.","sfx":[{"name":"fan_hum","dt":0,"gain_db":-12}]},
+  {"sc":"lift","hi":"पैनल पर एक नया बटन था, तेरह, और मेरी उंगली अपने आप उस पर चली गई।","hl":"Panel pe ek naya button tha, 13, aur meri ungli apne aap us pe chali gayi.","gap":0.5,"sfx":[{"name":"pop","at":"end","dt":-0.4,"gain_db":-6}]},
+  {"sc":"corridor","hi":"दरवाज़ा खुला, तो बिलकुल मेरे फ़्लोर जैसा कॉरिडोर था।","hl":"Darwaza khula, to bilkul mere floor jaisa corridor tha.","sfx":[{"name":"chime","dt":-0.2,"gain_db":-8}]},
+  {"sc":"corridor","hi":"पर वहाँ के सारे दरवाज़े, अंदर से ज़ोर-ज़ोर से खटखटाए जा रहे थे।","hl":"Par wahan ke saare darwaze, andar se zor zor se khatkhataye ja rahe the.","gap":0.45,"sfx":[{"name":"door_knock","dt":1.2,"gain_db":-5},{"name":"door_knock","at":"end","dt":-0.6,"gain_db":-4}]},
+  {"sc":"home","hi":"मैं डरकर वापस लिफ़्ट में भागा, और सीधा अपने घर पहुँच गया।","hl":"Main darr kar wapas lift mein bhaaga, aur seedha apne ghar pahunch gaya.","gap":0.85,"sfx":[{"name":"footsteps_run","dt":0.2,"gain_db":-8}]},
+  {"sc":"twist","hi":"तभी मम्मी ने धीरे से पूछा, बेटा, तुम तेरह से कब वापस आए?","hl":"Tabhi Mummy ne dheere se poocha, beta, tum 13 se kab wapas aaye?","gap":0.5,"sfx":[{"name":"violin_stinger","at":"end","dt":-0.9,"gain_db":-6}]},
+  {"sc":"cta_loop","hi":"तुम्हारी बिल्डिंग में तेरहवाँ फ़्लोर है? हाँ या नहीं, कमेंट करो।","hl":"Tumhari building mein 13th floor hai? Haan ya Nahi, comment karo."}
+ ]
+}

@@ -1,0 +1,249 @@
+# आख़िरी नाव — Series Bible
+
+**Working title:** आख़िरी नाव (The Last Boat)
+**Tagline:** हर रात आख़िरी नाव लौटती है, और उसे कोई चला नहीं रहा होता।
+**Genre:** Horror-survival, Hindi/Hinglish voiceover, Devanagari burned-in captions, 9:16 (1080x1920).
+**Person:** First person. The narrator is the older brother ("मैं"). He is never named. The viewer is behind his eyes.
+**Premise:** My younger brother is missing. Our village sits beside a deep lake. Every night, in December, the last boat comes back across the water with no one rowing.
+**The one idea the series is about:** तीन नियम, और हर नियम एक-एक करके टूटता है। (Three rules, and each one breaks, one at a time.)
+
+> **FICTION notice.** The boat, the voice, the figure and the oars are FICTION. So are the village, the lake, the brother and the three rules. They are story, not fact, and no episode presents them as real or as safety advice. The only real-world facts are in the Fact ledger (section 6), and they are the ones the story is allowed to teach.
+
+---
+
+## 1. Format
+
+- **One viewer path is 5 episodes.** One Story needs **7 scripts**: ep1, ep2a, ep2b, ep3, ep4a, ep4b, ep5.
+- **Length:** 140–170 spoken words per episode, about 60 seconds. At about 2.5 words per second, 150–160 words lands near 60 seconds. Count the spoken lines only, not cards or captions.
+- **Votes sit at three points:** after ep1, after ep3, and after ep5.
+  - after ep1: A goes to ep2a, B goes to ep2b
+  - after ep3: A goes to ep4a, B goes to ep4b
+  - after ep5: A or B sets the opener of Story 2 (the options are written in the caption)
+- **Only the vote episodes carry an ask.** ep2a, ep2b, ep4a and ep4b have no ask. They end on a rejoin line that hands the viewer to ep3 or ep5.
+- **The ask is always exactly:** `कमेंट करो, A या B?`
+  - The letters A and B are Latin and are spoken in English. They are the only Latin characters in a spoken line.
+  - It is the last spoken line of the episode and it also sits in the caption. Do not reword it.
+- **Pinned comment (resolves the conflict between `survival-series/SERIES.md` and `survival-series/FORMAT.md`).** The old SERIES.md says the creator pins a comment that links to both branches. The old FORMAT.md says the creator pins a comment that gives the count. This series does both in **ONE** comment. The creator pins ONE comment that gives the vote count AND links to both branches. The same comment states the tie rule. There are not two pins.
+- **Window:** 24 hours. The creator reads the comments by hand, counts, and posts the winning branch after the window closes.
+- **Tie rule:** the branch whose ask was posted first wins.
+- **Both branches are pre-produced.** The ask drives comments. It does not gate the release. No keyword automation is assumed anywhere, because native Instagram comment-keyword auto-reply is **not verified**. The creator replies by hand.
+- **Second signal (optional):** an Instagram Story poll. The comment count decides.
+- **Publish order:** ep1 → (ep2a and ep2b, same day, 2a first) → ep3 → (ep4a and ep4b, same day, 4a first) → ep5. Because "first posted wins" a tie, posting 2a and 4a first is a real choice, so the creator should note it before publishing.
+- **Hook card is on screen at frame one.** The spoken hook starts at 0:00, never after a beat of silence.
+- **Captions:** word-by-word Devanagari, max 2 lines, max 42 characters per line, at or under 18 characters per second. (Carried over from `survival-series/SERIES.md`, unchanged.)
+- **Safe zone:** keep faces, cards and captions inside x 60–900, y 160–1560. Right 180px and bottom 360px stay clear. (Carried over, unchanged.)
+- **Strobe limit:** max 3 full-frame luminance flashes per second. This series aims for none. Horror is built from dark frames and sound, not flicker.
+- **Pilot rule:** render one episode as a pilot and check it before the full Story is produced.
+
+## 2. Rules ladder
+
+Three rules. Each is set in one episode and broken in a later one. They are the village's sayings, remembered by the narrator and spoken by him, so no extra person appears on screen. Rules are story law only and are FICTION.
+
+1. **Rule one — "नाव की आवाज़ का जवाब मत दो."**
+   - **Set:** ep1, in the stake beat, as the first thing the village always says.
+   - **Broken:** ep2a, when the narrator reaches the boat, hears the voice say his name, and answers it. The lights go out the moment he speaks.
+   - **Path B:** kept in ep2b. The voice calls from the water and he stays silent. Keeping it is what costs him: the wave that soaks him arrives anyway.
+2. **Rule two — "अकेले झील पार मत करो."**
+   - **Set:** ep3, after the warm-up fails, as the narrator realises where the boat wants him to go.
+   - **Broken:** ep4a, when he climbs into the boat. The cabin is warm and the voice says to stay until morning. He is alone, and the oars start moving.
+   - **Path B:** kept in ep4b. He runs for the village, so he never crosses. The road sign still points back at the lake.
+3. **Rule three — "सुबह से पहले नाव को हाथ मत लगाओ."**
+   - **Set:** ep4b, on the road, as the third line the village says. Path A viewers have not heard it by ep4a, so ep5 must repeat it once in the narrator's own words (the recap line in section 5).
+   - **Tested:** ep5, at the dock at dawn. The boat is tied and the red jacket on the seat is wet. The narrator decides whether to wait for the sun or to touch the boat now.
+   - **Scope:** rule three covers the *moored* boat. The boat on the water in ep4a is a different matter, so path A does not contradict it.
+
+**Ladder order and the hand-off:** rule one breaks first (ep2a), rule two second (ep4a), and rule three is the one still standing at the finale (ep5). A viewer on path A has broken two rules by the dawn; a viewer on path B has broken none, and has been chased anyway. Both reach the same dock.
+
+**Continuity guard:** in ep3 the narrator takes the pack from the bank beside the boat's stern, without touching the hull. That keeps rule three untested until ep5.
+
+## 3. Cast and setting canon
+
+- **The narrator.** The older brother. First person, "मैं". He is never named. He is calm on the outside and scared underneath, and he speaks in full, ordinary sentences.
+- **The younger brother ("छोटा").** Missing. He is never on screen alive in the present. He is seen only through his **red jacket** (ep1 dry on the seat, ep5 wet on the seat) and, in ep2b, through the walk of the figure. He is never named.
+- **The village.** One unnamed village on the shore. Houses are up the hill. The road runs uphill from the shore to the village. Nobody else appears on screen. The village exists as a set of sayings and a set of unlit windows.
+- **The lake.** Deep and dark, the kind that does not show the bottom. It is not frozen. The water is only a few degrees above freezing in December. No depth is spoken as a number.
+- **The last boat (आख़िरी नाव).** A wooden boat with a small cabin, a lantern or cabin light, and a pair of oars. Every night it crosses back to the village shore with no one rowing. It comes in with its lights on. FICTION.
+- **The voice.** Heard from the boat and from the water. It says the narrator's name and never the brother's. It sounds like someone kind. FICTION.
+- **The figure.** A shape that walks across the water from the far bank with the younger brother's walk. Never seen up close. FICTION.
+- **The oars.** They move by themselves in ep4a. FICTION.
+- **Time:** a December night. ep1 dusk, ep2a and ep2b minutes later, ep3 deep night on the shore, ep4a and ep4b the same night, ep5 first light.
+- **Weather:** clear and cold, wind off the water, temperature falling toward zero. No rescue arrives before dawn.
+- **Props and facts the story may use:** a wet jacket and shirt, a dead phone, a bottle in the boat's pack, the red jacket. No knife and no lighter. The phone went into the water and is dead; it is the reason no one calls for help.
+- **Rejoin hand-offs (so that ep3 is true on both paths):**
+  - ep2a ends: he answers, the lights go out, and the next shot is the narrator lying on the bank, soaked, with the boat resting at the shore.
+  - ep2b ends: a wave with no wind behind it rises over the shore and soaks him to the chest, and the boat has come in and rests beside him.
+  - Both arrive at ep3 on the same bank, at the same hour, with wet clothes (U1).
+
+## 4. Branch map
+
+```
+ep1  ख़ाली नाव         (the boat comes back empty, lights on)   → "कमेंट करो, A या B?"
+ ├── A: नाव तक जाओ            → ep2a  नाम  (wade in, answer the voice)
+ └── B: किनारे पर रुको        → ep2b  पानी पर  (the figure on the water)
+        both rejoin → ep3  भीगा किनारा (hypothermia on the shore)
+                        → "कमेंट करो, A या B?"
+ ├── A: नाव में चढ़ो           → ep4a  दो प्याले  (the cabin, the oars)
+ └── B: गाँव की ओर भागो       → ep4b  ऊपर की सड़क  (the road, the footsteps)
+        both rejoin → ep5  सुबह (the dock at dawn)
+                        → "कमेंट करो, A या B?"
+ ├── A → Story 2 opener A
+ └── B → Story 2 opener B
+```
+
+- **Choice wording is fixed:** every ask is exactly "कमेंट करो, A या B?" The option text (what A and B mean) lives on the hook card and in the caption, never in a reworded ask.
+- **Story 2 naming** follows `survival-series/FORMAT.md` section 4: `s2_ep1a.md` and `s2_ep1b.md`. Story 1 names stay as ep1.md, ep2a.md, ep2b.md, ep3.md, ep4a.md, ep4b.md, ep5.md.
+- **Production cost:** 7 scripts, 5 renders on any one viewer path, and every one of the 7 gets rendered across the whole Story.
+
+## 5. Episode outlines
+
+Word budget for every episode: **140–170 spoken words**. Suggested split: hook about 16, stake about 22, body five beats of about 17, cliff or choice about 18, payoff about 13, ask 5. In the four episodes without an ask, give those 5 words to the payoff. All beat lines below are story beats. They are not final script lines.
+
+### ep1 — ख़ाली नाव (the village shore at dusk)
+- **Beat 1 (hook):** the boat slides in over flat water with its lights on, and no one is rowing. The narrator says it plainly in the first sentence.
+- **Beat 2 (stake):** it is my younger brother's third night missing. Every night in December the last boat comes back this way. Sets **rule one**: "नाव की आवाज़ का जवाब मत दो."
+- **Beat 3:** the boat bumps the bank. Everything on it is dry, even though it crossed the whole lake.
+- **Beat 4:** on the seat lies the red jacket, dry. It is my brother's.
+- **Beat 5:** the cabin light flickers once, and I hear nothing, and that is worse.
+- **Beat 6 (choice):** I can wade out to the boat, or I can stay on the shore and wait. The cold is already in my hands.
+- **Ask:** `कमेंट करो, A या B?`
+- **Hook card:** "आख़िरी नाव लौटी, चलाता कोई नहीं।" Then a second card for the choice: "A नाव तक जाओ · B किनारे रुको".
+
+### ep2a — नाम (branch A: wade in)
+- **Beat 1 (hook):** I step into the water and it does not feel like water; it feels like a hand closing around my chest.
+- **Beat 2:** cold shock. The gasp is the danger (**F1**), not the freezing. I tell myself to breathe slowly.
+- **Beat 3:** I try to hold my breath and swim under. That fails in cold water (**F2**), so I stop and swim on the surface.
+- **Beat 4:** I reach the boat. The cabin light hums. The red jacket is right there.
+- **Beat 5:** the voice says my name, softly, in a kind voice I almost know.
+- **Beat 6 (break):** I answer it. **Rule one breaks.** The lights go out.
+- **Closing line (no ask):** the boat is gone and I am on the bank, soaked, and I know that the village was right about the rule.
+- **Hook card:** "पानी में कदम। साँस पर ध्यान।"
+
+### ep2b — पानी पर (branch B: stay on the shore)
+- **Beat 1 (hook):** I stay on the shore, and across the black water something starts to walk toward me.
+- **Beat 2:** a figure comes from the far bank, upright, on top of the water, with no ripple at its feet.
+- **Beat 3:** it walks my brother's walk, a little to the left, the way he always did.
+- **Beat 4:** a voice calls from the water, close and kind. It says my name.
+- **Beat 5 (kept):** I keep my mouth shut. **Rule one holds** on this path. I do not answer.
+- **Beat 6:** a wave with no wind behind it climbs the bank and soaks me to the chest, and the boat nudges in beside me.
+- **Closing line (no ask):** the figure is gone, my clothes are wet and heavy, and I am still on the bank.
+- **Hook card:** "किनारे पर मैं। पानी पर कोई।"
+
+### ep3 — भीगा किनारा (both paths rejoin; the shore at night)
+- **Beat 1 (hook):** I am on the bank, wet to the skin, and my hands will not close around anything.
+- **Beat 2:** wet clothes carry the cold into me (**U1**). I take off what I can and wring it out.
+- **Beat 3:** I am shivering hard and my thoughts are slipping. That is mild hypothermia (**F3**), and the real danger is later, when the shivering stops.
+- **Beat 4:** I pull the pack from the bank next to the boat's stern, and there is a bottle in it. I drink. It does not warm me (**F4**); I only lose heat faster.
+- **Beat 5:** the cabin light comes on. The village's second saying comes back to me. Sets **rule two**: "अकेले झील पार मत करो."
+- **Beat 6 (choice):** I can climb into the boat and get out of the wind, or I can run for the village.
+- **Ask:** `कमेंट करो, A या B?`
+- **Hook card:** "भीगे कपड़े। रुकती हुई कंपकंपी।" Then the choice card: "A नाव में चढ़ो · B गाँव भागो".
+
+### ep4a — दो प्याले (branch A: inside the boat)
+- **Beat 1 (hook):** I climb in, and the cabin is warm, and the heater is already running.
+- **Beat 2:** two cups sit on the table. Both are steaming.
+- **Beat 3:** the voice says to stay until morning, and it says it like it has said it to me before.
+- **Beat 4:** the red jacket is not on the seat any more.
+- **Beat 5 (break):** the oars start to move by themselves. **Rule two breaks**, because I am alone on the lake.
+- **Closing line (no ask):** the shore slides away and I am watching it go.
+- **Hook card:** "दो प्याले। एक मेहमान।"
+
+### ep4b — ऊपर की सड़क (branch B: the road to the village)
+- **Beat 1 (hook):** I run uphill in the dark, away from the lake, and I tell myself I only have to reach the first house.
+- **Beat 2:** I keep the road, so **rule two holds** on this path. I do not cross the water.
+- **Beat 3:** a signboard at the bend points back toward the lake, though the village is the other way.
+- **Beat 4:** footsteps come behind me and they match my pace, even when I stop.
+- **Beat 5 (rule three set):** the village says one more thing, and I finally hear it. Sets **rule three**: "सुबह से पहले नाव को हाथ मत लगाओ."
+- **Closing line (no ask):** the sun is not up, and I turn around.
+- **Hook card:** "सड़क ऊपर जाती है। तीर नीचे।"
+
+### ep5 — सुबह (finale; the dock at dawn)
+- **Beat 1 (hook):** it is first light, and the boat is tied at the dock as if it had always been there.
+- **Beat 2:** on the seat is the red jacket, and it is wet. It was dry when it first came in.
+- **Beat 3 (recap, for path A):** the narrator says rule three once, in his own words: "सुबह से पहले नाव को हाथ मत लगाओ." Path B viewers have heard it, so keep it to a single sentence.
+- **Beat 4 (rule three tested):** I put my hand out, and I wait. The sun has not cleared the hills yet, and I choose whether to wait for it.
+- **Beat 5:** the first sun hits the hull. The wet jacket now smells of the lake and of my brother.
+- **Beat 6:** footprints lead from the water to the dock, small ones. They are wet.
+- **Beat 7 (ask):** the final ask opens Story 2, and the options (what A and B mean) are given in the caption. `कमेंट करो, A या B?`
+- **Hook card:** "सुबह हो गई। जैकेट भीगी है।" Then the ask card "A नाव में लौटो · B झील पार करो" (placeholder labels; the creator confirms them).
+
+## 6. Fact ledger
+
+Every spoken fact must trace to an entry here. **VERIFIED** = came with a named source in the Lead brief. **UNVERIFIED** = added by this series, not fetched, and never the core teaching point of an episode. Everything else in this series is **FICTION** and is labelled below. The IDs F1, F2, F3, F4 and U1 are reused from `survival-series/SERIES.md` section 4 with the same wording. F5–F10 and U2–U4 are not carried over, because this series does not use them.
+
+### VERIFIED
+
+- **F1 — Cold shock response.** Sudden cold-water immersion forces an involuntary gasp and rapid breathing, and this can cause drowning in the first moments. Source: Wikipedia "Cold shock response", citing Bierens & Lunetta, *Physiology* 2016. **VERIFIED.** Used: ep2a.
+- **F2 — Breath-hold collapses in cold water.** In water below about 15 °C (59 °F), breath-holding time drops sharply. Source: Wikipedia "Cold shock response". **VERIFIED.** Used: ep2a. Note: the scripts say "ठंडे पानी" and never quote the fifteen-degree threshold aloud; the number lives here only.
+- **F3 — Hypothermia.** Core temperature below 35 °C (95 °F) is hypothermia; normal is about 36.5–37.5 °C. Mild: shivering and confusion. Moderate: shivering stops. Source: Wikipedia "Hypothermia". **VERIFIED.** Used: ep3 only.
+- **F4 — Alcohol myth.** Alcohol does not warm you; it speeds heat loss. Source: Wikipedia "Hypothermia" (myth section). **VERIFIED.** Used: ep3. In the story the bottle in the boat's pack is the prop that carries this fact.
+
+### UNVERIFIED (used, off the core teaching point)
+
+- **U1 — Wet clothing.** Wet clothes add weight and drag in the water and lose insulation value on land. Practical first-aid guidance, **not fetched**. Used: ep2a, ep2b, ep3.
+
+### FICTION (labelled; never spoken as fact)
+
+- **The last boat** — FICTION. A boat that crosses with no one rowing does not exist.
+- **The voice** — FICTION. It says the narrator's name; no voice does that.
+- **The figure** — FICTION. A person walking on the water does not exist.
+- **The oars moving by themselves** — FICTION.
+- **The three rules** — FICTION. They are village sayings in the story, not safety advice.
+- **The warm cabin, the two cups, the wet jacket and the footprints** — FICTION.
+- **The village, the lake as the series' lake, the brother and the narrator** — FICTION.
+
+**Rule for the writers:** the survival lessons (F1–F4, U1) are the only real facts, and they are stated in a plain voice inside a fiction frame. The fiction is never used to prove a fact, and a fact is never used to make the fiction look real. No episode tells the viewer to go into cold water.
+
+### Not used, kept out on purpose
+
+- Any number of minutes for how long cold shock lasts — not checked, so no duration is spoken anywhere.
+- "Cold kills instantly" — myth. ep2a says the danger of the first moments is the gasp and drowning (F1), not freezing.
+- Any "1-10-1" style timing rule — not verified here.
+
+### Platform notes (given by the Lead, not re-verified)
+
+- Reels can run to 3 minutes. This series stays near 60 seconds. **Not re-verified.**
+- Auto-captions exist on Reels. **Not re-verified.**
+- Comment-keyword automation is **not verified** as native Instagram behaviour. Every ask is a plain request to comment, and the creator replies by hand.
+
+## 7. Myths to avoid
+
+Say none of these, in any part, in any language. Never present the boat or the voice as real.
+
+- **Item 1.** **"शराब गरम करती है।"** False. It speeds heat loss (F4). ep3 kills it in one line.
+- **Item 2.** **"समुद्री पानी पी लो।"** False. It worsens dehydration. Not spoken in any episode, and listed so no future part uses it wrongly.
+- **Item 4.** **"धुआँ आ गया, मतलब आग तैयार है।"** False. Smoke is not an ember. Not spoken in any episode.
+- **Item 5.** **"ठंड तुरंत मार देती है।"** False framing. The killer in the first seconds is the gasp and drowning (F1).
+- **Item 7.** **"साँस रोककर नीचे तैरो, ठंड कम लगेगी।"** Dangerous. Cold water collapses breath-hold (F2), so ep2a shows that the dive fails.
+
+(The numbers 1, 2, 4, 5 and 7 are kept from `survival-series/SERIES.md` section 5 so the two lists can be compared. Items 3, 6, 8 and 9 are not carried over.)
+
+**Fiction guards added by this series:**
+
+- Never say or imply that a boat, a voice or a figure like these is real, or that the rules are real safety rules.
+- Never say "यह सच्ची कहानी है" or any wording that claims the story happened.
+- Never let the narrator give real-world advice to go into cold water, row a boat alone, or drink to get warm.
+
+## 8. Language rules (mandatory, checked per file)
+
+- **Friend Test:** every spoken sentence must sound normal said aloud to a friend. Full sentences, with connectors: क्योंकि, तो, यानी, इसलिए, लेकिन, फिर.
+- **No riddle fragments.** No 2–4 word spoken fragments, and no one-word rhetorical questions. Short lines are allowed only on on-screen cards (hook cards, choice cards).
+- **Numbers:** every number in a spoken line is spelled in Hindi words (छत्तीस, पैंतीस, तीन, दो). No digits 0–9 or ०–९ in any spoken line. Timestamps and production notes may use digits.
+- **TTS trap words avoided:** निगल (say खा जाते), बँटती (say दो रास्ते), विज्ञान (say साइंस). None appear in any script.
+- **One ask per vote episode,** and it is always the last spoken line. ep2a, ep2b, ep4a and ep4b have no ask.
+- **Loop:** the last payoff line repeats one exact word from that episode's hook.
+- **Length:** 140–170 spoken words per episode, about 60 seconds.
+- **Latin letters:** only A and B, in the ask and in the choice cards. Nothing else Latin is spoken.
+- **Choice cards:** A and B on choice cards do not count toward the 6-word card limit.
+- **Voice:** first person, past or present, plain. The narrator does not explain the rules in a lecture; he says them as people say a village saying.
+
+## 9. File index
+
+- `SERIES.md` — this file: the series bible, format, rules ladder, cast and setting, branch map, outlines, fact ledger, myths, language rules.
+- `episodes/ep1.md` — ख़ाली नाव (planned, not yet written)
+- `episodes/ep2a.md` — नाम (planned, not yet written)
+- `episodes/ep2b.md` — पानी पर (planned, not yet written)
+- `episodes/ep3.md` — भीगा किनारा (planned, not yet written)
+- `episodes/ep4a.md` — दो प्याले (written)
+- `episodes/ep4b.md` — ऊपर की सड़क (written)
+- `episodes/ep5.md` — सुबह (written)
+- Reference only, not edited: `../survival-series/SERIES.md` and `../survival-series/FORMAT.md`.

@@ -1,0 +1,8 @@
+{
+  "platform": "reels",
+  "genre": "guide",
+  "lang": "en",
+  "hook": "Deterministic 2D video built on Node.",
+  "payoff": "Viewer sees the full pipeline in 15 seconds.",
+  "allow_long": false
+}

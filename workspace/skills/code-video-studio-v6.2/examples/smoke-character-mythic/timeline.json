@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "slug": "smoke-character-mythic",
+  "aspect": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_s": 10.0,
+  "target_lufs": -16,
+  "true_peak_dbtp": -1.5,
+  "audio_file": null,
+  "scenes": [
+    {
+      "id": "character_intro",
+      "start_s": 0.0,
+      "end_s": 3.4,
+      "mood": "energetic",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 0.0,
+          "dur_s": 1.7,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["character.scale", "character.mouthOpen"]
+        },
+        {
+          "t_s": 1.7,
+          "dur_s": 1.7,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["character.blink", "counter.value"]
+        }
+      ]
+    },
+    {
+      "id": "population_grove",
+      "start_s": 3.4,
+      "end_s": 6.7,
+      "mood": "neutral",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 3.4,
+          "dur_s": 1.65,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["counter.value", "trees.sway"]
+        },
+        {
+          "t_s": 5.05,
+          "dur_s": 1.65,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["character.hat", "character.prop"]
+        }
+      ]
+    },
+    {
+      "id": "mythic_revelation",
+      "start_s": 6.7,
+      "end_s": 10.0,
+      "mood": "reverent",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 6.7,
+          "dur_s": 1.65,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["mythic.auraRays", "mythic.floatY"]
+        },
+        {
+          "t_s": 8.35,
+          "dur_s": 1.65,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["mythic.embers", "mythic.halo"]
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "speaker": "NARRATOR",
+      "text": "Meet YOU: a modular 2D rig\nwith live speech.",
+      "highlight": "YOU:",
+      "start_s": 0.2,
+      "end_s": 3.2,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "Counting 8,000,000,000 souls\nin a seeded forest.",
+      "highlight": "8,000,000,000",
+      "start_s": 3.6,
+      "end_s": 6.5,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "Tier 2 mythic cutout with\ngolden aura and embers.",
+      "highlight": "mythic",
+      "start_s": 6.9,
+      "end_s": 9.8,
+      "safe_zone": true
+    }
+  ],
+  "audio_cues": [
+    { "type": "bgm", "name": "warm_orchestral_pad", "t_s": 0.0, "gain_db": -25 },
+    { "type": "sfx", "name": "counter_tick", "t_s": 3.4, "gain_db": -14 },
+    { "type": "sfx", "name": "divine_chime", "t_s": 6.7, "gain_db": -12 }
+  ]
+}

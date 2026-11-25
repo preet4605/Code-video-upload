@@ -1,0 +1,75 @@
+{
+ "platform": "reels",
+ "genre": "horror",
+ "lang": "hi",
+ "format": "standalone",
+ "viewer": "Hindi horror fans at night who scroll for a trending phonk sound",
+ "hook": "शादी से एक रात पहले, सीढ़ियों पर मेरे पीछे कोई चल रहा था।",
+ "payoff": "The one behind him was the dead first bride of the house, bangles jingling, walking the groom home from the wet figure above; turning around sent her away.",
+ "cta": "",
+ "target_duration_s": 42.4,
+ "loop": true,
+ "sources": [],
+ "audio": {
+  "mode": "music_led_captions_only",
+  "song": "song_original_audio.mp3",
+  "song_trim_start_s": 12.0,
+  "voiceover": false,
+  "song_title": "Saajan Saajan Teri Dulhan (phonk remix), Aarzoo 1999"
+ },
+ "story": {
+  "setup": "The night before his wedding he climbs his dark apartment stairwell at 2 a.m. with two shadows on the wall.",
+  "rule_or_clue": [
+   {
+    "text": "Dadi's rule about the first bride's bangles",
+    "line": "दादी कहती थीं, पहली दुल्हन की चूड़ियाँ बजें, तो मुड़कर मत देखना।",
+    "type": "rule"
+   },
+   {
+    "text": "Wet bare footprints already climbing ahead of him",
+    "line": "गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।",
+    "type": "clue"
+   }
+  ],
+  "escalation": [
+   {
+    "text": "Bangles jingle every step",
+    "line": "हर क़दम पर पीछे चूड़ियाँ छनक रही थीं।"
+   },
+   {
+    "text": "Timer light dies each landing, sound closer",
+    "line": "बत्ती बुझती, और चूड़ियाँ एक क़दम पास आ जातीं।"
+   },
+   {
+    "text": "Dripping figure above, back turned",
+    "line": "ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पानी टपकता हुआ।"
+   }
+  ],
+  "false_relief": {
+   "text": "Behind him is only a shadow and jingling bangles",
+   "line": "पीछे बस एक परछाईं थी, और छनकती चूड़ियाँ।"
+  },
+  "twist": {
+   "text": "She vanishes when he looks: she was walking him home, shielding him from the wet one",
+   "line": "देखते ही वो चली गईं। वो मुझे घर छोड़ने आई थीं, गीले साये से बचाकर।",
+   "explains_hook": true,
+   "how": "The someone walking behind him in the hook was the house's first bride guarding the groom."
+  },
+  "ending_image": {
+   "text": "Under his door: light strip, two wet feet, a drip falling into the light"
+  },
+  "callback": {
+   "text": "Hook echoed: nobody walks behind him now, it stands outside his door",
+   "line": "अब सीढ़ियों पर मेरे पीछे कोई नहीं चलता। वो दरवाज़े के बाहर खड़ा रहता है।",
+   "type": "callback"
+  },
+  "threat": {
+   "name": "the wet figure",
+   "planted_by": "गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।",
+   "first_seen": "ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पानी टपकता हुआ।"
+  },
+  "scare_pattern": "turn_and_protector_vanishes",
+  "previous_scare_pattern": "count_and_extra"
+ },
+ "allow_long": true
+}

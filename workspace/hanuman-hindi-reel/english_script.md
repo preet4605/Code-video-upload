@@ -1,0 +1,103 @@
+# English script (transcribed from the reference reel)
+
+Whisper (small) transcription, cleaned by hand. Raw timestamped ASR is at the end.
+
+- My dear, no! I am not a mango, I am the Sun!
+- And that morning had started so quietly.
+- A little baby opens his eyes.
+- Maa Anjana has gone to bring fruit.
+- Eyes open, tummy open.
+- Maa, maa, hungry!
+- No Maa. And the mangoes on the tree, all raw.
+- But up in the sky, the biggest, ripest mango he has ever seen.
+- Mango!
+- He jumps. Trees gone, clouds gone.
+- Vayu Dev flies right behind, fanning him cool,
+- like a father running behind his child's first cycle.
+- Surya Dev is doing his morning duty.
+- Then he sees a tiny mouth, getting bigger and bigger.
+- Lights off in all three worlds.
+- Somewhere, somebody says, power gone?
+- The only light left: two little cheeks, glowing like diyas.
+- That day, Rahu had a booking. An eclipse.
+- He arrives. No sun. Only a baby, looking at him.
+- Jamun!
+- Rahu has never flown so fast.
+- Indra Dev! The kid ate the Sun!
+- Indra Dev comes on Airavat.
+- Big. White. Round.
+- The baby's eyes light up.
+- Rasgulla!
+- Indra panics. Vajra! Tuk! Right on the chin.
+- Hic!
+- And the sun is back. Good morning, again.
+- But the little one is falling.
+- Vayu Dev catches him. Beta? No answer.
+- Vayu Dev looks up at Indra, and the wind stops.
+- Until my son laughs, nobody breathes.
+- The gods come running. Nobody empty-handed.
+- Brahma ji: no weapon will ever hurt him.
+- Indra Dev, very sorry: he will be stronger than my Vajra.
+- Surya Dev, still a little shaken: I will teach him.
+- And that small mark on his chin, his hanu, gives him his name.
+- Hanuman.
+- The baby smiles. Vayu Dev smiles. And everybody breathes.
+- Son, do you want anything else?
+- And Surya Dev quietly slips behind a cloud.
+
+(Last line is a new CTA, not in the original: "Liked the story? Follow for more.")
+
+## Raw ASR
+
+- [0.0-3.5] My dear, no, I am not Aam, I am Suraj.
+- [5.0-8.0] And that morning had started so quietly.
+- [8.5-10.5] A little baby opens his eyes.
+- [11.0-13.0] Ma Anjana has gone to bring fruit.
+- [13.5-15.0] Eyes open, tummy open.
+- [15.5-18.0] Ma, ma, bhook.
+- [18.5-21.5] No ma, the mangoes on the tree, all kacha.
+- [22.0-26.5] But up in the sky, the biggest, ripest mango he has ever seen.
+- [27.0-27.5] Aam.
+- [28.0-31.0] He jumps, trees gone, clouds gone.
+- [31.5-34.0] Vayu Dev flies right behind, fanning him cool.
+- [34.5-37.0] Like a father running behind his child's first cycle.
+- [37.5-39.5] Surya Dev is doing his morning duty.
+- [40.0-44.0] Then he sees a tiny mouth, getting bigger and bigger.
+- [45.5-48.0] Lights off in all three worlds.
+- [48.5-50.5] Somewhere somebody says, Bijli gayi?
+- [51.0-55.0] The only light left, two little cheeks glowing like the earth.
+- [55.0-58.0] That day, Rahu had a booking, eclipse.
+- [58.5-60.0] He arrives, no son.
+- [60.5-62.0] Only a baby, looking at him.
+- [62.5-63.0] Jamun.
+- [63.5-65.5] Rahu has never flown so fast.
+- [66.0-68.0] Indra Dev, Bachcha, Suraj, Khagya.
+- [68.5-70.5] Indra Dev comes on Irawat.
+- [71.0-73.0] Big, white, round.
+- [73.5-75.0] The baby's eyes light up.
+- [75.5-76.0] Raskulla.
+- [76.5-79.0] Indra panics, Vajra, took on the chin.
+- [79.5-80.0] Hick.
+- [80.5-81.5] And the son is back.
+- [82.0-83.0] Good morning, again.
+- [83.5-85.0] But the little one is falling.
+- [85.5-86.5] Vayu Dev catches him.
+- [87.0-87.5] Beta?
+- [88.0-88.5] No answer.
+- [89.0-91.5] Vayu Dev looks up at Indra, and the wind stops.
+- [92.0-95.5] Japtak mera beta nahi hasega, koi saas nahi lega.
+- [96.0-98.0] The gods come running, nobody empty-handed.
+- [98.5-99.0] Brahmaji.
+- [99.5-101.0] No weapon will ever hurt him.
+- [101.5-103.0] Indra Dev, very sorry.
+- [103.5-105.0] He will be stronger than my Vajra.
+- [105.5-107.0] Surya Dev, still a little shaken.
+- [107.5-108.5] Main isko padhanga.
+- [109.0-111.0] And that small mark on his chin.
+- [111.0-113.0] His hanu gives him his name.
+- [113.5-114.5] Hanuman.
+- [115.0-116.0] The baby smiles.
+- [116.5-118.0] Vayu Dev smiles.
+- [118.5-120.5] And everybody breathes.
+- [121.0-122.5] Beta, aur kuch chahiye?
+- [126.0-129.0] And Surya Dev quietly goes behind a cloud.

@@ -1,0 +1,16 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.7, "tempo": 1.1, "gap": 0.32, "tail_s": 2.0,
+ "scenes_meta": { "hook": {"mood":"suspense","props":["phone.ring"]}, "cta_loop": {"mood":"suspense","props":["choice.cards","phone.ring"]} },
+ "extra_sfx": [ {"name":"chime","t_s":"end","before_end":1.6,"gain_db":-8}, {"name":"chime","t_s":"end","before_end":0.9,"gain_db":-8} ],
+ "lines": [
+  {"sc":"hook","hi":"रात के तीन बजकर तैंतीस मिनट पर, मम्मी का फ़ोन आया।","hl":"Raat ke 3 baj kar 33 minute pe, Mummy ka phone aaya.","sfx":[{"name":"chime","dt":-0.05,"gain_db":-7},{"name":"chime","dt":0.9,"gain_db":-8}]},
+  {"sc":"hook2","hi":"पर मम्मी तो बगल वाले कमरे में सो रही थीं।","hl":"Par Mummy to bagal wale kamre mein so rahi thi.","gap":0.45},
+  {"sc":"call","hi":"मैंने फ़ोन उठाया, तो मम्मी की आवाज़ बहुत धीमी थी।","hl":"Maine phone uthaya, to Mummy ki awaaz bahut dheemi thi."},
+  {"sc":"call","hi":"वो बोलीं, बेटा, दरवाज़ा मत खोलना, चाहे कोई भी कुछ भी बोले।","hl":"Wo boli, beta, darwaza mat kholna, chahe koi bhi kuch bhi bole.","gap":0.45,"sfx":[{"name":"whisper_gust","dt":0.3,"gain_db":-10}]},
+  {"sc":"door","hi":"तभी कमरे के दरवाज़े पर खटखट हुई।","hl":"Tabhi kamre ke darwaze pe khatkhat hui.","sfx":[{"name":"door_knock","at":"end","dt":-0.5,"gain_db":-4}]},
+  {"sc":"door","hi":"बाहर से मम्मी की आवाज़ आई, बेटा खोल, फ़ोन क्यों नहीं उठा रहा?","hl":"Bahar se Mummy ki awaaz aayi, beta khol, phone kyun nahi utha raha?","gap":0.85,"sfx":[{"name":"door_knock","at":"end","dt":0.1,"gain_db":-4}]},
+  {"sc":"twist","hi":"एक मम्मी फ़ोन पर है, और एक दरवाज़े पर। तुम किसकी सुनोगे?","hl":"Ek Mummy phone pe hai, aur ek darwaze pe. Tum kiski sunoge?","gap":0.45,"sfx":[{"name":"violin_stinger","at":"end","dt":-1.0,"gain_db":-6}]},
+  {"sc":"cta_loop","hi":"ए, फ़ोन वाली मम्मी। बी, दरवाज़े वाली। कल बताएँगे असली कौन थी।","hl":"A, phone wali Mummy. B, darwaze wali. Kal batayenge asli kaun thi."}
+ ]
+}

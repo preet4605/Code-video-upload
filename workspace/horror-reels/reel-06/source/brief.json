@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Hindi-speaking 16-30 year olds, many from highway towns and trucking families",
+ "hook": "Headlights hit a woman in white with a raised hand: Raat ko highway pe koi haath dikhaye, to gaadi mat rokna.",
+ "payoff": "Pappu never stops, she keeps reappearing every 10 km, then she is in the side mirror on the back seat.",
+ "cta": "A: gaadi roko, B: mirror mat dekho. Follow for more truck stories.",
+ "target_duration_s": 45, "loop": true,
+ "sources": ["Original story inspired by the common Indian highway-ghost folk motif (woman in white asking for a lift). Code-drawn visuals, Kalpa Labs TTS (Aman), studio-synthesized SFX/BGM. No third-party footage or audio."]
+}

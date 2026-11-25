@@ -1,0 +1,100 @@
+{
+ "mode": "script",
+ "verdict": "workable",
+ "answers": [
+  {
+   "id": "stranger_test",
+   "score": 4,
+   "evidence": "शादी से एक रात पहले, सीढ़ियों पर मेरे पीछे कोई चल रहा था।",
+   "note": "Wedding eve plus two shadows; the bridal song matches."
+  },
+  {
+   "id": "myth_grounding",
+   "score": 3,
+   "evidence": "दादी कहती थीं, पहली दुल्हन की चूड़ियाँ बजें, तो मुड़कर मत देखना।",
+   "note": "Invented family rule from dadi, labelled as hers; the do-not-look-back taboo is widely known."
+  },
+  {
+   "id": "relatability",
+   "score": 5,
+   "evidence": "दादी कहती थीं, पहली दुल्हन की चूड़ियाँ बजें, तो मुड़कर मत देखना।",
+   "note": "Wedding-eve nerves, apartment stairs at night, family lore."
+  },
+  {
+   "id": "violation",
+   "score": 5,
+   "evidence": "मैंने मुड़कर देख लिया।",
+   "note": "One explicit moment on a bar hit."
+  },
+  {
+   "id": "consequence",
+   "score": 4,
+   "evidence": "देखते ही वो चली गईं।",
+   "note": "Protector vanishes, wet figure descends."
+  },
+  {
+   "id": "escalation",
+   "score": 4,
+   "evidence": "बत्ती बुझती, और चूड़ियाँ एक क़दम पास आ जातीं।",
+   "note": "Behind, then ahead, then trapped."
+  },
+  {
+   "id": "withholding",
+   "score": 4,
+   "evidence": "ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पानी टपकता हुआ।",
+   "note": "Wet figure never faces camera; dadi seen only as a shadow."
+  },
+  {
+   "id": "specificity",
+   "score": 4,
+   "evidence": "गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।",
+   "note": "Bangle jingle, timer light, wet footprints going up, red glass shards."
+  },
+  {
+   "id": "the_turn",
+   "score": 4,
+   "evidence": "वो मुझे घर छोड़ने आई थीं, गीले साये से बचाकर।",
+   "note": "Recontextualises 'someone behind me'."
+  },
+  {
+   "id": "sound_scare",
+   "score": 3,
+   "evidence": "मैंने मुड़कर देख लिया।",
+   "note": "The song never goes silent (breakdown only ~4.5 dB down), so the silence must be visual or the song must be baked and ducked."
+  },
+  {
+   "id": "ending_loop",
+   "score": 4,
+   "evidence": "अब सीढ़ियों पर मेरे पीछे कोई नहीं चलता।",
+   "note": "Inverts the hook."
+  },
+  {
+   "id": "cliche_scan",
+   "score": 3,
+   "evidence": "दादी कहती थीं, पहली दुल्हन की चूड़ियाँ बजें, तो मुड़कर मत देखना।",
+   "note": "Dead bride is familiar; the protector reversal and wet second figure are the fresh parts."
+  },
+  {
+   "id": "code_visual_feasible",
+   "score": 4,
+   "evidence": "ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पानी टपकता हुआ।",
+   "note": "Stairwell is boxes and quads in scene3d; figures are silhouettes and shadows."
+  },
+  {
+   "id": "bluff_plot_without_adjectives",
+   "score": 4,
+   "evidence": "मैंने मुड़कर देख लिया।",
+   "note": "Plot holds with no adjectives.",
+   "plot_events": [
+    "दादी कहती थीं, पहली दुल्हन की चूड़ियाँ बजें, तो मुड़कर मत देखना।",
+    "गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।",
+    "मैंने मुड़कर देख लिया।",
+    "देखते ही वो चली गईं।"
+   ]
+  }
+ ],
+ "weakest_line": {
+  "quote": "हर क़दम पर पीछे चूड़ियाँ छनक रही थीं।",
+  "rewrite": "हर क़दम के साथ पीछे चूड़ियाँ एक बार छनकतीं।"
+ }
+}

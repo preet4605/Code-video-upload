@@ -1,0 +1,247 @@
+{
+ "scenes": [
+  {
+   "id": "hook",
+   "subject": "The narrator on the bank at dusk, something walking far out on the lake",
+   "layers": {
+    "foreground": "his dark back at the bottom of frame, breath steam",
+    "midground": "the mud bank edge and flat black water",
+    "background": "a small figure far out in the last light, the lit boat beside the bank on the right"
+   },
+   "light_source": "boat lantern and cabin window on the right, last orange at the horizon",
+   "focal_point": [
+    540,
+    800
+   ],
+   "motion": "ripples lap the bank, the far figure inches closer",
+   "camera": "slow push-in from behind his shoulder",
+   "sound_cue": "lake_still_night, breath, one cold gust",
+   "sync_word": "किनारे",
+   "details": [
+    "dark shoulders on the bank",
+    "lit cabin window on the right",
+    "far figure on the water",
+    "orange sliver behind the ridge",
+    "steam of his breath"
+   ],
+   "withheld": "what the walker is",
+   "intensity": 2
+  },
+  {
+   "id": "calls",
+   "subject": "The post where he has stood for three nights; the answer is new",
+   "layers": {
+    "foreground": "the post with three notches in the lamp light",
+    "midground": "mud bank with his own footprints",
+    "background": "the dark lake, the walker closer"
+   },
+   "light_source": "lamp on the post and moon",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "lamp sways, reeds move, the walker grows",
+   "camera": "slow turn back to the lake",
+   "sound_cue": "old_calls_echo, his own thin voice from other nights",
+   "sync_word": "पुकारता",
+   "details": [
+    "three notches on the post",
+    "footprints in the mud",
+    "lamp flame sway",
+    "reeds bending",
+    "walker a little larger"
+   ],
+   "withheld": "who answered",
+   "intensity": 2
+  },
+  {
+   "id": "walk",
+   "subject": "The walker across the water with no ripples at its feet",
+   "layers": {
+    "foreground": "his silhouette in the foreground, still",
+    "midground": "the walker mid-lake, no rings around its feet while his own ripples spread",
+    "background": "the far ridge and a grey sky line"
+   },
+   "light_source": "boat lantern behind him, moon front-lighting the walker",
+   "focal_point": [
+    540,
+    820
+   ],
+   "motion": "the walker steps, leaning left, with flat dead-still water around its feet",
+   "camera": "slow push-in on the walker over his shoulder",
+   "sound_cue": "step_ticks, no splash",
+   "sync_word": "लहर",
+   "details": [
+    "small narrow silhouette",
+    "left lean each step",
+    "no rings around its feet",
+    "his ripples spreading",
+    "boat lantern behind"
+   ],
+   "withheld": "its face",
+   "intensity": 3
+  },
+  {
+   "id": "voice",
+   "subject": "His full name called out of the water",
+   "layers": {
+    "foreground": "the water surface just ahead of him",
+    "midground": "ripples forming where the voice lands",
+    "background": "the walker standing, head tilted, nearer"
+   },
+   "light_source": "moon and the window light on black water",
+   "focal_point": [
+    540,
+    860
+   ],
+   "motion": "tiny ripples spread from where the voice lands, lips of light across the surface",
+   "camera": "still push-in with a slow handheld tremor",
+   "sound_cue": "name_in_water, lake voice with echo",
+   "sync_word": "पूरा नाम",
+   "details": [
+    "voice ripples",
+    "tilted head shape",
+    "his clenched jaw rim light",
+    "boat window glow",
+    "cold breath steam"
+   ],
+   "withheld": "the voice source",
+   "intensity": 3
+  },
+  {
+   "id": "under",
+   "subject": "Light falls across the water and shows the walker beneath it, inverted",
+   "layers": {
+    "foreground": "the surface of the water with a thin film of reflection",
+    "midground": "a pale figure under the surface, feet up at the surface, head down in the dark",
+    "background": "black depth below, the boat hull above"
+   },
+   "light_source": "lantern beam into the water",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "the walker flips under the surface as the camera tilts down, pale limbs drifting",
+   "camera": "tilt down from the horizon to the water, slow push",
+   "sound_cue": "long low drone, water muffled",
+   "sync_word": "उल्टा",
+   "details": [
+    "pale inverted figure",
+    "feet touching the surface from below",
+    "head hanging into the depth",
+    "lantern beam in the water",
+    "no ripples above it"
+   ],
+   "withheld": "its face",
+   "intensity": 4
+  },
+  {
+   "id": "face",
+   "subject": "The face under the water looking up at his boots",
+   "layers": {
+    "foreground": "mud and his own boots at the water edge",
+    "midground": "a pale oval under the surface, lips moving",
+    "background": "black depth around it"
+   },
+   "light_source": "boat lantern glowing down into the water",
+   "focal_point": [
+    540,
+    920
+   ],
+   "motion": "lips shape words that do not match the sound",
+   "camera": "tight push to the water edge, slight Dutch angle",
+   "sound_cue": "water_knock, a voice coming from elsewhere",
+   "sync_word": "चेहरा",
+   "details": [
+    "pale oval under the surface",
+    "his boots in mud",
+    "lips moving",
+    "soundless bubbles",
+    "lamp glow in the water"
+   ],
+   "withheld": "the eyes",
+   "intensity": 4
+  },
+  {
+   "id": "relief",
+   "subject": "Quiet: the face dissolves into the ripples, he holds his breath and wins",
+   "layers": {
+    "foreground": "his steady shoulders",
+    "midground": "calm black water, rings fading",
+    "background": "the lit boat steady"
+   },
+   "light_source": "steady lantern light",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "the ripples fade, the water goes still, his shoulders loosen",
+   "camera": "slow gentle pull-back",
+   "sound_cue": "everything drops to near silence",
+   "sync_word": "जीत",
+   "details": [
+    "calm black water",
+    "faded rings",
+    "his loosened shoulders",
+    "steady lantern",
+    "a single star"
+   ],
+   "withheld": "what the lake will do next",
+   "intensity": 2
+  },
+  {
+   "id": "wave",
+   "subject": "A wave with no wind rises and shoves him up the bank",
+   "layers": {
+    "foreground": "his soaked back as the water hits",
+    "midground": "the wave rising over the bank edge, little hand shapes in the foam",
+    "background": "the lake flat behind it"
+   },
+   "light_source": "window light and moon",
+   "focal_point": [
+    540,
+    860
+   ],
+   "motion": "a wave rises with no wind, hands-shapes in the foam shove him",
+   "camera": "sudden handheld surge and a push-in",
+   "sound_cue": "wave_no_wind, his own voice answering from the lake",
+   "sync_word": "आवाज़",
+   "details": [
+    "wave with no wind",
+    "small hands in the foam",
+    "soaked back",
+    "mud thrown up",
+    "window flare behind"
+   ],
+   "withheld": "whose hands",
+   "intensity": 5
+  },
+  {
+   "id": "loop",
+   "subject": "He lies on the bank, the lake quiet, the boat beside him",
+   "layers": {
+    "foreground": "his wet hair and hand in the mud",
+    "midground": "his body on the bank, boat resting beside him",
+    "background": "the dark lake and ridge"
+   },
+   "light_source": "shore lamp, boat lantern",
+   "focal_point": [
+    540,
+    980
+   ],
+   "motion": "water dripping, lantern flicker, faint fog drifting",
+   "camera": "slow pull-back from his hand to the lake",
+   "sound_cue": "lapping water, then a soft echo of his own voice far out",
+   "sync_word": "आवाज़",
+   "details": [
+    "wet hair in the mud",
+    "boat hull beside him",
+    "lamp flicker",
+    "fog on the water",
+    "a faint ring far out"
+   ],
+   "withheld": "whom the lake will call with his voice",
+   "intensity": 3
+  }
+ ]
+}

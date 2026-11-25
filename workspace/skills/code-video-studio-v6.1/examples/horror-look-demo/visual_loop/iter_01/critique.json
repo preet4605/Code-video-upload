@@ -1,0 +1,13 @@
+{ "shots": [
+  { "id": "room", "seen": "Bright storybook bedroom: purple-blue wall with polka dots, pink curtains, yellow moon, sky-blue blanket, orange wood; everything evenly lit. Detailed, but reads cosy and cheerful, not frightening.",
+    "problems": ["too bright (72)", "4 hue families", "no dread in the set", "even lighting, no darkness"],
+    "fix": "Switch to the horror theme: cold desaturated palette, darkness mask with light only from the moon, the door strip and the red clock; add damp stains, cracks, peeling paper, cobweb, a bare dead bulb, a doll facing the wall; slight dutch tilt.",
+    "scores": { "subject": 3, "depth": 4, "detail": 5, "light": 1, "character": 3, "composition": 3 } },
+  { "id": "door", "seen": "Warm door close-up with a red school bag, teal slippers and a purple rug; the foot shadows are there but the colours make it look like a toy shop.",
+    "problems": ["too bright (82)", "playful props", "door surface plain"],
+    "fix": "Horror theme, remove the playful props, add claw scratches and a dried handprint on the door, grime on the wall, keep only the strip as light so the feet read as silhouettes in the only bright area.",
+    "scores": { "subject": 4, "depth": 3, "detail": 3, "light": 2, "character": 2, "composition": 3 } },
+  { "id": "face", "seen": "Bright close-up of the kid with blush and sweat drop under a sky-blue blanket; expression is scared but the frame is so bright and saturated that it reads cute.",
+    "problems": ["too bright (90)", "cute blush", "no shadow on the face"],
+    "fix": "Horror theme (pale skin, no blush), light the face only from the door side with a cold moon rim from the left, crush everything else to near-black, add the dark gap under the bed edge in frame.",
+    "scores": { "subject": 4, "depth": 3, "detail": 3, "light": 1, "character": 3, "composition": 3 } } ] }

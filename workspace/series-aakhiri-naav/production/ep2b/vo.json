@@ -1,0 +1,1 @@
+{"voice": "1eb6c010-34e0-477c-9d24-e915f853359e", "temperature": 0.8, "tempo": 1.0, "gap": 0.33, "lead_s": 0.1, "tail_s": 0.6, "fx": {"3": "lake", "8": "lakeown"}, "gaps": {"0": 0.5, "2": 0.45, "3": 0.5, "7": 0.2, "8": 0.45}, "extra": [{"name": "calls", "text": "छोटे, मैं यहीं हूँ!", "temperature": 0.85}], "scare_dt": 0.0}

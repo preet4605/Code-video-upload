@@ -1,0 +1,502 @@
+{
+  "version": "1.0",
+  "slug": "project",
+  "aspect": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_s": 23.156,
+  "target_lufs": -16,
+  "true_peak_dbtp": -1.5,
+  "audio_file": null,
+  "alignment": {
+    "method": "wpm-estimate"
+  },
+  "voice_style": {
+    "tempo": 1,
+    "temperature": null,
+    "lineGapS": 0.2,
+    "sceneTailS": 0.25,
+    "perLine": false
+  },
+  "silences": [],
+  "lines": [
+    {
+      "index": 0,
+      "speaker": "NARRATOR",
+      "text": "रात को वो कमरा मत खोलना।",
+      "start_s": 0.25,
+      "dur_s": 2.667
+    },
+    {
+      "index": 1,
+      "speaker": "NARRATOR",
+      "text": "नानी ने यही कहा था।",
+      "start_s": 3.117,
+      "dur_s": 2.222
+    },
+    {
+      "index": 2,
+      "speaker": "NARRATOR",
+      "text": "तीन बजे दरवाज़ा अपने आप खुला।",
+      "start_s": 6.039,
+      "dur_s": 2.667
+    },
+    {
+      "index": 3,
+      "speaker": "NARRATOR",
+      "text": "अंदर कुछ था।",
+      "start_s": 8.906,
+      "dur_s": 1.333
+    },
+    {
+      "index": 4,
+      "speaker": "NARRATOR",
+      "text": "उसने मेरा नाम लिया।",
+      "start_s": 10.939,
+      "dur_s": 1.778
+    },
+    {
+      "index": 5,
+      "speaker": "NARRATOR",
+      "text": "फिर सब शांत हो गया।",
+      "start_s": 12.917,
+      "dur_s": 2.222
+    },
+    {
+      "index": 6,
+      "speaker": "NARRATOR",
+      "text": "पर कहानी अभी बाकी है।",
+      "start_s": 15.839,
+      "dur_s": 2.222
+    },
+    {
+      "index": 7,
+      "speaker": "NARRATOR",
+      "text": "Part 3 के लिए फ़ॉलो करो, अगली रील वहीं की।",
+      "start_s": 18.261,
+      "dur_s": 4.444
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "start_s": 0,
+      "end_s": 5.789,
+      "mood": "suspense",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 0,
+          "dur_s": 5.789,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "room",
+      "start_s": 5.789,
+      "end_s": 10.689,
+      "mood": "suspense",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 5.789,
+          "dur_s": 4.9,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scare",
+      "start_s": 10.689,
+      "end_s": 15.589,
+      "mood": "climax",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 10.689,
+          "dur_s": 4.9,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cliff",
+      "start_s": 15.589,
+      "end_s": 23.156,
+      "mood": "suspense",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 15.589,
+          "dur_s": 7.567,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "word": "रात",
+      "start_s": 0.25,
+      "end_s": 0.694,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "को",
+      "start_s": 0.694,
+      "end_s": 1.139,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "वो",
+      "start_s": 1.139,
+      "end_s": 1.583,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "कमरा",
+      "start_s": 1.583,
+      "end_s": 2.028,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "मत",
+      "start_s": 2.028,
+      "end_s": 2.472,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "खोलना।",
+      "start_s": 2.472,
+      "end_s": 2.917,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "नानी",
+      "start_s": 3.117,
+      "end_s": 3.561,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "ने",
+      "start_s": 3.561,
+      "end_s": 4.006,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "यही",
+      "start_s": 4.006,
+      "end_s": 4.45,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "कहा",
+      "start_s": 4.45,
+      "end_s": 4.894,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "था।",
+      "start_s": 4.894,
+      "end_s": 5.339,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "तीन",
+      "start_s": 6.039,
+      "end_s": 6.483,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बजे",
+      "start_s": 6.483,
+      "end_s": 6.928,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "दरवाज़ा",
+      "start_s": 6.928,
+      "end_s": 7.372,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "अपने",
+      "start_s": 7.372,
+      "end_s": 7.817,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "आप",
+      "start_s": 7.817,
+      "end_s": 8.261,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "खुला।",
+      "start_s": 8.261,
+      "end_s": 8.706,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "अंदर",
+      "start_s": 8.906,
+      "end_s": 9.35,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "कुछ",
+      "start_s": 9.35,
+      "end_s": 9.795,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "था।",
+      "start_s": 9.795,
+      "end_s": 10.239,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "उसने",
+      "start_s": 10.939,
+      "end_s": 11.383,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "मेरा",
+      "start_s": 11.383,
+      "end_s": 11.828,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "नाम",
+      "start_s": 11.828,
+      "end_s": 12.272,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "लिया।",
+      "start_s": 12.272,
+      "end_s": 12.717,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "फिर",
+      "start_s": 12.917,
+      "end_s": 13.361,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "सब",
+      "start_s": 13.361,
+      "end_s": 13.806,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "शांत",
+      "start_s": 13.806,
+      "end_s": 14.25,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "हो",
+      "start_s": 14.25,
+      "end_s": 14.695,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "गया।",
+      "start_s": 14.695,
+      "end_s": 15.139,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "पर",
+      "start_s": 15.839,
+      "end_s": 16.283,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "कहानी",
+      "start_s": 16.283,
+      "end_s": 16.728,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "अभी",
+      "start_s": 16.728,
+      "end_s": 17.172,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "बाकी",
+      "start_s": 17.172,
+      "end_s": 17.617,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "है।",
+      "start_s": 17.617,
+      "end_s": 18.061,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "Part",
+      "start_s": 18.261,
+      "end_s": 18.706,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "3",
+      "start_s": 18.706,
+      "end_s": 19.15,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "के",
+      "start_s": 19.15,
+      "end_s": 19.595,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "लिए",
+      "start_s": 19.595,
+      "end_s": 20.039,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "फ़ॉलो",
+      "start_s": 20.039,
+      "end_s": 20.483,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "करो,",
+      "start_s": 20.483,
+      "end_s": 20.928,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "अगली",
+      "start_s": 20.928,
+      "end_s": 21.372,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "रील",
+      "start_s": 21.372,
+      "end_s": 21.817,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "वहीं",
+      "start_s": 21.817,
+      "end_s": 22.261,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "की।",
+      "start_s": 22.261,
+      "end_s": 22.706,
+      "speaker": "NARRATOR"
+    }
+  ],
+  "captions": [
+    {
+      "speaker": "NARRATOR",
+      "text": "रात को वो कमरा मत खोलना।",
+      "start_s": 0.25,
+      "end_s": 2.917,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "नानी ने यही कहा था।",
+      "start_s": 3.117,
+      "end_s": 5.339,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "तीन बजे दरवाज़ा अपने आप खुला।",
+      "start_s": 6.039,
+      "end_s": 8.706,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "अंदर कुछ था।",
+      "start_s": 8.906,
+      "end_s": 10.239,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "उसने मेरा नाम लिया।",
+      "start_s": 10.939,
+      "end_s": 12.717,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "फिर सब शांत हो गया।",
+      "start_s": 12.917,
+      "end_s": 15.139,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "पर कहानी अभी बाकी है।",
+      "start_s": 15.839,
+      "end_s": 18.061,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "Part 3 के लिए फ़ॉलो करो, अगली रील वहीं की।",
+      "start_s": 18.261,
+      "end_s": 22.706,
+      "safe_zone": true
+    }
+  ],
+  "audio_cues": [
+    {
+      "type": "sfx",
+      "name": "heartbeat",
+      "t_s": 6.039,
+      "gain_db": -6
+    },
+    {
+      "type": "sfx",
+      "name": "violin_stinger",
+      "t_s": 10.939,
+      "gain_db": -6,
+      "scare": true
+    }
+  ]
+}

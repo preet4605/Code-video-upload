@@ -1,0 +1,102 @@
+{
+ "mode": "script",
+ "verdict": "workable",
+ "answers": [
+  {
+   "id": "stranger_test",
+   "score": 4,
+   "evidence": "मैं किनारे पर रुका रहा, और पानी के पार से कोई चलकर आने लगा।",
+   "note": "Someone walks across a lake toward him."
+  },
+  {
+   "id": "myth_grounding",
+   "score": 4,
+   "evidence": "नाव की आवाज़ का जवाब मत दो",
+   "note": "Invented village rule."
+  },
+  {
+   "id": "relatability",
+   "score": 3,
+   "evidence": "तीन रात से मैं यहाँ खड़ा पुकारता रहा",
+   "note": "Waiting and calling for someone lost."
+  },
+  {
+   "id": "violation",
+   "score": 3,
+   "evidence": "मैं बिना हिले खड़ा रहा",
+   "note": "He keeps the rule here; the break is taken from him, which is the point."
+  },
+  {
+   "id": "consequence",
+   "score": 4,
+   "evidence": "झील से मेरी अपनी आवाज़ ने जवाब दे दिया",
+   "note": "Following the rule still costs him his voice."
+  },
+  {
+   "id": "escalation",
+   "score": 4,
+   "evidence": "उसके पैरों पर कोई लहर नहीं उठती थी",
+   "note": "Walker, name, upside-down figure, white face."
+  },
+  {
+   "id": "withholding",
+   "score": 4,
+   "evidence": "आवाज़ कहीं और से आती थी",
+   "note": "Face is only an oval; the voice source is never shown."
+  },
+  {
+   "id": "specificity",
+   "score": 5,
+   "evidence": "सतह के नीचे से एक सफ़ेद चेहरा मुझे देखने लगा",
+   "note": "Upside-down walker under the lake; no ripples; left lean."
+  },
+  {
+   "id": "the_turn",
+   "score": 5,
+   "evidence": "मैंने एक शब्द नहीं कहा था, पर झील से मेरी अपनी आवाज़ ने जवाब दे दिया।",
+   "note": "Silence does not protect him."
+  },
+  {
+   "id": "sound_scare",
+   "score": 4,
+   "evidence": "हाँ, मैं यहीं हूँ।",
+   "note": "His own voice after a held silence."
+  },
+  {
+   "id": "ending_loop",
+   "score": 4,
+   "evidence": "झील के पास अब मेरी आवाज़ थी, और वह किसे बुलाएगी?",
+   "note": "Ends on the new threat and hands to ep3."
+  },
+  {
+   "id": "cliche_scan",
+   "score": 3,
+   "evidence": "सतह के नीचे से एक सफ़ेद चेहरा मुझे देखने लगा",
+   "note": "A white face is a familiar image; the inversion is what lifts it."
+  },
+  {
+   "id": "code_visual_feasible",
+   "score": 3,
+   "evidence": "वह पानी के नीचे चल रहा है, उल्टा",
+   "note": "Inverted figure under water is the hardest shot; planned as a simple silhouette."
+  },
+  {
+   "id": "bluff_plot_without_adjectives",
+   "score": 4,
+   "evidence": "पानी के पार से कोई चलकर आने लगा",
+   "note": "Walker comes, calls, shows, he stays silent, lake answers, wave shoves him.",
+   "plot_events": [
+    "पानी के पार से कोई चलकर आने लगा",
+    "मेरा पूरा नाम पानी से आया",
+    "वह पानी के नीचे चल रहा है",
+    "मैं बिना हिले खड़ा रहा",
+    "झील से मेरी अपनी आवाज़ ने जवाब दे दिया",
+    "एक लहर चढ़ी"
+   ]
+  }
+ ],
+ "weakest_line": {
+  "quote": "वह नाव की बत्ती में आया, और मैं समझ गया कि वह पानी के नीचे चल रहा है, उल्टा, सिर गहराई में लटका हुआ।",
+  "rewrite": "वह नाव की बत्ती में आया, तो दिखा कि वह पानी के नीचे चल रहा है, उल्टा, सिर गहराई में लटका हुआ।"
+ }
+}

@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "slug": "smoke-physics-orbit",
+  "assets": [
+    {
+      "id": "seeded_starfield",
+      "tier": 1,
+      "type": "procedural_canvas",
+      "license": "MIT"
+    },
+    {
+      "id": "newton_mountain_cannon",
+      "tier": 1,
+      "type": "procedural_canvas",
+      "license": "MIT"
+    },
+    {
+      "id": "kepler_orbital_solver",
+      "tier": 1,
+      "type": "procedural_canvas",
+      "license": "MIT"
+    }
+  ]
+}

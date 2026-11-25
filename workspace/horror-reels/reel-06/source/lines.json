@@ -1,0 +1,17 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.7, "tempo": 1.1, "gap": 0.32, "tail_s": 2.0,
+ "scenes_meta": { "hook": {"mood":"suspense","props":["road.scroll"]}, "cta_loop": {"mood":"suspense","props":["choice.cards","road.scroll"]} },
+ "extra_sfx": [ {"name":"whoosh","t_s":"end","before_end":1.7,"gain_db":-8} ],
+ "lines": [
+  {"sc":"hook","hi":"रात को हाईवे पर कोई हाथ दिखाए, तो गाड़ी मत रोकना।","hl":"Raat ko highway pe koi haath dikhaye, to gaadi mat rokna.","gap":0.45,"sfx":[{"name":"whoosh","dt":-0.05,"gain_db":-6}]},
+  {"sc":"rule","hi":"ट्रक ड्राइवर पप्पू भैया का एक ही नियम था, रात बारह बजे के बाद किसी को लिफ़्ट नहीं।","hl":"Truck driver Pappu bhaiya ka ek hi niyam tha, raat 12 baje ke baad kisi ko lift nahi.","gap":0.45,"sfx":[{"name":"fan_hum","dt":0,"gain_db":-12}]},
+  {"sc":"woman","hi":"उस रात सड़क किनारे, सफ़ेद साड़ी में एक औरत हाथ दिखा रही थी।","hl":"Us raat sadak kinare, safed saree mein ek aurat haath dikha rahi thi."},
+  {"sc":"woman","hi":"पप्पू भैया नहीं रुके, और आगे निकल गए।","hl":"Pappu bhaiya nahi ruke, aur aage nikal gaye.","gap":0.45,"sfx":[{"name":"whoosh","dt":0.2,"gain_db":-7}]},
+  {"sc":"repeat","hi":"दस किलोमीटर बाद, वही औरत फिर खड़ी थी, उसी तरह हाथ दिखाती हुई।","hl":"10 kilometre baad, wahi aurat phir khadi thi, usi tarah haath dikhati hui.","sfx":[{"name":"heartbeat","dt":0.2,"gain_db":-8}]},
+  {"sc":"repeat","hi":"अगले दस किलोमीटर बाद भी वही थी, और उसके बाद भी।","hl":"Agle 10 kilometre baad bhi wahi thi, aur uske baad bhi.","gap":0.45,"sfx":[{"name":"whoosh","dt":0.1,"gain_db":-8}]},
+  {"sc":"mirror","hi":"चौथी बार वो सड़क पर नहीं थी। वो साइड मिरर में दिख रही थी, पीछे वाली सीट पर।","hl":"Chauthi baar wo sadak pe nahi thi. Wo side mirror mein dikh rahi thi, peeche wali seat pe.","gap":0.85,"sfx":[{"name":"violin_stinger","at":"end","dt":-1.6,"gain_db":-6}]},
+  {"sc":"twist","hi":"अब बताओ, तुम होते तो क्या करते?","hl":"Ab batao, tum hote to kya karte?","gap":0.45},
+  {"sc":"cta_loop","hi":"ए, गाड़ी रोको। बी, मिरर मत देखो। ट्रक वालों की और कहानियाँ चाहिए, तो फ़ॉलो करो।","hl":"A, gaadi roko. B, mirror mat dekho. Truck walon ki aur kahaniyan chahiye, to follow karo."}
+ ]
+}

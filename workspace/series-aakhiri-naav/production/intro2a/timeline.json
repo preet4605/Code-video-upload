@@ -1,0 +1,265 @@
+{
+ "version": "1.0",
+ "slug": "intro2a",
+ "aspect": "9:16",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "duration_s": 6.283,
+ "target_lufs": -14,
+ "true_peak_dbtp": -1.5,
+ "audio_file": "voiceover.wav",
+ "alignment": {
+  "method": "voiced-span-weighted",
+  "line_anchored": true,
+  "note": "One TTS clip per line; word timing inside a line is voiced-span weighted."
+ },
+ "scenes": [
+  {
+   "id": "recap",
+   "start_s": 0,
+   "end_s": 6.283,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 0,
+     "start_s": 0.1,
+     "end_s": 1.375
+    },
+    {
+     "i": 1,
+     "start_s": 1.595,
+     "end_s": 3.074
+    },
+    {
+     "i": 2,
+     "start_s": 3.174,
+     "end_s": 4.597
+    },
+    {
+     "i": 3,
+     "start_s": 4.777,
+     "end_s": 6.083
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 2.094,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 2.094,
+     "dur_s": 2.094,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 4.189,
+     "dur_s": 2.094,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "i": 0,
+   "speaker": "NARRATOR",
+   "text": "पिछली बार सवाल था।",
+   "start_s": 0.1,
+   "end_s": 1.375
+  },
+  {
+   "i": 1,
+   "speaker": "NARRATOR",
+   "text": "A, नाव तक जाओ।",
+   "start_s": 1.595,
+   "end_s": 3.074
+  },
+  {
+   "i": 2,
+   "speaker": "NARRATOR",
+   "text": "B, किनारे रुको।",
+   "start_s": 3.174,
+   "end_s": 4.597
+  },
+  {
+   "i": 3,
+   "speaker": "NARRATOR",
+   "text": "A चुनते तो यह होता।",
+   "start_s": 4.777,
+   "end_s": 6.083
+  }
+ ],
+ "words": [
+  {
+   "word": "पिछली",
+   "start_s": 0.1,
+   "end_s": 0.463,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "बार",
+   "start_s": 0.463,
+   "end_s": 0.74,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "सवाल",
+   "start_s": 0.74,
+   "end_s": 1.103,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "था।",
+   "start_s": 1.103,
+   "end_s": 1.293,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "A,",
+   "start_s": 1.595,
+   "end_s": 1.876,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "नाव",
+   "start_s": 2.192,
+   "end_s": 2.486,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "तक",
+   "start_s": 2.486,
+   "end_s": 2.78,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "जाओ।",
+   "start_s": 2.78,
+   "end_s": 3.074,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "B,",
+   "start_s": 3.174,
+   "end_s": 3.508,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "किनारे",
+   "start_s": 3.978,
+   "end_s": 4.33,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "रुको।",
+   "start_s": 4.33,
+   "end_s": 4.597,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "A",
+   "start_s": 4.777,
+   "end_s": 4.969,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "चुनते",
+   "start_s": 4.969,
+   "end_s": 5.334,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "तो",
+   "start_s": 5.334,
+   "end_s": 5.526,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "यह",
+   "start_s": 5.526,
+   "end_s": 5.804,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "होता।",
+   "start_s": 5.804,
+   "end_s": 6.083,
+   "speaker": "NARRATOR",
+   "line": 3
+  }
+ ],
+ "captions": [
+  {
+   "speaker": "NARRATOR",
+   "text": "पिछली बार सवाल था।",
+   "start_s": 0.02,
+   "end_s": 1.495,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "A, नाव तक जाओ।",
+   "start_s": 1.515,
+   "end_s": 3.074,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "B, किनारे रुको।",
+   "start_s": 3.094,
+   "end_s": 4.677,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "A चुनते तो यह होता।",
+   "start_s": 4.697,
+   "end_s": 6.283,
+   "safe_zone": true,
+   "line": 3
+  }
+ ],
+ "audio_cues": []
+}

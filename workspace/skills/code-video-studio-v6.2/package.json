@@ -1,0 +1,20 @@
+{
+  "name": "code-video-studio",
+  "version": "0.3.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Deterministic 2D code-based reel/short production studio (Node >=22 + Canvas + FFmpeg) with measured SHIP/FIX QA",
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs --json",
+    "example:hello": "node scripts/render_and_lint.mjs --project examples/hello-15s --draft && node scripts/master_and_qa.mjs --project examples/hello-15s",
+    "test": "node --test tests/*.test.mjs",
+    "qa": "node scripts/qa_video.mjs --json"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.68"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

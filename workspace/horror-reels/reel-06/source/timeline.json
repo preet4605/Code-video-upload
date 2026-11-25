@@ -1,0 +1,1403 @@
+{
+ "version": "1.0",
+ "slug": "reel-06",
+ "aspect": "9:16",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "duration_s": 44.91,
+ "target_lufs": -14,
+ "true_peak_dbtp": -1.5,
+ "audio_file": "voiceover.wav",
+ "alignment": {
+  "method": "voiced-span-weighted",
+  "line_anchored": true,
+  "note": "One TTS clip per line, so line windows are exact; word timing inside a line is voiced-span weighted."
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "start_s": 0,
+   "end_s": 4.147,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 0,
+     "start_s": 0.12,
+     "end_s": 3.797
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 2.074,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "road.scroll"
+     ]
+    },
+    {
+     "t_s": 2.074,
+     "dur_s": 2.074,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "road.scroll"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rule",
+   "start_s": 4.147,
+   "end_s": 10.08,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 1,
+     "start_s": 4.247,
+     "end_s": 9.73
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 4.147,
+     "dur_s": 1.978,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 6.125,
+     "dur_s": 1.978,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 8.102,
+     "dur_s": 1.978,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "woman",
+   "start_s": 10.08,
+   "end_s": 18.286,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 2,
+     "start_s": 10.18,
+     "end_s": 14.782
+    },
+    {
+     "i": 3,
+     "start_s": 15.102,
+     "end_s": 17.936
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 10.08,
+     "dur_s": 2.052,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 12.132,
+     "dur_s": 2.052,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 14.183,
+     "dur_s": 2.052,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 16.235,
+     "dur_s": 2.052,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "repeat",
+   "start_s": 18.286,
+   "end_s": 27.869,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 4,
+     "start_s": 18.386,
+     "end_s": 23.579
+    },
+    {
+     "i": 5,
+     "start_s": 23.899,
+     "end_s": 27.519
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 18.286,
+     "dur_s": 2.396,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 20.682,
+     "dur_s": 2.396,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 23.078,
+     "dur_s": 2.396,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 25.473,
+     "dur_s": 2.396,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mirror",
+   "start_s": 27.869,
+   "end_s": 34.209,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 6,
+     "start_s": 27.969,
+     "end_s": 33.459
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 27.869,
+     "dur_s": 2.113,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 29.982,
+     "dur_s": 2.113,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 32.096,
+     "dur_s": 2.113,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "start_s": 34.209,
+   "end_s": 36.723,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 7,
+     "start_s": 34.309,
+     "end_s": 36.373
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 34.209,
+     "dur_s": 2.514,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cta_loop",
+   "start_s": 36.723,
+   "end_s": 44.91,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 8,
+     "start_s": 36.823,
+     "end_s": 42.91
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 36.723,
+     "dur_s": 2.047,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "choice.cards",
+      "road.scroll"
+     ]
+    },
+    {
+     "t_s": 38.77,
+     "dur_s": 2.047,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "choice.cards",
+      "road.scroll"
+     ]
+    },
+    {
+     "t_s": 40.817,
+     "dur_s": 2.047,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "choice.cards",
+      "road.scroll"
+     ]
+    },
+    {
+     "t_s": 42.863,
+     "dur_s": 2.047,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "choice.cards",
+      "road.scroll"
+     ]
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "word": "Raat",
+   "start_s": 0.12,
+   "end_s": 0.419,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "ko",
+   "start_s": 0.419,
+   "end_s": 0.603,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "highway",
+   "start_s": 0.603,
+   "end_s": 1.075,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "pe",
+   "start_s": 1.075,
+   "end_s": 1.259,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "koi",
+   "start_s": 1.259,
+   "end_s": 1.601,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "haath",
+   "start_s": 1.601,
+   "end_s": 1.957,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "dikhaye,",
+   "start_s": 1.957,
+   "end_s": 2.429,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "to",
+   "start_s": 2.726,
+   "end_s": 2.899,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "gaadi",
+   "start_s": 2.899,
+   "end_s": 3.234,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "mat",
+   "start_s": 3.234,
+   "end_s": 3.461,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "rokna.",
+   "start_s": 3.461,
+   "end_s": 3.797,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "Truck",
+   "start_s": 4.247,
+   "end_s": 4.547,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "driver",
+   "start_s": 4.547,
+   "end_s": 4.894,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "Pappu",
+   "start_s": 4.894,
+   "end_s": 5.194,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "bhaiya",
+   "start_s": 5.194,
+   "end_s": 5.542,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "ka",
+   "start_s": 5.542,
+   "end_s": 5.759,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "ek",
+   "start_s": 5.759,
+   "end_s": 5.914,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "hi",
+   "start_s": 5.914,
+   "end_s": 6.068,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "niyam",
+   "start_s": 6.068,
+   "end_s": 6.368,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "tha,",
+   "start_s": 6.368,
+   "end_s": 6.571,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "raat",
+   "start_s": 7.04,
+   "end_s": 7.336,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "12",
+   "start_s": 7.336,
+   "end_s": 7.518,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "baje",
+   "start_s": 7.518,
+   "end_s": 7.814,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "ke",
+   "start_s": 7.814,
+   "end_s": 7.997,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "baad",
+   "start_s": 7.997,
+   "end_s": 8.293,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "kisi",
+   "start_s": 8.293,
+   "end_s": 8.722,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "ko",
+   "start_s": 8.722,
+   "end_s": 8.904,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "lift",
+   "start_s": 8.904,
+   "end_s": 9.2,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "nahi.",
+   "start_s": 9.2,
+   "end_s": 9.496,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "Us",
+   "start_s": 10.18,
+   "end_s": 10.393,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "raat",
+   "start_s": 10.393,
+   "end_s": 10.738,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "sadak",
+   "start_s": 10.738,
+   "end_s": 11.218,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "kinare,",
+   "start_s": 11.218,
+   "end_s": 11.696,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "safed",
+   "start_s": 12.006,
+   "end_s": 12.345,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "saree",
+   "start_s": 12.345,
+   "end_s": 12.685,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "mein",
+   "start_s": 12.685,
+   "end_s": 12.969,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "ek",
+   "start_s": 12.969,
+   "end_s": 13.249,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "aurat",
+   "start_s": 13.249,
+   "end_s": 13.588,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "haath",
+   "start_s": 13.588,
+   "end_s": 13.928,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "dikha",
+   "start_s": 13.928,
+   "end_s": 14.267,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "rahi",
+   "start_s": 14.267,
+   "end_s": 14.552,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "thi.",
+   "start_s": 14.552,
+   "end_s": 14.782,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "Pappu",
+   "start_s": 15.102,
+   "end_s": 15.49,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "bhaiya",
+   "start_s": 15.49,
+   "end_s": 15.834,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "nahi",
+   "start_s": 15.834,
+   "end_s": 16.083,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "ruke,",
+   "start_s": 16.083,
+   "end_s": 16.331,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "aur",
+   "start_s": 16.87,
+   "end_s": 17.085,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "aage",
+   "start_s": 17.085,
+   "end_s": 17.352,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "nikal",
+   "start_s": 17.352,
+   "end_s": 17.669,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "gaye.",
+   "start_s": 17.669,
+   "end_s": 17.936,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "10",
+   "start_s": 18.386,
+   "end_s": 18.587,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "kilometre",
+   "start_s": 18.587,
+   "end_s": 19.227,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "baad,",
+   "start_s": 19.227,
+   "end_s": 19.553,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "wahi",
+   "start_s": 19.936,
+   "end_s": 20.193,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "aurat",
+   "start_s": 20.193,
+   "end_s": 20.499,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "phir",
+   "start_s": 20.499,
+   "end_s": 20.835,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "khadi",
+   "start_s": 20.835,
+   "end_s": 21.141,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "thi,",
+   "start_s": 21.141,
+   "end_s": 21.349,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "usi",
+   "start_s": 21.881,
+   "end_s": 22.111,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "tarah",
+   "start_s": 22.111,
+   "end_s": 22.451,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "haath",
+   "start_s": 22.451,
+   "end_s": 22.9,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "dikhati",
+   "start_s": 22.9,
+   "end_s": 23.349,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "hui.",
+   "start_s": 23.349,
+   "end_s": 23.579,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "Agle",
+   "start_s": 23.899,
+   "end_s": 24.203,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "10",
+   "start_s": 24.203,
+   "end_s": 24.39,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "kilometre",
+   "start_s": 24.39,
+   "end_s": 24.985,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "baad",
+   "start_s": 24.985,
+   "end_s": 25.289,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "bhi",
+   "start_s": 25.289,
+   "end_s": 25.534,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "wahi",
+   "start_s": 25.534,
+   "end_s": 25.838,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "thi,",
+   "start_s": 25.838,
+   "end_s": 26.083,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "aur",
+   "start_s": 26.525,
+   "end_s": 26.747,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "uske",
+   "start_s": 26.747,
+   "end_s": 27.022,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "baad",
+   "start_s": 27.022,
+   "end_s": 27.297,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "bhi.",
+   "start_s": 27.297,
+   "end_s": 27.519,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "Chauthi",
+   "start_s": 27.969,
+   "end_s": 28.39,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "baar",
+   "start_s": 28.39,
+   "end_s": 28.657,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "wo",
+   "start_s": 28.657,
+   "end_s": 28.821,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "sadak",
+   "start_s": 28.821,
+   "end_s": 29.139,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "pe",
+   "start_s": 29.139,
+   "end_s": 29.371,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "nahi",
+   "start_s": 29.371,
+   "end_s": 29.638,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "thi.",
+   "start_s": 29.638,
+   "end_s": 29.854,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "Wo",
+   "start_s": 30.387,
+   "end_s": 30.531,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "side",
+   "start_s": 30.531,
+   "end_s": 30.765,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "mirror",
+   "start_s": 30.765,
+   "end_s": 31.089,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "mein",
+   "start_s": 31.089,
+   "end_s": 31.322,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "dikh",
+   "start_s": 31.322,
+   "end_s": 31.556,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "rahi",
+   "start_s": 31.556,
+   "end_s": 31.79,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "thi,",
+   "start_s": 31.79,
+   "end_s": 31.979,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "peeche",
+   "start_s": 32.468,
+   "end_s": 32.811,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "wali",
+   "start_s": 32.811,
+   "end_s": 33.059,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "seat",
+   "start_s": 33.059,
+   "end_s": 33.306,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "pe.",
+   "start_s": 33.306,
+   "end_s": 33.459,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "Ab",
+   "start_s": 34.309,
+   "end_s": 34.469,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "batao,",
+   "start_s": 34.469,
+   "end_s": 34.778,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "tum",
+   "start_s": 35.131,
+   "end_s": 35.358,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "hote",
+   "start_s": 35.358,
+   "end_s": 35.639,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "to",
+   "start_s": 35.639,
+   "end_s": 35.811,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "kya",
+   "start_s": 35.811,
+   "end_s": 36.038,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "karte?",
+   "start_s": 36.038,
+   "end_s": 36.373,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "A,",
+   "start_s": 36.823,
+   "end_s": 36.944,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "gaadi",
+   "start_s": 36.944,
+   "end_s": 37.462,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "roko.",
+   "start_s": 37.462,
+   "end_s": 37.749,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "B,",
+   "start_s": 37.749,
+   "end_s": 37.87,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "mirror",
+   "start_s": 38.249,
+   "end_s": 38.406,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "mat",
+   "start_s": 38.406,
+   "end_s": 38.498,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "dekho.",
+   "start_s": 38.498,
+   "end_s": 38.633,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "Truck",
+   "start_s": 38.971,
+   "end_s": 39.352,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "walon",
+   "start_s": 39.352,
+   "end_s": 39.733,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "ki",
+   "start_s": 39.733,
+   "end_s": 40.444,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "aur",
+   "start_s": 40.444,
+   "end_s": 40.702,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "kahaniyan",
+   "start_s": 40.702,
+   "end_s": 41.329,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "chahiye,",
+   "start_s": 41.329,
+   "end_s": 41.834,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "to",
+   "start_s": 41.834,
+   "end_s": 42.03,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "follow",
+   "start_s": 42.03,
+   "end_s": 42.59,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "karo.",
+   "start_s": 42.59,
+   "end_s": 42.91,
+   "speaker": "NARRATOR",
+   "line": 8
+  }
+ ],
+ "captions": [
+  {
+   "speaker": "NARRATOR",
+   "text": "Raat ko highway\npe koi haath",
+   "start_s": 0.04,
+   "end_s": 1.857,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "dikhaye, to\ngaadi mat rokna.",
+   "start_s": 1.877,
+   "end_s": 4.147,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Truck driver Pappu bhaiya ka\nek hi niyam tha, raat 12 baje",
+   "start_s": 4.167,
+   "end_s": 7.714,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "ke baad kisi\nko lift nahi.",
+   "start_s": 7.734,
+   "end_s": 9.846,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Us raat sadak kinare,",
+   "start_s": 10.1,
+   "end_s": 11.906,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "safed saree\nmein ek aurat",
+   "start_s": 11.926,
+   "end_s": 13.488,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "haath dikha rahi thi.",
+   "start_s": 13.508,
+   "end_s": 15.002,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Pappu bhaiya\nnahi ruke,",
+   "start_s": 15.022,
+   "end_s": 16.681,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "aur aage nikal gaye.",
+   "start_s": 16.79,
+   "end_s": 18.286,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "10 kilometre baad,",
+   "start_s": 18.306,
+   "end_s": 19.836,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "wahi aurat\nphir khadi thi,",
+   "start_s": 19.856,
+   "end_s": 21.699,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "usi tarah haath\ndikhati hui.",
+   "start_s": 21.801,
+   "end_s": 23.799,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Agle 10 kilometre\nbaad bhi",
+   "start_s": 23.819,
+   "end_s": 25.434,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "wahi thi, aur\nuske baad bhi.",
+   "start_s": 25.454,
+   "end_s": 27.869,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Chauthi baar wo\nsadak pe nahi thi.",
+   "start_s": 27.889,
+   "end_s": 30.204,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Wo side mirror mein dikh rahi\nthi, peeche wali seat pe.",
+   "start_s": 30.307,
+   "end_s": 33.809,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Ab batao, tum\nhote to kya karte?",
+   "start_s": 34.229,
+   "end_s": 36.723,
+   "safe_zone": true,
+   "line": 7
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "A, gaadi roko.",
+   "start_s": 36.743,
+   "end_s": 37.649,
+   "safe_zone": true,
+   "line": 8
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "B, mirror mat dekho.",
+   "start_s": 37.669,
+   "end_s": 38.871,
+   "safe_zone": true,
+   "line": 8
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Truck walon ki\naur kahaniyan",
+   "start_s": 38.891,
+   "end_s": 41.229,
+   "safe_zone": true,
+   "line": 8
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "chahiye, to\nfollow karo.",
+   "start_s": 41.249,
+   "end_s": 43.26,
+   "safe_zone": true,
+   "line": 8
+  }
+ ],
+ "audio_cues": [
+  {
+   "type": "sfx",
+   "name": "whoosh",
+   "t_s": 0.07,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "fan_hum",
+   "t_s": 4.247,
+   "gain_db": -12
+  },
+  {
+   "type": "sfx",
+   "name": "whoosh",
+   "t_s": 15.302,
+   "gain_db": -7
+  },
+  {
+   "type": "sfx",
+   "name": "heartbeat",
+   "t_s": 18.586,
+   "gain_db": -8
+  },
+  {
+   "type": "sfx",
+   "name": "whoosh",
+   "t_s": 23.999,
+   "gain_db": -8
+  },
+  {
+   "type": "sfx",
+   "name": "violin_stinger",
+   "t_s": 31.859,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "whoosh",
+   "t_s": 43.21,
+   "gain_db": -8
+  }
+ ]
+}

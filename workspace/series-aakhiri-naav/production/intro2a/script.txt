@@ -1,0 +1,5 @@
+[SCENE id=recap mood=suspense]
+[NARRATOR] पिछली बार सवाल था।
+[NARRATOR] A, नाव तक जाओ।
+[NARRATOR] B, किनारे रुको।
+[NARRATOR] A चुनते तो यह होता।

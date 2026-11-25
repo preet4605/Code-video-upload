@@ -1,0 +1,101 @@
+{
+ "mode": "script",
+ "verdict": "workable",
+ "reviewer_note": "Same-model self-critique is biased toward flattering its own draft. A human must read this aloud once and watch it with sound on a phone before posting.",
+ "answers": [
+  {
+   "id": "stranger_test",
+   "score": 4,
+   "evidence": "रात को कोई एक बार पुकारे... तो जवाब मत देना।",
+   "note": "Rule is the hook; a stranger knows the premise in 3s. Not shocking, but specific."
+  },
+  {
+   "id": "myth_grounding",
+   "score": 4,
+   "evidence": "इंसान हमेशा दो बार पुकारता है",
+   "note": "Framed as nani's saying. It is an invented family rule, labelled so in brief.belief_label; not claimed as a sourced regional tradition."
+  },
+  {
+   "id": "relatability",
+   "score": 5,
+   "evidence": "माँ बगल में सो रही थीं",
+   "note": "Own bed, own mother, kitchen down the hall."
+  },
+  {
+   "id": "violation",
+   "score": 4,
+   "evidence": "पर नींद में माँ बुदबुदाईं",
+   "note": "The narrator obeys the rule; the mother breaks it unknowingly. Dread shifts from self to loved one."
+  },
+  {
+   "id": "consequence",
+   "score": 4,
+   "evidence": "फिर रोशनी बुझ गई",
+   "note": "Consequence is implied by absence. Concrete but nothing is seen."
+  },
+  {
+   "id": "escalation",
+   "score": 4,
+   "evidence": "दो पैर रुके",
+   "note": "Beats 3->5 escalate, but beat 4 (still) is mostly one idea; middle is the weakest stretch."
+  },
+  {
+   "id": "withholding",
+   "score": 4,
+   "evidence": "तो बगल में जो लेटा था...",
+   "note": "The thing is never seen or described. Only a light strip and a shadow."
+  },
+  {
+   "id": "specificity",
+   "score": 4,
+   "evidence": "तीन बजकर सात मिनट",
+   "note": "Details that are not generic: a clock at 3:07, two feet in the light strip, counting to eleven, two cups both warm."
+  },
+  {
+   "id": "the_turn",
+   "score": 5,
+   "evidence": "सुबह रसोई से माँ ने पुकारा",
+   "note": "The dawn double call answers the hook: the real mother calls twice, so whatever came back to bed is the once-caller."
+  },
+  {
+   "id": "sound_scare",
+   "score": 3,
+   "evidence": "चप्पलें रसोई की ओर गईं",
+   "note": "Pre-scare drop + stinger is designed and measured; synthetic foley is unheard by a human."
+  },
+  {
+   "id": "ending_loop",
+   "score": 4,
+   "evidence": "उसने मेरी तरफ़ मुँह किया",
+   "note": "Ends on a one-word call then 'एक बार।' echoing the hook. Loop works only if viewers connect it."
+  },
+  {
+   "id": "cliche_scan",
+   "score": 4,
+   "note": "Cliché list clean. 'मैं सो गया।' is flat by design (false relief) but risks reading as filler; see weakest_line."
+  },
+  {
+   "id": "code_visual_feasible",
+   "score": 3,
+   "note": "3D kit gives depth and light, but the face is still a drawn face; it depends on darkness and a short look."
+  },
+  {
+   "id": "bluff_plot_without_adjectives",
+   "score": 4,
+   "evidence": "माँ चुपचाप बगल में लेट गईं",
+   "plot_events": [
+    "तभी रसोई से माँ की आवाज़ आई",
+    "पर नींद में माँ बुदबुदाईं",
+    "फिर रोशनी बुझ गई",
+    "माँ चुपचाप बगल में लेट गईं",
+    "सुबह रसोई से माँ ने पुकारा",
+    "उसने मेरी तरफ़ मुँह किया"
+   ],
+   "note": "Strip every adjective and the plot survives: call, answer, walk away, light out, morning returns the call."
+  }
+ ],
+ "weakest_line": {
+  "quote": "मैं सो गया।",
+  "rewrite": "मैंने उनकी पीठ से सटकर आँखें बंद कर लीं।"
+ }
+}

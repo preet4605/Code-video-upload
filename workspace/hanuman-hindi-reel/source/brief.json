@@ -1,0 +1,15 @@
+{
+  "platform": "reels",
+  "genre": "story",
+  "lang": "hinglish",
+  "viewer": "Hindi-speaking families and young adults who enjoy light, funny retellings of mythology kathas",
+  "hook": "Arre beta, main aam nahi hoon, main Suraj hoon!",
+  "payoff": "The chin mark (hanu) gives baby Hanuman his name, and the scared Sun quietly hides behind a cloud.",
+  "cta": "Katha pasand aayi? Follow karo",
+  "target_duration_s": 152,
+  "loop": false,
+  "sources": [
+    "Structure and pacing follow a reference reel (instagram.com/reel/Dfvpm6MRBke) supplied by the user; script translated to Hindi; all visuals and audio are original (code-drawn art, Kalpa TTS voice). Story: traditional Hanuman birth/childhood katha (public-domain mythology)."
+  ],
+  "allow_long": true
+}

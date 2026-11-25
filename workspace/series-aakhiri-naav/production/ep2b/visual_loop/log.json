@@ -1,0 +1,310 @@
+{
+  "targets": "../../../../../../../mnt/attach/project-files/skills/code-video-studio-v6.1/templates/visual_targets.horror.json",
+  "iterations": [
+    {
+      "iter": 1,
+      "pass": false,
+      "mean_score": 0.364,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "hook",
+          "pass": false,
+          "score": 0.365,
+          "metrics": {
+            "sharp_edges": 0.0061,
+            "contrast": 22.5333,
+            "mean_luma": 29.8,
+            "color_bins": 13.3333,
+            "saturation": 0.317,
+            "ink": 0.0048,
+            "focal": 4.19,
+            "hue_families": 3.6667,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "calls",
+          "pass": false,
+          "score": 0.348,
+          "metrics": {
+            "sharp_edges": 0.0043,
+            "contrast": 29.7667,
+            "mean_luma": 47.4333,
+            "color_bins": 16,
+            "saturation": 0.307,
+            "ink": 0.0013,
+            "focal": 4.8,
+            "hue_families": 1.3333,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "walk",
+          "pass": false,
+          "score": 0.306,
+          "metrics": {
+            "sharp_edges": 0.0025,
+            "contrast": 17.0333,
+            "mean_luma": 25.5333,
+            "color_bins": 8,
+            "saturation": 0.4093,
+            "ink": 0.0018,
+            "focal": 5.9667,
+            "hue_families": 1.6667,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "voice",
+          "pass": false,
+          "score": 0.283,
+          "metrics": {
+            "sharp_edges": 0.0015,
+            "contrast": 14.2667,
+            "mean_luma": 22.4,
+            "color_bins": 6.3333,
+            "saturation": 0.585,
+            "ink": 0.001,
+            "focal": 8.0333,
+            "hue_families": 1,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "under",
+          "pass": false,
+          "score": 0.359,
+          "metrics": {
+            "sharp_edges": 0.0055,
+            "contrast": 21.7667,
+            "mean_luma": 23.9333,
+            "color_bins": 10.3333,
+            "saturation": 0.5107,
+            "ink": 0.0044,
+            "focal": 6.6067,
+            "hue_families": 1.6667,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.544,
+          "metrics": {
+            "sharp_edges": 0.0094,
+            "contrast": 39.5667,
+            "mean_luma": 38.7,
+            "color_bins": 12,
+            "saturation": 0.3657,
+            "ink": 0.0067,
+            "focal": 4.6967,
+            "hue_families": 1,
+            "empty_cells": 8
+          }
+        },
+        {
+          "id": "relief",
+          "pass": false,
+          "score": 0.268,
+          "metrics": {
+            "sharp_edges": 0.002,
+            "contrast": 9.6333,
+            "mean_luma": 14.6,
+            "color_bins": 5.3333,
+            "saturation": 0.5367,
+            "ink": 0.0018,
+            "focal": 6.3267,
+            "hue_families": 0.6667,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "wave",
+          "pass": false,
+          "score": 0.38,
+          "metrics": {
+            "sharp_edges": 0.0103,
+            "contrast": 20.6,
+            "mean_luma": 23.7667,
+            "color_bins": 12,
+            "saturation": 0.5557,
+            "ink": 0.0056,
+            "focal": 5.6833,
+            "hue_families": 1.3333,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "loop",
+          "pass": false,
+          "score": 0.423,
+          "metrics": {
+            "sharp_edges": 0.0083,
+            "contrast": 20.6667,
+            "mean_luma": 27.9667,
+            "color_bins": 18,
+            "saturation": 0.5393,
+            "ink": 0.0057,
+            "focal": 4.1667,
+            "hue_families": 2,
+            "empty_cells": 9
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 2,
+      "pass": false,
+      "mean_score": 0.562,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "hook",
+          "pass": false,
+          "score": 0.594,
+          "metrics": {
+            "sharp_edges": 0.0181,
+            "contrast": 24.6667,
+            "mean_luma": 32.1333,
+            "color_bins": 16.6667,
+            "saturation": 0.3387,
+            "ink": 0.016,
+            "focal": 4.05,
+            "hue_families": 3.3333,
+            "empty_cells": 6
+          }
+        },
+        {
+          "id": "calls",
+          "pass": false,
+          "score": 0.461,
+          "metrics": {
+            "sharp_edges": 0.0102,
+            "contrast": 30.6667,
+            "mean_luma": 48.7667,
+            "color_bins": 17,
+            "saturation": 0.3093,
+            "ink": 0.0064,
+            "focal": 3.8433,
+            "hue_families": 1.3333,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "walk",
+          "pass": false,
+          "score": 0.452,
+          "metrics": {
+            "sharp_edges": 0.0124,
+            "contrast": 18.6667,
+            "mean_luma": 27.3667,
+            "color_bins": 11.3333,
+            "saturation": 0.418,
+            "ink": 0.0116,
+            "focal": 3.8133,
+            "hue_families": 1.6667,
+            "empty_cells": 10
+          }
+        },
+        {
+          "id": "voice",
+          "pass": false,
+          "score": 0.416,
+          "metrics": {
+            "sharp_edges": 0.0089,
+            "contrast": 15.0667,
+            "mean_luma": 23.8333,
+            "color_bins": 11,
+            "saturation": 0.5747,
+            "ink": 0.0084,
+            "focal": 3.6433,
+            "hue_families": 1,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "under",
+          "pass": false,
+          "score": 0.681,
+          "metrics": {
+            "sharp_edges": 0.024,
+            "contrast": 24.3333,
+            "mean_luma": 27.1333,
+            "color_bins": 15.3333,
+            "saturation": 0.504,
+            "ink": 0.0223,
+            "focal": 3.57,
+            "hue_families": 2,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.788,
+          "metrics": {
+            "sharp_edges": 0.0274,
+            "contrast": 40.4667,
+            "mean_luma": 38.3667,
+            "color_bins": 15.6667,
+            "saturation": 0.3547,
+            "ink": 0.0243,
+            "focal": 2.5133,
+            "hue_families": 1.3333,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "relief",
+          "pass": false,
+          "score": 0.606,
+          "metrics": {
+            "sharp_edges": 0.0201,
+            "contrast": 15.8667,
+            "mean_luma": 19.3,
+            "color_bins": 11.6667,
+            "saturation": 0.531,
+            "ink": 0.0196,
+            "focal": 3.9033,
+            "hue_families": 2.3333,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "wave",
+          "pass": false,
+          "score": 0.497,
+          "metrics": {
+            "sharp_edges": 0.0174,
+            "contrast": 22.7333,
+            "mean_luma": 25.2667,
+            "color_bins": 15,
+            "saturation": 0.543,
+            "ink": 0.0123,
+            "focal": 4.48,
+            "hue_families": 1.3333,
+            "empty_cells": 10
+          }
+        },
+        {
+          "id": "loop",
+          "pass": false,
+          "score": 0.564,
+          "metrics": {
+            "sharp_edges": 0.0163,
+            "contrast": 23.1667,
+            "mean_luma": 29.4667,
+            "color_bins": 20,
+            "saturation": 0.5213,
+            "ink": 0.0127,
+            "focal": 4.8167,
+            "hue_families": 2.3333,
+            "empty_cells": 6
+          }
+        }
+      ]
+    }
+  ]
+}

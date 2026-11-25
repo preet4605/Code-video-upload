@@ -1,0 +1,36 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Hindi-speaking students and young adults, 15-30, scrolling a feed of dark horror reels",
+ "hook": "The whole school's shadows are gone at noon. One wet footprint trail crosses the white courtyard.",
+ "payoff": "For one minute the dead look like the living. Raju took the narrator's hand and the one shadow that returned: the narrator's stayed with Raju, who went home as him.",
+ "cta": "",
+ "belief_label": "Dadi's rule is an invented family saying, not a sourced regional tradition. Zero Shadow Day itself is a real astronomical event (sun at the zenith at local solar noon, twice a year south of 23.5 N, about one minute).",
+ "target_duration_s": 62, "loop": true,
+ "format": "standalone",
+ "sound": { "ambience": ["cicadas", "loo wind"] },
+ "sources": ["Original story (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS (Aman), sound synthesized in code. No third-party footage, images or audio. Science background: https://www.scienceabc.com/eyeopeners/what-is-the-zero-shadow-day.html"],
+ "story": {
+  "setup": "School courtyard on Zero Shadow Day. Dadi has warned the narrator not to hold anyone's hand; master ji makes everyone hold hands.",
+  "rule_or_clue": [
+   { "type": "rule", "text": "do not hold anyone's hand today", "line": "दादी ने कहा था, आज किसी का हाथ मत पकड़ना।" },
+   { "type": "rule", "text": "dead and living look alike for a minute, only one shadow returns", "line": "उस एक मिनट में ज़िंदा और मुर्दे में फ़र्क़ नहीं रहता, और परछाईं सिर्फ़ एक ही लौटती है।" },
+   { "type": "clue", "text": "Raju was alone at the well last year on this day and never came back", "line": "पिछले साल इसी दिन, राजू कुएँ पे अकेला था। वापस नहीं आया।" }
+  ],
+  "escalation": [
+   { "text": "every shadow shrinks away, sound dies", "line": "फिर एक एक करके, सबकी परछाईं गायब हो गई।" },
+   { "text": "a cold hand takes his in 40 degree heat", "line": "किसी ने मेरा हाथ पकड़ा। चालीस डिग्री में भी, हाथ ठंडा था।" },
+   { "text": "it is Raju, wet hair, a drop on hot stone", "line": "वो राजू था। बाल गीले, बूँद टपकती हुई।" }
+  ],
+  "false_relief": { "text": "shadows return, one appears under his feet, he breathes out", "line": "परछाइयाँ लौटीं। मेरी भी। मैंने साँस ली।" },
+  "twist": {
+   "text": "he lets go and his shadow stays joined to Raju's feet",
+   "line": "मैंने हाथ छुड़ाया। मेरी परछाईं राजू के पैरों से जुड़ी रही।",
+   "explains_hook": true,
+   "how": "The hook says every shadow was gone and the rule says dead and living look alike for a minute: Raju used that minute to take the one shadow that came back, so the boy who walks home is Raju and the narrator is the one left shadowless."
+  },
+  "ending_image": { "text": "bright empty courtyard, the narrator alone with his hand raised and no shadow; wet footprints evaporating at his feet" },
+  "callback": { "text": "wet footprints evaporating on hot stone, now at his own feet", "line": "परछाईं गायब हो, तो किसी का हाथ मत पकड़ना।" },
+  "threat": { "planted_by": { "line": "राजू कुएँ पे अकेला था" }, "first_seen": { "line": "वो राजू था।" } },
+  "scare_pattern": "daylight swap: a dead friend takes your hand and your shadow"
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.7,
+ "gap": 0.32,
+ "tempo": 1.1,
+ "tail_s": 2.0,
+ "scenes_meta": { "hook": {"mood":"suspense","props":["rule.slam"]}, "twist": {"mood":"climax","props":["bed.push"]}, "cta_loop": {"mood":"suspense","props":["choice.cards"]} },
+ "extra_sfx": [ {"name":"stamp_slam","t_s":"end","before_end":1.7,"gain_db":-5} ],
+ "lines": [
+  {"sc":"hook","hi":"किसी ने तीसरा नियम तोड़ दिया।","hl":"Kisi ne teesra niyam tod diya.","gap":0.55,"sfx":[{"name":"stamp_slam","dt":-0.08,"gain_db":-4}]},
+  {"sc":"recap","hi":"पार्ट दो में बताया था, अगर रात को छत से आवाज़ आए, तो बिस्तर मत छोड़ना।","hl":"Part 2 mein bataya tha, agar raat ko chhat se awaaz aaye, to bistar mat chhodna."},
+  {"sc":"recap","hi":"पर रिया ने ये नियम नहीं माना।","hl":"Par Riya ne ye niyam nahi maana.","gap":0.45},
+  {"sc":"stairs","hi":"रात के दो बजकर तीन मिनट पर, ऊपर दौड़ने की आवाज़ अचानक रुक गई।","hl":"Raat ke 2 baj kar 3 minute pe, upar daudne ki awaaz achanak ruk gayi.","sfx":[{"name":"footsteps_run","dt":0.1,"gain_db":-8}]},
+  {"sc":"stairs","hi":"रिया उठी, और धीरे-धीरे सीढ़ियों तक गई।","hl":"Riya uthi, aur dheere dheere seedhiyon tak gayi."},
+  {"sc":"stairs","hi":"छत का दरवाज़ा, जो हर रात बंद रहता था, आज खुला हुआ था।","hl":"Chhat ka darwaza, jo har raat band rehta tha, aaj khula hua tha.","gap":0.45,"sfx":[{"name":"door_creak","at":"end","dt":-0.9,"gain_db":-6}]},
+  {"sc":"roof","hi":"छत पर कोई नहीं था, बस ज़मीन पर गीले पैरों के निशान थे।","hl":"Chhat pe koi nahi tha, bas zameen pe geele pairon ke nishaan the.","sfx":[{"name":"whisper_gust","dt":0.2,"gain_db":-10}]},
+  {"sc":"roof","hi":"नंगे पैर, और उनकी उंगलियाँ पीछे की तरफ़ थीं, यानी पैर उल्टे थे।","hl":"Nange pair, aur unki ungliyan peeche ki taraf thi, yaani pair ulte the.","gap":0.45,"sfx":[{"name":"heartbeat","at":"end","dt":-1.6,"gain_db":-6}]},
+  {"sc":"bed","hi":"रिया डर के मारे भागकर नीचे अपने कमरे में आई।","hl":"Riya darr ke maare bhaag kar neeche apne kamre mein aayi."},
+  {"sc":"bed","hi":"पर उसके बिस्तर पर कोई पहले से सो रहा था, बिलकुल उसी के जैसे कपड़े पहनकर।","hl":"Par uske bistar pe koi pehle se so raha tha, bilkul usi ke jaise kapde pehen kar.","gap":0.85},
+  {"sc":"twist","hi":"अब बताओ, नीचे बिस्तर पर कौन है?","hl":"Ab batao, neeche bistar pe kaun hai?","gap":0.4,"sfx":[{"name":"violin_stinger","dt":-0.05,"gain_db":-6}]},
+  {"sc":"cta_loop","hi":"ए या बी, कमेंट करो। पार्ट चार में जवाब मिलेगा।","hl":"A ya B, comment karo. Part 4 mein jawab milega."}
+ ]
+}

@@ -1,0 +1,319 @@
+{
+ "version": "1.0",
+ "slug": "outro2",
+ "aspect": "9:16",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "duration_s": 9.268,
+ "target_lufs": -14,
+ "true_peak_dbtp": -1.5,
+ "audio_file": "voiceover.wav",
+ "alignment": {
+  "method": "voiced-span-weighted",
+  "line_anchored": true,
+  "note": "One TTS clip per line; word timing inside a line is voiced-span weighted."
+ },
+ "scenes": [
+  {
+   "id": "ask",
+   "start_s": 0,
+   "end_s": 9.268,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 0,
+     "start_s": 0.1,
+     "end_s": 2.987
+    },
+    {
+     "i": 1,
+     "start_s": 3.207,
+     "end_s": 4.984
+    },
+    {
+     "i": 2,
+     "start_s": 5.084,
+     "end_s": 6.923
+    },
+    {
+     "i": 3,
+     "start_s": 7.103,
+     "end_s": 9.068
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 2.317,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 4.634,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 6.951,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "i": 0,
+   "speaker": "NARRATOR",
+   "text": "अब तुम बताओ, मेरे कंधे पर कुछ गीला है।",
+   "start_s": 0.1,
+   "end_s": 2.987
+  },
+  {
+   "i": 1,
+   "speaker": "NARRATOR",
+   "text": "A, उसे छूकर देखो।",
+   "start_s": 3.207,
+   "end_s": 4.984
+  },
+  {
+   "i": 2,
+   "speaker": "NARRATOR",
+   "text": "B, झील को पुकारो।",
+   "start_s": 5.084,
+   "end_s": 6.923
+  },
+  {
+   "i": 3,
+   "speaker": "NARRATOR",
+   "text": "कमेंट करो, A या B?",
+   "start_s": 7.103,
+   "end_s": 9.068
+  }
+ ],
+ "words": [
+  {
+   "word": "अब",
+   "start_s": 0.1,
+   "end_s": 0.276,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "तुम",
+   "start_s": 0.276,
+   "end_s": 0.451,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "बताओ,",
+   "start_s": 0.451,
+   "end_s": 0.682,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "मेरे",
+   "start_s": 1.128,
+   "end_s": 1.443,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "कंधे",
+   "start_s": 1.443,
+   "end_s": 1.758,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "पर",
+   "start_s": 1.758,
+   "end_s": 2.141,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "कुछ",
+   "start_s": 2.141,
+   "end_s": 2.455,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "गीला",
+   "start_s": 2.455,
+   "end_s": 2.77,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "है।",
+   "start_s": 2.77,
+   "end_s": 2.987,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "A,",
+   "start_s": 3.207,
+   "end_s": 3.511,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "उसे",
+   "start_s": 3.802,
+   "end_s": 4.159,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "छूकर",
+   "start_s": 4.159,
+   "end_s": 4.628,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "देखो।",
+   "start_s": 4.628,
+   "end_s": 4.984,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "B,",
+   "start_s": 5.084,
+   "end_s": 5.447,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "झील",
+   "start_s": 5.954,
+   "end_s": 6.277,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "को",
+   "start_s": 6.277,
+   "end_s": 6.499,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "पुकारो।",
+   "start_s": 6.499,
+   "end_s": 6.923,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "कमेंट",
+   "start_s": 7.103,
+   "end_s": 7.44,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "करो,",
+   "start_s": 7.44,
+   "end_s": 7.697,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "A",
+   "start_s": 8.121,
+   "end_s": 8.391,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "या",
+   "start_s": 8.391,
+   "end_s": 8.799,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "B?",
+   "start_s": 8.799,
+   "end_s": 9.068,
+   "speaker": "NARRATOR",
+   "line": 3
+  }
+ ],
+ "captions": [
+  {
+   "speaker": "NARRATOR",
+   "text": "अब तुम बताओ, मेरे\nकंधे पर कुछ गीला है।",
+   "start_s": 0.02,
+   "end_s": 3.107,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "A, उसे छूकर देखो।",
+   "start_s": 3.127,
+   "end_s": 4.984,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "B, झील को पुकारो।",
+   "start_s": 5.004,
+   "end_s": 7.003,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "कमेंट करो, A या B?",
+   "start_s": 7.023,
+   "end_s": 9.268,
+   "safe_zone": true,
+   "line": 3
+  }
+ ],
+ "audio_cues": []
+}

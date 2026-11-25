@@ -1,0 +1,16 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.7, "tempo": 1.1, "gap": 0.32, "tail_s": 2.0,
+ "scenes_meta": { "hook": {"mood":"suspense","props":["threads.sway"]}, "cta_loop": {"mood":"suspense","props":["choice.cards","threads.sway"]} },
+ "extra_sfx": [ {"name":"whisper_gust","t_s":"end","before_end":1.7,"gain_db":-8} ],
+ "lines": [
+  {"sc":"hook","hi":"गाँव में कहते हैं, पीपल के पेड़ के नीचे रात को कभी मत सोना।","hl":"Gaon mein kehte hain, peepal ke ped ke neeche raat ko kabhi mat sona.","gap":0.45,"sfx":[{"name":"whisper_gust","dt":0,"gain_db":-7}]},
+  {"sc":"setup","hi":"नानाजी के गाँव में एक बहुत पुराना पीपल था, जिस पर लोग मन्नत के धागे बाँधते थे।","hl":"Nanaji ke gaon mein ek bahut purana peepal tha, jis pe log mannat ke dhaage baandhte the."},
+  {"sc":"setup","hi":"और उसका एक ही नियम था, रात को उसके नीचे मत सोना।","hl":"Aur uska ek hi niyam tha, raat ko uske neeche mat sona.","gap":0.45,"sfx":[{"name":"temple_bell","dt":0.2,"gain_db":-12}]},
+  {"sc":"monu","hi":"मेरा कज़िन मोनू इस बात पर हँसा, और उसी रात वहीं सो गया।","hl":"Mera cousin Monu is baat pe hasa, aur usi raat wahin so gaya.","gap":0.45,"sfx":[{"name":"whisper_gust","at":"end","dt":-0.4,"gain_db":-9}]},
+  {"sc":"morning","hi":"सुबह जब वो उठा, तो कुछ बोल नहीं रहा था।","hl":"Subah jab wo utha, to kuch bol nahi raha tha."},
+  {"sc":"morning","hi":"बस एक धागे की तरफ़ एकटक देख रहा था, एक काले धागे की तरफ़।","hl":"Bas ek dhaage ki taraf ektak dekh raha tha, ek kaale dhaage ki taraf.","gap":0.85,"sfx":[{"name":"heartbeat","dt":0.3,"gain_db":-8}]},
+  {"sc":"twist","hi":"उस धागे पर उसका नाम लिखा था, और एक तारीख़, आज की।","hl":"Us dhaage pe uska naam likha tha, aur ek tareekh, aaj ki.","gap":0.5,"sfx":[{"name":"violin_stinger","at":"end","dt":-1.0,"gain_db":-6}]},
+  {"sc":"cta_loop","hi":"तुम्हारे गाँव में कौन सा पेड़ है, जिसके पास रात को कोई नहीं जाता? पीपल, इमली या बरगद, कमेंट करो।","hl":"Tumhare gaon mein kaunsa ped hai, jiske paas raat ko koi nahi jaata? Peepal, Imli ya Bargad, comment karo."}
+ ]
+}

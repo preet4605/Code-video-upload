@@ -1,0 +1,16 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.7, "tempo": 1.1, "gap": 0.32, "tail_s": 2.2,
+ "scenes_meta": { "hook": {"mood":"suspense","props":["knock.counter"]}, "cta_loop": {"mood":"suspense","props":["choice.cards","knock.counter"]} },
+ "extra_sfx": [ {"name":"door_knock","t_s":"end","before_end":1.7,"gain_db":-4} ],
+ "lines": [
+  {"sc":"hook","hi":"इंसान तीन बार खटखटाता है। ये, दो बार खटखटाता है।","hl":"Insaan teen baar khatkhatata hai. Ye, do baar khatkhatata hai.","gap":0.5,"sfx":[{"name":"door_knock","dt":-0.1,"gain_db":-4}]},
+  {"sc":"rule","hi":"रात दो बजे वाले घर का आख़िरी नियम, दरवाज़ा दो बार खटके, तो मत खोलना।","hl":"Raat 2 Baje wale ghar ka aakhri niyam, darwaza do baar khatke, to mat kholna.","gap":0.45},
+  {"sc":"riya","hi":"रिया ने तीसरा नियम तोड़ा था, और उसके बाद हर रात दो बजे, दो खटके आते थे।","hl":"Riya ne teesra niyam toda tha, aur uske baad har raat 2 baje, do khatke aate the.","gap":0.45,"sfx":[{"name":"door_knock","at":"end","dt":-0.4,"gain_db":-6}]},
+  {"sc":"third","hi":"फिर एक रात तीसरा खटका भी आया। रिया ने सोचा कोई इंसान है, और दरवाज़ा खोल दिया।","hl":"Phir ek raat teesra khatka bhi aaya. Riya ne socha koi insaan hai, aur darwaza khol diya.","gap":0.5,"sfx":[{"name":"thud","dt":0.9,"gain_db":-6},{"name":"door_creak","at":"end","dt":-1.0,"gain_db":-6}]},
+  {"sc":"outside","hi":"पर बाहर कोई भी नहीं था।","hl":"Par bahar koi bhi nahi tha.","gap":0.9,"sfx":[{"name":"whisper_gust","dt":0.1,"gain_db":-9}]},
+  {"sc":"twist","hi":"क्योंकि वो तीसरा खटका, अंदर से आया था।","hl":"Kyunki wo teesra khatka, andar se aaya tha.","gap":0.5,"sfx":[{"name":"thud","at":"end","dt":-0.9,"gain_db":-4},{"name":"violin_stinger","at":"end","dt":-0.85,"gain_db":-6}]},
+  {"sc":"cta_loop","hi":"रात दो बजे का सीज़न एक खत्म। सीज़न दो में क्या हो? ए, रिया बचती है। बी, घर जीत जाता है।","hl":"Raat 2 Baje ka Season 1 khatam. Season 2 mein kya ho? A, Riya bachti hai. B, ghar jeet jaata hai."},
+  {"sc":"cta_loop","hi":"फ़ॉलो करो, ताकि सीज़न दो सबसे पहले तुम्हें मिले।","hl":"Follow karo, taaki Season 2 sabse pehle tumhe mile."}
+ ]
+}

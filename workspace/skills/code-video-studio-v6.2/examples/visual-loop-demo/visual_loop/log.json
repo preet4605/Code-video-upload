@@ -1,0 +1,223 @@
+{
+  "targets": "../../templates/visual_targets.json",
+  "iterations": [
+    {
+      "iter": 1,
+      "pass": false,
+      "mean_score": 0.319,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "room",
+          "pass": false,
+          "score": 0.256,
+          "metrics": {
+            "sharp_edges": 0.0017,
+            "contrast": 10.1,
+            "mean_luma": 46.1,
+            "color_bins": 4,
+            "saturation": 0.476,
+            "ink": 0.0002,
+            "focal": 31,
+            "empty_cells": 12
+          }
+        },
+        {
+          "id": "door",
+          "pass": false,
+          "score": 0.208,
+          "metrics": {
+            "sharp_edges": 0,
+            "contrast": 1.6,
+            "mean_luma": 44.7,
+            "color_bins": 2,
+            "saturation": 0.466,
+            "ink": 0,
+            "focal": 0,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.492,
+          "metrics": {
+            "sharp_edges": 0.0074,
+            "contrast": 47.4,
+            "mean_luma": 62.2,
+            "color_bins": 4,
+            "saturation": 0.472,
+            "ink": 0.0048,
+            "focal": 4.17,
+            "empty_cells": 10
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 2,
+      "pass": false,
+      "mean_score": 0.712,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "room",
+          "pass": false,
+          "score": 0.914,
+          "metrics": {
+            "sharp_edges": 0.0487,
+            "contrast": 30,
+            "mean_luma": 70.4667,
+            "color_bins": 35.6667,
+            "saturation": 0.509,
+            "ink": 0.0389,
+            "focal": 2.24,
+            "empty_cells": 0
+          }
+        },
+        {
+          "id": "door",
+          "pass": false,
+          "score": 0.628,
+          "metrics": {
+            "sharp_edges": 0.0236,
+            "contrast": 28.1,
+            "mean_luma": 83.8,
+            "color_bins": 27.3333,
+            "saturation": 0.4667,
+            "ink": 0.018,
+            "focal": 4.1533,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.595,
+          "metrics": {
+            "sharp_edges": 0.0174,
+            "contrast": 24.3667,
+            "mean_luma": 97.4333,
+            "color_bins": 18.3333,
+            "saturation": 0.4947,
+            "ink": 0.0142,
+            "focal": 2.77,
+            "empty_cells": 5
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 3,
+      "pass": false,
+      "mean_score": 0.87,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "room",
+          "pass": true,
+          "score": 0.926,
+          "metrics": {
+            "sharp_edges": 0.0584,
+            "contrast": 36.1333,
+            "mean_luma": 72.1,
+            "color_bins": 35.6667,
+            "saturation": 0.4923,
+            "ink": 0.0441,
+            "focal": 4.4867,
+            "empty_cells": 3
+          }
+        },
+        {
+          "id": "door",
+          "pass": true,
+          "score": 0.755,
+          "metrics": {
+            "sharp_edges": 0.0297,
+            "contrast": 33.8333,
+            "mean_luma": 82,
+            "color_bins": 28.6667,
+            "saturation": 0.4683,
+            "ink": 0.022,
+            "focal": 3.09,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.93,
+          "metrics": {
+            "sharp_edges": 0.0426,
+            "contrast": 47.5,
+            "mean_luma": 109.3333,
+            "color_bins": 23.3333,
+            "saturation": 0.478,
+            "ink": 0.0337,
+            "focal": 1.9167,
+            "empty_cells": 1
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 4,
+      "pass": true,
+      "mean_score": 0.829,
+      "regressions": [
+        "face got worse (-0.125): revert that change or justify it in the critique"
+      ],
+      "shots": [
+        {
+          "id": "room",
+          "pass": true,
+          "score": 0.926,
+          "metrics": {
+            "sharp_edges": 0.0584,
+            "contrast": 36.1333,
+            "mean_luma": 72.1,
+            "color_bins": 35.6667,
+            "saturation": 0.4923,
+            "ink": 0.0441,
+            "focal": 4.4867,
+            "empty_cells": 3
+          }
+        },
+        {
+          "id": "door",
+          "pass": true,
+          "score": 0.755,
+          "metrics": {
+            "sharp_edges": 0.0297,
+            "contrast": 33.8333,
+            "mean_luma": 82,
+            "color_bins": 28.6667,
+            "saturation": 0.4683,
+            "ink": 0.022,
+            "focal": 3.09,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "face",
+          "pass": true,
+          "score": 0.805,
+          "metrics": {
+            "sharp_edges": 0.0327,
+            "contrast": 57.4333,
+            "mean_luma": 90.3333,
+            "color_bins": 38,
+            "saturation": 0.467,
+            "ink": 0.0227,
+            "focal": 2.4967,
+            "empty_cells": 4
+          }
+        }
+      ],
+      "critique_min": 3
+    }
+  ]
+}

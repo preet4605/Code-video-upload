@@ -1,0 +1,220 @@
+{
+ "scenes": [
+  {
+   "id": "hook",
+   "subject": "Moonlit bedroom, the shut door across the room",
+   "layers": {
+    "foreground": "dust motes in the moon cone",
+    "midground": "door with brass handle, red clock on the dresser",
+    "background": "back wall, rotating fan above"
+   },
+   "light_source": "moon cone through the left window; red clock glow",
+   "focal_point": [
+    540,
+    800
+   ],
+   "motion": "fan blades turn, dust drifts, moon dims behind clouds",
+   "camera": "slow dolly forward from the bed toward the door, handheld",
+   "sound_cue": "fan_hum + room tone",
+   "sync_word": "पुकारे",
+   "details": [
+    "rotating ceiling fan",
+    "moon cone with dust",
+    "red clock glow",
+    "door panels and handle",
+    "fog bank at floor level"
+   ],
+   "withheld": "what is behind the door",
+   "intensity": 2
+  },
+  {
+   "id": "nani",
+   "subject": "Nani's room: the diya, her silhouette, her shadow twice her size",
+   "layers": {
+    "foreground": "diya flame flicker",
+    "midground": "nani silhouette rim-lit orange",
+    "background": "huge shadow on the wall, shelf of pots, framed photo"
+   },
+   "light_source": "single diya, warm, flickering",
+   "focal_point": [
+    560,
+    900
+   ],
+   "motion": "flame flicker, shadow sway",
+   "camera": "slow push-in with drift",
+   "sound_cue": "room tone, quieter bed",
+   "sync_word": "नानी",
+   "details": [
+    "diya flame",
+    "rim light on nani",
+    "her giant wall shadow",
+    "shelf with four pots",
+    "framed photo"
+   ],
+   "withheld": "her face",
+   "intensity": 1
+  },
+  {
+   "id": "wake",
+   "subject": "Low shot past mother's sleeping head toward the door; a light strip appears",
+   "layers": {
+    "foreground": "mother from behind, rim-lit, breathing",
+    "midground": "bed edge, red clock",
+    "background": "door; strip of light under it after the call"
+   },
+   "light_source": "moon + warm strip under the door",
+   "focal_point": [
+    540,
+    1000
+   ],
+   "motion": "breathing, strip flicker, fan",
+   "camera": "low push-in toward the door, handheld",
+   "sound_cue": "heartbeat starts; the call",
+   "sync_word": "बेटा",
+   "details": [
+    "mother's hair and blanket folds",
+    "rim light on her shoulder",
+    "light strip under the door",
+    "door panels",
+    "dust in the moon cone"
+   ],
+   "withheld": "who is calling",
+   "intensity": 3
+  },
+  {
+   "id": "still",
+   "subject": "Mother sits up in her sleep and answers",
+   "layers": {
+    "foreground": "mother rising out of frame, rim-lit",
+    "midground": "her silhouette filling the right edge",
+    "background": "the door with its strip"
+   },
+   "light_source": "moon rim; strip glow",
+   "focal_point": [
+    700,
+    900
+   ],
+   "motion": "she rises; breath; heartbeat speeds up",
+   "camera": "push-in with growing handheld",
+   "sound_cue": "whispered हाँ, heartbeat faster",
+   "sync_word": "हाँ",
+   "details": [
+    "rim light on her shoulder",
+    "silhouette rising at frame edge",
+    "strip under the door",
+    "clock glow",
+    "fog bank"
+   ],
+   "withheld": "her face; whether she is awake",
+   "intensity": 4
+  },
+  {
+   "id": "kitchen",
+   "subject": "Floor-level shot at the door: two feet stand in the light, then it dies",
+   "layers": {
+    "foreground": "long foot shadows on the floor",
+    "midground": "two foot gaps in the light strip",
+    "background": "the door, dark room"
+   },
+   "light_source": "only the warm strip under the door",
+   "focal_point": [
+    700,
+    800
+   ],
+   "motion": "strip flicker, feet appear, the light dies",
+   "camera": "floor-level dolly toward the door, handheld",
+   "sound_cue": "slippers, thud, then silence",
+   "sync_word": "रुके",
+   "details": [
+    "two feet in the strip",
+    "long cast shadows toward camera",
+    "door panels",
+    "light dying",
+    "dust in the strip glow"
+   ],
+   "withheld": "what stands outside the door",
+   "intensity": 5
+  },
+  {
+   "id": "return",
+   "subject": "Darkness; something in mother's shape crosses from the door to the bed",
+   "layers": {
+    "foreground": "the shape crossing, rim-lit at the edge of frame",
+    "midground": "the bed, mother's side",
+    "background": "door, moon cone"
+   },
+   "light_source": "moon only (cloud cover moving)",
+   "focal_point": [
+    560,
+    900
+   ],
+   "motion": "silhouette crosses, settles, breathing stops",
+   "camera": "slow pan following the shape, handheld",
+   "sound_cue": "door creak, slippers, false-relief quiet",
+   "sync_word": "लौटीं",
+   "details": [
+    "rim-lit silhouette crossing",
+    "bed with blanket",
+    "moon cone",
+    "door left ajar",
+    "fan turning"
+   ],
+   "withheld": "its face",
+   "intensity": 3
+  },
+  {
+   "id": "morning",
+   "subject": "Dawn: kitchen door open, the real mother at the stove; camera pans back to the bed",
+   "layers": {
+    "foreground": "the sleeper beside him (back to camera)",
+    "midground": "open door, the real mother small in warm light",
+    "background": "grey dawn window"
+   },
+   "light_source": "dawn fill through the window; warm kitchen light",
+   "focal_point": [
+    700,
+    900
+   ],
+   "motion": "door swings open, mother at the stove, steam of light",
+   "camera": "pan from the kitchen door back to the bed, slow push",
+   "sound_cue": "two calls from the kitchen, then the drop",
+   "sync_word": "दो बार",
+   "details": [
+    "real mother silhouette in the kitchen",
+    "door swung open",
+    "dawn window light",
+    "the sleeper's still blanket",
+    "fog bank"
+   ],
+   "withheld": "what is beside him",
+   "intensity": 4
+  },
+  {
+   "id": "reveal_callback",
+   "subject": "The blanket turns: a pale face, half in shadow",
+   "layers": {
+    "foreground": "blanket edge over its mouth",
+    "midground": "the face",
+    "background": "dawn window going dark"
+   },
+   "light_source": "dawn light draining to black",
+   "focal_point": [
+    560,
+    1000
+   ],
+   "motion": "turn, light drains, mouth opens on the last call",
+   "camera": "close push-in, shake on the stinger",
+   "sound_cue": "stinger on the turn; whispered बेटा",
+   "sync_word": "कंबल",
+   "details": [
+    "half-shadowed face",
+    "eye glint",
+    "blanket edge",
+    "window mullions",
+    "light draining"
+   ],
+   "withheld": "what it is",
+   "intensity": 5
+  }
+ ]
+}

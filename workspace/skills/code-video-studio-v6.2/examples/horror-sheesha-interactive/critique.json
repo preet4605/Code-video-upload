@@ -1,0 +1,100 @@
+{
+ "mode": "script",
+ "verdict": "workable",
+ "reviewer_note": "Same-model self-critique. A human must read it aloud and watch with sound on a phone; the vote mechanics (pinned comment) must be set up by hand after posting.",
+ "answers": [
+  {
+   "id": "stranger_test",
+   "score": 4,
+   "evidence": "रात को शीशे में अपने पीछे कोई दिखे... तो मुड़कर मत देखना।",
+   "note": "Mirror + don't turn: instantly legible."
+  },
+  {
+   "id": "myth_grounding",
+   "score": 4,
+   "evidence": "रात को शीशा ढककर सोना",
+   "note": "Grandmother's saying; labelled invented in brief.belief_label."
+  },
+  {
+   "id": "relatability",
+   "score": 5,
+   "evidence": "रात ढाई बजे मैं ब्रश कर रहा था",
+   "note": "Every hostel student has brushed alone at night facing a mirror."
+  },
+  {
+   "id": "violation",
+   "score": 4,
+   "evidence": "तौलिया खिसककर गिर गया",
+   "note": "The rule is broken by accident (fan), not by stupidity."
+  },
+  {
+   "id": "consequence",
+   "score": 4,
+   "evidence": "उसने आँखें खोलीं",
+   "note": "Seen: the eyes open; heard: something rises in the real room."
+  },
+  {
+   "id": "escalation",
+   "score": 4,
+   "evidence": "कंबल धीरे-धीरे ऊपर-नीचे हो रहा था",
+   "note": "Uncovered mirror -> shape -> breathing -> not Rohan -> eyes -> real-room movement."
+  },
+  {
+   "id": "withholding",
+   "score": 4,
+   "evidence": "कोई उठा",
+   "note": "What rises in the real room is never shown."
+  },
+  {
+   "id": "specificity",
+   "score": 4,
+   "evidence": "शाम छह बजे घर चला गया था",
+   "note": "Diwali-empty hostel, towel on the mirror, the 'reached home, bro' text."
+  },
+  {
+   "id": "the_turn",
+   "score": 5,
+   "evidence": "रोहन का मैसेज",
+   "note": "The message proves the sleeper is not Rohan and recasts the hook rule."
+  },
+  {
+   "id": "sound_scare",
+   "score": 3,
+   "evidence": "असली कमरे में, कोई उठा",
+   "note": "Breath + silence + stinger designed and measured; synthetic, unheard."
+  },
+  {
+   "id": "ending_loop",
+   "score": 3,
+   "evidence": "मुड़ूँ, या देखता रहूँ?",
+   "note": "Interactive: ends on a fork, not a loop. Earned because both options carry the rule's danger."
+  },
+  {
+   "id": "cliche_scan",
+   "score": 4,
+   "note": "List clean. The phone-message twist is a known device; it is planted (Rohan left at six)."
+  },
+  {
+   "id": "code_visual_feasible",
+   "score": 4,
+   "note": "Mirror = a reflected render of the same room; eyes are two glints in the dark."
+  },
+  {
+   "id": "bluff_plot_without_adjectives",
+   "score": 4,
+   "evidence": "रोहन के बिस्तर पर कोई सो रहा था",
+   "plot_events": [
+    "शाम छह बजे घर चला गया था",
+    "तौलिया खिसककर गिर गया",
+    "रोहन के बिस्तर पर कोई सो रहा था",
+    "रोहन का मैसेज",
+    "उसने आँखें खोलीं",
+    "कोई उठा"
+   ]
+  }
+ ],
+ "weakest_line": {
+  "quote": "रोहन लौट आया होगा। मैं मुस्कुराया।",
+  "rewrite": "रोहन ट्रेन छोड़कर लौट आया होगा। मैंने राहत में मुँह धोया।"
+ }
+}

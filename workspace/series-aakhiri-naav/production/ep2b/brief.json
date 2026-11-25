@@ -1,0 +1,113 @@
+{
+ "platform": "reels",
+ "genre": "horror",
+ "lang": "hi",
+ "format": "serial",
+ "viewer": "Hindi-speaking viewers who watched ep1 or land cold, scrolling alone at night",
+ "hook": "मैं किनारे पर रुका रहा, और पानी के पार से कोई चलकर आने लगा।",
+ "payoff": "The walker is upside down under the water; he stays silent and the lake answers in his own voice anyway.",
+ "belief_label": "invented village saying inside a fiction; not a real belief or safety advice",
+ "target_duration_s": 85,
+ "loop": false,
+ "sources": [
+  "Original story (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS, sound synthesized in code."
+ ],
+ "sound": {
+  "ambience": [
+   "lake",
+   "wind"
+  ]
+ },
+ "series": {
+  "id": "aakhiri-naav",
+  "part": 2,
+  "of": 5,
+  "bible_path": "series_bible.md",
+  "recap_line": "",
+  "hook_is_recap": true,
+  "next_hook": "झील के पास अब मेरी आवाज़ थी, और वह किसे बुलाएगी?"
+ },
+ "story": {
+  "setup": "He stays on the shore while the boat sits lit at the bank and something walks across the lake toward him.",
+  "characters": [
+   "छोटा",
+   "माँ"
+  ],
+  "places": [
+   "झील",
+   "नाव"
+  ],
+  "rule_or_clue": [
+   {
+    "type": "rule",
+    "text": "नाव की आवाज़ का जवाब मत दो",
+    "line": "नाव की आवाज़ का जवाब मत दो"
+   },
+   {
+    "type": "clue",
+    "text": "no ripple at its feet",
+    "line": "कोई लहर नहीं उठती थी"
+   },
+   {
+    "type": "clue",
+    "text": "the brother's left lean",
+    "line": "बाईं तरफ़ झुकाकर रखता था"
+   },
+   {
+    "type": "clue",
+    "text": "he has called his brother for three nights",
+    "line": "तीन रात से मैं यहाँ खड़ा पुकारता रहा"
+   }
+  ],
+  "escalation": [
+   {
+    "text": "the walker with the brother's lean and no ripples",
+    "line": "कोई लहर नहीं उठती थी"
+   },
+   {
+    "text": "his full name is called from the water",
+    "line": "मेरा पूरा नाम पानी से आया"
+   },
+   {
+    "text": "a white face looks up from under the surface",
+    "line": "एक सफ़ेद चेहरा मुझे देखने लगा"
+   }
+  ],
+  "false_relief": {
+   "text": "he thinks he has won by staying silent",
+   "line": "मुझे लगा कि मैं जीत गया"
+  },
+  "twist": {
+   "text": "he stays silent and the lake answers in his own voice anyway",
+   "line": "झील से मेरी अपनी आवाज़ ने जवाब दे दिया",
+   "explains_hook": true,
+   "how": "The hook says someone walks toward him across the lake: the walker was the lake fishing for his one word, and when he refuses, it takes his voice anyway."
+  },
+  "part_question": "What is walking toward him across the water?",
+  "part_payoff": {
+   "text": "the walker is under the water, upside down",
+   "line": "पानी के नीचे चल रहा है"
+  },
+  "ending_image": {
+   "text": "a wave with no wind soaks him and shoves him up the bank like many small hands"
+  },
+  "callback": {
+   "text": "the many who walked toward him return as the many small hands that shove him out",
+   "line": "बहुत सारे छोटे हाथ मुझे बाहर धकेल रहे हों"
+  },
+  "threat": {
+   "planted_by": {
+    "line": "कोई लहर नहीं उठती थी"
+   },
+   "first_seen": {
+    "line": "एक सफ़ेद चेहरा मुझे देखने लगा"
+   }
+  },
+  "new_facts": [
+   "The walker is under the water and inverted",
+   "The lake can answer in the narrator's voice",
+   "Many small hands shove him out of the water"
+  ],
+  "scare_pattern": "inverted figure then borrowed-voice answer"
+ }
+}

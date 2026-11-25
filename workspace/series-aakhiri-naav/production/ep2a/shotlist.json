@@ -1,0 +1,301 @@
+{
+ "scenes": [
+  {
+   "id": "hook",
+   "subject": "Dusk lake from behind the narrator, chest-deep, the lit dry boat far out",
+   "layers": {
+    "foreground": "his dark back and shoulders at the waterline, breath steam",
+    "midground": "black water with a thin lantern streak and no wake",
+    "background": "dark ridge on the right, last orange sliver at the horizon"
+   },
+   "light_source": "lantern and cabin window on the boat, a faint cold moon",
+   "focal_point": [
+    540,
+    800
+   ],
+   "motion": "ripples spread from his chest, steam drifts, the boat bobs slightly",
+   "camera": "slow push-in over his shoulder, low, handheld",
+   "sound_cue": "water_wade_cold, cold gasp, wind low",
+   "sync_word": "उतरा",
+   "details": [
+    "dark shoulders with a rim of moonlight",
+    "breath steam in the cold",
+    "four-pane cabin window glowing",
+    "lantern streak on black water",
+    "orange sliver under the ridge"
+   ],
+   "withheld": "what the hand on his chest is",
+   "intensity": 2
+  },
+  {
+   "id": "breath",
+   "subject": "His breath fighting the cold, water at his collarbone",
+   "layers": {
+    "foreground": "steam from his mouth rising past the lens",
+    "midground": "ripple rings spreading from him in time with his breath",
+    "background": "the boat a little closer, still lit"
+   },
+   "light_source": "boat lantern, moon glow on steam",
+   "focal_point": [
+    540,
+    880
+   ],
+   "motion": "ripple rings pulse with his slowed breathing",
+   "camera": "push-in, slight tilt down to the waterline",
+   "sound_cue": "slow breath, heartbeat under wind",
+   "sync_word": "धीरे-धीरे",
+   "details": [
+    "breath steam cloud",
+    "water lapping at his collarbone",
+    "rings moving outward",
+    "goosebump rim light on his neck",
+    "lantern streak shortening"
+   ],
+   "withheld": "whether anything is under the water near him",
+   "intensity": 2
+  },
+  {
+   "id": "calls",
+   "subject": "He turns: the shore behind him and the post where he stood calling",
+   "layers": {
+    "foreground": "three notches cut in a mooring post, wet and close",
+    "midground": "the empty mud bank with his three nights of footprints",
+    "background": "the village lights far up the hill, none near"
+   },
+   "light_source": "a single lamp on the post, village glow",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "lamp sways, a cold breath of wind moves the reeds",
+   "camera": "slow turn from the water back toward the bank, then back to the boat",
+   "sound_cue": "old_calls_echo, his own voice thin and far",
+   "sync_word": "पुकार",
+   "details": [
+    "mooring post with three notches",
+    "three nights of footprints in the mud",
+    "reeds bending",
+    "small lamp flame",
+    "far village windows"
+   ],
+   "withheld": "who is standing in the dark by the post",
+   "intensity": 2
+  },
+  {
+   "id": "warm",
+   "subject": "The water near the boat is steaming in the cold night",
+   "layers": {
+    "foreground": "warm steam rising off black water in the lantern light",
+    "midground": "the boat hull ringed by drifting mist",
+    "background": "ridge and stars above the glow"
+   },
+   "light_source": "lantern glow turning amber into the steam, moon above",
+   "focal_point": [
+    540,
+    860
+   ],
+   "motion": "steam coils upward, the water surface slides, ripples slow and stop shivering him",
+   "camera": "low glide forward, slight upward tilt through the steam",
+   "sound_cue": "warm_water_hum rising under the wind",
+   "sync_word": "गर्म",
+   "details": [
+    "steam spiralling in the lantern",
+    "hull planks wet and dark",
+    "amber tint creeping into the water",
+    "his shoulders relaxing",
+    "stars dimming behind the steam"
+   ],
+   "withheld": "why the lake is warm",
+   "intensity": 3
+  },
+  {
+   "id": "cabin",
+   "subject": "The cabin window from the side, the whole hull murmuring",
+   "layers": {
+    "foreground": "fogged window panes with faint pale smears forming",
+    "midground": "the cabin wall and the lantern at its right",
+    "background": "the black water and the ridge"
+   },
+   "light_source": "window glow pulsing in time with the murmur, lantern warm",
+   "focal_point": [
+    540,
+    820
+   ],
+   "motion": "window light pulses, fog smears spread across the panes",
+   "camera": "slow push toward the window, small lateral drift",
+   "sound_cue": "murmur_haan layered, many voices saying one word",
+   "sync_word": "हाँ",
+   "details": [
+    "four-pane window",
+    "fog smears like palms on the glass",
+    "lantern on the right side",
+    "wet planks",
+    "pulse of light on the water"
+   ],
+   "withheld": "who is inside the cabin",
+   "intensity": 3
+  },
+  {
+   "id": "jacket",
+   "subject": "The red jacket on the bow seat, warm to the touch",
+   "layers": {
+    "foreground": "his hand reaching into frame, his fingers trembling",
+    "midground": "the red jacket breathing slightly on the seat",
+    "background": "the bow rising out of the steam"
+   },
+   "light_source": "lantern light warm on the red cloth",
+   "focal_point": [
+    500,
+    900
+   ],
+   "motion": "the jacket rises and falls like breathing, steam off the wool",
+   "camera": "push-in to the jacket, slight handheld wobble",
+   "sound_cue": "warm hum, his breath catching",
+   "sync_word": "जैकेट",
+   "details": [
+    "red jacket on the bow seat",
+    "small left sleeve hanging",
+    "steam rising off the cloth",
+    "his trembling hand",
+    "coconut-oil sheen on the collar"
+   ],
+   "withheld": "what is inside the jacket",
+   "intensity": 3
+  },
+  {
+   "id": "relief",
+   "subject": "His hand holding the sleeve, tears, the light steady",
+   "layers": {
+    "foreground": "the sleeve gripped in his fist",
+    "midground": "the jacket pressed to him, his bent head",
+    "background": "the lit boat steady and calm behind"
+   },
+   "light_source": "steady warm lantern, moon on wet skin",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "a slow steady sway of the boat, his shoulders shaking once",
+   "camera": "gentle pull-back",
+   "sound_cue": "quiet bed, one sob, then nothing",
+   "sync_word": "ज़िंदा",
+   "details": [
+    "sleeve in his fist",
+    "wet cheek glint",
+    "steady window light",
+    "water at his chest",
+    "red against the dark"
+   ],
+   "withheld": "what answers next",
+   "intensity": 2
+  },
+  {
+   "id": "voice",
+   "subject": "The cabin window brightens as the voice speaks, ripples answer it",
+   "layers": {
+    "foreground": "the black water ringing with each syllable",
+    "midground": "the cabin window pulsing in the rhythm of a voice",
+    "background": "the bow, the jacket, the dark behind"
+   },
+   "light_source": "the cabin window brightens with each word",
+   "focal_point": [
+    540,
+    800
+   ],
+   "motion": "ripples ring out from under the boat in time with the voice",
+   "camera": "slow push-in toward the window, nothing else moves",
+   "sound_cue": "name_in_water, the lake voice with an echo",
+   "sync_word": "नाम",
+   "details": [
+    "concentric ripples under the boat",
+    "window panes brightening one by one",
+    "his head tilting toward it",
+    "steam hanging still",
+    "the jacket motionless"
+   ],
+   "withheld": "the speaker",
+   "intensity": 4
+  },
+  {
+   "id": "break",
+   "subject": "His breath leaves him on one word",
+   "layers": {
+    "foreground": "a burst of steam from his mouth",
+    "midground": "his head turned toward the window, rim lit",
+    "background": "the window and the dark boat"
+   },
+   "light_source": "window light at its brightest then cut off",
+   "focal_point": [
+    540,
+    820
+   ],
+   "motion": "steam bursts, the head turns, the window flares then dies on the scare",
+   "camera": "tight push-in on his head and the window",
+   "sound_cue": "the reflex answer, silence, the lights-out stinger",
+   "sync_word": "हाँ",
+   "details": [
+    "breath burst",
+    "his hair rim light",
+    "window flare",
+    "ripples frozen mid-ring",
+    "lantern flame stretching"
+   ],
+   "withheld": "what hears him",
+   "intensity": 4
+  },
+  {
+   "id": "grip",
+   "subject": "Black water, the lights gone, a ring closing around his chest",
+   "layers": {
+    "foreground": "the water line closing at his shoulders",
+    "midground": "dark ripple rings contracting inward",
+    "background": "pitch dark with a thin moon line"
+   },
+   "light_source": "moonlight only, a pale rim on the water",
+   "focal_point": [
+    540,
+    860
+   ],
+   "motion": "rings contract around him, pulling inward, a single flicker of the lantern",
+   "camera": "hard shake and slow push-in",
+   "sound_cue": "stinger, pressure, a drowning hum",
+   "sync_word": "जकड़",
+   "details": [
+    "contracting rings",
+    "pale rim on his shoulders",
+    "black waterline rising",
+    "moon line on the horizon",
+    "lantern gone cold"
+   ],
+   "withheld": "what holds him",
+   "intensity": 5
+  },
+  {
+   "id": "push",
+   "subject": "A small wet hand slaps against his back and shoves him",
+   "layers": {
+    "foreground": "a small wet handprint appearing on his back",
+    "midground": "his body thrown forward toward the bank",
+    "background": "the shore lamp far ahead"
+   },
+   "light_source": "moon and the shore lamp",
+   "focal_point": [
+    540,
+    880
+   ],
+   "motion": "the whole frame lurches shoreward, water streaming off him",
+   "camera": "sudden surge forward, whip, settle",
+   "sound_cue": "small_hand_slap, water surge",
+   "sync_word": "धकेल",
+   "details": [
+    "wet handprint on his back",
+    "surging water",
+    "shore lamp growing",
+    "the boat falling behind",
+    "spray in the lamp light"
+   ],
+   "withheld": "whose hand it is",
+   "intensity": 5
+  }
+ ]
+}

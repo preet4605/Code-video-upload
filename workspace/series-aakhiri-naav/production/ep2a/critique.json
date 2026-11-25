@@ -1,0 +1,102 @@
+{
+ "mode": "script",
+ "verdict": "workable",
+ "answers": [
+  {
+   "id": "stranger_test",
+   "score": 4,
+   "evidence": "मैं पानी में उतरा, तो लगा किसी ने मेरी छाती पर हाथ रख दिया।",
+   "note": "First line puts a body in cold water with a hand on his chest."
+  },
+  {
+   "id": "myth_grounding",
+   "score": 4,
+   "evidence": "गाँव वाले कहते हैं, जवाब मत दो",
+   "note": "Invented village rule, labelled as such in the brief."
+  },
+  {
+   "id": "relatability",
+   "score": 3,
+   "evidence": "तीन रात से मैं किनारे से पुकार रहा था",
+   "note": "Grief and calling a lost sibling are universal; the lake is distant."
+  },
+  {
+   "id": "violation",
+   "score": 5,
+   "evidence": "और मैं हार गया",
+   "note": "The rule break is one explicit moment: he answers."
+  },
+  {
+   "id": "consequence",
+   "score": 4,
+   "evidence": "पानी ने मेरी छाती को उसी हाथ की तरह जकड़ लिया",
+   "note": "Physical grip on the chest, paying off the hook."
+  },
+  {
+   "id": "escalation",
+   "score": 4,
+   "evidence": "पानी गर्म हो गया, कंपकंपी थम गई",
+   "note": "Warmth, then murmur, then jacket warmth, then name."
+  },
+  {
+   "id": "withholding",
+   "score": 4,
+   "evidence": "पास जाकर समझ आया कि वह बहुत सारे लोगों का एक ही शब्द है",
+   "note": "We never see the speakers; only a word."
+  },
+  {
+   "id": "specificity",
+   "score": 5,
+   "evidence": "उसमें नारियल के तेल की वही महक थी जो भाई के बालों में रहती थी",
+   "note": "Coconut-oil smell, warm water in December, many voices saying one word."
+  },
+  {
+   "id": "the_turn",
+   "score": 4,
+   "evidence": "पानी ने मेरी छाती को उसी हाथ की तरह जकड़ लिया",
+   "note": "The hook hand becomes the lake grip."
+  },
+  {
+   "id": "sound_scare",
+   "score": 4,
+   "evidence": "बत्ती बुझ गई",
+   "note": "Reflex answer, then lights out with a pre-scare drop."
+  },
+  {
+   "id": "ending_loop",
+   "score": 3,
+   "evidence": "तभी पीछे से एक छोटे हाथ ने मुझे किनारे की तरफ़ धकेल दिया।",
+   "note": "Ends mid-action on the small hand: the cut is the cliffhanger; ep3 opens on the bank."
+  },
+  {
+   "id": "cliche_scan",
+   "score": 3,
+   "evidence": "तभी पीछे से एक छोटे हाथ ने मुझे किनारे की तरफ़ धकेल दिया",
+   "note": "\"तभी\" is a stock connector; the small hand is the new idea."
+  },
+  {
+   "id": "code_visual_feasible",
+   "score": 4,
+   "evidence": "सीट की लाल जैकेट गर्म थी",
+   "note": "Water, steam, window, jacket and hands are drawable without faces."
+  },
+  {
+   "id": "bluff_plot_without_adjectives",
+   "score": 4,
+   "evidence": "मैं पानी में उतरा",
+   "note": "Wades, listens, touches jacket, answers, is gripped, is pushed ashore.",
+   "plot_events": [
+    "मैं पानी में उतरा",
+    "सीट की लाल जैकेट गर्म थी",
+    "और मैं हार गया",
+    "हाँ, मैं यहीं हूँ",
+    "पानी ने मेरी छाती को उसी हाथ की तरह जकड़ लिया",
+    "एक छोटे हाथ ने मुझे किनारे की तरफ़ धकेल दिया"
+   ]
+  }
+ ],
+ "weakest_line": {
+  "quote": "तभी पीछे से एक छोटे हाथ ने मुझे किनारे की तरफ़ धकेल दिया।",
+  "rewrite": "पीछे से एक छोटे गीले हाथ ने मुझे किनारे की तरफ़ धकेल दिया।"
+ }
+}

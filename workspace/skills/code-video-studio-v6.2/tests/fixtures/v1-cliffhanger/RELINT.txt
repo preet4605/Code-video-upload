@@ -1,0 +1,43 @@
+
+FAIL  tests/fixtures/v1-cliffhanger  (v1_fixture.mp4)
+  FAIL story:
+         - story/story_missing: brief.story missing: write { setup, rule_or_clue[], escalation[], false_relief, twist, ending_image, callback } before the script
+         - story/lines_min: 8 spoken lines; a complete horror story needs >= 9
+         - story/silence_beat: no deliberate [SILENCE dur=0.8-1.2] beat
+         - story/duration: 23.2s is outside the 50-75s band for format "standalone"
+         - story/no_parts: standalone reel mentions a part/next reel at line 8: "Part 3 के लिए फ़ॉलो करो, अगली रील वहीं की।"
+         - story/cta_before_payoff: CTA at line 8 comes before the payoff
+  FAIL script:
+         - not_thin_words: 44 spoken words; need 80-103 for ~40s at 135 wpm
+         - scene_count: 4 scenes; need >= 5 distinct locations/beats
+         - sfx_designed: 2 SFX cues; horror needs >= 3 designed sound events (sound carries the scare)
+         - tts_digits: raw digits in Hindi spoken text (3): TTS mispronounces them; spell as words (तीन बजकर सात मिनट). Show digits on screen instead
+         - critique_present: critique.json missing or unreadable
+  FAIL shotlist:
+         - shotlist_present: shotlist.json missing: declare subject/layers/light/focal/motion/details/withheld per scene
+  FAIL visual:
+         - escalation: motion does not escalate: last-third / first-third = 1.13 (< 1.15)
+  FAIL motion:
+         - motion_hook: scene "hook" measured motion < 0.0008 for 5.3s (ends ~5.5s): static frame. Declared animated_properties do not count
+         - motion_room: scene "room" measured motion < 0.0008 for 4.5s (ends ~10.5s): static frame. Declared animated_properties do not count
+         - motion_scare: scene "scare" measured motion < 0.0008 for 4.5s (ends ~15.3s): static frame. Declared animated_properties do not count
+         - motion_cliff: scene "cliff" measured motion < 0.0008 for 7.3s (ends ~23.0s): static frame. Declared animated_properties do not count
+  FAIL sound:
+         - scare_drop_0: scare at 10.94s: level drops only 10.7 dB in the 0.5 s before it (need >= 20). Cut the bed and voice before the hit (--bgm horror does this)
+         - scare_stinger_0: scare at 10.94s: no stinger peak after it (rise 19.6 dB, need >= 20)
+
+PASS  examples/horror-ek-baar  (final_horror-ek-baar.mp4)
+  ok   story
+  ok   script
+  ok   shotlist
+  ok   visual
+  ok   motion
+  ok   sound
+
+PASS  examples/horror-sheesha-interactive  (final_horror-sheesha-interactive.mp4)
+  ok   story
+  ok   script
+  ok   shotlist
+  ok   visual
+  ok   motion
+  ok   sound
