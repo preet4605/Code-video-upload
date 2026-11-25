@@ -1,0 +1,134 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.65,
+ "tempo": 1.06,
+ "lead_s": 0.15,
+ "gap": 0.45,
+ "tail_s": 1.6,
+ "lines": [
+  {
+   "sc": "s1_hook",
+   "hi": "साल में एक दिन, एक मिनट के लिए, किसी की परछाईं नहीं होती।",
+   "hl": "Saal mein ek din, ek minute ke liye, kisi ki parchhai nahi hoti.",
+   "gap": 0.5
+  },
+  {
+   "sc": "s2_dadi",
+   "hi": "सुबह रसोई में दादी बोलीं, उस मिनट किसी का हाथ मत पकड़ना।",
+   "hl": "Subah rasoi mein dadi bolin, us minute kisi ka haath mat pakadna.",
+   "gap": 0.3
+  },
+  {
+   "sc": "s2_dadi",
+   "hi": "जिसका हाथ पकड़ोगे, वो तुम्हारी परछाईं ले जाएगा।",
+   "hl": "Jiska haath pakdoge, wo tumhari parchhai le jayega.",
+   "gap": 0.45
+  },
+  {
+   "sc": "s3_circle",
+   "hi": "पर स्कूल में मास्टर जी ने सबके हाथ पकड़वा दिए।",
+   "hl": "Par school mein master ji ne sabke haath pakadwa diye.",
+   "gap": 0.3
+  },
+  {
+   "sc": "s3_circle",
+   "hi": "मेरे बगल वाली जगह खाली थी। राजू की जगह। पिछले साल वो कुएँ में डूब गया।",
+   "hl": "Mere bagal wali jagah khaali thi. Raju ki jagah. Pichle saal wo kuen mein doob gaya.",
+   "gap": 0.45
+  },
+  {
+   "sc": "s4_minute",
+   "hi": "बारह बजकर सात मिनट पर, सबकी परछाईं गायब हो गई।",
+   "hl": "Barah bajkar saat minute par, sabki parchhai gayab ho gayi.",
+   "gap": 0.5
+  },
+  {
+   "sc": "s5_hand",
+   "hi": "तभी किसी ने मेरा हाथ पकड़ा। चालीस डिग्री में भी, हाथ बर्फ़ जैसा ठंडा था।",
+   "hl": "Tabhi kisi ne mera haath pakda. 40 degree mein bhi, haath barf jaisa thanda tha.",
+   "gap": 0.4
+  },
+  {
+   "sc": "s6_raju",
+   "hi": "मैंने देखा। राजू। गीले बाल, टपकता पानी।",
+   "hl": "Maine dekha. Raju. Geele baal, tapakta paani.",
+   "gap": 1.1
+  },
+  {
+   "sc": "s7_whisper",
+   "hi": "उसने धीरे से कहा, तेरी परछाईं अब मेरी है।",
+   "hl": "Usne dheere se kaha, teri parchhai ab meri hai.",
+   "gap": 0.6,
+   "whisper": true,
+   "sfx": [
+    {
+     "name": "stinger",
+     "at": "start",
+     "dt": -0.08,
+     "gain_db": -6,
+     "scare": true
+    }
+   ],
+   "tempo": 0.92
+  },
+  {
+   "sc": "s8_relief",
+   "hi": "मिनट पूरा हुआ। सबकी परछाईं लौट आई। मैंने साँस ली।",
+   "hl": "Minute poora hua. Sabki parchhai laut aayi. Maine saans li.",
+   "gap": 0.35
+  },
+  {
+   "sc": "s9_twist",
+   "hi": "मैंने हाथ छुड़ाया। पर मेरी परछाईं राजू के पैरों से जुड़ी थी।",
+   "hl": "Maine haath chhudaya. Par meri parchhai Raju ke pairon se judi thi.",
+   "gap": 0.4
+  },
+  {
+   "sc": "s10_gate",
+   "hi": "गेट पर मम्मी ने राजू को मेरा नाम लेकर गले लगाया। मैं चीखा। किसी ने नहीं सुना।",
+   "hl": "Gate par mummy ne Raju ko mera naam lekar gale lagaya. Main cheekha. Kisi ne nahi suna.",
+   "gap": 0.5
+  },
+  {
+   "sc": "s11_loop",
+   "hi": "अब हर साल, उस एक मिनट में, मैं किसी का हाथ ढूँढता हूँ।",
+   "hl": "Ab har saal, us ek minute mein, main kisi ka haath dhoondhta hoon.",
+   "gap": 0.4
+  }
+ ],
+ "scenes_meta": {
+  "s1_hook": {
+   "mood": "suspense"
+  },
+  "s2_dadi": {
+   "mood": "calm"
+  },
+  "s3_circle": {
+   "mood": "suspense"
+  },
+  "s4_minute": {
+   "mood": "tension"
+  },
+  "s5_hand": {
+   "mood": "tension"
+  },
+  "s6_raju": {
+   "mood": "tension"
+  },
+  "s7_whisper": {
+   "mood": "climax"
+  },
+  "s8_relief": {
+   "mood": "suspense"
+  },
+  "s9_twist": {
+   "mood": "tension"
+  },
+  "s10_gate": {
+   "mood": "suspense"
+  },
+  "s11_loop": {
+   "mood": "suspense"
+  }
+ }
+}

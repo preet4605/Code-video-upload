@@ -1,0 +1,102 @@
+{
+ "mode": "script",
+ "verdict": "workable",
+ "reviewer_note": "Same-model self-critique is biased. A human must read this aloud once and watch it with sound on a phone before posting.",
+ "answers": [
+  {
+   "id": "stranger_test",
+   "score": 4,
+   "evidence": "साल में एक दिन, एक मिनट के लिए, किसी की परछाईं नहीं होती।",
+   "note": "Clear claim in line one: one minute a year with no shadows. The rule arrives in the next two lines."
+  },
+  {
+   "id": "myth_grounding",
+   "score": 4,
+   "evidence": "जिसका हाथ पकड़ोगे, वो तुम्हारी परछाईं ले जाएगा।",
+   "note": "One rule, stated plainly: whoever's hand you hold in that minute takes your shadow. Invented family saying, labelled in belief_label."
+  },
+  {
+   "id": "relatability",
+   "score": 4,
+   "evidence": "पर स्कूल में मास्टर जी ने सबके हाथ पकड़वा दिए।",
+   "note": "Every Indian school kid has stood in a ground circle on a hot noon holding a neighbour's hand."
+  },
+  {
+   "id": "violation",
+   "score": 4,
+   "evidence": "तभी किसी ने मेरा हाथ पकड़ा। चालीस डिग्री में भी, हाथ बर्फ़ जैसा ठंडा था।",
+   "note": "The narrator is forced into the violation by the teacher, so it is not his choice."
+  },
+  {
+   "id": "consequence",
+   "score": 4,
+   "evidence": "मैंने हाथ छुड़ाया। पर मेरी परछाईं राजू के पैरों से जुड़ी थी।",
+   "note": "Physical and visible: a shadow stays attached to the wrong feet."
+  },
+  {
+   "id": "escalation",
+   "score": 4,
+   "evidence": "मैंने देखा। राजू। गीले बाल, टपकता पानी।",
+   "note": "Shadows go, cold hand, then the face and the drop. Each step removes a safety."
+  },
+  {
+   "id": "withholding",
+   "score": 3,
+   "evidence": "बारह बजकर सात मिनट पर, सबकी परछाईं गायब हो गई।",
+   "note": "Raju's face is shown only in the 6 s before the whisper and half in frame. Nothing explains how the swap works beyond Dadi's one rule."
+  },
+  {
+   "id": "specificity",
+   "score": 5,
+   "evidence": "बारह बजकर सात मिनट पर, सबकी परछाईं गायब हो गई।",
+   "note": "A clock time (12:07), 40 degrees, the empty place in the ring, ice-cold hand."
+  },
+  {
+   "id": "the_turn",
+   "score": 4,
+   "evidence": "मैंने हाथ छुड़ाया। पर मेरी परछाईं राजू के पैरों से जुड़ी थी।",
+   "note": "The twist is the rule paid off literally: his shadow is on Raju's feet."
+  },
+  {
+   "id": "sound_scare",
+   "score": 4,
+   "evidence": "उसने धीरे से कहा, तेरी परछाईं अब मेरी है।",
+   "note": "Cicadas die as the shadows go, then 1 s of silence before the whisper stinger."
+  },
+  {
+   "id": "ending_loop",
+   "score": 4,
+   "evidence": "अब हर साल, उस एक मिनट में, मैं किसी का हाथ ढूँढता हूँ।",
+   "note": "Complete ending: he has become the thing that takes a hand. The replay returns to 'one minute a year'."
+  },
+  {
+   "id": "cliche_scan",
+   "score": 3,
+   "evidence": "गेट पर मम्मी ने राजू को मेरा नाम लेकर गले लगाया। मैं चीखा। किसी ने नहीं सुना।",
+   "note": "The narrator-is-the-ghost idea is a known trope, and 'only one comes back' is a known swap rule. Fresh part is the mechanism and the daylight setting."
+  },
+  {
+   "id": "code_visual_feasible",
+   "score": 5,
+   "evidence": "मैंने हाथ छुड़ाया। पर मेरी परछाईं राजू के पैरों से जुड़ी थी।",
+   "note": "Shadows are projected geometry, so every scare is drawable and deterministic."
+  },
+  {
+   "id": "bluff_plot_without_adjectives",
+   "score": 4,
+   "evidence": "पर स्कूल में मास्टर जी ने सबके हाथ पकड़वा दिए।",
+   "note": "Strip all adjectives and the plot still stands.",
+   "plot_events": [
+    "पर स्कूल में मास्टर जी ने सबके हाथ पकड़वा दिए।",
+    "बारह बजकर सात मिनट पर, सबकी परछाईं गायब हो गई।",
+    "तभी किसी ने मेरा हाथ पकड़ा। चालीस डिग्री में भी, हाथ बर्फ़ जैसा ठंडा था।",
+    "मैंने हाथ छुड़ाया। पर मेरी परछाईं राजू के पैरों से जुड़ी थी।",
+    "गेट पर मम्मी ने राजू को मेरा नाम लेकर गले लगाया। मैं चीखा। किसी ने नहीं सुना।"
+   ]
+  }
+ ],
+ "weakest_line": {
+  "quote": "मिनट पूरा हुआ। सबकी परछाईं लौट आई। मैंने साँस ली।",
+  "rewrite": "मिनट पूरा हुआ। परछाइयाँ लौटीं। मेरे पैरों में भी एक आई। मैंने साँस ली।"
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "mode": "script",
+ "verdict": "workable",
+ "reviewer_note": "Same-model self-critique is biased. A human must read this aloud once and watch it with sound on a phone before posting.",
+ "answers": [
+  {
+   "id": "stranger_test",
+   "score": 4,
+   "evidence": "उस दोपहर, पूरे स्कूल की परछाईं गायब थी।",
+   "note": "Visual contradiction in the first frame (bright school, no shadows). The stakes only land at line 3."
+  },
+  {
+   "id": "myth_grounding",
+   "score": 4,
+   "evidence": "दादी ने कहा था, आज किसी का हाथ मत पकड़ना।",
+   "note": "Dadi's rule is an invented family saying, labelled in brief.belief_label. The noon with no shadow is a real, labelled phenomenon."
+  },
+  {
+   "id": "relatability",
+   "score": 4,
+   "evidence": "पर मास्टर जी ने सबके हाथ पकड़वा दिए।",
+   "note": "Every Indian school kid has stood in a ground circle on a hot noon holding a neighbour's hand."
+  },
+  {
+   "id": "violation",
+   "score": 4,
+   "evidence": "किसी ने मेरा हाथ पकड़ा। चालीस डिग्री में भी, हाथ ठंडा था।",
+   "note": "The narrator is forced into the violation by the teacher, so it is not his choice."
+  },
+  {
+   "id": "consequence",
+   "score": 4,
+   "evidence": "मैंने हाथ छुड़ाया। मेरी परछाईं राजू के पैरों से जुड़ी रही।",
+   "note": "Physical and visible: a shadow stays attached to the wrong feet."
+  },
+  {
+   "id": "escalation",
+   "score": 4,
+   "evidence": "वो राजू था। बाल गीले, बूँद टपकती हुई।",
+   "note": "Shadows go, cold hand, then the face and the drop. Each step removes a safety."
+  },
+  {
+   "id": "withholding",
+   "score": 3,
+   "evidence": "फिर एक एक करके, सबकी परछाईं गायब हो गई।",
+   "note": "Raju's face is shown only in the 6 s before the whisper and half in frame. Nothing explains how the swap works beyond Dadi's one rule."
+  },
+  {
+   "id": "specificity",
+   "score": 5,
+   "evidence": "राजू कुएँ पे अकेला था",
+   "note": "Details in no other script: a noon with no shadows, a wet hand in 40 degree heat, a drop evaporating on hot stone, one shadow for two boys."
+  },
+  {
+   "id": "the_turn",
+   "score": 4,
+   "evidence": "मेरी परछाईं राजू के पैरों से जुड़ी रही।",
+   "note": "Recontextualises the hook: the school's shadows were gone because the dead one came for the one that returns."
+  },
+  {
+   "id": "sound_scare",
+   "score": 4,
+   "evidence": "उसने धीरे से कहा, एक ही परछाईं लौटती है।",
+   "note": "Cicadas die as the shadows go, then 1 s of silence before the whisper stinger."
+  },
+  {
+   "id": "ending_loop",
+   "score": 4,
+   "evidence": "परछाईं गायब हो, तो किसी का हाथ मत पकड़ना।",
+   "note": "Short and final. The last shot returns to the foot-level wet footprints of the opening."
+  },
+  {
+   "id": "cliche_scan",
+   "score": 3,
+   "evidence": "मुझे किसी ने नहीं देखा।",
+   "note": "The narrator-is-the-ghost idea is a known trope, and 'only one comes back' is a known swap rule. Fresh part is the mechanism and the daylight setting."
+  },
+  {
+   "id": "code_visual_feasible",
+   "score": 5,
+   "evidence": "मेरी परछाईं राजू के पैरों से जुड़ी रही।",
+   "note": "Shadows are projected geometry, so every scare is drawable and deterministic."
+  },
+  {
+   "id": "bluff_plot_without_adjectives",
+   "score": 4,
+   "evidence": "पर मास्टर जी ने सबके हाथ पकड़वा दिए।",
+   "note": "Strip all adjectives and the plot still stands.",
+   "plot_events": [
+    "दादी ने कहा था, आज किसी का हाथ मत पकड़ना।",
+    "पर मास्टर जी ने सबके हाथ पकड़वा दिए।",
+    "किसी ने मेरा हाथ पकड़ा।",
+    "मैंने हाथ छुड़ाया।",
+    "मम्मी ने उसे मेरा नाम लेकर गले लगाया।"
+   ]
+  }
+ ],
+ "weakest_line": {
+  "quote": "परछाइयाँ लौटीं। मेरी भी। मैंने साँस ली।",
+  "rewrite": "परछाइयाँ लौटीं। मेरे पैरों के पास भी एक आई। मैंने साँस ली।"
+ }
+}

@@ -1,0 +1,31 @@
+[SCENE id=s1_hook mood=suspense]
+[SFX name=cicada_drone]
+[NARRATOR] साल में एक दिन, एक मिनट के लिए, किसी की परछाईं नहीं होती।
+[SCENE id=s2_dadi mood=calm]
+[SFX name=kitchen_room_tone]
+[NARRATOR] सुबह रसोई में दादी बोलीं, उस मिनट किसी का हाथ मत पकड़ना।
+[NARRATOR] जिसका हाथ पकड़ोगे, वो तुम्हारी परछाईं ले जाएगा।
+[SCENE id=s3_circle mood=suspense]
+[SFX name=school_bell_far]
+[NARRATOR] पर स्कूल में मास्टर जी ने सबके हाथ पकड़वा दिए।
+[NARRATOR] मेरे बगल वाली जगह खाली थी। राजू की जगह। पिछले साल वो कुएँ में डूब गया।
+[SCENE id=s4_minute mood=tension]
+[NARRATOR] बारह बजकर सात मिनट पर, सबकी परछाईं गायब हो गई।
+[SCENE id=s5_hand mood=tension]
+[SFX name=heartbeat]
+[NARRATOR] तभी किसी ने मेरा हाथ पकड़ा। चालीस डिग्री में भी, हाथ बर्फ़ जैसा ठंडा था।
+[SCENE id=s6_raju mood=tension]
+[SFX name=water_drip]
+[NARRATOR] मैंने देखा। राजू। गीले बाल, टपकता पानी।
+[SCENE id=s7_whisper mood=climax]
+[SILENCE dur=1.0]
+[SCARE name=raju_whisper]
+[WHISPER] उसने धीरे से कहा, तेरी परछाईं अब मेरी है।
+[SCENE id=s8_relief mood=calm]
+[NARRATOR] मिनट पूरा हुआ। सबकी परछाईं लौट आई। मैंने साँस ली।
+[SCENE id=s9_twist mood=tension]
+[NARRATOR] मैंने हाथ छुड़ाया। पर मेरी परछाईं राजू के पैरों से जुड़ी थी।
+[SCENE id=s10_gate mood=suspense]
+[NARRATOR] गेट पर मम्मी ने राजू को मेरा नाम लेकर गले लगाया। मैं चीखा। किसी ने नहीं सुना।
+[SCENE id=s11_loop mood=suspense]
+[NARRATOR] अब हर साल, उस एक मिनट में, मैं किसी का हाथ ढूँढता हूँ।

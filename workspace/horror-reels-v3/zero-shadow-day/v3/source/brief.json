@@ -1,0 +1,82 @@
+{
+ "platform": "reels",
+ "genre": "horror",
+ "lang": "hinglish",
+ "viewer": "Hindi-speaking students and young adults, 15-30, scrolling a feed of dark horror reels",
+ "hook": "The whole school's shadows are gone at noon. One wet footprint trail crosses the white courtyard.",
+ "payoff": "For one minute the dead look like the living. Raju took the narrator's hand and the one shadow that returned: the narrator's stayed with Raju, who went home as him.",
+ "cta": "",
+ "belief_label": "Dadi's rule is an invented family saying, not a sourced regional tradition. Zero Shadow Day itself is a real astronomical event (sun at the zenith at local solar noon, twice a year south of 23.5 N, about one minute).",
+ "target_duration_s": 62,
+ "loop": true,
+ "format": "standalone",
+ "sound": {
+  "ambience": [
+   "cicadas",
+   "loo wind"
+  ]
+ },
+ "sources": [
+  "Original story (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS (Aman), sound synthesized in code. No third-party footage, images or audio. Science background: https://www.scienceabc.com/eyeopeners/what-is-the-zero-shadow-day.html"
+ ],
+ "story": {
+  "setup": "School courtyard on Zero Shadow Day. Dadi warns: in that minute, whoever's hand you hold takes your shadow. Master ji makes everyone hold hands; the place beside the narrator is Raju's, who drowned last year.",
+  "rule_or_clue": [
+   {
+    "type": "rule",
+    "text": "whoever's hand you hold in that minute takes your shadow",
+    "line": "जिसका हाथ पकड़ोगे, वो तुम्हारी परछाईं ले जाएगा।"
+   },
+   {
+    "type": "rule",
+    "text": "do not hold anyone's hand in that minute",
+    "line": "सुबह रसोई में दादी बोलीं, उस मिनट किसी का हाथ मत पकड़ना।"
+   },
+   {
+    "type": "clue",
+    "text": "the empty place beside him was Raju's, who drowned in the well last year",
+    "line": "मेरे बगल वाली जगह खाली थी। राजू की जगह। पिछले साल वो कुएँ में डूब गया।"
+   }
+  ],
+  "escalation": [
+   {
+    "text": "every shadow vanishes at 12:07",
+    "line": "बारह बजकर सात मिनट पर, सबकी परछाईं गायब हो गई।"
+   },
+   {
+    "text": "an ice-cold hand takes his",
+    "line": "तभी किसी ने मेरा हाथ पकड़ा। चालीस डिग्री में भी, हाथ बर्फ़ जैसा ठंडा था।"
+   },
+   {
+    "text": "it is Raju, wet, dripping",
+    "line": "मैंने देखा। राजू। गीले बाल, टपकता पानी।"
+   }
+  ],
+  "false_relief": {
+   "text": "the minute ends, shadows return, he breathes out",
+   "line": "मिनट पूरा हुआ। सबकी परछाईं लौट आई। मैंने साँस ली।"
+  },
+  "twist": {
+   "text": "he lets go but his shadow is joined to Raju's feet",
+   "line": "मैंने हाथ छुड़ाया। पर मेरी परछाईं राजू के पैरों से जुड़ी थी।",
+   "explains_hook": true,
+   "how": "The hook says one minute a year nobody has a shadow; Dadi's rule says whoever's hand you hold takes your shadow. Raju held his hand in that minute and took it, so Raju goes home as him."
+  },
+  "ending_image": {
+   "text": "empty courtyard, the narrator alone with no shadow, hand reaching out toward the lens; wet footprints at his feet"
+  },
+  "callback": {
+   "text": "now he waits for the minute every year to take someone's hand, as Raju took his",
+   "line": "अब हर साल, उस एक मिनट में, मैं किसी का हाथ ढूँढता हूँ।"
+  },
+  "threat": {
+   "planted_by": {
+    "line": "मेरे बगल वाली जगह खाली थी। राजू की जगह। पिछले साल वो कुएँ में डूब गया।"
+   },
+   "first_seen": {
+    "line": "मैंने देखा। राजू। गीले बाल, टपकता पानी।"
+   }
+  },
+  "scare_pattern": "daylight swap: a dead friend takes your hand and your shadow"
+ }
+}

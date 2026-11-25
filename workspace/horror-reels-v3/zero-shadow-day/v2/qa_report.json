@@ -1,0 +1,236 @@
+{
+  "verdict": "SHIP",
+  "fails": [],
+  "warns": [
+    "captions: word timings aligned by voiced-span weighting (approximate: +/-0.15s typical); use provider timestamps for frame-accurate highlights",
+    "horror: SHIP means no measured defect was found. It does not measure fear; watch it with sound on a phone in a dark room.",
+    "horror-script: specificity: 0 concrete numbers/times; add specifics (a time, two cups, counting to eleven)",
+    "visual-loop: not run. Run scripts/visual_loop.mjs --project <dir> and iterate until LOOP PASS (references/visual-loop.md)"
+  ],
+  "human_review": {
+    "required": true,
+    "checklist": [
+      "Watch the whole master once on a phone with sound ON, then once muted.",
+      "First 2 seconds: would a stranger stop scrolling? Is the hook understood without sound?",
+      "Listen for mispronounced words, harsh SFX, music masking speech, clicks at cuts.",
+      "Open qa_safezone_sheet.png: no caption, face or badge under the red bands.",
+      "Every on-screen claim/number matches the voiceover and a source.",
+      "Last second: does it loop or land a payoff, not fade into nothing?"
+    ]
+  },
+  "measured": {
+    "flashes": {
+      "series_len": 1838,
+      "max_per_sec": 0.5,
+      "worst_t": 42.33,
+      "transitions": 1
+    },
+    "hook": {
+      "frames": 18,
+      "motion": 0.02
+    },
+    "mix": {
+      "vo_lufs": -19.7,
+      "bed_gain_db": -9,
+      "bed_lufs_after_gain": -34.3,
+      "vo_to_bed_lu": 14.6
+    },
+    "duration_s": 61.266667
+  },
+  "safe_zone_sheet": "/tmp/claude-0/-home-user/43fdb731-d60e-57a1-b784-aab1a3baa8f0/scratchpad/zsd/zsd/out/qa_safezone_sheet.png",
+  "safe_profile": "universal",
+  "platform": "reels",
+  "horror": {
+    "script": {
+      "pass": true,
+      "fails": [],
+      "warns": [
+        "specificity: 0 concrete numbers/times; add specifics (a time, two cups, counting to eleven)"
+      ]
+    },
+    "story": {
+      "format": "standalone",
+      "errors": [],
+      "warns": []
+    },
+    "measured": {
+      "per_scene": [
+        {
+          "id": "s1_hook",
+          "motion": 0.0115,
+          "camera_px_s": 0,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s2_dadi",
+          "motion": 0.0112,
+          "camera_px_s": 0,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s3_circle",
+          "motion": 0.0273,
+          "camera_px_s": 44.1,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s4_minute",
+          "motion": 0.011,
+          "camera_px_s": 23.6,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s5_hand",
+          "motion": 0.0076,
+          "camera_px_s": 9.8,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s6_raju",
+          "motion": 0.0077,
+          "camera_px_s": 5,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s7_whisper",
+          "motion": 0.0185,
+          "camera_px_s": 1.9,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s8_relief",
+          "motion": 0.0195,
+          "camera_px_s": 23.7,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s9_twist",
+          "motion": 0.0264,
+          "camera_px_s": 30.5,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s10_gate",
+          "motion": 0.0331,
+          "camera_px_s": 44.7,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s11_loop",
+          "motion": 0.0456,
+          "camera_px_s": 67.4,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        }
+      ],
+      "dark_share": 0,
+      "scares": [
+        {
+          "t": 38.138,
+          "context_db": -16.8,
+          "quiet_db": -66.1,
+          "drop_db": 49.3,
+          "stinger_peak_db": -6.3,
+          "rise_db": 59.8
+        }
+      ],
+      "note": "Measured gates catch static, black and undropped scares. SHIP does not measure fear: watch it with sound on a phone."
+    },
+    "visual": {
+      "pass": true,
+      "fails": [],
+      "warns": [],
+      "per_scene": [
+        {
+          "id": "s1_hook",
+          "mean": 126.8,
+          "p98": 158.8,
+          "edge": 0.0718,
+          "motion": 0.0114
+        },
+        {
+          "id": "s2_dadi",
+          "mean": 114.6,
+          "p98": 246.3,
+          "edge": 0.0646,
+          "motion": 0.0123
+        },
+        {
+          "id": "s3_circle",
+          "mean": 116.9,
+          "p98": 153.8,
+          "edge": 0.0474,
+          "motion": 0.0273
+        },
+        {
+          "id": "s4_minute",
+          "mean": 126.1,
+          "p98": 147.9,
+          "edge": 0.029,
+          "motion": 0.011
+        },
+        {
+          "id": "s5_hand",
+          "mean": 121.5,
+          "p98": 151.7,
+          "edge": 0.0144,
+          "motion": 0.0076
+        },
+        {
+          "id": "s6_raju",
+          "mean": 77.9,
+          "p98": 144.8,
+          "edge": 0.0856,
+          "motion": 0.0077
+        },
+        {
+          "id": "s7_whisper",
+          "mean": 67.3,
+          "p98": 128.2,
+          "edge": 0.1105,
+          "motion": 0.0185
+        },
+        {
+          "id": "s8_relief",
+          "mean": 125.5,
+          "p98": 157.1,
+          "edge": 0.0522,
+          "motion": 0.0195
+        },
+        {
+          "id": "s9_twist",
+          "mean": 115.1,
+          "p98": 152.5,
+          "edge": 0.0723,
+          "motion": 0.0264
+        },
+        {
+          "id": "s10_gate",
+          "mean": 116.9,
+          "p98": 149.1,
+          "edge": 0.0594,
+          "motion": 0.0331
+        },
+        {
+          "id": "s11_loop",
+          "mean": 117.6,
+          "p98": 144.9,
+          "edge": 0.036,
+          "motion": 0.0456
+        }
+      ],
+      "escalation": 1.52,
+      "scene_sheet": "/tmp/claude-0/-home-user/43fdb731-d60e-57a1-b784-aab1a3baa8f0/scratchpad/zsd/zsd/out/qa_scene_sheet.png"
+    }
+  }
+}
