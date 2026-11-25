@@ -37,7 +37,7 @@ Per scene: `subject`, `layers.{foreground,midground,background}`, `light_source`
 
 | Genre | Pace | Camera/visual | Voice | Bed | SFX |
 |---|---|---|---|---|---|
-| horror | slow VO, pauses ≤ 1.2 s, dead air < 2 s | dread_creep push-in, vignette, grain, no strobe | low, calm, close; `--genre horror` | `--audio-mood horror` | sparse, one hit per beat, silence before the scare |
+| horror | slow VO, pauses ≤ 1.2 s, dead air < 2 s | dread_creep push-in, vignette, grain, no strobe | low, calm, close; `--genre horror` | `--audio-mood horror` (EQ only, dry voice; `--voice-echo` only if asked) | sparse, one hit per beat, silence before the scare |
 | funny | fast, 160+ wpm, no gaps | snap cuts, bold stamps, bounce easing | bright, deadpan on the punchline | light, off-beat, low | comic hit exactly on the punchline word (anticipate 1–3 frames) |
 | guide | steady, one step per ~4 s | big numbered steps, highlight the control being used | clear, neutral | very low bed or none | tick/pop on each step |
 | news/explainer | medium, plain sentences | one chart/number per beat, source line | neutral, steady | documentary bed low | minimal |

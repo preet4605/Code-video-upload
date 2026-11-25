@@ -11,9 +11,9 @@ rng = np.random.default_rng(13)
 n = rng.standard_normal(len(x)).astype(np.float32)
 n = sosfilt(butter(4, [1400, 7500], 'bandpass', fs=SR, output='sos'), n)
 n = n / (np.abs(n).max() + 1e-9) * env**1.3
-v = sosfilt(butter(2, 300, 'highpass', fs=SR, output='sos'), x)
-y = 0.5 * v / (np.abs(v).max() + 1e-9) + 0.75 * n
+v = sosfilt(butter(2, 90, 'highpass', fs=SR, output='sos'), x)   # keep the real voice body (300 Hz cut made a deep take sound thin and high)
+y = 0.8 * v / (np.abs(v).max() + 1e-9) + 0.5 * n
 # tiny close-room reflection
-d = int(0.017 * SR); y[d:] += 0.25 * y[:-d]
+# (no room reflection: Love heard the voice as echoey)
 y = (y / (np.abs(y).max() + 1e-9) * 0.9).astype(np.float32)
 subprocess.run(['ffmpeg','-v','error','-y','-f','f32le','-ar',str(SR),'-ac','1','-i','-','-c:a','pcm_s16le',dst],input=y.tobytes(),check=True)

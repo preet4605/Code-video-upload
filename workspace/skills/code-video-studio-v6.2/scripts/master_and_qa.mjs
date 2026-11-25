@@ -41,6 +41,7 @@ function parseArgs(argv) {
     sfxAuto: false,
     preset: 'default',
     audioMood: 'none',
+    voiceEcho: false,
     noStreamCopy: false,
     out: null,
     dryRun: false,
@@ -64,6 +65,7 @@ function parseArgs(argv) {
     else if (a === '--sfx-auto') opts.sfxAuto = true;
     else if (a === '--preset') opts.preset = argv[++i];
     else if (a === '--audio-mood') opts.audioMood = argv[++i];
+    else if (a === '--voice-echo') opts.voiceEcho = true;   // opt-in: room echo on the narration (off by default)
     else if (a === '--no-stream-copy') opts.noStreamCopy = true;
     else if (a === '--out') opts.out = argv[++i];
     else if (a === '--dry-run') opts.dryRun = true;
@@ -454,6 +456,7 @@ function main() {
       lra,
       vocalPreset,
       audioMood,
+      voiceEcho: opts.voiceEcho,
       timeline,
       applyExternalTension: applyExternalTension && opts.bgm !== 'horror'
     };
@@ -497,6 +500,7 @@ function main() {
       truePeak,
       preset: opts.preset,
       audioMood,
+      voiceEcho: opts.voiceEcho,
       bgm: bgmPath,
       sfxCount: sfxEntries.length,
       subtitles: opts.subtitles ? path.resolve(opts.subtitles) : null,

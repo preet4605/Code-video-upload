@@ -1,0 +1,236 @@
+{
+  "verdict": "SHIP",
+  "fails": [],
+  "warns": [
+    "captions: word timings aligned by voiced-span weighting (approximate: +/-0.15s typical); use provider timestamps for frame-accurate highlights",
+    "horror: SHIP means no measured defect was found. It does not measure fear; watch it with sound on a phone in a dark room.",
+    "horror-visual: escalation: weak escalation 1.24 (< 1.4)",
+    "visual-loop: not run. Run scripts/visual_loop.mjs --project <dir> and iterate until LOOP PASS (references/visual-loop.md)"
+  ],
+  "human_review": {
+    "required": true,
+    "checklist": [
+      "Watch the whole master once on a phone with sound ON, then once muted.",
+      "First 2 seconds: would a stranger stop scrolling? Is the hook understood without sound?",
+      "Listen for mispronounced words, harsh SFX, music masking speech, clicks at cuts.",
+      "Open qa_safezone_sheet.png: no caption, face or badge under the red bands.",
+      "Every on-screen claim/number matches the voiceover and a source.",
+      "Last second: does it loop or land a payoff, not fade into nothing?"
+    ]
+  },
+  "measured": {
+    "flashes": {
+      "series_len": 2085,
+      "max_per_sec": 0.5,
+      "worst_t": 5.1,
+      "transitions": 2
+    },
+    "hook": {
+      "frames": 18,
+      "motion": 0.01963
+    },
+    "mix": {
+      "vo_lufs": -19.7,
+      "bed_gain_db": -9,
+      "bed_lufs_after_gain": -34.6,
+      "vo_to_bed_lu": 14.9
+    },
+    "duration_s": 69.552
+  },
+  "safe_zone_sheet": "/tmp/claude-0/-home-user/43fdb731-d60e-57a1-b784-aab1a3baa8f0/scratchpad/zsd/zsd/out/qa_safezone_sheet.png",
+  "safe_profile": "universal",
+  "platform": "reels",
+  "horror": {
+    "script": {
+      "pass": true,
+      "fails": [],
+      "warns": []
+    },
+    "story": {
+      "format": "standalone",
+      "errors": [],
+      "warns": []
+    },
+    "measured": {
+      "per_scene": [
+        {
+          "id": "s1_hook",
+          "motion": 0.0112,
+          "camera_px_s": 0,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s2_dadi",
+          "motion": 0.0127,
+          "camera_px_s": 0,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s3_circle",
+          "motion": 0.0223,
+          "camera_px_s": 28,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s4_minute",
+          "motion": 0.0101,
+          "camera_px_s": 20.1,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s5_hand",
+          "motion": 0.0084,
+          "camera_px_s": 7.5,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s6_raju",
+          "motion": 0.0076,
+          "camera_px_s": 5,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s7_whisper",
+          "motion": 0.0162,
+          "camera_px_s": 3,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s8_relief",
+          "motion": 0.017,
+          "camera_px_s": 16.3,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s9_twist",
+          "motion": 0.0248,
+          "camera_px_s": 31.4,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s10_gate",
+          "motion": 0.0329,
+          "camera_px_s": 30.2,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        },
+        {
+          "id": "s11_loop",
+          "motion": 0.0445,
+          "camera_px_s": 65.2,
+          "low_motion_run_s": 0,
+          "black_run_s": 0
+        }
+      ],
+      "dark_share": 0,
+      "scares": [
+        {
+          "t": 40.251,
+          "context_db": -17.7,
+          "quiet_db": -80.5,
+          "drop_db": 62.7,
+          "stinger_peak_db": -6.9,
+          "rise_db": 73.5
+        }
+      ],
+      "note": "Measured gates catch static, black and undropped scares. SHIP does not measure fear: watch it with sound on a phone."
+    },
+    "visual": {
+      "pass": true,
+      "fails": [],
+      "warns": [
+        "escalation: weak escalation 1.24 (< 1.4)"
+      ],
+      "per_scene": [
+        {
+          "id": "s1_hook",
+          "mean": 126.1,
+          "p98": 158.8,
+          "edge": 0.0758,
+          "motion": 0.0112
+        },
+        {
+          "id": "s2_dadi",
+          "mean": 118.6,
+          "p98": 246.1,
+          "edge": 0.0674,
+          "motion": 0.0127
+        },
+        {
+          "id": "s3_circle",
+          "mean": 113.7,
+          "p98": 152.1,
+          "edge": 0.0519,
+          "motion": 0.0223
+        },
+        {
+          "id": "s4_minute",
+          "mean": 126.2,
+          "p98": 147.9,
+          "edge": 0.029,
+          "motion": 0.0101
+        },
+        {
+          "id": "s5_hand",
+          "mean": 121.4,
+          "p98": 151.6,
+          "edge": 0.0166,
+          "motion": 0.0084
+        },
+        {
+          "id": "s6_raju",
+          "mean": 77.9,
+          "p98": 144.9,
+          "edge": 0.0848,
+          "motion": 0.0082
+        },
+        {
+          "id": "s7_whisper",
+          "mean": 67.3,
+          "p98": 127.9,
+          "edge": 0.1092,
+          "motion": 0.0168
+        },
+        {
+          "id": "s8_relief",
+          "mean": 124.2,
+          "p98": 156.7,
+          "edge": 0.0653,
+          "motion": 0.017
+        },
+        {
+          "id": "s9_twist",
+          "mean": 115.2,
+          "p98": 153.5,
+          "edge": 0.0793,
+          "motion": 0.0248
+        },
+        {
+          "id": "s10_gate",
+          "mean": 117.2,
+          "p98": 149.5,
+          "edge": 0.0553,
+          "motion": 0.0329
+        },
+        {
+          "id": "s11_loop",
+          "mean": 118.5,
+          "p98": 146.1,
+          "edge": 0.0358,
+          "motion": 0.0445
+        }
+      ],
+      "escalation": 1.24,
+      "scene_sheet": "/tmp/claude-0/-home-user/43fdb731-d60e-57a1-b784-aab1a3baa8f0/scratchpad/zsd/zsd/out/qa_scene_sheet.png"
+    }
+  }
+}

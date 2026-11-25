@@ -42,6 +42,7 @@ Lints timeline, captions (<= 18 CPS, 2 lines, 42 chars), direction warnings, sce
 ```bash
 node scripts/master_and_qa.mjs --project <dir> --bgm auto --sfx-auto --preset reel-vocal --audio-mood auto --platform reels --json
 ```
+**Voice stays dry by default (V6.2.1):** no mood adds echo or reverb to the narration. Add `--voice-echo` only when the user asks for an echoey or room voice. Never add reverb to VO in custom tools either (whisper effects included).
 Horror adds measured per-scene motion, darkness and a >= 20 dB pre-scare drop (`horror_relint.mjs` re-checks old reels). Writes `out/<slug>.mp4`, `qa_report.json`, `qa_contact_sheet.png`, `qa_safezone_sheet.png` (red = platform UI). `verdict: FIX` lists failures (flashes, freeze, black, dead air, draft size, placeholder tone, music over voice, spec). Fix, re-render, re-master; `--strict` exits non-zero unless SHIP. Then do the human review checklist in the report.
 
 ## Song-reel mode (V6.2): a reel locked to a supplied song

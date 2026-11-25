@@ -1,7 +1,7 @@
 {
  "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
  "temperature": 0.65,
- "tempo": 1.06,
+ "tempo": 1.0,
  "lead_s": 0.15,
  "gap": 0.45,
  "tail_s": 1.6,
