@@ -394,10 +394,13 @@ const DSP_SFX_SYNTHS = {
   }
 };
 
-export function getMoodVoiceFilter(mood = 'none') {
+// Voice echo is OFF by default (V6.2.1): the old horror chain added aecho 45|90 ms, which made narration sound like
+// an empty room. Echo is added only when the caller asks for it (master_and_qa.mjs --voice-echo).
+export const VOICE_ECHO_FILTER = 'aecho=0.8:0.75:45|90:0.18|0.10';
+export function getMoodVoiceFilter(mood = 'none', { echo = false } = {}) {
   const m = String(mood || 'none').toLowerCase().trim();
   if (m === 'horror' || m === 'suspense') {
-    return 'equalizer=f=120:t=q:w=1.2:g=3.5,equalizer=f=3200:t=q:w=1.5:g=2.0,aecho=0.8:0.75:45|90:0.18|0.10';
+    return 'equalizer=f=120:t=q:w=1.2:g=3.5,equalizer=f=3200:t=q:w=1.5:g=2.0' + (echo ? ',' + VOICE_ECHO_FILTER : '');
   }
   if (m === 'documentary' || m === 'science-doc') {
     return 'equalizer=f=140:t=q:w=1.2:g=2.0,equalizer=f=4000:t=q:w=1.4:g=2.5';
@@ -750,6 +753,7 @@ export function buildAudioMixFilterGraph({
   lra = 11,
   vocalPreset = false,
   audioMood = 'none',
+  voiceEcho = false, // true => add the room echo to the voice (opt-in only)
   timeline = null,
   applyExternalTension = false,
   linearGainDb = null, // number => linear normalisation (gain + limiter), keeps designed dynamics (horror drops)
@@ -760,7 +764,7 @@ export function buildAudioMixFilterGraph({
   const bgmTensionFilter = timeline && applyExternalTension ? `,${buildBgmVolumeExpression(timeline)}` : '';
 
   if (voiceInputIdx !== null && voiceInputIdx !== undefined) {
-    const moodFilter = audioMood && audioMood !== 'none' ? getMoodVoiceFilter(audioMood) : '';
+    const moodFilter = audioMood && audioMood !== 'none' ? getMoodVoiceFilter(audioMood, { echo: voiceEcho }) : (voiceEcho ? VOICE_ECHO_FILTER : '');
     const voSteps = [];
     if (moodFilter) voSteps.push(moodFilter);
     if (vocalPreset) voSteps.push('acompressor=threshold=-18dB:ratio=3:attack=5:release=60');

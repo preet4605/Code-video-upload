@@ -1,5 +1,9 @@
 # Changelog
 
+## V6.2.1 (25 Nov 2026)
+- Voice echo is now opt-in. `--audio-mood horror`/`suspense` used to add `aecho` 45|90 ms to the narration, which sounded like an empty room (reported by Love on Zero Shadow Day). The mood now applies EQ only; pass `master_and_qa.mjs --voice-echo` to add the echo when the user asks for it. `getMoodVoiceFilter(mood, { echo })` in lib/audio_sfx.mjs. Verified: horror default measures like the dry voice; `--voice-echo` restores the 45/90 ms echo.
+
+
 ## V6.2 (2026-11-25): song-reel mode
 
 ### Added

@@ -4,7 +4,7 @@ cd "$(dirname "$0")/.."
 S=/mnt/attach/project-files/skills/code-video-studio-v6.2
 node $S/scripts/render_and_lint.mjs --project $1 --json > /tmp/rl_full.json 2>/tmp/rl_full.err
 python3 -I -c "import json;d=json.load(open('/tmp/rl_full.json'));print('render',d.get('ok'),d['lint']['errors'],d['lint']['warnings'])"
-node $S/scripts/master_and_qa.mjs --project $1 --bgm $PWD/$1/sound_bed.wav --bgm-gain -9 --preset reel-vocal --audio-mood horror --platform reels --json > /tmp/qa.json 2>/tmp/qa.err
+node $S/scripts/master_and_qa.mjs --project $1 --bgm $PWD/$1/sound_bed.wav --bgm-gain -9 --preset reel-vocal --audio-mood none --platform reels --json > /tmp/qa.json 2>/tmp/qa.err
 python3 -I - <<'PY'
 import json
 d=json.load(open('/tmp/qa.json'))
