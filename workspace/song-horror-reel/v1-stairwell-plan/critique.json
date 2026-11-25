@@ -1,0 +1,100 @@
+{
+ "mode": "script",
+ "verdict": "workable",
+ "answers": [
+  {
+   "id": "stranger_test",
+   "score": 4,
+   "evidence": "रात के दो बजे, सीढ़ियों पर मेरे पीछे कोई चल रहा था।",
+   "note": "Two shadows on the wall make it readable with sound off."
+  },
+  {
+   "id": "myth_grounding",
+   "score": 3,
+   "evidence": "मुड़कर मत देखना",
+   "note": "Invented family rule from dadi, labelled as hers; the do-not-look-back taboo is widely known."
+  },
+  {
+   "id": "relatability",
+   "score": 5,
+   "evidence": "लिफ्ट बंद, घर पाँचवीं मंज़िल पर।",
+   "note": "Dead lift plus a night climb is an ordinary Indian apartment evening."
+  },
+  {
+   "id": "violation",
+   "score": 5,
+   "evidence": "मैंने मुड़कर देख लिया।",
+   "note": "One explicit moment on a bar hit."
+  },
+  {
+   "id": "consequence",
+   "score": 4,
+   "evidence": "देखते ही वो चली गईं।",
+   "note": "Protector vanishes, wet figure descends."
+  },
+  {
+   "id": "escalation",
+   "score": 4,
+   "evidence": "बत्ती हर मंज़िल पर बुझती, और आवाज़ एक क़दम पास आ जाती।",
+   "note": "Behind, then ahead, then trapped."
+  },
+  {
+   "id": "withholding",
+   "score": 4,
+   "evidence": "ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पैरों से पानी टपकता हुआ।",
+   "note": "Wet figure never faces camera; dadi seen only as a shadow."
+  },
+  {
+   "id": "specificity",
+   "score": 4,
+   "evidence": "गेट से गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।",
+   "note": "Key-bunch jingle, timer light, wet footprints going up."
+  },
+  {
+   "id": "the_turn",
+   "score": 4,
+   "evidence": "वो मुझे घर छोड़ने आई थीं, ऊपर वाले से बचाकर।",
+   "note": "Recontextualises 'someone behind me'."
+  },
+  {
+   "id": "sound_scare",
+   "score": 3,
+   "evidence": "मैंने मुड़कर देख लिया।",
+   "note": "The song never goes silent (breakdown only ~4.5 dB down), so the silence must be visual or the song must be baked and ducked."
+  },
+  {
+   "id": "ending_loop",
+   "score": 4,
+   "evidence": "अब सीढ़ियों पर मेरे पीछे कोई नहीं चलता।",
+   "note": "Inverts the hook."
+  },
+  {
+   "id": "cliche_scan",
+   "score": 3,
+   "evidence": "पीछे दादी की परछाईं थी, और छनकती चाबियाँ।",
+   "note": "Dead-relative protector is familiar; the key jingle and the timer light are the fresh parts."
+  },
+  {
+   "id": "code_visual_feasible",
+   "score": 4,
+   "evidence": "आगे वो, पीछे वो, और नीचे जाने का रास्ता नहीं।",
+   "note": "Stairwell is boxes and quads in scene3d; figures are silhouettes and shadows."
+  },
+  {
+   "id": "bluff_plot_without_adjectives",
+   "score": 4,
+   "evidence": "मैंने मुड़कर देख लिया।",
+   "note": "Plot holds with no adjectives.",
+   "plot_events": [
+    "तीन साल पहले गुज़री दादी चाबियाँ छनकाते हुए कहती थीं, पीछे कोई चले, तो मुड़कर मत देखना।",
+    "गेट से गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।",
+    "मैंने मुड़कर देख लिया।",
+    "देखते ही वो चली गईं।"
+   ]
+  }
+ ],
+ "weakest_line": {
+  "quote": "आगे वो, पीछे वो, नीचे जाने का रास्ता नहीं।",
+  "rewrite": "आगे बूँदें, पीछे चाबियाँ, और बीच में मैं।"
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "platform": "reels",
+ "genre": "horror",
+ "lang": "hi",
+ "format": "standalone",
+ "viewer": "Hindi horror fans at night who scroll for a trending phonk sound",
+ "hook": "रात के दो बजे, सीढ़ियों पर मेरे पीछे कोई चल रहा था।",
+ "payoff": "The one behind him was his dead dadi walking him home; turning around sent her away and left him alone with the wet thing above.",
+ "cta": "",
+ "target_duration_s": 54.4,
+ "loop": true,
+ "sources": [],
+ "audio": {
+  "mode": "music_led_captions_only",
+  "song": "song_original_audio.mp3",
+  "voiceover": false
+ },
+ "story": {
+  "setup": "2 a.m., lift broken, he climbs to the fifth floor and sees two shadows on the stairwell wall.",
+  "rule_or_clue": [
+   {
+    "text": "Dadi's family rule, with her jingling key bunch",
+    "line": "तीन साल पहले गुज़री दादी चाबियाँ छनकाते हुए कहती थीं, पीछे कोई चले, तो मुड़कर मत देखना।",
+    "type": "rule"
+   },
+   {
+    "text": "Wet bare footprints already going up ahead of him",
+    "line": "गेट से गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।",
+    "type": "clue"
+   }
+  ],
+  "escalation": [
+   {
+    "text": "Key-jingle follows every step",
+    "line": "हर क़दम पर पीछे चाबियाँ छनक रही थीं।"
+   },
+   {
+    "text": "Timer light dies each landing, sound one step closer",
+    "line": "बत्ती हर मंज़िल पर बुझती, और आवाज़ एक क़दम पास आ जाती।"
+   },
+   {
+    "text": "Dripping figure waits above, back turned",
+    "line": "ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पैरों से पानी टपकता हुआ।"
+   },
+   {
+    "text": "Trapped between the two",
+    "line": "आगे वो, पीछे वो, नीचे जाने का रास्ता नहीं।"
+   }
+  ],
+  "false_relief": {
+   "text": "It is dadi's shadow and her keys behind him, not a monster",
+   "line": "पीछे दादी की परछाईं थी, और छनकती चाबियाँ।"
+  },
+  "twist": {
+   "text": "She was escorting him home away from the wet thing; turning sent her away",
+   "line": "देखते ही वो चली गईं। वो मुझे घर छोड़ने आई थीं, ऊपर वाले से बचाकर।",
+   "explains_hook": true,
+   "how": "The someone walking behind him in the hook was dadi guarding him from the wet figure above."
+  },
+  "ending_image": {
+   "text": "Under his door: light strip, two wet feet, a drip into the light"
+  },
+  "callback": {
+   "text": "Hook echoed: nobody walks behind him now, it stands outside his door",
+   "line": "अब सीढ़ियों पर मेरे पीछे कोई नहीं चलता। वो दरवाज़े के बाहर खड़ा रहता है।",
+   "type": "callback"
+  },
+  "threat": {
+   "name": "the wet figure",
+   "planted_by": "गेट से गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।",
+   "first_seen": "ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पैरों से पानी टपकता हुआ।"
+  },
+  "scare_pattern": "turn_and_protector_vanishes",
+  "previous_scare_pattern": "count_and_extra"
+ }
+}

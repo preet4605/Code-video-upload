@@ -1,0 +1,774 @@
+{
+ "version": "1.0",
+ "slug": "dulhan-stairs",
+ "aspect": "9:16",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "duration_s": 42.36,
+ "target_lufs": -14,
+ "true_peak_dbtp": -1.5,
+ "audio_file": null,
+ "scenes": [
+  {
+   "id": "hook",
+   "start_s": 0,
+   "end_s": 2.87,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.435,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "bulb.flicker",
+      "shadow.sway",
+      "camera.push",
+      "grain.seed",
+      "dust.drift"
+     ]
+    },
+    {
+     "t_s": 1.435,
+     "dur_s": 1.435,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "bulb.flicker",
+      "shadow.sway",
+      "camera.push",
+      "grain.seed",
+      "dust.drift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rule",
+   "start_s": 2.87,
+   "end_s": 8.5,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.407,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 1.407,
+     "dur_s": 1.407,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 2.815,
+     "dur_s": 1.407,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 4.223,
+     "dur_s": 1.407,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "prints",
+   "start_s": 8.5,
+   "end_s": 11.9,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.7,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "drip.fall"
+     ]
+    },
+    {
+     "t_s": 1.7,
+     "dur_s": 1.7,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "drip.fall"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chase1",
+   "start_s": 11.9,
+   "end_s": 14.7,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.4,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 1.4,
+     "dur_s": 1.4,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "blackout",
+   "start_s": 14.7,
+   "end_s": 18.2,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.75,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 1.75,
+     "dur_s": 1.75,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "above",
+   "start_s": 18.2,
+   "end_s": 24.95,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.35,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step"
+     ]
+    },
+    {
+     "t_s": 1.35,
+     "dur_s": 1.35,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step"
+     ]
+    },
+    {
+     "t_s": 2.7,
+     "dur_s": 1.35,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step"
+     ]
+    },
+    {
+     "t_s": 4.05,
+     "dur_s": 1.35,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step"
+     ]
+    },
+    {
+     "t_s": 5.4,
+     "dur_s": 1.35,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "turn",
+   "start_s": 24.95,
+   "end_s": 25.4,
+   "mood": "climax",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 0.45,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.whip",
+      "ca.hit",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "relief",
+   "start_s": 25.4,
+   "end_s": 28.1,
+   "mood": "calm",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.35,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "shadow.sway",
+      "bulb.flicker",
+      "dust.drift",
+      "camera.creep"
+     ]
+    },
+    {
+     "t_s": 1.35,
+     "dur_s": 1.35,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "shadow.sway",
+      "bulb.flicker",
+      "dust.drift",
+      "camera.creep"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "start_s": 28.1,
+   "end_s": 29.98,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.88,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "shadow.fade",
+      "shards.fall",
+      "bulb.flicker",
+      "camera.creep"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chase2",
+   "start_s": 29.98,
+   "end_s": 40.03,
+   "mood": "climax",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.436,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step",
+      "ca.hit"
+     ]
+    },
+    {
+     "t_s": 1.436,
+     "dur_s": 1.436,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step",
+      "ca.hit"
+     ]
+    },
+    {
+     "t_s": 2.871,
+     "dur_s": 1.436,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step",
+      "ca.hit"
+     ]
+    },
+    {
+     "t_s": 4.307,
+     "dur_s": 1.436,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step",
+      "ca.hit"
+     ]
+    },
+    {
+     "t_s": 5.743,
+     "dur_s": 1.436,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step",
+      "ca.hit"
+     ]
+    },
+    {
+     "t_s": 7.179,
+     "dur_s": 1.436,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step",
+      "ca.hit"
+     ]
+    },
+    {
+     "t_s": 8.614,
+     "dur_s": 1.436,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.path",
+      "camera.handheld",
+      "bulb.flicker",
+      "shadow.sway",
+      "dust.drift",
+      "grain.seed",
+      "figure.step",
+      "ca.hit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "door_loop",
+   "start_s": 40.03,
+   "end_s": 42.36,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 1.165,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "drip.fall",
+      "light.strip",
+      "grain.seed",
+      "camera.creep"
+     ]
+    },
+    {
+     "t_s": 1.165,
+     "dur_s": 1.165,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "drip.fall",
+      "light.strip",
+      "grain.seed",
+      "camera.creep"
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "i": 0,
+   "speaker": "NARRATOR",
+   "text": "शादी से एक रात पहले, सीढ़ियों पर मेरे पीछे कोई चल रहा था।",
+   "start_s": 0.1,
+   "end_s": 3.6
+  },
+  {
+   "i": 1,
+   "speaker": "NARRATOR",
+   "text": "दादी कहती थीं, पहली दुल्हन की चूड़ियाँ बजें, तो मुड़कर मत देखना।",
+   "start_s": 3.8,
+   "end_s": 8.2
+  },
+  {
+   "i": 2,
+   "speaker": "NARRATOR",
+   "text": "गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।",
+   "start_s": 8.5,
+   "end_s": 11.6
+  },
+  {
+   "i": 3,
+   "speaker": "NARRATOR",
+   "text": "हर क़दम पर पीछे चूड़ियाँ छनक रही थीं।",
+   "start_s": 11.9,
+   "end_s": 14.4
+  },
+  {
+   "i": 4,
+   "speaker": "NARRATOR",
+   "text": "बत्ती बुझती, और चूड़ियाँ एक क़दम पास आ जातीं।",
+   "start_s": 14.7,
+   "end_s": 18
+  },
+  {
+   "i": 5,
+   "speaker": "NARRATOR",
+   "text": "ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पानी टपकता हुआ।",
+   "start_s": 18.3,
+   "end_s": 21.9
+  },
+  {
+   "i": 6,
+   "speaker": "NARRATOR",
+   "text": "मैंने मुड़कर देख लिया।",
+   "start_s": 23.9,
+   "end_s": 25.3
+  },
+  {
+   "i": 7,
+   "speaker": "NARRATOR",
+   "text": "पीछे बस एक परछाईं थी, और छनकती चूड़ियाँ।",
+   "start_s": 25.5,
+   "end_s": 28
+  },
+  {
+   "i": 8,
+   "speaker": "NARRATOR",
+   "text": "देखते ही वो चली गईं। वो मुझे घर छोड़ने आई थीं, गीले साये से बचाकर।",
+   "start_s": 28.1,
+   "end_s": 32
+  },
+  {
+   "i": 9,
+   "speaker": "NARRATOR",
+   "text": "टूटी चूड़ियाँ उठाईं और भागा।",
+   "start_s": 32.2,
+   "end_s": 35.4
+  },
+  {
+   "i": 10,
+   "speaker": "NARRATOR",
+   "text": "अब सीढ़ियों पर मेरे पीछे कोई नहीं चलता।",
+   "start_s": 36,
+   "end_s": 38.6
+  },
+  {
+   "i": 11,
+   "speaker": "NARRATOR",
+   "text": "वो दरवाज़े के बाहर खड़ा रहता है।",
+   "start_s": 38.8,
+   "end_s": 42.3
+  }
+ ],
+ "words": [],
+ "captions": [
+  {
+   "speaker": "NARRATOR",
+   "text": "शादी से एक रात पहले,\nसीढ़ियों पर मेरे पीछे कोई चल रहा था।",
+   "start_s": 0.1,
+   "end_s": 3.6,
+   "safe_zone": true,
+   "line": 0,
+   "red": "पीछे"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "दादी कहती थीं, पहली दुल्हन की\nचूड़ियाँ बजें, तो मुड़कर मत देखना।",
+   "start_s": 3.8,
+   "end_s": 8.2,
+   "safe_zone": true,
+   "line": 1,
+   "red": "मुड़कर"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "गीले पैरों के निशान\nमुझसे आगे चढ़ रहे थे।",
+   "start_s": 8.5,
+   "end_s": 11.6,
+   "safe_zone": true,
+   "line": 2,
+   "red": "गीले"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "हर क़दम पर पीछे\nचूड़ियाँ छनक रही थीं।",
+   "start_s": 11.9,
+   "end_s": 14.4,
+   "safe_zone": true,
+   "line": 3,
+   "red": "चूड़ियाँ"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "बत्ती बुझती, और चूड़ियाँ\nएक क़दम पास आ जातीं।",
+   "start_s": 14.7,
+   "end_s": 18,
+   "safe_zone": true,
+   "line": 4,
+   "red": "पास"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "ऊपर कोई खड़ा था, पीठ मेरी तरफ़,\nपानी टपकता हुआ।",
+   "start_s": 18.3,
+   "end_s": 21.9,
+   "safe_zone": true,
+   "line": 5,
+   "red": "पीठ"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "मैंने मुड़कर देख लिया।",
+   "start_s": 23.9,
+   "end_s": 25.3,
+   "safe_zone": true,
+   "line": 6,
+   "red": "देख"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "पीछे बस एक परछाईं थी,\nऔर छनकती चूड़ियाँ।",
+   "start_s": 25.5,
+   "end_s": 28,
+   "safe_zone": true,
+   "line": 7,
+   "red": "परछाईं"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "देखते ही वो चली गईं। वो मुझे घर छोड़ने आई थीं,\nगीले साये से बचाकर।",
+   "start_s": 28.1,
+   "end_s": 32,
+   "safe_zone": true,
+   "line": 8,
+   "red": "बचाकर"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "टूटी चूड़ियाँ उठाईं\nऔर भागा।",
+   "start_s": 32.2,
+   "end_s": 35.4,
+   "safe_zone": true,
+   "line": 9,
+   "red": "भागा"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "अब सीढ़ियों पर मेरे पीछे\nकोई नहीं चलता।",
+   "start_s": 36,
+   "end_s": 38.6,
+   "safe_zone": true,
+   "line": 10,
+   "red": "नहीं"
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "वो दरवाज़े के बाहर\nखड़ा रहता है।",
+   "start_s": 38.8,
+   "end_s": 42.3,
+   "safe_zone": true,
+   "line": 11,
+   "red": "दरवाज़े"
+  }
+ ],
+ "audio_cues": [
+  {
+   "type": "sfx",
+   "name": "bulb_buzz_two_shadows",
+   "t_s": 0.07,
+   "gain_db": -12
+  },
+  {
+   "type": "sfx",
+   "name": "drip_slow",
+   "t_s": 9.6,
+   "gain_db": -14
+  },
+  {
+   "type": "sfx",
+   "name": "timer_light_click",
+   "t_s": 7.9,
+   "gain_db": -10
+  },
+  {
+   "type": "sfx",
+   "name": "bangles_shatter_stone",
+   "t_s": 28.95,
+   "gain_db": -4
+  },
+  {
+   "type": "sfx",
+   "name": "wet_step_descend",
+   "t_s": 36,
+   "gain_db": -10
+  },
+  {
+   "type": "sfx",
+   "name": "door_bolt_drip_under_door",
+   "t_s": 40.03,
+   "gain_db": -3
+  }
+ ]
+}

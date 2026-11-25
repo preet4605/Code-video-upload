@@ -1,0 +1,33 @@
+[SCENE id=hook mood=suspense]
+[SFX name=bulb_buzz_two_shadows]
+[NARRATOR] शादी से एक रात पहले, सीढ़ियों पर मेरे पीछे कोई चल रहा था।
+[SCENE id=rule mood=suspense]
+[SFX name=bangle_jingle]
+[NARRATOR] दादी कहती थीं, पहली दुल्हन की चूड़ियाँ बजें, तो मुड़कर मत देखना।
+[SCENE id=prints mood=suspense]
+[SFX name=drip_slow]
+[NARRATOR] गीले पैरों के निशान मुझसे आगे चढ़ रहे थे।
+[SCENE id=chase1 mood=suspense]
+[SFX name=bangle_jingle]
+[NARRATOR] हर क़दम पर पीछे चूड़ियाँ छनक रही थीं।
+[SCENE id=blackout mood=suspense]
+[SFX name=timer_light_click]
+[NARRATOR] बत्ती बुझती, और चूड़ियाँ एक क़दम पास आ जातीं।
+[SCENE id=above mood=suspense]
+[SFX name=drip_slow]
+[NARRATOR] ऊपर कोई खड़ा था, पीठ मेरी तरफ़, पानी टपकता हुआ।
+[SCENE id=turn mood=climax]
+[SILENCE dur=1.0]
+[SCARE name=turn_and_bangles_break]
+[NARRATOR] मैंने मुड़कर देख लिया।
+[SCENE id=relief mood=calm]
+[NARRATOR] पीछे बस एक परछाईं थी, और छनकती चूड़ियाँ।
+[SCENE id=twist mood=suspense]
+[SFX name=bangles_shatter_stone]
+[NARRATOR] देखते ही वो चली गईं। वो मुझे घर छोड़ने आई थीं, गीले साये से बचाकर।
+[SCENE id=chase2 mood=climax]
+[SFX name=wet_step_descend]
+[NARRATOR] टूटी चूड़ियाँ उठाईं और भागा।
+[SCENE id=door_loop mood=suspense]
+[SFX name=door_bolt_drip_under_door]
+[NARRATOR] अब सीढ़ियों पर मेरे पीछे कोई नहीं चलता। वो दरवाज़े के बाहर खड़ा रहता है।
