@@ -1,0 +1,11 @@
+import fs from 'fs';
+import { createRequire } from 'module';
+const { chromium } = createRequire(import.meta.url)('playwright');
+const D='/mnt/project-files/profile-picture/cinematic/';
+const names={'cine-1-face':'1 · Cinematic Face (recommended)','cine-2-face-tight':'2 · Cinematic Face, tight crop','cine-3-penguin':'3 · Cinematic Penguin'};
+const img=k=>'data:image/png;base64,'+fs.readFileSync(D+k+'.png').toString('base64');
+const circ=(k,px)=>`<div><img class="c" style="width:${px}px;height:${px}px" src="${img(k)}"><span>${px}px</span></div>`;
+const col=k=>`<div class="col"><div class="t">${names[k]}</div><img class="full" src="${img(k)}"><div class="row dark">${circ(k,110)}${circ(k,64)}${circ(k,40)}</div><div class="row light">${circ(k,110)}${circ(k,64)}${circ(k,40)}</div></div>`;
+const html=`<body style="margin:0;background:#161616;font-family:Inter,Arial,sans-serif;color:#ddd"><style>.wrap{display:flex;gap:40px;padding:40px;width:max-content}.col{width:420px}.t{font-size:22px;margin-bottom:12px;font-weight:600}.full{width:420px;height:420px;border-radius:6px}.row{display:flex;gap:28px;align-items:flex-end;margin-top:14px;padding:12px;border-radius:8px}.dark{background:#000}.light{background:#f2f2f2}.light span{color:#555}.row div{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;color:#999}.c{border-radius:50%}</style><div class="wrap">${Object.keys(names).map(col).join('')}</div></body>`;
+const b=await chromium.launch();const p=await b.newPage({viewport:{width:1480,height:860}});
+await p.setContent(html);await p.screenshot({path:D+'preview-circle-crops-cinematic.png'});await b.close();
