@@ -1,0 +1,16 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.7, "tempo": 1.1, "gap": 0.32, "tail_s": 2.0,
+ "scenes_meta": { "hook": {"mood":"suspense","props":["reflection.blink"]}, "cta_loop": {"mood":"suspense","props":["choice.cards","reflection.blink"]} },
+ "extra_sfx": [ {"name":"whisper_gust","t_s":"end","before_end":1.6,"gain_db":-9} ],
+ "lines": [
+  {"sc":"hook","hi":"तुम्हारा रिफ़्लेक्शन, तुमसे थोड़ा देर से पलक झपकाता है?","hl":"Tumhara reflection, tumse thoda der se palak jhapkata hai?","gap":0.45,"sfx":[{"name":"violin_stinger","dt":0.0,"gain_db":-9}]},
+  {"sc":"test","hi":"आज रात एक टेस्ट करो। आईने के सामने खड़े हो, और जल्दी से पलक झपकाओ।","hl":"Aaj raat ek test karo. Aaine ke saamne khade ho, aur jaldi se palak jhapkao."},
+  {"sc":"test","hi":"अगर सब नॉर्मल है, तो वो तुम्हारे साथ ही झपकेगा।","hl":"Agar sab normal hai, to wo tumhare saath hi jhapkega."},
+  {"sc":"test2","hi":"पर अगर वो एक पल भी देर से झपके, तो वो तुम नहीं हो।","hl":"Par agar wo ek pal bhi der se jhapke, to wo tum nahi ho.","gap":0.45,"sfx":[{"name":"heartbeat","dt":0.2,"gain_db":-8}]},
+  {"sc":"neha","hi":"नेहा ने ये टेस्ट किया, और उसका रिफ़्लेक्शन देर से झपका।","hl":"Neha ne ye test kiya, aur uska reflection der se jhapka."},
+  {"sc":"neha","hi":"फिर रिफ़्लेक्शन मुस्कुराया, पर नेहा तो मुस्कुरा ही नहीं रही थी।","hl":"Phir reflection muskuraya, par Neha to muskura hi nahi rahi thi.","gap":0.85,"sfx":[{"name":"claw_scrape","at":"end","dt":-1.5,"gain_db":-9}]},
+  {"sc":"twist","hi":"अब हर सुबह, वो नेहा से पहले उठ जाता है।","hl":"Ab har subah, wo Neha se pehle uth jaata hai.","gap":0.5,"sfx":[{"name":"violin_stinger","at":"end","dt":-0.8,"gain_db":-6}]},
+  {"sc":"cta_loop","hi":"टेस्ट करके कमेंट करो, नॉर्मल या देर से। हिम्मत हो तो।","hl":"Test karke comment karo, Normal ya Der se. Himmat ho to."}
+ ]
+}

@@ -1,0 +1,1172 @@
+{
+ "version": "1.0",
+ "slug": "reel-04",
+ "aspect": "9:16",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "duration_s": 38.727,
+ "target_lufs": -14,
+ "true_peak_dbtp": -1.5,
+ "audio_file": "voiceover.wav",
+ "alignment": {
+  "method": "voiced-span-weighted",
+  "line_anchored": true,
+  "note": "One TTS clip per line, so line windows are exact; word timing inside a line is voiced-span weighted."
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "start_s": 0,
+   "end_s": 4.396,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 0,
+     "start_s": 0.12,
+     "end_s": 3.996
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 2.198,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "call.rings"
+     ]
+    },
+    {
+     "t_s": 2.198,
+     "dur_s": 2.198,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "call.rings"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "intro",
+   "start_s": 4.396,
+   "end_s": 10.339,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 1,
+     "start_s": 4.496,
+     "end_s": 9.989
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 4.396,
+     "dur_s": 1.981,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 6.377,
+     "dur_s": 1.981,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 8.358,
+     "dur_s": 1.981,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rule1",
+   "start_s": 10.339,
+   "end_s": 17.076,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 2,
+     "start_s": 10.439,
+     "end_s": 16.726
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 10.339,
+     "dur_s": 2.246,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 12.585,
+     "dur_s": 2.246,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 14.83,
+     "dur_s": 2.246,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rule2",
+   "start_s": 17.076,
+   "end_s": 22.999,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 3,
+     "start_s": 17.176,
+     "end_s": 22.649
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 17.076,
+     "dur_s": 1.974,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 19.05,
+     "dur_s": 1.974,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 21.025,
+     "dur_s": 1.974,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rule3",
+   "start_s": 22.999,
+   "end_s": 28.388,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 4,
+     "start_s": 23.099,
+     "end_s": 27.638
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 22.999,
+     "dur_s": 2.695,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 25.694,
+     "dur_s": 2.695,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "start_s": 28.388,
+   "end_s": 32.109,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 5,
+     "start_s": 28.488,
+     "end_s": 31.709
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 28.388,
+     "dur_s": 1.861,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 30.249,
+     "dur_s": 1.861,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cta_loop",
+   "start_s": 32.109,
+   "end_s": 38.727,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 6,
+     "start_s": 32.209,
+     "end_s": 36.727
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 32.109,
+     "dur_s": 2.206,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "comment.card",
+      "call.rings"
+     ]
+    },
+    {
+     "t_s": 34.315,
+     "dur_s": 2.206,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "comment.card",
+      "call.rings"
+     ]
+    },
+    {
+     "t_s": 36.521,
+     "dur_s": 2.206,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "comment.card",
+      "call.rings"
+     ]
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "word": "Wo",
+   "start_s": 0.12,
+   "end_s": 0.29,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "tumhara",
+   "start_s": 0.29,
+   "end_s": 0.727,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "naam",
+   "start_s": 0.727,
+   "end_s": 1.004,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "do",
+   "start_s": 1.004,
+   "end_s": 1.175,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "baar",
+   "start_s": 1.175,
+   "end_s": 1.452,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "pukaarti",
+   "start_s": 1.452,
+   "end_s": 1.942,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "hai.",
+   "start_s": 1.942,
+   "end_s": 2.166,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "Teesri",
+   "start_s": 2.7,
+   "end_s": 3.11,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "baar",
+   "start_s": 3.11,
+   "end_s": 3.405,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "mat",
+   "start_s": 3.405,
+   "end_s": 3.644,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "sunna.",
+   "start_s": 3.644,
+   "end_s": 3.996,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "Daadi",
+   "start_s": 4.496,
+   "end_s": 4.876,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "kehti",
+   "start_s": 4.876,
+   "end_s": 5.255,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "thi,",
+   "start_s": 5.255,
+   "end_s": 5.512,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "chudail",
+   "start_s": 5.923,
+   "end_s": 6.364,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "ko",
+   "start_s": 6.364,
+   "end_s": 6.536,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "pehchanna",
+   "start_s": 6.536,
+   "end_s": 7.084,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "aasaan",
+   "start_s": 7.084,
+   "end_s": 7.472,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "hai,",
+   "start_s": 7.472,
+   "end_s": 7.698,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "bas",
+   "start_s": 8.169,
+   "end_s": 8.389,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "3",
+   "start_s": 8.389,
+   "end_s": 8.633,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "cheezein",
+   "start_s": 8.633,
+   "end_s": 9.117,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "dhyaan",
+   "start_s": 9.117,
+   "end_s": 9.495,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "se",
+   "start_s": 9.495,
+   "end_s": 9.663,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "dekho.",
+   "start_s": 9.663,
+   "end_s": 9.989,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "Pehli,",
+   "start_s": 10.439,
+   "end_s": 10.78,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "uske",
+   "start_s": 11.263,
+   "end_s": 11.542,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "pair",
+   "start_s": 11.542,
+   "end_s": 11.82,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "ulte",
+   "start_s": 11.82,
+   "end_s": 12.171,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "hote",
+   "start_s": 12.171,
+   "end_s": 12.45,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "hain,",
+   "start_s": 12.45,
+   "end_s": 12.728,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "to",
+   "start_s": 13.168,
+   "end_s": 13.31,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "wo",
+   "start_s": 13.31,
+   "end_s": 13.452,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "aage",
+   "start_s": 13.452,
+   "end_s": 13.683,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "chalti",
+   "start_s": 13.683,
+   "end_s": 14.003,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "hai",
+   "start_s": 14.003,
+   "end_s": 14.68,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "par",
+   "start_s": 14.68,
+   "end_s": 14.867,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "nishaan",
+   "start_s": 14.867,
+   "end_s": 15.231,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "peeche",
+   "start_s": 15.231,
+   "end_s": 15.802,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "ki",
+   "start_s": 15.802,
+   "end_s": 15.944,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "taraf",
+   "start_s": 15.944,
+   "end_s": 16.219,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "bante",
+   "start_s": 16.219,
+   "end_s": 16.495,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "hain.",
+   "start_s": 16.495,
+   "end_s": 16.726,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "Doosri,",
+   "start_s": 17.176,
+   "end_s": 17.636,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "wo",
+   "start_s": 18.239,
+   "end_s": 18.384,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "tumhari",
+   "start_s": 18.384,
+   "end_s": 18.756,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "Mummy",
+   "start_s": 18.756,
+   "end_s": 19.037,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "ki",
+   "start_s": 19.037,
+   "end_s": 19.182,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "awaaz",
+   "start_s": 19.182,
+   "end_s": 19.463,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "mein",
+   "start_s": 19.463,
+   "end_s": 19.699,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "bulayegi,",
+   "start_s": 19.699,
+   "end_s": 20.117,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "par",
+   "start_s": 20.656,
+   "end_s": 20.868,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "do",
+   "start_s": 20.868,
+   "end_s": 21.029,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "baar",
+   "start_s": 21.029,
+   "end_s": 21.291,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "se",
+   "start_s": 21.291,
+   "end_s": 21.452,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "zyada",
+   "start_s": 21.452,
+   "end_s": 21.764,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "nahi",
+   "start_s": 21.764,
+   "end_s": 22.026,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "bol",
+   "start_s": 22.026,
+   "end_s": 22.237,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "sakti.",
+   "start_s": 22.237,
+   "end_s": 22.649,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "Teesri,",
+   "start_s": 23.099,
+   "end_s": 23.472,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "wo",
+   "start_s": 24.082,
+   "end_s": 24.243,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "kabhi",
+   "start_s": 24.243,
+   "end_s": 24.557,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "khud",
+   "start_s": 24.557,
+   "end_s": 24.819,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "andar",
+   "start_s": 24.819,
+   "end_s": 25.132,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "nahi",
+   "start_s": 25.132,
+   "end_s": 25.395,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "aati.",
+   "start_s": 25.395,
+   "end_s": 25.658,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "Tum",
+   "start_s": 26.231,
+   "end_s": 26.442,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "use",
+   "start_s": 26.442,
+   "end_s": 26.653,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "khud",
+   "start_s": 26.653,
+   "end_s": 26.914,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "andar",
+   "start_s": 26.914,
+   "end_s": 27.226,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "bulaoge.",
+   "start_s": 27.226,
+   "end_s": 27.638,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "Ab",
+   "start_s": 28.488,
+   "end_s": 28.685,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "socho,",
+   "start_s": 28.685,
+   "end_s": 29.068,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "aaj",
+   "start_s": 29.576,
+   "end_s": 29.799,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "tumhe",
+   "start_s": 29.799,
+   "end_s": 30.128,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "kisne",
+   "start_s": 30.128,
+   "end_s": 30.457,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "do",
+   "start_s": 30.457,
+   "end_s": 30.626,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "baar",
+   "start_s": 30.626,
+   "end_s": 30.902,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "awaaz",
+   "start_s": 30.902,
+   "end_s": 31.231,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "di",
+   "start_s": 31.231,
+   "end_s": 31.401,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "thi?",
+   "start_s": 31.401,
+   "end_s": 31.624,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "Apni",
+   "start_s": 32.209,
+   "end_s": 32.48,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "daadi",
+   "start_s": 32.48,
+   "end_s": 32.803,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "wala",
+   "start_s": 32.803,
+   "end_s": 33.074,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "niyam",
+   "start_s": 33.074,
+   "end_s": 33.397,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "comment",
+   "start_s": 33.397,
+   "end_s": 33.825,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "karo,",
+   "start_s": 33.825,
+   "end_s": 34.096,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "sabse",
+   "start_s": 34.538,
+   "end_s": 34.909,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "achha",
+   "start_s": 34.909,
+   "end_s": 35.28,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "wala",
+   "start_s": 35.28,
+   "end_s": 35.591,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "agli",
+   "start_s": 35.591,
+   "end_s": 35.985,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "reel",
+   "start_s": 35.985,
+   "end_s": 36.296,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "banega.",
+   "start_s": 36.296,
+   "end_s": 36.727,
+   "speaker": "NARRATOR",
+   "line": 6
+  }
+ ],
+ "captions": [
+  {
+   "speaker": "NARRATOR",
+   "text": "Wo tumhara naam do\nbaar pukaarti hai.",
+   "start_s": 0.04,
+   "end_s": 2.516,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Teesri baar mat sunna.",
+   "start_s": 2.62,
+   "end_s": 4.346,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Daadi kehti\nthi, chudail ko",
+   "start_s": 4.416,
+   "end_s": 6.436,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "pehchanna aasaan hai,",
+   "start_s": 6.456,
+   "end_s": 8.048,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "bas 3 cheezein\ndhyaan se dekho.",
+   "start_s": 8.089,
+   "end_s": 10.339,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Pehli, uske\npair ulte hote",
+   "start_s": 10.359,
+   "end_s": 12.35,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "hain, to wo\naage chalti hai",
+   "start_s": 12.37,
+   "end_s": 14.58,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "par nishaan peeche\nki taraf bante hain.",
+   "start_s": 14.6,
+   "end_s": 17.076,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Doosri, wo\ntumhari Mummy ki",
+   "start_s": 17.096,
+   "end_s": 19.082,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "awaaz mein bulayegi,",
+   "start_s": 19.102,
+   "end_s": 20.467,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "par do baar se zyada\nnahi bol sakti.",
+   "start_s": 20.576,
+   "end_s": 22.999,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Teesri, wo kabhi\nkhud andar nahi aati.",
+   "start_s": 23.019,
+   "end_s": 26.008,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Tum use khud\nandar bulaoge.",
+   "start_s": 26.151,
+   "end_s": 27.988,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Ab socho, aaj\ntumhe kisne do",
+   "start_s": 28.408,
+   "end_s": 30.526,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "baar awaaz di thi?",
+   "start_s": 30.546,
+   "end_s": 31.974,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Apni daadi wala\nniyam comment",
+   "start_s": 32.129,
+   "end_s": 33.725,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "karo, sabse achha\nwala agli reel banega.",
+   "start_s": 33.745,
+   "end_s": 37.077,
+   "safe_zone": true,
+   "line": 6
+  }
+ ],
+ "audio_cues": [
+  {
+   "type": "sfx",
+   "name": "whisper_gust",
+   "t_s": 0.12,
+   "gain_db": -7
+  },
+  {
+   "type": "sfx",
+   "name": "stamp_slam",
+   "t_s": 10.389,
+   "gain_db": -8
+  },
+  {
+   "type": "sfx",
+   "name": "stamp_slam",
+   "t_s": 17.126,
+   "gain_db": -8
+  },
+  {
+   "type": "sfx",
+   "name": "stamp_slam",
+   "t_s": 23.049,
+   "gain_db": -8
+  },
+  {
+   "type": "sfx",
+   "name": "door_creak",
+   "t_s": 26.638,
+   "gain_db": -7
+  },
+  {
+   "type": "sfx",
+   "name": "violin_stinger",
+   "t_s": 30.909,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "whisper_gust",
+   "t_s": 37.027,
+   "gain_db": -8
+  }
+ ]
+}

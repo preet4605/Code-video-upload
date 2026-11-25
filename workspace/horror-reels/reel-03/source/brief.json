@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Urban Hindi-speaking 16-30 year olds who live in apartment buildings",
+ "hook": "A lift button glowing 13: Agar lift mein 13 ka button dikhe, to use dabaana mat.",
+ "payoff": "Back home, Mummy asks: tum 13 se kab wapas aaye?",
+ "cta": "Haan ya Nahi: tumhari building mein 13th floor hai?",
+ "target_duration_s": 40, "loop": true,
+ "sources": ["Original story (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS (Aman), studio-synthesized SFX/BGM. No third-party footage or audio."]
+}

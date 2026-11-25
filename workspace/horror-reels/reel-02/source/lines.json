@@ -1,0 +1,136 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.7,
+ "tempo": 1.1,
+ "gap": 0.32,
+ "tail_s": 2.0,
+ "scenes_meta": {
+  "hook": {
+   "mood": "suspense",
+   "props": [
+    "frost.crack"
+   ]
+  },
+  "cta_loop": {
+   "mood": "suspense",
+   "props": [
+    "choice.cards",
+    "frost.grow"
+   ]
+  }
+ },
+ "extra_sfx": [
+  {
+   "name": "whisper_gust",
+   "t_s": "end",
+   "before_end": 1.8,
+   "gain_db": -8
+  }
+ ],
+ "lines": [
+  {
+   "sc": "hook",
+   "hi": "रंगा पहले डायन नहीं थी, वो एक दुल्हन थी।",
+   "hl": "Ranga pehle dayan nahi thi, wo ek dulhan thi.",
+   "gap": 0.5,
+   "sfx": [
+    {
+     "name": "violin_stinger",
+     "dt": -0.05,
+     "gain_db": -6
+    }
+   ]
+  },
+  {
+   "sc": "recap",
+   "hi": "पार्ट एक में बताया था, रंगा पास हो तो अचानक बहुत ठंड हो जाती है। आज जानो क्यों।",
+   "hl": "Part 1 mein bataya tha, Ranga paas ho to achanak bahut thand ho jaati hai. Aaj jaano kyun.",
+   "gap": 0.45
+  },
+  {
+   "sc": "village",
+   "hi": "पहाड़ों में एक छोटा सा गाँव था, और सर्दी की एक रात रंगा की शादी थी।",
+   "hl": "Pahadon mein ek chhota sa gaon tha, aur sardi ki ek raat Ranga ki shaadi thi.",
+   "sfx": [
+    {
+     "name": "whisper_gust",
+     "dt": 0.1,
+     "gain_db": -10
+    }
+   ]
+  },
+  {
+   "sc": "village",
+   "hi": "वो पूरी रात सजकर इंतज़ार करती रही, पर बारात आई ही नहीं।",
+   "hl": "Wo poori raat saj kar intezaar karti rahi, par baraat aayi hi nahi.",
+   "gap": 0.45
+  },
+  {
+   "sc": "cast_out",
+   "hi": "गाँव वालों ने कहा, ये लड़की मनहूस है।",
+   "hl": "Gaon walon ne kaha, ye ladki manhoos hai."
+  },
+  {
+   "sc": "cast_out",
+   "hi": "उन्होंने उसे बर्फ़ में बाहर छोड़ दिया, और सबने अपने दरवाज़े बंद कर लिए।",
+   "hl": "Unhone use barf mein bahar chhod diya, aur sabne apne darwaze band kar liye.",
+   "gap": 0.5,
+   "sfx": [
+    {
+     "name": "thud",
+     "at": "end",
+     "dt": -1.2,
+     "gain_db": -6
+    },
+    {
+     "name": "thud",
+     "at": "end",
+     "dt": -0.6,
+     "gain_db": -7
+    }
+   ]
+  },
+  {
+   "sc": "trail",
+   "hi": "अगली सुबह वो वहाँ नहीं थी।",
+   "hl": "Agli subah wo wahan nahi thi."
+  },
+  {
+   "sc": "trail",
+   "hi": "बस बर्फ़ पर एक लंबी लकीर थी, जो गाँव के हर घर के दरवाज़े तक जाती थी।",
+   "hl": "Bas barf pe ek lambi lakeer thi, jo gaon ke har ghar ke darwaze tak jaati thi.",
+   "gap": 0.6,
+   "sfx": [
+    {
+     "name": "heartbeat",
+     "dt": 0.3,
+     "gain_db": -7
+    }
+   ]
+  },
+  {
+   "sc": "warning",
+   "hi": "इसीलिए जब रात को ठंड अचानक बढ़ जाए, तो दरवाज़ा मत खोलना।",
+   "hl": "Isiliye jab raat ko thand achanak badh jaaye, to darwaza mat kholna.",
+   "gap": 0.6,
+   "sfx": [
+    {
+     "name": "door_knock",
+     "at": "end",
+     "dt": 0.1,
+     "gain_db": -4
+    }
+   ]
+  },
+  {
+   "sc": "cta_loop",
+   "hi": "क्या गाँव वालों को माफ़ी मिलनी चाहिए? हाँ या ना, कमेंट करो।",
+   "hl": "Kya gaon walon ko maafi milni chahiye? Haan ya Na, comment karo."
+  },
+  {
+   "sc": "cta_loop",
+   "hi": "पार्ट तीन में बताऊँगा, रंगा से कैसे बचें।",
+   "hl": "Part 3 mein bataunga, Ranga se kaise bachein."
+  }
+ ]
+}

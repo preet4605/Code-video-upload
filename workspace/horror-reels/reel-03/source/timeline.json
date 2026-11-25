@@ -1,0 +1,1374 @@
+{
+ "version": "1.0",
+ "slug": "reel-03",
+ "aspect": "9:16",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "duration_s": 45.187,
+ "target_lufs": -14,
+ "true_peak_dbtp": -1.5,
+ "audio_file": "voiceover.wav",
+ "alignment": {
+  "method": "voiced-span-weighted",
+  "line_anchored": true,
+  "note": "One TTS clip per line, so line windows are exact; word timing inside a line is voiced-span weighted."
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "start_s": 0,
+   "end_s": 4.018,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 0,
+     "start_s": 0.12,
+     "end_s": 3.618
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 2.009,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "button.glow"
+     ]
+    },
+    {
+     "t_s": 2.009,
+     "dur_s": 2.009,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "button.glow"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "setup",
+   "start_s": 4.018,
+   "end_s": 9.093,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 1,
+     "start_s": 4.118,
+     "end_s": 8.743
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 4.018,
+     "dur_s": 2.538,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 6.556,
+     "dur_s": 2.538,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lift",
+   "start_s": 9.093,
+   "end_s": 19.368,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 2,
+     "start_s": 9.193,
+     "end_s": 13.429
+    },
+    {
+     "i": 3,
+     "start_s": 13.749,
+     "end_s": 18.968
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 9.093,
+     "dur_s": 2.055,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 11.148,
+     "dur_s": 2.055,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 13.203,
+     "dur_s": 2.055,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 15.258,
+     "dur_s": 2.055,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 17.313,
+     "dur_s": 2.055,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "corridor",
+   "start_s": 19.368,
+   "end_s": 28.441,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 4,
+     "start_s": 19.468,
+     "end_s": 23.109
+    },
+    {
+     "i": 5,
+     "start_s": 23.429,
+     "end_s": 28.091
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 19.368,
+     "dur_s": 2.268,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 21.636,
+     "dur_s": 2.268,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 23.905,
+     "dur_s": 2.268,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 26.173,
+     "dur_s": 2.268,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home",
+   "start_s": 28.441,
+   "end_s": 33.54,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 6,
+     "start_s": 28.541,
+     "end_s": 32.79
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 28.441,
+     "dur_s": 2.55,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 30.99,
+     "dur_s": 2.55,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "start_s": 33.54,
+   "end_s": 38.887,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 7,
+     "start_s": 33.64,
+     "end_s": 38.487
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 33.54,
+     "dur_s": 2.674,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 36.213,
+     "dur_s": 2.674,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cta_loop",
+   "start_s": 38.887,
+   "end_s": 45.187,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 8,
+     "start_s": 38.987,
+     "end_s": 43.187
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 38.887,
+     "dur_s": 2.1,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "choice.cards",
+      "button.glow"
+     ]
+    },
+    {
+     "t_s": 40.987,
+     "dur_s": 2.1,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "choice.cards",
+      "button.glow"
+     ]
+    },
+    {
+     "t_s": 43.087,
+     "dur_s": 2.1,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "choice.cards",
+      "button.glow"
+     ]
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "word": "Agar",
+   "start_s": 0.12,
+   "end_s": 0.417,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "lift",
+   "start_s": 0.417,
+   "end_s": 0.714,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "mein",
+   "start_s": 0.714,
+   "end_s": 1.127,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "13",
+   "start_s": 1.127,
+   "end_s": 1.309,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "ka",
+   "start_s": 1.309,
+   "end_s": 1.492,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "button",
+   "start_s": 1.492,
+   "end_s": 1.903,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "dikhe,",
+   "start_s": 1.903,
+   "end_s": 2.257,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "to",
+   "start_s": 2.541,
+   "end_s": 2.715,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "use",
+   "start_s": 2.715,
+   "end_s": 2.943,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "dabaana",
+   "start_s": 2.943,
+   "end_s": 3.389,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "mat.",
+   "start_s": 3.389,
+   "end_s": 3.618,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "Hamari",
+   "start_s": 4.118,
+   "end_s": 4.545,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "building",
+   "start_s": 4.545,
+   "end_s": 5.09,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "mein",
+   "start_s": 5.09,
+   "end_s": 5.398,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "12",
+   "start_s": 5.398,
+   "end_s": 5.588,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "ke",
+   "start_s": 5.588,
+   "end_s": 5.777,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "baad",
+   "start_s": 5.777,
+   "end_s": 6.085,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "seedha",
+   "start_s": 6.085,
+   "end_s": 6.583,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "14",
+   "start_s": 6.583,
+   "end_s": 6.773,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "aata",
+   "start_s": 6.773,
+   "end_s": 7.081,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "hai,",
+   "start_s": 7.081,
+   "end_s": 7.33,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "ye",
+   "start_s": 7.783,
+   "end_s": 7.947,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "sabko",
+   "start_s": 7.947,
+   "end_s": 8.263,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "pata",
+   "start_s": 8.263,
+   "end_s": 8.529,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "hai.",
+   "start_s": 8.529,
+   "end_s": 8.743,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "Ek",
+   "start_s": 9.193,
+   "end_s": 9.462,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "raat,",
+   "start_s": 9.462,
+   "end_s": 9.899,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "kareeb",
+   "start_s": 10.279,
+   "end_s": 10.877,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "1",
+   "start_s": 10.877,
+   "end_s": 11.011,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "baje,",
+   "start_s": 11.011,
+   "end_s": 11.328,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "main",
+   "start_s": 11.876,
+   "end_s": 12.175,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "lift",
+   "start_s": 12.175,
+   "end_s": 12.473,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "mein",
+   "start_s": 12.473,
+   "end_s": 12.832,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "akela",
+   "start_s": 12.832,
+   "end_s": 13.188,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "tha.",
+   "start_s": 13.188,
+   "end_s": 13.429,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "Panel",
+   "start_s": 13.749,
+   "end_s": 14.087,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "pe",
+   "start_s": 14.087,
+   "end_s": 14.262,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "ek",
+   "start_s": 14.262,
+   "end_s": 14.437,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "naya",
+   "start_s": 14.437,
+   "end_s": 14.721,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "button",
+   "start_s": 14.721,
+   "end_s": 15.114,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "tha,",
+   "start_s": 15.114,
+   "end_s": 15.343,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "13,",
+   "start_s": 15.872,
+   "end_s": 16.258,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "aur",
+   "start_s": 16.604,
+   "end_s": 16.82,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "meri",
+   "start_s": 16.82,
+   "end_s": 17.088,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "ungli",
+   "start_s": 17.088,
+   "end_s": 17.407,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "apne",
+   "start_s": 17.407,
+   "end_s": 17.739,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "aap",
+   "start_s": 17.739,
+   "end_s": 17.956,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "us",
+   "start_s": 17.956,
+   "end_s": 18.12,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "pe",
+   "start_s": 18.12,
+   "end_s": 18.381,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "chali",
+   "start_s": 18.381,
+   "end_s": 18.7,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "gayi.",
+   "start_s": 18.7,
+   "end_s": 18.968,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "Darwaza",
+   "start_s": 19.468,
+   "end_s": 19.958,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "khula,",
+   "start_s": 19.958,
+   "end_s": 20.329,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "to",
+   "start_s": 20.329,
+   "end_s": 20.762,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "bilkul",
+   "start_s": 20.762,
+   "end_s": 21.255,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "mere",
+   "start_s": 21.255,
+   "end_s": 21.566,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "floor",
+   "start_s": 21.566,
+   "end_s": 21.937,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "jaisa",
+   "start_s": 21.937,
+   "end_s": 22.308,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "corridor",
+   "start_s": 22.308,
+   "end_s": 22.858,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "tha.",
+   "start_s": 22.858,
+   "end_s": 23.109,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "Par",
+   "start_s": 23.429,
+   "end_s": 23.679,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "wahan",
+   "start_s": 23.679,
+   "end_s": 24.047,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "ke",
+   "start_s": 24.047,
+   "end_s": 24.238,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "saare",
+   "start_s": 24.238,
+   "end_s": 24.606,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "darwaze,",
+   "start_s": 24.606,
+   "end_s": 25.094,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "andar",
+   "start_s": 25.473,
+   "end_s": 25.827,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "se",
+   "start_s": 25.827,
+   "end_s": 26.01,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "zor",
+   "start_s": 26.01,
+   "end_s": 26.25,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "zor",
+   "start_s": 26.25,
+   "end_s": 26.49,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "se",
+   "start_s": 26.49,
+   "end_s": 26.673,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "khatkhataye",
+   "start_s": 26.673,
+   "end_s": 27.371,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "ja",
+   "start_s": 27.371,
+   "end_s": 27.554,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "rahe",
+   "start_s": 27.554,
+   "end_s": 27.851,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "the.",
+   "start_s": 27.851,
+   "end_s": 28.091,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "Main",
+   "start_s": 28.541,
+   "end_s": 28.805,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "darr",
+   "start_s": 28.805,
+   "end_s": 29.07,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "kar",
+   "start_s": 29.07,
+   "end_s": 29.283,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "wapas",
+   "start_s": 29.283,
+   "end_s": 29.599,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "lift",
+   "start_s": 29.599,
+   "end_s": 29.863,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "mein",
+   "start_s": 29.863,
+   "end_s": 30.127,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "bhaaga,",
+   "start_s": 30.127,
+   "end_s": 30.493,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "aur",
+   "start_s": 30.944,
+   "end_s": 31.164,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "seedha",
+   "start_s": 31.164,
+   "end_s": 31.542,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "apne",
+   "start_s": 31.542,
+   "end_s": 31.814,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "ghar",
+   "start_s": 31.814,
+   "end_s": 32.087,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "pahunch",
+   "start_s": 32.087,
+   "end_s": 32.517,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "gaya.",
+   "start_s": 32.517,
+   "end_s": 32.79,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "Tabhi",
+   "start_s": 33.64,
+   "end_s": 33.974,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "Mummy",
+   "start_s": 33.974,
+   "end_s": 34.307,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "ne",
+   "start_s": 34.307,
+   "end_s": 34.48,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "dheere",
+   "start_s": 34.48,
+   "end_s": 34.867,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "se",
+   "start_s": 34.867,
+   "end_s": 35.039,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "poocha,",
+   "start_s": 35.039,
+   "end_s": 35.427,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "beta,",
+   "start_s": 35.903,
+   "end_s": 36.304,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "tum",
+   "start_s": 36.797,
+   "end_s": 37.222,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "13",
+   "start_s": 37.222,
+   "end_s": 37.396,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "se",
+   "start_s": 37.396,
+   "end_s": 37.57,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "kab",
+   "start_s": 37.57,
+   "end_s": 37.866,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "wapas",
+   "start_s": 37.866,
+   "end_s": 38.204,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "aaye?",
+   "start_s": 38.204,
+   "end_s": 38.487,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "Tumhari",
+   "start_s": 38.987,
+   "end_s": 39.378,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "building",
+   "start_s": 39.378,
+   "end_s": 39.817,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "mein",
+   "start_s": 39.817,
+   "end_s": 40.224,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "13th",
+   "start_s": 40.224,
+   "end_s": 40.472,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "floor",
+   "start_s": 40.472,
+   "end_s": 40.768,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "hai?",
+   "start_s": 40.768,
+   "end_s": 40.969,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "Haan",
+   "start_s": 41.48,
+   "end_s": 41.793,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "ya",
+   "start_s": 41.793,
+   "end_s": 41.986,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "Nahi,",
+   "start_s": 41.986,
+   "end_s": 42.299,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "comment",
+   "start_s": 42.299,
+   "end_s": 42.874,
+   "speaker": "NARRATOR",
+   "line": 8
+  },
+  {
+   "word": "karo.",
+   "start_s": 42.874,
+   "end_s": 43.187,
+   "speaker": "NARRATOR",
+   "line": 8
+  }
+ ],
+ "captions": [
+  {
+   "speaker": "NARRATOR",
+   "text": "Agar lift mein\n13 ka button",
+   "start_s": 0.04,
+   "end_s": 1.803,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "dikhe, to use\ndabaana mat.",
+   "start_s": 1.823,
+   "end_s": 3.968,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Hamari building\nmein 12 ke",
+   "start_s": 4.038,
+   "end_s": 5.677,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "baad seedha\n14 aata hai,",
+   "start_s": 5.697,
+   "end_s": 7.68,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "ye sabko pata hai.",
+   "start_s": 7.703,
+   "end_s": 9.093,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Ek raat,\nkareeb 1 baje,",
+   "start_s": 9.113,
+   "end_s": 11.678,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "main lift mein\nakela tha.",
+   "start_s": 11.796,
+   "end_s": 13.649,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Panel pe ek\nnaya button tha,",
+   "start_s": 13.669,
+   "end_s": 15.693,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "13, aur meri\nungli apne aap us",
+   "start_s": 15.792,
+   "end_s": 18.02,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "pe chali gayi.",
+   "start_s": 18.04,
+   "end_s": 19.318,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Darwaza khula,\nto bilkul mere",
+   "start_s": 19.388,
+   "end_s": 21.466,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "floor jaisa\ncorridor tha.",
+   "start_s": 21.486,
+   "end_s": 23.329,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Par wahan ke\nsaare darwaze,",
+   "start_s": 23.349,
+   "end_s": 25.373,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "andar se zor zor se",
+   "start_s": 25.393,
+   "end_s": 26.573,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "khatkhataye\nja rahe the.",
+   "start_s": 26.593,
+   "end_s": 28.441,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Main darr kar\nwapas lift mein",
+   "start_s": 28.461,
+   "end_s": 30.027,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "bhaaga, aur seedha\napne ghar pahunch gaya.",
+   "start_s": 30.047,
+   "end_s": 33.14,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Tabhi Mummy\nne dheere se",
+   "start_s": 33.56,
+   "end_s": 34.939,
+   "safe_zone": true,
+   "line": 7
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "poocha, beta, tum 13\nse kab wapas aaye?",
+   "start_s": 34.959,
+   "end_s": 38.837,
+   "safe_zone": true,
+   "line": 7
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Tumhari building\nmein 13th floor hai?",
+   "start_s": 38.907,
+   "end_s": 41.319,
+   "safe_zone": true,
+   "line": 8
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Haan ya Nahi,\ncomment karo.",
+   "start_s": 41.4,
+   "end_s": 43.537,
+   "safe_zone": true,
+   "line": 8
+  }
+ ],
+ "audio_cues": [
+  {
+   "type": "sfx",
+   "name": "stamp_slam",
+   "t_s": 0.04,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "fan_hum",
+   "t_s": 9.193,
+   "gain_db": -12
+  },
+  {
+   "type": "sfx",
+   "name": "pop",
+   "t_s": 18.568,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "chime",
+   "t_s": 19.268,
+   "gain_db": -8
+  },
+  {
+   "type": "sfx",
+   "name": "door_knock",
+   "t_s": 24.629,
+   "gain_db": -5
+  },
+  {
+   "type": "sfx",
+   "name": "door_knock",
+   "t_s": 27.491,
+   "gain_db": -4
+  },
+  {
+   "type": "sfx",
+   "name": "footsteps_run",
+   "t_s": 28.741,
+   "gain_db": -8
+  },
+  {
+   "type": "sfx",
+   "name": "violin_stinger",
+   "t_s": 37.587,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "chime",
+   "t_s": 43.587,
+   "gain_db": -8
+  }
+ ]
+}

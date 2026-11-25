@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Hindi-speaking 16-30 year olds scrolling late at night with their phone in hand",
+ "hook": "Phone screen: Mummy calling, 3:33 AM. Voice: Raat ke 3:33 pe Mummy ka phone aaya.",
+ "payoff": "One Mummy on the phone says don't open the door; another Mummy knocks on it.",
+ "cta": "A: phone wali Mummy, B: darwaze wali. Kal batayenge asli kaun thi.",
+ "target_duration_s": 40, "loop": true,
+ "sources": ["Original story (Doomsday Horror). Code-drawn visuals (phone UI is generic, no real app branding), Kalpa Labs TTS (Aman), studio-synthesized SFX/BGM. No third-party footage or audio."]
+}

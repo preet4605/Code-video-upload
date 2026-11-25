@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Hindi-speaking college and hostel students, 17-25",
+ "hook": "Roll-call counter ticks 28 then 29: Kamre mein 28 ladke the, par ginti 29 aayi.",
+ "payoff": "The long-empty corner bed was occupied; next morning it is empty again but the narrator's bed is now in the corner.",
+ "cta": "Apne hostel ka naam likho, agli reel wahin ki.",
+ "target_duration_s": 40, "loop": true,
+ "sources": ["Original story (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS (Aman), studio-synthesized SFX/BGM. No third-party footage or audio."]
+}

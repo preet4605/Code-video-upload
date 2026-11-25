@@ -1,0 +1,12 @@
+{
+ "platform": "reels",
+ "genre": "horror",
+ "lang": "hinglish",
+ "viewer": "Hindi-speaking 16-30 year olds who watch short horror stories at night; many saw Raat 2 Baje Part 2",
+ "hook": "Kisi ne teesra niyam tod diya. (red rule text slams in at 0s with the line)",
+ "payoff": "Riya comes back downstairs and someone dressed exactly like her is already asleep in her bed.",
+ "cta": "A ya B comment karo. Part 4 mein jawab.",
+ "target_duration_s": 45,
+ "loop": true,
+ "sources": ["Original story for the Raat 2 Baje series (Doomsday Horror). All visuals drawn in code, voice is Kalpa Labs TTS (Aman), SFX/BGM synthesized by the studio. No third-party footage or audio."]
+}

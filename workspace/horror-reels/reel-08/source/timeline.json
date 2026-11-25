@@ -1,0 +1,1149 @@
+{
+ "version": "1.0",
+ "slug": "reel-08",
+ "aspect": "9:16",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "duration_s": 38.301,
+ "target_lufs": -14,
+ "true_peak_dbtp": -1.5,
+ "audio_file": "voiceover.wav",
+ "alignment": {
+  "method": "voiced-span-weighted",
+  "line_anchored": true,
+  "note": "One TTS clip per line, so line windows are exact; word timing inside a line is voiced-span weighted."
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "start_s": 0,
+   "end_s": 4.618,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 0,
+     "start_s": 0.12,
+     "end_s": 4.268
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 2.309,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "counter.tick"
+     ]
+    },
+    {
+     "t_s": 2.309,
+     "dur_s": 2.309,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "counter.tick"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "setup",
+   "start_s": 4.618,
+   "end_s": 14.518,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 1,
+     "start_s": 4.718,
+     "end_s": 9.822
+    },
+    {
+     "i": 2,
+     "start_s": 10.142,
+     "end_s": 14.168
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 4.618,
+     "dur_s": 1.98,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 6.598,
+     "dur_s": 1.98,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 8.578,
+     "dur_s": 1.98,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 10.558,
+     "dur_s": 1.98,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 12.538,
+     "dur_s": 1.98,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "count",
+   "start_s": 14.518,
+   "end_s": 20.88,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 3,
+     "start_s": 14.618,
+     "end_s": 17.424
+    },
+    {
+     "i": 4,
+     "start_s": 17.744,
+     "end_s": 20.53
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 14.518,
+     "dur_s": 2.121,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 16.639,
+     "dur_s": 2.121,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 18.759,
+     "dur_s": 2.121,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "corner",
+   "start_s": 20.88,
+   "end_s": 28.203,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 5,
+     "start_s": 20.98,
+     "end_s": 27.453
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 20.88,
+     "dur_s": 2.441,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 23.321,
+     "dur_s": 2.441,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 25.762,
+     "dur_s": 2.441,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "start_s": 28.203,
+   "end_s": 32.923,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 6,
+     "start_s": 28.303,
+     "end_s": 32.523
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 28.203,
+     "dur_s": 2.36,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    },
+    {
+     "t_s": 30.563,
+     "dur_s": 2.36,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cta_loop",
+   "start_s": 32.923,
+   "end_s": 38.301,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 7,
+     "start_s": 33.023,
+     "end_s": 36.301
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 32.923,
+     "dur_s": 2.689,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "comment.card",
+      "counter.tick"
+     ]
+    },
+    {
+     "t_s": 35.612,
+     "dur_s": 2.689,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "comment.card",
+      "counter.tick"
+     ]
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "word": "Kamre",
+   "start_s": 0.12,
+   "end_s": 0.499,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "mein",
+   "start_s": 0.499,
+   "end_s": 0.816,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "28",
+   "start_s": 0.816,
+   "end_s": 1.099,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "ladke",
+   "start_s": 1.099,
+   "end_s": 1.478,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "the,",
+   "start_s": 1.478,
+   "end_s": 1.734,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "lekin",
+   "start_s": 2.229,
+   "end_s": 2.746,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "ginti",
+   "start_s": 2.746,
+   "end_s": 3.264,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "aayi",
+   "start_s": 3.264,
+   "end_s": 4.001,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "29.",
+   "start_s": 4.001,
+   "end_s": 4.268,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "Hamare",
+   "start_s": 4.718,
+   "end_s": 5.129,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "hostel",
+   "start_s": 5.129,
+   "end_s": 5.54,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "mein",
+   "start_s": 5.54,
+   "end_s": 5.836,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "har",
+   "start_s": 5.836,
+   "end_s": 6.076,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "raat",
+   "start_s": 6.076,
+   "end_s": 6.373,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "ginti",
+   "start_s": 6.373,
+   "end_s": 6.726,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "hoti",
+   "start_s": 6.726,
+   "end_s": 7.023,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "thi,",
+   "start_s": 7.023,
+   "end_s": 7.263,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "warden",
+   "start_s": 7.723,
+   "end_s": 8.124,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "har",
+   "start_s": 8.124,
+   "end_s": 8.358,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "bed",
+   "start_s": 8.358,
+   "end_s": 8.592,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "pe",
+   "start_s": 8.592,
+   "end_s": 8.771,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "torch",
+   "start_s": 8.771,
+   "end_s": 9.186,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "maarta",
+   "start_s": 9.186,
+   "end_s": 9.587,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "tha.",
+   "start_s": 9.587,
+   "end_s": 9.821,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "28",
+   "start_s": 10.142,
+   "end_s": 10.457,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "ladke",
+   "start_s": 10.457,
+   "end_s": 10.893,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "the,",
+   "start_s": 10.893,
+   "end_s": 11.188,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "aur",
+   "start_s": 11.693,
+   "end_s": 11.976,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "har",
+   "start_s": 11.976,
+   "end_s": 12.258,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "raat",
+   "start_s": 12.258,
+   "end_s": 12.608,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "ginti",
+   "start_s": 12.608,
+   "end_s": 13.026,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "28",
+   "start_s": 13.026,
+   "end_s": 13.32,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "hi",
+   "start_s": 13.32,
+   "end_s": 13.535,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "aati",
+   "start_s": 13.535,
+   "end_s": 13.885,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "thi.",
+   "start_s": 13.885,
+   "end_s": 14.168,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "Ek",
+   "start_s": 14.618,
+   "end_s": 14.81,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "raat",
+   "start_s": 14.81,
+   "end_s": 15.121,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "warden",
+   "start_s": 15.121,
+   "end_s": 15.552,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "ne",
+   "start_s": 15.552,
+   "end_s": 15.743,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "gina,",
+   "start_s": 15.743,
+   "end_s": 16.054,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "to",
+   "start_s": 16.397,
+   "end_s": 16.658,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "29",
+   "start_s": 16.658,
+   "end_s": 16.919,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "nikle.",
+   "start_s": 16.919,
+   "end_s": 17.425,
+   "speaker": "NARRATOR",
+   "line": 3
+  },
+  {
+   "word": "Usne",
+   "start_s": 17.744,
+   "end_s": 18.014,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "ghabra",
+   "start_s": 18.014,
+   "end_s": 18.389,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "kar",
+   "start_s": 18.389,
+   "end_s": 18.607,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "dobara",
+   "start_s": 18.607,
+   "end_s": 18.981,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "gina,",
+   "start_s": 18.981,
+   "end_s": 19.252,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "phir",
+   "start_s": 19.685,
+   "end_s": 20.063,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "se",
+   "start_s": 20.063,
+   "end_s": 20.296,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "29.",
+   "start_s": 20.296,
+   "end_s": 20.529,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "Kone",
+   "start_s": 20.98,
+   "end_s": 21.321,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "wala",
+   "start_s": 21.321,
+   "end_s": 21.662,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "bed,",
+   "start_s": 21.662,
+   "end_s": 21.938,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "jo",
+   "start_s": 22.297,
+   "end_s": 22.48,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "saalon",
+   "start_s": 22.48,
+   "end_s": 22.892,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "se",
+   "start_s": 22.892,
+   "end_s": 23.076,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "khaali",
+   "start_s": 23.076,
+   "end_s": 23.488,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "tha,",
+   "start_s": 23.488,
+   "end_s": 23.728,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "us",
+   "start_s": 24.114,
+   "end_s": 24.267,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "pe",
+   "start_s": 24.267,
+   "end_s": 24.42,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "chadar",
+   "start_s": 24.42,
+   "end_s": 24.847,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "uthi",
+   "start_s": 24.847,
+   "end_s": 25.096,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "hui",
+   "start_s": 25.096,
+   "end_s": 25.297,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "thi,",
+   "start_s": 25.297,
+   "end_s": 25.498,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "jaise",
+   "start_s": 26.105,
+   "end_s": 26.485,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "koi",
+   "start_s": 26.485,
+   "end_s": 26.742,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "so",
+   "start_s": 26.742,
+   "end_s": 26.938,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "raha",
+   "start_s": 26.938,
+   "end_s": 27.257,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "ho.",
+   "start_s": 27.257,
+   "end_s": 27.453,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "Subah",
+   "start_s": 28.303,
+   "end_s": 28.63,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "wo",
+   "start_s": 28.63,
+   "end_s": 28.798,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "bed",
+   "start_s": 28.798,
+   "end_s": 29.02,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "phir",
+   "start_s": 29.02,
+   "end_s": 29.359,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "khaali",
+   "start_s": 29.359,
+   "end_s": 29.738,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "tha.",
+   "start_s": 29.738,
+   "end_s": 29.96,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "Par",
+   "start_s": 30.43,
+   "end_s": 30.643,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "mera",
+   "start_s": 30.643,
+   "end_s": 30.907,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "bed,",
+   "start_s": 30.907,
+   "end_s": 31.12,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "ab",
+   "start_s": 31.588,
+   "end_s": 31.853,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "kone",
+   "start_s": 31.853,
+   "end_s": 32.092,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "mein",
+   "start_s": 32.092,
+   "end_s": 32.33,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "tha.",
+   "start_s": 32.33,
+   "end_s": 32.523,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "Apne",
+   "start_s": 33.023,
+   "end_s": 33.284,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "hostel",
+   "start_s": 33.284,
+   "end_s": 33.646,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "ka",
+   "start_s": 33.646,
+   "end_s": 33.806,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "naam",
+   "start_s": 33.806,
+   "end_s": 34.067,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "likho,",
+   "start_s": 34.067,
+   "end_s": 34.378,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "agli",
+   "start_s": 34.876,
+   "end_s": 35.172,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "reel",
+   "start_s": 35.172,
+   "end_s": 35.469,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "wahin",
+   "start_s": 35.469,
+   "end_s": 35.822,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "ki",
+   "start_s": 35.822,
+   "end_s": 36.004,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "hogi.",
+   "start_s": 36.004,
+   "end_s": 36.301,
+   "speaker": "NARRATOR",
+   "line": 7
+  }
+ ],
+ "captions": [
+  {
+   "speaker": "NARRATOR",
+   "text": "Kamre mein\n28 ladke the,",
+   "start_s": 0.04,
+   "end_s": 2.084,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "lekin ginti aayi 29.",
+   "start_s": 2.149,
+   "end_s": 4.618,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Hamare hostel\nmein har raat",
+   "start_s": 4.638,
+   "end_s": 6.273,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "ginti hoti thi,\nwarden har bed",
+   "start_s": 6.293,
+   "end_s": 8.492,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "pe torch maarta tha.",
+   "start_s": 8.512,
+   "end_s": 10.042,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "28 ladke the,\naur har raat",
+   "start_s": 10.062,
+   "end_s": 12.508,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "ginti 28 hi aati thi.",
+   "start_s": 12.528,
+   "end_s": 14.518,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Ek raat warden\nne gina,",
+   "start_s": 14.538,
+   "end_s": 16.297,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "to 29 nikle.",
+   "start_s": 16.317,
+   "end_s": 17.644,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Usne ghabra kar\ndobara gina,",
+   "start_s": 17.664,
+   "end_s": 19.585,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "phir se 29.",
+   "start_s": 19.605,
+   "end_s": 20.879,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Kone wala bed,\njo saalon se",
+   "start_s": 20.9,
+   "end_s": 22.976,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "khaali tha, us\npe chadar uthi",
+   "start_s": 22.996,
+   "end_s": 24.996,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "hui thi, jaise\nkoi so raha ho.",
+   "start_s": 25.016,
+   "end_s": 27.803,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Subah wo bed\nphir khaali tha.",
+   "start_s": 28.223,
+   "end_s": 30.31,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Par mera bed, ab\nkone mein tha.",
+   "start_s": 30.35,
+   "end_s": 32.873,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "Apne hostel\nka naam likho,",
+   "start_s": 32.943,
+   "end_s": 34.728,
+   "safe_zone": true,
+   "line": 7
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "agli reel\nwahin ki hogi.",
+   "start_s": 34.796,
+   "end_s": 36.651,
+   "safe_zone": true,
+   "line": 7
+  }
+ ],
+ "audio_cues": [
+  {
+   "type": "sfx",
+   "name": "stamp_slam",
+   "t_s": 3.568,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "heartbeat",
+   "t_s": 16.824,
+   "gain_db": -7
+  },
+  {
+   "type": "sfx",
+   "name": "whisper_gust",
+   "t_s": 21.48,
+   "gain_db": -9
+  },
+  {
+   "type": "sfx",
+   "name": "violin_stinger",
+   "t_s": 31.323,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "thud",
+   "t_s": 36.701,
+   "gain_db": -9
+  }
+ ]
+}

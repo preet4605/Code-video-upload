@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Hindi-speaking 16-30 year olds with roots in villages and summer trips to nani-nana's gaon",
+ "hook": "A huge peepal at night with red threads swaying: Gaon mein kehte hain, peepal ke neeche raat ko mat sona.",
+ "payoff": "Monu slept under it; next morning he stares at a black thread with his name and today's date.",
+ "cta": "Ped ka naam likho: Peepal, Imli, Bargad.",
+ "target_duration_s": 45, "loop": true,
+ "sources": ["Original story built on common North Indian folk belief about peepal trees at night. Code-drawn visuals, Kalpa Labs TTS (Aman), studio-synthesized SFX/BGM. No third-party footage or audio."]
+}

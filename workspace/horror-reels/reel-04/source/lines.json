@@ -1,0 +1,15 @@
+{
+ "voice": "1eb6c010-34e0-477c-9d24-e915f853359e",
+ "temperature": 0.7, "tempo": 1.1, "gap": 0.32, "tail_s": 2.0,
+ "scenes_meta": { "hook": {"mood":"suspense","props":["call.rings"]}, "cta_loop": {"mood":"suspense","props":["comment.card","call.rings"]} },
+ "extra_sfx": [ {"name":"whisper_gust","t_s":"end","before_end":1.7,"gain_db":-8} ],
+ "lines": [
+  {"sc":"hook","hi":"वो तुम्हारा नाम दो बार पुकारती है। तीसरी बार मत सुनना।","hl":"Wo tumhara naam do baar pukaarti hai. Teesri baar mat sunna.","gap":0.5,"sfx":[{"name":"whisper_gust","dt":0,"gain_db":-7}]},
+  {"sc":"intro","hi":"दादी कहती थीं, चुड़ैल को पहचानना आसान है, बस तीन चीज़ें ध्यान से देखो।","hl":"Daadi kehti thi, chudail ko pehchanna aasaan hai, bas 3 cheezein dhyaan se dekho.","gap":0.45},
+  {"sc":"rule1","hi":"पहली, उसके पैर उल्टे होते हैं, तो वो आगे चलती है पर निशान पीछे की तरफ़ बनते हैं।","hl":"Pehli, uske pair ulte hote hain, to wo aage chalti hai par nishaan peeche ki taraf bante hain.","gap":0.45,"sfx":[{"name":"stamp_slam","dt":-0.05,"gain_db":-8}]},
+  {"sc":"rule2","hi":"दूसरी, वो तुम्हारी मम्मी की आवाज़ में बुलाएगी, पर दो बार से ज़्यादा नहीं बोल सकती।","hl":"Doosri, wo tumhari Mummy ki awaaz mein bulayegi, par do baar se zyada nahi bol sakti.","gap":0.45,"sfx":[{"name":"stamp_slam","dt":-0.05,"gain_db":-8}]},
+  {"sc":"rule3","hi":"तीसरी, वो कभी खुद अंदर नहीं आती। तुम उसे खुद अंदर बुलाओगे।","hl":"Teesri, wo kabhi khud andar nahi aati. Tum use khud andar bulaoge.","gap":0.85,"sfx":[{"name":"stamp_slam","dt":-0.05,"gain_db":-8},{"name":"door_creak","at":"end","dt":-1.0,"gain_db":-7}]},
+  {"sc":"twist","hi":"अब सोचो, आज तुम्हें किसने दो बार आवाज़ दी थी?","hl":"Ab socho, aaj tumhe kisne do baar awaaz di thi?","gap":0.5,"sfx":[{"name":"violin_stinger","at":"end","dt":-0.8,"gain_db":-6}]},
+  {"sc":"cta_loop","hi":"अपनी दादी वाला नियम कमेंट करो, सबसे अच्छा वाला अगली रील बनेगा।","hl":"Apni daadi wala niyam comment karo, sabse achha wala agli reel banega."}
+ ]
+}

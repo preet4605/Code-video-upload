@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Hindi-speaking 16-30 year olds who grew up on grandparents' ghost stories",
+ "hook": "Wo tumhara naam do baar pukaarti hai. Teesri baar mat sunna.",
+ "payoff": "Three folk signs of a chudail; the last one: she never comes in, you invite her. Who called you twice today?",
+ "cta": "Apni daadi ka niyam comment karo, best wala agla reel banega.",
+ "target_duration_s": 40, "loop": true,
+ "sources": ["Common North Indian folklore about the chudail (reversed feet, calling by name, needing an invitation), retold in original words. Code-drawn visuals, Kalpa Labs TTS (Aman), studio-synthesized SFX/BGM. No third-party footage or audio."]
+}

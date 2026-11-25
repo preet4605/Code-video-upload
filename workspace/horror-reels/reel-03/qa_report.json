@@ -1,0 +1,39 @@
+{
+  "verdict": "SHIP",
+  "fails": [],
+  "warns": [
+    "captions: word timings aligned by voiced-span weighting (approximate: +/-0.15s typical); use provider timestamps for frame-accurate highlights"
+  ],
+  "human_review": {
+    "required": true,
+    "checklist": [
+      "Watch the whole master once on a phone with sound ON, then once muted.",
+      "First 2 seconds: would a stranger stop scrolling? Is the hook understood without sound?",
+      "Listen for mispronounced words, harsh SFX, music masking speech, clicks at cuts.",
+      "Open qa_safezone_sheet.png: no caption, face or badge under the red bands.",
+      "Every on-screen claim/number matches the voiceover and a source.",
+      "Last second: does it loop or land a payoff, not fade into nothing?"
+    ]
+  },
+  "measured": {
+    "flashes": {
+      "series_len": 1356,
+      "max_per_sec": 0,
+      "worst_t": 0,
+      "transitions": 0
+    },
+    "hook": {
+      "frames": 18,
+      "motion": 0.02558
+    },
+    "mix": {
+      "vo_lufs": -19.3,
+      "bed_lufs_after_gain": -36.5,
+      "vo_to_bed_lu": 17.2
+    },
+    "duration_s": 45.2
+  },
+  "safe_zone_sheet": "/tmp/claude-0/-home-user/0460ddd9-841f-5de6-af53-e1561a8877ce/scratchpad/hr/reel-03/out/qa_safezone_sheet.png",
+  "safe_profile": "universal",
+  "platform": "reels"
+}

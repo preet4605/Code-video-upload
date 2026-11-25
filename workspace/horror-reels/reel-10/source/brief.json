@@ -1,0 +1,9 @@
+{
+ "platform": "reels", "genre": "horror", "lang": "hinglish",
+ "viewer": "Followers of the Raat 2 Baje series and new horror viewers",
+ "hook": "Two knocks on black: Insaan teen baar khatkhatata hai. Ye do baar khatkhatata hai.",
+ "payoff": "Riya opens the door on the third knock; nobody is outside because the third knock came from inside.",
+ "cta": "A: Riya bachti hai, B: ghar jeet jaata hai. Follow for Season 2.",
+ "target_duration_s": 50, "loop": true,
+ "sources": ["Original story, season finale of the Raat 2 Baje series (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS (Aman), studio-synthesized SFX/BGM. No third-party footage or audio."]
+}
