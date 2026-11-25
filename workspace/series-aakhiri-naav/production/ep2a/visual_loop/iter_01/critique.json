@@ -1,0 +1,158 @@
+{
+ "shots": [
+  {
+   "id": "hook",
+   "seen": "boat far on dusk water, narrator back at bottom, orange sliver",
+   "problems": "boat small; sky/water mostly empty; low detail",
+   "fix": "denser stars, crisp ridge rim, brighter water dashes, bigger narrator",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "breath",
+   "seen": "boat nearer, steam of breath (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "sparse detail, dark upper frame",
+   "fix": "stars, cloud streaks, brighter water highlights",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "calls",
+   "seen": "shore with post and lamp, almost empty (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "dead frame, lamp glow washed, no detail",
+   "fix": "more reeds, brighter village lights, crisp footprints, stars",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 2,
+    "character": 2,
+    "composition": 2
+   }
+  },
+  {
+   "id": "warm",
+   "seen": "steaming water around the lit boat (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "blurry steam, little crisp detail",
+   "fix": "crisp plank lines, outline cabin, oar and rope props",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 4,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "cabin",
+   "seen": "window with palm smears (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "brown wall mass, small palms",
+   "fix": "plank highlights, frame outline, rope coil, oar",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 4,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "jacket",
+   "seen": "red jacket on the seat with his hand (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "jacket reads as helmet, flat brown hull",
+   "fix": "hood, sleeves, stitching, outline, plank lines",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "relief",
+   "seen": "jacket cropped on brown hull (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "too tight, dead cells",
+   "fix": "pitch up to include sky and stars, jacket outline",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 3,
+    "character": 2,
+    "composition": 2
+   }
+  },
+  {
+   "id": "voice",
+   "seen": "window wall fills frame (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "no context, no depth",
+   "fix": "pull camera back so the whole lit boat reads against sky",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 3,
+    "character": 2,
+    "composition": 2
+   }
+  },
+  {
+   "id": "break",
+   "seen": "window wall, steam blob (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "same as voice, no depth",
+   "fix": "pull camera back, keep window brighter",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 3,
+    "character": 2,
+    "composition": 2
+   }
+  },
+  {
+   "id": "grip",
+   "seen": "near black with pale fingers (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "too dark, no moon-lit water",
+   "fix": "lighter overlay, brighter fingers, crisp water dashes",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 2,
+    "character": 3,
+    "composition": 2
+   }
+  },
+  {
+   "id": "push",
+   "seen": "near black, hand print, lamp (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "too dark, no environment",
+   "fix": "lighter overlay, lamp and reeds, spray streaks",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 2,
+    "character": 3,
+    "composition": 2
+   }
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+  "series_id": "aakhiri-naav",
+  "version": 2,
+  "notes": "ep1 is aired and fixed. Votes are not yet recorded. ep2a/ep2b/ep4a/ep4b are serial rejoin parts, not forks.",
+  "nodes": [
+    {
+      "part": 1,
+      "title": "ख़ाली नाव",
+      "status": "aired",
+      "aired_url": "https://www.instagram.com/reel/DgF4RDuyb6v/",
+      "choice": "कमेंट करो, A या B?",
+      "option_a": "नाव तक जाओ",
+      "option_b": "किनारे रुको",
+      "vote_channel": "pinned_comment",
+      "deadline_note": "24 hours from posting; pin ONE comment with the count, both branch links, and the tie rule (the branch posted first wins).",
+      "vote": null,
+      "winner": null,
+      "next_part": null,
+      "branches": { "A": "ep2a", "B": "ep2b" }
+    },
+    {
+      "part": "2a",
+      "title": "नाम",
+      "status": "scripted",
+      "from": "ep1:A",
+      "format": "serial",
+      "rejoin": "ep3",
+      "next_hook": "तभी पीछे से एक छोटे हाथ ने मुझे किनारे की तरफ़ धकेल दिया।"
+    },
+    {
+      "part": "2b",
+      "title": "पानी पर",
+      "status": "scripted",
+      "from": "ep1:B",
+      "format": "serial",
+      "rejoin": "ep3",
+      "next_hook": "तब समझ आया कि झील के पास मेरी आवाज़ है, और मुझे नहीं पता था कि वह उससे किसे बुलाएगी।"
+    },
+    {
+      "part": 3,
+      "title": "भीगा किनारा",
+      "status": "scripted",
+      "choice": "कमेंट करो, A या B?",
+      "option_a": "नाव में चढ़ो",
+      "option_b": "गाँव भागो",
+      "vote_channel": "pinned_comment",
+      "deadline_note": "24 hours from posting; ONE pinned comment with the count, both links, and the tie rule.",
+      "vote": null,
+      "winner": null,
+      "next_part": null,
+      "branches": { "A": "ep4a", "B": "ep4b" }
+    },
+    {
+      "part": "4a",
+      "title": "दो प्याले",
+      "status": "scripted",
+      "from": "ep3:A",
+      "format": "serial",
+      "rejoin": "ep5",
+      "next_hook": "मैं मुड़ा, तो कुर्सी ख़ाली थी, दूसरा प्याला उलटा पड़ा था, और डेक पर मेरे पीछे गीले पैरों की आहट थी।"
+    },
+    {
+      "part": "4b",
+      "title": "ऊपर की सड़क",
+      "status": "scripted",
+      "from": "ep3:B",
+      "format": "serial",
+      "rejoin": "ep5",
+      "next_hook": "सूरज निकलने में देर थी, और मैं उसी झील की तरफ़ उतरता गया जिससे भागकर आया था।"
+    },
+    {
+      "part": 5,
+      "title": "सुबह",
+      "status": "scripted",
+      "choice": "कमेंट करो, A या B?",
+      "option_a": "मुड़कर देखो",
+      "option_b": "बिना देखे चलो",
+      "vote_channel": "pinned_comment",
+      "deadline_note": "24 hours from posting; the winner opens Story 2. Labels are proposals; confirm before posting.",
+      "vote": null,
+      "winner": null,
+      "next_part": null,
+      "branches": { "A": "story2_ep1a", "B": "story2_ep1b" }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+[SCENE id=ask mood=suspense]
+[NARRATOR] अब तुम बताओ, मेरे कंधे पर कुछ गीला है।
+[NARRATOR] A, उसे छूकर देखो।
+[NARRATOR] B, झील को पुकारो।
+[NARRATOR] कमेंट करो, A या B?

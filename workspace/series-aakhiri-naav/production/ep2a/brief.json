@@ -1,0 +1,114 @@
+{
+ "platform": "reels",
+ "genre": "horror",
+ "lang": "hi",
+ "format": "serial",
+ "viewer": "Hindi-speaking viewers who watched ep1 or land cold, scrolling alone at night",
+ "hook": "मैं पानी में उतरा, तो लगा किसी ने मेरी छाती पर हाथ रख दिया।",
+ "payoff": "The hand on his chest becomes literal: after he answers the kind voice, the lake grips his chest; a small hand shoves him out.",
+ "belief_label": "invented village saying inside a fiction; not a real belief or safety advice",
+ "target_duration_s": 85,
+ "loop": false,
+ "sources": [
+  "Original story (Doomsday Horror). Code-drawn visuals, Kalpa Labs TTS, sound synthesized in code."
+ ],
+ "sound": {
+  "ambience": [
+   "lake",
+   "wind"
+  ]
+ },
+ "series": {
+  "id": "aakhiri-naav",
+  "part": 2,
+  "of": 5,
+  "bible_path": "series_bible.md",
+  "recap_line": "",
+  "hook_is_recap": true,
+  "next_hook": "तभी पीछे से एक छोटे हाथ ने मुझे किनारे की तरफ़ धकेल दिया।"
+ },
+ "story": {
+  "setup": "He wades into the lake toward the lit, dry boat that brought his missing brother's jacket.",
+  "characters": [
+   "छोटा",
+   "माँ"
+  ],
+  "places": [
+   "झील",
+   "नाव"
+  ],
+  "rule_or_clue": [
+   {
+    "type": "rule",
+    "text": "नाव की आवाज़ का जवाब मत दो",
+    "line": "गाँव वाले कहते हैं, जवाब मत दो"
+   },
+   {
+    "type": "clue",
+    "text": "he has called his brother for three nights",
+    "line": "तीन रात से मैं किनारे से पुकार रहा था"
+   },
+   {
+    "type": "clue",
+    "text": "warm water in a December lake",
+    "line": "जो दिसंबर की झील में हो ही नहीं सकता"
+   },
+   {
+    "type": "clue",
+    "text": "the cabin murmurs haan in many voices",
+    "line": "बहुत सारे लोगों का एक ही शब्द है"
+   }
+  ],
+  "escalation": [
+   {
+    "text": "the water turns warm and his shivering stops",
+    "line": "पानी गर्म हो गया"
+   },
+   {
+    "text": "the cabin murmurs yes in many voices",
+    "line": "हाँ, हाँ, हाँ"
+   },
+   {
+    "text": "the jacket is body-warm and smells of his brother",
+    "line": "सीट की लाल जैकेट गर्म थी"
+   }
+  ],
+  "false_relief": {
+   "text": "he believes his brother is alive",
+   "line": "मुझे लगा कि वह ज़िंदा है"
+  },
+  "twist": {
+   "text": "the hook's hand on his chest is literal: the lake grips him",
+   "line": "पानी ने मेरी छाती को उसी हाथ की तरह जकड़ लिया",
+   "explains_hook": true,
+   "how": "The cold at the first step was not weather: the lake was already reaching for his chest, and the grip arrives once he answers."
+  },
+  "part_question": "Who is calling from the boat and what does it want?",
+  "part_payoff": {
+   "text": "it wants one answer; he gives it",
+   "line": "और मैं हार गया"
+  },
+  "ending_image": {
+   "text": "a small wet hand slaps his back and shoves him toward the bank as the frame cuts to black"
+  },
+  "callback": {
+   "text": "the small hand that shoves him ashore answers the hand that gripped him",
+   "line": "एक छोटे हाथ ने मुझे किनारे की तरफ़ धकेल दिया"
+  },
+  "threat": {
+   "planted_by": {
+    "line": "भनभनाहट थी"
+   },
+   "first_seen": {
+    "line": "नाव ने मेरा पूरा नाम लिया"
+   }
+  },
+  "new_facts": [
+   "The narrator has called for his brother on the shore for three nights",
+   "The water is warm near the boat; the cabin murmurs \"हाँ\" in many voices",
+   "The voice that calls the narrator is his own voice, raised and softened",
+   "A small wet hand pushes him out of the water"
+  ],
+  "scare_pattern": "reflex answer then lights out"
+ }
+}

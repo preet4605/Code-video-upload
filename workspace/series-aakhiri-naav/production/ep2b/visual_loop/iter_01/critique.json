@@ -1,0 +1,130 @@
+{
+ "shots": [
+  {
+   "id": "hook",
+   "seen": "bank at dusk, walker a speck, boat at the edge",
+   "problems": "walker too small, boat cropped",
+   "fix": "boat to centre-right, walker larger",
+   "scores": {
+    "subject": 2,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 2
+   }
+  },
+  {
+   "id": "calls",
+   "seen": "post and reeds in lamp light (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "washed glow, empty",
+   "fix": "crisper reeds, footprints outline",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 2,
+    "character": 2,
+    "composition": 2
+   }
+  },
+  {
+   "id": "walk",
+   "seen": "small walker on dark water (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "tiny, dead water",
+   "fix": "scale up walker, rim light, calm patch under feet",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 2,
+    "character": 2,
+    "composition": 2
+   }
+  },
+  {
+   "id": "voice",
+   "seen": "walker standing before the boat (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "dark, low detail",
+   "fix": "brighter water dashes, stars",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 2,
+    "character": 3,
+    "composition": 2
+   }
+  },
+  {
+   "id": "under",
+   "seen": "inverted pale figure in the light (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "V legs read oddly, large empty water",
+   "fix": "pale glow and rim, brighter water dashes",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "face",
+   "seen": "pale face rising through water (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "good subject, little else",
+   "fix": "stars/water detail",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 4,
+    "composition": 4
+   }
+  },
+  {
+   "id": "relief",
+   "seen": "dark water, nearly empty (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "dead frame",
+   "fix": "pitch up to show boat and sky",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 1,
+    "light": 2,
+    "character": 2,
+    "composition": 2
+   }
+  },
+  {
+   "id": "wave",
+   "seen": "row of small hands in a crest (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "wave thin, dark",
+   "fix": "stronger crest, brighter water",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "loop",
+   "seen": "hand in mud, lit boat (as sampled at 20, 50 and 85 percent of the shot)",
+   "problems": "low detail",
+   "fix": "brighter mud, plank and star detail",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  }
+ ]
+}

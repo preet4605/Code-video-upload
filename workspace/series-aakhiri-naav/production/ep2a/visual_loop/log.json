@@ -1,0 +1,563 @@
+{
+  "targets": "../../../../../../../mnt/attach/project-files/skills/code-video-studio-v6.1/templates/visual_targets.horror.json",
+  "iterations": [
+    {
+      "iter": 1,
+      "pass": false,
+      "mean_score": 0.378,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "hook",
+          "pass": false,
+          "score": 0.465,
+          "metrics": {
+            "sharp_edges": 0.011,
+            "contrast": 27.7333,
+            "mean_luma": 33.5667,
+            "color_bins": 19.6667,
+            "saturation": 0.3443,
+            "ink": 0.0082,
+            "focal": 6.4667,
+            "hue_families": 2.3333,
+            "empty_cells": 10
+          }
+        },
+        {
+          "id": "breath",
+          "pass": false,
+          "score": 0.485,
+          "metrics": {
+            "sharp_edges": 0.0124,
+            "contrast": 28.0333,
+            "mean_luma": 31.1,
+            "color_bins": 19.6667,
+            "saturation": 0.354,
+            "ink": 0.0095,
+            "focal": 4.8833,
+            "hue_families": 2.3333,
+            "empty_cells": 10
+          }
+        },
+        {
+          "id": "calls",
+          "pass": false,
+          "score": 0.29,
+          "metrics": {
+            "sharp_edges": 0.0013,
+            "contrast": 15.7,
+            "mean_luma": 21.0333,
+            "color_bins": 7.6667,
+            "saturation": 0.439,
+            "ink": 0.0011,
+            "focal": 5.3,
+            "hue_families": 1.6667,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "warm",
+          "pass": false,
+          "score": 0.513,
+          "metrics": {
+            "sharp_edges": 0.0108,
+            "contrast": 39.9,
+            "mean_luma": 39.7333,
+            "color_bins": 30,
+            "saturation": 0.391,
+            "ink": 0.0059,
+            "focal": 4.5467,
+            "hue_families": 3,
+            "empty_cells": 10
+          }
+        },
+        {
+          "id": "cabin",
+          "pass": false,
+          "score": 0.508,
+          "metrics": {
+            "sharp_edges": 0.0106,
+            "contrast": 43.2333,
+            "mean_luma": 44.8667,
+            "color_bins": 26.6667,
+            "saturation": 0.4353,
+            "ink": 0.0048,
+            "focal": 5.1933,
+            "hue_families": 2.6667,
+            "empty_cells": 10
+          }
+        },
+        {
+          "id": "jacket",
+          "pass": false,
+          "score": 0.393,
+          "metrics": {
+            "sharp_edges": 0.0063,
+            "contrast": 27.8667,
+            "mean_luma": 36.3667,
+            "color_bins": 16.6667,
+            "saturation": 0.5127,
+            "ink": 0.0046,
+            "focal": 5.5067,
+            "hue_families": 2,
+            "empty_cells": 12
+          }
+        },
+        {
+          "id": "relief",
+          "pass": false,
+          "score": 0.34,
+          "metrics": {
+            "sharp_edges": 0.0045,
+            "contrast": 18.7333,
+            "mean_luma": 31.5333,
+            "color_bins": 13.3333,
+            "saturation": 0.5553,
+            "ink": 0.0044,
+            "focal": 7.1133,
+            "hue_families": 2,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "voice",
+          "pass": false,
+          "score": 0.308,
+          "metrics": {
+            "sharp_edges": 0.0015,
+            "contrast": 18.8333,
+            "mean_luma": 33.8,
+            "color_bins": 12.6667,
+            "saturation": 0.518,
+            "ink": 0.0014,
+            "focal": 10.3233,
+            "hue_families": 2,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "break",
+          "pass": false,
+          "score": 0.316,
+          "metrics": {
+            "sharp_edges": 0.0007,
+            "contrast": 21.9333,
+            "mean_luma": 39.4333,
+            "color_bins": 11.6667,
+            "saturation": 0.5207,
+            "ink": 0.0007,
+            "focal": 12.68,
+            "hue_families": 2,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "grip",
+          "pass": false,
+          "score": 0.274,
+          "metrics": {
+            "sharp_edges": 0.0066,
+            "contrast": 4.9667,
+            "mean_luma": 3.1667,
+            "color_bins": 3.6667,
+            "saturation": 0.3147,
+            "ink": 0.0066,
+            "focal": 8.7733,
+            "hue_families": 0.3333,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "push",
+          "pass": false,
+          "score": 0.269,
+          "metrics": {
+            "sharp_edges": 0.0022,
+            "contrast": 9.5333,
+            "mean_luma": 8.8333,
+            "color_bins": 3.6667,
+            "saturation": 0.379,
+            "ink": 0.002,
+            "focal": 11.5633,
+            "hue_families": 0.6667,
+            "empty_cells": 14
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 2,
+      "pass": false,
+      "mean_score": 0.458,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "hook",
+          "pass": false,
+          "score": 0.585,
+          "metrics": {
+            "sharp_edges": 0.0181,
+            "contrast": 28.1333,
+            "mean_luma": 34.5667,
+            "color_bins": 21.3333,
+            "saturation": 0.3457,
+            "ink": 0.0141,
+            "focal": 5.7433,
+            "hue_families": 2.3333,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "breath",
+          "pass": false,
+          "score": 0.605,
+          "metrics": {
+            "sharp_edges": 0.0209,
+            "contrast": 28.4667,
+            "mean_luma": 32.2,
+            "color_bins": 20,
+            "saturation": 0.3567,
+            "ink": 0.0171,
+            "focal": 3.69,
+            "hue_families": 2.3333,
+            "empty_cells": 8
+          }
+        },
+        {
+          "id": "calls",
+          "pass": false,
+          "score": 0.338,
+          "metrics": {
+            "sharp_edges": 0.0056,
+            "contrast": 16.1667,
+            "mean_luma": 21.8667,
+            "color_bins": 8,
+            "saturation": 0.4383,
+            "ink": 0.0054,
+            "focal": 3.1767,
+            "hue_families": 1.6667,
+            "empty_cells": 12
+          }
+        },
+        {
+          "id": "warm",
+          "pass": false,
+          "score": 0.629,
+          "metrics": {
+            "sharp_edges": 0.017,
+            "contrast": 40.3667,
+            "mean_luma": 40.5333,
+            "color_bins": 30.6667,
+            "saturation": 0.387,
+            "ink": 0.0092,
+            "focal": 4.17,
+            "hue_families": 3,
+            "empty_cells": 6
+          }
+        },
+        {
+          "id": "cabin",
+          "pass": false,
+          "score": 0.561,
+          "metrics": {
+            "sharp_edges": 0.0154,
+            "contrast": 43.5,
+            "mean_luma": 45.5,
+            "color_bins": 27,
+            "saturation": 0.4347,
+            "ink": 0.0073,
+            "focal": 5.04,
+            "hue_families": 2.6667,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "jacket",
+          "pass": false,
+          "score": 0.467,
+          "metrics": {
+            "sharp_edges": 0.0118,
+            "contrast": 28.6333,
+            "mean_luma": 37.0667,
+            "color_bins": 17.3333,
+            "saturation": 0.4957,
+            "ink": 0.0093,
+            "focal": 4.4967,
+            "hue_families": 2,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "relief",
+          "pass": false,
+          "score": 0.399,
+          "metrics": {
+            "sharp_edges": 0.0085,
+            "contrast": 19.6,
+            "mean_luma": 32.2333,
+            "color_bins": 14,
+            "saturation": 0.528,
+            "ink": 0.0077,
+            "focal": 4.32,
+            "hue_families": 2,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "voice",
+          "pass": false,
+          "score": 0.416,
+          "metrics": {
+            "sharp_edges": 0.0085,
+            "contrast": 25.3333,
+            "mean_luma": 35.2,
+            "color_bins": 20,
+            "saturation": 0.4563,
+            "ink": 0.0061,
+            "focal": 5.32,
+            "hue_families": 2.6667,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "break",
+          "pass": false,
+          "score": 0.465,
+          "metrics": {
+            "sharp_edges": 0.0076,
+            "contrast": 32.0333,
+            "mean_luma": 40.5,
+            "color_bins": 24.3333,
+            "saturation": 0.4173,
+            "ink": 0.004,
+            "focal": 7.3167,
+            "hue_families": 2.3333,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "grip",
+          "pass": false,
+          "score": 0.281,
+          "metrics": {
+            "sharp_edges": 0.0068,
+            "contrast": 5.1333,
+            "mean_luma": 4.1333,
+            "color_bins": 3.6667,
+            "saturation": 0.3217,
+            "ink": 0.0068,
+            "focal": 8.8767,
+            "hue_families": 0.3333,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "push",
+          "pass": false,
+          "score": 0.291,
+          "metrics": {
+            "sharp_edges": 0.0032,
+            "contrast": 12.0333,
+            "mean_luma": 12.6333,
+            "color_bins": 6,
+            "saturation": 0.4597,
+            "ink": 0.0028,
+            "focal": 9.16,
+            "hue_families": 1.3333,
+            "empty_cells": 14
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 3,
+      "pass": false,
+      "mean_score": 0.469,
+      "regressions": [
+        "hook got worse (-0.05): revert that change or justify it in the critique",
+        "breath got worse (-0.055): revert that change or justify it in the critique",
+        "calls got worse (-0.056): revert that change or justify it in the critique"
+      ],
+      "shots": [
+        {
+          "id": "hook",
+          "pass": false,
+          "score": 0.535,
+          "metrics": {
+            "sharp_edges": 0.017,
+            "contrast": 25.7,
+            "mean_luma": 21.8333,
+            "color_bins": 15.3333,
+            "saturation": 0.4767,
+            "ink": 0.0135,
+            "focal": 6.2533,
+            "hue_families": 3,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "breath",
+          "pass": false,
+          "score": 0.55,
+          "metrics": {
+            "sharp_edges": 0.0178,
+            "contrast": 26.5667,
+            "mean_luma": 20.5,
+            "color_bins": 16,
+            "saturation": 0.51,
+            "ink": 0.0147,
+            "focal": 4.3067,
+            "hue_families": 2.6667,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "calls",
+          "pass": false,
+          "score": 0.282,
+          "metrics": {
+            "sharp_edges": 0.0028,
+            "contrast": 10.7333,
+            "mean_luma": 11.3,
+            "color_bins": 5.3333,
+            "saturation": 0.5123,
+            "ink": 0.0026,
+            "focal": 3.9767,
+            "hue_families": 1.6667,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "warm",
+          "pass": false,
+          "score": 0.644,
+          "metrics": {
+            "sharp_edges": 0.0213,
+            "contrast": 43.4,
+            "mean_luma": 29.1667,
+            "color_bins": 29.3333,
+            "saturation": 0.5193,
+            "ink": 0.0113,
+            "focal": 3.79,
+            "hue_families": 2,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "cabin",
+          "pass": false,
+          "score": 0.628,
+          "metrics": {
+            "sharp_edges": 0.0202,
+            "contrast": 48.2,
+            "mean_luma": 34.1333,
+            "color_bins": 25.6667,
+            "saturation": 0.5923,
+            "ink": 0.012,
+            "focal": 5.0467,
+            "hue_families": 2,
+            "empty_cells": 8
+          }
+        },
+        {
+          "id": "jacket",
+          "pass": false,
+          "score": 0.539,
+          "metrics": {
+            "sharp_edges": 0.0142,
+            "contrast": 31.1667,
+            "mean_luma": 24.9,
+            "color_bins": 14,
+            "saturation": 0.6657,
+            "ink": 0.0117,
+            "focal": 4.5633,
+            "hue_families": 2,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "relief",
+          "pass": false,
+          "score": 0.448,
+          "metrics": {
+            "sharp_edges": 0.0103,
+            "contrast": 18.6333,
+            "mean_luma": 19.4333,
+            "color_bins": 11.6667,
+            "saturation": 0.7883,
+            "ink": 0.0097,
+            "focal": 3.9967,
+            "hue_families": 1,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "voice",
+          "pass": false,
+          "score": 0.472,
+          "metrics": {
+            "sharp_edges": 0.0115,
+            "contrast": 24.9333,
+            "mean_luma": 22.5,
+            "color_bins": 18.6667,
+            "saturation": 0.6477,
+            "ink": 0.0079,
+            "focal": 4.6733,
+            "hue_families": 1.6667,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "break",
+          "pass": false,
+          "score": 0.525,
+          "metrics": {
+            "sharp_edges": 0.0131,
+            "contrast": 32.5,
+            "mean_luma": 27.9,
+            "color_bins": 25.6667,
+            "saturation": 0.6063,
+            "ink": 0.0068,
+            "focal": 5.5333,
+            "hue_families": 1.6667,
+            "empty_cells": 8
+          }
+        },
+        {
+          "id": "grip",
+          "pass": false,
+          "score": 0.263,
+          "metrics": {
+            "sharp_edges": 0.0042,
+            "contrast": 3.6667,
+            "mean_luma": 2.0333,
+            "color_bins": 3,
+            "saturation": 0.4607,
+            "ink": 0.0042,
+            "focal": 10.7833,
+            "hue_families": 0,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "push",
+          "pass": false,
+          "score": 0.268,
+          "metrics": {
+            "sharp_edges": 0.0026,
+            "contrast": 9.0333,
+            "mean_luma": 5.9667,
+            "color_bins": 3,
+            "saturation": 0.5053,
+            "ink": 0.002,
+            "focal": 10.5833,
+            "hue_families": 1,
+            "empty_cells": 14
+          }
+        }
+      ]
+    }
+  ]
+}

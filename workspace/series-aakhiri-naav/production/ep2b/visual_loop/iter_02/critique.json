@@ -1,0 +1,130 @@
+{
+ "shots": [
+  {
+   "id": "hook",
+   "seen": "bank at dusk with the boat and a distant walker (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "walker small by design",
+   "fix": "contrast overlay pass",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "calls",
+   "seen": "post, reeds, lamp glow (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "dim",
+   "fix": "contrast overlay and crisper reeds",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "walk",
+   "seen": "walker with pale rim and calm patch, boat at right (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "walker readable but small",
+   "fix": "overlay pass",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "voice",
+   "seen": "walker larger before the lit boat (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "dark water",
+   "fix": "overlay pass and brighter dashes",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "under",
+   "seen": "pale inverted figure under the surface (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "figure is simple",
+   "fix": "contrast overlay",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "face",
+   "seen": "pale face with pupils rising through banded water (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "strong",
+   "fix": "none beyond the overlay",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 4,
+    "composition": 4
+   }
+  },
+  {
+   "id": "relief",
+   "seen": "calm water with boat and moon (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "empty water",
+   "fix": "overlay pass",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "wave",
+   "seen": "crest of small hands (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "dark",
+   "fix": "overlay pass",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "loop",
+   "seen": "hand in mud, lit boat (keyframes at 20, 50 and 85 percent of the shot, iteration two)",
+   "problems": "low detail",
+   "fix": "overlay pass",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  }
+ ]
+}

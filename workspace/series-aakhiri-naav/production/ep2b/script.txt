@@ -1,0 +1,29 @@
+[SCENE id=hook mood=suspense]
+[SFX name=lake_still_night]
+[NARRATOR] मैं किनारे पर रुका रहा, और पानी के पार से कोई चलकर आने लगा।
+[SCENE id=calls mood=suspense]
+[SFX name=old_calls_echo]
+[NARRATOR] तीन रात से मैं यहाँ खड़ा पुकारता रहा, छोटे, मैं यहीं हूँ, और आज शाम पाँच बजे पहली बार किसी ने जवाब दिया।
+[SCENE id=walk mood=suspense]
+[SFX name=step_ticks]
+[NARRATOR] उसके पैरों पर कोई लहर नहीं उठती थी, और वह हर क़दम बाईं तरफ़ झुकाकर रखता था, मेरे छोटे भाई की तरह।
+[SCENE id=voice mood=suspense]
+[SFX name=name_in_water]
+[CHARACTER] तू सुन रहा है न? घर चल, बस एक बार बोल दे।
+[NARRATOR] मेरा पूरा नाम पानी से आया, मैंने दाँत भींच लिए, क्योंकि गाँव वाले कहते हैं, नाव की आवाज़ का जवाब मत दो।
+[SCENE id=under mood=suspense]
+[NARRATOR] वह नाव की बत्ती में आया, और मैं समझ गया कि वह पानी के नीचे चल रहा है, उल्टा, सिर गहराई में लटका हुआ।
+[SCENE id=face mood=suspense]
+[SFX name=water_knock]
+[NARRATOR] वह मेरे पाँवों तक पहुँचा, और सतह के नीचे से एक सफ़ेद चेहरा मुझे देखने लगा, होंठ हिलते थे, आवाज़ कहीं और से आती थी।
+[SCENE id=relief mood=calm]
+[NARRATOR] मैं बिना हिले खड़ा रहा, चेहरा लहरों में घुल गया, आवाज़ बंद हो गई, और मुझे लगा कि मैं जीत गया।
+[SILENCE dur=0.9]
+[SCARE name=my_voice_answers]
+[CHARACTER] हाँ, मैं यहीं हूँ।
+[SCENE id=wave mood=climax]
+[NARRATOR] मैंने एक शब्द नहीं कहा था, पर झील से मेरी अपनी आवाज़ ने जवाब दे दिया।
+[SFX name=wave_no_wind]
+[NARRATOR] फिर बिना हवा के एक लहर चढ़ी, मुझे छाती तक भिगोकर धकेल गई, जैसे बहुत सारे छोटे हाथ मुझे बाहर धकेल रहे हों।
+[SCENE id=loop mood=suspense]
+[NARRATOR] झील के पास अब मेरी आवाज़ थी, और वह किसे बुलाएगी?

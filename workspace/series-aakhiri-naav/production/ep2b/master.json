@@ -1,0 +1,262 @@
+{
+  "ok": true,
+  "verdict": "FIX",
+  "ship": {
+    "verdict": "FIX",
+    "fails": [
+      "visual-loop: not converged (iteration 2: metrics fail, critique min missing). Run scripts/visual_loop.mjs until LOOP PASS"
+    ],
+    "warns": [
+      "captions: word timings aligned by voiced-span weighting (approximate: +/-0.15s typical); use provider timestamps for frame-accurate highlights",
+      "horror: SHIP means no measured defect was found. It does not measure fear; watch it with sound on a phone in a dark room.",
+      "horror-script: ending_echoes_hook: last line shares no content word with the hook (no loop/callback)",
+      "horror-script: short_lines: median line is 22 words; use clipped lines for dread",
+      "horror-script: story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\"",
+      "horror-script: story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\"",
+      "horror-visual: bright_calls: scene \"calls\" mean luma 50 is on the bright side (> 45)"
+    ],
+    "human_review": {
+      "required": true,
+      "checklist": [
+        "Watch the whole master once on a phone with sound ON, then once muted.",
+        "First 2 seconds: would a stranger stop scrolling? Is the hook understood without sound?",
+        "Listen for mispronounced words, harsh SFX, music masking speech, clicks at cuts.",
+        "Open qa_safezone_sheet.png: no caption, face or badge under the red bands.",
+        "Every on-screen claim/number matches the voiceover and a source.",
+        "Last second: does it loop or land a payoff, not fade into nothing?"
+      ]
+    },
+    "measured": {
+      "flashes": {
+        "series_len": 2631,
+        "max_per_sec": 0,
+        "worst_t": 0,
+        "transitions": 0
+      },
+      "hook": {
+        "frames": 18,
+        "motion": 0.01139
+      },
+      "mix": {
+        "vo_lufs": -19.6,
+        "bed_gain_db": -6,
+        "bed_lufs_after_gain": -33.7,
+        "vo_to_bed_lu": 14.1
+      },
+      "duration_s": 87.718
+    },
+    "safe_zone_sheet": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2b/out/qa_safezone_sheet.png",
+    "safe_profile": "universal",
+    "platform": "reels",
+    "horror": {
+      "script": {
+        "pass": true,
+        "fails": [],
+        "warns": [
+          "ending_echoes_hook: last line shares no content word with the hook (no loop/callback)",
+          "short_lines: median line is 22 words; use clipped lines for dread",
+          "story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\"",
+          "story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\""
+        ]
+      },
+      "story": {
+        "format": "serial",
+        "errors": [],
+        "warns": [
+          "story/closing_line: serial closing line should be a short plain \"Part N coming, follow...\""
+        ]
+      },
+      "measured": {
+        "per_scene": [
+          {
+            "id": "hook",
+            "motion": 0.0056,
+            "camera_px_s": 0,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "calls",
+            "motion": 0.0219,
+            "camera_px_s": 29.2,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "walk",
+            "motion": 0.0047,
+            "camera_px_s": 5.7,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "voice",
+            "motion": 0.0058,
+            "camera_px_s": 17.3,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "under",
+            "motion": 0.0287,
+            "camera_px_s": 78,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "face",
+            "motion": 0.0089,
+            "camera_px_s": 0,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "relief",
+            "motion": 0.0244,
+            "camera_px_s": 63,
+            "low_motion_run_s": 0,
+            "black_run_s": 0
+          },
+          {
+            "id": "wave",
+            "motion": 0.025,
+            "camera_px_s": 58.8,
+            "low_motion_run_s": 0.5,
+            "black_run_s": 0
+          },
+          {
+            "id": "loop",
+            "motion": 0.0202,
+            "camera_px_s": 48.7,
+            "low_motion_run_s": 0,
+            "black_run_s": 0.25
+          }
+        ],
+        "dark_share": 0.003,
+        "scares": [
+          {
+            "t": 65.006,
+            "context_db": -13.7,
+            "quiet_db": -82.4,
+            "drop_db": 68.7,
+            "stinger_peak_db": -5.7,
+            "rise_db": 76.7
+          }
+        ],
+        "note": "Measured gates catch static, black and undropped scares. SHIP does not measure fear: watch it with sound on a phone."
+      },
+      "visual": {
+        "pass": true,
+        "fails": [],
+        "warns": [
+          "bright_calls: scene \"calls\" mean luma 50 is on the bright side (> 45)"
+        ],
+        "per_scene": [
+          {
+            "id": "hook",
+            "mean": 38.8,
+            "p98": 115.7,
+            "edge": 0.0428,
+            "motion": 0.0055
+          },
+          {
+            "id": "calls",
+            "mean": 50,
+            "p98": 95.1,
+            "edge": 0.0186,
+            "motion": 0.0219
+          },
+          {
+            "id": "walk",
+            "mean": 25.4,
+            "p98": 56.1,
+            "edge": 0.0229,
+            "motion": 0.0047
+          },
+          {
+            "id": "voice",
+            "mean": 26.5,
+            "p98": 60,
+            "edge": 0.0219,
+            "motion": 0.0058
+          },
+          {
+            "id": "under",
+            "mean": 28.7,
+            "p98": 105.1,
+            "edge": 0.0546,
+            "motion": 0.0287
+          },
+          {
+            "id": "face",
+            "mean": 27.4,
+            "p98": 134.5,
+            "edge": 0.0613,
+            "motion": 0.0089
+          },
+          {
+            "id": "relief",
+            "mean": 21.9,
+            "p98": 63,
+            "edge": 0.0402,
+            "motion": 0.0244
+          },
+          {
+            "id": "wave",
+            "mean": 31.1,
+            "p98": 97.3,
+            "edge": 0.0318,
+            "motion": 0.025
+          },
+          {
+            "id": "loop",
+            "mean": 31.5,
+            "p98": 111.4,
+            "edge": 0.0358,
+            "motion": 0.0202
+          }
+        ],
+        "escalation": 2.2,
+        "scene_sheet": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2b/out/qa_scene_sheet.png"
+      }
+    },
+    "visual_loop": {
+      "iterations": 2,
+      "last_pass": false,
+      "critique_min": null,
+      "mean_score": 0.562
+    }
+  },
+  "stitch_mode": "stream-copy",
+  "outMp4": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2b/out/ep2b.mp4",
+  "horror_bed": null,
+  "loudness_mode": "linear (gain + limiter)",
+  "contactSheet": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2b/out/qa_contact_sheet.png",
+  "preset": "reel-vocal",
+  "audioMood": "none",
+  "bgm": "/tmp/claude-0/-home-user/0bbfbc76-5e8e-5f43-94f4-42e0e0f9ca1c/scratchpad/work/ep2b/sound_bed.wav",
+  "sfxCount": 0,
+  "audio_qa": {
+    "integrated_lufs": -14.1,
+    "target_lufs": -14,
+    "lufs_tolerance_lu": 2,
+    "true_peak_dbtp": -1.8,
+    "true_peak_limit_dbtp": -1.5,
+    "loudness_retries": 0,
+    "pass": true
+  },
+  "ffprobe": {
+    "duration": 87.718,
+    "size_bytes": 46644843,
+    "video": {
+      "codec": "h264",
+      "pix_fmt": "yuv420p",
+      "width": 1080,
+      "height": 1920
+    },
+    "audio": {
+      "codec": "aac",
+      "sample_rate": "48000"
+    }
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "iter": 2,
+  "pass": false,
+  "mean_score": 0.562,
+  "regressions": [],
+  "shots": [
+    {
+      "id": "hook",
+      "pass": false,
+      "score": 0.594,
+      "delta": 0.229,
+      "metrics": {
+        "sharp_edges": 0.0181,
+        "contrast": 24.6667,
+        "mean_luma": 32.1333,
+        "color_bins": 16.6667,
+        "saturation": 0.3387,
+        "ink": 0.016,
+        "focal": 4.05,
+        "hue_families": 3.3333,
+        "empty_cells": 6
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "upper-centre",
+        "bottom-left"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0181,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 24.6667,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        },
+        {
+          "metric": "hue_families",
+          "value": 3.3333,
+          "target": "<= 3",
+          "hint": "too many colours for this look: grade to one cold base hue plus at most one or two accent hues (warm door light, red clock)"
+        }
+      ]
+    },
+    {
+      "id": "calls",
+      "pass": false,
+      "score": 0.461,
+      "delta": 0.113,
+      "metrics": {
+        "sharp_edges": 0.0102,
+        "contrast": 30.6667,
+        "mean_luma": 48.7667,
+        "color_bins": 17,
+        "saturation": 0.3093,
+        "ink": 0.0064,
+        "focal": 3.8433,
+        "hue_families": 1.3333,
+        "empty_cells": 9
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "upper-centre",
+        "upper-right",
+        "middle-left",
+        "lower-right",
+        "bottom-right",
+        "middle-right",
+        "lower-left",
+        "bottom-left"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0102,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 30.6667,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 9,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, top-centre, top-right, upper-left, upper-centre, upper-right, middle-left, lower-right, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    },
+    {
+      "id": "walk",
+      "pass": false,
+      "score": 0.452,
+      "delta": 0.146,
+      "metrics": {
+        "sharp_edges": 0.0124,
+        "contrast": 18.6667,
+        "mean_luma": 27.3667,
+        "color_bins": 11.3333,
+        "saturation": 0.418,
+        "ink": 0.0116,
+        "focal": 3.8133,
+        "hue_families": 1.6667,
+        "empty_cells": 10
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "upper-centre",
+        "lower-centre",
+        "bottom-left",
+        "upper-right",
+        "lower-left",
+        "lower-right",
+        "bottom-centre"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0124,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 18.6667,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 10,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, top-centre, upper-left, upper-centre, upper-right, lower-left, lower-centre, lower-right, bottom-left, bottom-centre: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    },
+    {
+      "id": "voice",
+      "pass": false,
+      "score": 0.416,
+      "delta": 0.133,
+      "metrics": {
+        "sharp_edges": 0.0089,
+        "contrast": 15.0667,
+        "mean_luma": 23.8333,
+        "color_bins": 11,
+        "saturation": 0.5747,
+        "ink": 0.0084,
+        "focal": 3.6433,
+        "hue_families": 1,
+        "empty_cells": 9
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "upper-left",
+        "upper-centre",
+        "upper-right",
+        "lower-left",
+        "lower-right",
+        "bottom-left",
+        "middle-left",
+        "middle-right",
+        "lower-centre",
+        "bottom-centre"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0089,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 15.0667,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 9,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, top-centre, middle-left, middle-right, lower-left, lower-centre, lower-right, bottom-left, bottom-centre: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    },
+    {
+      "id": "under",
+      "pass": false,
+      "score": 0.681,
+      "delta": 0.322,
+      "metrics": {
+        "sharp_edges": 0.024,
+        "contrast": 24.3333,
+        "mean_luma": 27.1333,
+        "color_bins": 15.3333,
+        "saturation": 0.504,
+        "ink": 0.0223,
+        "focal": 3.57,
+        "hue_families": 2,
+        "empty_cells": 5
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "lower-left",
+        "bottom-left",
+        "upper-left",
+        "bottom-right",
+        "middle-right",
+        "lower-right"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.024,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 24.3333,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        }
+      ]
+    },
+    {
+      "id": "face",
+      "pass": false,
+      "score": 0.788,
+      "delta": 0.244,
+      "metrics": {
+        "sharp_edges": 0.0274,
+        "contrast": 40.4667,
+        "mean_luma": 38.3667,
+        "color_bins": 15.6667,
+        "saturation": 0.3547,
+        "ink": 0.0243,
+        "focal": 2.5133,
+        "hue_families": 1.3333,
+        "empty_cells": 5
+      },
+      "empty_where": [
+        "bottom-right",
+        "top-left",
+        "top-right",
+        "upper-left",
+        "lower-centre",
+        "bottom-left"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0274,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        }
+      ]
+    },
+    {
+      "id": "relief",
+      "pass": false,
+      "score": 0.606,
+      "delta": 0.338,
+      "metrics": {
+        "sharp_edges": 0.0201,
+        "contrast": 15.8667,
+        "mean_luma": 19.3,
+        "color_bins": 11.6667,
+        "saturation": 0.531,
+        "ink": 0.0196,
+        "focal": 3.9033,
+        "hue_families": 2.3333,
+        "empty_cells": 5
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "middle-left",
+        "bottom-left",
+        "top-right",
+        "upper-left",
+        "lower-left"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0201,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 15.8667,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        }
+      ]
+    },
+    {
+      "id": "wave",
+      "pass": false,
+      "score": 0.497,
+      "delta": 0.117,
+      "metrics": {
+        "sharp_edges": 0.0174,
+        "contrast": 22.7333,
+        "mean_luma": 25.2667,
+        "color_bins": 15,
+        "saturation": 0.543,
+        "ink": 0.0123,
+        "focal": 4.48,
+        "hue_families": 1.3333,
+        "empty_cells": 10
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "upper-centre",
+        "bottom-left",
+        "lower-left",
+        "lower-centre",
+        "lower-right",
+        "bottom-centre",
+        "bottom-right",
+        "upper-right"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0174,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 22.7333,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 10,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, top-centre, top-right, upper-left, lower-left, lower-centre, lower-right, bottom-left, bottom-centre, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    },
+    {
+      "id": "loop",
+      "pass": false,
+      "score": 0.564,
+      "delta": 0.141,
+      "metrics": {
+        "sharp_edges": 0.0163,
+        "contrast": 23.1667,
+        "mean_luma": 29.4667,
+        "color_bins": 20,
+        "saturation": 0.5213,
+        "ink": 0.0127,
+        "focal": 4.8167,
+        "hue_families": 2.3333,
+        "empty_cells": 6
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "upper-right",
+        "bottom-right",
+        "upper-left"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0163,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 23.1667,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        }
+      ]
+    }
+  ],
+  "targets": "horror-dark"
+}

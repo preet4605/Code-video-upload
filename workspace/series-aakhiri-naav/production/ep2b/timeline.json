@@ -1,0 +1,2524 @@
+{
+ "version": "1.0",
+ "slug": "ep2b",
+ "aspect": "9:16",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "duration_s": 87.718,
+ "target_lufs": -14,
+ "true_peak_dbtp": -1.5,
+ "audio_file": "voiceover.wav",
+ "alignment": {
+  "method": "voiced-span-weighted",
+  "line_anchored": true,
+  "note": "One TTS clip per line; word timing inside a line is voiced-span weighted."
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "start_s": 0,
+   "end_s": 5.028,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 0,
+     "start_s": 0.1,
+     "end_s": 4.628
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 0,
+     "dur_s": 2.514,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 2.514,
+     "dur_s": 2.514,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "calls",
+   "start_s": 5.028,
+   "end_s": 14.917,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 1,
+     "start_s": 5.128,
+     "end_s": 14.687
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 5.028,
+     "dur_s": 2.472,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 7.5,
+     "dur_s": 2.472,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 9.973,
+     "dur_s": 2.472,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 12.445,
+     "dur_s": 2.472,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "walk",
+   "start_s": 14.917,
+   "end_s": 23.673,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 2,
+     "start_s": 15.017,
+     "end_s": 23.323
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 14.917,
+     "dur_s": 2.189,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 17.106,
+     "dur_s": 2.189,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 19.295,
+     "dur_s": 2.189,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 21.484,
+     "dur_s": 2.189,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "voice",
+   "start_s": 23.673,
+   "end_s": 37.576,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 3,
+     "start_s": 23.773,
+     "end_s": 28.676
+    },
+    {
+     "i": 4,
+     "start_s": 29.176,
+     "end_s": 37.346
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 23.673,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 25.99,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 28.307,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 30.624,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 32.942,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 35.259,
+     "dur_s": 2.317,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "under",
+   "start_s": 37.576,
+   "end_s": 46.092,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 5,
+     "start_s": 37.676,
+     "end_s": 45.862
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 37.576,
+     "dur_s": 2.129,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 39.705,
+     "dur_s": 2.129,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 41.834,
+     "dur_s": 2.129,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 43.963,
+     "dur_s": 2.129,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "face",
+   "start_s": 46.092,
+   "end_s": 56.398,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 6,
+     "start_s": 46.192,
+     "end_s": 56.168
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 46.092,
+     "dur_s": 2.061,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 48.153,
+     "dur_s": 2.061,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 50.214,
+     "dur_s": 2.061,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 52.276,
+     "dur_s": 2.061,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 54.337,
+     "dur_s": 2.061,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "relief",
+   "start_s": 56.398,
+   "end_s": 68.287,
+   "mood": "calm",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 7,
+     "start_s": 56.498,
+     "end_s": 64.106
+    },
+    {
+     "i": 8,
+     "start_s": 65.206,
+     "end_s": 67.937
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 56.398,
+     "dur_s": 2.378,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 58.776,
+     "dur_s": 2.378,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 61.154,
+     "dur_s": 2.378,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 63.531,
+     "dur_s": 2.378,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 65.909,
+     "dur_s": 2.378,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wave",
+   "start_s": 68.287,
+   "end_s": 82.937,
+   "mood": "climax",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 9,
+     "start_s": 68.387,
+     "end_s": 74.245
+    },
+    {
+     "i": 10,
+     "start_s": 74.575,
+     "end_s": 82.707
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 68.287,
+     "dur_s": 2.093,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 70.38,
+     "dur_s": 2.093,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 72.473,
+     "dur_s": 2.093,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 74.566,
+     "dur_s": 2.093,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 76.658,
+     "dur_s": 2.093,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 78.751,
+     "dur_s": 2.093,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 80.844,
+     "dur_s": 2.093,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "loop",
+   "start_s": 82.937,
+   "end_s": 87.718,
+   "mood": "suspense",
+   "ambient_motion": true,
+   "lines": [
+    {
+     "i": 11,
+     "start_s": 83.037,
+     "end_s": 87.118
+    }
+   ],
+   "beats": [
+    {
+     "t_s": 82.937,
+     "dur_s": 2.391,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    },
+    {
+     "t_s": 85.328,
+     "dur_s": 2.391,
+     "hold": false,
+     "flashes_per_sec": 0,
+     "animated_properties": [
+      "camera.push",
+      "flicker.light",
+      "grain.seed",
+      "water.ripple"
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "i": 0,
+   "speaker": "NARRATOR",
+   "text": "मैं किनारे पर रुका रहा, और पानी के पार से कोई चलकर आने लगा।",
+   "start_s": 0.1,
+   "end_s": 4.628
+  },
+  {
+   "i": 1,
+   "speaker": "NARRATOR",
+   "text": "तीन रात से मैं यहाँ खड़ा पुकारता रहा, छोटे, मैं यहीं हूँ, और आज शाम पाँच बजे पहली बार किसी ने जवाब दिया।",
+   "start_s": 5.128,
+   "end_s": 14.687
+  },
+  {
+   "i": 2,
+   "speaker": "NARRATOR",
+   "text": "उसके पैरों पर कोई लहर नहीं उठती थी, और वह हर क़दम बाईं तरफ़ झुकाकर रखता था, मेरे छोटे भाई की तरह।",
+   "start_s": 15.017,
+   "end_s": 23.323
+  },
+  {
+   "i": 3,
+   "speaker": "CHARACTER",
+   "text": "तू सुन रहा है न? घर चल, बस एक बार बोल दे।",
+   "start_s": 23.773,
+   "end_s": 28.676
+  },
+  {
+   "i": 4,
+   "speaker": "NARRATOR",
+   "text": "मेरा पूरा नाम पानी से आया, मैंने दाँत भींच लिए, क्योंकि गाँव वाले कहते हैं, नाव की आवाज़ का जवाब मत दो।",
+   "start_s": 29.176,
+   "end_s": 37.346
+  },
+  {
+   "i": 5,
+   "speaker": "NARRATOR",
+   "text": "वह नाव की बत्ती में आया, और मैं समझ गया कि वह पानी के नीचे चल रहा है, उल्टा, सिर गहराई में लटका हुआ।",
+   "start_s": 37.676,
+   "end_s": 45.862
+  },
+  {
+   "i": 6,
+   "speaker": "NARRATOR",
+   "text": "वह मेरे पाँवों तक पहुँचा, और सतह के नीचे से एक सफ़ेद चेहरा मुझे देखने लगा, होंठ हिलते थे, आवाज़ कहीं और से आती थी।",
+   "start_s": 46.192,
+   "end_s": 56.168
+  },
+  {
+   "i": 7,
+   "speaker": "NARRATOR",
+   "text": "मैं बिना हिले खड़ा रहा, चेहरा लहरों में घुल गया, आवाज़ बंद हो गई, और मुझे लगा कि मैं जीत गया।",
+   "start_s": 56.498,
+   "end_s": 64.106
+  },
+  {
+   "i": 8,
+   "speaker": "CHARACTER",
+   "text": "हाँ, मैं यहीं हूँ।",
+   "start_s": 65.206,
+   "end_s": 67.937
+  },
+  {
+   "i": 9,
+   "speaker": "NARRATOR",
+   "text": "मैंने एक शब्द नहीं कहा था, पर झील से मेरी अपनी आवाज़ ने जवाब दे दिया।",
+   "start_s": 68.387,
+   "end_s": 74.245
+  },
+  {
+   "i": 10,
+   "speaker": "NARRATOR",
+   "text": "फिर बिना हवा के एक लहर चढ़ी, मुझे छाती तक भिगोकर धकेल गई, जैसे बहुत सारे छोटे हाथ मुझे बाहर धकेल रहे हों।",
+   "start_s": 74.575,
+   "end_s": 82.707
+  },
+  {
+   "i": 11,
+   "speaker": "NARRATOR",
+   "text": "झील के पास अब मेरी आवाज़ थी, और वह किसे बुलाएगी?",
+   "start_s": 83.037,
+   "end_s": 87.118
+  }
+ ],
+ "words": [
+  {
+   "word": "मैं",
+   "start_s": 0.1,
+   "end_s": 0.306,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "किनारे",
+   "start_s": 0.306,
+   "end_s": 0.699,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "पर",
+   "start_s": 0.699,
+   "end_s": 0.999,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "रुका",
+   "start_s": 0.999,
+   "end_s": 1.299,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "रहा,",
+   "start_s": 1.299,
+   "end_s": 1.599,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "और",
+   "start_s": 2.016,
+   "end_s": 2.398,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "पानी",
+   "start_s": 2.398,
+   "end_s": 2.667,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "के",
+   "start_s": 2.667,
+   "end_s": 2.852,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "पार",
+   "start_s": 2.852,
+   "end_s": 3.121,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "से",
+   "start_s": 3.121,
+   "end_s": 3.306,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "कोई",
+   "start_s": 3.306,
+   "end_s": 3.575,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "चलकर",
+   "start_s": 3.575,
+   "end_s": 4.089,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "आने",
+   "start_s": 4.089,
+   "end_s": 4.358,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "लगा।",
+   "start_s": 4.358,
+   "end_s": 4.628,
+   "speaker": "NARRATOR",
+   "line": 0
+  },
+  {
+   "word": "तीन",
+   "start_s": 5.128,
+   "end_s": 5.446,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "रात",
+   "start_s": 5.446,
+   "end_s": 5.765,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "से",
+   "start_s": 5.765,
+   "end_s": 5.984,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "मैं",
+   "start_s": 5.984,
+   "end_s": 6.203,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "यहाँ",
+   "start_s": 6.203,
+   "end_s": 6.521,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "खड़ा",
+   "start_s": 6.521,
+   "end_s": 6.839,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "पुकारता",
+   "start_s": 6.839,
+   "end_s": 7.451,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "रहा,",
+   "start_s": 7.451,
+   "end_s": 7.77,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "छोटे,",
+   "start_s": 8.38,
+   "end_s": 8.88,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "मैं",
+   "start_s": 9.41,
+   "end_s": 9.638,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "यहीं",
+   "start_s": 9.638,
+   "end_s": 9.969,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "हूँ,",
+   "start_s": 9.969,
+   "end_s": 10.196,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "और",
+   "start_s": 10.781,
+   "end_s": 11.134,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "आज",
+   "start_s": 11.134,
+   "end_s": 11.421,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "शाम",
+   "start_s": 11.421,
+   "end_s": 11.852,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "पाँच",
+   "start_s": 11.852,
+   "end_s": 12.139,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "बजे",
+   "start_s": 12.139,
+   "end_s": 12.426,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "पहली",
+   "start_s": 12.426,
+   "end_s": 13.17,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "बार",
+   "start_s": 13.17,
+   "end_s": 13.457,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "किसी",
+   "start_s": 13.457,
+   "end_s": 13.743,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "ने",
+   "start_s": 13.743,
+   "end_s": 13.94,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "जवाब",
+   "start_s": 13.94,
+   "end_s": 14.401,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "दिया।",
+   "start_s": 14.401,
+   "end_s": 14.687,
+   "speaker": "NARRATOR",
+   "line": 1
+  },
+  {
+   "word": "उसके",
+   "start_s": 15.017,
+   "end_s": 15.442,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "पैरों",
+   "start_s": 15.442,
+   "end_s": 15.695,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "पर",
+   "start_s": 15.695,
+   "end_s": 15.949,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "कोई",
+   "start_s": 15.949,
+   "end_s": 16.364,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "लहर",
+   "start_s": 16.364,
+   "end_s": 16.697,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "नहीं",
+   "start_s": 16.697,
+   "end_s": 16.95,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "उठती",
+   "start_s": 16.95,
+   "end_s": 17.283,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "थी,",
+   "start_s": 17.283,
+   "end_s": 17.457,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "और",
+   "start_s": 18.1,
+   "end_s": 18.392,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "वह",
+   "start_s": 18.392,
+   "end_s": 18.683,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "हर",
+   "start_s": 18.683,
+   "end_s": 18.975,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "क़दम",
+   "start_s": 18.975,
+   "end_s": 19.45,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "बाईं",
+   "start_s": 19.45,
+   "end_s": 19.741,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "तरफ़",
+   "start_s": 19.741,
+   "end_s": 20.124,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "झुकाकर",
+   "start_s": 20.124,
+   "end_s": 20.598,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "रखता",
+   "start_s": 20.598,
+   "end_s": 20.98,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "था,",
+   "start_s": 20.98,
+   "end_s": 21.181,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "मेरे",
+   "start_s": 21.873,
+   "end_s": 22.163,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "छोटे",
+   "start_s": 22.163,
+   "end_s": 22.453,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "भाई",
+   "start_s": 22.453,
+   "end_s": 22.743,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "की",
+   "start_s": 22.743,
+   "end_s": 22.943,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "तरह।",
+   "start_s": 22.943,
+   "end_s": 23.323,
+   "speaker": "NARRATOR",
+   "line": 2
+  },
+  {
+   "word": "तू",
+   "start_s": 23.773,
+   "end_s": 24.027,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "सुन",
+   "start_s": 24.027,
+   "end_s": 24.397,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "रहा",
+   "start_s": 24.397,
+   "end_s": 24.767,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "है",
+   "start_s": 24.767,
+   "end_s": 25.112,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "न?",
+   "start_s": 25.112,
+   "end_s": 25.367,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "घर",
+   "start_s": 25.367,
+   "end_s": 25.736,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "चल,",
+   "start_s": 25.736,
+   "end_s": 26.106,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "बस",
+   "start_s": 26.106,
+   "end_s": 26.476,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "एक",
+   "start_s": 26.476,
+   "end_s": 26.846,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "बार",
+   "start_s": 26.846,
+   "end_s": 27.216,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "बोल",
+   "start_s": 27.216,
+   "end_s": 27.651,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "दे।",
+   "start_s": 27.651,
+   "end_s": 28.288,
+   "speaker": "CHARACTER",
+   "line": 3
+  },
+  {
+   "word": "मेरा",
+   "start_s": 29.176,
+   "end_s": 29.457,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "पूरा",
+   "start_s": 29.457,
+   "end_s": 29.845,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "नाम",
+   "start_s": 29.845,
+   "end_s": 30.126,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "पानी",
+   "start_s": 30.126,
+   "end_s": 30.485,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "से",
+   "start_s": 30.485,
+   "end_s": 30.678,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "आया,",
+   "start_s": 30.678,
+   "end_s": 30.959,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "मैंने",
+   "start_s": 31.458,
+   "end_s": 31.76,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "दाँत",
+   "start_s": 31.76,
+   "end_s": 32.062,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "भींच",
+   "start_s": 32.062,
+   "end_s": 32.365,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "लिए,",
+   "start_s": 32.365,
+   "end_s": 32.667,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "क्योंकि",
+   "start_s": 33.108,
+   "end_s": 33.467,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "गाँव",
+   "start_s": 33.467,
+   "end_s": 33.741,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "वाले",
+   "start_s": 33.741,
+   "end_s": 34.014,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "कहते",
+   "start_s": 34.014,
+   "end_s": 34.373,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "हैं,",
+   "start_s": 34.373,
+   "end_s": 34.561,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "नाव",
+   "start_s": 34.905,
+   "end_s": 35.244,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "की",
+   "start_s": 35.244,
+   "end_s": 35.476,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "आवाज़",
+   "start_s": 35.476,
+   "end_s": 35.92,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "का",
+   "start_s": 35.92,
+   "end_s": 36.152,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "जवाब",
+   "start_s": 36.152,
+   "end_s": 36.775,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "मत",
+   "start_s": 36.775,
+   "end_s": 37.113,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "दो।",
+   "start_s": 37.113,
+   "end_s": 37.346,
+   "speaker": "NARRATOR",
+   "line": 4
+  },
+  {
+   "word": "वह",
+   "start_s": 37.676,
+   "end_s": 37.938,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "नाव",
+   "start_s": 37.938,
+   "end_s": 38.2,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "की",
+   "start_s": 38.2,
+   "end_s": 38.38,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "बत्ती",
+   "start_s": 38.38,
+   "end_s": 38.843,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "में",
+   "start_s": 38.843,
+   "end_s": 39.023,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "आया,",
+   "start_s": 39.023,
+   "end_s": 39.285,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "और",
+   "start_s": 39.779,
+   "end_s": 40.019,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "मैं",
+   "start_s": 40.019,
+   "end_s": 40.183,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "समझ",
+   "start_s": 40.183,
+   "end_s": 40.498,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "गया",
+   "start_s": 40.498,
+   "end_s": 41.023,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "कि",
+   "start_s": 41.023,
+   "end_s": 41.188,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "वह",
+   "start_s": 41.188,
+   "end_s": 41.539,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "पानी",
+   "start_s": 41.539,
+   "end_s": 41.779,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "के",
+   "start_s": 41.779,
+   "end_s": 41.944,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "नीचे",
+   "start_s": 41.944,
+   "end_s": 42.184,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "चल",
+   "start_s": 42.184,
+   "end_s": 42.423,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "रहा",
+   "start_s": 42.423,
+   "end_s": 42.663,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "है,",
+   "start_s": 42.663,
+   "end_s": 42.828,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "उल्टा,",
+   "start_s": 43.468,
+   "end_s": 43.905,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "सिर",
+   "start_s": 44.273,
+   "end_s": 44.555,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "गहराई",
+   "start_s": 44.555,
+   "end_s": 45.014,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "में",
+   "start_s": 45.014,
+   "end_s": 45.209,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "लटका",
+   "start_s": 45.209,
+   "end_s": 45.579,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "हुआ।",
+   "start_s": 45.579,
+   "end_s": 45.862,
+   "speaker": "NARRATOR",
+   "line": 5
+  },
+  {
+   "word": "वह",
+   "start_s": 46.192,
+   "end_s": 46.451,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "मेरे",
+   "start_s": 46.451,
+   "end_s": 46.817,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "पाँवों",
+   "start_s": 46.817,
+   "end_s": 47.076,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "तक",
+   "start_s": 47.076,
+   "end_s": 47.416,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "पहुँचा,",
+   "start_s": 47.416,
+   "end_s": 47.756,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "और",
+   "start_s": 48.316,
+   "end_s": 48.595,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "सतह",
+   "start_s": 48.595,
+   "end_s": 48.963,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "के",
+   "start_s": 48.963,
+   "end_s": 49.155,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "नीचे",
+   "start_s": 49.155,
+   "end_s": 49.435,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "से",
+   "start_s": 49.435,
+   "end_s": 49.627,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "एक",
+   "start_s": 49.627,
+   "end_s": 50.172,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "सफ़ेद",
+   "start_s": 50.172,
+   "end_s": 50.539,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "चेहरा",
+   "start_s": 50.539,
+   "end_s": 50.984,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "मुझे",
+   "start_s": 50.984,
+   "end_s": 51.264,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "देखने",
+   "start_s": 51.264,
+   "end_s": 51.632,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "लगा,",
+   "start_s": 51.632,
+   "end_s": 51.911,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "होंठ",
+   "start_s": 52.556,
+   "end_s": 52.904,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "हिलते",
+   "start_s": 52.904,
+   "end_s": 53.445,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "थे,",
+   "start_s": 53.445,
+   "end_s": 53.685,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "आवाज़",
+   "start_s": 54.312,
+   "end_s": 54.711,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "कहीं",
+   "start_s": 54.711,
+   "end_s": 55.142,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "और",
+   "start_s": 55.142,
+   "end_s": 55.446,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "से",
+   "start_s": 55.446,
+   "end_s": 55.655,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "आती",
+   "start_s": 55.655,
+   "end_s": 55.959,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "थी।",
+   "start_s": 55.959,
+   "end_s": 56.168,
+   "speaker": "NARRATOR",
+   "line": 6
+  },
+  {
+   "word": "मैं",
+   "start_s": 56.498,
+   "end_s": 56.729,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "बिना",
+   "start_s": 56.729,
+   "end_s": 57.066,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "हिले",
+   "start_s": 57.066,
+   "end_s": 57.402,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "खड़ा",
+   "start_s": 57.402,
+   "end_s": 57.738,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "रहा,",
+   "start_s": 57.738,
+   "end_s": 58.074,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "चेहरा",
+   "start_s": 58.567,
+   "end_s": 58.9,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "लहरों",
+   "start_s": 58.9,
+   "end_s": 59.232,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "में",
+   "start_s": 59.232,
+   "end_s": 59.406,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "घुल",
+   "start_s": 59.406,
+   "end_s": 59.659,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "गया,",
+   "start_s": 59.659,
+   "end_s": 59.912,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "आवाज़",
+   "start_s": 60.354,
+   "end_s": 60.729,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "बंद",
+   "start_s": 60.729,
+   "end_s": 61.015,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "हो",
+   "start_s": 61.015,
+   "end_s": 61.211,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "गई,",
+   "start_s": 61.211,
+   "end_s": 61.497,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "और",
+   "start_s": 62.034,
+   "end_s": 62.318,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "मुझे",
+   "start_s": 62.318,
+   "end_s": 62.602,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "लगा",
+   "start_s": 62.602,
+   "end_s": 63.146,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "कि",
+   "start_s": 63.146,
+   "end_s": 63.342,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "मैं",
+   "start_s": 63.342,
+   "end_s": 63.537,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "जीत",
+   "start_s": 63.537,
+   "end_s": 63.822,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "गया।",
+   "start_s": 63.822,
+   "end_s": 64.106,
+   "speaker": "NARRATOR",
+   "line": 7
+  },
+  {
+   "word": "हाँ,",
+   "start_s": 65.206,
+   "end_s": 65.536,
+   "speaker": "CHARACTER",
+   "line": 8
+  },
+  {
+   "word": "मैं",
+   "start_s": 65.899,
+   "end_s": 66.332,
+   "speaker": "CHARACTER",
+   "line": 8
+  },
+  {
+   "word": "यहीं",
+   "start_s": 66.332,
+   "end_s": 66.961,
+   "speaker": "CHARACTER",
+   "line": 8
+  },
+  {
+   "word": "हूँ।",
+   "start_s": 66.961,
+   "end_s": 67.63,
+   "speaker": "CHARACTER",
+   "line": 8
+  },
+  {
+   "word": "मैंने",
+   "start_s": 68.387,
+   "end_s": 68.685,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "एक",
+   "start_s": 68.685,
+   "end_s": 68.983,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "शब्द",
+   "start_s": 68.983,
+   "end_s": 69.374,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "नहीं",
+   "start_s": 69.374,
+   "end_s": 69.672,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "कहा",
+   "start_s": 69.672,
+   "end_s": 69.971,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "था,",
+   "start_s": 69.971,
+   "end_s": 70.176,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "पर",
+   "start_s": 70.831,
+   "end_s": 71.134,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "झील",
+   "start_s": 71.134,
+   "end_s": 71.437,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "से",
+   "start_s": 71.437,
+   "end_s": 71.645,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "मेरी",
+   "start_s": 71.645,
+   "end_s": 72.232,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "अपनी",
+   "start_s": 72.232,
+   "end_s": 72.729,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "आवाज़",
+   "start_s": 72.729,
+   "end_s": 73.127,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "ने",
+   "start_s": 73.127,
+   "end_s": 73.335,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "जवाब",
+   "start_s": 73.335,
+   "end_s": 73.733,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "दे",
+   "start_s": 73.733,
+   "end_s": 73.941,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "दिया।",
+   "start_s": 73.941,
+   "end_s": 74.244,
+   "speaker": "NARRATOR",
+   "line": 9
+  },
+  {
+   "word": "फिर",
+   "start_s": 74.575,
+   "end_s": 74.89,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "बिना",
+   "start_s": 74.89,
+   "end_s": 75.204,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "हवा",
+   "start_s": 75.204,
+   "end_s": 75.519,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "के",
+   "start_s": 75.519,
+   "end_s": 75.736,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "एक",
+   "start_s": 75.736,
+   "end_s": 76.05,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "लहर",
+   "start_s": 76.05,
+   "end_s": 76.463,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "चढ़ी,",
+   "start_s": 76.463,
+   "end_s": 76.778,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "मुझे",
+   "start_s": 77.178,
+   "end_s": 77.513,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "छाती",
+   "start_s": 77.513,
+   "end_s": 77.768,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "तक",
+   "start_s": 77.768,
+   "end_s": 78.022,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "भिगोकर",
+   "start_s": 78.022,
+   "end_s": 78.435,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "धकेल",
+   "start_s": 78.435,
+   "end_s": 78.769,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "गई,",
+   "start_s": 78.769,
+   "end_s": 79.023,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "जैसे",
+   "start_s": 79.46,
+   "end_s": 79.759,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "बहुत",
+   "start_s": 79.759,
+   "end_s": 80.226,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "सारे",
+   "start_s": 80.226,
+   "end_s": 80.525,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "छोटे",
+   "start_s": 80.525,
+   "end_s": 80.823,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "हाथ",
+   "start_s": 80.823,
+   "end_s": 81.122,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "मुझे",
+   "start_s": 81.122,
+   "end_s": 81.42,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "बाहर",
+   "start_s": 81.42,
+   "end_s": 81.812,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "धकेल",
+   "start_s": 81.812,
+   "end_s": 82.203,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "रहे",
+   "start_s": 82.203,
+   "end_s": 82.502,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "हों।",
+   "start_s": 82.502,
+   "end_s": 82.707,
+   "speaker": "NARRATOR",
+   "line": 10
+  },
+  {
+   "word": "झील",
+   "start_s": 83.037,
+   "end_s": 83.366,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "के",
+   "start_s": 83.366,
+   "end_s": 83.592,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "पास",
+   "start_s": 83.592,
+   "end_s": 83.921,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "अब",
+   "start_s": 83.921,
+   "end_s": 84.313,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "मेरी",
+   "start_s": 84.313,
+   "end_s": 84.642,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "आवाज़",
+   "start_s": 84.642,
+   "end_s": 85.074,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "थी,",
+   "start_s": 85.074,
+   "end_s": 85.3,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "और",
+   "start_s": 85.963,
+   "end_s": 86.192,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "वह",
+   "start_s": 86.192,
+   "end_s": 86.516,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "किसे",
+   "start_s": 86.516,
+   "end_s": 86.745,
+   "speaker": "NARRATOR",
+   "line": 11
+  },
+  {
+   "word": "बुलाएगी?",
+   "start_s": 86.745,
+   "end_s": 87.118,
+   "speaker": "NARRATOR",
+   "line": 11
+  }
+ ],
+ "captions": [
+  {
+   "speaker": "NARRATOR",
+   "text": "मैं किनारे पर रुका रहा,\nऔर पानी के पार से",
+   "start_s": 0.02,
+   "end_s": 3.206,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "कोई चलकर आने लगा।",
+   "start_s": 3.226,
+   "end_s": 4.978,
+   "safe_zone": true,
+   "line": 0
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "तीन रात से मैं यहाँ\nखड़ा पुकारता रहा,",
+   "start_s": 5.048,
+   "end_s": 8.12,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "छोटे, मैं यहीं हूँ, और\nआज शाम पाँच बजे पहली",
+   "start_s": 8.3,
+   "end_s": 13.07,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "बार किसी ने जवाब दिया।",
+   "start_s": 13.09,
+   "end_s": 14.917,
+   "safe_zone": true,
+   "line": 1
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "उसके पैरों पर कोई\nलहर नहीं उठती थी,",
+   "start_s": 14.937,
+   "end_s": 17.807,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "और वह हर क़दम\nबाईं तरफ़ झुकाकर रखता",
+   "start_s": 18.02,
+   "end_s": 20.88,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "था, मेरे छोटे भाई की तरह।",
+   "start_s": 20.9,
+   "end_s": 23.673,
+   "safe_zone": true,
+   "line": 2
+  },
+  {
+   "speaker": "CHARACTER",
+   "text": "तू सुन रहा है न?",
+   "start_s": 23.693,
+   "end_s": 25.267,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "CHARACTER",
+   "text": "घर चल, बस एक बार बोल दे।",
+   "start_s": 25.287,
+   "end_s": 28.638,
+   "safe_zone": true,
+   "line": 3
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "मेरा पूरा नाम पानी से\nआया, मैंने दाँत भींच लिए,",
+   "start_s": 29.096,
+   "end_s": 33.008,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "क्योंकि गाँव वाले कहते हैं, नाव\nकी आवाज़ का जवाब मत दो।",
+   "start_s": 33.028,
+   "end_s": 37.576,
+   "safe_zone": true,
+   "line": 4
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "वह नाव की बत्ती में आया,\nऔर मैं समझ गया कि",
+   "start_s": 37.596,
+   "end_s": 41.088,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "वह पानी के नीचे चल रहा है,",
+   "start_s": 41.108,
+   "end_s": 43.178,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "उल्टा, सिर गहराई में लटका हुआ।",
+   "start_s": 43.388,
+   "end_s": 46.092,
+   "safe_zone": true,
+   "line": 5
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "वह मेरे पाँवों तक पहुँचा,\nऔर सतह के नीचे से",
+   "start_s": 46.112,
+   "end_s": 49.527,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "एक सफ़ेद चेहरा मुझे देखने लगा,",
+   "start_s": 49.547,
+   "end_s": 52.261,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "होंठ हिलते थे, आवाज़\nकहीं और से आती थी।",
+   "start_s": 52.476,
+   "end_s": 56.398,
+   "safe_zone": true,
+   "line": 6
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "मैं बिना हिले खड़ा रहा,\nचेहरा लहरों में घुल",
+   "start_s": 56.418,
+   "end_s": 59.559,
+   "safe_zone": true,
+   "line": 7
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "गया, आवाज़ बंद हो गई,\nऔर मुझे लगा कि मैं जीत गया।",
+   "start_s": 59.579,
+   "end_s": 64.456,
+   "safe_zone": true,
+   "line": 7
+  },
+  {
+   "speaker": "CHARACTER",
+   "text": "हाँ, मैं यहीं हूँ।",
+   "start_s": 65.126,
+   "end_s": 67.98,
+   "safe_zone": true,
+   "line": 8
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "मैंने एक शब्द नहीं कहा\nथा, पर झील से मेरी",
+   "start_s": 68.307,
+   "end_s": 72.132,
+   "safe_zone": true,
+   "line": 9
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "अपनी आवाज़ ने जवाब दे दिया।",
+   "start_s": 72.152,
+   "end_s": 74.475,
+   "safe_zone": true,
+   "line": 9
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "फिर बिना हवा के एक लहर चढ़ी,",
+   "start_s": 74.495,
+   "end_s": 77.078,
+   "safe_zone": true,
+   "line": 10
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "मुझे छाती तक भिगोकर धकेल गई,",
+   "start_s": 77.098,
+   "end_s": 79.36,
+   "safe_zone": true,
+   "line": 10
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "जैसे बहुत सारे छोटे हाथ\nमुझे बाहर धकेल रहे हों।",
+   "start_s": 79.38,
+   "end_s": 82.937,
+   "safe_zone": true,
+   "line": 10
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "झील के पास अब मेरी आवाज़ थी,",
+   "start_s": 82.957,
+   "end_s": 85.65,
+   "safe_zone": true,
+   "line": 11
+  },
+  {
+   "speaker": "NARRATOR",
+   "text": "और वह किसे बुलाएगी?",
+   "start_s": 85.883,
+   "end_s": 87.468,
+   "safe_zone": true,
+   "line": 11
+  }
+ ],
+ "audio_cues": [
+  {
+   "type": "sfx",
+   "name": "lake_still_night",
+   "t_s": 0.1,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "old_calls_echo",
+   "t_s": 5.128,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "step_ticks",
+   "t_s": 15.017,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "name_in_water",
+   "t_s": 23.773,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "water_knock",
+   "t_s": 46.192,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "wave_no_wind",
+   "t_s": 74.575,
+   "gain_db": -6
+  },
+  {
+   "type": "sfx",
+   "name": "my_voice_answers",
+   "t_s": 65.006,
+   "gain_db": 0,
+   "scare": true
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+[SCENE id=hook mood=suspense]
+[SFX name=water_wade_cold]
+[NARRATOR] मैं पानी में उतरा, तो लगा किसी ने मेरी छाती पर हाथ रख दिया।
+[SCENE id=breath mood=suspense]
+[NARRATOR] साँस तेज़ हुई, पर हवा खींचता तो डूबता, इसलिए धीरे-धीरे साँस लेता रहा।
+[SCENE id=calls mood=suspense]
+[SFX name=old_calls_echo]
+[NARRATOR] तीन रात से मैं किनारे से पुकार रहा था, छोटे, मैं यहीं हूँ, और आज शाम पाँच बजे नाव उसकी जैकेट लेकर लौटी थी।
+[SCENE id=warm mood=suspense]
+[SFX name=warm_water_hum]
+[NARRATOR] पानी गर्म हो गया, कंपकंपी थम गई, और मुझे अच्छा लगा, जो दिसंबर की झील में हो ही नहीं सकता।
+[SCENE id=cabin mood=suspense]
+[SFX name=murmur_haan]
+[NARRATOR] केबिन के पीछे भनभनाहट थी, पास जाकर समझ आया कि वह बहुत सारे लोगों का एक ही शब्द है, हाँ, हाँ, हाँ।
+[SCENE id=jacket mood=suspense]
+[NARRATOR] सीट की लाल जैकेट गर्म थी, और उसमें नारियल के तेल की वही महक थी जो भाई के बालों में रहती थी।
+[SCENE id=relief mood=calm]
+[NARRATOR] मुझे लगा कि वह ज़िंदा है, और मैं रो पड़ा।
+[SILENCE dur=0.9]
+[SCENE id=voice mood=suspense]
+[SFX name=name_in_water]
+[CHARACTER] इधर आ जा, बहुत ठंड है, चल घर चलें।
+[NARRATOR] नाव ने मेरा पूरा नाम लिया, जो सिर्फ़ माँ लेती थीं, और आवाज़ इतनी नरम थी कि मैं पहचान गया।
+[SCENE id=break mood=climax]
+[NARRATOR] गाँव वाले कहते हैं, जवाब मत दो, पर नाम सुनकर जवाब देना सबसे पुरानी आदत है, और मैं हार गया।
+[NARRATOR] हाँ, मैं यहीं हूँ।
+[SILENCE dur=0.8]
+[SCARE name=lights_out_grip]
+[SCENE id=grip mood=climax]
+[NARRATOR] बत्ती बुझ गई, और पानी ने मेरी छाती को उसी हाथ की तरह जकड़ लिया।
+[SCENE id=push mood=climax]
+[SFX name=small_hand_slap]
+[NARRATOR] तभी पीछे से एक छोटे हाथ ने मुझे किनारे की तरफ़ धकेल दिया।
