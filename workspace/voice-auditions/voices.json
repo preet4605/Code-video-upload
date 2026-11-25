@@ -1,0 +1,11 @@
+{
+  "kalpa-labs": {
+    "horror":       { "hi": "1eb6c010-34e0-477c-9d24-e915f853359e", "en": "2b5f1a3b-b992-44d2-8214-fd4b9b175369" },
+    "funny":        { "hi": "bc22cae9-0935-4420-bd31-1fd360fc5e71", "en": "c676a75b-2a1d-4bc8-880a-6ca649ed1170" },
+    "guide":        { "hi": "5e0c5704-590f-483b-b291-00a2415cb67e", "en": "c676a75b-2a1d-4bc8-880a-6ca649ed1170" },
+    "news":         { "hi": "18c26f49-9f9c-400c-bec9-7467f28e1db5", "en": "f213312a-ae4a-4857-a8ac-a9ac76f73294" },
+    "story":        { "hi": "bc22cae9-0935-4420-bd31-1fd360fc5e71", "en": "2b5f1a3b-b992-44d2-8214-fd4b9b175369" },
+    "motivational": { "hi": "18c26f49-9f9c-400c-bec9-7467f28e1db5", "en": "2b5f1a3b-b992-44d2-8214-fd4b9b175369" },
+    "default":      { "hi": "5e0c5704-590f-483b-b291-00a2415cb67e", "en": "c676a75b-2a1d-4bc8-880a-6ca649ed1170" }
+  }
+}
