@@ -1,0 +1,14 @@
+[SCENE id=hook mood=suspense]
+[NARRATOR] रात को वो कमरा मत खोलना।
+[NARRATOR] नानी ने यही कहा था।
+[SCENE id=room mood=suspense]
+[SFX name=heartbeat]
+[NARRATOR] तीन बजे दरवाज़ा अपने आप खुला।
+[NARRATOR] अंदर कुछ था।
+[SCENE id=scare mood=climax]
+[SCARE name=violin_stinger]
+[NARRATOR] उसने मेरा नाम लिया।
+[NARRATOR] फिर सब शांत हो गया।
+[SCENE id=cliff mood=suspense]
+[NARRATOR] पर कहानी अभी बाकी है।
+[NARRATOR] Part 3 के लिए फ़ॉलो करो, अगली रील वहीं की।

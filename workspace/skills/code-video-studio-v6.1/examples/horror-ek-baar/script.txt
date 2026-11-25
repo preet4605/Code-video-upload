@@ -1,0 +1,34 @@
+[SCENE id=hook mood=suspense]
+[SFX name=fan_hum]
+[NARRATOR] रात को कोई एक बार पुकारे... तो जवाब मत देना।
+[SCENE id=nani mood=calm]
+[NARRATOR] नानी कहती थीं, इंसान हमेशा दो बार पुकारता है।
+[NARRATOR] जो सिर्फ़ एक बार पुकारे, वो इंसान नहीं होता।
+[SCENE id=wake mood=suspense]
+[NARRATOR] तीन बजकर सात मिनट। माँ बगल में सो रही थीं।
+[NARRATOR] तभी रसोई से माँ की आवाज़ आई। "बेटा।" बस एक बार।
+[SCENE id=still mood=suspense]
+[NARRATOR] मैंने जवाब नहीं दिया। पर नींद में माँ बुदबुदाईं...
+[WHISPER] हाँ...?
+[SCENE id=kitchen mood=climax]
+[SFX name=slippers]
+[NARRATOR] माँ उठीं। चप्पलें रसोई की ओर गईं।
+[NARRATOR] दरवाज़े के नीचे की रोशनी में दो पैर रुके।
+[SFX name=thud]
+[NARRATOR] फिर रोशनी बुझ गई।
+[SILENCE dur=1.0]
+[SCENE id=return mood=calm]
+[SFX name=door_creak]
+[NARRATOR] कुछ देर बाद चप्पलें लौटीं। माँ चुपचाप बगल में लेट गईं।
+[NARRATOR] मैं सो गया।
+[SCENE id=morning mood=suspense]
+[SFX name=whisper_gust]
+[NARRATOR] सुबह रसोई से माँ ने पुकारा। "बेटा! बेटा!"
+[NARRATOR] दो बार। माँ रात भर रसोई में थीं।
+[NARRATOR] तो बगल में जो लेटा था...
+[SILENCE dur=1.0]
+[SCARE name=violin_stinger]
+[SCENE id=reveal_callback mood=climax]
+[NARRATOR] कंबल हिला। उसने मेरी तरफ़ मुँह किया।
+[WHISPER] "बेटा।"
+[NARRATOR] एक बार।

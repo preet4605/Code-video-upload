@@ -1,0 +1,14 @@
+{
+  "series_id": "sheesha",
+  "nodes": [
+    {
+      "part": 1,
+      "choice": "मुड़ूँ, या देखता रहूँ?",
+      "option_a": "मुड़ूँ",
+      "option_b": "देखता रहूँ",
+      "vote": null,
+      "winner": null,
+      "next_part": null
+    }
+  ]
+}

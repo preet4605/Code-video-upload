@@ -1,0 +1,79 @@
+{
+  "platform": "reels",
+  "genre": "horror",
+  "lang": "hi",
+  "viewer": "Hindi-speaking viewers scrolling alone at night, phone in bed",
+  "hook": "रात को कोई एक बार पुकारे... तो जवाब मत देना।",
+  "payoff": "The mother really calls twice from the kitchen at dawn; the thing that came back to bed in her place called once.",
+  "belief_label": "invented family rule, framed as a grandmother's saying; not a sourced regional tradition",
+  "target_duration_s": 62,
+  "loop": true,
+  "sources": [],
+  "format": "standalone",
+  "sound": {
+    "ambience": [
+      "fan",
+      "crickets"
+    ]
+  },
+  "story": {
+    "setup": "A boy sleeps beside his mother; nani's rule: humans call twice, a once-caller is not human.",
+    "rule_or_clue": [
+      {
+        "type": "rule",
+        "text": "humans always call twice",
+        "line": "इंसान हमेशा दो बार पुकारता है"
+      },
+      {
+        "type": "rule",
+        "text": "a once-caller is not human",
+        "line": "जो सिर्फ़ एक बार पुकारे, वो इंसान नहीं होता"
+      },
+      {
+        "type": "clue",
+        "text": "the one who came back said nothing",
+        "line": "माँ चुपचाप बगल में लेट गईं"
+      }
+    ],
+    "escalation": [
+      {
+        "text": "a once-call from the kitchen in mother's voice",
+        "line": "तभी रसोई से माँ की आवाज़ आई"
+      },
+      {
+        "text": "mother answers in her sleep",
+        "line": "पर नींद में माँ बुदबुदाईं"
+      },
+      {
+        "text": "two feet stop in the light under the door, the light dies",
+        "line": "दो पैर रुके"
+      }
+    ],
+    "false_relief": {
+      "text": "slippers return, mother lies down, he sleeps",
+      "line": "कुछ देर बाद चप्पलें लौटीं"
+    },
+    "twist": {
+      "text": "at dawn the real mother calls twice from the kitchen",
+      "line": "सुबह रसोई से माँ ने पुकारा",
+      "explains_hook": true,
+      "how": "Humans call twice: the dawn voice is the real mother, so the thing that returned to bed answered the once-call and is the reason the hook says never answer."
+    },
+    "ending_image": {
+      "text": "the blanket beside him turns; a pale face with half of it in shadow"
+    },
+    "callback": {
+      "text": "it calls once",
+      "line": "एक बार।"
+    },
+    "threat": {
+      "planted_by": {
+        "line": "जो सिर्फ़ एक बार पुकारे"
+      },
+      "first_seen": {
+        "line": "कंबल हिला"
+      }
+    },
+    "scare_pattern": "lying-beside-you reveal after a dawn twist"
+  }
+}

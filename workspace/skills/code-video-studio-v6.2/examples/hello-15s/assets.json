@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "assets": [
+    {
+      "id": "grid_backdrop",
+      "tier": 1,
+      "type": "procedural_canvas",
+      "license": "MIT"
+    },
+    {
+      "id": "vector_mascot",
+      "tier": 1,
+      "type": "procedural_canvas",
+      "license": "MIT"
+    }
+  ]
+}

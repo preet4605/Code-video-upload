@@ -1,0 +1,14 @@
+{ "shots": [
+  { "id": "room", "seen": "Unchanged establishing shot: bed above the caption, kid peeking with scared eyes, mother asleep facing away, window with moon, fan, red 3:07 clock, nani photo, calendar, door strip.",
+    "problems": ["kid small on a phone"],
+    "fix": "Keep for this demo; for production push in to 1.15 so the kid's face reads on a phone screen.",
+    "scores": { "subject": 3, "depth": 4, "detail": 5, "light": 4, "character": 3, "composition": 3 } },
+  { "id": "door", "seen": "Door close-up: brass handle, switchboard, red school bag, slippers, purple rug in the warm spill; two long foot shadows grow across the floor during the shot.",
+    "problems": ["bag cropped at the edge (acceptable foreground framing)"],
+    "fix": "No change needed; accepted as is after two passes.",
+    "scores": { "subject": 4, "depth": 3, "detail": 4, "light": 4, "character": 3, "composition": 4 } },
+  { "id": "face", "seen": "Kid's scared face now sits in a warm pool of light from the door side with a sweat drop and open mouth; headboard and blanket fall off into dark blue, so the eye lands on the face first.",
+    "problems": ["blink lands on the last keyframe (fine in motion)"],
+    "fix": "Accepted: the light pool solved the focal problem; next reel try a 2-frame eye dart toward the door at the caption.",
+    "regression_note": "Metric score dropped because darkening the surround removed background edges; this is the intended trade: focal rose from 1.92 to 2.50 and the face now reads first.",
+    "scores": { "subject": 4, "depth": 3, "detail": 4, "light": 4, "character": 4, "composition": 4 } } ] }

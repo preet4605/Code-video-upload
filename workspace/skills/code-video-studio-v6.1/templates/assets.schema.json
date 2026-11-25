@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CodeVideoStudioAssets",
+  "type": "object",
+  "required": ["version", "assets"],
+  "properties": {
+    "version": { "type": "string", "const": "1.0" },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "tier", "type", "license"],
+        "properties": {
+          "id": { "type": "string" },
+          "tier": { "type": "integer", "enum": [1, 2, 3] },
+          "type": { "type": "string", "enum": ["procedural_svg", "procedural_canvas", "illustrated_cutout", "wikimedia_media", "audio"] },
+          "path": { "type": "string" },
+          "source_url": { "type": "string" },
+          "author": { "type": "string" },
+          "license": { "type": "string" },
+          "attribution_text": { "type": "string" },
+          "respect_qa_passed": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

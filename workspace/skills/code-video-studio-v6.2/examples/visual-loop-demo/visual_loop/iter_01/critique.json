@@ -1,0 +1,13 @@
+{ "shots": [
+  { "id": "room", "seen": "Flat navy wall, a brown box with a blue rectangle for a bed and a brown slab for a door; no characters, no window, no light source; three keyframes identical.",
+    "problems": ["no subject", "no set dressing", "no outlines", "static"],
+    "fix": "Rebuild with the cartoon kit: bed with the kid (scared, eyes open) and sleeping mother, window with moon and curtains, fan, 3:07 clock, framed photo, door with warm light strip; slow push-in.",
+    "scores": { "subject": 1, "depth": 1, "detail": 1, "light": 1, "character": 1, "composition": 2 } },
+  { "id": "door", "seen": "A single flat brown rectangle filling the frame with an orange line under it; nothing else, no feet, no glow, completely static.",
+    "problems": ["no detail", "light strip has no glow", "the story beat (two feet) is missing"],
+    "fix": "Close-up door with panels, handle, frame and wall; strong glow and light spill under the door with two foot shadows that appear; floor boards; push-in toward the gap.",
+    "scores": { "subject": 2, "depth": 1, "detail": 1, "light": 2, "character": 1, "composition": 2 } },
+  { "id": "face", "seen": "A plain peach circle with two black dots centred on a flat navy wall; reads as a placeholder, not a scared child; static.",
+    "problems": ["no character design", "no expression", "empty background"],
+    "fix": "Use the kid rig in close-up with the 'scared' expression and blinking, blanket pulled to the chin, pillow, moonlight rim and the door glow behind; slow zoom.",
+    "scores": { "subject": 2, "depth": 1, "detail": 1, "light": 1, "character": 2, "composition": 3 } } ] }

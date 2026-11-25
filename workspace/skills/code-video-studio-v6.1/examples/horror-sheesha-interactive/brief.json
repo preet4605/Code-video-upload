@@ -1,0 +1,109 @@
+{
+  "platform": "reels",
+  "genre": "horror",
+  "lang": "hi",
+  "format": "interactive",
+  "viewer": "Hindi-speaking hostel students scrolling alone at night",
+  "hook": "रात को शीशे में अपने पीछे कोई दिखे... तो मुड़कर मत देखना।",
+  "payoff": "Rohan texts that he reached home; the thing in his bed, visible only in the mirror, opens its eyes.",
+  "belief_label": "invented family rule framed as a grandmother's saying; not a sourced tradition",
+  "target_duration_s": 72,
+  "loop": false,
+  "sources": [],
+  "sound": {
+    "ambience": [
+      "fan",
+      "crickets"
+    ]
+  },
+  "series": {
+    "id": "sheesha",
+    "part": 1,
+    "of": 2,
+    "bible_path": "series_bible.md",
+    "recap_line": "",
+    "next_hook": "मुड़ूँ, या देखता रहूँ?"
+  },
+  "choice": {
+    "question": "मुड़ूँ, या देखता रहूँ?",
+    "option_a": "मुड़ूँ",
+    "option_b": "देखता रहूँ",
+    "vote_channel": "pinned_comment",
+    "deadline_note": "Votes counted 24 h after posting; pin the comment 'A या B? कमेंट करो' as the first comment."
+  },
+  "story": {
+    "setup": "A hostel student alone over Diwali brushes his teeth at night; his roommate Rohan went home at six.",
+    "characters": [
+      "रोहन",
+      "दादी"
+    ],
+    "places": [
+      "हॉस्टल"
+    ],
+    "rule_or_clue": [
+      {
+        "type": "rule",
+        "text": "रात को शीशा ढककर सोना",
+        "line": "रात को शीशा ढककर सोना"
+      },
+      {
+        "type": "rule",
+        "text": "मुड़ोगे, तो वो जान जाएगा कि तुमने उसे देख लिया",
+        "line": "मुड़ोगे, तो वो जान जाएगा"
+      },
+      {
+        "type": "clue",
+        "text": "Rohan left at six",
+        "line": "शाम छह बजे घर चला गया था"
+      }
+    ],
+    "escalation": [
+      {
+        "text": "the towel covering the mirror falls",
+        "line": "तौलिया खिसककर गिर गया"
+      },
+      {
+        "text": "someone sleeps in Rohan's bed, in the mirror",
+        "line": "रोहन के बिस्तर पर कोई सो रहा था"
+      },
+      {
+        "text": "the blanket breathes",
+        "line": "कंबल धीरे-धीरे ऊपर-नीचे हो रहा था"
+      }
+    ],
+    "false_relief": {
+      "text": "he decides Rohan came back",
+      "line": "रोहन लौट आया होगा"
+    },
+    "twist": {
+      "text": "Rohan texts that he reached home",
+      "line": "रोहन का मैसेज",
+      "explains_hook": true,
+      "how": "Rohan is home, so the sleeper exists only in the mirror: it is the one the rule says not to turn toward."
+    },
+    "part_question": "रोहन के बिस्तर पर कौन सो रहा है?",
+    "part_payoff": {
+      "text": "it is not Rohan, and it opens its eyes in the mirror",
+      "line": "उसने आँखें खोलीं"
+    },
+    "ending_image": {
+      "text": "the mirror: his own face in the foreground, the thing's open eyes behind him"
+    },
+    "callback": {
+      "text": "the turn-around rule returns as the choice",
+      "line": "मुड़ूँ"
+    },
+    "threat": {
+      "planted_by": {
+        "line": "पीछे कोई दिखे"
+      },
+      "first_seen": {
+        "line": "कोई सो रहा था"
+      }
+    },
+    "new_facts": [
+      "Part 1: the thing sleeps in Rohan's bed and is visible only in the mirror"
+    ],
+    "scare_pattern": "reflection opens its eyes after a phone-message twist"
+  }
+}

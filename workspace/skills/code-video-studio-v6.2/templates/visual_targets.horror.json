@@ -1,0 +1,62 @@
+{
+  "name": "horror-dark",
+  "calibrated_from": [
+    {
+      "file": "f011aa92-51204.mp4",
+      "sharp_edges": 0.0513,
+      "contrast": 40.9667,
+      "mean_luma": 17.0625,
+      "color_bins": 13.375,
+      "saturation": 0.2392,
+      "ink": 0.035,
+      "focal": 2.935,
+      "hue_families": 1.125,
+      "empty_cells": 0.21
+    },
+    {
+      "file": "6b54ce43-51188.mp4",
+      "sharp_edges": 0.0477,
+      "contrast": 40.0583,
+      "mean_luma": 51.475,
+      "color_bins": 19.4583,
+      "saturation": 0.4638,
+      "ink": 0.0255,
+      "focal": 3.1204,
+      "hue_families": 1.7917,
+      "empty_cells": 4.67
+    }
+  ],
+  "margin": 0.8,
+  "sharp_edges": {
+    "min": 0.0382,
+    "aim": 0.0495
+  },
+  "contrast": {
+    "min": 32.0466,
+    "aim": 40.5125
+  },
+  "saturation": {
+    "min": 0.1914,
+    "aim": 0.3515
+  },
+  "color_bins": {
+    "min": 10,
+    "max": 28
+  },
+  "focal": {
+    "min": 2.35
+  },
+  "ink": {
+    "aim": 0.0302
+  },
+  "aim_empty_cells": 2,
+  "max_empty_cells": 6,
+  "mood": "dark",
+  "mean_luma": {
+    "max": 59.2,
+    "aim": 34.2687
+  },
+  "hue_families": {
+    "max": 3
+  }
+}

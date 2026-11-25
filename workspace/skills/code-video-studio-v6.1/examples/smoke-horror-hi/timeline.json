@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "slug": "smoke-horror-hi",
+  "aspect": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_s": 10.0,
+  "target_lufs": -16,
+  "true_peak_dbtp": -1.5,
+  "audio_file": null,
+  "scenes": [
+    {
+      "id": "lab_dread",
+      "start_s": 0.0,
+      "end_s": 3.4,
+      "mood": "suspense",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 0.0,
+          "dur_s": 1.7,
+          "hold": true,
+          "flashes_per_sec": 0,
+          "animated_properties": ["grain.seed", "camera.drift"]
+        },
+        {
+          "t_s": 1.7,
+          "dur_s": 1.7,
+          "hold": false,
+          "flashes_per_sec": 1,
+          "animated_properties": ["polaroid.scale", "gauge.value"]
+        }
+      ]
+    },
+    {
+      "id": "xray_reveal",
+      "start_s": 3.4,
+      "end_s": 6.8,
+      "mood": "tense",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 3.4,
+          "dur_s": 1.7,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["xray.cx", "xray.cy", "creature.pulse"]
+        },
+        {
+          "t_s": 5.1,
+          "dur_s": 1.7,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["xray.r", "gauge.value"]
+        }
+      ]
+    },
+    {
+      "id": "banned_verdict",
+      "start_s": 6.8,
+      "end_s": 10.0,
+      "mood": "urgent",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 6.8,
+          "dur_s": 1.6,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["stamp.progress01", "gauge.value"]
+        },
+        {
+          "t_s": 8.4,
+          "dur_s": 1.6,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": ["camera.zoom", "vignette.alpha"]
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "speaker": "NARRATOR",
+      "text": "रात के तीन बजे जब लैब बंद हुई...",
+      "highlight": "रात",
+      "start_s": 0.2,
+      "end_s": 3.2,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "X-Ray लेंस में दिखा अजीब कंकाल!",
+      "highlight": "X-Ray",
+      "start_s": 3.6,
+      "end_s": 6.6,
+      "safe_zone": true
+    },
+    {
+      "speaker": "WHISPER",
+      "text": "Yeh secret file turant\nBANNED kar di gayi.",
+      "highlight": "BANNED",
+      "start_s": 7.0,
+      "end_s": 9.8,
+      "safe_zone": true
+    }
+  ],
+  "audio_cues": [
+    { "type": "bgm", "name": "dread_drone", "t_s": 0.0, "gain_db": -24 },
+    { "type": "sfx", "name": "xray_hum", "t_s": 3.4, "gain_db": -12 },
+    { "type": "sfx", "name": "stamp_slam", "t_s": 6.8, "gain_db": -8 }
+  ]
+}

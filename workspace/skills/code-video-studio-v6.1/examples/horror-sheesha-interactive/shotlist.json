@@ -1,0 +1,220 @@
+{
+ "scenes": [
+  {
+   "id": "hook",
+   "subject": "A towel-covered mirror above a hostel washbasin, the dark room behind",
+   "layers": {
+    "foreground": "the narrator's shoulder, back to camera",
+    "midground": "washbasin and the towel on the mirror",
+    "background": "bunk, desk, window"
+   },
+   "light_source": "tube light flicker over the basin + moon from the window",
+   "focal_point": [
+    540,
+    800
+   ],
+   "motion": "tube flicker, towel sways in fan air",
+   "camera": "slow push-in over his shoulder, handheld",
+   "sound_cue": "fan hum, tube buzz",
+   "sync_word": "शीशे",
+   "details": [
+    "towel folds",
+    "tube light flicker",
+    "washbasin and tap",
+    "his shoulder silhouette",
+    "dust in the moon cone"
+   ],
+   "withheld": "what the mirror shows",
+   "intensity": 2
+  },
+  {
+   "id": "dadi",
+   "subject": "Memory: dadi with a candle covering a mirror with cloth",
+   "layers": {
+    "foreground": "candle flame",
+    "midground": "dadi silhouette, cloth over a mirror",
+    "background": "her shadow on the wall"
+   },
+   "light_source": "single candle",
+   "focal_point": [
+    560,
+    900
+   ],
+   "motion": "flame flicker, shadow sway",
+   "camera": "slow push-in",
+   "sound_cue": "room tone",
+   "sync_word": "दादी",
+   "details": [
+    "candle flame",
+    "cloth over the mirror",
+    "rim light on dadi",
+    "wall shadow",
+    "shelf"
+   ],
+   "withheld": "her face",
+   "intensity": 1
+  },
+  {
+   "id": "room",
+   "subject": "The empty hostel room at 2:30, Rohan's bed made",
+   "layers": {
+    "foreground": "his back at the basin",
+    "midground": "Rohan's empty bed in the mirror's direction",
+    "background": "window, door"
+   },
+   "light_source": "tube light + moon",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "camera drifts, fan turns",
+   "camera": "pan from Rohan's bed to the basin, handheld",
+   "sound_cue": "towel falls with a gust",
+   "sync_word": "तौलिया",
+   "details": [
+    "Rohan's made bed",
+    "diwali lights through the window",
+    "tube light",
+    "towel falling",
+    "desk with books"
+   ],
+   "withheld": "the mirror",
+   "intensity": 2
+  },
+  {
+   "id": "mirror",
+   "subject": "The uncovered mirror: in it, someone sleeps in Rohan's bed",
+   "layers": {
+    "foreground": "his own reflected face, half lit",
+    "midground": "the shape in Rohan's bed, breathing",
+    "background": "reflected window"
+   },
+   "light_source": "tube light from above; moon in the reflection",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "blanket breathes, push into the mirror",
+   "camera": "push-in toward the mirror",
+   "sound_cue": "breath layer, heartbeat builds",
+   "sync_word": "सो रहा",
+   "details": [
+    "reflected bed with a breathing blanket",
+    "his reflection",
+    "mirror frame",
+    "tap dripping",
+    "moon cone in the reflection"
+   ],
+   "withheld": "who it is",
+   "intensity": 3
+  },
+  {
+   "id": "relief",
+   "subject": "He relaxes; the light steadies",
+   "layers": {
+    "foreground": "his reflection smiling",
+    "midground": "the sleeper still in the mirror",
+    "background": "reflected room"
+   },
+   "light_source": "tube light steady",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "camera eases back, slow drift",
+   "camera": "gentle pull-back",
+   "sound_cue": "quieter bed, heartbeat slows",
+   "sync_word": "मुस्कुराया",
+   "details": [
+    "steady tube light",
+    "his smile",
+    "the sleeping shape",
+    "toothbrush",
+    "mirror edge"
+   ],
+   "withheld": "the sleeper's face",
+   "intensity": 3
+  },
+  {
+   "id": "phone",
+   "subject": "His phone lights up with Rohan's message",
+   "layers": {
+    "foreground": "phone glow on his hand",
+    "midground": "his reflection lit by the phone",
+    "background": "the shape in the mirror"
+   },
+   "light_source": "phone screen as the main light",
+   "focal_point": [
+    540,
+    1000
+   ],
+   "motion": "phone glow pulse, light drains, silence",
+   "camera": "push-in to the phone, then hold-drift",
+   "sound_cue": "phone buzz, then dead silence",
+   "sync_word": "मैसेज",
+   "details": [
+    "phone glow",
+    "message bubble",
+    "his lit face in the mirror",
+    "the dark shape behind",
+    "tube light dying"
+   ],
+   "withheld": "the shape's face",
+   "intensity": 4
+  },
+  {
+   "id": "eyes",
+   "subject": "In the mirror, the thing opens its eyes",
+   "layers": {
+    "foreground": "his frozen reflection",
+    "midground": "two eye glints in Rohan's bed",
+    "background": "the reflected dark room"
+   },
+   "light_source": "near-black; only the eye glints and phone",
+   "focal_point": [
+    600,
+    900
+   ],
+   "motion": "eyes open on the stinger, CA spike, shake",
+   "camera": "snap push into the mirror, shake",
+   "sound_cue": "stinger, then creak behind",
+   "sync_word": "आँखें",
+   "details": [
+    "eye glints",
+    "his frozen reflection",
+    "mirror frame",
+    "shape rising",
+    "phone glow fading"
+   ],
+   "withheld": "what stands up in the real room",
+   "intensity": 5
+  },
+  {
+   "id": "fork",
+   "subject": "His reflection, and behind it the risen shape; the question",
+   "layers": {
+    "foreground": "his reflected eyes",
+    "midground": "the risen silhouette behind him in the mirror",
+    "background": "darkness"
+   },
+   "light_source": "faint phone light",
+   "focal_point": [
+    540,
+    900
+   ],
+   "motion": "silhouette leans closer, camera drifts",
+   "camera": "slow push on his reflection",
+   "sound_cue": "held breath, room tone, a creak",
+   "sync_word": "कमेंट",
+   "details": [
+    "his reflected eyes",
+    "risen silhouette",
+    "mirror frame",
+    "phone light",
+    "dark room"
+   ],
+   "withheld": "which choice is safe",
+   "intensity": 4
+  }
+ ]
+}

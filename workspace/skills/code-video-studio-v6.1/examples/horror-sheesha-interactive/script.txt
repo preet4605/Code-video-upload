@@ -1,0 +1,27 @@
+[SCENE id=hook mood=suspense]
+[SFX name=fan_hum]
+[NARRATOR] रात को शीशे में अपने पीछे कोई दिखे... तो मुड़कर मत देखना।
+[SCENE id=dadi mood=calm]
+[NARRATOR] दादी कहती थीं, रात को शीशा ढककर सोना।
+[NARRATOR] पीछे कोई दिखे, तो मुड़ना मत। मुड़ोगे, तो वो जान जाएगा कि तुमने उसे देख लिया।
+[SCENE id=room mood=suspense]
+[NARRATOR] रूममेट रोहन शाम छह बजे घर चला गया था। हॉस्टल खाली था।
+[NARRATOR] रात ढाई बजे मैं ब्रश कर रहा था।
+[SFX name=whisper_gust]
+[NARRATOR] पंखे की हवा से शीशे का तौलिया खिसककर गिर गया।
+[SCENE id=mirror mood=suspense]
+[NARRATOR] शीशे में, मेरे पीछे, रोहन के बिस्तर पर कोई सो रहा था।
+[SFX name=breath]
+[NARRATOR] कंबल धीरे-धीरे ऊपर-नीचे हो रहा था।
+[SCENE id=relief mood=calm]
+[NARRATOR] रोहन लौट आया होगा। मैं मुस्कुराया।
+[SCENE id=phone mood=suspense]
+[NARRATOR] तभी फ़ोन चमका। रोहन का मैसेज। "घर पहुँच गया, भाई।"
+[SILENCE dur=1.0]
+[SCARE name=violin_stinger]
+[SCENE id=eyes mood=climax]
+[NARRATOR] शीशे में, उसने आँखें खोलीं।
+[SFX name=door_creak]
+[NARRATOR] और मेरे पीछे, असली कमरे में, कोई उठा।
+[SCENE id=fork mood=climax]
+[NARRATOR] मुड़ूँ, या देखता रहूँ? A या B, कमेंट करो।

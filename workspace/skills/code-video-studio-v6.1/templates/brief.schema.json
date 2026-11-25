@@ -1,0 +1,383 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CodeVideoStudioBrief",
+  "description": "One-screen creative brief. Written BEFORE the script. Checked by lib/direction_lint.mjs.",
+  "type": "object",
+  "required": [
+    "platform",
+    "genre",
+    "hook",
+    "payoff"
+  ],
+  "properties": {
+    "platform": {
+      "type": "string",
+      "enum": [
+        "reels",
+        "shorts",
+        "tiktok"
+      ]
+    },
+    "genre": {
+      "type": "string",
+      "enum": [
+        "horror",
+        "funny",
+        "guide",
+        "news",
+        "story",
+        "motivational"
+      ]
+    },
+    "lang": {
+      "type": "string",
+      "enum": [
+        "en",
+        "hi",
+        "hinglish"
+      ]
+    },
+    "viewer": {
+      "type": "string",
+      "description": "Who stops for this, in one phrase"
+    },
+    "hook": {
+      "type": "string",
+      "description": "The first spoken/on-screen line (<= 12 words). Must make sense with sound off."
+    },
+    "payoff": {
+      "type": "string",
+      "description": "What the viewer gets by the end (reveal, answer, laugh, result)"
+    },
+    "cta": {
+      "type": "string",
+      "description": "One ask at most (follow, save, comment word). Empty is fine."
+    },
+    "target_duration_s": {
+      "type": "number"
+    },
+    "loop": {
+      "type": "boolean",
+      "description": "Last frame/line echoes the hook"
+    },
+    "allow_long": {
+      "type": "boolean",
+      "description": "Deliberately outside the platform duration band"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs/refs for every factual claim on screen"
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "standalone",
+        "serial",
+        "interactive"
+      ],
+      "default": "standalone",
+      "description": "Story format; lib/story_lint.mjs enforces completeness per format"
+    },
+    "story": {
+      "type": "object",
+      "description": "Written BEFORE the script. Every line is an exact script quote.",
+      "required": [
+        "setup",
+        "rule_or_clue",
+        "escalation",
+        "false_relief",
+        "twist",
+        "ending_image",
+        "callback"
+      ],
+      "properties": {
+        "setup": {
+          "type": "string"
+        },
+        "rule_or_clue": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "line"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "line": {
+                "type": "string",
+                "description": "exact quote of the script line"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "rule",
+                  "clue"
+                ]
+              }
+            }
+          }
+        },
+        "escalation": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "line"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "line": {
+                "type": "string",
+                "description": "exact quote of the script line"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "rule",
+                  "clue"
+                ]
+              }
+            }
+          }
+        },
+        "false_relief": {
+          "type": "object",
+          "required": [
+            "line"
+          ],
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "line": {
+              "type": "string",
+              "description": "exact quote of the script line"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "rule",
+                "clue"
+              ]
+            }
+          }
+        },
+        "twist": {
+          "type": "object",
+          "required": [
+            "line",
+            "explains_hook",
+            "how"
+          ],
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "line": {
+              "type": "string"
+            },
+            "explains_hook": {
+              "const": true
+            },
+            "how": {
+              "type": "string",
+              "minLength": 15
+            }
+          }
+        },
+        "ending_image": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        "callback": {
+          "type": "object",
+          "required": [
+            "line"
+          ],
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "line": {
+              "type": "string",
+              "description": "exact quote of the script line"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "rule",
+                "clue"
+              ]
+            }
+          }
+        },
+        "part_question": {
+          "type": "string"
+        },
+        "part_payoff": {
+          "type": "object",
+          "required": [
+            "line"
+          ],
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "line": {
+              "type": "string",
+              "description": "exact quote of the script line"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "rule",
+                "clue"
+              ]
+            }
+          }
+        },
+        "characters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "places": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "new_facts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "threat": {
+          "type": "object"
+        },
+        "scare_pattern": {
+          "type": "string"
+        },
+        "previous_scare_pattern": {
+          "type": "string"
+        },
+        "ambience": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "series": {
+      "type": "object",
+      "required": [
+        "id",
+        "part",
+        "of",
+        "bible_path",
+        "next_hook"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "part": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "of": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "bible_path": {
+          "type": "string"
+        },
+        "recap_line": {
+          "type": "string"
+        },
+        "hook_is_recap": {
+          "type": "boolean"
+        },
+        "next_hook": {
+          "type": "string"
+        }
+      }
+    },
+    "choice": {
+      "type": "object",
+      "required": [
+        "question",
+        "option_a",
+        "option_b",
+        "vote_channel",
+        "deadline_note"
+      ],
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "option_a": {
+          "type": "string"
+        },
+        "option_b": {
+          "type": "string"
+        },
+        "vote_channel": {
+          "type": "string",
+          "enum": [
+            "pinned_comment",
+            "story_poll"
+          ]
+        },
+        "deadline_note": {
+          "type": "string"
+        }
+      }
+    },
+    "shots": {
+      "type": "string",
+      "description": "Path to the shot list (default shotlist.json); see references/direction-playbook.md 1b"
+    },
+    "sound": {
+      "type": "object",
+      "properties": {
+        "ambience": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "fan",
+              "crickets",
+              "rain",
+              "fridge"
+            ]
+          }
+        }
+      }
+    },
+    "silent": {
+      "type": "boolean",
+      "description": "captions-only reel: no voiceover expected"
+    },
+    "smoke_test": {
+      "type": "boolean",
+      "description": "pipeline smoke test: horror gates downgrade to warnings"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+[SCENE id=hook_emerald mood=editorial-light ambient=true]
+[SFX name=pop]
+[NARRATOR] Sirf 2 cm ka yeh jewel wasp emerald aur cobalt mein chamakta hai.
+[SFX name=whoosh]
+[SCENE id=hunt_protocol mood=science-doc ambient=true]
+[NARRATOR] Apne shikaar ke brain par ek exact neural sting maarta hai.
+[SFX name=chime]
+[SCENE id=mind_control mood=horror ambient=true]
+[SFX name=stamp_slam]
+[WHISPER] Aur phir shikaar khud uske peeche chal padta hai.

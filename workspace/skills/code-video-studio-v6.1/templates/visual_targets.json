@@ -1,0 +1,78 @@
+{
+  "name": "code-reels-reference",
+  "calibrated_from": [
+    {
+      "file": "bc6334cc-51205.mp4",
+      "sharp_edges": 0.0308,
+      "contrast": 26.6375,
+      "mean_luma": 25.3667,
+      "color_bins": 14.375,
+      "saturation": 0.6146,
+      "ink": 0.0181,
+      "focal": 3.9558,
+      "hue_families": 2.625,
+      "empty_cells": 5.38
+    },
+    {
+      "file": "70d8d3dd-51192.mp4",
+      "sharp_edges": 0.0652,
+      "contrast": 59.6375,
+      "mean_luma": 128.3333,
+      "color_bins": 36.0833,
+      "saturation": 0.4315,
+      "ink": 0.0264,
+      "focal": 2.8675,
+      "hue_families": 2.0417,
+      "empty_cells": 1.54
+    },
+    {
+      "file": "f011aa92-51204.mp4",
+      "sharp_edges": 0.0513,
+      "contrast": 40.9667,
+      "mean_luma": 17.0625,
+      "color_bins": 13.375,
+      "saturation": 0.2392,
+      "ink": 0.035,
+      "focal": 2.935,
+      "hue_families": 1.125,
+      "empty_cells": 0.21
+    },
+    {
+      "file": "dfe0419a-57930.mp4",
+      "sharp_edges": 0.0745,
+      "contrast": 41.0958,
+      "mean_luma": 134.725,
+      "color_bins": 28.5833,
+      "saturation": 0.4018,
+      "ink": 0.0307,
+      "focal": 3.9408,
+      "hue_families": 2.5833,
+      "empty_cells": 2.38
+    }
+  ],
+  "margin": 0.8,
+  "sharp_edges": {
+    "min": 0.0246,
+    "aim": 0.0582
+  },
+  "contrast": {
+    "min": 21.31,
+    "aim": 41.0313
+  },
+  "saturation": {
+    "min": 0.1914,
+    "aim": 0.4166
+  },
+  "color_bins": {
+    "min": 10,
+    "max": 51
+  },
+  "focal": {
+    "min": 2.29
+  },
+  "ink": {
+    "aim": 0.0285
+  },
+  "aim_empty_cells": 2,
+  "max_empty_cells": 6
+}

@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "slug": "hello-15s",
+  "aspect": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_s": 15.0,
+  "target_lufs": -16,
+  "true_peak_dbtp": -1.5,
+  "audio_file": null,
+  "scenes": [
+    {
+      "id": "intro",
+      "start_s": 0.0,
+      "end_s": 5.0,
+      "mood": "energetic",
+      "ambient_motion": true,
+      "beats": [
+        { "t_s": 0.0, "dur_s": 2.5, "hold": false, "flashes_per_sec": 0, "animated_properties": ["grid.offsetY", "title.scale", "title.alpha"] },
+        { "t_s": 2.5, "dur_s": 2.5, "hold": false, "flashes_per_sec": 0, "animated_properties": ["counter.value", "grid.offsetY"] }
+      ]
+    },
+    {
+      "id": "character",
+      "start_s": 5.0,
+      "end_s": 10.0,
+      "mood": "neutral",
+      "ambient_motion": true,
+      "beats": [
+        { "t_s": 5.0, "dur_s": 2.5, "hold": false, "flashes_per_sec": 0, "animated_properties": ["character.bobY", "character.mouthOpen", "orbit.angle"] },
+        { "t_s": 7.5, "dur_s": 2.5, "hold": false, "flashes_per_sec": 0, "animated_properties": ["character.blink", "character.mouthOpen", "orbit.angle"] }
+      ]
+    },
+    {
+      "id": "outro",
+      "start_s": 10.0,
+      "end_s": 15.0,
+      "mood": "calm",
+      "ambient_motion": true,
+      "beats": [
+        { "t_s": 10.0, "dur_s": 2.5, "hold": false, "flashes_per_sec": 0, "animated_properties": ["badge.scale", "camera.zoom"] },
+        { "t_s": 12.5, "dur_s": 2.5, "hold": false, "flashes_per_sec": 0, "animated_properties": ["badge.glow", "grid.offsetY"] }
+      ]
+    }
+  ],
+  "captions": [
+    { "speaker": "NARRATOR", "text": "Deterministic 2D video\nbuilt on Node.", "start_s": 0.3, "end_s": 4.6, "safe_zone": true },
+    { "speaker": "CHARACTER", "text": "Procedural characters,\nzero browser bloat.", "start_s": 5.3, "end_s": 9.6, "safe_zone": true },
+    { "speaker": "NARRATOR", "text": "FFmpeg mastered with\nverified LUFS QA.", "start_s": 10.3, "end_s": 14.6, "safe_zone": true }
+  ],
+  "audio_cues": [
+    { "type": "bgm", "name": "synth_bed", "t_s": 0.0, "gain_db": -26 }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "iter": 5,
+  "pass": false,
+  "mean_score": 0.681,
+  "regressions": [],
+  "shots": [
+    {
+      "id": "room",
+      "pass": false,
+      "score": 0.732,
+      "delta": 0,
+      "metrics": {
+        "sharp_edges": 0.0397,
+        "contrast": 26.0333,
+        "mean_luma": 24.4333,
+        "color_bins": 18.6667,
+        "saturation": 0.26,
+        "ink": 0.0244,
+        "focal": 4.87,
+        "hue_families": 3,
+        "empty_cells": 4
+      },
+      "empty_where": [
+        "lower-centre",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "contrast",
+          "value": 26.0333,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        }
+      ]
+    },
+    {
+      "id": "door",
+      "pass": false,
+      "score": 0.632,
+      "delta": 0,
+      "metrics": {
+        "sharp_edges": 0.0218,
+        "contrast": 32,
+        "mean_luma": 33.4333,
+        "color_bins": 16.6667,
+        "saturation": 0.4123,
+        "ink": 0.0105,
+        "focal": 3.4633,
+        "hue_families": 2,
+        "empty_cells": 5
+      },
+      "empty_where": [
+        "top-left",
+        "top-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0218,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 32,
+          "target": ">= 32.0466",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        }
+      ]
+    },
+    {
+      "id": "face",
+      "pass": false,
+      "score": 0.68,
+      "delta": 0,
+      "metrics": {
+        "sharp_edges": 0.0462,
+        "contrast": 33.9,
+        "mean_luma": 27.6333,
+        "color_bins": 22.3333,
+        "saturation": 0.21,
+        "ink": 0.0236,
+        "focal": 3.0967,
+        "hue_families": 2,
+        "empty_cells": 9
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "lower-left",
+        "lower-centre",
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "empty_cells",
+          "value": 9,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, top-centre, top-right, lower-left, lower-centre, lower-right, bottom-left, bottom-centre, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    }
+  ],
+  "targets": "horror-dark"
+}

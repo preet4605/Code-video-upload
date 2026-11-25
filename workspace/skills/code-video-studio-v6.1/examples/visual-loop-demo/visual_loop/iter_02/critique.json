@@ -1,0 +1,13 @@
+{ "shots": [
+  { "id": "room", "seen": "Full cartoon bedroom reads well: window with moon and curtains, fan, 3:07 clock, nani photo, calendar, door with light strip. But both faces on the pillows sit exactly under the caption bar, so the subject is hidden.",
+    "problems": ["caption covers the characters", "focal slightly low: subject not dominant"],
+    "fix": "Raise the bed so the heads sit at ~60% height above the caption band, enlarge the kid, add a warm rim/glow from the door on the kid so the face is the brightest busy area.",
+    "scores": { "subject": 2, "depth": 4, "detail": 4, "light": 3, "character": 2, "composition": 2 } },
+  { "id": "door", "seen": "Door close-up with panels, brass handle and a strong warm strip; two long foot shadows appear on the floor. Left half of the wall and the lower floor are bare purple areas; clock is cropped at the top edge.",
+    "problems": ["dead wall area left", "empty floor", "clock cut by frame edge"],
+    "fix": "Reframe slightly lower so the clock leaves the frame cleanly; add a switchboard and a hanging school bag on the left wall, a pair of slippers and a rug on the floor in the light spill.",
+    "scores": { "subject": 4, "depth": 3, "detail": 3, "light": 4, "character": 3, "composition": 3 } },
+  { "id": "face", "seen": "Camera lands on the headboard and blanket; the kid's face is half off the left edge and behind the caption; mother's hair is the clearest shape. No readable scared expression.",
+    "problems": ["wrong framing target", "face hidden", "low detail"],
+    "fix": "Frame on the kid's head position directly (computed from the bed rig) and place it at upper-centre of the screen; bigger head scale, blanket to chin with stitched pattern, tear/sweat drop, door glow behind as a warm rim.",
+    "scores": { "subject": 1, "depth": 3, "detail": 2, "light": 2, "character": 2, "composition": 1 } } ] }
