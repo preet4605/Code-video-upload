@@ -1,0 +1,178 @@
+{
+  "iter": 1,
+  "pass": false,
+  "mean_score": 0.319,
+  "regressions": [],
+  "shots": [
+    {
+      "id": "room",
+      "pass": false,
+      "score": 0.256,
+      "delta": null,
+      "metrics": {
+        "sharp_edges": 0.0017,
+        "contrast": 10.1,
+        "mean_luma": 46.1,
+        "color_bins": 4,
+        "saturation": 0.476,
+        "ink": 0.0002,
+        "focal": 31,
+        "empty_cells": 12
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "upper-centre",
+        "upper-right",
+        "middle-left",
+        "middle-centre",
+        "middle-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0017,
+          "target": ">= 0.0246",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 10.1,
+          "target": ">= 21.31",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        },
+        {
+          "metric": "color_bins",
+          "value": 4,
+          "target": ">= 10",
+          "hint": "too few colours: add a light and shade tone per material and a second accent"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 12,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, top-centre, top-right, upper-left, upper-centre, upper-right, middle-left, middle-centre, middle-right, bottom-left, bottom-centre, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    },
+    {
+      "id": "door",
+      "pass": false,
+      "score": 0.208,
+      "delta": null,
+      "metrics": {
+        "sharp_edges": 0,
+        "contrast": 1.6,
+        "mean_luma": 44.7,
+        "color_bins": 2,
+        "saturation": 0.466,
+        "ink": 0,
+        "focal": 0,
+        "empty_cells": 15
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "upper-centre",
+        "upper-right",
+        "middle-left",
+        "middle-centre",
+        "middle-right",
+        "lower-left",
+        "lower-centre",
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0,
+          "target": ">= 0.0246",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "contrast",
+          "value": 1.6,
+          "target": ">= 21.31",
+          "hint": "separate subject from background: darker darks, a brighter key light/rim, outline the subject, avoid mid-grey fills"
+        },
+        {
+          "metric": "color_bins",
+          "value": 2,
+          "target": ">= 10",
+          "hint": "too few colours: add a light and shade tone per material and a second accent"
+        },
+        {
+          "metric": "focal",
+          "value": 0,
+          "target": ">= 2.29",
+          "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 15,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, top-centre, top-right, upper-left, upper-centre, upper-right, middle-left, middle-centre, middle-right, lower-left, lower-centre, lower-right, bottom-left, bottom-centre, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    },
+    {
+      "id": "face",
+      "pass": false,
+      "score": 0.492,
+      "delta": null,
+      "metrics": {
+        "sharp_edges": 0.0074,
+        "contrast": 47.4,
+        "mean_luma": 62.2,
+        "color_bins": 4,
+        "saturation": 0.472,
+        "ink": 0.0048,
+        "focal": 4.17,
+        "empty_cells": 10
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "upper-right",
+        "lower-left",
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0074,
+          "target": ">= 0.0246",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "color_bins",
+          "value": 4,
+          "target": ">= 10",
+          "hint": "too few colours: add a light and shade tone per material and a second accent"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 10,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, top-centre, top-right, upper-left, upper-right, lower-left, lower-right, bottom-left, bottom-centre, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    }
+  ],
+  "targets": "code-reels-reference"
+}

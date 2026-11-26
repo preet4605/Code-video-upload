@@ -1,0 +1,82 @@
+{
+  "iter": 3,
+  "pass": false,
+  "mean_score": 0.87,
+  "regressions": [],
+  "shots": [
+    {
+      "id": "room",
+      "pass": true,
+      "score": 0.926,
+      "delta": 0.012,
+      "metrics": {
+        "sharp_edges": 0.0584,
+        "contrast": 36.1333,
+        "mean_luma": 72.1,
+        "color_bins": 35.6667,
+        "saturation": 0.4923,
+        "ink": 0.0441,
+        "focal": 4.4867,
+        "empty_cells": 3
+      },
+      "empty_where": [
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": []
+    },
+    {
+      "id": "door",
+      "pass": true,
+      "score": 0.755,
+      "delta": 0.127,
+      "metrics": {
+        "sharp_edges": 0.0297,
+        "contrast": 33.8333,
+        "mean_luma": 82,
+        "color_bins": 28.6667,
+        "saturation": 0.4683,
+        "ink": 0.022,
+        "focal": 3.09,
+        "empty_cells": 4
+      },
+      "empty_where": [
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right",
+        "lower-left"
+      ],
+      "deficits": []
+    },
+    {
+      "id": "face",
+      "pass": false,
+      "score": 0.93,
+      "delta": 0.335,
+      "metrics": {
+        "sharp_edges": 0.0426,
+        "contrast": 47.5,
+        "mean_luma": 109.3333,
+        "color_bins": 23.3333,
+        "saturation": 0.478,
+        "ink": 0.0337,
+        "focal": 1.9167,
+        "empty_cells": 1
+      },
+      "empty_where": [
+        "lower-right"
+      ],
+      "deficits": [
+        {
+          "metric": "focal",
+          "value": 1.9167,
+          "target": ">= 2.29",
+          "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
+        }
+      ]
+    }
+  ],
+  "targets": "code-reels-reference"
+}

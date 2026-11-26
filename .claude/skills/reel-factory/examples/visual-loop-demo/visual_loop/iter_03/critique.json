@@ -1,0 +1,13 @@
+{ "shots": [
+  { "id": "room", "seen": "Bed now sits above the caption; both heads readable, kid peeking with scared eyes, mother asleep facing away; window, moon, fan, clock, photo, calendar, door strip all present; slow push-in.",
+    "problems": ["kid still small in a wide shot"],
+    "fix": "Acceptable for an establishing shot; keep. Next reel: frame slightly tighter (push to 1.15) so the kid reads on a phone.",
+    "scores": { "subject": 3, "depth": 4, "detail": 5, "light": 4, "character": 3, "composition": 3 } },
+  { "id": "door", "seen": "Door close-up with brass handle, switchboard, red school bag, slippers and a purple rug in the warm spill; two foot shadows grow across the floor during the shot.",
+    "problems": ["bag cropped by left edge"],
+    "fix": "Minor: fine to keep the bag cropped as foreground framing; no change needed this pass.",
+    "scores": { "subject": 4, "depth": 3, "detail": 4, "light": 4, "character": 3, "composition": 3 } },
+  { "id": "face", "seen": "Close-up of the kid's scared face with sweat drop, blush and open mouth under the blanket, but the headboard and the patterned blanket are as bright and busy as the face, so the eye does not land on it.",
+    "problems": ["no dominant focal area", "background competes with the face"],
+    "fix": "Pool of light on the face: darken everything outside a radial mask centred on the head, add a warm rim from the door side, mute the blanket pattern outside the light.",
+    "scores": { "subject": 3, "depth": 3, "detail": 4, "light": 2, "character": 4, "composition": 3 } } ] }

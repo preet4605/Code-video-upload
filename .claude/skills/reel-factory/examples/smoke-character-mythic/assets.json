@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "slug": "smoke-character-mythic",
+  "assets": [
+    {
+      "id": "modular_character_you",
+      "tier": 1,
+      "type": "procedural_svg_canvas_rig",
+      "license": "MIT",
+      "parts": ["head", "torso", "eyes_blink", "mouth_viseme", "fedora_crown_hat", "flask_gada_prop"]
+    },
+    {
+      "id": "seeded_forest_grove",
+      "tier": 1,
+      "type": "procedural_canvas",
+      "license": "MIT"
+    },
+    {
+      "id": "mythic_shakti_cutout",
+      "tier": 2,
+      "type": "illustrated_mythic_cutout",
+      "license": "CC0 / Bundled Sacred Emblem Fallback",
+      "iconography_qa_passed": true,
+      "iconography_checklist": [
+        "Verify traditional attributes, mudras, tilak, crown, and weapons match cultural iconography.",
+        "Confirm respectful proportions and dignified framing inside 9:16 safe zones (x: 60..900, y: 270..1440).",
+        "Inspect alpha cutouts for clean edges without white halos or severed-limb seams.",
+        "Confirm zero extra limbs, distorted faces, or unintended caricature artifacts."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "targets": "visual_targets.json",
+  "iterations": [
+    {
+      "iter": 1,
+      "pass": false,
+      "mean_score": 0.837,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "room",
+          "pass": false,
+          "score": 0.93,
+          "metrics": {
+            "sharp_edges": 0.0584,
+            "contrast": 36.5,
+            "mean_luma": 72.2,
+            "color_bins": 35.6667,
+            "saturation": 0.4913,
+            "ink": 0.044,
+            "focal": 4.49,
+            "hue_families": 3.6667,
+            "empty_cells": 3
+          }
+        },
+        {
+          "id": "door",
+          "pass": false,
+          "score": 0.766,
+          "metrics": {
+            "sharp_edges": 0.0297,
+            "contrast": 33.8333,
+            "mean_luma": 82,
+            "color_bins": 28.6667,
+            "saturation": 0.4683,
+            "ink": 0.022,
+            "focal": 3.09,
+            "hue_families": 3,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.816,
+          "metrics": {
+            "sharp_edges": 0.0327,
+            "contrast": 57.4333,
+            "mean_luma": 90.3333,
+            "color_bins": 38,
+            "saturation": 0.467,
+            "ink": 0.0227,
+            "focal": 2.4967,
+            "hue_families": 3,
+            "empty_cells": 4
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 2,
+      "pass": false,
+      "mean_score": 0.459,
+      "regressions": [
+        "room got worse (-0.451): revert that change or justify it in the critique",
+        "door got worse (-0.353): revert that change or justify it in the critique",
+        "face got worse (-0.332): revert that change or justify it in the critique"
+      ],
+      "shots": [
+        {
+          "id": "room",
+          "pass": false,
+          "score": 0.479,
+          "metrics": {
+            "sharp_edges": 0.0124,
+            "contrast": 19.6667,
+            "mean_luma": 18,
+            "color_bins": 13.6667,
+            "saturation": 0.3137,
+            "ink": 0.0105,
+            "focal": 12.8567,
+            "hue_families": 3,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "door",
+          "pass": false,
+          "score": 0.413,
+          "metrics": {
+            "sharp_edges": 0.0075,
+            "contrast": 27.1333,
+            "mean_luma": 28.1,
+            "color_bins": 13.3333,
+            "saturation": 0.467,
+            "ink": 0.0048,
+            "focal": 5.1267,
+            "hue_families": 2,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.484,
+          "metrics": {
+            "sharp_edges": 0.0155,
+            "contrast": 31.4333,
+            "mean_luma": 26.5333,
+            "color_bins": 17,
+            "saturation": 0.219,
+            "ink": 0.0139,
+            "focal": 3.4567,
+            "hue_families": 2,
+            "empty_cells": 9
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 3,
+      "pass": false,
+      "mean_score": 0.667,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "room",
+          "pass": false,
+          "score": 0.734,
+          "metrics": {
+            "sharp_edges": 0.0374,
+            "contrast": 25.5667,
+            "mean_luma": 22.3667,
+            "color_bins": 18,
+            "saturation": 0.2747,
+            "ink": 0.0227,
+            "focal": 7.8967,
+            "hue_families": 4,
+            "empty_cells": 3
+          }
+        },
+        {
+          "id": "door",
+          "pass": false,
+          "score": 0.62,
+          "metrics": {
+            "sharp_edges": 0.0208,
+            "contrast": 30.3667,
+            "mean_luma": 30.7,
+            "color_bins": 16.6667,
+            "saturation": 0.4213,
+            "ink": 0.0105,
+            "focal": 3.7767,
+            "hue_families": 2,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.648,
+          "metrics": {
+            "sharp_edges": 0.0414,
+            "contrast": 35.3,
+            "mean_luma": 30.2667,
+            "color_bins": 21,
+            "saturation": 0.213,
+            "ink": 0.0204,
+            "focal": 3.1033,
+            "hue_families": 2,
+            "empty_cells": 9
+          }
+        }
+      ],
+      "critique_min": 3
+    },
+    {
+      "iter": 4,
+      "pass": false,
+      "mean_score": 0.681,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "room",
+          "pass": false,
+          "score": 0.732,
+          "metrics": {
+            "sharp_edges": 0.0397,
+            "contrast": 26.0333,
+            "mean_luma": 24.4333,
+            "color_bins": 18.6667,
+            "saturation": 0.26,
+            "ink": 0.0244,
+            "focal": 4.87,
+            "hue_families": 3,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "door",
+          "pass": false,
+          "score": 0.632,
+          "metrics": {
+            "sharp_edges": 0.0218,
+            "contrast": 32,
+            "mean_luma": 33.4333,
+            "color_bins": 16.6667,
+            "saturation": 0.4123,
+            "ink": 0.0105,
+            "focal": 3.4633,
+            "hue_families": 2,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.68,
+          "metrics": {
+            "sharp_edges": 0.0462,
+            "contrast": 33.9,
+            "mean_luma": 27.6333,
+            "color_bins": 22.3333,
+            "saturation": 0.21,
+            "ink": 0.0236,
+            "focal": 3.0967,
+            "hue_families": 2,
+            "empty_cells": 9
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 5,
+      "pass": false,
+      "mean_score": 0.681,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "room",
+          "pass": false,
+          "score": 0.732,
+          "metrics": {
+            "sharp_edges": 0.0397,
+            "contrast": 26.0333,
+            "mean_luma": 24.4333,
+            "color_bins": 18.6667,
+            "saturation": 0.26,
+            "ink": 0.0244,
+            "focal": 4.87,
+            "hue_families": 3,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "door",
+          "pass": false,
+          "score": 0.632,
+          "metrics": {
+            "sharp_edges": 0.0218,
+            "contrast": 32,
+            "mean_luma": 33.4333,
+            "color_bins": 16.6667,
+            "saturation": 0.4123,
+            "ink": 0.0105,
+            "focal": 3.4633,
+            "hue_families": 2,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.68,
+          "metrics": {
+            "sharp_edges": 0.0462,
+            "contrast": 33.9,
+            "mean_luma": 27.6333,
+            "color_bins": 22.3333,
+            "saturation": 0.21,
+            "ink": 0.0236,
+            "focal": 3.0967,
+            "hue_families": 2,
+            "empty_cells": 9
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 6,
+      "pass": false,
+      "mean_score": 0.653,
+      "regressions": [
+        "room got worse (-0.033): revert that change or justify it in the critique",
+        "face got worse (-0.045): revert that change or justify it in the critique"
+      ],
+      "shots": [
+        {
+          "id": "room",
+          "pass": false,
+          "score": 0.699,
+          "metrics": {
+            "sharp_edges": 0.0362,
+            "contrast": 25.7667,
+            "mean_luma": 26.7333,
+            "color_bins": 17,
+            "saturation": 0.2893,
+            "ink": 0.0218,
+            "focal": 3.39,
+            "hue_families": 3,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "door",
+          "pass": false,
+          "score": 0.624,
+          "metrics": {
+            "sharp_edges": 0.0219,
+            "contrast": 29.3333,
+            "mean_luma": 31.8,
+            "color_bins": 17.3333,
+            "saturation": 0.388,
+            "ink": 0.0112,
+            "focal": 3.8,
+            "hue_families": 2,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "face",
+          "pass": false,
+          "score": 0.635,
+          "metrics": {
+            "sharp_edges": 0.0426,
+            "contrast": 32.1,
+            "mean_luma": 31.5,
+            "color_bins": 21.3333,
+            "saturation": 0.2333,
+            "ink": 0.0209,
+            "focal": 5.7133,
+            "hue_families": 2,
+            "empty_cells": 10
+          }
+        }
+      ]
+    }
+  ]
+}

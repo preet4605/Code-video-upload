@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "duration_s": 12,
+  "slug": "visual-loop-demo",
+  "scenes": [
+    {
+      "id": "room",
+      "start_s": 0,
+      "end_s": 4,
+      "mood": "suspense",
+      "beats": [
+        {
+          "id": "room_b1",
+          "start_s": 0,
+          "end_s": 4,
+          "type": "move",
+          "animated_properties": [
+            "camera.push",
+            "character.blink"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "door",
+      "start_s": 4,
+      "end_s": 8,
+      "mood": "suspense",
+      "beats": [
+        {
+          "id": "door_b1",
+          "start_s": 4,
+          "end_s": 8,
+          "type": "move",
+          "animated_properties": [
+            "camera.push",
+            "character.blink"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face",
+      "start_s": 8,
+      "end_s": 12,
+      "mood": "climax",
+      "beats": [
+        {
+          "id": "face_b1",
+          "start_s": 8,
+          "end_s": 12,
+          "type": "move",
+          "animated_properties": [
+            "camera.push",
+            "character.blink"
+          ]
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start_s": 0.3,
+      "end_s": 3.8,
+      "text": "रात के तीन बजकर सात मिनट।"
+    },
+    {
+      "start_s": 4.2,
+      "end_s": 7.8,
+      "text": "दरवाज़े के नीचे दो पैर रुके।"
+    },
+    {
+      "start_s": 8.2,
+      "end_s": 11.8,
+      "text": "मैंने जवाब नहीं दिया।"
+    }
+  ],
+  "audio_cues": [],
+  "silences": []
+}

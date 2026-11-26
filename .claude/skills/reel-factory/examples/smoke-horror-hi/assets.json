@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "slug": "smoke-horror-hi",
+  "assets": [
+    {
+      "id": "horror_grid_and_grain",
+      "tier": 1,
+      "type": "procedural_canvas",
+      "license": "MIT"
+    },
+    {
+      "id": "specimen_xray_creature",
+      "tier": 1,
+      "type": "procedural_canvas",
+      "license": "MIT"
+    },
+    {
+      "id": "archive_lab_polaroid",
+      "tier": 3,
+      "type": "wikimedia_commons_photo",
+      "source": "https://commons.wikimedia.org/wiki/File:Demo_Archive_Lab_1954.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "PHOTO: Demo Archive · CC BY 4.0 · WIKIMEDIA COMMONS"
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "version": "1.0",
+  "slug": "smoke-peet-editorial",
+  "aspect": "9:16",
+  "width": 720,
+  "height": 1280,
+  "fps": 30,
+  "duration_s": 16.767,
+  "target_lufs": -14,
+  "true_peak_dbtp": -1.5,
+  "audio_file": null,
+  "scenes": [
+    {
+      "id": "hook_emerald",
+      "start_s": 0,
+      "end_s": 6.478,
+      "mood": "editorial-light",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 0,
+          "dur_s": 6.478,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hunt_protocol",
+      "start_s": 6.478,
+      "end_s": 12.067,
+      "mood": "science-doc",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 6.478,
+          "dur_s": 5.589,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mind_control",
+      "start_s": 12.067,
+      "end_s": 16.767,
+      "mood": "horror",
+      "ambient_motion": true,
+      "beats": [
+        {
+          "t_s": 12.067,
+          "dur_s": 4.7,
+          "hold": false,
+          "flashes_per_sec": 0,
+          "animated_properties": [
+            "camera.drift",
+            "ambient.particles",
+            "caption.reveal"
+          ]
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "word": "Sirf",
+      "start_s": 0.25,
+      "end_s": 0.694,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "2",
+      "start_s": 0.694,
+      "end_s": 1.139,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "cm",
+      "start_s": 1.139,
+      "end_s": 1.583,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "ka",
+      "start_s": 1.583,
+      "end_s": 2.028,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "yeh",
+      "start_s": 2.028,
+      "end_s": 2.472,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "jewel",
+      "start_s": 2.472,
+      "end_s": 2.917,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "wasp",
+      "start_s": 2.917,
+      "end_s": 3.361,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "emerald",
+      "start_s": 3.361,
+      "end_s": 3.806,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "aur",
+      "start_s": 3.806,
+      "end_s": 4.25,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "cobalt",
+      "start_s": 4.25,
+      "end_s": 4.694,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "mein",
+      "start_s": 4.694,
+      "end_s": 5.139,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "chamakta",
+      "start_s": 5.139,
+      "end_s": 5.583,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "hai.",
+      "start_s": 5.583,
+      "end_s": 6.028,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "Apne",
+      "start_s": 6.728,
+      "end_s": 7.172,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "shikaar",
+      "start_s": 7.172,
+      "end_s": 7.617,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "ke",
+      "start_s": 7.617,
+      "end_s": 8.061,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "brain",
+      "start_s": 8.061,
+      "end_s": 8.506,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "par",
+      "start_s": 8.506,
+      "end_s": 8.95,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "ek",
+      "start_s": 8.95,
+      "end_s": 9.395,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "exact",
+      "start_s": 9.395,
+      "end_s": 9.839,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "neural",
+      "start_s": 9.839,
+      "end_s": 10.284,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "sting",
+      "start_s": 10.284,
+      "end_s": 10.728,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "maarta",
+      "start_s": 10.728,
+      "end_s": 11.172,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "hai.",
+      "start_s": 11.172,
+      "end_s": 11.617,
+      "speaker": "NARRATOR"
+    },
+    {
+      "word": "Aur",
+      "start_s": 12.317,
+      "end_s": 12.761,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "phir",
+      "start_s": 12.761,
+      "end_s": 13.206,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "shikaar",
+      "start_s": 13.206,
+      "end_s": 13.65,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "khud",
+      "start_s": 13.65,
+      "end_s": 14.095,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "uske",
+      "start_s": 14.095,
+      "end_s": 14.539,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "peeche",
+      "start_s": 14.539,
+      "end_s": 14.984,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "chal",
+      "start_s": 14.984,
+      "end_s": 15.428,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "padta",
+      "start_s": 15.428,
+      "end_s": 15.873,
+      "speaker": "WHISPER"
+    },
+    {
+      "word": "hai.",
+      "start_s": 15.873,
+      "end_s": 16.317,
+      "speaker": "WHISPER"
+    }
+  ],
+  "captions": [
+    {
+      "speaker": "NARRATOR",
+      "text": "Sirf 2 cm ka yeh jewel wasp emerald aur\ncobalt mein chamakta hai.",
+      "start_s": 0.25,
+      "end_s": 6.028,
+      "safe_zone": true
+    },
+    {
+      "speaker": "NARRATOR",
+      "text": "Apne shikaar ke brain par ek exact neural\nsting maarta hai.",
+      "start_s": 6.728,
+      "end_s": 11.617,
+      "safe_zone": true
+    },
+    {
+      "speaker": "WHISPER",
+      "text": "Aur phir shikaar khud uske peeche chal\npadta hai.",
+      "start_s": 12.317,
+      "end_s": 16.317,
+      "safe_zone": true
+    }
+  ],
+  "audio_cues": [
+    {
+      "type": "sfx",
+      "name": "pop",
+      "t_s": 0.25,
+      "gain_db": -6
+    },
+    {
+      "type": "sfx",
+      "name": "whoosh",
+      "t_s": 6.228,
+      "gain_db": -6
+    },
+    {
+      "type": "sfx",
+      "name": "chime",
+      "t_s": 11.817,
+      "gain_db": -6
+    },
+    {
+      "type": "sfx",
+      "name": "stamp_slam",
+      "t_s": 12.317,
+      "gain_db": -6
+    }
+  ]
+}

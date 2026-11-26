@@ -1,0 +1,105 @@
+{
+  "iter": 2,
+  "pass": false,
+  "mean_score": 0.712,
+  "regressions": [],
+  "shots": [
+    {
+      "id": "room",
+      "pass": false,
+      "score": 0.914,
+      "delta": 0.658,
+      "metrics": {
+        "sharp_edges": 0.0487,
+        "contrast": 30,
+        "mean_luma": 70.4667,
+        "color_bins": 35.6667,
+        "saturation": 0.509,
+        "ink": 0.0389,
+        "focal": 2.24,
+        "empty_cells": 0
+      },
+      "empty_where": [],
+      "deficits": [
+        {
+          "metric": "focal",
+          "value": 2.24,
+          "target": ">= 2.29",
+          "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
+        }
+      ]
+    },
+    {
+      "id": "door",
+      "pass": false,
+      "score": 0.628,
+      "delta": 0.42,
+      "metrics": {
+        "sharp_edges": 0.0236,
+        "contrast": 28.1,
+        "mean_luma": 83.8,
+        "color_bins": 27.3333,
+        "saturation": 0.4667,
+        "ink": 0.018,
+        "focal": 4.1533,
+        "empty_cells": 7
+      },
+      "empty_where": [
+        "middle-left",
+        "lower-left",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right",
+        "top-right",
+        "middle-right",
+        "upper-left"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0236,
+          "target": ">= 0.0246",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 7,
+          "target": "<= 6",
+          "hint": "dead areas at top-right, middle-left, middle-right, lower-left, bottom-left, bottom-centre, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    },
+    {
+      "id": "face",
+      "pass": false,
+      "score": 0.595,
+      "delta": 0.103,
+      "metrics": {
+        "sharp_edges": 0.0174,
+        "contrast": 24.3667,
+        "mean_luma": 97.4333,
+        "color_bins": 18.3333,
+        "saturation": 0.4947,
+        "ink": 0.0142,
+        "focal": 2.77,
+        "empty_cells": 5
+      },
+      "empty_where": [
+        "upper-left",
+        "upper-centre",
+        "upper-right",
+        "top-left",
+        "top-centre"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.0174,
+          "target": ">= 0.0246",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        }
+      ]
+    }
+  ],
+  "targets": "code-reels-reference"
+}
