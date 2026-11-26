@@ -231,7 +231,10 @@ export const HORROR_VISUAL = Object.freeze({
   minP98: 30, // 98th percentile luma below this => mud, nothing readable (FAIL)
   minEdge: 0.008, // fraction of pixels with strong gradient below this => empty frame (FAIL)
   escalationMin: 1.15, // last-third motion / first-third motion below this => FAIL
-  escalationWarn: 1.4
+  escalationWarn: 1.4, // last-third / first-third motion below this is "weak escalation"
+  // Horror enforcement: weak escalation (< escalationWarn) is a FAIL, not a warning. Escape hatch:
+  // qa.json { "horror": { "escalationWeakIsFail": false } } (or lower "escalationWarn"): then it is a warning again.
+  escalationWeakIsFail: true
 });
 
 export function checkShotlist(shotlist, timeline, { safeProfile = 'universal', scriptText = null } = {}) {
@@ -357,7 +360,7 @@ export function evaluateVisual(samples, timeline, { thresholds = HORROR_VISUAL, 
   const first = mo(0.25, D / 3), last = mo((2 * D) / 3, D - 1.5);
   const ratio = first > 0 ? last / first : 0;
   if (ratio < T.escalationMin) add('escalation', false, `motion does not escalate: last-third / first-third = ${ratio.toFixed(2)} (< ${T.escalationMin})`);
-  else if (ratio < T.escalationWarn) add('escalation', false, `weak escalation ${ratio.toFixed(2)} (< ${T.escalationWarn})`, 'warn');
+  else if (ratio < T.escalationWarn) add('escalation', false, `weak escalation ${ratio.toFixed(2)} (< ${T.escalationWarn})${T.escalationWeakIsFail === false ? '' : ': horror must escalate (qa.json horror.escalationWeakIsFail=false to accept)'}`, T.escalationWeakIsFail === false ? 'warn' : 'fail');
   else add('escalation', true, `escalation ${ratio.toFixed(2)}`);
   return { checks: out, perScene, escalation: +ratio.toFixed(2) };
 }
@@ -406,4 +409,33 @@ export function runHorrorVisualGate({ mp4, projectDir, writeSheet = true }) {
   const s = summarize(checks);
   if (smoke) return { pass: true, fails: [], warns: [...s.fails.map((x) => '[smoke] ' + x), ...s.warns], perScene: ev.perScene, escalation: ev.escalation, sheet, smoke: true };
   return { ...s, perScene: ev.perScene, escalation: ev.escalation, sheet, smoke: false };
+}
+
+// ---- Visual-loop enforcement ---------------------------------------------------
+// scripts/visual_loop.mjs writes <project>/visual_loop/log.json. Horror may not SHIP without a converged loop.
+// Escape hatch (explicit): qa.json { "require_visual_loop": false } downgrades "not run" to a warning.
+// smoke_test briefs also downgrade. Non-horror genres: not run = warning (unchanged), unconverged = FIX.
+export function applyVisualLoopGate(ship, projectDir, brief = {}, qa = {}) {
+  const horror = !!brief && brief.genre === 'horror';
+  const required = horror && qa.require_visual_loop !== false && brief.smoke_test !== true;
+  let vlog = null;
+  try { vlog = JSON.parse(fs.readFileSync(path.join(projectDir, 'visual_loop', 'log.json'), 'utf8')); } catch { /* not run */ }
+  const iters = vlog && Array.isArray(vlog.iterations) ? vlog.iterations : [];
+  if (!iters.length) {
+    if (required) {
+      ship.fails.push(`visual-loop: not run (required for horror). Fix: run scripts/visual_loop.mjs --project ${projectDir} and iterate until LOOP PASS`);
+      ship.verdict = 'FIX';
+    } else {
+      const why = horror ? (brief.smoke_test === true ? ' [smoke_test]' : ' [waived by qa.json require_visual_loop=false]') : '';
+      ship.warns.push(`visual-loop: not run${why}. Run scripts/visual_loop.mjs --project <dir> and iterate until LOOP PASS (references/visual-loop.md)`);
+    }
+    return { run: false, required };
+  }
+  const last = iters[iters.length - 1];
+  ship.visual_loop = { iterations: iters.length, last_pass: last?.pass ?? false, critique_min: last?.critique_min ?? null, mean_score: last?.mean_score ?? null };
+  if (!(last && last.pass && (last.critique_min ?? 0) >= 3)) {
+    ship.fails.push(`visual-loop: not converged (iteration ${last?.iter}: metrics ${last?.pass ? 'pass' : 'fail'}, critique min ${last?.critique_min ?? 'missing'}). Run scripts/visual_loop.mjs until LOOP PASS`);
+    ship.verdict = 'FIX';
+  }
+  return { run: true, required };
 }

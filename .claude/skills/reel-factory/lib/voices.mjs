@@ -1,7 +1,7 @@
 // Genre -> voice selection for TTS, plus per-genre audition lines.
 //
-// HONEST LIMIT: this catalog only knows voice IDs you have supplied or that shipped as defaults. Claude cannot
-// listen to audio, so the genre->voice mapping below is a STARTING POINT, not a verified "best voice".
+// HONEST LIMIT: the voice ids below exist in the live Kalpa catalog, but Claude cannot listen to audio, so the
+// genre->voice mapping is a STARTING POINT (only horror/hi = Aman was chosen by the user), not a verified "best voice".
 // Run scripts/voice_audition.mjs, listen, then pin your pick in ~/.config/code-video-studio/voices.json:
 //   { "kalpa-labs": { "horror": { "hi": "<voice-id>", "en": "<voice-id>" }, "guide": { "hi": "<voice-id>" } } }
 // Overrides always win. API keys never go in this file or in the skill folder (use tts.env).
@@ -11,23 +11,46 @@ import path from 'node:path';
 
 export const GENRES = ['horror', 'funny', 'guide', 'news', 'story', 'motivational', 'default'];
 
+// Verified against the live Kalpa catalog (GET /v1/voices, model kalpa-tts-1). "Verified" = the id exists and
+// synthesizes; it does NOT mean anyone has judged the voice by ear.
+const V = (name, langs, source = 'kalpa-catalog') => ({ name, label: name, langs, source });
 export const KALPA_VOICES = Object.freeze({
-  '5e0c5704-590f-483b-b291-00a2415cb67e': { label: 'reader (user-supplied; sample line is a story/news reader prompt)', langs: ['hi', 'en'], source: 'user' },
-  '1eb6c010-34e0-477c-9d24-e915f853359e': { label: 'previous Hindi default', langs: ['hi'], source: 'skill-default' },
-  'dda5319f-3b81-4124-b69e-9241eb510b77': { label: 'previous English default', langs: ['en'], source: 'skill-default' }
+  '1eb6c010-34e0-477c-9d24-e915f853359e': V('Aman', ['hi']),
+  '5e0c5704-590f-483b-b291-00a2415cb67e': V('Kiara', ['hi']),
+  '902b3219-1f67-40f2-80b9-0c2a28600615': V('Sana', ['hi']),
+  '18c26f49-9f9c-400c-bec9-7467f28e1db5': V('Arjun', ['hi']),
+  '13604d2a-7a9e-4524-b3b7-32d6372f0e56': V('Nikhil', ['hi']),
+  'bc22cae9-0935-4420-bd31-1fd360fc5e71': V('Dev', ['hi']),
+  'dda5319f-3b81-4124-b69e-9241eb510b77': V('Wren', ['en']),
+  '71e4a314-666b-4fa7-b4e2-3d36e85d391f': V('Tessa', ['en']),
+  'c676a75b-2a1d-4bc8-880a-6ca649ed1170': V('Isla', ['en']),
+  'f213312a-ae4a-4857-a8ac-a9ac76f73294': V('Grant', ['en']),
+  '2b5f1a3b-b992-44d2-8214-fd4b9b175369': V('Otis', ['en'])
 });
 
-// Starting-point table (unverified by ear). Narration-style genres use the reader voice;
-// horror/funny keep the previous defaults until the user audition-picks something better.
+// Name (case-insensitive) or id -> id. Unknown strings pass through (custom voice ids).
+export function resolveVoice(nameOrId) {
+  if (!nameOrId) return null;
+  if (KALPA_VOICES[nameOrId]) return nameOrId;
+  const hit = Object.entries(KALPA_VOICES).find(([, v]) => v.name.toLowerCase() === String(nameOrId).toLowerCase());
+  return hit ? hit[0] : String(nameOrId);
+}
+
+const AMAN = '1eb6c010-34e0-477c-9d24-e915f853359e';
+const KIARA = '5e0c5704-590f-483b-b291-00a2415cb67e';
+const WREN = 'dda5319f-3b81-4124-b69e-9241eb510b77';
+// Genre defaults. Only horror hi (Aman) was chosen by the user; every other cell is a starting point not judged by ear
+// (horror en = Wren included). Audition with scripts/voice_audition.mjs and pin picks in voices.json.
 const KALPA_DEFAULTS = {
-  guide: { hi: '5e0c5704-590f-483b-b291-00a2415cb67e', en: '5e0c5704-590f-483b-b291-00a2415cb67e' },
-  news: { hi: '5e0c5704-590f-483b-b291-00a2415cb67e', en: '5e0c5704-590f-483b-b291-00a2415cb67e' },
-  story: { hi: '5e0c5704-590f-483b-b291-00a2415cb67e', en: '5e0c5704-590f-483b-b291-00a2415cb67e' },
-  horror: { hi: '1eb6c010-34e0-477c-9d24-e915f853359e', en: 'dda5319f-3b81-4124-b69e-9241eb510b77' },
-  funny: { hi: '1eb6c010-34e0-477c-9d24-e915f853359e', en: 'dda5319f-3b81-4124-b69e-9241eb510b77' },
-  motivational: { hi: '1eb6c010-34e0-477c-9d24-e915f853359e', en: 'dda5319f-3b81-4124-b69e-9241eb510b77' },
-  default: { hi: '5e0c5704-590f-483b-b291-00a2415cb67e', en: 'dda5319f-3b81-4124-b69e-9241eb510b77' }
+  guide: { hi: KIARA, en: WREN },
+  news: { hi: KIARA, en: WREN },
+  story: { hi: KIARA, en: WREN },
+  horror: { hi: AMAN, en: WREN },
+  funny: { hi: AMAN, en: WREN },
+  motivational: { hi: AMAN, en: WREN },
+  default: { hi: KIARA, en: WREN }
 };
+const USER_CHOSEN = new Set(['horror:hi']);
 
 // Post-processing mood per genre (maps to getMoodVoiceFilter / --audio-mood in master_and_qa.mjs)
 export const GENRE_AUDIO_MOOD = Object.freeze({ horror: 'horror', funny: 'editorial', guide: 'documentary', news: 'documentary', story: 'vintage', motivational: 'editorial', default: 'none' });
@@ -61,7 +84,7 @@ export function pickVoice({ provider = 'kalpa-labs', genre = 'default', lang = '
   const l = normLang(lang);
   const ov = loadOverrides(overridesFile)?.[provider]?.[g]?.[l];
   if (ov) return { voice: ov, source: 'user-override' };
-  if (provider === 'kalpa-labs') return { voice: KALPA_DEFAULTS[g][l], source: 'catalog-default-unverified' };
+  if (provider === 'kalpa-labs') return { voice: KALPA_DEFAULTS[g][l], source: USER_CHOSEN.has(`${g}:${l}`) ? 'user-chosen-default' : 'catalog-default-unverified' };
   return { voice: null, source: 'provider-default' };
 }
 

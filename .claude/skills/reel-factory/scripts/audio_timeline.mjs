@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { execFileSync, spawnSync } from 'node:child_process';
 import { pickVoice, genreVoiceStyle } from '../lib/voices.mjs';
+import { synth as kalpaSynth } from '../lib/kalpa.mjs';
 import { whisperize, applyTempo, assembleLines, probeDuration as probeDurationFx } from '../lib/voice_fx.mjs';
 import { alignWordsToVoicedSpans, alignWordsToCues, detectVoicedSpans, parseVtt, retimeTimeline } from '../lib/align.mjs';
 import fs from 'node:fs';
@@ -659,30 +660,13 @@ export async function synthesizeTts({ provider, text, lang = 'en', voice = null,
       : (process.env.KALPA_VOICE_ID_EN || process.env.KALPA_VOICE_ID || 'dda5319f-3b81-4124-b69e-9241eb510b77');
     const voiceId = (voice && !isDefaultEdgeVoice) ? voice : defaultVoiceId;
     const cleanText = stripTtsTags(text);
-    const kalpaCall = (body) => fetch(`https://api.kalpalabs.ai/v1/tts/${voiceId}`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.KALPA_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    });
-    let resp = await kalpaCall(Number.isFinite(temperature) ? { text: cleanText, temperature } : { text: cleanText });
-    // If the provider rejects the temperature field, retry once with text only (never fail the line over style).
-    if (!resp.ok && Number.isFinite(temperature) && resp.status >= 400 && resp.status < 500 && resp.status !== 401 && resp.status !== 403) {
-      resp = await kalpaCall({ text: cleanText });
-    }
-    if (!resp.ok) {
-      const errBody = (await resp.text()).slice(0, 200);
-      throw new Error(`Kalpa Labs TTS failed: ${resp.status} ${errBody}`);
-    }
-    const data = await resp.json();
-    const b64 = data?.audio?.data_b64;
-    if (!b64) {
-      throw new Error('Kalpa Labs TTS returned no audio.data_b64');
-    }
+    // Shared client: sends model + sample_rate + params.temperature, maps API errors (402 never retried, 429 honours Retry-After).
     fs.mkdirSync(path.dirname(path.resolve(outPath)), { recursive: true });
-    fs.writeFileSync(outPath, Buffer.from(b64, 'base64'));
+    await kalpaSynth({
+      text: cleanText, voice: voiceId, model: /^kalpa/.test(ttsModel || '') ? ttsModel : 'kalpa-tts-1',
+      temperature: Number.isFinite(temperature) ? temperature : undefined,
+      sampleRate: Number(process.env.KALPA_SAMPLE_RATE) || 48000, out: outPath, force: true
+    });
     return { ok: true, provider: 'kalpa-labs', audio_file: outPath };
   }
 

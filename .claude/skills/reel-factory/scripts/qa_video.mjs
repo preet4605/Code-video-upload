@@ -212,6 +212,55 @@ export function makeSafeZoneSheet(ffmpeg, p, outPng, profileName = DEFAULT_SAFE_
   return r.status === 0 && fs.existsSync(outPng);
 }
 
+// ---------- honesty contract: what was measured vs what was not ----------
+
+// Version of the qa_report.json contract (fields verified/unverified). Distinct from the skill version.
+export const QA_CONTRACT_VERSION = '1.0';
+
+// Never measured by any gate in this package. Always listed; a human must judge these.
+export const ALWAYS_UNVERIFIED = Object.freeze([
+  'hook strength (only first-2s motion is measured, not whether a stranger stops scrolling)',
+  'fear / humour / emotional effect',
+  'pronunciation and voice acting of the narration',
+  'taste, originality and visual beauty',
+  'factual accuracy of on-screen claims and numbers',
+  'how it looks and sounds on a real phone'
+]);
+
+export function buildVerification({ probe, flashes, freezes, black, silence, hook, loudness, mix, timeline, thresholds = QA_THRESHOLDS, placeholderAudio = false } = {}) {
+  const verified = [];
+  const unverified = [...ALWAYS_UNVERIFIED];
+  const v = probe?.streams?.find((s) => s.codec_type === 'video');
+  const a = probe?.streams?.find((s) => s.codec_type === 'audio');
+  const dur = Number(probe?.format?.duration) || 0;
+  if (v) verified.push(`spec: ${v.codec_name} ${v.pix_fmt} ${v.width}x${v.height}, ${dur.toFixed(2)}s`);
+  else unverified.push('spec: no video stream probed');
+  if (a) verified.push(`audio spec: ${a.codec_name} ${a.sample_rate} Hz`);
+  if (flashes) verified.push(`flashes: max ${Number(flashes.max_per_sec || 0).toFixed(1)}/s (cap ${thresholds.maxFlashesPerSec})`);
+  else unverified.push('flash check skipped');
+  if (freezes) verified.push(`freeze: ${freezes.length} segment(s) >= 0.5s (cap ${thresholds.maxFreezeS}s)`);
+  else unverified.push('freeze check skipped');
+  if (black) verified.push(`black frames: ${black.length} segment(s)`);
+  else unverified.push('black-frame check skipped');
+  if (silence) verified.push(`dead air: ${silence.length} silent segment(s) below ${thresholds.silenceDb} dB`);
+  else unverified.push('dead-air check skipped');
+  if (hook && hook.frames >= 2) verified.push(`hook motion (first ${thresholds.hookMotionWindowS}s): ${hook.motion} (min ${thresholds.hookMinMotion})`);
+  else unverified.push('hook motion check skipped (too few frames)');
+  if (loudness && loudness.integrated_lufs !== null && loudness.integrated_lufs !== undefined) {
+    verified.push(`loudness: ${loudness.integrated_lufs} LUFS` + (loudness.true_peak_dbtp != null ? `, true peak ${loudness.true_peak_dbtp} dBTP` : ''));
+    if (loudness.true_peak_dbtp == null) unverified.push('true peak not measured');
+  } else unverified.push('loudness not measured');
+  if (mix && mix.vo_to_bed_lu != null) verified.push(`voice over bed: ${mix.vo_to_bed_lu} LU (min ${thresholds.minVoiceToBedLu})`);
+  else unverified.push('voice-vs-bed level not measured (no voiceover+bed pair)');
+  if (placeholderAudio) unverified.push('audio is a placeholder tone: real sound design not present');
+  if (timeline?.words?.length && timeline.audio_file) {
+    const m = timeline.alignment?.method;
+    verified.push(`caption alignment method: ${m || 'unknown'}`);
+    if (!m || m === 'wpm-estimate' || m === 'linear-scale' || m === 'voiced-span-weighted') unverified.push(`word timing is approximate (${m || 'unknown'}), not frame-accurate`);
+  } else if (!timeline) unverified.push('timeline.json absent: caption timing, scene pacing and direction lint not checked');
+  return { contract_version: QA_CONTRACT_VERSION, verified, unverified };
+}
+
 // ---------- the verdict ----------
 
 export function evaluateQa({ probe, flashes, freezes, black, silence, hook, loudness, mix, timeline, brief, platform, faststart, thresholds = QA_THRESHOLDS, placeholderAudio = false, draftManifest = false, allowances = {} }) {
@@ -358,12 +407,15 @@ export function runQa({ mp4, projectDir = null, platform = 'reels', safeProfile 
   const fl = measureFlashes(ffmpeg, mp4, thresholds);
   const { series, ...flashes } = fl;
   const hook = measureHookMotion(ffmpeg, mp4);
+  const freezes = measureFreezes(ffmpeg, mp4, 0.5);
+  const black = measureBlack(ffmpeg, mp4);
+  const silence = measureSilence(ffmpeg, mp4, thresholds.silenceDb, 0.5, dur);
   const res = evaluateQa({
     probe,
     flashes,
-    freezes: measureFreezes(ffmpeg, mp4, 0.5),
-    black: measureBlack(ffmpeg, mp4),
-    silence: measureSilence(ffmpeg, mp4, thresholds.silenceDb, 0.5, dur),
+    freezes,
+    black,
+    silence,
     hook,
     loudness,
     mix,
@@ -383,8 +435,10 @@ export function runQa({ mp4, projectDir = null, platform = 'reels', safeProfile 
     const p = path.join(outDir, 'qa_safezone_sheet.png');
     if (makeSafeZoneSheet(ffmpeg, mp4, p, safeProfile)) safeSheet = p;
   }
+  const honesty = buildVerification({ probe, flashes, freezes, black, silence, hook, loudness, mix, timeline, thresholds, placeholderAudio });
   return {
     ...res,
+    ...honesty,
     measured: {
       flashes,
       hook,
@@ -430,7 +484,7 @@ function main() {
     loudness: { integrated_lufs: loud.integrated_lufs, target_lufs: null, true_peak_dbtp: null },
     draftManifest: draft
   });
-  console.log(o.json ? JSON.stringify(report, null, 2) : `QA ${report.verdict}${report.fails.length ? '\n - ' + report.fails.join('\n - ') : ''}${report.warns.length ? '\nwarnings:\n - ' + report.warns.join('\n - ') : ''}`);
+  console.log(o.json ? JSON.stringify(report, null, 2) : `QA ${report.verdict}${report.fails.length ? '\n - ' + report.fails.join('\n - ') : ''}${report.warns.length ? '\nwarnings:\n - ' + report.warns.join('\n - ') : ''}\nNOT VERIFIED (a human must judge):\n - ${report.unverified.join('\n - ')}`);
   if (o.strict && report.verdict !== 'SHIP') process.exit(1);
 }
 

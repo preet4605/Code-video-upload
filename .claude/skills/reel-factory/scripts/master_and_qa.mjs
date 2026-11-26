@@ -12,9 +12,9 @@ import {
 } from '../lib/audio_sfx.mjs';
 import { resolveBin } from '../lib/runtime.mjs';
 import { videoEncodeArgs, colorFilter } from '../lib/encode.mjs';
-import { runQa, measureIntegratedLufs } from './qa_video.mjs';
+import { runQa, measureIntegratedLufs, QA_CONTRACT_VERSION } from './qa_video.mjs';
 import { DEFAULT_SAFE_PROFILE } from '../lib/profiles.mjs';
-import { runHorrorVisualGate } from '../lib/horror_gate.mjs';
+import { runHorrorVisualGate, applyVisualLoopGate } from '../lib/horror_gate.mjs';
 import { generateHorrorBed } from './horror_sound.mjs';
 import { lintStoryProject } from '../lib/story_lint.mjs';
 import { runHorrorMeasuredGate } from '../lib/horror_measure.mjs';
@@ -88,6 +88,25 @@ function buildAssFilter(subtitlesOpt) {
   const escapedPath = escapeFilterPath(resolvedSub);
   const escapedFontsDir = escapeFilterPath(fontsDir);
   return `,ass='${escapedPath}':fontsdir='${escapedFontsDir}'`;
+}
+
+// Adds the visual-loop gate and completes verified/unverified on a runQa() result (mutates and returns ship).
+export function finalizeHonesty(ship, projectDir, brief = {}, qaCfg = {}) {
+  ship.verified = ship.verified || [];
+  ship.unverified = ship.unverified || [];
+  const vl = applyVisualLoopGate(ship, projectDir, brief, qaCfg);
+  if (vl.run) ship.verified.push(`visual-loop: ${ship.visual_loop.iterations} iteration(s), last ${ship.visual_loop.last_pass ? 'pass' : 'fail'}, critique min ${ship.visual_loop.critique_min}`);
+  else ship.unverified.push('visual-loop not run: picture composition/depth was not iterated against targets');
+  if (ship.horror) {
+    const h = ship.horror;
+    if (h.visual && h.visual.escalation != null) ship.verified.push(`horror escalation (last/first third motion): ${h.visual.escalation}`);
+    if (h.measured && Array.isArray(h.measured.per_scene)) ship.verified.push(`horror measured motion/darkness for ${h.measured.per_scene.length} scene(s) and pre-scare drops`);
+    ship.unverified.push('horror: whether it is actually scary (only measurable defects are gated)');
+  }
+  ship.verified = [...new Set(ship.verified)];
+  ship.unverified = [...new Set(ship.unverified)];
+  ship.contract_version = ship.contract_version || QA_CONTRACT_VERSION;
+  return ship;
 }
 
 export function evaluateMasterQa({ vStream, aStream, contactSheetExists, loud, targetLufs, truePeak }) {
@@ -237,8 +256,11 @@ function runFastPath(opts, ffmpeg, ffprobe) {
   });
   report.verdict = ship.verdict;
   report.ship = ship;
+  report.contract_version = ship.contract_version;
+  report.verified = ship.verified;
+  report.unverified = ship.unverified;
 
-  console.log(opts.json ? JSON.stringify(report, null, 2) : `MASTER QA ${qaPass ? 'PASS' : 'FAIL'} | VERDICT ${ship.verdict}: ${outMp4}`);
+  console.log(opts.json ? JSON.stringify(report, null, 2) : `MASTER QA ${qaPass ? 'PASS' : 'FAIL'} | VERDICT ${ship.verdict}: ${outMp4}\nNOT VERIFIED (a human must judge):\n - ${ship.unverified.join('\n - ')}`);
   if (!qaPass) process.exit(1);
   if (opts.strict && ship.verdict !== 'SHIP') process.exit(1);
 }
@@ -643,23 +665,18 @@ function main() {
       if (sg.fails.length || vg.fails.length) ship.verdict = 'FIX';
     }
   }
-  // Visual self-improvement loop status (scripts/visual_loop.mjs). Missing -> warning; run but not converged -> FIX.
-  try {
-    const vlog = JSON.parse(fs.readFileSync(path.join(projectDir, 'visual_loop', 'log.json'), 'utf8'));
-    const last = vlog.iterations[vlog.iterations.length - 1];
-    ship.visual_loop = { iterations: vlog.iterations.length, last_pass: last?.pass ?? false, critique_min: last?.critique_min ?? null, mean_score: last?.mean_score ?? null };
-    if (!(last && last.pass && (last.critique_min ?? 0) >= 3)) {
-      ship.fails.push(`visual-loop: not converged (iteration ${last?.iter}: metrics ${last?.pass ? 'pass' : 'fail'}, critique min ${last?.critique_min ?? 'missing'}). Run scripts/visual_loop.mjs until LOOP PASS`);
-      ship.verdict = 'FIX';
-    }
-  } catch {
-    ship.warns.push('visual-loop: not run. Run scripts/visual_loop.mjs --project <dir> and iterate until LOOP PASS (references/visual-loop.md)');
-  }
+  // Visual self-improvement loop: horror requires it (FIX if not run); other genres: warning if not run.
+  let qaCfg = {};
+  try { qaCfg = JSON.parse(fs.readFileSync(path.join(projectDir, 'qa.json'), 'utf8')); } catch { /* none */ }
+  finalizeHonesty(ship, projectDir, briefObj, qaCfg);
   fs.writeFileSync(path.join(outDir, 'qa_report.json'), JSON.stringify(ship, null, 2));
 
   const report = {
     ok: qaPass,
     verdict: ship.verdict,
+    contract_version: ship.contract_version,
+    verified: ship.verified,
+    unverified: ship.unverified,
     ship,
     stitch_mode: stitchMode,
     outMp4,
@@ -687,7 +704,7 @@ function main() {
     }
   };
 
-  console.log(opts.json ? JSON.stringify(report, null, 2) : `MASTER QA ${qaPass ? 'PASS' : 'FAIL'} | VERDICT ${ship.verdict}: ${outMp4}${ship.fails.length ? '\n - ' + ship.fails.join('\n - ') : ''}`);
+  console.log(opts.json ? JSON.stringify(report, null, 2) : `MASTER QA ${qaPass ? 'PASS' : 'FAIL'} | VERDICT ${ship.verdict}: ${outMp4}${ship.fails.length ? '\n - ' + ship.fails.join('\n - ') : ''}\nNOT VERIFIED (a human must judge; watch with sound on a phone):\n - ${ship.unverified.join('\n - ')}`);
   if (!qaPass) process.exit(1);
   if (opts.strict && ship.verdict !== 'SHIP') process.exit(1);
 }

@@ -17,7 +17,7 @@ if (!GENRES.includes(genre)) {
   process.exit(2);
 }
 loadTtsEnv();
-const ids = (get('--voices') ? get('--voices').split(',') : Object.keys(KALPA_VOICES)).filter(Boolean);
+const ids = (get('--voices') ? get('--voices').split(',') : Object.keys(KALPA_VOICES).filter((id) => KALPA_VOICES[id].langs.includes(lang === 'hi' || lang === 'hinglish' ? 'hi' : 'en'))).filter(Boolean);
 const text = AUDITION_LINES[genre][lang === 'hi' ? 'hi' : 'en'];
 fs.mkdirSync(out, { recursive: true });
 const rows = [];
@@ -25,9 +25,9 @@ for (const id of ids) {
   const file = path.join(out, `${genre}_${lang}_${id.slice(0, 8)}.wav`);
   try {
     const r = await synthesizeTts({ provider: 'kalpa-labs', text, lang, voice: id, outPath: file });
-    rows.push({ voice: id, label: KALPA_VOICES[id]?.label || 'custom', ok: r.ok, file: r.ok ? file : null });
+    rows.push({ voice: id, label: KALPA_VOICES[id]?.name || 'custom', ok: r.ok, file: r.ok ? file : null });
   } catch (e) {
-    rows.push({ voice: id, label: KALPA_VOICES[id]?.label || 'custom', ok: false, error: String(e.message).slice(0, 160) });
+    rows.push({ voice: id, label: KALPA_VOICES[id]?.name || 'custom', ok: false, error: String(e.message).slice(0, 160) });
   }
 }
 const current = pickVoice({ provider: 'kalpa-labs', genre, lang });
