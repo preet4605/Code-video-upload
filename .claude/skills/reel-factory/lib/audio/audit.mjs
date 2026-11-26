@@ -48,18 +48,19 @@ export function auditProjectAudio({ projectDir, media, ffmpeg = 'ffmpeg', timeli
     const tp = truePeak(dec.L, dec.R); values.true_peak = tp;
     if (tp.true_peak_dbtp > AUDIO_QA.truePeakMaxDbtp) fails.push(`audio: true peak ${tp.true_peak_dbtp} dBTP after encode (limit ${AUDIO_QA.truePeakMaxDbtp}); ${tp.clipped_samples} sample(s) at full scale`);
     else verified.push(`true peak after encode (decoded, 4x oversampled): ${tp.true_peak_dbtp} dBTP (limit ${AUDIO_QA.truePeakMaxDbtp})`);
-    const st = shortTermLoudness(dec.L, dec.R); const sp = loudnessSpikes(st, targetLufs, scares.map((c) => rep.get(c.id)?.at_s ?? c.at_s)); values.short_term_max_lufs = Math.max(...st.map((p) => p.lufs));
+    const st = shortTermLoudness(dec.L, dec.R); const sp = loudnessSpikes(st, targetLufs, cues.filter((c) => isScareCue(c) || (c.tags || []).includes('accent')).map((c) => rep.get(c.id)?.at_s ?? c.at_s)); values.short_term_max_lufs = Math.max(...st.map((p) => p.lufs));
     const bad = sp.filter((p) => !p.intended);
     if (bad.length) warns.push(`audio: short-term loudness above target+${AUDIO_QA.stSpikeLu} LU at ${bad.slice(0, 4).map((p) => `${p.t}s (${p.lufs} LUFS)`).join(', ')}${bad.length > 4 ? ` +${bad.length - 4} more` : ''}`);
     verified.push(`short-term loudness: max ${values.short_term_max_lufs} LUFS (target ${targetLufs}); ${sp.length - bad.length} intended scare spike(s), ${bad.length} unintended`);
-    if (spans.length) {
+    const hasVo = Boolean(timeline?.audio_file) && fs.existsSync(path.join(projectDir, timeline.audio_file));
+    if (spans.length && hasVo) {
       const mf = monoFold({ L: dec.L, R: dec.R, spans }); values.mono_fold = { worst_loss_db: mf.worst_loss_db, mean_corr: mf.mean_corr };
       if (mf.per_span.length) {
         if (mf.fail.length) fails.push(`audio: mono fold-down loses >= ${AUDIO_QA.monoFoldFailDb} dB of voice-band energy in ${mf.fail.length} span(s) (worst ${mf.worst_loss_db} dB, e.g. ${mf.fail[0].t0}-${mf.fail[0].t1}s): out-of-phase stereo`);
         else verified.push(`mono fold-down over ${mf.per_span.length} spoken span(s) (1-4 kHz of the final mix): worst loss ${mf.worst_loss_db} dB (limit ${AUDIO_QA.monoFoldFailDb}), mean L/R correlation ${mf.mean_corr}`);
         if (mf.mean_corr !== null && mf.mean_corr < 0) warns.push(`audio: mean L/R correlation over speech is negative (${mf.mean_corr})`);
       }
-    } else unverified.push('mono fold-down not measured (no spoken spans in timeline)');
+    } else unverified.push('mono fold-down not measured (no voiceover file or no spoken spans); a wide ambience bed alone is not a voice-compatibility problem');
     // pre-scare silence on the final mix
     if (scares.length) {
       const ps = preScareSilence({ L: dec.L, R: dec.R, scares: scares.map((c) => ({ id: c.id, onset_s: rep.get(c.id)?.onset_s ?? c.at_s })) }); values.pre_scare = ps.per_scare;

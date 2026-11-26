@@ -103,9 +103,9 @@ export function pianoNote(f0, rng, sr, { dur = 3, vel = 0.7, B = 0.0004 } = {}) 
 export function piano_motif(p, ctx) {
   const { sr, rng } = ctx; const n = Math.round((p.dur_s ?? ctx.dur ?? 20) * sr); const st = stereoMix(n);
   const T = tensionTrack(p.tension ?? 'auto', n, sr, ctx); const scale = p.scale ?? 'phrygian'; const root = keyToMidi(p.key, p.octave ?? 4);
-  const beat = 60 / (p.tempo ?? 56); let t = (p.first_s ?? 1.5) * rng.uniform(0.8, 1.2), deg = rng.int(0, 3);
+  const beat = 60 / (p.tempo ?? 56); let t = (p.first_s ?? 1.5) * rng.uniform(0.8, 1.2), deg = rng.int(0, 3), first = true;
   while (t < n / sr - 1.5) {
-    const tens = T(Math.round(t * sr)); const hold = rng.next() < 0.45 + 0.35 * tens; // rests are the point
+    const tens = T(Math.round(t * sr)); const wasFirst = first; first = false; const hold = wasFirst ? false : rng.next() < 0.45 + 0.35 * tens; // rests are the point (the first note always sounds)
     if (hold) { t += beat * rng.pick([1, 2, 3]); continue; }
     deg = clamp(deg + rng.pick([-2, -1, -1, 0, 1, 2, 3]), -4, 9);
     const m = degreeMidi(root, scale, deg); const vel = 0.35 + 0.35 * rng.next();

@@ -1,0 +1,709 @@
+{
+ "seed": 11,
+ "note": "Port of tools/sound_design.py (scipy) to tier-A Node synthesis. This timeline predates build_vo.mjs \"events\", so cues use seconds, except lineNN_start/_end names which are derived from scenes[].lines (the cue report marks them derived). Word-level anchors are seconds read from timeline.words. Levels are approximations of the Python gains, not identical samples.",
+ "buses": {
+  "vo": 0,
+  "sfx": -3,
+  "music": -12,
+  "ambience": -12,
+  "room": -20
+ },
+ "space": {
+  "sfx": {
+   "preset": "outdoor",
+   "send_db": -20
+  }
+ },
+ "cues": [
+  {
+   "id": "room",
+   "at": 0,
+   "until": 61.213,
+   "kind": "room_tone",
+   "gain_db": 0
+  },
+  {
+   "id": "cic_intro",
+   "at": 0,
+   "until": 3.953,
+   "kind": "cicadas",
+   "gain_db": -4
+  },
+  {
+   "id": "cic_kitchen",
+   "at": 3.953,
+   "until": 15.638,
+   "kind": "cicadas",
+   "gain_db": -12,
+   "filter": {
+    "lp_hz": 900
+   },
+   "gain_curve": [
+    {
+     "at": 3.953,
+     "db": 0
+    },
+    {
+     "at": 9.953,
+     "db": 0
+    },
+    {
+     "at": 15.638,
+     "db": 4
+    }
+   ],
+   "note": "heard through the doorway: low-passed at 900 Hz"
+  },
+  {
+   "id": "cic_court",
+   "at": 15.638,
+   "until": 26.978,
+   "kind": "cicadas",
+   "gain_db": -8,
+   "gain_curve": [
+    {
+     "at": 15.638,
+     "db": 0
+    },
+    {
+     "at": 26.478,
+     "db": 4
+    }
+   ],
+   "note": "dies at t_cut = word \"ho\" (line 5) + 0.12 s"
+  },
+  {
+   "id": "cic_back",
+   "at": 42.553,
+   "until": 61.213,
+   "kind": "cicadas",
+   "gain_db": -6,
+   "gain_curve": [
+    {
+     "at": 42.553,
+     "db": 0
+    },
+    {
+     "at": 51.369,
+     "db": -6
+    },
+    {
+     "at": 61.213,
+     "db": -10
+    }
+   ]
+  },
+  {
+   "id": "wind_intro",
+   "at": 0,
+   "until": 3.953,
+   "kind": "wind",
+   "gain_db": -8
+  },
+  {
+   "id": "wind_kitchen",
+   "at": 4.153,
+   "until": 15.338,
+   "kind": "wind",
+   "gain_db": -22
+  },
+  {
+   "id": "wind_court",
+   "at": 15.638,
+   "until": 26.978,
+   "kind": "wind",
+   "gain_db": -8
+  },
+  {
+   "id": "wind_back",
+   "at": 42.553,
+   "until": 61.213,
+   "kind": "wind",
+   "gain_db": -9
+  },
+  {
+   "id": "embers",
+   "at": 3.953,
+   "until": 15.638,
+   "kind": "crackle",
+   "params": {
+    "rate_hz": 3.1
+   },
+   "gain_db": -10
+  },
+  {
+   "id": "thali",
+   "at": 4.952999999999999,
+   "kind": "ring",
+   "params": {
+    "f": 2200,
+    "dur_s": 0.9,
+    "tau": 0.2
+   },
+   "pan": 0.35,
+   "gain_db": -14
+  },
+  {
+   "id": "bangle_0",
+   "at": "line01_start",
+   "offset_s": 3.855,
+   "kind": "ring",
+   "params": {
+    "f": 2800,
+    "dur_s": 0.5,
+    "tau": 0.1
+   },
+   "pan": 0.1,
+   "gain_db": -16,
+   "note": "word \"pakadna\" starts 7.708 s (word timing is not an event)"
+  },
+  {
+   "id": "bangle_1",
+   "at": "line01_start",
+   "offset_s": 3.905,
+   "kind": "ring",
+   "params": {
+    "f": 3300,
+    "dur_s": 0.5,
+    "tau": 0.1
+   },
+   "pan": 0.1,
+   "gain_db": -18,
+   "note": "word \"pakadna\" starts 7.708 s (word timing is not an event)"
+  },
+  {
+   "id": "bangle_2",
+   "at": "line01_start",
+   "offset_s": 3.955,
+   "kind": "ring",
+   "params": {
+    "f": 2500,
+    "dur_s": 0.5,
+    "tau": 0.1
+   },
+   "pan": 0.1,
+   "gain_db": -20,
+   "note": "word \"pakadna\" starts 7.708 s (word timing is not an event)"
+  },
+  {
+   "id": "bangle_3",
+   "at": "line01_start",
+   "offset_s": 4.005,
+   "kind": "ring",
+   "params": {
+    "f": 3000,
+    "dur_s": 0.5,
+    "tau": 0.1
+   },
+   "pan": 0.1,
+   "gain_db": -22,
+   "note": "word \"pakadna\" starts 7.708 s (word timing is not an event)"
+  },
+  {
+   "id": "dark_room_swoosh",
+   "at": 4.253,
+   "kind": "noise_swell",
+   "params": {
+    "dark": true,
+    "hi": 300,
+    "dur_s": 0.7
+   },
+   "pan": -0.2,
+   "gain_db": -18
+  },
+  {
+   "id": "school_bell",
+   "at": 15.788,
+   "kind": "bell",
+   "params": {
+    "f": 620,
+    "dur_s": 3,
+    "lowpass_hz": 5000
+   },
+   "pan": 0.5,
+   "gain_db": -14,
+   "reverb": {
+    "preset": "outdoor",
+    "send_db": -12
+   }
+  },
+  {
+   "id": "kids_shuffle",
+   "at": 16.238,
+   "until": 20.637999999999998,
+   "kind": "shuffle",
+   "gain_db": -26
+  },
+  {
+   "id": "chalk",
+   "at": 17.938,
+   "kind": "noise_swell",
+   "params": {
+    "lo": 2500,
+    "hi": 7000,
+    "dur_s": 1.2
+   },
+   "pan": 0.2,
+   "gain_db": -24
+  },
+  {
+   "id": "tightening_ring",
+   "at": 23.406,
+   "until": 26.958000000000002,
+   "kind": "hum",
+   "layer": "ambience",
+   "params": {
+    "freqs": [
+     {
+      "f": 2800,
+      "f_to": 5400,
+      "amp": 1
+     }
+    ],
+    "shape": "swell_in",
+    "power": 1.5
+   },
+   "gain_db": -26,
+   "note": "rises as the shadows retreat; ends at the cut"
+  },
+  {
+   "id": "dead_zone_sub",
+   "at": 26.978,
+   "until": "line07_end",
+   "until_offset_s": 0.02,
+   "kind": "hum",
+   "layer": "ambience",
+   "params": {
+    "freqs": [
+     {
+      "f": 38,
+      "amp": 1
+     },
+     {
+      "f": 41.5,
+      "amp": 0.7,
+      "phase": 1
+     }
+    ],
+    "shape": "swell_in",
+    "power": 0.5
+   },
+   "gain_db": -22,
+   "note": "a pressure bed that fills the dead zone; deliberately felt, not heard on a phone"
+  },
+  {
+   "id": "heart",
+   "at": 27.778000000000002,
+   "until": 36.95,
+   "kind": "heartbeat",
+   "reverb": false,
+   "params": {
+    "bpm_from": 52,
+    "bpm_to": 82,
+    "gain_from_db": -10,
+    "gain_to_db": 0
+   },
+   "gain_db": -10
+  },
+  {
+   "id": "wet_grip",
+   "at": 28.921,
+   "kind": "slap",
+   "params": {
+    "f": 62,
+    "dur_s": 0.35
+   },
+   "pan": 0.3,
+   "gain_db": -9
+  },
+  {
+   "id": "drip_pre0",
+   "at": 30.071,
+   "kind": "drip",
+   "pan": 0.4,
+   "gain_db": -22
+  },
+  {
+   "id": "drip_pre1",
+   "at": 31.571,
+   "kind": "drip",
+   "pan": 0.4,
+   "gain_db": -22
+  },
+  {
+   "id": "drip_pre2",
+   "at": 32.329,
+   "kind": "drip",
+   "pan": 0.4,
+   "gain_db": -22
+  },
+  {
+   "id": "drip_stone0",
+   "at": 33.727,
+   "kind": "drip",
+   "pan": 0,
+   "gain_db": -14,
+   "note": "period matches the visual: impact at (n + 0.55) / 0.55"
+  },
+  {
+   "id": "drip_stone1",
+   "at": 35.545,
+   "kind": "drip",
+   "pan": 0,
+   "gain_db": -14,
+   "note": "period matches the visual: impact at (n + 0.55) / 0.55"
+  },
+  {
+   "id": "pre_scare_drop",
+   "at": "line07_end",
+   "offset_s": 0.02,
+   "until": "line08_start",
+   "until_offset_s": -0.02,
+   "kind": "drop",
+   "params": {
+    "buses": [
+     "sfx",
+     "music",
+     "ambience"
+    ],
+    "depth_db": -46,
+    "ramp_in_s": 0.01,
+    "ramp_out_s": 0.01
+   },
+   "note": "everything but room tone leaves for ~1 s before the whisper"
+  },
+  {
+   "id": "scare_thud",
+   "at": "line08_start",
+   "kind": "sub_drop",
+   "params": {
+    "dur_s": 1.6
+   },
+   "gain_db": -5,
+   "tags": [
+    "scare"
+   ],
+   "reverb": false
+  },
+  {
+   "id": "whisper_pad",
+   "at": "line08_start",
+   "offset_s": -0.05,
+   "until": 42.6,
+   "kind": "hum",
+   "layer": "ambience",
+   "params": {
+    "freqs": [
+     {
+      "f": 55,
+      "amp": 1
+     },
+     {
+      "f": 58.3,
+      "amp": 0.8,
+      "phase": 1
+     },
+     {
+      "f": 82.4,
+      "amp": 0.4,
+      "phase": 2
+     },
+     {
+      "f": 110.2,
+      "amp": 0.25,
+      "phase": 1.3
+     },
+     {
+      "f": 233.1,
+      "amp": 0.05
+     },
+     {
+      "f": 220.7,
+      "amp": 0.05
+     }
+    ],
+    "shape": "swell_in",
+    "power": 2.2
+   },
+   "gain_db": -12
+  },
+  {
+   "id": "whisper_air",
+   "at": 37.88,
+   "until": 42.6,
+   "kind": "noise_swell",
+   "layer": "ambience",
+   "params": {
+    "dark": true,
+    "hi": 400,
+    "shape": "rise"
+   },
+   "gain_db": -26
+  },
+  {
+   "id": "eyes_open",
+   "at": "line08_end",
+   "offset_s": -0.2,
+   "kind": "stinger",
+   "params": {
+    "big": 1,
+    "dur_s": 3.2,
+    "swell_s": 0.5
+   },
+   "gain_db": 0,
+   "reverb": {
+    "preset": "room",
+    "send_db": -12
+   }
+  },
+  {
+   "id": "relief_gust",
+   "at": 42.553,
+   "offset_s": -0.1,
+   "kind": "noise_swell",
+   "params": {
+    "lo": 200,
+    "hi": 2500,
+    "dur_s": 1.6
+   },
+   "gain_db": -14
+  },
+  {
+   "id": "kids_murmur",
+   "at": 42.553,
+   "until": 46.83,
+   "kind": "noise_swell",
+   "layer": "ambience",
+   "params": {
+    "lo": 250,
+    "hi": 1800,
+    "shape": "hann"
+   },
+   "pan": 0.1,
+   "gain_db": -26
+  },
+  {
+   "id": "relief_shuffle_0",
+   "at": 43.053,
+   "kind": "shuffle",
+   "params": {
+    "dur_s": 0.4
+   },
+   "pan": -0.6,
+   "gain_db": -24
+  },
+  {
+   "id": "relief_shuffle_1",
+   "at": 43.452999999999996,
+   "kind": "shuffle",
+   "params": {
+    "dur_s": 0.4
+   },
+   "pan": -0.3,
+   "gain_db": -24
+  },
+  {
+   "id": "relief_shuffle_2",
+   "at": 43.852999999999994,
+   "kind": "shuffle",
+   "params": {
+    "dur_s": 0.4
+   },
+   "pan": 0,
+   "gain_db": -24
+  },
+  {
+   "id": "relief_shuffle_3",
+   "at": 44.253,
+   "kind": "shuffle",
+   "params": {
+    "dur_s": 0.4
+   },
+   "pan": 0.29999999999999993,
+   "gain_db": -24
+  },
+  {
+   "id": "relief_shuffle_4",
+   "at": 44.653,
+   "kind": "shuffle",
+   "params": {
+    "dur_s": 0.4
+   },
+   "pan": 0.6,
+   "gain_db": -24
+  },
+  {
+   "id": "shadow_slide",
+   "at": 48.489,
+   "kind": "noise_swell",
+   "params": {
+    "lo": 900,
+    "hi": 5000,
+    "dur_s": 1.5,
+    "shape": "hann"
+   },
+   "pan": 0.3,
+   "gain_db": -16
+  },
+  {
+   "id": "twist_swell",
+   "at": 48.669,
+   "kind": "hum",
+   "layer": "sfx",
+   "params": {
+    "freqs": [
+     {
+      "f": 32,
+      "f_to": 40,
+      "amp": 1
+     }
+    ],
+    "dur_s": 2.4,
+    "shape": "swell_in",
+    "power": 2
+   },
+   "gain_db": -8
+  },
+  {
+   "id": "twist_hit",
+   "tags": [
+    "accent"
+   ],
+   "at": 51.069,
+   "kind": "sub_drop",
+   "params": {
+    "dur_s": 1.6
+   },
+   "gain_db": -4,
+   "reverb": false
+  },
+  {
+   "id": "gate_slap_0",
+   "at": 51.7,
+   "kind": "slap",
+   "pan": -0.3,
+   "gain_db": -13
+  },
+  {
+   "id": "gate_slap_1",
+   "at": 52.22,
+   "kind": "slap",
+   "pan": -0.3,
+   "gain_db": -13
+  },
+  {
+   "id": "gate_slap_2",
+   "at": 52.74,
+   "kind": "slap",
+   "pan": -0.3,
+   "gain_db": -13
+  },
+  {
+   "id": "gate_slap_3",
+   "at": 53.26,
+   "kind": "slap",
+   "pan": -0.3,
+   "gain_db": -13
+  },
+  {
+   "id": "gate_slap_4",
+   "at": 53.78,
+   "kind": "slap",
+   "pan": -0.3,
+   "gain_db": -13
+  },
+  {
+   "id": "gate_shuffle",
+   "at": 51.669,
+   "until": 56.05,
+   "kind": "shuffle",
+   "pan": 0.5,
+   "gain_db": -27
+  },
+  {
+   "id": "hug_cloth",
+   "at": 54.1,
+   "kind": "noise_swell",
+   "params": {
+    "lo": 800,
+    "hi": 6000,
+    "dur_s": 0.9
+   },
+   "pan": -0.4,
+   "gain_db": -18
+  },
+  {
+   "id": "print_drip_0",
+   "at": "line12_start",
+   "offset_s": -0.55,
+   "kind": "drip",
+   "pan": -0.1,
+   "gain_db": -20
+  },
+  {
+   "id": "print_drip_1",
+   "at": "line12_start",
+   "offset_s": -0.20000000000000007,
+   "kind": "drip",
+   "pan": -0.05,
+   "gain_db": -20
+  },
+  {
+   "id": "print_drip_2",
+   "at": "line12_start",
+   "offset_s": 0.1499999999999999,
+   "kind": "drip",
+   "pan": 0,
+   "gain_db": -20
+  },
+  {
+   "id": "print_drip_3",
+   "at": "line12_start",
+   "offset_s": 0.4999999999999998,
+   "kind": "drip",
+   "pan": 0.05000000000000002,
+   "gain_db": -20
+  },
+  {
+   "id": "print_drip_4",
+   "at": "line12_start",
+   "offset_s": 0.8499999999999999,
+   "kind": "drip",
+   "pan": 0.1,
+   "gain_db": -20
+  },
+  {
+   "id": "print_drip_5",
+   "at": "line12_start",
+   "offset_s": 1.2,
+   "kind": "drip",
+   "pan": 0.15,
+   "gain_db": -20
+  },
+  {
+   "id": "loop_swell",
+   "at": 58.713,
+   "kind": "noise_swell",
+   "params": {
+    "dark": true,
+    "hi": 1200,
+    "dur_s": 2.4,
+    "shape": "rise_cubic"
+   },
+   "gain_db": -14
+  },
+  {
+   "id": "loop_hiss",
+   "at": 59.913000000000004,
+   "kind": "noise_swell",
+   "params": {
+    "lo": 4000,
+    "hi": 12000,
+    "dur_s": 1.6,
+    "shape": "fall"
+   },
+   "pan": 0.1,
+   "gain_db": -20
+  }
+ ]
+}

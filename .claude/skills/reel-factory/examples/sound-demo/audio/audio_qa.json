@@ -6,13 +6,13 @@
   "verified": [
     "licences: all audio is tier-A synthesis (no third-party assets)",
     "scare cue \"scare_hit\" is anchored to event \"scare\" (offset 0.000 s <= 1 frame); the visual must use the same event",
-    "true peak after encode (decoded, 4x oversampled): -1.54 dBTP (limit -1)",
-    "short-term loudness: max -11.9 LUFS (target -14); 0 intended scare spike(s), 0 unintended",
-    "pre-scare silence: 1 scare(s), drops 34.6 dB (need >= 10)",
-    "phone check (200 Hz high-pass proxy, sfx stem): 2 sub/heartbeat cue(s) keep 150-400 Hz share >= -9.7 dB (limit -20)"
+    "true peak after encode (decoded, 4x oversampled): -1.65 dBTP (limit -1)",
+    "short-term loudness: max -12.1 LUFS (target -14); 0 intended scare spike(s), 0 unintended",
+    "pre-scare silence: 1 scare(s), drops 37.9 dB (need >= 10)",
+    "phone check (200 Hz high-pass proxy, sfx stem): 2 sub/heartbeat cue(s) keep 150-400 Hz share >= -9.8 dB (limit -20)"
   ],
   "unverified": [
-    "mono fold-down not measured (no spoken spans in timeline)",
+    "mono fold-down not measured (no voiceover file or no spoken spans); a wide ambience bed alone is not a voice-compatibility problem",
     "voice clarity not measured (no voiceover file or no spoken spans); ducking depth unverified",
     "whether the sound design is good or scary: only measurable defects are gated; listen with headphones and on a phone speaker"
   ],
@@ -22,18 +22,18 @@
       "missing": []
     },
     "true_peak": {
-      "true_peak_dbtp": -1.54,
-      "sample_peak_dbfs": -1.54,
+      "true_peak_dbtp": -1.65,
+      "sample_peak_dbfs": -1.65,
       "clipped_samples": 0
     },
-    "short_term_max_lufs": -11.9,
+    "short_term_max_lufs": -12.1,
     "pre_scare": [
       {
         "id": "scare_hit",
         "onset_s": 15.65,
-        "surround_db": -19.7,
+        "surround_db": -16.4,
         "window_db": -54.3,
-        "drop_db": 34.6,
+        "drop_db": 37.9,
         "pass": true
       }
     ],
@@ -43,7 +43,7 @@
         "kind": "heartbeat",
         "t0": 8,
         "t1": 15,
-        "band_ratio_db": -9.7,
+        "band_ratio_db": -9.8,
         "hp200_dbfs": -33.9,
         "pass": true
       },
@@ -52,8 +52,8 @@
         "kind": "sub_drop",
         "t0": 16,
         "t1": 17.2,
-        "band_ratio_db": -8.8,
-        "hp200_dbfs": -22.7,
+        "band_ratio_db": -9.5,
+        "hp200_dbfs": -23.4,
         "pass": true
       }
     ]

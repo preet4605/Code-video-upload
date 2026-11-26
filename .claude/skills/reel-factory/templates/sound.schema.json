@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "reel-factory sound.json cue sheet",
+  "description": "Validated for real by lib/audio/cues.mjs (unknown kinds/events, licences, ranges are errors). See references/sound.md.",
+  "type": "object",
+  "required": ["seed", "cues"],
+  "properties": {
+    "seed": { "type": "integer", "description": "Master seed. Each cue is seeded from hash(seed, cue.id), so adding a cue never changes another." },
+    "buses": {
+      "type": "object",
+      "description": "Bus trim in dB applied at the mix. Defaults: vo 0, sfx -3, music -12, ambience -14, room -26.",
+      "properties": { "vo": { "type": "number" }, "sfx": { "type": "number" }, "music": { "type": "number" }, "ambience": { "type": "number" }, "room": { "type": "number" } },
+      "additionalProperties": false
+    },
+    "ducking": {
+      "type": "object",
+      "description": "Music + ambience duck under VO. Values outside the ranges are clamped with a warning.",
+      "properties": { "depth_db": { "type": "number", "minimum": 4, "maximum": 6 }, "attack_s": { "type": "number", "minimum": 0.01, "maximum": 0.05 }, "release_s": { "type": "number", "minimum": 0.3, "maximum": 0.8 } }
+    },
+    "space": {
+      "type": "object",
+      "description": "Default reverb send per layer: { sfx: { preset, send_db } }. A cue overrides it with its own reverb, or reverb:false.",
+      "additionalProperties": { "$ref": "#/$defs/reverb" }
+    },
+    "cues": { "type": "array", "items": { "$ref": "#/$defs/cue" } }
+  },
+  "$defs": {
+    "when": { "oneOf": [{ "type": "string", "description": "timeline event name (timeline.events, e.g. line03_end)" }, { "type": "number", "description": "seconds" }] },
+    "reverb": { "oneOf": [{ "enum": ["room", "hall", "corridor", "outdoor"] }, { "const": false }, { "type": "object", "required": ["preset"], "properties": { "preset": { "enum": ["room", "hall", "corridor", "outdoor"] }, "send_db": { "type": "number" } } }] },
+    "cue": {
+      "type": "object",
+      "required": ["id", "at", "kind"],
+      "properties": {
+        "id": { "type": "string", "description": "Unique. Also the seed key." },
+        "at": { "$ref": "#/$defs/when" },
+        "offset_s": { "type": "number" },
+        "until": { "$ref": "#/$defs/when", "description": "End of a bed / drop. Optional for one-shots." },
+        "until_offset_s": { "type": "number" },
+        "layer": { "enum": ["sfx", "music", "ambience", "room"], "description": "Defaults to the kind's layer." },
+        "kind": { "type": "string", "description": "Synth kind (impact, creak, footsteps, drip, pluck, wind, rain, room_tone, heartbeat, breath, riser, sub_drop, stinger, whoosh, cicadas, bell, ring, crackle, shuffle, noise_swell, hum, slap, thump, underscore, drone, pad, piano_motif, strings_tension), the automation kind 'drop', or a free label for generated/library cues." },
+        "params": { "type": "object" },
+        "gain_db": { "type": "number", "description": "Relative to the kind's default level." },
+        "gain_curve": { "type": "array", "items": { "type": "object", "required": ["at", "db"], "properties": { "at": { "$ref": "#/$defs/when" }, "offset_s": { "type": "number" }, "db": { "type": "number", "description": "<= -90 means silent" } } } },
+        "pan": { "oneOf": [{ "type": "number", "minimum": -1, "maximum": 1 }, { "type": "object", "required": ["from", "to"], "properties": { "from": { "type": "number" }, "to": { "type": "number" } } }] },
+        "binaural": { "type": "boolean", "description": "false disables ITD/ILD for this cue." },
+        "reverb": { "$ref": "#/$defs/reverb" },
+        "filter": { "type": "object", "properties": { "lp_hz": { "type": "number" }, "hp_hz": { "type": "number" } } },
+        "fade_in_s": { "type": "number" },
+        "fade_out_s": { "type": "number" },
+        "tags": { "type": "array", "items": { "type": "string" }, "description": "'scare' = QA requires >= 0.5 s relative silence before it and checks event anchoring; 'accent' = an intended loudness spike; 'phone' = run the phone check on it." },
+        "source": { "enum": ["synth", "generated", "library"], "default": "synth" },
+        "file": { "type": "string", "description": "Required for generated/library: WAV path relative to the project." },
+        "licence": { "oneOf": [{ "type": "string" }, { "type": "object", "properties": { "name": { "type": "string" }, "url": { "type": "string" }, "credit": { "type": "string" }, "proof": { "type": "string" } } }], "description": "Required for generated/library. Missing = error." },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

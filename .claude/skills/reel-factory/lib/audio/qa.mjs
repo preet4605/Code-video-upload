@@ -100,7 +100,9 @@ export function preScareSilence({ L, R, sr = SR, scares, cfg = AUDIO_QA }) {
   for (const s of scares) {
     const t = s.onset_s; const w0 = t - cfg.silenceBeforeScareS, w1 = t - 0.02;
     if (w0 - cfg.silenceSurroundS < -0.001 && w0 < 1.0) { per.push({ id: s.id, onset_s: r2(t), skipped: 'not enough lead-in before the scare to measure surrounding level' }); continue; }
-    const sur = msDb(ms(m, Math.max(0, w0 - cfg.silenceSurroundS) * sr, w0 * sr)); const win = msDb(ms(m, w0 * sr, w1 * sr));
+    // surrounding level = 80th percentile of 100 ms block powers over the 4 s before the window (robust to a longer silence that began earlier)
+    const blocks = []; const s0 = Math.max(0, w0 - cfg.silenceSurroundS) * sr, bl = 0.1 * sr; for (let a = s0; a + bl <= w0 * sr; a += bl) blocks.push(ms(m, a, a + bl)); blocks.sort((x, y) => x - y);
+    const sur = msDb(blocks.length ? blocks[Math.min(blocks.length - 1, Math.floor(blocks.length * 0.8))] : 0); const win = msDb(ms(m, w0 * sr, w1 * sr));
     const drop = sur - win; const trivially = sur < -60;
     per.push({ id: s.id, onset_s: r2(t), surround_db: r1(sur), window_db: r1(win), drop_db: r1(drop), pass: trivially || drop >= cfg.silenceRelDb });
   }

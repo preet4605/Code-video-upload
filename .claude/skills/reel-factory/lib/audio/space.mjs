@@ -19,7 +19,7 @@ export function placeStereo(x, pan = 0, { binaural = false, sr = SR } = {}) {
   for (let i = 0; i < n; i++) { L[i] = x[i] * gl; R[i] = x[i] * gr; }
   if (!binaural || Math.abs(pan) < 0.02) return { L, R };
   const a = Math.abs(clamp(pan, -1, 1));
-  const delay = a * MAX_ITD_S * sr;
+  const delay = a * (MAX_ITD_S - 0.00015) * sr; // the head-shadow lowpass adds ~0.15 ms of group delay: total stays <= 0.6 ms
   const ild = dbToLin(-3 * a);
   const fc = 20000 * Math.pow(3200 / 20000, a); // head shadow: 20 kHz -> 3.2 kHz as the source moves to the side
   const shadow = (s) => { const f = applyBiquad(s, biquadCoefs('lp', Math.min(fc, sr * 0.45), 0.6, sr)); const o = delayFrac(f, delay); for (let i = 0; i < o.length; i++) o[i] *= ild; return o; };

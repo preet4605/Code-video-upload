@@ -1,0 +1,70 @@
+{
+  "fails": [],
+  "warns": [
+    "audio: loudnorm pass 2 reported \"dynamic\" normalization (measured LRA 13.7, TP -2.28); using one fixed gain + limiter instead so designed silences are preserved"
+  ],
+  "verified": [
+    "licences: all audio is tier-A synthesis (no third-party assets)",
+    "scare cue \"scare_thud\" is anchored to event \"line08_start\" (offset 0.000 s <= 1 frame); the visual must use the same event",
+    "true peak after encode (decoded, 4x oversampled): -1.66 dBTP (limit -1)",
+    "short-term loudness: max -9.9 LUFS (target -14); 4 intended scare spike(s), 0 unintended",
+    "pre-scare silence: 1 scare(s), drops 12.9 dB (need >= 10)",
+    "phone check (200 Hz high-pass proxy, sfx stem): 3 sub/heartbeat cue(s) keep 150-400 Hz share >= -10.1 dB (limit -20)"
+  ],
+  "unverified": [
+    "mono fold-down not measured (no voiceover file or no spoken spans); a wide ambience bed alone is not a voice-compatibility problem",
+    "voice clarity not measured (no voiceover file or no spoken spans); ducking depth unverified",
+    "whether the sound design is good or scary: only measurable defects are gated; listen with headphones and on a phone speaker"
+  ],
+  "values": {
+    "licences": {
+      "required": 0,
+      "missing": []
+    },
+    "true_peak": {
+      "true_peak_dbtp": -1.66,
+      "sample_peak_dbfs": -1.81,
+      "clipped_samples": 0
+    },
+    "short_term_max_lufs": -9.9,
+    "pre_scare": [
+      {
+        "id": "scare_thud",
+        "onset_s": 38.08,
+        "surround_db": -17.6,
+        "window_db": -30.5,
+        "drop_db": 12.9,
+        "pass": true
+      }
+    ],
+    "phone": [
+      {
+        "id": "heart",
+        "kind": "heartbeat",
+        "t0": 27.78,
+        "t1": 36.95,
+        "band_ratio_db": -10.1,
+        "hp200_dbfs": -42.8,
+        "pass": true
+      },
+      {
+        "id": "scare_thud",
+        "kind": "sub_drop",
+        "t0": 38.08,
+        "t1": 39.28,
+        "band_ratio_db": -9.3,
+        "hp200_dbfs": -29.5,
+        "pass": true
+      },
+      {
+        "id": "twist_hit",
+        "kind": "sub_drop",
+        "t0": 51.07,
+        "t1": 52.27,
+        "band_ratio_db": -9.2,
+        "hp200_dbfs": -28.4,
+        "pass": true
+      }
+    ]
+  }
+}

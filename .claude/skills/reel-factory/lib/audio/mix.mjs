@@ -106,7 +106,7 @@ export function normalizeTwoPass({ ffmpeg, inFile, outFile, I = -14, TP = -1.5, 
   if (p2.status !== 0 || type !== 'linear') {
     mode = 'linear-gain+limiter (fallback)';
     warnings.push(`loudnorm pass 2 reported "${type}" normalization (measured LRA ${mlra}, TP ${mtp}); using one fixed gain + limiter instead so designed silences are preserved`);
-    const gain = clamp(I - mi, -30, 30); const lim = Math.pow(10, (TP - 0.6) / 20).toFixed(4);
+    const gain = clamp(I - mi, -30, 30); const lim = Math.pow(10, (TP - 1.0) / 20).toFixed(4); // 1 dB extra headroom: AAC encoding overshoots the limiter ceiling by a few tenths of a dB
     const p3 = spawnSync(ffmpeg, ['-hide_banner', '-y', '-i', inFile, '-af', `volume=${gain.toFixed(2)}dB,alimiter=limit=${lim}:attack=1:release=60:level=disabled`, '-ar', '48000', ...wav, tmp], { encoding: 'utf8' });
     if (p3.status !== 0) throw new Error(`fallback normalization failed: ${String(p3.stderr).slice(-200)}`);
   }

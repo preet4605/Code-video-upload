@@ -32,7 +32,7 @@
         "steps_start",
         "end"
       ],
-      "render_ms": 4548.683
+      "render_ms": 4707.965
     },
     {
       "id": "room",
@@ -51,7 +51,7 @@
         "start",
         "end"
       ],
-      "render_ms": 245.321
+      "render_ms": 279.019
     },
     {
       "id": "wind",
@@ -74,7 +74,7 @@
         "riser_start",
         "end"
       ],
-      "render_ms": 635.969
+      "render_ms": 570.736
     },
     {
       "id": "drip_a",
@@ -91,7 +91,7 @@
       "events": [
         "start"
       ],
-      "render_ms": 19.022
+      "render_ms": 17.717
     },
     {
       "id": "steps",
@@ -108,7 +108,7 @@
       "events": [
         "steps_start"
       ],
-      "render_ms": 65.663
+      "render_ms": 73.513
     },
     {
       "id": "drip_b",
@@ -125,7 +125,7 @@
       "events": [
         "start"
       ],
-      "render_ms": 4.267
+      "render_ms": 4.25
     },
     {
       "id": "door_creak",
@@ -142,7 +142,7 @@
       "events": [
         "creak"
       ],
-      "render_ms": 61.764
+      "render_ms": 65.616
     },
     {
       "id": "heart",
@@ -161,7 +161,7 @@
         "heart_start",
         "silence_start"
       ],
-      "render_ms": 65.57
+      "render_ms": 76.568
     },
     {
       "id": "drip_c",
@@ -178,7 +178,7 @@
       "events": [
         "start"
       ],
-      "render_ms": 19.803
+      "render_ms": 18.389
     },
     {
       "id": "rise",
@@ -195,7 +195,7 @@
       "events": [
         "riser_start"
       ],
-      "render_ms": 60.643
+      "render_ms": 66.261
     },
     {
       "id": "silence",
@@ -232,7 +232,7 @@
       "events": [
         "scare"
       ],
-      "render_ms": 66.193
+      "render_ms": 67.082
     },
     {
       "id": "scare_sub",
@@ -249,7 +249,7 @@
       "events": [
         "scare"
       ],
-      "render_ms": 20.749
+      "render_ms": 25.221
     },
     {
       "id": "after_drip",
@@ -266,7 +266,7 @@
       "events": [
         "scare"
       ],
-      "render_ms": 7.322
+      "render_ms": 10.398
     }
   ]
 }
