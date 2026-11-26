@@ -5,3 +5,5 @@ examples/*/out/
 __pycache__/
 *.pyc
 /_*.mjs
+examples/*/audio/*.wav
+_dbg*.mjs
