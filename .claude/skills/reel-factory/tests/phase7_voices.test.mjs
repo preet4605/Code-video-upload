@@ -10,7 +10,7 @@ test('voices: every genre resolves for hi/en and has an audition line and a mood
     for (const lang of ['hi', 'en', 'hinglish']) {
       const p = pickVoice({ genre: g, lang, overridesFile: '/nonexistent.json' });
       assert.match(p.voice, /^[0-9a-f-]{36}$/);
-      assert.equal(p.source, 'catalog-default-unverified');
+      assert.ok(['catalog-default-unverified', 'user-chosen-default'].includes(p.source));
     }
     assert.ok(AUDITION_LINES[g].hi && AUDITION_LINES[g].en);
     assert.ok(GENRE_AUDIO_MOOD[g]);

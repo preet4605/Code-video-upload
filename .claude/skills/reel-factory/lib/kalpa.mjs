@@ -115,7 +115,7 @@ export async function synth({ text, voice, model = DEFAULT_MODEL, temperature, s
     if (!res.ok) {
       last = await toError(res);
       if (!RETRYABLE.has(res.status) || attempt === MAX_ATTEMPTS) throw last;
-      const delayMs = last.retryAfterS != null ? last.retryAfterS * 1000 : backoffMs * attempt;
+      const delayMs = last.retryAfterS != null ? (res.status === 429 ? last.retryAfterS * 1000 : Math.max(last.retryAfterS * 1000, backoffMs * attempt)) : backoffMs * attempt;
       log(`kalpa ${res.status}, retry ${attempt}/${MAX_ATTEMPTS - 1} in ${Math.round(delayMs)}ms`);
       await wait(delayMs);
       continue;

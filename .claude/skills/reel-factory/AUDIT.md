@@ -129,3 +129,16 @@ A speech-band stub voice (-18.5 LUFS per line) through per-line synthesis and th
 Measured on the user's reference reels vs ours (24 frames each, 270x480): references sharp-edge detail 0.031-0.075, contrast 27-60; V5 examples 0.011-0.015 and 20-24. Targets (floors) 0.0246 / 21.3, at most 6 dead cells; aims 0.058 / 41.
 Demo run (examples/visual-loop-demo/visual_loop/log.json): iteration 1 (typical flat first draft) FIX on every shot; iteration 2 (cartoon kit) caught by eye: captions covering faces and a mis-framed close-up the metrics passed; iteration 3 fixed framing; iteration 4 converged, with one regression flagged by the loop and justified in the critique (light pool reduced background edges on purpose).
 Not measured: beauty, style consistency across reels, character model consistency. Human review remains final.
+
+---
+
+# reel-factory 1.0.0-p0: gaps closed
+
+Closed:
+- **Gates existed but were not enforced (horror).** A shipped report said SHIP with `visual-loop: not run` and `weak escalation 1.26 (< 1.4)` as warnings. Now, for `brief.genre === "horror"`, not-run visual loop => FIX and escalation < 1.4 => FAIL. Waivers only via `qa.json` (`require_visual_loop: false`, `horror.escalationWeakIsFail: false`). Shown failing on broken fixtures in `tests/phase10_p0.test.mjs` (escalation 1.26, no loop).
+- **SHIP overclaiming.** `qa_report.json` has `contract_version` "1.0", `verified` (with values) and `unverified` (hook strength, fear/humour, pronunciation, taste, facts, real phone playback, plus anything skipped). The CLI prints the unverified list.
+- **Install-failure class (partly).** `doctor.mjs` checks bundled fonts, Devanagari shaping (canvas measure > 0), ffmpeg filters (loudnorm, sidechaincompress, ebur128, freezedetect, blackdetect, silencedetect) and KALPA_API_KEY presence (never the value).
+- **Bloated SKILL.md / 2 failing size tests.** 6,110 B -> ~5.0 KB; song-reel detail already in `references/song-reel-mode.md`.
+- **Endless fix loops.** SKILL.md rule 10: max 3 QA fix passes, then hand to the human.
+
+Still open: pacing from frame differences, automatic text-under-safe-zone detection, two-pass loudnorm, SFX-onset checks, no ASR. "Verified" lists what was measured on this MP4; it is not a quality score.

@@ -473,7 +473,9 @@ test('listTtsProviders(), detectTTS("kalpa"), and synthesizeTts() support Kalpa 
     assert.deepEqual(detectTTS('auto'), { provider: 'kalpa-labs' });
 
     const calls = [];
-    const fakeWav = Buffer.from('RIFF\x00\x00\x00\x00WAVEfmt ', 'ascii');
+    const wavPath = path.join(tmpDir, 'src.wav');
+    execFileSync('ffmpeg', ['-v', 'error', '-y', '-f', 'lavfi', '-i', 'sine=frequency=300:duration=0.4', '-c:a', 'pcm_s16le', wavPath]);
+    const fakeWav = fs.readFileSync(wavPath);
     globalThis.fetch = async (url, init) => {
       calls.push({ url, init });
       return {
@@ -495,7 +497,7 @@ test('listTtsProviders(), detectTTS("kalpa"), and synthesizeTts() support Kalpa 
     assert.equal(resHi.provider, 'kalpa-labs');
     assert.equal(calls[0].url, 'https://api.kalpalabs.ai/v1/tts/1eb6c010-34e0-477c-9d24-e915f853359e');
     assert.equal(calls[0].init.headers.Authorization, 'Bearer dummy-kalpa-key');
-    assert.deepEqual(JSON.parse(calls[0].init.body), { text: 'नमस्ते दुनिया' });
+    assert.deepEqual(JSON.parse(calls[0].init.body), { text: 'नमस्ते दुनिया', model: 'kalpa-tts-1', sample_rate: 48000 });
     assert.deepEqual(fs.readFileSync(outHi), fakeWav);
 
     const outEn = path.join(tmpDir, 'vo_en.wav');
@@ -508,7 +510,7 @@ test('listTtsProviders(), detectTTS("kalpa"), and synthesizeTts() support Kalpa 
     });
     assert.equal(resEn.ok, true);
     assert.equal(calls[1].url, 'https://api.kalpalabs.ai/v1/tts/dda5319f-3b81-4124-b69e-9241eb510b77');
-    assert.deepEqual(JSON.parse(calls[1].init.body), { text: 'Hello world' });
+    assert.deepEqual(JSON.parse(calls[1].init.body), { text: 'Hello world', model: 'kalpa-tts-1', sample_rate: 48000 });
   } finally {
     globalThis.fetch = origFetch;
     fs.rmSync(tmpDir, { recursive: true, force: true });

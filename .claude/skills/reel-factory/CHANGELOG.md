@@ -1,5 +1,13 @@
 # Changelog
 
+## reel-factory 1.0.0-p0
+- Renamed/installed as `reel-factory`. SKILL.md rewritten (< 5500 B): 12 hard rules, two human checkpoints (script approved, visual loop passed), "READ x WHEN y" pointers. Song-reel detail lives in `references/song-reel-mode.md`; new `references/qa-honesty.md`.
+- QA honesty: `qa_report.json` (and `qa_video.mjs`/`master_and_qa.mjs` output) now carries `contract_version: "1.0"`, `verified: [...]` (measured, with values) and `unverified: [...]` (hook strength, fear/humour, pronunciation, taste, facts, phone playback, plus skipped checks). The CLI summary prints the unverified list. Existing fields unchanged.
+- Horror enforcement (`brief.genre === "horror"`): visual loop not run => FIX (`run scripts/visual_loop.mjs --project <dir>`); weak escalation (< 1.4) => FAIL instead of warn. Waivers only via `qa.json`: `require_visual_loop: false`, `horror.escalationWeakIsFail: false`. `smoke_test` briefs downgrade to warnings. Other genres unchanged. Root cause: a shipped report said SHIP with "visual-loop: not run" and "weak escalation 1.26 (< 1.4)" as warnings.
+- Cap: max 3 QA fix passes, then hand to the human with measured numbers (SKILL.md rule 10).
+- `doctor.mjs` adds `bundled_fonts`, `devanagari_shaping`, `ffmpeg_filters` (loudnorm, sidechaincompress, ebur128, freezedetect, blackdetect, silencedetect), `tts_keys` (KALPA_API_KEY set/not set; value never printed), `preflight_ready`, `warnings`.
+- Tests: `tests/phase10_p0.test.mjs`.
+
 ## V6.2.1 (25 Nov 2026)
 - Voice echo is now opt-in. `--audio-mood horror`/`suspense` used to add `aecho` 45|90 ms to the narration, which sounded like an empty room (reported by Love on Zero Shadow Day). The mood now applies EQ only; pass `master_and_qa.mjs --voice-echo` to add the echo when the user asks for it. `getMoodVoiceFilter(mood, { echo })` in lib/audio_sfx.mjs. Verified: horror default measures like the dry voice; `--voice-echo` restores the 45/90 ms echo.
 
