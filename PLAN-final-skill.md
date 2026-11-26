@@ -1,6 +1,6 @@
-# Plan v2: code-video-studio → one-command reel generator
+# Plan v3: code-video-studio → one-command reel generator
 
-Status: plan only, nothing built. 2026-11-25. v1 was attacked by the advisor and by me; changes are in section 0.
+Status: plan only, nothing built. 2026-11-26. v2 = advisor/self attack (section 0). v3 = five research agents on public repos and docs (section 5). Research was read from public pages; nothing was run except ffmpeg filter syntax and pip availability.
 
 ## 0. What the fight changed
 
@@ -56,3 +56,38 @@ P0 → P1 → P2 gives the working command with the proven voice and enforced ga
 
 ## 4. Decisions needed
 1. Go on P0–P2? 2. Commit the package (11 MB minus zip/sheets) to this branch as `reel-factory`? 3. Which 3 acceptance reels? 4. Send the 4-line voice A/B first?
+
+## 5. Research merge (v3): what we adopt, from where, under what licence
+
+Rule: copy code only from MIT/Apache/BSD. AGPL (OpenMontage) and Remotion's source-available licence: **ideas only, write our own**.
+
+| # | Adopt | Source (licence) | Closes | Phase |
+|---|---|---|---|---|
+| 1 | `run.json` per project: stage, input hash, outputs, status; skip when hash+outputs match; script/plan carry `approved:{sha256}` and the renderer exits non-zero if the script changed after approval | OpenMontage idea (AGPL, idea only), MPT (MIT) | unresumable runs, forgeable checkpoints | P2 |
+| 2 | Atomic outputs: write `.tmp`, ffprobe duration > 0 and decodable, then rename. Reject zero-length audio | MoneyPrinterTurbo (MIT) | half-written files, "durationInFrames must be positive" | P1 |
+| 3 | Named time-events from per-line TTS durations (`line3_start`/`line3_end`); scenes use `at()`/`dur()` not raw seconds | Motion Canvas pattern (MIT) | re-TTS breaks hand timing | P1/P2 |
+| 4 | Every QA gate returns `{verified:[], unverified:[]}`; final message lists unverified items; `contract_version` separate from skill version | kajisho5/ffmpeg-skill (MIT) | overclaiming SHIP | P0 |
+| 5 | Capped fix loop: max 3 QA passes, then hand to the human with measured numbers; `SKILL.md` = ≤12 hard rules, rest in `references/` with "read X when Y" | browser-use/video-use (MIT), Anthropic skill-creator | endless loops, bloated SKILL.md (our 2 failing tests) | P0/P2 |
+| 6 | `plan_lint` before render (repeated scenes, static seconds per scene, text-only scenes) + 4 sampled frames after render for blankness | OpenMontage idea | slideshow / flat scenes | P4 |
+| 7 | Content-hash render cache per segment: hash(scene source + cfg + timeline slice + ffmpeg version) | Manim (MIT) | slow re-renders | P2 |
+| 8 | Frame-pure scenes (`scene(ctx, frame, t, cfg)`, seeded PRNG per frame) then chunked parallel render, concat, mux audio once | Remotion idea (restricted, idea only), Revideo (MIT) | slow render | **later**, only if render time is a measured problem |
+| 9 | Caption presets (JSON: words/page, lines, active colour, emphasis, stroke, shadow, caps, punctuation, supersized keywords), width-aware wrap, glyph centering | Captions.ai / Submagic docs, MPT (MIT) | basic captions | P4 |
+| 10 | Hook lint on first 2-3 s (text present, payoff, spoken start) named "hook lint", not "retention" | OpusClip axes (marketing), Meta/Instagram 3 s + 2 s skip signals (primary) | hook strength | P4 |
+| 11 | Preflight: ffmpeg, fonts, `KALPA_API_KEY`, Node version; never retry a POST after transport error (double billing) | ShortGPT/SVM issue families | install-failure class | P0/P1 |
+| 12 | Two-pass loudnorm on the final mix (`I=-16:TP=-1.5:LRA=11`, then linear pass with measured values; check pass 2 says Linear) | ffmpeg strings run in sandbox, levels measured only | loudness | P4, only if a reel misses -14..-16 |
+
+### Word timing (the open technical risk)
+- Plan: forced-align the **known script text** per Kalpa line with `Harveenchadha/vakyansh-wav2vec2-hindi-him-4200` (MIT, 378 MB, 20 ms frames), CPU torch. No ASR transcript needed. Hinglish Latin words: transliterate to Devanagari for alignment only, keep display tokens.
+- Verified: pip wheels download, HuggingFace reachable (ranged download returned 206), `forced_align` exists in torchaudio 2.11.1. **Not verified: the alignment itself was never run, Hindi accuracy unmeasured.** torchaudio's `forced_align` was announced as deprecated; fallback is a ~30-line numpy Viterbi.
+- Gate before adopting: align 5 real Kalpa lines, compare word boundaries against the waveform energy dips and the user's ear. If it fails, keep the current estimate and use akshara-weighted allocation inside voiced spans.
+- Reject: stable-ts / faster-whisper word timestamps (cross-attention, no better than now), WhisperX (too heavy), AI4Bharat IndicWav2Vec (gated), MMS_FA (CC-BY-NC, 1.26 GB).
+- Mispronunciation check: greedy-decode the same emissions, per-word CER vs script. Experimental; it flags, a human judges.
+
+### Explicitly not adopting
+Remotion code or Chromium capture; OpenMontage code / 100-tool sprawl / LLM-only orchestration; Diffusion Studio (unclear licence); wholesale Motion Canvas or Revideo; editly WebGL layer and random transitions; MoviePy; stock-footage-first look (opt-in layer later at most, licence risk); auto-upload; in-memory queues; any "60% retention", fixed cut-interval or "85% watch muted" folklore; paid skill bundles (the listings showed no checkpoint or QA tooling, contents not viewable).
+
+### Honest limits of this research
+Public pages only; a fetch tool summarised many pages; star counts conflict across sites; Remotion determinism, Revideo worker split, Motion Canvas event storage unverified; no paid skill's contents seen. Safe-zone bottom margin has no official spec: verify in-app. Real retention can only be measured on the user's own account View Rate.
+
+### Revised order
+P0 (package copy, tests, gates, verified/unverified, preflight, 3-pass cap) → P1 (voice, atomic, events, **alignment test on 5 lines**) → P2 (`run.json`, hashes, runner, workflow) → **P3 spike** → P4 (plan_lint, hook lint, caption presets) → P5 acceptance. Parallel render (row 8) stays parked.
