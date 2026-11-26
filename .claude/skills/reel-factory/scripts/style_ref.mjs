@@ -8,7 +8,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { resolveBin } from '../lib/runtime.mjs';
-import { frameMetrics, aggregate } from '../lib/visual_metrics.mjs';
+import { frameMetrics, aggregate, DEFAULT_CAPTION_BAND } from '../lib/visual_metrics.mjs';
 
 export const AW = 270, AH = 480;
 
@@ -20,13 +20,13 @@ export function sampleFrames(file, n = 24) {
   const out = [];
   for (const t of times) {
     const r = spawnSync(ffmpeg, ['-v', 'error', ...(isImg ? [] : ['-ss', t.toFixed(2)]), '-i', file, '-frames:v', '1', '-vf', `scale=${AW}:${AH}`, '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], { maxBuffer: 1 << 24 });
-    if (r.stdout && r.stdout.length === AW * AH * 3) out.push(frameMetrics(r.stdout, AW, AH, 3));
+    if (r.stdout && r.stdout.length === AW * AH * 3) out.push(frameMetrics(r.stdout, AW, AH, 3, { ignoreBands: [DEFAULT_CAPTION_BAND] })); // captions are not scene detail
   }
   return out;
 }
 
 export function buildTargets(refStats, { margin = 0.8, name = 'custom', mood = null } = {}) {
-  const pick = (k) => refStats.map((r) => r.agg[k]);
+  const pick = (k) => refStats.map((r) => r.agg[k] ?? 0);
   const min = (k) => +(Math.min(...pick(k)) * margin).toFixed(4);
   const med = (k) => { const v = pick(k).slice().sort((a, b) => a - b); const m = v.length >> 1; return +(v.length % 2 ? v[m] : (v[m - 1] + v[m]) / 2).toFixed(4); };
   return {
@@ -41,6 +41,9 @@ export function buildTargets(refStats, { margin = 0.8, name = 'custom', mood = n
     ink: { aim: med('ink') },
     aim_empty_cells: Math.round(med('empty_cells')),
     max_empty_cells: Math.max(1, Math.round(Math.max(...pick('empty_cells')) + 1)),
+    // lit subject / subject scale floors, only when the reference stats carry them (floor = weakest reference x margin)
+    ...(pick('subject_scale').every((v) => v > 0) ? { subject_scale: { min: +Math.min(0.22, Math.min(...pick('subject_scale')) * margin).toFixed(3) } } : {}),
+    ...(mood === 'dark' && pick('lit_fraction').every((v) => v > 0) ? { lit_fraction: { min: +(Math.min(...pick("lit_fraction")) * margin).toFixed(4) }, lit_regions: { min: 1 } } : {}),
     ...(mood === 'dark' ? {
       // dark looks (horror): cap brightness and the number of hues, so a bright multicolour frame fails
       mood: 'dark',

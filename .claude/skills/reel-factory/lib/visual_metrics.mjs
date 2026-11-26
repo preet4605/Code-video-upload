@@ -189,7 +189,6 @@ export function subjectScale(buf, w, h, ch, skip) {
   const sal = new Float32Array(P.length);
   for (let i = 0; i < sal.length; i++) if (V[i]) sal[i] = Math.min(1, 0.4 * (lc[i] / dl) + 0.3 * (ed[i] / de) + 0.3 * (di[i] / dd));
   const on = Uint8Array.from(sal, (v) => (v >= 0.4 ? 1 : 0));
-  if (globalThis.__SALDBG) globalThis.__SALDBG(on, sal, gw, gh);
   // merge blobs within 1 cell (a figure with a thin gap between head and body is one subject; a crowd stays many blobs), then take the heaviest
   const dil = new Uint8Array(on.length);
   for (let gy = 0; gy < gh; gy++) for (let gx = 0; gx < gw; gx++) {
@@ -251,14 +250,14 @@ export function deficits(m, T) {
 // Shot fingerprints and reel-level similarity (reused backdrop, near-duplicate shots)
 // ---------------------------------------------------------------------------------------------------------
 export const SIMILARITY_DEFAULTS = Object.freeze({
-  dup_hash_sim: 0.9,       // adjacent shots: dHash similarity >= this ...
+  dup_hash_sim: 0.88,      // adjacent shots: dHash similarity >= this ...
   dup_hist_dist: 0.2,      // ... and colour histogram distance <= this => near-duplicate
   backdrop_hash_sim: 0.85, // masked-backdrop dHash similarity >= this ...
-  backdrop_cell_diff: 0.08,// ... and mean abs per-cell colour difference (0..1) <= this => same backdrop
+  backdrop_cell_diff: 0.05,// ... and mean abs per-cell colour difference (0..1) <= this => same backdrop
   backdrop_share_max: 0.4, // flag when more than this share of shots share one backdrop
   backdrop_min_shots: 4    // do not judge reels shorter than this
 });
-const FW = 9, FH = 8;
+const FW = 9, FH = 8, BACKDROP_MIN_BITS = 20; // fewer comparable hash bits than this = too little unmasked background to judge
 
 // Fingerprint of one frame. mask(x,y)->true marks pixels that must not count (caption band, subject).
 function fingerprintOne(buf, w, h, ch, skipRow, maskFn) {
@@ -343,7 +342,7 @@ export function reelSimilarity(shots, opts = {}) {
   // backdrop clusters (union-find over pairs whose masked backdrops match)
   const parent = shots.map((_, i) => i);
   const find = (i) => (parent[i] === i ? i : (parent[i] = find(parent[i])));
-  for (const p of pairs) if (p.backdrop.bits >= 12 && p.backdrop.hash_sim >= C.backdrop_hash_sim && p.backdrop.cell_diff <= C.backdrop_cell_diff) parent[find(p.ai)] = find(p.bi);
+  for (const p of pairs) if (p.backdrop.bits >= BACKDROP_MIN_BITS && p.backdrop.hash_sim >= C.backdrop_hash_sim && p.backdrop.cell_diff <= C.backdrop_cell_diff) parent[find(p.ai)] = find(p.bi);
   const groups = new Map();
   shots.forEach((s, i) => { const r = find(i); if (!groups.has(r)) groups.set(r, []); groups.get(r).push(s.id); });
   const clusters = [...groups.values()].filter((g) => g.length >= 2).sort((a, b) => b.length - a.length);

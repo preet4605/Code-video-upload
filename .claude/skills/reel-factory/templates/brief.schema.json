@@ -378,6 +378,10 @@
     "smoke_test": {
       "type": "boolean",
       "description": "pipeline smoke test: horror gates downgrade to warnings"
+    },
+    "look": {
+      "type": "string",
+      "description": "Lighting look; selects visual targets. 'day'|'daylight'|'noon'|'bright'|'sunny'|'midday' use visual_targets.horror-day.json for horror; anything else (e.g. 'night','interior') uses the night template."
     }
   }
 }

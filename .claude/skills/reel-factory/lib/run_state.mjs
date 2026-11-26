@@ -64,5 +64,5 @@ export function scriptApprovalProblem(dir) {
   const ap = run?.approvals?.script;
   if (!ap?.sha256) return null;
   if (scriptHash(dir) === ap.sha256) return null;
-  return 'script changed after approval: re-approve with reel.mjs approve <dir> script';
+  return `script changed after approval: re-approve with reel.mjs approve ${dir} script`;
 }

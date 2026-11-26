@@ -74,5 +74,13 @@
     "aim": 0.0285
   },
   "aim_empty_cells": 2,
-  "max_empty_cells": 6
+  "max_empty_cells": 6,
+  "similarity": {
+    "dup_hash_sim": 0.88,
+    "dup_hist_dist": 0.2,
+    "backdrop_hash_sim": 0.85,
+    "backdrop_cell_diff": 0.05,
+    "backdrop_share_max": 0.4,
+    "backdrop_min_shots": 4
+  }
 }

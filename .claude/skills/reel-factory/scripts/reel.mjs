@@ -94,7 +94,7 @@ const DEFS = {
     run: (dir, ctx) => spawnNode('render_and_lint.mjs', ['--project', dir, '--json', ...(ctx.draft ? ['--draft'] : [])])
   },
   master_qa: {
-    hash: (dir) => hashFiles(dir, ['cache/render_manifest.json', 'timeline.json', 'brief.json', 'qa.json', 'voiceover.wav']),
+    hash: (dir, ctx) => hashString(hashFiles(dir, ['cache/render_manifest.json', 'timeline.json', 'brief.json', 'qa.json', 'voiceover.wav']) + ':' + (ctx.run?.stages?.render?.input_hash || '')),
     outputs: () => ['out/qa_report.json'],
     run: (dir) => {
       const brief = readJson(path.join(dir, 'brief.json'), {});
@@ -119,7 +119,7 @@ export async function runPipeline(dir, opts = {}, { commands = {}, log = console
   const stopAt = opts.stopAt || null;
   if (stopAt && !STAGES.includes(stopAt)) { log(`unknown stage "${stopAt}"; stages: ${STAGES.join(', ')}`); return { code: EXIT.USAGE }; }
   for (const f of [...force, ...skip]) if (!STAGES.includes(f)) { log(`unknown stage "${f}"; stages: ${STAGES.join(', ')}`); return { code: EXIT.USAGE }; }
-  const ctx = { draft: !!opts.draft, auto };
+  const ctx = { draft: !!opts.draft, auto, run };
   run.stages = run.stages || {};
   run.approvals = run.approvals || {};
   const reasons = new Set(run.unreviewed_reasons || []);

@@ -58,5 +58,23 @@
   },
   "hue_families": {
     "max": 3
-  }
+  },
+  "lit_fraction": {
+    "min": 0.02
+  },
+  "lit_regions": {
+    "min": 1
+  },
+  "subject_scale": {
+    "min": 0.22
+  },
+  "similarity": {
+    "dup_hash_sim": 0.88,
+    "dup_hist_dist": 0.2,
+    "backdrop_hash_sim": 0.85,
+    "backdrop_cell_diff": 0.05,
+    "backdrop_share_max": 0.4,
+    "backdrop_min_shots": 4
+  },
+  "look": "night"
 }
