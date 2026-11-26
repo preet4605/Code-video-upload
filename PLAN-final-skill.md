@@ -91,3 +91,37 @@ Public pages only; a fetch tool summarised many pages; star counts conflict acro
 
 ### Revised order
 P0 (package copy, tests, gates, verified/unverified, preflight, 3-pass cap) → P1 (voice, atomic, events, **alignment test on 5 lines**) → P2 (`run.json`, hashes, runner, workflow) → **P3 spike** → P4 (plan_lint, hook lint, caption presets) → P5 acceptance. Parallel render (row 8) stays parked.
+
+## 6. Audio plan (v4, from 3 research agents, 2026-11-26)
+
+Verdict: worth doing. Sound carries horror more than picture; today's SFX are generic oscillator/noise one-shots, there is no music, and the best sound work (ZSD `sound_design.py`, needs scipy) is trapped in one reel.
+
+Honest ceiling: code synthesis can do ambience, drones, risers, sub drops, stingers, heartbeats, wind, drips well; realistic foley (doors, cloth, footsteps on surfaces) from pure synthesis stays "game-like". Realistic foley needs generated or recorded sources.
+
+### Architecture: one cue sheet, three source tiers
+- `sound.json` cue sheet written by Claude, cues anchored to timeline events (`at: "line03_end"`, layer, kind, gain, pan, seed), never raw seconds.
+- Resolver per cue: **tier A** code synthesis (always available, free, deterministic) → **tier B** AI generation behind a key, cached by hash like VO → **tier C** curated library files with a licence manifest. Every non-synth asset logs source, licence, credit.
+- Layer buses: VO > SFX > music > ambience > room tone; ducking under VO; per-bus EQ.
+
+### Tier A upgrades (build now, no keys, own code only)
+Modal synthesis (impacts, doors, wood, metal), Karplus-Strong (drips, plucks), stick-slip friction (creaks), gusting wind, two-envelope heartbeat, risers, sub drops with 150-300 Hz harmonics for phones, synthetic convolution reverb (decaying noise IR + early reflections), simple ITD/ILD panning, an underscore generator (drones, pads, sparse piano/strings motifs from additive/modal synthesis). Port the ZSD `sound_design.py` recipes to Node so no scipy is needed.
+
+### Tier B (opt-in, needs the user's paid key; adapters only until chosen)
+- SFX: ElevenLabs Sound Effects API (`/v1/sound-generation`, 0.5-30 s, loop). Commercial on paid plans (SFX-specific terms not located).
+- Music: Lyria 3 via Gemini API (~$0.04-0.08 per song, paid tier only; licence text not fetched) or ElevenLabs Music (paid plans; film/TV/game carve-out per secondary source).
+- Never: MusicGen/AudioGen weights, AudioLDM 2, Tango (all non-commercial licences), Suno/Udio unofficial wrappers, any free tier.
+
+### Tier C (manual import, licence manifest required)
+Sonniss GDC bundles (commercial, no credit), Pixabay (commercial, can trigger claims; keep licence proof), Freesound CC0 / CC-BY (credit). Not: BBC Sound Effects (non-commercial), YouTube Audio Library (YouTube only).
+
+### Audio QA (measured, added to qa_report verified/unverified)
+- Voice clarity: VO vs bed energy in 1-4 kHz per spoken segment (bed ≥ 12 dB under VO; ducking 4-6 dB).
+- Phone check: high-pass 200 Hz render; every sub hit must keep audible harmonics.
+- Mono fold-down: VO level loss < 3 dB; mean correlation ≥ 0.
+- True peak ≤ -1 dBTP after encode; short-term LUFS spikes > target +3 LU flagged; two-pass loudnorm on the final mix.
+- Horror: ≥ 0.5 s relative silence before each sound scare; stinger onset within 1 frame of its visual event.
+- Licence manifest complete for every tier B/C asset.
+Unverified forever: whether it sounds good or scary. A human listens with headphones and on a phone speaker.
+
+### Open decision for the user
+Which paid provider, if any, for tier B (ElevenLabs SFX+Music, Lyria for music, or none). Tier A and QA proceed regardless.
