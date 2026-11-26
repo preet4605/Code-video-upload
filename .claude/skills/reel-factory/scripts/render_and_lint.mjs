@@ -3,6 +3,7 @@ import { execFileSync, spawn } from 'node:child_process';
 import { videoEncodeArgs, colorFilter, ENCODER_VERSION } from '../lib/encode.mjs';
 import { getSafeProfile, DEFAULT_SAFE_PROFILE } from '../lib/profiles.mjs';
 import { lintDirection } from '../lib/direction_lint.mjs';
+import { scriptApprovalProblem } from '../lib/run_state.mjs';
 import { lintStoryProject } from '../lib/story_lint.mjs';
 import crypto from 'node:crypto';
 import { once } from 'node:events';
@@ -849,6 +850,12 @@ async function main() {
   }
 
   const projectDir = path.resolve(opts.project);
+  // Approval lock: if reel.mjs recorded a script approval, a changed script blocks rendering (no run.json = unchanged behaviour).
+  const approvalProblem = scriptApprovalProblem(projectDir);
+  if (approvalProblem) {
+    console.error(opts.json ? JSON.stringify({ ok: false, error: approvalProblem }) : approvalProblem);
+    process.exit(1);
+  }
   const timelinePath = path.join(projectDir, 'timeline.json');
   const sceneModulePath = path.join(projectDir, 'scene.mjs');
 
