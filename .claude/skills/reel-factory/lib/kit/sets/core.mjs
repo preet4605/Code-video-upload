@@ -60,7 +60,7 @@ export function makeSet(def) {
   set.lightsAt = (cam, t = 0) => lightsAt(set, cam, t);
   set.render = (ctx, cam, t, o = {}) => render(set, ctx, cam, t, o);
   set.occluder = (o, cam, t = 0, filter) => { for (const L of set.layers) if (L.kind !== 'back' && (!filter || filter(L))) cam.layer(o, L.depth, (c, b) => L.draw(c, b, true, t), { fullBleed: L.fullBleed }); };
-  set.place = ({ z = 1.4, x = 0, meters = 1.6 } = {}) => ({ x: set.vp.x + x / z, feet: set.vp.y + set.groundH / z, height: (meters * set.upm) / z });
+  set.place = ({ z = 1.4, x = 0, meters = 1.6 } = {}) => ({ x: set.vp.x + (x * set.upm) / z, feet: set.vp.y + set.groundH / z, height: (meters * set.upm) / z });
   set.figureLight = (cam, at = [540, 1200], t = 0) => figureLight(set, cam, at, t);
   return set;
 }

@@ -133,11 +133,11 @@ export function schoolCourtyard(o = {}) {
     foliage(c, 930, 130, 300, 130, pal, { seed: seed + 21, n: 40, leaf: night ? '#0c1812' : '#3d6a30', lit: night ? '#1d3226' : '#b5d96a', dark: '#0a1409', size: 1.5 });
     const g = c.createLinearGradient(0, -40, 0, 420); g.addColorStop(0, rgba('#000', 0.35)); g.addColorStop(1, rgba('#000', 0)); c.fillStyle = g; c.fillRect(0, -40, DW, 460);
   } });
-  layers.push({ id: 'fg-corner', depth: 0.55, kind: 'fg', blur: 10, draw: (c, b) => {
-    // out-of-focus bucket + rope at the bottom-left
-    const bx = 60, by = DH + 20, g = c.createLinearGradient(bx - 150, 0, bx + 150, 0); g.addColorStop(0, '#6a5646'); g.addColorStop(0.5, '#2c2320'); g.addColorStop(1, '#0a0807');
-    c.fillStyle = g; c.beginPath(); c.moveTo(bx - 190, by); c.lineTo(bx - 150, by - 330); c.lineTo(bx + 170, by - 330); c.lineTo(bx + 200, by); c.closePath(); c.fill();
-    c.fillStyle = '#0a0807'; c.beginPath(); c.ellipse(bx + 10, by - 330, 160, 34, 0, 0, TAU); c.fill(); c.strokeStyle = rgba('#fff', 0.3); c.lineWidth = 5; c.beginPath(); c.ellipse(bx + 10, by - 330, 160, 34, 0, Math.PI * 1.1, Math.PI * 1.7); c.stroke();
+  layers.push({ id: 'fg-corner', depth: 0.55, kind: 'fg', blur: 9, draw: (c, b) => {
+    // out-of-focus verandah pillar at the left edge: lit rim, plaster, never a flat box
+    const x = -30, w = 150, g = c.createLinearGradient(x - w, 0, x + w, 0); g.addColorStop(0, shade(pal.wall, -0.6)); g.addColorStop(0.55, shade(pal.wall, -0.2)); g.addColorStop(1, shade(pal.wall, 0.1));
+    c.fillStyle = g; c.fillRect(x - w, b.y0, w * 2, b.h); c.save(); c.beginPath(); c.rect(x - w, b.y0, w * 2, b.h); c.clip(); cin.fillTexture(c, 'plaster', [x - w, b.y0, w * 2, b.h], { alpha: 0.5, scale: 1.4, ox: 0, oy: 0, seed: seed + 51 }); c.restore();
+    c.fillStyle = rgba('#fff', 0.5); c.fillRect(x + w - 10, b.y0, 10, b.h); c.fillStyle = shade(pal.wall, -0.15); c.fillRect(x - w, 1560, w * 2 + 20, 70); c.fillStyle = rgba(accent, 0.8); c.fillRect(x - w, 1700, w * 2 + 20, 220);
   } });
   const lights = [];
   if (night) {

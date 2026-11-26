@@ -1,0 +1,119 @@
+{
+ "targets": "templates/visual_targets.horror-day.json",
+ "keys": [
+  0.2,
+  0.5,
+  0.85
+ ],
+ "table": {
+  "s1_hook": {
+   "before": {
+    "sharp_edges": 0.0316,
+    "contrast": 30.0333,
+    "saturation": 0.0607,
+    "color_bins": 16.3333,
+    "mean_luma": 207.7333,
+    "p5_luma": 151.3333,
+    "lit_fraction": 1,
+    "lit_regions": 2,
+    "subject_scale": 0.2953,
+    "empty_cells": 9
+   },
+   "after": {
+    "sharp_edges": 0.0812,
+    "contrast": 65.2,
+    "saturation": 0.201,
+    "color_bins": 43.6667,
+    "mean_luma": 129.9667,
+    "p5_luma": 18.3333,
+    "lit_fraction": 0.8425,
+    "lit_regions": 2,
+    "subject_scale": 0.4757,
+    "empty_cells": 1
+   },
+   "deficits_before": [
+    "sharp_edges",
+    "contrast",
+    "saturation",
+    "p5_luma",
+    "empty_cells"
+   ],
+   "deficits_after": [
+    "color_bins",
+    "hue_families"
+   ]
+  },
+  "s2_dadi": {
+   "before": {
+    "sharp_edges": 0.0138,
+    "contrast": 76.2667,
+    "saturation": 0.1983,
+    "color_bins": 23,
+    "mean_luma": 87,
+    "p5_luma": 20.3333,
+    "lit_fraction": 0.485,
+    "lit_regions": 1,
+    "subject_scale": 0.5,
+    "empty_cells": 5.67
+   },
+   "after": {
+    "sharp_edges": 0.0258,
+    "contrast": 56.2,
+    "saturation": 0.4463,
+    "color_bins": 22.3333,
+    "mean_luma": 36.7667,
+    "p5_luma": 3.3333,
+    "lit_fraction": 0.2085,
+    "lit_regions": 1,
+    "subject_scale": 0.344,
+    "empty_cells": 7.67
+   },
+   "deficits_before": [
+    "sharp_edges"
+   ],
+   "deficits_after": [
+    "sharp_edges",
+    "empty_cells"
+   ]
+  },
+  "s5_hand": {
+   "before": {
+    "sharp_edges": 0.0035,
+    "contrast": 22.9667,
+    "saturation": 0.058,
+    "color_bins": 13,
+    "mean_luma": 210.7,
+    "p5_luma": 167.6667,
+    "lit_fraction": 1,
+    "lit_regions": 2,
+    "subject_scale": 0.2327,
+    "empty_cells": 11.67
+   },
+   "after": {
+    "sharp_edges": 0.0346,
+    "contrast": 64.7333,
+    "saturation": 0.1837,
+    "color_bins": 41.3333,
+    "mean_luma": 129.3,
+    "p5_luma": 4.6667,
+    "lit_fraction": 0.8555,
+    "lit_regions": 2,
+    "subject_scale": 0.4933,
+    "empty_cells": 6.33
+   },
+   "deficits_before": [
+    "sharp_edges",
+    "contrast",
+    "saturation",
+    "p5_luma",
+    "empty_cells"
+   ],
+   "deficits_after": [
+    "sharp_edges",
+    "saturation",
+    "color_bins",
+    "hue_families"
+   ]
+  }
+ }
+}
