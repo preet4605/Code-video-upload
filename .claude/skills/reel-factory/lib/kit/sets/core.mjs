@@ -93,7 +93,7 @@ function figureLight(set, cam, at, t) {
 
 function render(set, ctx, cam, t, o) {
   const subj = (o.subjects || []).map((s) => ({ ...s, kind: 'subject' }));
-  const lit = o.lit ?? set.palette.tod === 'night' || set.palette.tod === 'dusk' || set.forceMask;
+  const lit = o.lit ?? (set.palette.tod === 'night' || set.palette.tod === 'dusk' || !!set.forceMask);
   const lights = lit ? set.lightsAt(cam, t) : null;
   const lopt = { ambient: set.ambient ?? set.palette.amb, glow: set.glow ?? 0.3, ...(o.mask || {}) };
   const backs = set.layers.filter((L) => L.kind === 'back'), mids = set.layers.filter((L) => L.kind === 'lit'), fgs = set.layers.filter((L) => L.kind === 'fg');
@@ -106,6 +106,6 @@ function render(set, ctx, cam, t, o) {
   const rest = [...subj, ...fgs.map((L) => ({ kind: 'fg', depth: L.depth, L }))].sort((a, b) => b.depth - a.depth);
   for (const s of rest) {
     if (s.kind === 'fg') cam.layer(ctx, s.L.depth, (c, b) => s.L.draw(c, b, false, t), { fullBleed: s.L.fullBleed, blur: s.L.blur });
-    else s.draw(ctx, cam);
+    else { const k = ctx.canvas.width / DW; ctx.save(); ctx.setTransform(k, 0, 0, k, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; s.draw(ctx, cam); ctx.restore(); }
   }
 }

@@ -106,8 +106,8 @@ export function surface(c, path, bbox, { color, tex = 'plaster', texA = 0.6, sca
   c.save(); c.fillStyle = color; c.fill(path); c.clip(path);
   if (tex) cin.fillTexture(c, tex, [x0, y0, w, h], { alpha: texA, scale, ox: 0, oy: 0, seed, tint, blend });
   if (wear > 0.02) {
-    stains(c, [x0, y0, w, h], seed * 7 + 1, { n: Math.round(3 + wear * 12), color: stain, a: 0.08 + wear * 0.22, rmin: 40, rmax: 170 });
-    streaks(c, [x0, y0, w, h], seed * 7 + 2, { n: Math.round(wear * 9), color: stain, a: 0.1 + wear * 0.18, w: 7 });
+    stains(c, [x0, y0, w, h], seed * 7 + 1, { n: Math.round(3 + wear * 9), color: stain, a: 0.05 + wear * 0.14, rmin: 40, rmax: 170 });
+    streaks(c, [x0, y0, w, h], seed * 7 + 2, { n: Math.round(wear * 9), color: stain, a: 0.08 + wear * 0.14, w: 7 });
   }
   c.restore();
 }

@@ -8,3 +8,4 @@ __pycache__/
 examples/*/audio/*.wav
 _dbg*.mjs
 examples/*/audio/*.wav
+examples/*/_dev/
