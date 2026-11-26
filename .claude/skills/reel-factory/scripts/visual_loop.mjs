@@ -11,14 +11,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { createCanvas, GlobalFonts } from '@napi-rs/canvas';
-import { frameMetrics, aggregate, deficits } from '../lib/visual_metrics.mjs';
+import { frameMetrics, aggregate, deficits, shotFingerprint, reelSimilarity, selectTargetsFile, SIMILARITY_HINTS, DEFAULT_CAPTION_BAND } from '../lib/visual_metrics.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const KEYS = [0.2, 0.5, 0.85];
 export const RUBRIC = ['subject', 'depth', 'detail', 'light', 'character', 'composition'];
 const RW = 540, RH = 960, AW = 270, AH = 480;
-// Caption bar band (drawCaptionBar) is ignored: text must not count as scene detail.
-const IGNORE = [[0.64, 0.82]];
+// Caption bar band (drawCaptionBar sits at ~0.68 H, boxH <= ~0.1 H) is ignored by every metric, the fingerprints and
+// the keyframe-change test: text must not count as scene detail (see lib/visual_metrics.mjs).
+const IGNORE = [DEFAULT_CAPTION_BAND];
 
 let fontsDone = false;
 function fonts() {
@@ -44,10 +45,11 @@ export function keyframeChange(frames) {
   let tot = 0, n = 0;
   // compare downscaled copies (cheap and robust to grain)
   const small = frames.map((f) => { const c = createCanvas(54, 96); c.getContext('2d').drawImage(f.canvas, 0, 0, 54, 96); return c.getContext('2d').getImageData(0, 0, 54, 96).data; });
+  const y0 = Math.floor(DEFAULT_CAPTION_BAND[0] * 96), y1 = Math.ceil(DEFAULT_CAPTION_BAND[1] * 96);
   for (let i = 1; i < small.length; i++) {
-    let d = 0;
-    for (let k = 0; k < small[i].length; k += 4) d += Math.abs(small[i][k] - small[i - 1][k]) + Math.abs(small[i][k + 1] - small[i - 1][k + 1]) + Math.abs(small[i][k + 2] - small[i - 1][k + 2]);
-    tot += d / (small[i].length / 4) / 765; n++;
+    let d = 0, cnt = 0;
+    for (let k = 0; k < small[i].length; k += 4) { const row = Math.floor(k / 4 / 54); if (row >= y0 && row < y1) continue; cnt++; d += Math.abs(small[i][k] - small[i - 1][k]) + Math.abs(small[i][k + 1] - small[i - 1][k + 1]) + Math.abs(small[i][k + 2] - small[i - 1][k + 2]); }
+    tot += d / Math.max(1, cnt) / 765; n++;
   }
   return n ? tot / n : 0;
 }
@@ -72,7 +74,7 @@ export function validateCritique(c, shotIds, prev = null, regressed = []) {
   return errs;
 }
 
-async function renderShots(projectDir, timeline, iterTag) {
+export async function renderShots(projectDir, timeline, iterTag) {
   fonts();
   const mod = await import(pathToFileURL(path.join(projectDir, 'scene.mjs')).href + `?iter=${iterTag}`);
   const VC = mod.VideoClock;
@@ -87,16 +89,19 @@ async function renderShots(projectDir, timeline, iterTag) {
       const small = createCanvas(AW, AH);
       small.getContext('2d').drawImage(c, 0, 0, AW, AH);
       const data = small.getContext('2d').getImageData(0, 0, AW, AH).data;
-      frames.push({ t: +t.toFixed(2), canvas: c, m: frameMetrics(data, AW, AH, 4, { ignoreBands: IGNORE }) });
+      frames.push({ t: +t.toFixed(2), canvas: c, data, m: frameMetrics(data, AW, AH, 4, { ignoreBands: IGNORE }) });
     }
-    shots.push({ id: sc.id, frames });
+    const tags = [].concat(sc.tags || [], sc.shot_type || [], sc.framing || []).map((x) => String(x).toLowerCase());
+    shots.push({ id: sc.id, frames, establishing: sc.establishing === true || tags.includes('establishing'), scale_min: sc.subject_scale_min ?? null,
+      fp: shotFingerprint(frames.map((f) => ({ buf: f.data, w: AW, h: AH, ch: 4 })), { ignoreBands: IGNORE }) });
   }
   return shots;
 }
 
-function drawSheet(shots, results, outPng, iter) {
+function drawSheet(shots, results, outPng, iter, reel = null) {
   const tw = 216, th = 384, pad = 10, label = 150;
-  const W = pad + KEYS.length * (tw + pad) + 470, H = pad + shots.length * (th + pad);
+  const foot = reel ? 120 : 0;
+  const W = pad + KEYS.length * (tw + pad) + 470, H = pad + shots.length * (th + pad) + foot;
   const c = createCanvas(W, H), x = c.getContext('2d');
   x.fillStyle = '#141414'; x.fillRect(0, 0, W, H);
   shots.forEach((s, r) => {
@@ -109,7 +114,8 @@ function drawSheet(shots, results, outPng, iter) {
     x.fillStyle = '#ddd'; x.font = '15px "DejaVu Sans Mono", monospace';
     const m = res.metrics;
     const lines = [`iter ${iter}  score ${res.score}${res.delta != null ? ` (${res.delta >= 0 ? '+' : ''}${res.delta})` : ''}`,
-      `edges ${m.sharp_edges}  contrast ${m.contrast}`, `sat ${m.saturation}  bins ${m.color_bins}  ink ${m.ink}`, `focal ${m.focal}  empty ${m.empty_cells}`];
+      `edges ${m.sharp_edges}  contrast ${m.contrast}`, `sat ${m.saturation}  bins ${m.color_bins}  ink ${m.ink}`, `focal ${m.focal}  empty ${m.empty_cells}`,
+      `lit ${m.lit_fraction} x${m.lit_regions}  p5 ${m.p5_luma}  scale ${m.subject_scale}${res.establishing ? ' (est.)' : ''}`];
     lines.forEach((l, i) => x.fillText(l, lx, y + 58 + i * 22));
     x.fillStyle = '#ffb86b'; x.font = '14px "DejaVu Sans", sans-serif';
     let yy = y + 58 + lines.length * 22 + 10;
@@ -121,14 +127,22 @@ function drawSheet(shots, results, outPng, iter) {
       if (yy > y + th - 10) break;
     }
   });
+  if (reel) {
+    const y = pad + shots.length * (th + pad) + 6;
+    x.font = 'bold 18px "DejaVu Sans", sans-serif';
+    x.fillStyle = reel.flags.length ? '#ff7b72' : '#7ee787';
+    x.fillText(`REEL similarity: ${reel.flags.length ? reel.flags.join(', ') : 'ok'}  (backdrop share ${reel.backdrop_share})`, pad, y + 20);
+    x.font = '14px "DejaVu Sans Mono", monospace'; x.fillStyle = '#ddd';
+    reel.top_pairs.forEach((p, i) => x.fillText(`most similar #${i + 1}: ${p.a} ~ ${p.b}  hash ${p.hash_sim}  hist ${p.hist_dist}`, pad, y + 46 + i * 20));
+  }
   fs.writeFileSync(outPng, c.toBuffer('image/png'));
 }
 
 export async function runVisualLoop({ projectDir, targetsPath = null, maxIter = 6 } = {}) {
   const tlPath = path.join(projectDir, 'timeline.json');
   const timeline = JSON.parse(fs.readFileSync(tlPath, 'utf8'));
-  let genre = ''; try { genre = JSON.parse(fs.readFileSync(path.join(projectDir, 'brief.json'), 'utf8')).genre || ''; } catch {}
-  const dflt = path.join(ROOT, 'templates', genre === 'horror' ? 'visual_targets.horror.json' : 'visual_targets.json');
+  let brief = {}; try { brief = JSON.parse(fs.readFileSync(path.join(projectDir, 'brief.json'), 'utf8')); } catch {}
+  const dflt = path.join(ROOT, 'templates', selectTargetsFile(brief));
   const tp = targetsPath || (fs.existsSync(path.join(projectDir, 'visual_targets.json')) ? path.join(projectDir, 'visual_targets.json') : dflt);
   const T = JSON.parse(fs.readFileSync(tp, 'utf8'));
   const loopDir = path.join(projectDir, 'visual_loop');
@@ -157,26 +171,46 @@ export async function runVisualLoop({ projectDir, targetsPath = null, maxIter = 
     const agg = aggregate(s.frames.map((f) => f.m));
     const emptyUnion = [...new Set(s.frames.flatMap((f) => f.m.empty_cells))];
     const worstEmpty = s.frames.reduce((a, f) => (f.m.empty_cells.length > a.length ? f.m.empty_cells : a), []);
-    const m = { ...agg, empty_cells: worstEmpty };
-    const def = deficits(m, T);
+    const m = { ...agg, empty_cells: worstEmpty, establishing: s.establishing };
+    const Ts = s.scale_min != null ? { ...T, subject_scale: { ...(T.subject_scale || {}), min: s.scale_min } } : T;
+    const def = deficits(m, Ts);
     // keyframes must differ: a shot whose three keys are nearly identical is a still image, not a shot
     const keyDiff = keyframeChange(s.frames);
     if (keyDiff < (T.min_key_change ?? 0.01)) def.push({ metric: 'key_change', value: +keyDiff.toFixed(4), target: `>= ${T.min_key_change ?? 0.01}`, hint: 'the shot does not change between its keyframes: move the camera (push/pan), animate a character (blink, breath, turn) or a light (flicker, sweep)' });
     const score = shotScore({ ...agg, empty_cells: worstEmpty.length }, T);
     const prev = prevEntry?.shots?.find((q) => q.id === s.id);
-    return { id: s.id, pass: def.length === 0, score, delta: prev ? +(score - prev.score).toFixed(3) : null, metrics: { ...agg, empty_cells: worstEmpty.length }, empty_where: emptyUnion, deficits: def };
+    return { id: s.id, pass: def.length === 0, score, delta: prev ? +(score - prev.score).toFixed(3) : null, establishing: s.establishing, subject_box: s.frames[1].m.subject_box, metrics: { ...agg, empty_cells: worstEmpty.length }, empty_where: emptyUnion, deficits: def };
   });
+  // reel-level: near-duplicate adjacent shots and a backdrop shared by > 40% of shots
+  const sim = reelSimilarity(shots.map((s) => ({ id: s.id, fp: s.fp })), T.similarity || {});
+  const flags = [];
+  for (const d of sim.near_duplicates) {
+    flags.push(`near-duplicate shots ${d.a} / ${d.b}`);
+    const r = results.find((q) => q.id === d.b);
+    r.deficits.push({ metric: 'near_duplicate', value: d.hash_sim, target: `hash similarity < ${sim.thresholds.dup_hash_sim} vs ${d.a}`, hint: SIMILARITY_HINTS.near_duplicate });
+    r.pass = false;
+  }
+  if (sim.reused_backdrop) {
+    const cl = sim.backdrop_clusters[0];
+    flags.push(`reused backdrop in ${cl.length}/${shots.length} shots (${cl.join(', ')})`);
+    for (const id of cl.slice(1)) {
+      const r = results.find((q) => q.id === id);
+      r.deficits.push({ metric: 'reused_backdrop', value: sim.backdrop_share, target: `<= ${sim.thresholds.backdrop_share_max} of shots share a backdrop`, hint: SIMILARITY_HINTS.reused_backdrop });
+      r.pass = false;
+    }
+  }
+  const reel = { flags, backdrop_share: sim.backdrop_share, top_pairs: sim.top_pairs, near_duplicates: sim.near_duplicates, backdrop_clusters: sim.backdrop_clusters, reused_backdrop: sim.reused_backdrop };
   const regressions = results.filter((r) => r.delta != null && r.delta < -0.03).map((r) => `${r.id} got worse (${r.delta}): revert that change or justify it in the critique`);
   const iterDir = path.join(loopDir, `iter_${String(iter).padStart(2, '0')}`);
   fs.mkdirSync(iterDir, { recursive: true });
-  drawSheet(shots, results, path.join(iterDir, 'sheet.png'), iter);
+  drawSheet(shots, results, path.join(iterDir, 'sheet.png'), iter, reel);
   const pass = results.every((r) => r.pass);
-  const entry = { iter, pass, mean_score: +(results.reduce((a, r) => a + r.score, 0) / results.length).toFixed(3), regressions, shots: results.map(({ id, pass: p, score, metrics }) => ({ id, pass: p, score, metrics })) };
-  fs.writeFileSync(path.join(iterDir, 'report.json'), JSON.stringify({ ...entry, shots: results, targets: T.name }, null, 2));
+  const entry = { iter, pass, reel, mean_score: +(results.reduce((a, r) => a + r.score, 0) / results.length).toFixed(3), regressions, shots: results.map(({ id, pass: p, score, metrics }) => ({ id, pass: p, score, metrics })) };
+  fs.writeFileSync(path.join(iterDir, 'report.json'), JSON.stringify({ ...entry, shots: results, targets: T.name, targets_file: path.relative(ROOT, tp) }, null, 2));
   log.iterations.push(entry);
   fs.writeFileSync(logPath, JSON.stringify(log, null, 2));
   return {
-    iter, pass, mean_score: entry.mean_score, regressions,
+    iter, pass, mean_score: entry.mean_score, regressions, reel_flags: flags,
     failing: results.filter((r) => !r.pass).map((r) => ({ id: r.id, deficits: r.deficits.map((d) => `${d.metric} ${d.value} (${d.target})`) })),
     next: `LOOK at ${path.relative(projectDir, path.join(iterDir, 'sheet.png'))}, write ${path.relative(projectDir, path.join(iterDir, 'critique.json'))}, fix scene.mjs, run again`
   };
@@ -194,6 +228,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(fs.realpathSync(process
   else {
     console.log(`ITERATION ${r.iter}: ${r.pass ? 'metrics PASS' : 'FIX'}  mean score ${r.mean_score}`);
     r.regressions.forEach((x) => console.log(' REGRESSION ' + x));
+    (r.reel_flags || []).forEach((x) => console.log(' REEL ' + x));
     r.failing.forEach((f) => console.log(` FIX ${f.id}: ${f.deficits.join('; ')}`));
     console.log(r.next);
   }

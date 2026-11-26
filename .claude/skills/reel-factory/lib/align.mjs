@@ -20,9 +20,29 @@ const glen = (s) => {
 };
 const r3 = (n) => Math.round(n * 1000) / 1000;
 
+// Devanagari akshara count: a consonant cluster (consonants joined by virama) or an independent vowel is one
+// akshara; matras, anusvara, chandrabindu, visarga, nukta attach to the akshara they follow.
+const DEVA_RE = /[\u0900-\u097F]/;
+export function aksharaCount(core) {
+  let n = 0;
+  let afterVirama = false;
+  for (const ch of core) {
+    const c = ch.codePointAt(0);
+    if (c === 0x094d) { afterVirama = true; continue; }
+    const consonant = (c >= 0x0915 && c <= 0x0939) || (c >= 0x0958 && c <= 0x095f);
+    const indepVowel = (c >= 0x0904 && c <= 0x0914) || c === 0x0960 || c === 0x0961;
+    if (consonant) { if (!afterVirama) n++; }
+    else if (indepVowel) n++;
+    else if (!(c >= 0x0900 && c <= 0x097f)) n++; // Latin / digit inside a mixed token: one unit per character
+    afterVirama = false;
+  }
+  return n;
+}
+
 export function wordWeight(word) {
-  const core = String(word).replace(/[^\p{L}\p{N}]/gu, '');
-  return Math.max(1, glen(core)) + 1.2; // per-word onset cost
+  const core = String(word).replace(/[^\p{L}\p{N}\p{M}]/gu, '');
+  const units = DEVA_RE.test(core) ? aksharaCount(core) : glen(core.replace(/\p{M}/gu, ''));
+  return Math.max(1, units) + 1.2; // per-word onset cost
 }
 
 // ---------- voiced spans ----------
@@ -78,6 +98,61 @@ function voicedToReal(spans, vt, isStart = false) {
 }
 
 const BREAK_RE = /[.,;:!?\u0964\u2014]["'\u201d)]?$/;
+
+// Silences this long (after the 0.02 s edge padding of each span, i.e. ~0.15 s raw) are real pauses: no word may span one.
+export const ISLAND_GAP = 0.11;
+const MIN_ISLAND_S = 0.08;
+
+// Merge spans separated by short gaps into "islands" of continuous speech; drop click-sized islands.
+function toIslands(spans) {
+  const isl = [];
+  for (const sp of spans) {
+    const last = isl[isl.length - 1];
+    if (last && sp[0] - last[last.length - 1][1] < ISLAND_GAP) last.push(sp);
+    else isl.push([sp]);
+  }
+  const dur = (g) => g.reduce((x, [a, b]) => x + (b - a), 0);
+  const kept = isl.filter((g) => dur(g) >= MIN_ISLAND_S);
+  return kept.length ? kept : isl;
+}
+
+// Split a word group over the islands of its spans so no word crosses a real pause.
+function distributeGroup(words, idxs, spans, out) {
+  let isl = toIslands(spans);
+  if (isl.length > idxs.length) { // more pauses than words: keep the longest islands, in time order
+    const dur = (g) => g.reduce((x, [a, b]) => x + (b - a), 0);
+    const keep = new Set([...isl].sort((a, b) => dur(b) - dur(a)).slice(0, idxs.length));
+    isl = isl.filter((g) => keep.has(g));
+  }
+  if (isl.length <= 1) return distribute(words, idxs, isl.length ? isl[0] : spans, out);
+  const dur = isl.map((g) => g.reduce((x, [a, b]) => x + (b - a), 0));
+  const totalD = dur.reduce((x, y) => x + y, 0);
+  const w = idxs.map((i) => wordWeight(words[i].word));
+  const W = w.reduce((x, y) => x + y, 0);
+  const cum = [];
+  w.reduce((a, x, k) => (cum[k] = a + x), 0);
+  const cuts = []; // word index (within idxs) after which island j ends
+  let cd = 0, prev = -1;
+  for (let j = 0; j < isl.length - 1; j++) {
+    cd += dur[j];
+    const target = cd / totalD;
+    const lo = prev + 1;
+    const hi = idxs.length - 1 - (isl.length - 1 - j); // leave >= 1 word for each later island
+    let best = lo, bestD = Infinity;
+    for (let k = lo; k <= hi; k++) {
+      const d = Math.abs(cum[k] / W - target);
+      if (d < bestD) { bestD = d; best = k; }
+    }
+    cuts.push(best);
+    prev = best;
+  }
+  cuts.push(idxs.length - 1);
+  let from = 0;
+  cuts.forEach((c, j) => {
+    distribute(words, idxs.slice(from, c + 1), isl[j], out);
+    from = c + 1;
+  });
+}
 
 function distribute(words, idxs, spans, out) {
   if (!idxs.length || !spans.length) return;
@@ -142,7 +217,7 @@ export function alignWordsToVoicedSpans(words, spans, { phraseGap = 0.25 } = {})
     const idxs = [];
     for (let i = wStart; i <= bnd.after; i++) idxs.push(i);
     const spansForGroup = segs.slice(sStart, bnd.seg + 1).flat();
-    distribute(words, idxs, spansForGroup, out);
+    distributeGroup(words, idxs, spansForGroup, out);
     wStart = bnd.after + 1;
     sStart = bnd.seg + 1;
   }
