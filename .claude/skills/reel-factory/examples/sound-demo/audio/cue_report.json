@@ -1,0 +1,272 @@
+{
+  "duration_s": 20,
+  "sample_rate": 48000,
+  "frames": 960000,
+  "seed": 7,
+  "derived_events": false,
+  "warnings": [],
+  "stems": [
+    "sfx",
+    "music",
+    "ambience",
+    "room"
+  ],
+  "cues": [
+    {
+      "id": "music",
+      "kind": "underscore",
+      "layer": "music",
+      "source": "synth",
+      "at": "start",
+      "at_s": 0,
+      "onset_s": 0,
+      "end_s": 20,
+      "until_s": 20,
+      "gain_db": -10,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "start",
+        "end",
+        "start",
+        "steps_start",
+        "end"
+      ],
+      "render_ms": 4548.683
+    },
+    {
+      "id": "room",
+      "kind": "room_tone",
+      "layer": "room",
+      "source": "synth",
+      "at": "start",
+      "at_s": 0,
+      "onset_s": 0,
+      "end_s": 20,
+      "until_s": 20,
+      "gain_db": -14,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "start",
+        "end"
+      ],
+      "render_ms": 245.321
+    },
+    {
+      "id": "wind",
+      "kind": "wind",
+      "layer": "ambience",
+      "source": "synth",
+      "at": "start",
+      "at_s": 0,
+      "onset_s": 0,
+      "end_s": 20,
+      "until_s": 20,
+      "gain_db": -6,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "start",
+        "end",
+        "start",
+        "heart_start",
+        "riser_start",
+        "end"
+      ],
+      "render_ms": 635.969
+    },
+    {
+      "id": "drip_a",
+      "kind": "drip",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "start",
+      "at_s": 1.2,
+      "onset_s": 1.2,
+      "end_s": 1.8,
+      "gain_db": -16,
+      "pan": -0.5,
+      "tags": [],
+      "events": [
+        "start"
+      ],
+      "render_ms": 19.022
+    },
+    {
+      "id": "steps",
+      "kind": "footsteps",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "steps_start",
+      "at_s": 2.5,
+      "onset_s": 2.5,
+      "end_s": 8.68,
+      "gain_db": -6,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "steps_start"
+      ],
+      "render_ms": 65.663
+    },
+    {
+      "id": "drip_b",
+      "kind": "drip",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "start",
+      "at_s": 4.4,
+      "onset_s": 4.4,
+      "end_s": 5,
+      "gain_db": -18,
+      "pan": 0.6,
+      "tags": [],
+      "events": [
+        "start"
+      ],
+      "render_ms": 4.267
+    },
+    {
+      "id": "door_creak",
+      "kind": "creak",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "creak",
+      "at_s": 6,
+      "onset_s": 6,
+      "end_s": 8.6,
+      "gain_db": -8,
+      "pan": 0.55,
+      "tags": [],
+      "events": [
+        "creak"
+      ],
+      "render_ms": 61.764
+    },
+    {
+      "id": "heart",
+      "kind": "heartbeat",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "heart_start",
+      "at_s": 8,
+      "onset_s": 8,
+      "end_s": 15,
+      "until_s": 15,
+      "gain_db": -6,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "heart_start",
+        "silence_start"
+      ],
+      "render_ms": 65.57
+    },
+    {
+      "id": "drip_c",
+      "kind": "drip",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "start",
+      "at_s": 9.6,
+      "onset_s": 9.6,
+      "end_s": 10.2,
+      "gain_db": -15,
+      "pan": -0.2,
+      "tags": [],
+      "events": [
+        "start"
+      ],
+      "render_ms": 19.803
+    },
+    {
+      "id": "rise",
+      "kind": "riser",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "riser_start",
+      "at_s": 12,
+      "onset_s": 12,
+      "end_s": 15,
+      "gain_db": -8,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "riser_start"
+      ],
+      "render_ms": 60.643
+    },
+    {
+      "id": "silence",
+      "kind": "drop",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "silence_start",
+      "at_s": 15,
+      "onset_s": 15,
+      "end_s": 15.63,
+      "until_s": 15.63,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "silence_start",
+        "scare"
+      ],
+      "render_ms": 0
+    },
+    {
+      "id": "scare_hit",
+      "kind": "stinger",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 16,
+      "onset_s": 15.65,
+      "end_s": 18.8,
+      "gain_db": -2,
+      "pan": 0,
+      "tags": [
+        "scare"
+      ],
+      "events": [
+        "scare"
+      ],
+      "render_ms": 66.193
+    },
+    {
+      "id": "scare_sub",
+      "kind": "sub_drop",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 16,
+      "onset_s": 16,
+      "end_s": 18.2,
+      "gain_db": -3,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "scare"
+      ],
+      "render_ms": 20.749
+    },
+    {
+      "id": "after_drip",
+      "kind": "drip",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 19.2,
+      "onset_s": 19.2,
+      "end_s": 19.8,
+      "gain_db": -14,
+      "pan": 0.1,
+      "tags": [],
+      "events": [
+        "scare"
+      ],
+      "render_ms": 7.322
+    }
+  ]
+}

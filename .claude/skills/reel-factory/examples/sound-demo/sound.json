@@ -1,0 +1,28 @@
+{
+  "seed": 7,
+  "buses": { "vo": 0, "sfx": -3, "music": -12, "ambience": -14, "room": -26 },
+  "ducking": { "depth_db": 5, "attack_s": 0.02, "release_s": 0.5 },
+  "space": { "sfx": { "preset": "corridor", "send_db": -16 } },
+  "cues": [
+    { "id": "room", "at": "start", "until": "end", "kind": "room_tone", "layer": "room", "gain_db": -14 },
+    { "id": "wind", "at": "start", "until": "end", "kind": "wind", "layer": "ambience", "gain_db": -6,
+      "params": { "gust_hz": 0.1, "f_hi": 800 },
+      "gain_curve": [ { "at": "start", "db": 0 }, { "at": "heart_start", "db": -4 }, { "at": "riser_start", "db": 1 }, { "at": "end", "db": -3 } ] },
+    { "id": "music", "at": "start", "until": "end", "kind": "underscore", "layer": "music", "gain_db": -10,
+      "params": { "key": "D", "scale": "phrygian", "tempo": 52, "tension": "auto" },
+      "gain_curve": [ { "at": "start", "db": -18 }, { "at": "steps_start", "db": 0 }, { "at": "end", "db": -4 } ] },
+    { "id": "drip_a", "at": "start", "offset_s": 1.2, "kind": "drip", "pan": -0.5, "gain_db": -16 },
+    { "id": "drip_b", "at": "start", "offset_s": 4.4, "kind": "drip", "pan": 0.6, "gain_db": -18 },
+    { "id": "drip_c", "at": "start", "offset_s": 9.6, "kind": "drip", "pan": -0.2, "gain_db": -15 },
+    { "id": "steps", "at": "steps_start", "kind": "footsteps", "layer": "sfx", "gain_db": -6,
+      "params": { "surface": "concrete", "count": 9, "interval_s": 0.62, "pan_from": -0.9, "pan_to": 0.15, "gain_from_db": -26, "gain_to_db": -2 } },
+    { "id": "door_creak", "at": "creak", "kind": "creak", "pan": 0.55, "gain_db": -8, "params": { "dur_s": 2.6, "f_lo": 380, "f_hi": 980 } },
+    { "id": "heart", "at": "heart_start", "until": "silence_start", "kind": "heartbeat", "gain_db": -6, "reverb": false,
+      "params": { "bpm_from": 54, "bpm_to": 104, "gain_from_db": -16, "gain_to_db": -1 } },
+    { "id": "rise", "at": "riser_start", "kind": "riser", "gain_db": -8, "params": { "dur_s": 3, "from_hz": 220, "to_hz": 8500, "pitch_from": 90, "pitch_to": 520 } },
+    { "id": "silence", "at": "silence_start", "until": "scare", "until_offset_s": -0.37, "kind": "drop", "params": { "buses": ["sfx", "music", "ambience"], "depth_db": -40, "ramp_in_s": 0.03, "ramp_out_s": 0.02 } },
+    { "id": "scare_hit", "at": "scare", "kind": "stinger", "gain_db": -2, "tags": ["scare"], "reverb": { "preset": "hall", "send_db": -10 }, "params": { "swell_s": 0.35, "dur_s": 2.8 } },
+    { "id": "scare_sub", "at": "scare", "kind": "sub_drop", "gain_db": -3, "reverb": false },
+    { "id": "after_drip", "at": "scare", "offset_s": 3.2, "kind": "drip", "pan": 0.1, "gain_db": -14 }
+  ]
+}

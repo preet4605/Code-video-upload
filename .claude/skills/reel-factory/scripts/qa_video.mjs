@@ -13,6 +13,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { resolveBin } from '../lib/runtime.mjs';
 import { lintDirection } from '../lib/direction_lint.mjs';
+import { auditProjectAudio } from '../lib/audio/audit.mjs';
 import { QA_THRESHOLDS, getPlatform, getSafeProfile, DEFAULT_SAFE_PROFILE } from '../lib/profiles.mjs';
 
 const MAXBUF = 256 * 1024 * 1024;
@@ -436,6 +437,18 @@ export function runQa({ mp4, projectDir = null, platform = 'reels', safeProfile 
     if (makeSafeZoneSheet(ffmpeg, mp4, p, safeProfile)) safeSheet = p;
   }
   const honesty = buildVerification({ probe, flashes, freezes, black, silence, hook, loudness, mix, timeline, thresholds, placeholderAudio });
+  // Audio audit (only for projects that have a sound.json cue sheet; otherwise nothing changes).
+  let audioAudit = null;
+  if (projectDir) {
+    try { audioAudit = auditProjectAudio({ projectDir, media: mp4, ffmpeg, timeline, targetLufs: loudness?.target_lufs ?? timeline?.target_lufs ?? -14 }); }
+    catch (e) { honesty.unverified.push(`audio audit crashed: ${e.message}`); }
+    if (audioAudit) {
+      res.fails.push(...audioAudit.fails); res.warns.push(...audioAudit.warns);
+      honesty.verified.push(...audioAudit.verified); honesty.unverified.push(...audioAudit.unverified);
+      honesty.verified = [...new Set(honesty.verified)]; honesty.unverified = [...new Set(honesty.unverified)];
+      if (res.fails.length) res.verdict = 'FIX';
+    }
+  }
   return {
     ...res,
     ...honesty,
@@ -443,6 +456,7 @@ export function runQa({ mp4, projectDir = null, platform = 'reels', safeProfile 
       flashes,
       hook,
       mix,
+      audio: audioAudit ? audioAudit.values : undefined,
       duration_s: dur
     },
     safe_zone_sheet: safeSheet,

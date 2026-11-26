@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "duration_s": 7,
+ "slug": "cinema-demo",
+ "scenes": [
+  {
+   "id": "alley",
+   "start_s": 0,
+   "end_s": 7,
+   "mood": "suspense",
+   "beats": [
+    {
+     "id": "alley_b1",
+     "start_s": 0,
+     "end_s": 7,
+     "type": "move",
+     "animated_properties": [
+      "camera.push",
+      "camera.handheld",
+      "light.flicker"
+     ]
+    }
+   ]
+  }
+ ],
+ "captions": [],
+ "audio_cues": [],
+ "silences": []
+}

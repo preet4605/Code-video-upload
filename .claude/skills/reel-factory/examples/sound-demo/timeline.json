@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "slug": "sound-demo",
+  "aspect": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_s": 20,
+  "target_lufs": -14,
+  "true_peak_dbtp": -1.5,
+  "audio_file": "",
+  "note": "Audio-only demo: no picture, no voiceover. 'events' is the native shape build_vo.mjs writes; every sound cue anchors to one of them.",
+  "events": {
+    "start": 0,
+    "steps_start": 2.5,
+    "creak": 6.0,
+    "heart_start": 8.0,
+    "riser_start": 12.0,
+    "silence_start": 15.0,
+    "scare": 16.0,
+    "end": 20.0
+  },
+  "scenes": [
+    { "id": "d1_corridor", "start_s": 0, "end_s": 6, "mood": "calm", "lines": [] },
+    { "id": "d2_approach", "start_s": 6, "end_s": 15, "mood": "suspense", "lines": [] },
+    { "id": "d3_silence", "start_s": 15, "end_s": 15.63, "mood": "silence", "silence_drop": true, "lines": [] },
+    { "id": "d4_scare", "start_s": 15.63, "end_s": 20, "mood": "climax", "lines": [] }
+  ],
+  "audio_cues": []
+}

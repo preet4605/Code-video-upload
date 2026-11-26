@@ -20,6 +20,8 @@ import { lintStoryProject } from '../lib/story_lint.mjs';
 import { runHorrorMeasuredGate } from '../lib/horror_measure.mjs';
 import { runScriptGate } from './script_gate.mjs';
 import { GENRE_AUDIO_MOOD } from '../lib/voices.mjs';
+import { buildMix, normalizeTwoPass } from '../lib/audio/mix.mjs';
+import { writeWavFloat } from '../lib/audio/wav.mjs';
 
 export { buildAudioMixFilterGraph };
 
@@ -48,7 +50,8 @@ function parseArgs(argv) {
     json: false,
     platform: 'reels',
     safeProfile: DEFAULT_SAFE_PROFILE,
-    strict: false
+    strict: false,
+    stems: null
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -73,6 +76,7 @@ function parseArgs(argv) {
     else if (a === '--platform') opts.platform = argv[++i];
     else if (a === '--safe-profile') opts.safeProfile = argv[++i];
     else if (a === '--strict') opts.strict = true;
+    else if (a === '--stems') opts.stems = argv[++i];
   }
   return opts;
 }
@@ -373,7 +377,12 @@ function main() {
   let briefForAudio = {};
   try { briefForAudio = JSON.parse(fs.readFileSync(path.join(projectDir, 'brief.json'), 'utf8')); } catch { /* none */ }
   const isHorror = briefForAudio.genre === 'horror';
-  const useLinear = opts.linearLoudness === true || (opts.linearLoudness !== false && isHorror);
+  // Stems from scripts/sound_design.mjs: --stems <dir> or auto-detect <project>/audio with a sound.json + cue_report.json.
+  let stemsDir = opts.stems ? path.resolve(opts.stems) : null;
+  if (!stemsDir && fs.existsSync(path.join(projectDir, 'sound.json')) && fs.existsSync(path.join(projectDir, 'audio', 'cue_report.json'))) stemsDir = path.join(projectDir, 'audio');
+  if (stemsDir && !fs.existsSync(stemsDir)) throw new Error(`--stems ${stemsDir} does not exist (run scripts/sound_design.mjs)`);
+  let stemsInfo = null;
+  const useLinear = stemsDir ? true : (opts.linearLoudness === true || (opts.linearLoudness !== false && isHorror));
   const bgmGainDb = Number.isFinite(opts.bgmGain) ? opts.bgmGain : (opts.bgm === 'horror' ? -8 : -16);
   const videoInputArgs = canStreamCopy
     ? ['-f', 'concat', '-safe', '0', '-i', segmentsConcatTxt]
@@ -382,7 +391,20 @@ function main() {
     ? ['-c:v', 'copy']
     : ['-vf', `fps=${manifest.fps},${colorFilter()}${assFilter}`, '-pix_fmt', 'yuv420p', ...videoEncodeArgs({ fps: manifest.fps })];
 
-  if (!useMultiTrack) {
+  if (stemsDir) {
+    // Designed stems + VO: bus gains, ducking under VO (JS, capped depth), two-pass loudnorm (linear check, limiter fallback).
+    const mixWav = path.join(projectDir, 'cache', 'mix_norm.wav');
+    if (!opts.dryRun) {
+      let soundCfg = {};
+      try { soundCfg = JSON.parse(fs.readFileSync(path.join(projectDir, 'sound.json'), 'utf8')); } catch { /* defaults */ }
+      fs.mkdirSync(path.join(projectDir, 'cache'), { recursive: true });
+      const m = buildMix({ projectDir, stemsDir, timeline, sound: soundCfg, ffmpeg });
+      const rawWav = path.join(projectDir, 'cache', 'mix_raw.wav');
+      writeWavFloat(rawWav, m.L, m.R, m.sr);
+      stemsInfo = { ...normalizeTwoPass({ ffmpeg, inFile: rawWav, outFile: mixWav, I: targetLufs, TP: truePeak }), ducking: m.duck ? { depth_db: m.duck.depth_db, attack_s: m.duck.attack_s, release_s: m.duck.release_s } : null, buses_db: m.buses, stems: m.stems_present, vo_present: Boolean(m.vo) };
+    }
+    ffmpegEncodeArgs = ['-y', ...videoInputArgs, '-i', mixWav, '-map', '0:v', '-map', '1:a', ...videoCodecArgs, '-c:a', 'aac', '-ar', '48000', '-b:a', '192k', '-movflags', '+faststart', '-shortest', outMp4];
+  } else if (!useMultiTrack) {
     placeholderAudio = !hasAudioFile;
     const audioInputArgs = hasAudioFile
       ? ['-i', path.join(projectDir, timeline.audio_file)]
@@ -635,6 +657,12 @@ function main() {
     placeholderAudio,
     draftManifest: Boolean(manifest.draft)
   });
+  if (stemsInfo) {
+    ship.warns.push(...stemsInfo.warnings.map((w) => `audio: ${w}`));
+    if (stemsInfo.mode === 'linear') ship.verified.push(`loudnorm two-pass: pass 2 reported linear (input ${stemsInfo.pass1.input_i} LUFS, LRA ${stemsInfo.pass1.input_lra}, TP ${stemsInfo.pass1.input_tp})`);
+    else ship.verified.push(`loudnorm two-pass fell back to fixed gain + limiter (pass 2 reported ${stemsInfo.pass2_type})`);
+    if (stemsInfo.ducking) ship.verified.push(`ducking under VO: ${stemsInfo.ducking.depth_db} dB, attack ${stemsInfo.ducking.attack_s}s, release ${stemsInfo.ducking.release_s}s (music + ambience only)`);
+  }
   // Horror craft gates: script heuristics + critique, shotlist, measured per-scene visuals.
   let briefObj = {};
   try { briefObj = JSON.parse(fs.readFileSync(path.join(projectDir, 'brief.json'), 'utf8')); } catch { /* no brief */ }
@@ -681,7 +709,8 @@ function main() {
     stitch_mode: stitchMode,
     outMp4,
     horror_bed: horrorBed,
-    loudness_mode: useLinear ? 'linear (gain + limiter)' : 'loudnorm',
+    loudness_mode: stemsInfo ? `stems: two-pass loudnorm (${stemsInfo.mode})` : (useLinear ? 'linear (gain + limiter)' : 'loudnorm'),
+    audio_mix: stemsInfo,
     contactSheet,
     preset: opts.preset,
     audioMood,

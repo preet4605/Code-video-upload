@@ -1,0 +1,8 @@
+{
+ "platform": "reels",
+ "genre": "horror",
+ "lang": "en",
+ "hook": "cinema library demo",
+ "smoke_test": true,
+ "note": "6-plane rainy alley built with lib/cinema; not a story"
+}

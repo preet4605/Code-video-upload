@@ -4,3 +4,4 @@ examples/*/cache/
 examples/*/out/
 __pycache__/
 *.pyc
+/_*.mjs

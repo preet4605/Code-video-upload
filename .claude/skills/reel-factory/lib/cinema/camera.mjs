@@ -122,6 +122,7 @@ export function visibleBounds(cam, depth, margin = 4) {
  * opts: fullBleed (default false) the art is a full 1080x1920 backdrop: its scale is raised if needed so it always
  *         covers the frame (automatic overscan) - no exposed edges whatever the move (push, pan, roll).
  *       Otherwise `bounds` = the visible window in authored coords (+margin): fill gradients/rects to it.
+ *       op: globalCompositeOperation for the plane (e.g. 'destination-over' to slip a plane BEHIND what is drawn);
  *       blur: px of depth-of-field blur (0 = none); haze: {color, amount} fog laid over everything drawn so far
  *       AFTER this plane (so farther planes get hazier); alpha.
  * Returns false when the plane is behind the lens (nothing drawn).
@@ -143,9 +144,9 @@ export function layer(cam, ctx, depth, drawFn, opts = {}) {
     ox.clearRect(0, 0, W, H); ox.save(); ox.setTransform(k, 0, 0, k, 0, 0); setup(ox);
     drawFn(ox, bounds); ox.restore();
     const blurred = depthBlur(off, depth, opts.focus ?? 1, { px: opts.blur * k, direct: true });
-    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = opts.alpha ?? 1; ctx.drawImage(blurred, 0, 0);
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = opts.alpha ?? 1; if (opts.op) ctx.globalCompositeOperation = opts.op; ctx.drawImage(blurred, 0, 0);
   } else {
-    ctx.globalAlpha = opts.alpha ?? 1;
+    ctx.globalAlpha = opts.alpha ?? 1; if (opts.op) ctx.globalCompositeOperation = opts.op;
     setup(ctx); drawFn(ctx, bounds);
   }
   if (opts.haze && opts.haze.amount > 0) {

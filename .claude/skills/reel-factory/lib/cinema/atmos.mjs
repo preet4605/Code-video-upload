@@ -21,71 +21,80 @@ function fogTile(seed, color) {
 
 /**
  * Layered ground fog: `depthBands` drifting noise bands (far bands small, slow, faint; near bands big, fast, thick)
- * concentrated around `horizon` (fraction of frame height). Drawn at half res then upscaled.
+ * concentrated around `horizon` (fraction of frame height). Built at quarter res, ONE upscaled blit.
  * opts: {depthBands=3, density=0.35, color='#8a9bb5', t=0, horizon=0.62, height=0.38, seed=11, wind=1}
  */
 export function fog(ctx, o = {}) {
   const { depthBands = 3, density = 0.35, color = '#8a9bb5', t = 0, horizon = 0.62, height = 0.38, seed = 11, wind = 1 } = o;
-  const { W, H, k } = begin(ctx);
-  const hw = Math.round(W / 2), hh = Math.round(H / 2), kk = hw / DW;
+  const { W, H } = begin(ctx);
+  const qw = Math.round(W / 4), qh = Math.round(H / 4), kk = qw / DW;
   const tile = fogTile(seed, color);
+  const acc = pooled('cin-fogacc', qw, qh), ax = acc.getContext('2d');
+  ax.clearRect(0, 0, qw, qh);
+  const band = pooled('cin-fogband', qw, qh), x = band.getContext('2d');
   for (let b = 0; b < depthBands; b++) {
     const f = depthBands === 1 ? 1 : b / (depthBands - 1);     // 0 far .. 1 near
-    const band = pooled(`cin-fog${b}`, hw, hh), x = band.getContext('2d');
-    x.clearRect(0, 0, hw, hh);
+    x.globalCompositeOperation = 'source-over'; x.globalAlpha = 1; x.clearRect(0, 0, qw, qh);
     const sc = (1.1 + f * 2.2) * kk * 1.4;                      // tile scale grows toward the camera
     const size = 256 * sc, off = (t * wind * (6 + f * 26) * kk + b * 97 * kk) % size;
     const yo = (b * 53 * kk) % size;
-    x.globalAlpha = 1;
-    for (let ty = -size + (-yo % size); ty < hh; ty += size) for (let tx = -size - off; tx < hw; tx += size) x.drawImage(tile, tx, ty, size + 0.5, size + 0.5);
-    // vertical envelope around the horizon (far bands sit nearer the horizon line)
-    const cy = (horizon + (f - 0.5) * 0.10) * hh, ext = height * hh * (0.6 + 0.6 * f);
+    for (let ty = -size + (-yo % size); ty < qh; ty += size) for (let tx = -size - off; tx < qw; tx += size) x.drawImage(tile, tx, ty, size + 0.5, size + 0.5);
+    const cy = (horizon + (f - 0.5) * 0.10) * qh, ext = height * qh * (0.6 + 0.6 * f);
     x.globalCompositeOperation = 'destination-in';
     const g = x.createLinearGradient(0, cy - ext, 0, cy + ext);
     g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(0.5, 'rgba(0,0,0,1)'); g.addColorStop(1, 'rgba(0,0,0,0)');
-    x.fillStyle = g; x.fillRect(0, 0, hw, hh); x.globalCompositeOperation = 'source-over';
-    ctx.globalAlpha = cl(density * (0.5 + 0.7 * f), 0, 1);
-    ctx.drawImage(band, 0, 0, DW, DH);
+    x.fillStyle = g; x.fillRect(0, 0, qw, qh); x.globalCompositeOperation = 'source-over';
+    ax.globalAlpha = cl(density * (0.5 + 0.7 * f), 0, 1); ax.drawImage(band, 0, 0);
   }
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'low';
+  ctx.drawImage(acc, 0, 0, W, H);
   end(ctx);
 }
 
-/** Bright-pass at quarter res (soft knee). Returns a pooled canvas; pass it to bloom/halation to share the work. */
-export function brightPass(ctx, threshold = 0.6, key = 'cin-bp') {
-  const q = snapshot(ctx, 0.25, 'cin-snap');
+function brightPassFrom(q, threshold, key) {
   const out = pooled(key, q.width, q.height), x = out.getContext('2d');
   const c = 3, a = (0.5 * (1 - 1 / c)) / Math.max(0.05, threshold);
   x.globalCompositeOperation = 'copy'; x.filter = `brightness(${a.toFixed(3)}) contrast(${c})`;
   x.drawImage(q, 0, 0); x.filter = 'none'; x.globalCompositeOperation = 'source-over';
   return out;
 }
+/** Bright-pass at quarter res (soft knee: 0 below threshold, ~0.67 at white). Returns a pooled canvas. */
+export function brightPass(ctx, threshold = 0.6, key = 'cin-bp') { return brightPassFrom(snapshot(ctx, 0.25, 'cin-snap'), threshold, key); }
 
-function addBlurred(ctx, src, blurPx, mode, alpha, tint = null) {
-  const { W, H } = begin(ctx);
+// blurred, optionally tinted copy of a bright-pass canvas, written into target (additively)
+function blurInto(target, src, blurPx, alpha, tint) {
   const t = pooled('cin-blur', src.width, src.height), x = t.getContext('2d');
   x.globalCompositeOperation = 'copy'; x.filter = `blur(${blurPx.toFixed(2)}px)`; x.drawImage(src, 0, 0); x.filter = 'none';
-  if (tint) { x.globalCompositeOperation = 'multiply'; x.fillStyle = tint; x.fillRect(0, 0, t.width, t.height); x.globalCompositeOperation = 'source-over'; }
-  ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.globalCompositeOperation = mode; ctx.globalAlpha = cl(alpha, 0, 1); ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'low';
-  ctx.drawImage(t, 0, 0, W, H);
+  // the blur leaves translucent borders: put it on black first so the tint multiply cannot leak at the edges
+  x.globalCompositeOperation = 'destination-over'; x.fillStyle = '#000'; x.fillRect(0, 0, t.width, t.height);
+  if (tint) { x.globalCompositeOperation = 'multiply'; x.fillStyle = tint; x.fillRect(0, 0, t.width, t.height); }
+  x.globalCompositeOperation = 'source-over';
+  const tx = target.getContext('2d'); tx.globalCompositeOperation = 'lighter'; tx.globalAlpha = cl(alpha, 0, 1); tx.drawImage(t, 0, 0); tx.globalAlpha = 1;
+}
+export function flushAdd(ctx, glowCanvas) {
+  const { W, H } = begin(ctx);
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalCompositeOperation = 'screen'; ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'low';
+  ctx.drawImage(glowCanvas, 0, 0, W, H);
   end(ctx);
 }
-
-/** Glow around highlights. opts: {threshold=0.6, radius=40 (design px), strength=0.6, bright}. */
-export function bloom(ctx, o = {}) {
-  const { threshold = 0.6, radius = 40, strength = 0.6 } = o;
-  const k = ctx.canvas.width / DW;
-  const bp = o.bright ?? brightPass(ctx, threshold);
-  addBlurred(ctx, bp, Math.max(0.5, radius * k * 0.25), 'screen', strength);
+/**
+ * Bloom and/or halation in ONE pass (a single full-res blit). opts: {bloom: {threshold,radius,strength}|false,
+ * halation: {threshold,radius,strength,color}|false, snap: optional shared quarter-res snapshot,
+ * addq: optional quarter-res additive accumulator canvas (then nothing is drawn to ctx; the caller flushes it with flushAdd)}.
+ */
+export function glow(ctx, o = {}) {
+  const q = o.snap ?? snapshot(ctx, 0.25, 'cin-snap');
+  const k = q.width / DW, qw = q.width, qh = q.height; // blur radii are in design px; work at the snapshot's resolution
+  const acc = o.addq ?? pooled('cin-glow', qw, qh), ax = acc.getContext('2d');
+  if (!o.addq) { ax.globalCompositeOperation = 'source-over'; ax.fillStyle = '#000'; ax.fillRect(0, 0, qw, qh); }
+  if (o.bloom) { const b = o.bloom, bp = brightPassFrom(q, b.threshold ?? 0.6, 'cin-bp'); blurInto(acc, bp, Math.max(0.4, (b.radius ?? 40) * k), b.strength ?? 0.6, null); }
+  if (o.halation) { const h = o.halation, bp = brightPassFrom(q, h.threshold ?? 0.8, 'cin-bp2'); blurInto(acc, bp, Math.max(0.4, (h.radius ?? 70) * k), h.strength ?? 0.5, h.color ?? '#ff5a1e'); }
+  if (!o.addq) flushAdd(ctx, acc);
 }
-
+/** Glow around highlights. opts: {threshold=0.6, radius=40 (design px), strength=0.6}. */
+export function bloom(ctx, o = {}) { glow(ctx, { bloom: o }); }
 /** Film halation: warm red-orange fringe bleeding from very bright areas. opts: {threshold=0.8, radius=70, strength=0.5, color}. */
-export function halation(ctx, o = {}) {
-  const { threshold = 0.8, radius = 70, strength = 0.5, color = '#ff5a1e' } = o;
-  const k = ctx.canvas.width / DW;
-  const bp = o.bright ?? brightPass(ctx, threshold, 'cin-bp2');
-  addBlurred(ctx, bp, Math.max(0.5, radius * k * 0.25), 'screen', strength, color);
-}
+export function halation(ctx, o = {}) { glow(ctx, { halation: o }); }
 
 /**
  * Depth-of-field: blur a layer canvas according to |1/depth - 1/focusDepth|. Returns a canvas (the input itself when
@@ -117,7 +126,7 @@ export function heatHaze(ctx, o = {}) {
   sx.globalCompositeOperation = 'copy'; sx.drawImage(ctx.canvas, 0, 0); sx.globalCompositeOperation = 'source-over';
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   const st = Math.max(2, Math.round(strip * k));
-  ctx.globalCompositeOperation = 'copy';
+  ctx.globalCompositeOperation = 'source-over';
   for (let y = 0; y < H; y += st) {
     const near = 0.25 + 0.75 * Math.exp(-Math.pow((y / H - centre) / spread, 2));
     const dx = (Math.sin(y / k * 0.05 + t * 3.1 * speed) + 0.6 * Math.sin(y / k * 0.021 - t * 1.7 * speed)) * amp * k * near;
