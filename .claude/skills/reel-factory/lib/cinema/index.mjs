@@ -6,7 +6,7 @@ export * from './light.mjs';
 export * from './atmos.mjs';
 export * from './film.mjs';
 export * from './texture.mjs';
-export { hashPixels, pooled, frameSeed, easeInOut, easeOut, DW, DH } from './util.mjs';
+export { hashPixels, pooled, poolSize, frameSeed, easeInOut, easeOut, DW, DH } from './util.mjs';
 import { glow, heatHaze, flushAdd } from './atmos.mjs';
 import { snapshot, pooled } from './util.mjs';
 import { grain, vignette, chromaticAberration, gateWeave, flicker, letterbox, dustScratches, grade, whipBlur } from './film.mjs';

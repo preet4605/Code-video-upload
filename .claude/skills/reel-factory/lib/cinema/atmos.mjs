@@ -53,12 +53,13 @@ export function fog(ctx, o = {}) {
 
 function brightPassFrom(q, threshold, key) {
   const out = pooled(key, q.width, q.height), x = out.getContext('2d');
-  const c = 3, a = (0.5 * (1 - 1 / c)) / Math.max(0.05, threshold);
-  x.globalCompositeOperation = 'copy'; x.filter = `brightness(${a.toFixed(3)}) contrast(${c})`;
+  // linear ramp 0 at `threshold` -> 1 at white, expressed as brightness(a) then contrast(c): a = 1/(1+t), c = (1+t)/(1-t)
+  const tt = Math.min(0.95, Math.max(0.05, threshold)), c = (1 + tt) / (1 - tt), a = 1 / (1 + tt);
+  x.globalCompositeOperation = 'copy'; x.filter = `brightness(${a.toFixed(3)}) contrast(${c.toFixed(3)})`;
   x.drawImage(q, 0, 0); x.filter = 'none'; x.globalCompositeOperation = 'source-over';
   return out;
 }
-/** Bright-pass at quarter res (soft knee: 0 below threshold, ~0.67 at white). Returns a pooled canvas. */
+/** Bright-pass at quarter res (linear ramp: 0 at `threshold`, 1 at white). Returns a pooled canvas. */
 export function brightPass(ctx, threshold = 0.6, key = 'cin-bp') { return brightPassFrom(snapshot(ctx, 0.25, 'cin-snap'), threshold, key); }
 
 // blurred, optionally tinted copy of a bright-pass canvas, written into target (additively)

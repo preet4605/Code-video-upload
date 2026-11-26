@@ -7,7 +7,7 @@ import { noise1 } from './texture.mjs';
 
 // ---------- grain ----------
 // One noise canvas per (seed, size) generated ONCE (a per-pixel loop at cache time), padded so a per-frame seeded
-// offset + flip can slide over the frame: per frame it is a single drawImage.
+// offset can slide over the frame: per frame it is a single drawImage.
 const _grain = new Map();
 const PAD = 256;
 function grainCanvas(seed, W, H, scale) {
@@ -26,20 +26,17 @@ function grainCanvas(seed, W, H, scale) {
   _grain.set(key, c); return c;
 }
 /**
- * Film grain: mid-grey noise, per-frame seeded offset/flip, blended overlay (true blacks and pure whites stay
+ * Film grain: mid-grey noise, per-frame seeded offset, blended overlay (true blacks and pure whites stay
  * clean, mid-tones carry the grain). opts: {frame=0, seed=1, amount=0.35, size=1.3 (grain size in px)}.
  */
 export function grain(ctx, o = {}) {
   const { frame = 0, seed = 1, amount = 0.35, size = 1.3 } = o;
   const { W, H, k } = begin(ctx);
   const g = grainCanvas(seed, W, H, Math.max(0.5, size * k));
-  const rnd = mulberry32(frameSeed(seed, frame)), ox = rnd() * PAD, oy = rnd() * PAD, fx = rnd() < 0.5, fy = rnd() < 0.5;
+  const rnd = mulberry32(frameSeed(seed, frame)), ox = Math.floor(rnd() * PAD), oy = Math.floor(rnd() * PAD);
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = cl(amount * 0.55, 0, 1);
-  ctx.save(); ctx.beginPath(); ctx.rect(0, 0, W, H); ctx.clip();
-  ctx.translate(fx ? W + ox : -ox, fy ? H + oy : -oy); ctx.scale(fx ? -1 : 1, fy ? -1 : 1);
-  ctx.drawImage(g, 0, 0);
-  ctx.restore();
+  ctx.drawImage(g, ox, oy, W, H, 0, 0, W, H); // 1:1 integer blit of a moving window: the cheapest path
   end(ctx);
 }
 
@@ -75,7 +72,7 @@ export function chromaticAberration(ctx, o = {}) {
   const { W, H } = begin(ctx);
   const hw = Math.round(W / 4), hh = Math.round(H / 4);
   const src = o.snap ?? snapshot(ctx, 0.25, 'cin-snap');
-  const FEATHER = 0.22; // fraction of the width on each side that carries the effect (strongest at the very edge)
+  const FEATHER = 0.16; // fraction of the width on each side that carries the effect (strongest at the very edge)
   const ramp = (x) => { const g = x.createLinearGradient(0, 0, hw, 0); g.addColorStop(0, 'rgba(0,0,0,1)'); g.addColorStop(FEATHER, 'rgba(0,0,0,0)'); g.addColorStop(1 - FEATHER, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,1)'); return g; };
   const chan = (key, col) => {
     const c = pooled(key, hw, hh), x = c.getContext('2d');
@@ -126,6 +123,7 @@ export function flickerValue(t, seed = 1, amount = 0.06, rate = 14) { return (no
 export function flicker(ctx, o = {}) {
   const { t = 0, seed = 1, amount = 0.06, rate = 14 } = o;
   const v = flickerValue(t, seed, amount, rate);
+  if (Math.abs(v) < 0.004) return; // invisible: skip the full-frame fill
   const { W, H } = begin(ctx);
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   if (v >= 0) { ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = `rgba(255,248,235,${v.toFixed(4)})`; } else { ctx.fillStyle = `rgba(0,0,0,${(-v).toFixed(4)})`; }

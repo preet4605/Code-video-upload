@@ -17,7 +17,7 @@ const fillB = (c, b, col) => { c.fillStyle = col; c.fillRect(b.x0, b.y0, b.w, b.
 // ---------------- plane 1 (far): sky ----------------
 function drawSky(c, b) {
   const g = c.createLinearGradient(0, b.y0, 0, 1250);
-  g.addColorStop(0, '#04060c'); g.addColorStop(0.55, '#0d1730'); g.addColorStop(1, '#2a3d63');
+  g.addColorStop(0, '#020308'); g.addColorStop(0.5, '#080f22'); g.addColorStop(1, '#1d2d4e');
   fillB(c, b, g);
   // stars sprite (transparent tile), upper sky only
   c.save(); c.beginPath(); c.rect(b.x0, b.y0, b.w, 1000 - b.y0); c.clip();
@@ -87,7 +87,7 @@ function drawGround(c, b, occ, t) {
   // curbs
   c.fillStyle = '#1f2431'; c.beginPath(); c.moveTo(b.x0, top - 22); c.lineTo(b.x1, top - 22); c.lineTo(b.x1, top + 14); c.lineTo(b.x0, top + 14); c.closePath(); c.fill();
   // puddles: dark mirrors with a vertical lamp reflection (the streak is what sells "wet")
-  const P = [[330, 1640, 330, 52], [760, 1470, 250, 36], [560, 1800, 420, 60], [880, 1740, 220, 40]];
+  const P = [[330, 1640, 330, 52], [760, 1470, 250, 36], [560, 1800, 420, 60], [880, 1740, 220, 40], [640, 1590, 300, 44]];
   for (const [x, y, rx, ry] of P) {
     const pg = c.createLinearGradient(0, y - ry, 0, y + ry); pg.addColorStop(0, 'rgba(120,150,210,0.55)'); pg.addColorStop(1, 'rgba(20,28,48,0.9)');
     c.fillStyle = pg; c.beginPath(); c.ellipse(x, y, rx, ry, 0, 0, 6.3); c.fill();
@@ -133,7 +133,7 @@ function drawSubject(c, b, occ, t, Path2D) {
   c.fillStyle = g; c.fillRect(SUB.x - 300, SUB.feet - 820, 600, 840); c.restore();
   // lamp is up-right of the subject: rim on that side, soft edge
   const toLamp = { x: 1, y: -0.55 };
-  cin.rimLight(c, path, toLamp, { width: 5, color: '#ffc98a', alpha: 0.95 });
+  cin.rimLight(c, path, toLamp, { width: 9, color: '#ffd9a8', alpha: 1 });
   // cold fill from the sky on the shadow side keeps the silhouette off the dark wall
   cin.rimLight(c, path, { x: -1, y: -0.5 }, { width: 3.5, color: '#6f8cc4', alpha: 0.5, soft: false });
 }
@@ -166,6 +166,24 @@ function motes(ctx, t, lampS) {
     const x = lampS.x + Math.cos(ang) * dist + Math.sin(t * 0.5 + ph) * 22, y = lampS.y + Math.sin(ang) * dist + ((t * sp) % 60);
     const a = 0.55 * (1 - dist / 1100) * (0.5 + 0.5 * Math.sin(t * 1.1 + ph));
     ctx.fillStyle = `rgba(255,214,150,${Math.max(0, a)})`; ctx.beginPath(); ctx.arc(x, y, 1.2 + r() * 1.8, 0, 6.3); ctx.fill();
+  }
+  ctx.restore();
+}
+
+// ---------------- rain: streaks in screen space, bright where the lamp cone catches them ----------------
+function rain(ctx, t, lamp) {
+  const k = ctx.canvas.width / 1080, r = mulberry32(8181);
+  ctx.save(); ctx.setTransform(k, 0, 0, k, 0, 0); ctx.globalCompositeOperation = 'screen'; ctx.lineCap = 'round';
+  const ax = Math.cos(1.95), ay = Math.sin(1.95);
+  for (let i = 0; i < 260; i++) {
+    const near = r(), sp = 1500 + near * 900, len = 40 + near * 70, x0 = r() * 1300 - 110, y0 = r() * 2300;
+    const x = x0 - ((t * sp * 0.18) % 1300), y = ((y0 + t * sp) % 2300) - 180;
+    // distance from the lamp's beam axis -> brightness
+    const dx = x - lamp.x, dy = y - lamp.y, along = dx * ax + dy * ay;
+    const cross = Math.abs(dx * ay - dy * ax), inBeam = along > 0 ? Math.exp(-Math.pow(cross / (110 + along * 0.38), 2)) * Math.max(0, 1 - along / 1500) : 0;
+    const a = 0.10 + 0.75 * inBeam;
+    ctx.strokeStyle = inBeam > 0.15 ? `rgba(255,226,180,${a})` : `rgba(150,170,210,${a})`; ctx.lineWidth = 1.6 + near * 2.2;
+    ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x - len * 0.18, y - len); ctx.stroke();
   }
   ctx.restore();
 }
@@ -204,20 +222,21 @@ export const VideoClock = {
     }, lights, lopt);
     // fog sits BETWEEN the street and the subject: the man stays crisp in front of it
     cin.fog(ctx, { t, depthBands: 3, density: 0.34, color: '#8fa2c4', horizon: 0.7, height: 0.3, seed: 11 });
-    cin.darkMaskLayer(ctx, (o) => {
-      cam.layer(o, 1.1, (c, b) => subjectShadow(c, b, P2D, t));
-      cam.layer(o, 1.1, (c, b) => drawSubject(c, b, false, t, P2D));
-    }, lights, lopt);
-
     // god rays: the real silhouettes occlude the lamp
     cin.godRays(ctx, (o) => {
       cam.layer(o, 2.6, (c, b) => drawBuildings(c, b, true));
       cam.layer(o, 1.9, (c, b) => drawGround(c, b, true, t));
       cam.layer(o, 1.3, (c, b) => drawLamp(c, b, true, t));
       cam.layer(o, 1.1, (c, b) => drawSubject(c, b, true, t, P2D));
-    }, { x: lampS.sx, y: lampS.sy }, { frame, seed: 5, intensity: 0.85, color: '#ffcf94', radius: 520, samples: 12, decay: 0.95, density: 0.95 });
+    }, { x: lampS.sx, y: lampS.sy }, { frame, seed: 5, intensity: 0.7, color: '#ffcf94', radius: 380, samples: 12, decay: 0.95, density: 0.95 });
+
+    cin.darkMaskLayer(ctx, (o) => {
+      cam.layer(o, 1.1, (c, b) => subjectShadow(c, b, P2D, t));
+      cam.layer(o, 1.1, (c, b) => drawSubject(c, b, false, t, P2D));
+    }, lights.map((L) => (L.type === 'cone' || L.r < 1000 ? { ...L, intensity: L.intensity * 0.38 } : L)), lopt);  // backlit: the man's front stays in shadow
 
     cin.fog(ctx, { t, depthBands: 1, density: 0.16, color: '#8fa2c4', horizon: 0.78, height: 0.2, seed: 12, wind: 1.6 }); // thin near mist
+    rain(ctx, t, { x: lampS.sx, y: lampS.sy });
     motes(ctx, t, { x: lampS.sx, y: lampS.sy });
     // lamp sparkle
     // the lamp itself is emissive: painted after the mask so it is never darkened

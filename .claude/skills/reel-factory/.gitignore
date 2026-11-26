@@ -7,3 +7,4 @@ __pycache__/
 /_*.mjs
 examples/*/audio/*.wav
 _dbg*.mjs
+examples/*/audio/*.wav
