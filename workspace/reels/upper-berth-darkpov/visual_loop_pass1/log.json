@@ -1,0 +1,1769 @@
+{
+  "targets": "../../../.claude/skills/reel-factory/templates/visual_targets.horror-dark-pov.json",
+  "iterations": [
+    {
+      "iter": 1,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.417,
+        "top_pairs": [
+          {
+            "a": "s11_ticket2",
+            "b": "s12_loop",
+            "hash_sim": 0.875,
+            "hist_dist": 0.075
+          },
+          {
+            "a": "s8_itarsi",
+            "b": "s12_loop",
+            "hash_sim": 0.868,
+            "hist_dist": 0.053
+          },
+          {
+            "a": "s5_stop",
+            "b": "s12_loop",
+            "hash_sim": 0.868,
+            "hist_dist": 0.066
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s6_eyes",
+            "s7_tickets",
+            "s8_itarsi",
+            "s11_ticket2",
+            "s12_loop"
+          ],
+          [
+            "s1_hook",
+            "s2_coach",
+            "s3_ticket",
+            "s4_rule"
+          ],
+          [
+            "s9_relief",
+            "s10_bhopal"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.903,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": true,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0092,
+            "contrast": 17.3667,
+            "mean_luma": 11.7,
+            "color_bins": 8.6667,
+            "saturation": 0.2637,
+            "ink": 0.0059,
+            "focal": 7.7067,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.054,
+            "lit_regions": 1.3333,
+            "p5_luma": 1,
+            "subject_scale": 0.257,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.011,
+            "contrast": 19.3333,
+            "mean_luma": 12.9667,
+            "color_bins": 8.6667,
+            "saturation": 0.2803,
+            "ink": 0.0082,
+            "focal": 5.2,
+            "hue_families": 1,
+            "lit_fraction": 0.057,
+            "lit_regions": 1,
+            "p5_luma": 1.3333,
+            "subject_scale": 0.257,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.914,
+          "metrics": {
+            "sharp_edges": 0.0191,
+            "contrast": 26.8,
+            "mean_luma": 15.5,
+            "color_bins": 14.6667,
+            "saturation": 0.2377,
+            "ink": 0.0121,
+            "focal": 5.7867,
+            "hue_families": 1,
+            "lit_fraction": 0.0752,
+            "lit_regions": 1,
+            "p5_luma": 2.3333,
+            "subject_scale": 0.191,
+            "empty_cells": 12
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0068,
+            "contrast": 20.2667,
+            "mean_luma": 12.7667,
+            "color_bins": 9.6667,
+            "saturation": 0.3323,
+            "ink": 0.0042,
+            "focal": 5.83,
+            "hue_families": 1,
+            "lit_fraction": 0.0601,
+            "lit_regions": 1,
+            "p5_luma": 1,
+            "subject_scale": 0.1873,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0091,
+            "contrast": 21.4,
+            "mean_luma": 18.4333,
+            "color_bins": 10,
+            "saturation": 0.3357,
+            "ink": 0.0059,
+            "focal": 4.3533,
+            "hue_families": 1,
+            "lit_fraction": 0.0998,
+            "lit_regions": 1,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.2083,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": false,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0061,
+            "contrast": 18.3,
+            "mean_luma": 14.6,
+            "color_bins": 9,
+            "saturation": 0.3477,
+            "ink": 0.0033,
+            "focal": 8.3267,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0382,
+            "lit_regions": 0.6667,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.1427,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0072,
+            "contrast": 25.1,
+            "mean_luma": 20.9667,
+            "color_bins": 13.6667,
+            "saturation": 0.2903,
+            "ink": 0.0036,
+            "focal": 5.92,
+            "hue_families": 1,
+            "lit_fraction": 0.0975,
+            "lit_regions": 1.3333,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.229,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.883,
+          "metrics": {
+            "sharp_edges": 0.0185,
+            "contrast": 25.5667,
+            "mean_luma": 21.9667,
+            "color_bins": 13,
+            "saturation": 0.16,
+            "ink": 0.0127,
+            "focal": 4.93,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.1112,
+            "lit_regions": 1.3333,
+            "p5_luma": 4.3333,
+            "subject_scale": 0.2047,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": true,
+          "score": 0.893,
+          "metrics": {
+            "sharp_edges": 0.0041,
+            "contrast": 17.6,
+            "mean_luma": 11,
+            "color_bins": 8,
+            "saturation": 0.4913,
+            "ink": 0.0037,
+            "focal": 4.0567,
+            "hue_families": 1,
+            "lit_fraction": 0.0477,
+            "lit_regions": 1,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.2397,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.884,
+          "metrics": {
+            "sharp_edges": 0.013,
+            "contrast": 29.0333,
+            "mean_luma": 21.8333,
+            "color_bins": 12.6667,
+            "saturation": 0.183,
+            "ink": 0.0038,
+            "focal": 7.0533,
+            "hue_families": 0.3333,
+            "lit_fraction": 0.1123,
+            "lit_regions": 1,
+            "p5_luma": 1.6667,
+            "subject_scale": 0.2533,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.89,
+          "metrics": {
+            "sharp_edges": 0.0215,
+            "contrast": 20.7333,
+            "mean_luma": 16.2333,
+            "color_bins": 11,
+            "saturation": 0.153,
+            "ink": 0.0182,
+            "focal": 3.9133,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0518,
+            "lit_regions": 1,
+            "p5_luma": 2,
+            "subject_scale": 0.052,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.929,
+          "metrics": {
+            "sharp_edges": 0.0265,
+            "contrast": 30.8,
+            "mean_luma": 23.3,
+            "color_bins": 14.6667,
+            "saturation": 0.2153,
+            "ink": 0.0139,
+            "focal": 4.42,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.1323,
+            "lit_regions": 1.6667,
+            "p5_luma": 2,
+            "subject_scale": 0.281,
+            "empty_cells": 10
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 2,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.417,
+        "top_pairs": [
+          {
+            "a": "s11_ticket2",
+            "b": "s12_loop",
+            "hash_sim": 0.875,
+            "hist_dist": 0.074
+          },
+          {
+            "a": "s5_stop",
+            "b": "s12_loop",
+            "hash_sim": 0.868,
+            "hist_dist": 0.065
+          },
+          {
+            "a": "s8_itarsi",
+            "b": "s12_loop",
+            "hash_sim": 0.861,
+            "hist_dist": 0.053
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s6_eyes",
+            "s7_tickets",
+            "s8_itarsi",
+            "s11_ticket2",
+            "s12_loop"
+          ],
+          [
+            "s1_hook",
+            "s2_coach",
+            "s3_ticket",
+            "s4_rule"
+          ],
+          [
+            "s9_relief",
+            "s10_bhopal"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.902,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": true,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0092,
+            "contrast": 17.3667,
+            "mean_luma": 11.7,
+            "color_bins": 8.6667,
+            "saturation": 0.2637,
+            "ink": 0.0059,
+            "focal": 7.7067,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.054,
+            "lit_regions": 1.3333,
+            "p5_luma": 1,
+            "subject_scale": 0.257,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.011,
+            "contrast": 19.3333,
+            "mean_luma": 12.9667,
+            "color_bins": 8.6667,
+            "saturation": 0.2803,
+            "ink": 0.0082,
+            "focal": 5.2,
+            "hue_families": 1,
+            "lit_fraction": 0.057,
+            "lit_regions": 1,
+            "p5_luma": 1.3333,
+            "subject_scale": 0.257,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.914,
+          "metrics": {
+            "sharp_edges": 0.0191,
+            "contrast": 26.8,
+            "mean_luma": 15.5,
+            "color_bins": 14.6667,
+            "saturation": 0.2377,
+            "ink": 0.0121,
+            "focal": 5.7867,
+            "hue_families": 1,
+            "lit_fraction": 0.0752,
+            "lit_regions": 1,
+            "p5_luma": 2.3333,
+            "subject_scale": 0.191,
+            "empty_cells": 12
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0068,
+            "contrast": 20.2667,
+            "mean_luma": 12.7667,
+            "color_bins": 9.6667,
+            "saturation": 0.3323,
+            "ink": 0.0042,
+            "focal": 5.83,
+            "hue_families": 1,
+            "lit_fraction": 0.0601,
+            "lit_regions": 1,
+            "p5_luma": 1,
+            "subject_scale": 0.1873,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0091,
+            "contrast": 21.4,
+            "mean_luma": 18.4333,
+            "color_bins": 10,
+            "saturation": 0.3357,
+            "ink": 0.0059,
+            "focal": 4.3533,
+            "hue_families": 1,
+            "lit_fraction": 0.0998,
+            "lit_regions": 1,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.2083,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": false,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0061,
+            "contrast": 18.3,
+            "mean_luma": 14.6,
+            "color_bins": 9,
+            "saturation": 0.3477,
+            "ink": 0.0033,
+            "focal": 8.3267,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0382,
+            "lit_regions": 0.6667,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.1427,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0072,
+            "contrast": 25.1,
+            "mean_luma": 20.9667,
+            "color_bins": 13.6667,
+            "saturation": 0.2903,
+            "ink": 0.0036,
+            "focal": 5.92,
+            "hue_families": 1,
+            "lit_fraction": 0.0975,
+            "lit_regions": 1.3333,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.229,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.88,
+          "metrics": {
+            "sharp_edges": 0.0183,
+            "contrast": 25.5667,
+            "mean_luma": 21.6333,
+            "color_bins": 13,
+            "saturation": 0.1577,
+            "ink": 0.0125,
+            "focal": 4.9933,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.1094,
+            "lit_regions": 1.3333,
+            "p5_luma": 4.3333,
+            "subject_scale": 0.2047,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": true,
+          "score": 0.893,
+          "metrics": {
+            "sharp_edges": 0.0041,
+            "contrast": 17.6,
+            "mean_luma": 11,
+            "color_bins": 8,
+            "saturation": 0.4913,
+            "ink": 0.0037,
+            "focal": 4.0567,
+            "hue_families": 1,
+            "lit_fraction": 0.0477,
+            "lit_regions": 1,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.2397,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.884,
+          "metrics": {
+            "sharp_edges": 0.013,
+            "contrast": 29.0333,
+            "mean_luma": 21.8333,
+            "color_bins": 12.6667,
+            "saturation": 0.183,
+            "ink": 0.0038,
+            "focal": 7.0533,
+            "hue_families": 0.3333,
+            "lit_fraction": 0.1123,
+            "lit_regions": 1,
+            "p5_luma": 1.6667,
+            "subject_scale": 0.2533,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.89,
+          "metrics": {
+            "sharp_edges": 0.0215,
+            "contrast": 20.7333,
+            "mean_luma": 16.2333,
+            "color_bins": 11,
+            "saturation": 0.153,
+            "ink": 0.0182,
+            "focal": 3.9133,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0518,
+            "lit_regions": 1,
+            "p5_luma": 2,
+            "subject_scale": 0.052,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0262,
+            "contrast": 30.8,
+            "mean_luma": 22.9333,
+            "color_bins": 14.6667,
+            "saturation": 0.215,
+            "ink": 0.0136,
+            "focal": 4.5133,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.1301,
+            "lit_regions": 1.6667,
+            "p5_luma": 2,
+            "subject_scale": 0.281,
+            "empty_cells": 11
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 3,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.417,
+        "top_pairs": [
+          {
+            "a": "s11_ticket2",
+            "b": "s12_loop",
+            "hash_sim": 0.875,
+            "hist_dist": 0.071
+          },
+          {
+            "a": "s8_itarsi",
+            "b": "s12_loop",
+            "hash_sim": 0.868,
+            "hist_dist": 0.052
+          },
+          {
+            "a": "s5_stop",
+            "b": "s12_loop",
+            "hash_sim": 0.868,
+            "hist_dist": 0.064
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s6_eyes",
+            "s7_tickets",
+            "s8_itarsi",
+            "s11_ticket2",
+            "s12_loop"
+          ],
+          [
+            "s1_hook",
+            "s2_coach",
+            "s3_ticket",
+            "s4_rule"
+          ],
+          [
+            "s9_relief",
+            "s10_bhopal"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.902,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": true,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0092,
+            "contrast": 17.3667,
+            "mean_luma": 11.7,
+            "color_bins": 8.6667,
+            "saturation": 0.2637,
+            "ink": 0.0059,
+            "focal": 7.7067,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.054,
+            "lit_regions": 1.3333,
+            "p5_luma": 1,
+            "subject_scale": 0.257,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.011,
+            "contrast": 19.3333,
+            "mean_luma": 12.9667,
+            "color_bins": 8.6667,
+            "saturation": 0.2803,
+            "ink": 0.0082,
+            "focal": 5.2,
+            "hue_families": 1,
+            "lit_fraction": 0.057,
+            "lit_regions": 1,
+            "p5_luma": 1.3333,
+            "subject_scale": 0.257,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.914,
+          "metrics": {
+            "sharp_edges": 0.0191,
+            "contrast": 26.8,
+            "mean_luma": 15.5,
+            "color_bins": 14.6667,
+            "saturation": 0.2377,
+            "ink": 0.0121,
+            "focal": 5.7867,
+            "hue_families": 1,
+            "lit_fraction": 0.0752,
+            "lit_regions": 1,
+            "p5_luma": 2.3333,
+            "subject_scale": 0.191,
+            "empty_cells": 12
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0068,
+            "contrast": 20.2667,
+            "mean_luma": 12.7667,
+            "color_bins": 9.6667,
+            "saturation": 0.3323,
+            "ink": 0.0042,
+            "focal": 5.83,
+            "hue_families": 1,
+            "lit_fraction": 0.0601,
+            "lit_regions": 1,
+            "p5_luma": 1,
+            "subject_scale": 0.1873,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0091,
+            "contrast": 21.4,
+            "mean_luma": 18.4333,
+            "color_bins": 10,
+            "saturation": 0.3357,
+            "ink": 0.0059,
+            "focal": 4.3533,
+            "hue_families": 1,
+            "lit_fraction": 0.0998,
+            "lit_regions": 1,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.2083,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": false,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0061,
+            "contrast": 18.3,
+            "mean_luma": 14.6,
+            "color_bins": 9,
+            "saturation": 0.3477,
+            "ink": 0.0033,
+            "focal": 8.3267,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0382,
+            "lit_regions": 0.6667,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.1427,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0072,
+            "contrast": 25.1,
+            "mean_luma": 20.9667,
+            "color_bins": 13.6667,
+            "saturation": 0.2903,
+            "ink": 0.0036,
+            "focal": 5.92,
+            "hue_families": 1,
+            "lit_fraction": 0.0975,
+            "lit_regions": 1.3333,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.229,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.878,
+          "metrics": {
+            "sharp_edges": 0.0176,
+            "contrast": 25.2,
+            "mean_luma": 21.1333,
+            "color_bins": 12.6667,
+            "saturation": 0.1553,
+            "ink": 0.0119,
+            "focal": 4.8933,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.1063,
+            "lit_regions": 1.3333,
+            "p5_luma": 4.3333,
+            "subject_scale": 0.1977,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": true,
+          "score": 0.893,
+          "metrics": {
+            "sharp_edges": 0.0041,
+            "contrast": 17.6,
+            "mean_luma": 11,
+            "color_bins": 8,
+            "saturation": 0.4913,
+            "ink": 0.0037,
+            "focal": 4.0567,
+            "hue_families": 1,
+            "lit_fraction": 0.0477,
+            "lit_regions": 1,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.2397,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.884,
+          "metrics": {
+            "sharp_edges": 0.013,
+            "contrast": 29.0333,
+            "mean_luma": 21.8333,
+            "color_bins": 12.6667,
+            "saturation": 0.183,
+            "ink": 0.0038,
+            "focal": 7.0533,
+            "hue_families": 0.3333,
+            "lit_fraction": 0.1123,
+            "lit_regions": 1,
+            "p5_luma": 1.6667,
+            "subject_scale": 0.2533,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.89,
+          "metrics": {
+            "sharp_edges": 0.0215,
+            "contrast": 20.7333,
+            "mean_luma": 16.2333,
+            "color_bins": 11,
+            "saturation": 0.153,
+            "ink": 0.0182,
+            "focal": 3.9133,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0518,
+            "lit_regions": 1,
+            "p5_luma": 2,
+            "subject_scale": 0.052,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0258,
+            "contrast": 30.4667,
+            "mean_luma": 22.4667,
+            "color_bins": 14.6667,
+            "saturation": 0.2143,
+            "ink": 0.0135,
+            "focal": 4.5133,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.1269,
+            "lit_regions": 1.6667,
+            "p5_luma": 2,
+            "subject_scale": 0.2673,
+            "empty_cells": 11
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 4,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.417,
+        "top_pairs": [
+          {
+            "a": "s11_ticket2",
+            "b": "s12_loop",
+            "hash_sim": 0.875,
+            "hist_dist": 0.071
+          },
+          {
+            "a": "s5_stop",
+            "b": "s12_loop",
+            "hash_sim": 0.868,
+            "hist_dist": 0.064
+          },
+          {
+            "a": "s8_itarsi",
+            "b": "s12_loop",
+            "hash_sim": 0.861,
+            "hist_dist": 0.052
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s6_eyes",
+            "s7_tickets",
+            "s8_itarsi",
+            "s11_ticket2",
+            "s12_loop"
+          ],
+          [
+            "s1_hook",
+            "s2_coach",
+            "s3_ticket",
+            "s4_rule"
+          ],
+          [
+            "s9_relief",
+            "s10_bhopal"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.902,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": true,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0092,
+            "contrast": 17.3667,
+            "mean_luma": 11.7,
+            "color_bins": 8.6667,
+            "saturation": 0.2637,
+            "ink": 0.0059,
+            "focal": 7.7067,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.054,
+            "lit_regions": 1.3333,
+            "p5_luma": 1,
+            "subject_scale": 0.257,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.011,
+            "contrast": 19.3333,
+            "mean_luma": 12.9667,
+            "color_bins": 8.6667,
+            "saturation": 0.2803,
+            "ink": 0.0082,
+            "focal": 5.2,
+            "hue_families": 1,
+            "lit_fraction": 0.057,
+            "lit_regions": 1,
+            "p5_luma": 1.3333,
+            "subject_scale": 0.257,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.914,
+          "metrics": {
+            "sharp_edges": 0.0191,
+            "contrast": 26.8,
+            "mean_luma": 15.5,
+            "color_bins": 14.6667,
+            "saturation": 0.2377,
+            "ink": 0.0121,
+            "focal": 5.7867,
+            "hue_families": 1,
+            "lit_fraction": 0.0752,
+            "lit_regions": 1,
+            "p5_luma": 2.3333,
+            "subject_scale": 0.191,
+            "empty_cells": 12
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0068,
+            "contrast": 20.2667,
+            "mean_luma": 12.7667,
+            "color_bins": 9.6667,
+            "saturation": 0.3323,
+            "ink": 0.0042,
+            "focal": 5.83,
+            "hue_families": 1,
+            "lit_fraction": 0.0601,
+            "lit_regions": 1,
+            "p5_luma": 1,
+            "subject_scale": 0.1873,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0091,
+            "contrast": 21.4,
+            "mean_luma": 18.4333,
+            "color_bins": 10,
+            "saturation": 0.3357,
+            "ink": 0.0059,
+            "focal": 4.3533,
+            "hue_families": 1,
+            "lit_fraction": 0.0998,
+            "lit_regions": 1,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.2083,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": false,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0061,
+            "contrast": 18.3,
+            "mean_luma": 14.6,
+            "color_bins": 9,
+            "saturation": 0.3477,
+            "ink": 0.0033,
+            "focal": 8.3267,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0382,
+            "lit_regions": 0.6667,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.1427,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0072,
+            "contrast": 25.1,
+            "mean_luma": 20.9667,
+            "color_bins": 13.6667,
+            "saturation": 0.2903,
+            "ink": 0.0036,
+            "focal": 5.92,
+            "hue_families": 1,
+            "lit_fraction": 0.0975,
+            "lit_regions": 1.3333,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.229,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.88,
+          "metrics": {
+            "sharp_edges": 0.0183,
+            "contrast": 25.5667,
+            "mean_luma": 21.6333,
+            "color_bins": 13,
+            "saturation": 0.1577,
+            "ink": 0.0125,
+            "focal": 4.9933,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.1094,
+            "lit_regions": 1.3333,
+            "p5_luma": 4.3333,
+            "subject_scale": 0.2047,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": true,
+          "score": 0.893,
+          "metrics": {
+            "sharp_edges": 0.0041,
+            "contrast": 17.6,
+            "mean_luma": 11,
+            "color_bins": 8,
+            "saturation": 0.4913,
+            "ink": 0.0037,
+            "focal": 4.0567,
+            "hue_families": 1,
+            "lit_fraction": 0.0477,
+            "lit_regions": 1,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.2397,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.884,
+          "metrics": {
+            "sharp_edges": 0.013,
+            "contrast": 29.0333,
+            "mean_luma": 21.8333,
+            "color_bins": 12.6667,
+            "saturation": 0.183,
+            "ink": 0.0038,
+            "focal": 7.0533,
+            "hue_families": 0.3333,
+            "lit_fraction": 0.1123,
+            "lit_regions": 1,
+            "p5_luma": 1.6667,
+            "subject_scale": 0.2533,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.89,
+          "metrics": {
+            "sharp_edges": 0.0215,
+            "contrast": 20.7333,
+            "mean_luma": 16.2333,
+            "color_bins": 11,
+            "saturation": 0.153,
+            "ink": 0.0182,
+            "focal": 3.9133,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0518,
+            "lit_regions": 1,
+            "p5_luma": 2,
+            "subject_scale": 0.052,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0258,
+            "contrast": 30.4667,
+            "mean_luma": 22.4667,
+            "color_bins": 14.6667,
+            "saturation": 0.2143,
+            "ink": 0.0135,
+            "focal": 4.5133,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.1269,
+            "lit_regions": 1.6667,
+            "p5_luma": 2,
+            "subject_scale": 0.2673,
+            "empty_cells": 11
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 5,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.417,
+        "top_pairs": [
+          {
+            "a": "s11_ticket2",
+            "b": "s12_loop",
+            "hash_sim": 0.875,
+            "hist_dist": 0.071
+          },
+          {
+            "a": "s5_stop",
+            "b": "s12_loop",
+            "hash_sim": 0.868,
+            "hist_dist": 0.064
+          },
+          {
+            "a": "s8_itarsi",
+            "b": "s12_loop",
+            "hash_sim": 0.861,
+            "hist_dist": 0.052
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s6_eyes",
+            "s7_tickets",
+            "s8_itarsi",
+            "s11_ticket2",
+            "s12_loop"
+          ],
+          [
+            "s1_hook",
+            "s2_coach",
+            "s3_ticket",
+            "s4_rule"
+          ],
+          [
+            "s9_relief",
+            "s10_bhopal"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.902,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": true,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0092,
+            "contrast": 17.3667,
+            "mean_luma": 11.7,
+            "color_bins": 8.6667,
+            "saturation": 0.2637,
+            "ink": 0.0059,
+            "focal": 7.7067,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.054,
+            "lit_regions": 1.3333,
+            "p5_luma": 1,
+            "subject_scale": 0.257,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.011,
+            "contrast": 19.3333,
+            "mean_luma": 12.9667,
+            "color_bins": 8.6667,
+            "saturation": 0.2803,
+            "ink": 0.0082,
+            "focal": 5.2,
+            "hue_families": 1,
+            "lit_fraction": 0.057,
+            "lit_regions": 1,
+            "p5_luma": 1.3333,
+            "subject_scale": 0.257,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.914,
+          "metrics": {
+            "sharp_edges": 0.0191,
+            "contrast": 26.8,
+            "mean_luma": 15.5,
+            "color_bins": 14.6667,
+            "saturation": 0.2377,
+            "ink": 0.0121,
+            "focal": 5.7867,
+            "hue_families": 1,
+            "lit_fraction": 0.0752,
+            "lit_regions": 1,
+            "p5_luma": 2.3333,
+            "subject_scale": 0.191,
+            "empty_cells": 12
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0068,
+            "contrast": 20.2667,
+            "mean_luma": 12.7667,
+            "color_bins": 9.6667,
+            "saturation": 0.3323,
+            "ink": 0.0042,
+            "focal": 5.83,
+            "hue_families": 1,
+            "lit_fraction": 0.0601,
+            "lit_regions": 1,
+            "p5_luma": 1,
+            "subject_scale": 0.1873,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0091,
+            "contrast": 21.4,
+            "mean_luma": 18.4333,
+            "color_bins": 10,
+            "saturation": 0.3357,
+            "ink": 0.0059,
+            "focal": 4.3533,
+            "hue_families": 1,
+            "lit_fraction": 0.0998,
+            "lit_regions": 1,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.2083,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": false,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0061,
+            "contrast": 18.3,
+            "mean_luma": 14.6,
+            "color_bins": 9,
+            "saturation": 0.3477,
+            "ink": 0.0033,
+            "focal": 8.3267,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0382,
+            "lit_regions": 0.6667,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.1427,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0072,
+            "contrast": 25.1,
+            "mean_luma": 20.9667,
+            "color_bins": 13.6667,
+            "saturation": 0.2903,
+            "ink": 0.0036,
+            "focal": 5.92,
+            "hue_families": 1,
+            "lit_fraction": 0.0975,
+            "lit_regions": 1.3333,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.229,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.88,
+          "metrics": {
+            "sharp_edges": 0.0183,
+            "contrast": 25.5667,
+            "mean_luma": 21.6333,
+            "color_bins": 13,
+            "saturation": 0.1577,
+            "ink": 0.0125,
+            "focal": 4.9933,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.1094,
+            "lit_regions": 1.3333,
+            "p5_luma": 4.3333,
+            "subject_scale": 0.2047,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": true,
+          "score": 0.893,
+          "metrics": {
+            "sharp_edges": 0.0041,
+            "contrast": 17.6,
+            "mean_luma": 11,
+            "color_bins": 8,
+            "saturation": 0.4913,
+            "ink": 0.0037,
+            "focal": 4.0567,
+            "hue_families": 1,
+            "lit_fraction": 0.0477,
+            "lit_regions": 1,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.2397,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.884,
+          "metrics": {
+            "sharp_edges": 0.013,
+            "contrast": 29.0333,
+            "mean_luma": 21.8333,
+            "color_bins": 12.6667,
+            "saturation": 0.183,
+            "ink": 0.0038,
+            "focal": 7.0533,
+            "hue_families": 0.3333,
+            "lit_fraction": 0.1123,
+            "lit_regions": 1,
+            "p5_luma": 1.6667,
+            "subject_scale": 0.2533,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.89,
+          "metrics": {
+            "sharp_edges": 0.0215,
+            "contrast": 20.7333,
+            "mean_luma": 16.2333,
+            "color_bins": 11,
+            "saturation": 0.153,
+            "ink": 0.0182,
+            "focal": 3.9133,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0518,
+            "lit_regions": 1,
+            "p5_luma": 2,
+            "subject_scale": 0.052,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0258,
+            "contrast": 30.4667,
+            "mean_luma": 22.4667,
+            "color_bins": 14.6667,
+            "saturation": 0.2143,
+            "ink": 0.0135,
+            "focal": 4.5133,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.1269,
+            "lit_regions": 1.6667,
+            "p5_luma": 2,
+            "subject_scale": 0.2673,
+            "empty_cells": 11
+          }
+        }
+      ],
+      "critique_min": 1
+    },
+    {
+      "iter": 6,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.417,
+        "top_pairs": [
+          {
+            "a": "s11_ticket2",
+            "b": "s12_loop",
+            "hash_sim": 0.875,
+            "hist_dist": 0.071
+          },
+          {
+            "a": "s5_stop",
+            "b": "s12_loop",
+            "hash_sim": 0.868,
+            "hist_dist": 0.064
+          },
+          {
+            "a": "s8_itarsi",
+            "b": "s12_loop",
+            "hash_sim": 0.861,
+            "hist_dist": 0.052
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s6_eyes",
+            "s7_tickets",
+            "s8_itarsi",
+            "s11_ticket2",
+            "s12_loop"
+          ],
+          [
+            "s1_hook",
+            "s2_coach",
+            "s3_ticket",
+            "s4_rule"
+          ],
+          [
+            "s9_relief",
+            "s10_bhopal"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.902,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": true,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0092,
+            "contrast": 17.3667,
+            "mean_luma": 11.7,
+            "color_bins": 8.6667,
+            "saturation": 0.2637,
+            "ink": 0.0059,
+            "focal": 7.7067,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.054,
+            "lit_regions": 1.3333,
+            "p5_luma": 1,
+            "subject_scale": 0.257,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.011,
+            "contrast": 19.3333,
+            "mean_luma": 12.9667,
+            "color_bins": 8.6667,
+            "saturation": 0.2803,
+            "ink": 0.0082,
+            "focal": 5.2,
+            "hue_families": 1,
+            "lit_fraction": 0.057,
+            "lit_regions": 1,
+            "p5_luma": 1.3333,
+            "subject_scale": 0.257,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.914,
+          "metrics": {
+            "sharp_edges": 0.0191,
+            "contrast": 26.8,
+            "mean_luma": 15.5,
+            "color_bins": 14.6667,
+            "saturation": 0.2377,
+            "ink": 0.0121,
+            "focal": 5.7867,
+            "hue_families": 1,
+            "lit_fraction": 0.0752,
+            "lit_regions": 1,
+            "p5_luma": 2.3333,
+            "subject_scale": 0.191,
+            "empty_cells": 12
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0068,
+            "contrast": 20.2667,
+            "mean_luma": 12.7667,
+            "color_bins": 9.6667,
+            "saturation": 0.3323,
+            "ink": 0.0042,
+            "focal": 5.83,
+            "hue_families": 1,
+            "lit_fraction": 0.0601,
+            "lit_regions": 1,
+            "p5_luma": 1,
+            "subject_scale": 0.1873,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0091,
+            "contrast": 21.4,
+            "mean_luma": 18.4333,
+            "color_bins": 10,
+            "saturation": 0.3357,
+            "ink": 0.0059,
+            "focal": 4.3533,
+            "hue_families": 1,
+            "lit_fraction": 0.0998,
+            "lit_regions": 1,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.2083,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": false,
+          "score": 0.9,
+          "metrics": {
+            "sharp_edges": 0.0061,
+            "contrast": 18.3,
+            "mean_luma": 14.6,
+            "color_bins": 9,
+            "saturation": 0.3477,
+            "ink": 0.0033,
+            "focal": 8.3267,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0382,
+            "lit_regions": 0.6667,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.1427,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.907,
+          "metrics": {
+            "sharp_edges": 0.0072,
+            "contrast": 25.1,
+            "mean_luma": 20.9667,
+            "color_bins": 13.6667,
+            "saturation": 0.2903,
+            "ink": 0.0036,
+            "focal": 5.92,
+            "hue_families": 1,
+            "lit_fraction": 0.0975,
+            "lit_regions": 1.3333,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.229,
+            "empty_cells": 13
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.88,
+          "metrics": {
+            "sharp_edges": 0.0183,
+            "contrast": 25.5667,
+            "mean_luma": 21.6333,
+            "color_bins": 13,
+            "saturation": 0.1577,
+            "ink": 0.0125,
+            "focal": 4.9933,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.1094,
+            "lit_regions": 1.3333,
+            "p5_luma": 4.3333,
+            "subject_scale": 0.2047,
+            "empty_cells": 11
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": true,
+          "score": 0.893,
+          "metrics": {
+            "sharp_edges": 0.0041,
+            "contrast": 17.6,
+            "mean_luma": 11,
+            "color_bins": 8,
+            "saturation": 0.4913,
+            "ink": 0.0037,
+            "focal": 4.0567,
+            "hue_families": 1,
+            "lit_fraction": 0.0477,
+            "lit_regions": 1,
+            "p5_luma": 0.6667,
+            "subject_scale": 0.2397,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.884,
+          "metrics": {
+            "sharp_edges": 0.013,
+            "contrast": 29.0333,
+            "mean_luma": 21.8333,
+            "color_bins": 12.6667,
+            "saturation": 0.183,
+            "ink": 0.0038,
+            "focal": 7.0533,
+            "hue_families": 0.3333,
+            "lit_fraction": 0.1123,
+            "lit_regions": 1,
+            "p5_luma": 1.6667,
+            "subject_scale": 0.2533,
+            "empty_cells": 14
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.89,
+          "metrics": {
+            "sharp_edges": 0.0215,
+            "contrast": 20.7333,
+            "mean_luma": 16.2333,
+            "color_bins": 11,
+            "saturation": 0.153,
+            "ink": 0.0182,
+            "focal": 3.9133,
+            "hue_families": 0.6667,
+            "lit_fraction": 0.0518,
+            "lit_regions": 1,
+            "p5_luma": 2,
+            "subject_scale": 0.052,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.921,
+          "metrics": {
+            "sharp_edges": 0.0258,
+            "contrast": 30.4667,
+            "mean_luma": 22.4667,
+            "color_bins": 14.6667,
+            "saturation": 0.2143,
+            "ink": 0.0135,
+            "focal": 4.5133,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.1269,
+            "lit_regions": 1.6667,
+            "p5_luma": 2,
+            "subject_scale": 0.2673,
+            "empty_cells": 11
+          }
+        }
+      ],
+      "critique_min": 1
+    }
+  ]
+}

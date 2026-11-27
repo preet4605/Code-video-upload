@@ -48,7 +48,8 @@ Blocky low-poly set silhouettes, set detail barely readable, flat (little depth,
 
 `node scripts/style_ref.mjs <ref.mp4> --out templates/visual_targets.horror-dark-pov.json --name horror-dark-pov --margin 0.8 --mood dark`. One reference only: re-run with more dark-POV references before treating it as a genre norm. Known conflicts (also written into the JSON `notes`):
 
-- `focal.min 6.56` and `color_bins.max 12` come from a near-empty reference: more readable detail lowers focal and raises bins. Real reels with readable detail miss them (upper-berth-darkpov: focal 4.2 to 7.9, bins up to 13.7). Do not add detail outside the pools to chase them.
+- **Decision 2026-11-27 (maintainer):** `focal.min` is now 2.35 (the horror-night floor), replacing 6.56, until >= 3 dark-POV reference reels calibrate it (also recorded in the JSON `notes.focal_decision`). No other floor changed. The text below describes why 6.56 was wrong.
+- `focal.min 6.56` (superseded, see above) and `color_bins.max 12` come from a near-empty reference: more readable detail lowers focal and raises bins. Real reels with readable detail miss them (upper-berth-darkpov: focal 4.2 to 7.9, bins up to 13.7). Do not add detail outside the pools to chase them.
 - `mean_luma.max 21.8` is below the reference's own brightest frames (40): sweep peaks and the scare board can exceed it on a keyframe.
 - `similarity.backdrop_share_max = 1.0`: the masked-backdrop test cannot work in near-black frames; the reference itself clusters 9 of 9 shots as one backdrop.
 - `p5_luma.max 12` is added by hand (reference worst frame), not by the style_ref rule.

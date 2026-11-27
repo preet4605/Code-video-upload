@@ -2,12 +2,12 @@
  "shots": [
   {
    "id": "s1_hook",
-   "seen": "Uncle's face behind window slats, cold blue, faint; HUD 23:52 top-left; blanket and knee fill the bottom edge as lit cloth. Reads, but dim and small. Metrics at iteration 6: luma 11.7, focal 7.7067, bins 8.6667, subject_scale 0.257.",
+   "seen": "Uncle's face behind window slats in a faint cold light with the HUD clock pill top-left; the narrator's hand rests on a lit blanket edge at the bottom. Reads, dim and small. [m6: luma 12.3333, focal 6.35, bins 8.6667, sat 0.2403, subj 0.2537, lit_regions 1.3333]",
    "problems": [
     "face small and dim",
     "bottom cloth competes slightly"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -19,12 +19,12 @@
   },
   {
    "id": "s2_coach",
-   "seen": "Dark curtain slit, a hanging chain and a cold lit rim at right; no face. Reads as a coach interior but the subject is a chain, thin. Metrics at iteration 6: luma 12.9667, focal 5.2, bins 8.6667, subject_scale 0.257.",
+   "seen": "Curtain slit with a swaying chain and a cold rim light on the berth rail; no face, a blanket and the hand at the bottom. Establishing insert, reads as a coach. [m6: luma 13.6, focal 4.63, bins 9, sat 0.2617, subj 0.2537, lit_regions 2]",
    "problems": [
     "focal 5.2: chain is the only busy area",
     "no human cue"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 2,
     "depth": 3,
@@ -36,11 +36,11 @@
   },
   {
    "id": "s3_ticket",
-   "seen": "Warm lit ticket with date 14-06-2014, barcode, coach S7, sharp print, held in a pool; the brightest warm accent. Reads well by eye. Metrics at iteration 6: luma 15.5, focal 5.7867, bins 14.6667, subject_scale 0.191.",
+   "seen": "Warm lit ticket dated 14-06-2014 with barcode and coach S7, sharp print inside a pool; brightest warm accent. Legible. [m6: luma 16.2, focal 5.4267, bins 14.6667, sat 0.226, subj 0.191, lit_regions 1.6667]",
    "problems": [
     "bins 14.7 (warm ticket + cold base + red caption)"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 5,
     "depth": 3,
@@ -52,12 +52,12 @@
   },
   {
    "id": "s4_rule",
-   "seen": "Uncle half-turned, only hair rim and a faint side of the face lit by a cold slat; most of him is shadow. Readable as a head, face barely. Metrics at iteration 6: luma 12.7667, focal 5.83, bins 9.6667, subject_scale 0.1873.",
+   "seen": "Uncle half turned, hair rim and one side of the face in a cold slat of light; eyes in shadow. Readable as a head, face is faint between sweeps. [m6: luma 13.4333, focal 4.8867, bins 10, sat 0.3083, subj 0.1807, lit_regions 1.6667]",
    "problems": [
     "face under-lit between sweeps",
     "focal 5.8"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -69,11 +69,11 @@
   },
   {
    "id": "s5_stop",
-   "seen": "Uncle seated, face and shoulders now readable in the dying tube plus a low cold fill; was nearly lost before. Knee/blanket read as cloth at the bottom. Metrics at iteration 6: luma 18.4333, focal 4.3533, bins 10, subject_scale 0.2083.",
+   "seen": "Uncle seated, face and shoulders readable in the dying tube plus a low cold rim; the frozen clock pill is red-edged with cream digits. He is no longer lost between flickers. [m6: luma 19.0333, focal 3.7867, bins 10, sat 0.3227, subj 0.2083, lit_regions 1.6667]",
    "problems": [
     "focal 4.35 still low: soft flat light, no hard accent"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -85,12 +85,12 @@
   },
   {
    "id": "s6_eyes",
-   "seen": "Reveal frame (glint 2, fading): bone-pale sideways face, eyes are dark sockets with a pinprick tracking the lens, mouth a dark slack oval; between beams the face is a faint shape with the same sockets. The old bright cold blob and star glints are gone. Metrics at iteration 6: luma 14.6, focal 8.3267, bins 9, subject_scale 0.1427.",
+   "seen": "Sideways bone-pale face lit by a hard narrow beam at the glint: dark sockets with a tracking pinprick, slack mouth, chain behind. Between beams a faint shape with the same sockets; after the last beam the frame is nearly black. [m6: luma 15.3333, focal 8.12, bins 9, sat 0.3457, subj 0.1427, lit_regions 0.6667]",
    "problems": [
     "lit_regions 0.67: one of 3 keyframes lands in the dark between beams (by design)",
     "mouth oval reads slightly like a nose"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -102,12 +102,12 @@
   },
   {
    "id": "s7_tickets",
-   "seen": "Row of berths, a hand holding the old ticket and a sleeve readable in a low cold fill; hands were nearly invisible before. Still dim and blocky. Metrics at iteration 6: luma 20.9667, focal 5.92, bins 13.6667, subject_scale 0.229.",
+   "seen": "A hand holding the old ticket and a striped sleeve in a low cold fill across the berth row; readable, blocky and dim at the edges. [m6: luma 21.3, focal 5.0533, bins 12.3333, sat 0.2077, subj 0.2223, lit_regions 1.3333]",
    "problems": [
     "bins 13.7",
     "hand edge soft"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -119,12 +119,12 @@
   },
   {
    "id": "s8_itarsi",
-   "seen": "Itarsi board in yellow behind bars, uncle's head and glasses at left, HUD STATION ITARSI. Busy and readable; mean luma slightly over the 21.8 ceiling. Metrics at iteration 6: luma 21.6333, focal 4.9933, bins 13, subject_scale 0.2047.",
+   "seen": "Yellow Itarsi board behind bars, the uncle's head and glasses at left, STATION ITARSI pill; busy and readable. [m6: luma 21.1333, focal 4.6033, bins 13, sat 0.193, subj 0.1977, lit_regions 1.3333]",
    "problems": [
     "bins 13",
     "mean_luma 21.97 over 21.8"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 4,
     "depth": 4,
@@ -136,11 +136,11 @@
   },
   {
    "id": "s9_relief",
-   "seen": "Near-black frame with a blue lamp bloom and the window slats; passes. A calm dip before the scare; allow_black waived for this shot. Metrics at iteration 6: luma 11, focal 4.0567, bins 8, subject_scale 0.2397.",
+   "seen": "Near-black frame with a blue lamp bloom and window slats; the calm dip before the scare (allow_black waived). [m6: luma 11.2333, focal 3.8733, bins 8.3333, sat 0.4883, subj 0.2397, lit_regions 1.3333]",
    "problems": [
     "very dark by intent"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 2,
     "depth": 2,
@@ -152,12 +152,12 @@
   },
   {
    "id": "s10_bhopal",
-   "seen": "BHOPAL board in a warm pool, bars across it, dark berth below; the scare board reads clearly. Slightly over the luma ceiling at 21.83. Metrics at iteration 6: luma 21.8333, focal 7.0533, bins 12.6667, subject_scale 0.2533.",
+   "seen": "BHOPAL board in a warm pool with bars over it and a dark berth below; the scare board reads at once. [m6: luma 21.8333, focal 7.0533, bins 12.6667, sat 0.183, subj 0.2533, lit_regions 1]",
    "problems": [
     "bins 12.7",
     "luma 21.83 vs 21.8"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -169,12 +169,12 @@
   },
   {
    "id": "s11_ticket2",
-   "seen": "Ticket dated 2026 in a soft pool with the bigger HUD pill BHOPAL -> passed above; the pill reads at phone size, red edge, no smear after the first glitch half second. Metrics at iteration 6: luma 16.2333, focal 3.9133, bins 11, subject_scale 0.052.",
+   "seen": "Ticket dated 14-06-2026 in a soft pool under the larger BHOPAL -> passed pill (red edge, cream text, legible); the pill is the most salient blob for the metric. [m6: luma 16.9, focal 3.6867, bins 11.3333, sat 0.1467, subj 0.052, lit_regions 2]",
    "problems": [
     "subject_scale 0.052: the metric picks small blobs (pill edge) over the ticket",
     "focal 3.9"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -186,12 +186,12 @@
   },
   {
    "id": "s12_loop",
-   "seen": "Uncle with glasses behind slats, pale cold light, readable face; HUD BHOPAL -> passed legible. Mean luma 23.3 over the ceiling, partly from the new cloth at the bottom. Metrics at iteration 6: luma 22.4667, focal 4.5133, bins 14.6667, subject_scale 0.2673.",
+   "seen": "Narrator with glasses behind slats in pale cold light; the pill BHOPAL -> passed is legible; hand on the blanket at the bottom. [m6: luma 21.0667, focal 4.42, bins 12.6667, sat 0.161, subj 0.2603, lit_regions 1.3333]",
    "problems": [
     "luma 23.3",
     "bins 14.7"
    ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping; per-shot evidence is in these critiques, recalibration is the maintainer's call",
+   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
    "scores": {
     "subject": 4,
     "depth": 3,

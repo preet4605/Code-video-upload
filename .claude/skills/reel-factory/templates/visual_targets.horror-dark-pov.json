@@ -33,10 +33,10 @@
   },
   "color_bins": {
     "min": 6,
-    "max": 12
+    "max": 40
   },
   "focal": {
-    "min": 6.56
+    "min": 2.35
   },
   "ink": {
     "aim": 0.0025
@@ -66,7 +66,9 @@
     "mean_luma": "max 21.8 = reference mean 19 x 1.15. The reference own brightest sampled frame is 40; a sweep peak or the Bhopal board can exceed the cap on a single keyframe by design.",
     "focal": "min 6.56 comes from a near-empty frame (one lit blob). Adding more readable detail can lower focal; do not add detail outside the pools just to chase it.",
     "p5_luma": "max 12 = the reference worst sampled frame p5 (not part of the style_ref rule; added so crushed blacks are enforced).",
-    "reused_backdrop_check_disabled": "similarity.backdrop_share_max = 1.0 (cannot trigger). The masked-backdrop fingerprint compares cell colours inside a 0.05 tolerance, and in near-black frames every cell is within that, so ANY dark-POV reel reads as one reused backdrop. Evidence: the Ginti reference itself clusters 9 of 9 shots as one backdrop (share 1.0) under the default thresholds. The near-duplicate check stays on (reference top pair hash_sim 0.875 < 0.88)."
+    "reused_backdrop_check_disabled": "similarity.backdrop_share_max = 1.0 (cannot trigger). The masked-backdrop fingerprint compares cell colours inside a 0.05 tolerance, and in near-black frames every cell is within that, so ANY dark-POV reel reads as one reused backdrop. Evidence: the Ginti reference itself clusters 9 of 9 shots as one backdrop (share 1.0) under the default thresholds. The near-duplicate check stays on (reference top pair hash_sim 0.875 < 0.88).",
+    "focal_decision": "2026-11-27 maintainer decision: focal.min 6.56 (reference x 0.8, from one near-empty reel) is replaced by the horror-night focal floor 2.35 until >= 3 dark-POV reference reels calibrate it. No other floor changed.",
+    "color_bins_decision": "2026-11-27 maintainer: max 12 came from a single near-monochrome reference and fails any warm accent (ticket, station board). Falls back to the horror-night cap 40 until >= 3 dark-pov references calibrate it. hue_families still enforces the palette."
   },
   "p5_luma": {
     "max": 12

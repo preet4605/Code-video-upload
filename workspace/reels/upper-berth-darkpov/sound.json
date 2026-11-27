@@ -651,7 +651,7 @@
       "offset_s": -4.2,
       "kind": "brake squeal",
       "layer": "sfx",
-      "gain_db": -4,
+      "gain_db": -8,
       "gain_curve": [
         {
           "at": "stop",

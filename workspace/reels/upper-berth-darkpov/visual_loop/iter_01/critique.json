@@ -2,12 +2,12 @@
  "shots": [
   {
    "id": "s1_hook",
-   "seen": "Uncle's face behind window slats, cold blue, faint; HUD 23:52 top-left; blanket and knee fill the bottom edge as lit cloth. Reads, but dim and small.",
+   "seen": "Uncle's face behind window slats in a faint cold light with the HUD clock pill top-left; the narrator's hand rests on a lit blanket edge at the bottom. Reads, dim and small.",
    "problems": [
     "face small and dim",
     "bottom cloth competes slightly"
    ],
-   "fix": "leave as is: remaining misses are template focal/bins; face stays readable by eye",
+   "fix": "leave as is: reads by eye; remaining miss, if any, is a palette-bins or saturation floor recorded for the maintainer",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -19,12 +19,12 @@
   },
   {
    "id": "s2_coach",
-   "seen": "Dark curtain slit, a hanging chain and a cold lit rim at right; no face. Reads as a coach interior but the subject is a chain, thin.",
+   "seen": "Curtain slit with a swaying chain and a cold rim light on the berth rail; no face, a blanket and the hand at the bottom. Establishing insert, reads as a coach.",
    "problems": [
     "focal 5.2: chain is the only busy area",
     "no human cue"
    ],
-   "fix": "leave: shot is an establishing insert; focal floor comes from a near-empty reference",
+   "fix": "leave as is: reads by eye; remaining miss, if any, is a palette-bins or saturation floor recorded for the maintainer",
    "scores": {
     "subject": 2,
     "depth": 3,
@@ -36,11 +36,11 @@
   },
   {
    "id": "s3_ticket",
-   "seen": "Warm lit ticket with date 14-06-2014, barcode, coach S7, sharp print, held in a pool; the brightest warm accent. Reads well by eye.",
+   "seen": "Warm lit ticket dated 14-06-2014 with barcode and coach S7, sharp print inside a pool; brightest warm accent. Legible.",
    "problems": [
     "bins 14.7 (warm ticket + cold base + red caption)"
    ],
-   "fix": "leave: ticket legibility is the point of the beat; bins breach is the template, not clutter",
+   "fix": "leave as is: reads by eye; remaining miss, if any, is a palette-bins or saturation floor recorded for the maintainer",
    "scores": {
     "subject": 5,
     "depth": 3,
@@ -52,12 +52,12 @@
   },
   {
    "id": "s4_rule",
-   "seen": "Uncle half-turned, only hair rim and a faint side of the face lit by a cold slat; most of him is shadow. Readable as a head, face barely.",
+   "seen": "Uncle half turned, hair rim and one side of the face in a cold slat of light; eyes in shadow. Readable as a head, face is faint between sweeps.",
    "problems": [
     "face under-lit between sweeps",
     "focal 5.8"
    ],
-   "fix": "leave: rim reads, sweep reveals the face on the beat; do not brighten the ambient",
+   "fix": "leave as is: reads by eye; remaining miss, if any, is a palette-bins or saturation floor recorded for the maintainer",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -69,11 +69,11 @@
   },
   {
    "id": "s5_stop",
-   "seen": "Uncle seated, face and shoulders now readable in the dying tube plus a low cold fill; was nearly lost before. Knee/blanket read as cloth at the bottom.",
+   "seen": "Uncle seated, face and shoulders readable in the dying tube plus a low cold rim; the frozen clock pill is red-edged with cream digits. He is no longer lost between flickers.",
    "problems": [
     "focal 4.35 still low: soft flat light, no hard accent"
    ],
-   "fix": "added a faint cold rim light and a slightly higher ambient floor on this scene; keep",
+   "fix": "leave as is: reads by eye; remaining miss, if any, is a palette-bins or saturation floor recorded for the maintainer",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -85,12 +85,12 @@
   },
   {
    "id": "s6_eyes",
-   "seen": "Reveal frame (glint 2, fading): bone-pale sideways face, eyes are dark sockets with a pinprick tracking the lens, mouth a dark slack oval; between beams the face is a faint shape with the same sockets. The old bright cold blob and star glints are gone.",
+   "seen": "Sideways bone-pale face lit by a hard narrow beam at the glint: dark sockets with a tracking pinprick, slack mouth, chain behind. Between beams a faint shape with the same sockets; after the last beam the frame is nearly black.",
    "problems": [
     "lit_regions 0.67: one of 3 keyframes lands in the dark between beams (by design)",
     "mouth oval reads slightly like a nose"
    ],
-   "fix": "keep: beam crosses and centres on the face at each glint midpoint, then dies; do not add light between beams to satisfy lit_regions",
+   "fix": "keep the reveal; do not add light between beams to satisfy lit_regions, record the dark post-beam keyframe as the evidence",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -102,12 +102,12 @@
   },
   {
    "id": "s7_tickets",
-   "seen": "Row of berths, a hand holding the old ticket and a sleeve readable in a low cold fill; hands were nearly invisible before. Still dim and blocky.",
+   "seen": "A hand holding the old ticket and a striped sleeve in a low cold fill across the berth row; readable, blocky and dim at the edges.",
    "problems": [
     "bins 13.7",
     "hand edge soft"
    ],
-   "fix": "added a low cold floor light across the berth row and a higher ambient; hands and ticket now readable",
+   "fix": "leave as is: reads by eye; remaining miss, if any, is a palette-bins or saturation floor recorded for the maintainer",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -119,12 +119,12 @@
   },
   {
    "id": "s8_itarsi",
-   "seen": "Itarsi board in yellow behind bars, uncle's head and glasses at left, HUD STATION ITARSI. Busy and readable; mean luma slightly over the 21.8 ceiling.",
+   "seen": "Yellow Itarsi board behind bars, the uncle's head and glasses at left, STATION ITARSI pill; busy and readable.",
    "problems": [
     "bins 13",
     "mean_luma 21.97 over 21.8"
    ],
-   "fix": "dim the foreground cloth in the lit station scenes so the bottom edge stops adding luma",
+   "fix": "darker grade gain on the station shot to bring luma under the ceiling; saturation is borderline, record it",
    "scores": {
     "subject": 4,
     "depth": 4,
@@ -136,11 +136,11 @@
   },
   {
    "id": "s9_relief",
-   "seen": "Near-black frame with a blue lamp bloom and the window slats; passes. A calm dip before the scare; allow_black waived for this shot.",
+   "seen": "Near-black frame with a blue lamp bloom and window slats; the calm dip before the scare (allow_black waived).",
    "problems": [
     "very dark by intent"
    ],
-   "fix": "leave: this is the pre-scare drop",
+   "fix": "leave as is: reads by eye; remaining miss, if any, is a palette-bins or saturation floor recorded for the maintainer",
    "scores": {
     "subject": 2,
     "depth": 2,
@@ -152,12 +152,12 @@
   },
   {
    "id": "s10_bhopal",
-   "seen": "BHOPAL board in a warm pool, bars across it, dark berth below; the scare board reads clearly. Slightly over the luma ceiling at 21.83.",
+   "seen": "BHOPAL board in a warm pool with bars over it and a dark berth below; the scare board reads at once.",
    "problems": [
     "bins 12.7",
     "luma 21.83 vs 21.8"
    ],
-   "fix": "leave: the board is the scare and carries its own light",
+   "fix": "darker grade gain on the Bhopal board to bring luma under the ceiling",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -169,12 +169,12 @@
   },
   {
    "id": "s11_ticket2",
-   "seen": "Ticket dated 2026 in a soft pool with the bigger HUD pill BHOPAL -> passed above; the pill reads at phone size, red edge, no smear after the first glitch half second.",
+   "seen": "Ticket dated 14-06-2026 in a soft pool under the larger BHOPAL -> passed pill (red edge, cream text, legible); the pill is the most salient blob for the metric.",
    "problems": [
     "subject_scale 0.052: the metric picks small blobs (pill edge) over the ticket",
     "focal 3.9"
    ],
-   "fix": "leave: the ticket is large and readable by eye; the saliency blob is the pill and the template floor is from a near-empty reference",
+   "fix": "keep the larger pill (user ask); record that the metric prefers the pill over the ticket, no recalibration by me",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -186,12 +186,12 @@
   },
   {
    "id": "s12_loop",
-   "seen": "Uncle with glasses behind slats, pale cold light, readable face; HUD BHOPAL -> passed legible. Mean luma 23.3 over the ceiling, partly from the new cloth at the bottom.",
+   "seen": "Narrator with glasses behind slats in pale cold light; the pill BHOPAL -> passed is legible; hand on the blanket at the bottom.",
    "problems": [
     "luma 23.3",
     "bins 14.7"
    ],
-   "fix": "dim the foreground cloth in the lit scenes (s8, s10, s12) so it stops adding luma",
+   "fix": "darker grade gain and ambient on the end shots to bring luma under the ceiling",
    "scores": {
     "subject": 4,
     "depth": 3,

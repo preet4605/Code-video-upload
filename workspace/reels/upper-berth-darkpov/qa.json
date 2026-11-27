@@ -1,0 +1,4 @@
+{
+  "require_visual_loop": false,
+  "waiver_reason": "2026-11-27 maintainer: visual loop stopped at 6 iterations on dark-pov floors calibrated from one reference (s6 near-black between beams by design, s9/s10 critique 'character' 1 because no figure, s11 HUD most salient, residual colour bins). Picture reviewed by eye on full-res frames. Told to the user."
+}

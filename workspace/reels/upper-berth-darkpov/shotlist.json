@@ -13,8 +13,20 @@
    "camera": "slow push-in on the uncle, extra close push on line01 as the light leaves his eyes, handheld coach rumble",
    "motion": "slow push-in on the uncle, extra close push on line01 as the light leaves his eyes, handheld coach rumble",
    "details": [
-    "POV across the bay to the uncle on the opposite lower berth"
-   ]
+    "uncle's pale face behind window bars",
+    "faint cold night-lamp rim on his hair",
+    "S7 clock pill ticking 23:52 top-left",
+    "passing sodium and white light sweeps",
+    "the narrator's own knee and blanket edge at the bottom"
+   ],
+   "withheld": "his eyes fall into shadow as the light leaves them; we never see what he sees",
+   "focal_point": [
+    330,
+    480
+   ],
+   "sound_cue": "room_tone + train_clack + whooshes sw_hook1-3",
+   "sync_word": "इटारसी",
+   "intensity": 2
   },
   {
    "id": "s2_coach",
@@ -29,8 +41,20 @@
    "camera": "slow dolly forward with handheld rumble",
    "motion": "slow dolly forward with handheld rumble",
    "details": [
-    "wide down the aisle: curtained berths, sleeping silhouettes, feet out of curtains"
-   ]
+    "hanging chain swaying with the coach",
+    "curtained berth with a slit of light",
+    "cold rim on the berth rail",
+    "faint blue lamp glow behind the curtain",
+    "handheld sway of the whole coach"
+   ],
+   "withheld": "the sleepers' faces: only curtains, a hanging chain and a cold rim light across the berths",
+   "focal_point": [
+    680,
+    580
+   ],
+   "sound_cue": "whooshes sw_coach1-3 over the train rumble",
+   "sync_word": "भोपाल",
+   "intensity": 1
   },
   {
    "id": "s3_ticket",
@@ -45,8 +69,20 @@
    "camera": "slow rack focus from soft to sharp with slight push",
    "motion": "slow rack focus from soft to sharp with slight push",
    "details": [
-    "insert close-up of the uncle's yellowed 14-06-2014 ticket held in his hand"
-   ]
+    "14-06-2014 date in typewriter print",
+    "barcode and reservation slip text",
+    "coach S7 and berth LB/33",
+    "creases and yellowing of the paper",
+    "raking warm light on the paper grain"
+   ],
+   "withheld": "the uncle himself: only his hand and the yellowed ticket are lit, the rest is black",
+   "focal_point": [
+    450,
+    850
+   ],
+   "sound_cue": "paper rustle rust_clue, whooshes sw_tick1-2",
+   "sync_word": "चौदह",
+   "intensity": 2
   },
   {
    "id": "s4_rule",
@@ -61,8 +97,20 @@
    "camera": "slow push-in while he leans toward lens",
    "motion": "slow push-in while he leans toward lens",
    "details": [
-    "medium close-up of the uncle leaning in, eyes in shadow"
-   ]
+    "hair rim lit by a cold slat",
+    "half face turned toward the lens",
+    "window bar shadows riding the sweep",
+    "S7 clock pill 01:41",
+    "knee and blanket lit only by the sweep"
+   ],
+   "withheld": "his eyes stay in shadow; the face shows only as a hair rim and a slat of light on a passing sweep",
+   "focal_point": [
+    470,
+    620
+   ],
+   "sound_cue": "brake squeal and whooshes sw_rule1-3",
+   "sync_word": "निकालना",
+   "intensity": 3
   },
   {
    "id": "s5_stop",
@@ -77,8 +125,20 @@
    "camera": "brake jolt then everything goes still, slow creep",
    "motion": "brake jolt then everything goes still, slow creep",
    "details": [
-    "the coach as tube lights flicker and the train halts, window shows black fog"
-   ]
+    "uncle seated with face readable in the dying tube",
+    "ceiling tube stuttering on and off",
+    "S7 clock frozen at 02:00 in red",
+    "cold rim on his shoulders",
+    "blanket and knee edges in the cold fill"
+   ],
+   "withheld": "what stands outside: the window is black fog, no station and no lamp",
+   "focal_point": [
+    610,
+    500
+   ],
+   "sound_cue": "tube_buzz + brake_groan at the stop",
+   "sync_word": "स्टेशन",
+   "intensity": 3
   },
   {
    "id": "s6_eyes",
@@ -93,8 +153,20 @@
    "camera": "camera trucks sideways, eye glints track",
    "motion": "camera trucks sideways, eye glints track",
    "details": [
-    "uncle lying on his side facing us, eyes follow the camera"
-   ]
+    "bone-pale face lying sideways",
+    "eyes as dark sockets with a tracking pinprick",
+    "slack open mouth",
+    "hard narrow beam crossing the face on each glint",
+    "hanging chain and berth rail behind"
+   ],
+   "withheld": "his face is seen only for a beat as a beam crosses it: dark sockets, slack mouth; it is never in steady light",
+   "focal_point": [
+    260,
+    960
+   ],
+   "sound_cue": "heartbeat + drone hum on the eyes event",
+   "sync_word": "छाती",
+   "intensity": 4
   },
   {
    "id": "s7_tickets",
@@ -109,8 +181,20 @@
    "camera": "accelerating lateral track",
    "motion": "accelerating lateral track",
    "details": [
-    "lateral track along berth stacks, every dangling hand holds the same yellow ticket"
-   ]
+    "dangling hand gripping the old ticket",
+    "striped sleeve cuff",
+    "row of berths sliding past",
+    "S7 clock pill 02:00",
+    "paper rustle as the ticket stirs"
+   ],
+   "withheld": "the owners of the hands and what the other tickets say: only a sleeve, a hand and a ticket in a low cold fill",
+   "focal_point": [
+    830,
+    920
+   ],
+   "sound_cue": "paper rustles rust_t1/t2, coach door at the end",
+   "sync_word": "टिकट",
+   "intensity": 4
   },
   {
    "id": "s8_itarsi",
@@ -125,8 +209,20 @@
    "camera": "board slides in and stops, uncle rises and walks away",
    "motion": "board slides in and stops, uncle rises and walks away",
    "details": [
-    "yellow Itarsi board in the window, warm platform light floods in; uncle stands, smiles, walks off"
-   ]
+    "yellow Itarsi board in Hindi and English",
+    "uncle's head and glasses at left",
+    "window bars across the platform glow",
+    "STATION ITARSI pill replacing the clock",
+    "silhouettes of people on the platform"
+   ],
+   "withheld": "the platform beyond the bars and where the uncle goes: he leaves the frame",
+   "focal_point": [
+    720,
+    500
+   ],
+   "sound_cue": "station bells bell/bell2 + platform murmur",
+   "sync_word": "हिलाया",
+   "intensity": 2
   },
   {
    "id": "s9_relief",
@@ -141,11 +237,23 @@
    "camera": "slow sink as lids close",
    "motion": "slow sink as lids close",
    "details": [
-    "eyelids close, coach dims, black through the silence"
+    "blue lamp bloom through closed lids",
+    "window slats barely visible",
+    "clock running on in the pill",
+    "coach dimming to black",
+    "the silence drop before the scare"
    ],
    "allow_black": true,
    "allow_silence": true,
-   "waiver_note": "designed black silence (eyelids closed, coach dimmed): no detail is added on purpose"
+   "waiver_note": "designed black silence (eyelids closed, coach dimmed): no detail is added on purpose",
+   "withheld": "everything: eyes closed, only a night-lamp bloom and window slats, what happens in the dark",
+   "focal_point": [
+    340,
+    520
+   ],
+   "sound_cue": "silence drop over room tone before the scare",
+   "sync_word": "आँखें",
+   "intensity": 1
   },
   {
    "id": "s10_bhopal",
@@ -160,8 +268,20 @@
    "camera": "whip pan with directional blur",
    "motion": "whip pan with directional blur",
    "details": [
-    "hard cut from black: Bhopal board whipping away left at speed"
-   ]
+    "BHOPAL board in Hindi and English",
+    "white flash then cold lamp streaks",
+    "bars over the window",
+    "directional whip blur to the left",
+    "dark berth below the sign"
+   ],
+   "withheld": "how long the train has been moving; only the Bhopal board whipping away, no platform",
+   "focal_point": [
+    310,
+    470
+   ],
+   "sound_cue": "stinger + sub_drop + whooshes at the scare",
+   "sync_word": "भोपाल",
+   "intensity": 5
   },
   {
    "id": "s11_ticket2",
@@ -176,8 +296,20 @@
    "camera": "slow rack focus with slight push, ageing animation",
    "motion": "slow rack focus with slight push, ageing animation",
    "details": [
-    "insert of the narrator's own ticket yellowing, same framing as s3"
-   ]
+    "ticket dated 14-06-2026",
+    "yellowing animation of the paper",
+    "barcode and berth LB/34",
+    "BHOPAL passed pill in red edge",
+    "finger edge holding the paper"
+   ],
+   "withheld": "the narrator's face: only his own ticket ageing, same framing as the first one",
+   "focal_point": [
+    460,
+    850
+   ],
+   "sound_cue": "paper crinkle rust_twist",
+   "sync_word": "पीला",
+   "intensity": 3
   },
   {
    "id": "s12_loop",
@@ -192,8 +324,20 @@
    "camera": "slow pull back to the s1 start framing, morph to the uncle at the end",
    "motion": "slow pull back to the s1 start framing, morph to the uncle at the end",
    "details": [
-    "reverse: narrator on the uncle's berth speaking to a boy, ends on the s1 frame"
-   ]
+    "narrator with glasses behind window bars",
+    "BHOPAL passed pill legible at the top",
+    "cold light slats over his face",
+    "sodium and white sweeps through the bars",
+    "knee and blanket in the foreground"
+   ],
+   "withheld": "the boy's face and the answer to the loop: it ends on the uncle's opening frame",
+   "focal_point": [
+    350,
+    490
+   ],
+   "sound_cue": "whooshes sw_loop1-3 over train rumble",
+   "sync_word": "भोपाल",
+   "intensity": 4
   }
  ]
 }

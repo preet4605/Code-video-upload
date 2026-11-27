@@ -26,7 +26,7 @@ export const SCENE = {
   s12_loop: { face: [400, 470, 430], sweepY: 700 },
 };
 
-export const POST = { s12_loop: { lightMask: { ambient: '#080c14', glow: 0.26 } }, s5_stop: { lightMask: { ambient: '#111827', glow: 0.26 } }, s7_tickets: { lightMask: { ambient: '#141c2e', glow: 0.26 } } };
+export const POST = { s5_stop: { lightMask: { ambient: '#111827', glow: 0.26 } }, s7_tickets: { lightMask: { ambient: '#141c2e', glow: 0.26 }, grade: { gamma: 0.96, gain: [0.95, 1.0, 1.14], saturation: 0.28, contrast: 0.35, splitTone: { shadows: '#02060c', highlights: '#c9d6ff', shadowStrength: 0.3, highlightStrength: 0.22 } } }, s8_itarsi: { grade: { gamma: 0.96, gain: [0.9, 0.95, 1.05], saturation: 0.55, contrast: 0.35, splitTone: { shadows: '#02060c', highlights: '#c9d6ff', shadowStrength: 0.3, highlightStrength: 0.22 } } }, s12_loop: { lightMask: { ambient: '#080c14', glow: 0.26 }, grade: { gamma: 0.96, gain: [0.88, 0.93, 1.05], saturation: 0.3, contrast: 0.35, splitTone: { shadows: '#02060c', highlights: '#c9d6ff', shadowStrength: 0.3, highlightStrength: 0.22 } } } };
 const LAMPBOOST = { s2_coach: 1.8, s3_ticket: 1.5, s4_rule: 1.8, s5_stop: 2.4, s6_eyes: 0.9, s7_tickets: 2.3, s11_ticket2: 1.9, s9_relief: 1.6 };
 const SWEEP_COL = { sodium: '#ffc489', white: '#dfe9ff', cool: '#b8ffe6' };
 
@@ -115,56 +115,49 @@ function fgPaths(t) {
   const s = swayOffset(t * 1.0 + 3, 2.4), bx = s.x * 1.6, by = s.y * 1.6;
   return { bx, by };
 }
-const KNEE = (bx, by) => { const p = new Path2D(); p.moveTo(560 + bx, 2000); p.bezierCurveTo(600 + bx, 1760 + by, 720 + bx, 1590 + by, 900 + bx, 1578 + by); p.bezierCurveTo(1040 + bx, 1570 + by, 1170 + bx, 1650 + by, 1200 + bx, 2000); p.closePath(); return p; };
-const BLANKET = (bx, by) => { const p = new Path2D(); p.moveTo(-120 + bx, 2000); p.bezierCurveTo(-90 + bx, 1790 + by, 80 + bx, 1690 + by, 270 + bx, 1712 + by); p.bezierCurveTo(400 + bx, 1730 + by, 500 + bx, 1830 + by, 540 + bx, 2000); p.closePath(); return p; };
-
-export function drawForeground(ctx, w, h, P, cfgScene) {
-  if (cfgScene.noFg) return;
-  const k = w / 1080, { bx, by } = fgPaths(P.t);
-  ctx.save(); ctx.setTransform(k, 0, 0, k, 0, 0); ctx.globalCompositeOperation = 'source-over';
-  const lying = cfgScene.lying;
-  for (const [p, y0] of [[KNEE(bx, by), 1580], [BLANKET(bx, by), 1700]]) {
-    if (lying && y0 === 1580) continue; // lying on his side: only the blanket edge
-    const g = ctx.createLinearGradient(0, y0, 0, 2000); g.addColorStop(0, '#0e1118'); g.addColorStop(1, '#030407');
-    ctx.fillStyle = g; ctx.fill(p);
-    ctx.save(); ctx.clip(p); cin.fillTexture(ctx, 'fabric', [-150, y0 - 20, 1400, 480], { blend: 'overlay', alpha: 0.5, scale: 1.4, seed: 17 });
-    // folds
-    ctx.strokeStyle = 'rgba(0,0,0,0.55)'; ctx.lineWidth = 9; ctx.lineCap = 'round';
-    for (let i = 0; i < 5; i++) { const fx = (y0 === 1580 ? 640 : 40) + i * 110 + bx; ctx.beginPath(); ctx.moveTo(fx, y0 + 40); ctx.quadraticCurveTo(fx + 30, y0 + 180 + by, fx - 20, 2000); ctx.stroke(); }
-    ctx.restore();
-  }
-  ctx.restore();
-}
-// Foreground drawn AFTER the mask (so it is not darkened away): his own raised knee (trouser cloth: centre seam, kneecap sheen, creases
-// radiating from the cap) and the blanket (a checked weave with deep folds). Lit only as much as the light that is passing, with a faint floor.
+// POV foreground: a wide blanket with a diagonal fold over his lap, and his own hand resting on the blanket edge (back of the hand, knuckles,
+// four fingers and a thumb, nails). Everything is drawn AFTER the light mask (overlay) so it is not erased by the dark: lit from the right,
+// only as strongly as the light that passes, with a faint floor so it never vanishes. s6 (lying on his side): blanket edge only, no hand.
+const BLANKET = (bx, by) => { const p = new Path2D(); p.moveTo(-140, 2050); p.lineTo(-140, 1805 + by); p.bezierCurveTo(60 + bx, 1790 + by, 240 + bx, 1775 + by, 430 + bx, 1738 + by); p.bezierCurveTo(600 + bx, 1706 + by, 700 + bx, 1668 + by, 880 + bx, 1646 + by); p.bezierCurveTo(1010 + bx, 1630 + by, 1120 + bx, 1640 + by, 1230, 1650 + by); p.lineTo(1230, 2050); p.closePath(); return p; };
+const capsule = (c, x0, y0, x1, y1, w0, w1) => { const dx = x1 - x0, dy = y1 - y0, L = Math.hypot(dx, dy) || 1, nx = -dy / L, ny = dx / L, p = new Path2D();
+  p.moveTo(x0 + nx * w0 / 2, y0 + ny * w0 / 2); p.lineTo(x1 + nx * w1 / 2, y1 + ny * w1 / 2); p.arc(x1, y1, w1 / 2, Math.atan2(ny, nx), Math.atan2(ny, nx) + Math.PI, true); p.lineTo(x0 - nx * w0 / 2, y0 - ny * w0 / 2); p.arc(x0, y0, w0 / 2, Math.atan2(ny, nx) + Math.PI, Math.atan2(ny, nx), true); p.closePath(); return p; };
+export function drawForeground() { /* the whole foreground is drawn post-mask in drawRim */ }
 export function drawRim(ctx, w, h, P, cfgScene, tube) {
   if (cfgScene.noFg) return;
   const a = Math.min(0.9, 0.2 + P.sweep.i * 0.7 + tube * 0.25 + (cfgScene.lying ? P.glint * 0.5 : 0));
   const k = w / 1080, { bx, by } = fgPaths(P.t), col = P.sweep.i > 0.05 ? SWEEP_COL[P.sweep.kind] || '#dfe9ff' : '#9bb6ff';
+  const lit = (P.sc.id === 's8_itarsi' || P.sc.id === 's12_loop') ? 0.75 : 1, fa = (0.45 + 0.4 * a) * lit;
   ctx.save(); ctx.setTransform(k, 0, 0, k, 0, 0); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-  for (const [p, y0] of [[KNEE(bx, by), 1580], [BLANKET(bx, by), 1700]]) {
-    const isKnee = y0 === 1580; if (cfgScene.lying && isKnee) continue;
-    ctx.save(); ctx.clip(p);
-    // body of the cloth: a real filled, lit form (dusty blue-grey wool for the blanket, darker trouser cloth for the knee), lit from above
-    ctx.globalCompositeOperation = 'source-over';
-    const cloth = ctx.createLinearGradient(0, y0 - 10, 0, y0 + 330), top = isKnee ? [118, 134, 180] : [128, 144, 188], fa = (0.45 + 0.4 * a) * ((P.sc.id === 's8_itarsi' || P.sc.id === 's10_bhopal' || P.sc.id === 's12_loop') ? 0.7 : 1);
-    cloth.addColorStop(0, `rgba(${top},${fa})`); cloth.addColorStop(0.5, `rgba(${top.map((v) => v * 0.4 | 0)},${fa})`); cloth.addColorStop(1, `rgba(6,8,14,0.92)`);
-    ctx.fillStyle = cloth; ctx.fillRect(-200, y0 - 40, 1500, 460);
-    cin.fillTexture(ctx, 'fabric', [-150, y0 - 20, 1400, 440], { blend: 'overlay', alpha: 0.85, scale: 1.3, seed: 17 });
-    if (isKnee) { // broad sheen on the kneecap, soft shadow-and-highlight wrinkles across the cap, the seam of the trouser leg
-      const cx = 905 + bx, cy = 1665 + by, sh = ctx.createRadialGradient(cx - 30, cy - 30, 10, cx, cy, 230); sh.addColorStop(0, `rgba(190,205,245,${a * 0.5})`); sh.addColorStop(1, 'rgba(190,205,245,0)');
-      ctx.fillStyle = sh; ctx.beginPath(); ctx.ellipse(cx, cy, 230, 130, 0, 0, TAU2); ctx.fill();
-      for (let i = 0; i < 4; i++) { const yy = cy - 70 + i * 34 + by * 0.2; ctx.strokeStyle = 'rgba(3,4,9,0.55)'; ctx.lineWidth = 15; ctx.beginPath(); ctx.moveTo(cx - 150 + i * 14, yy + 18); ctx.quadraticCurveTo(cx, yy - 22, cx + 150 - i * 14, yy + 18); ctx.stroke(); ctx.strokeStyle = `rgba(185,200,240,${a * 0.28})`; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(cx - 140 + i * 14, yy + 3); ctx.quadraticCurveTo(cx, yy - 37, cx + 140 - i * 14, yy + 3); ctx.stroke(); }
-      ctx.strokeStyle = 'rgba(3,4,9,0.5)'; ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(cx + 10, cy + 80); ctx.lineTo(cx - 4, 1990); ctx.stroke();
-    } else { // blanket: wide soft folds (dark trough + light crest) and a knit grain
-      for (let i = 0; i < 4; i++) { const fx = 80 + i * 135 + bx; ctx.strokeStyle = 'rgba(3,4,9,0.55)'; ctx.lineWidth = 34; ctx.beginPath(); ctx.moveTo(fx, y0 + 20); ctx.quadraticCurveTo(fx + 50, y0 + 150 + by, fx - 10, 1995); ctx.stroke(); ctx.strokeStyle = `rgba(185,200,240,${a * 0.3})`; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(fx + 30, y0 + 25); ctx.quadraticCurveTo(fx + 80, y0 + 150 + by, fx + 20, 1995); ctx.stroke(); }
-      ctx.strokeStyle = `rgba(190,205,245,${a * 0.14})`; ctx.lineWidth = 3; ctx.setLineDash([9, 7]); for (let y = y0 + 6; y < 2000; y += 20) { ctx.beginPath(); ctx.moveTo(-120, y + by); ctx.lineTo(600, y + 8 + by); ctx.stroke(); } ctx.setLineDash([]);
-    }
+  const bl = BLANKET(bx * 0.6, by * 0.6);
+  ctx.save(); ctx.clip(bl); ctx.globalCompositeOperation = 'source-over';
+  const cloth = ctx.createLinearGradient(1180, 0, -100, 0); cloth.addColorStop(0, `rgba(150,166,210,${fa})`); cloth.addColorStop(0.55, `rgba(62,72,104,${fa})`); cloth.addColorStop(1, `rgba(20,24,38,${fa})`);
+  ctx.fillStyle = cloth; ctx.fillRect(-200, 1600, 1500, 460);
+  const fall = ctx.createLinearGradient(0, 1640, 0, 1960); fall.addColorStop(0, 'rgba(0,0,0,0)'); fall.addColorStop(1, 'rgba(4,5,10,0.75)'); ctx.fillStyle = fall; ctx.fillRect(-200, 1600, 1500, 460);
+  cin.fillTexture(ctx, 'fabric', [-150, 1620, 1400, 440], { blend: 'overlay', alpha: 0.85, scale: 1.3, seed: 17 });
+  // one big diagonal fold (dark trough, light crest on its right edge) plus two smaller ones
+  for (const [x0, y0, x1, y1, wd] of [[760, 1700, 520, 2000, 56], [980, 1670, 880, 2000, 38], [330, 1790, 170, 2000, 34]]) {
+    ctx.strokeStyle = 'rgba(3,4,9,0.6)'; ctx.lineWidth = wd; ctx.beginPath(); ctx.moveTo(x0 + bx * 0.6, y0 + by * 0.6); ctx.quadraticCurveTo((x0 + x1) / 2 + 40, (y0 + y1) / 2, x1, y1); ctx.stroke();
+    ctx.strokeStyle = `rgba(190,205,245,${a * 0.38})`; ctx.lineWidth = wd * 0.28; ctx.beginPath(); ctx.moveTo(x0 + wd * 0.5 + bx * 0.6, y0 + by * 0.6); ctx.quadraticCurveTo((x0 + x1) / 2 + 40 + wd * 0.5, (y0 + y1) / 2, x1 + wd * 0.5, y1); ctx.stroke();
+  }
+  ctx.strokeStyle = `rgba(190,205,245,${a * 0.14})`; ctx.lineWidth = 3; ctx.setLineDash([9, 7]); for (let y = 1660; y < 2000; y += 20) { ctx.beginPath(); ctx.moveTo(-120, y + 12 + by * 0.6); ctx.lineTo(1200, y - 28 + by * 0.6); ctx.stroke(); } ctx.setLineDash([]);
+  ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.rect(-200, 1560, 1500, 420); ctx.clip(); ctx.globalCompositeOperation = 'screen'; ctx.strokeStyle = col; ctx.globalAlpha = a * 0.3; ctx.lineWidth = 14; ctx.stroke(bl); ctx.globalAlpha = Math.min(1, a * 0.9); ctx.lineWidth = 3.5; ctx.stroke(bl); ctx.restore();
+  if (!cfgScene.lying) { // his hand on the blanket edge
+    const hx = 360 + bx * 1.1, hy = 1790 + by * 1.1;
+    const skin = (x, y, x2, y2) => { const g = ctx.createLinearGradient(x, y, x2, y2); g.addColorStop(0, `rgba(196,186,200,${Math.min(1, fa + 0.2)})`); g.addColorStop(1, `rgba(78,72,92,${Math.min(1, fa + 0.2)})`); return g; };
+    ctx.save(); ctx.translate(hx, hy); ctx.rotate(-0.12);
+    ctx.fillStyle = 'rgba(2,3,6,0.55)'; ctx.beginPath(); ctx.ellipse(10, 20, 120, 150, 0, 0, TAU2); ctx.fill(); // contact shadow on the cloth
+    const back = new Path2D(); back.moveTo(-72, 250); back.bezierCurveTo(-96, 150, -92, 40, -78, -12); back.lineTo(78, -12); back.bezierCurveTo(96, 40, 92, 150, 70, 250); back.closePath();
+    const fingers = [[-58, -4, -66, -108, 40, 33], [-20, -8, -22, -128, 42, 34], [20, -8, 24, -120, 40, 33], [58, -4, 70, -92, 34, 28]].map(([x0, y0, x1, y1, w0, w1]) => capsule(ctx, x0, y0, x1, y1, w0, w1));
+    const thumb = capsule(ctx, 70, 78, 150, -6, 44, 32);
+    for (const sh of [...fingers, thumb, back]) { ctx.globalCompositeOperation = 'source-over'; ctx.fillStyle = skin(-90, -120, 110, 240); ctx.fill(sh); ctx.strokeStyle = 'rgba(6,6,12,0.7)'; ctx.lineWidth = 3.5; ctx.stroke(sh); }
+    ctx.globalCompositeOperation = 'screen'; ctx.strokeStyle = `rgba(215,225,255,${a * 0.5})`; ctx.lineWidth = 3;
+    for (const [x0, y0, x1, y1] of [[-58, -4, -66, -108], [-20, -8, -22, -128], [20, -8, 24, -120], [58, -4, 70, -92]]) { ctx.beginPath(); ctx.moveTo(x0 + 16, y0 + 6); ctx.lineTo(x1 + 12, y1 + 4); ctx.stroke(); } // right-edge sheen on each finger
+    ctx.globalCompositeOperation = 'source-over'; ctx.strokeStyle = 'rgba(8,8,14,0.55)'; ctx.lineWidth = 3;
+    for (const [x0, y0, x1, y1] of [[-58, -4, -66, -108], [-20, -8, -22, -128], [20, -8, 24, -120], [58, -4, 70, -92]]) { for (const f of [0.38, 0.68]) { const cx = x0 + (x1 - x0) * f, cy = y0 + (y1 - y0) * f; ctx.beginPath(); ctx.moveTo(cx - 13, cy); ctx.lineTo(cx + 13, cy); ctx.stroke(); } }
+    ctx.fillStyle = 'rgba(214,206,214,0.75)'; for (const [x, y] of [[-66, -108], [-22, -128], [24, -120], [70, -92]]) { ctx.beginPath(); ctx.ellipse(x, y - 8, 10, 13, 0, 0, TAU2); ctx.fill(); } // nails
+    ctx.strokeStyle = 'rgba(8,8,14,0.45)'; ctx.lineWidth = 3; for (const [x, y] of [[-56, 40], [-20, 34], [18, 34], [54, 40]]) { ctx.beginPath(); ctx.arc(x, y, 14, 0.2, Math.PI - 0.2); ctx.stroke(); } // knuckle creases
     ctx.restore();
-    // edge: soft glow then a crisp line
-    ctx.globalCompositeOperation = 'screen'; ctx.save(); ctx.beginPath(); ctx.rect(-200, y0 - 60, 1500, 440); ctx.clip();
-    ctx.strokeStyle = col; ctx.globalAlpha = a * 0.28; ctx.lineWidth = 16; ctx.stroke(p);
-    ctx.globalAlpha = Math.min(1, a * 0.95); ctx.lineWidth = 4; ctx.stroke(p); ctx.restore();
   }
   ctx.restore();
 }

@@ -23,10 +23,10 @@
     },
     "script_gate": {
       "status": "ok",
-      "input_hash": "6261c020f99e3cac20e809f909234b278cad56f233faf03ca3a232b2c6a36a8a",
-      "at": "2026-11-27T06:49:18.088Z",
-      "duration_ms": 43,
-      "runs": 8
+      "input_hash": "7cc2eb5ea0a2c6fd640204cc4d1217095ac93b29cfaf2b3f7d773228b3e986e5",
+      "at": "2026-11-27T07:07:23.613Z",
+      "duration_ms": 44,
+      "runs": 9
     },
     "vo": {
       "status": "ok",
@@ -37,24 +37,24 @@
     },
     "plan_lint": {
       "status": "ok",
-      "input_hash": "8ee0667f06b6cab49c478dbcb9d56ca2fcd65c13088d667741d920013cc17edd",
-      "at": "2026-11-27T06:49:18.093Z",
+      "input_hash": "1d02541ce467a5e75b626c1bd066626bbc26c9591b56d65972f595efe0b9c943",
+      "at": "2026-11-27T07:07:23.618Z",
       "duration_ms": 3,
-      "runs": 4,
+      "runs": 5,
       "warns": []
     },
     "script": {
       "status": "ok",
-      "at": "2026-11-27T06:52:21.295Z",
+      "at": "2026-11-27T07:11:26.541Z",
       "approved": true,
       "input_hash": "ff8b0862218b332f1efb430c4c8f52be47e703d61b475c4f4aee1aa07990e275"
     },
     "visual_loop": {
       "status": "waiting",
       "input_hash": "6112287b5fd33bc326b73ee5fc9918ab4fefee8ce02aaeb32a6b38772d260c2e",
-      "at": "2026-11-27T06:52:21.378Z",
-      "duration_ms": 81,
-      "runs": 8,
+      "at": "2026-11-27T07:11:26.623Z",
+      "duration_ms": 82,
+      "runs": 16,
       "result": {
         "stopped": true,
         "iter": 7,
@@ -67,7 +67,7 @@
   "format": "standalone",
   "voice": "aman",
   "unreviewed_reasons": [],
-  "updated_at": "2026-11-27T06:52:21.378Z",
+  "updated_at": "2026-11-27T07:11:26.623Z",
   "failed": {
     "stage": "script_gate",
     "exit_code": 1,
