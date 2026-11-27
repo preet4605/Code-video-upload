@@ -72,7 +72,7 @@ soft wet highlights on limbs and hands, **no shadow and no wet pool** (`fig.shad
 
 ## Props (`kit.props`)
 
-`framedInset(c,{x,y,w,h,kind:'mirror'|'phone'|'lift', content(c,w,h,t)})`, `liftDisplay(c,{x,y,text})`, `noteCard(c,{x,y,w,h,rot,lines})`, `clock(c,{x,y,r,h,m,glow})`,
+`framedInset(c,{x,y,w,h,kind:'mirror'|'phone'|'lift', content(c,w,h,t)})`, `liftDisplay(c,{x,y,text})`, `noteCard(c,{x,y,w,h,rot,lines})`, `clock(c,{x,y,r,h,m,glow})`, `hud(c,{label,value,x,y,wrong,t,scale,a})` (diegetic counter/clock/label pill, red + chromatic jitter when `wrong`, clamped to the safe zone; draw it via `frameInfo.overlay` for dark looks),
 `diya(c,{x,y,s,t})`, `torch(c,{x,y,angle})` (returns a cone light for `darkMask`), `well(c,{cx,cy,rx})`. Bicycles and anything needing IK were skipped.
 
 ## Cost (measured here: shared 4-core box, 1080x1920, median of 8 frames, canvas flushed with `getImageData`; `node examples/kit-gallery/_dev/bench.mjs` style)

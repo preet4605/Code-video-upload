@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "created_at": "2026-11-27T00:35:44.517Z",
+  "unreviewed": false,
+  "approvals": {},
+  "stages": {
+    "preflight": {
+      "status": "ok",
+      "input_hash": "54cbb6380b307b734a24ed34d6bb964ec262207b87c8e7009daf5bdd49028128",
+      "at": "2026-11-27T00:36:04.269Z",
+      "duration_ms": 244,
+      "runs": 1
+    },
+    "script_gate": {
+      "status": "ok",
+      "input_hash": "20763ca4d5a1855f3ac9681ad2fb7f6b0d4e85fdd3bcecc740238f2fe68470ac",
+      "at": "2026-11-27T01:36:26.309Z",
+      "duration_ms": 66,
+      "runs": 7
+    },
+    "vo": {
+      "status": "ok",
+      "input_hash": "3cd2fe7ee0332f2cb833fc432eec6da62d8150eba90d0c0ef143e34d60b05ce5",
+      "at": "2026-11-27T00:43:09.172Z",
+      "duration_ms": 15826,
+      "runs": 1
+    },
+    "plan_lint": {
+      "status": "ok",
+      "input_hash": "3a79fef64090d29346e2dd9bba965aca9ebcd7535cba9b622fab9a334764afcd",
+      "at": "2026-11-27T01:36:26.317Z",
+      "duration_ms": 4,
+      "runs": 3,
+      "warns": []
+    }
+  },
+  "genre": "horror",
+  "lang": "hi",
+  "format": "standalone",
+  "voice": "aman",
+  "unreviewed_reasons": [],
+  "updated_at": "2026-11-27T05:40:27.883Z",
+  "failed": {
+    "stage": "script_gate",
+    "exit_code": 1,
+    "at": "2026-11-27T00:37:32.337Z"
+  },
+  "variant_of": "workspace/reels/upper-berth",
+  "variant_note": "Copy of the approved v3 script with only brief.look changed to dark-pov. The inherited script approval was dropped because the brief hash changed (not re-approved: that checkpoint stays with the user: reel.mjs approve <dir> script). Lines, script.txt, timeline, sound and voiceover are byte-identical to upper-berth."
+}

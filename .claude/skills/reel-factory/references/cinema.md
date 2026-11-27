@@ -102,6 +102,7 @@ bloom and halation, and the three additive passes share one 1/8-res accumulator 
 | --- | --- |
 | `horror-night` | desaturated, teal shadows / warm highlights, bloom + halation, edge CA, heavy vignette, flicker, strong grain, dust |
 | `horror-day` | harsh noon: heat shimmer, bleach-bypass (sat 0.55 + self-overlay contrast), hard bloom, light vignette; blacks stay black |
+| `horror-dark-pov` | near-black POV look: one motivated light only (`frameInfo.lights`, ambient floor), blue-black desaturation, heavy grain, vignette 0.9; `frameInfo.overlay(ctx)` draws HUD/rim after the mask. See references/style-dark-pov.md |
 | `warm-story` | warm gain, soft bloom, gentle halation, split-tone, light grain |
 | `clean-guide` | vignette + a trace of grain only |
 

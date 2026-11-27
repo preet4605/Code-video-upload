@@ -1,0 +1,199 @@
+{
+ "scenes": [
+  {
+   "id": "s1_hook",
+   "subject": "POV across the bay to the uncle on the opposite lower berth",
+   "layers": {
+    "foreground": "knee + hanging chain (blurred)",
+    "midground": "uncle half-seated in kurta and shawl",
+    "background": "blue night lamp, barred window with sweeping light"
+   },
+   "light": "blue night-lamp key, passing sodium/white light sweeps through window bars, eyes fall into shadow",
+   "light_source": "blue night-lamp key, passing sodium/white light sweeps through window bars, eyes fall into shadow",
+   "camera": "slow push-in on the uncle, extra close push on line01 as the light leaves his eyes, handheld coach rumble",
+   "motion": "slow push-in on the uncle, extra close push on line01 as the light leaves his eyes, handheld coach rumble",
+   "details": [
+    "POV across the bay to the uncle on the opposite lower berth"
+   ]
+  },
+  {
+   "id": "s2_coach",
+   "subject": "wide down the aisle: curtained berths, sleeping silhouettes, feet out of curtains",
+   "layers": {
+    "foreground": "berth post, chain, curtain edge (blurred)",
+    "midground": "berths with sleepers and curtains, side berths",
+    "background": "aisle receding to the exit door under tube lights and fans"
+   },
+   "light": "cold tube light overhead, blue night lamps, sweeping window glare on the side berths",
+   "light_source": "cold tube light overhead, blue night lamps, sweeping window glare on the side berths",
+   "camera": "slow dolly forward with handheld rumble",
+   "motion": "slow dolly forward with handheld rumble",
+   "details": [
+    "wide down the aisle: curtained berths, sleeping silhouettes, feet out of curtains"
+   ]
+  },
+  {
+   "id": "s3_ticket",
+   "subject": "insert close-up of the uncle's yellowed 14-06-2014 ticket held in his hand",
+   "layers": {
+    "foreground": "blurred hanging chain",
+    "midground": "aged paper ticket PNR S7 14-06-2014 in his fingers",
+    "background": "out-of-focus berth and barred window with passing light"
+   },
+   "light": "raking window light across the paper, blue ambient",
+   "light_source": "raking window light across the paper, blue ambient",
+   "camera": "slow rack focus from soft to sharp with slight push",
+   "motion": "slow rack focus from soft to sharp with slight push",
+   "details": [
+    "insert close-up of the uncle's yellowed 14-06-2014 ticket held in his hand"
+   ]
+  },
+  {
+   "id": "s4_rule",
+   "subject": "medium close-up of the uncle leaning in, eyes in shadow",
+   "layers": {
+    "foreground": "none (shot is tight)",
+    "midground": "uncle face and shawl filling frame",
+    "background": "blurred bay wall with window rim light at left"
+   },
+   "light": "window rim light with eyes in shadow, passing sodium sweeps",
+   "light_source": "window rim light with eyes in shadow, passing sodium sweeps",
+   "camera": "slow push-in while he leans toward lens",
+   "motion": "slow push-in while he leans toward lens",
+   "details": [
+    "medium close-up of the uncle leaning in, eyes in shadow"
+   ]
+  },
+  {
+   "id": "s5_stop",
+   "subject": "the coach as tube lights flicker and the train halts, window shows black fog",
+   "layers": {
+    "foreground": "knee and berth edge (blurred)",
+    "midground": "uncle small and still on his berth",
+    "background": "fog-filled barred window, no platform"
+   },
+   "light": "flickering ceiling tube, blue lamp",
+   "light_source": "flickering ceiling tube, blue lamp",
+   "camera": "brake jolt then everything goes still, slow creep",
+   "motion": "brake jolt then everything goes still, slow creep",
+   "details": [
+    "the coach as tube lights flicker and the train halts, window shows black fog"
+   ]
+  },
+  {
+   "id": "s6_eyes",
+   "subject": "uncle lying on his side facing us, eyes follow the camera",
+   "layers": {
+    "foreground": "blurred chain and berth rail",
+    "midground": "uncle lying under a blanket, eyes glinting",
+    "background": "dark partition and fog window"
+   },
+   "light": "blue lamp, eye glints catching the lamp",
+   "light_source": "blue lamp, eye glints catching the lamp",
+   "camera": "camera trucks sideways, eye glints track",
+   "motion": "camera trucks sideways, eye glints track",
+   "details": [
+    "uncle lying on his side facing us, eyes follow the camera"
+   ]
+  },
+  {
+   "id": "s7_tickets",
+   "subject": "lateral track along berth stacks, every dangling hand holds the same yellow ticket",
+   "layers": {
+    "foreground": "blurred steel posts and chain",
+    "midground": "sleepers with dangling hands and yellow tickets",
+    "background": "berth row partitions with windows and night lamps"
+   },
+   "light": "cold blue key, warming ticket glow rising",
+   "light_source": "cold blue key, warming ticket glow rising",
+   "camera": "accelerating lateral track",
+   "motion": "accelerating lateral track",
+   "details": [
+    "lateral track along berth stacks, every dangling hand holds the same yellow ticket"
+   ]
+  },
+  {
+   "id": "s8_itarsi",
+   "subject": "yellow Itarsi board in the window, warm platform light floods in; uncle stands, smiles, walks off",
+   "layers": {
+    "foreground": "knee and berth edge",
+    "midground": "uncle standing then walking left",
+    "background": "warm Itarsi platform with board and lamps"
+   },
+   "light": "warm platform light flooding in, graded warm",
+   "light_source": "warm platform light flooding in, graded warm",
+   "camera": "board slides in and stops, uncle rises and walks away",
+   "motion": "board slides in and stops, uncle rises and walks away",
+   "details": [
+    "yellow Itarsi board in the window, warm platform light floods in; uncle stands, smiles, walks off"
+   ]
+  },
+  {
+   "id": "s9_relief",
+   "subject": "eyelids close, coach dims, black through the silence",
+   "layers": {
+    "foreground": "lids and knee",
+    "midground": "empty seat with the uncle's shawl",
+    "background": "fading platform, bay wall"
+   },
+   "light": "dimming warm light, then only the night lamp through the lids",
+   "light_source": "dimming warm light, then only the night lamp through the lids",
+   "camera": "slow sink as lids close",
+   "motion": "slow sink as lids close",
+   "details": [
+    "eyelids close, coach dims, black through the silence"
+   ],
+   "allow_black": true,
+   "allow_silence": true,
+   "waiver_note": "designed black silence (eyelids closed, coach dimmed): no detail is added on purpose"
+  },
+  {
+   "id": "s10_bhopal",
+   "subject": "hard cut from black: Bhopal board whipping away left at speed",
+   "layers": {
+    "foreground": "knee and berth edge",
+    "midground": "none, platform streak",
+    "background": "Bhopal platform and board sliding away"
+   },
+   "light": "white flash then cold platform lamps streaking",
+   "light_source": "white flash then cold platform lamps streaking",
+   "camera": "whip pan with directional blur",
+   "motion": "whip pan with directional blur",
+   "details": [
+    "hard cut from black: Bhopal board whipping away left at speed"
+   ]
+  },
+  {
+   "id": "s11_ticket2",
+   "subject": "insert of the narrator's own ticket yellowing, same framing as s3",
+   "layers": {
+    "foreground": "blurred chain",
+    "midground": "narrator's ticket 14-06-2026 ageing in his hand",
+    "background": "out-of-focus berth and window"
+   },
+   "light": "raking light on paper, blue ambient",
+   "light_source": "raking light on paper, blue ambient",
+   "camera": "slow rack focus with slight push, ageing animation",
+   "motion": "slow rack focus with slight push, ageing animation",
+   "details": [
+    "insert of the narrator's own ticket yellowing, same framing as s3"
+   ]
+  },
+  {
+   "id": "s12_loop",
+   "subject": "reverse: narrator on the uncle's berth speaking to a boy, ends on the s1 frame",
+   "layers": {
+    "foreground": "knee + chain (blurred), identical to s1",
+    "midground": "narrator in the shawl, morphing to the uncle",
+    "background": "blue night lamp, barred window with passing lights"
+   },
+   "light": "blue night lamp key, sodium/white sweeps",
+   "light_source": "blue night lamp key, sodium/white sweeps",
+   "camera": "slow pull back to the s1 start framing, morph to the uncle at the end",
+   "motion": "slow pull back to the s1 start framing, morph to the uncle at the end",
+   "details": [
+    "reverse: narrator on the uncle's berth speaking to a boy, ends on the s1 frame"
+   ]
+  }
+ ]
+}

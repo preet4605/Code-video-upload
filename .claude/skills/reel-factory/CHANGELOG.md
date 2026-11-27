@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased: dark-pov style
+- `references/style-dark-pov.md` (measured 'Ginti' reference), cinema preset `horror-dark-pov` (+ `frameInfo.lights` / `frameInfo.overlay`), `kit.props.hud`, `templates/visual_targets.horror-dark-pov.json` (brief.look `dark-pov`), tests `phase17_dark_pov.test.mjs`.
+
 ## Unreleased: real-recording sound sources
 - `scripts/sfx_fetch.mjs` (explicit fetch: Openverse cc0/pdm/by, your own index, earshot) -> `sound.lock.json` + `audio/library/` + `CREDITS.txt`; `scripts/sfx_index.mjs`; `lib/audio/sources/*`; earshot adapter in `lib/audio/providers.mjs`; file cues loop/trim to `until`, `normalize_rms_db`; audit fails CC BY without a credit line and NC/ND licences. Render stays offline and deterministic. See `references/sound.md`.
 

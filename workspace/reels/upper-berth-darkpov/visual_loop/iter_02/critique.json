@@ -1,0 +1,205 @@
+{
+ "shots": [
+  {
+   "id": "s1_hook",
+   "seen": "Lamp pool on the uncle reads as a face in blue dark; slats and clock pill present; foreground arcs now filled. Better than iter 1, still only a half-lit face.",
+   "problems": [
+    "lit_regions still under 1 at a key"
+   ],
+   "fix": "hold: pool already enlarged; check next pass",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s2_coach",
+   "seen": "Chain and aisle slit slightly more readable; rest black.",
+   "problems": [
+    "lit_regions 0.67",
+    "lit_fraction 0.044"
+   ],
+   "fix": "wider pool at the slit (r 480) and lamp boost 1.8",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s3_ticket",
+   "seen": "Ticket dimmer than iter 1 and nearly colourless (saturation 0.09): it looks like a grey smudge, a regression. It also matches s4 in layout (near duplicate 0.944).",
+   "problems": [
+    "regressed",
+    "near_duplicate with s4",
+    "no colour"
+   ],
+   "fix": "warm lamp colour on the ticket and move its pool lower (y 930) away from s4",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 2,
+    "light": 2,
+    "character": 3,
+    "composition": 2
+   },
+   "regression_note": "Regressed because the lamp pool was re-aimed and the sweep trimmed to cut brightness; the ticket is now a warm-lit pool placed low (y 930) in this pass, which should recover colour and legibility."
+  },
+  {
+   "id": "s4_rule",
+   "seen": "Uncle only appears at the sweep; between sweeps a faint blob. Layout identical to s3.",
+   "problems": [
+    "near_duplicate 0.944",
+    "uncle absent between sweeps"
+   ],
+   "fix": "pool higher on his face (y 620), boost lamp 1.8",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 2
+   }
+  },
+  {
+   "id": "s5_stop",
+   "seen": "Almost black, red 02:00; the three keys barely differ (key_change 0.0098).",
+   "problems": [
+    "keys identical",
+    "no subject"
+   ],
+   "fix": "stronger lamp boost 2.4 and a slow breathing of the pool so keys differ",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 2,
+    "light": 2,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s6_eyes",
+   "seen": "Reveal key works; base keys show only a dark bed.",
+   "problems": [
+    "lit_fraction 0.039",
+    "subject 0.129"
+   ],
+   "fix": "bigger lamp pool r 440 and boost 2.4",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s7_tickets",
+   "seen": "Hands and tickets now readable but dim; backdrop test false positive.",
+   "problems": [
+    "still dim"
+   ],
+   "fix": "keep lamp 1.7; no change beyond intensity checks",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s8_itarsi",
+   "seen": "Station board and uncle readable, still over the mean cap (25).",
+   "problems": [
+    "mean 25",
+    "bins 14"
+   ],
+   "fix": "cut tube 1.1 to 0.8 and sweep 1.05 to 0.9",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   },
+   "regression_note": "Small drop is the deliberate trade: tube and sweep intensity lowered to bring the shot toward the reference mean cap (25 vs 21.8); detail inside the lit station window is kept."
+  },
+  {
+   "id": "s9_relief",
+   "seen": "Lids closing, lamp blob; intended black.",
+   "problems": [
+    "none beyond waiver"
+   ],
+   "fix": "keep the black beat unchanged (waived)",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s10_bhopal",
+   "seen": "Board reads in one glance through slats; scare intact; bright.",
+   "problems": [
+    "mean 27"
+   ],
+   "fix": "board pool 0.7 to 0.55",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 4,
+    "character": 3,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s11_ticket2",
+   "seen": "Ticket legible with red pill; focal low.",
+   "problems": [
+    "focal 3.9"
+   ],
+   "fix": "hold; pool unchanged",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s12_loop",
+   "seen": "Aged narrator under the sweep; reads as the uncle did in s1, which is the loop intent.",
+   "problems": [
+    "mean 26"
+   ],
+   "fix": "sweep 0.9 lowers the peak",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 4,
+    "composition": 3
+   }
+  }
+ ]
+}

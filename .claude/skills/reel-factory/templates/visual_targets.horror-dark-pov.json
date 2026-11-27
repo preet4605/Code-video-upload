@@ -1,0 +1,83 @@
+{
+  "name": "horror-dark-pov",
+  "calibrated_from": [
+    {
+      "file": "ginti-pilot (Doomsday | Horror), 24 frames sampled",
+      "sharp_edges": 0.0031,
+      "contrast": 17.0167,
+      "mean_luma": 19,
+      "color_bins": 8.3333,
+      "saturation": 0.1984,
+      "ink": 0.0025,
+      "focal": 8.1971,
+      "hue_families": 0.8333,
+      "lit_fraction": 0.0578,
+      "lit_regions": 1,
+      "p5_luma": 4.0417,
+      "subject_scale": 0.1745,
+      "empty_cells": 13.04
+    }
+  ],
+  "margin": 0.8,
+  "sharp_edges": {
+    "min": 0.0025,
+    "aim": 0.0031
+  },
+  "contrast": {
+    "min": 13.6134,
+    "aim": 17.0167
+  },
+  "saturation": {
+    "min": 0.1587,
+    "aim": 0.1984
+  },
+  "color_bins": {
+    "min": 6,
+    "max": 12
+  },
+  "focal": {
+    "min": 6.56
+  },
+  "ink": {
+    "aim": 0.0025
+  },
+  "aim_empty_cells": 13,
+  "max_empty_cells": 14,
+  "subject_scale": {
+    "min": 0.14
+  },
+  "lit_fraction": {
+    "min": 0.0462
+  },
+  "lit_regions": {
+    "min": 1
+  },
+  "mood": "dark",
+  "mean_luma": {
+    "max": 21.8,
+    "aim": 19
+  },
+  "hue_families": {
+    "max": 2
+  },
+  "method": "node scripts/style_ref.mjs <ginti ref.mp4> --out templates/visual_targets.horror-dark-pov.json --name horror-dark-pov --margin 0.8 --mood dark. Floors = reference x 0.8, caps = reference x 1.15 / x 1.4, exactly the style_ref rule. Single reference: re-run with more dark-POV references before trusting it as a genre norm.",
+  "notes": {
+    "detail_floors_are_loose": "The reference is nearly empty (sharp_edges 0.0031, 13 of 15 grid cells empty, subject 17% of frame), so sharp_edges/empty_cells/subject_scale floors are trivially easy. They are NOT the quality bar: the improvement over the reference is readable set detail inside the light pools (aim for sharp_edges > 0.008 on lit frames).",
+    "mean_luma": "max 21.8 = reference mean 19 x 1.15. The reference own brightest sampled frame is 40; a sweep peak or the Bhopal board can exceed the cap on a single keyframe by design.",
+    "focal": "min 6.56 comes from a near-empty frame (one lit blob). Adding more readable detail can lower focal; do not add detail outside the pools just to chase it.",
+    "p5_luma": "max 12 = the reference worst sampled frame p5 (not part of the style_ref rule; added so crushed blacks are enforced).",
+    "reused_backdrop_check_disabled": "similarity.backdrop_share_max = 1.0 (cannot trigger). The masked-backdrop fingerprint compares cell colours inside a 0.05 tolerance, and in near-black frames every cell is within that, so ANY dark-POV reel reads as one reused backdrop. Evidence: the Ginti reference itself clusters 9 of 9 shots as one backdrop (share 1.0) under the default thresholds. The near-duplicate check stays on (reference top pair hash_sim 0.875 < 0.88)."
+  },
+  "p5_luma": {
+    "max": 12
+  },
+  "similarity": {
+    "dup_hash_sim": 0.88,
+    "dup_hist_dist": 0.2,
+    "backdrop_hash_sim": 0.85,
+    "backdrop_cell_diff": 0.05,
+    "backdrop_share_max": 1.0,
+    "backdrop_min_shots": 4
+  },
+  "look": "dark-pov"
+}

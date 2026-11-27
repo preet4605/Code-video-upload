@@ -73,3 +73,54 @@ export function well(c, o) {
   c.fillStyle = shade(stone, 0.1); c.beginPath(); c.ellipse(cx, cy - hgt, rx, ry, 0, 0, TAU); c.fill(); c.fillStyle = '#040404'; c.beginPath(); c.ellipse(cx, cy - hgt + 2, rx - 22, ry - 12, 0, 0, TAU); c.fill();
   c.strokeStyle = wood; c.lineWidth = 16; c.lineCap = 'round'; c.beginPath(); c.moveTo(cx - rx + 20, cy - hgt + 6); c.lineTo(cx - rx + 20, cy - hgt - 230); c.moveTo(cx + rx - 20, cy - hgt + 6); c.lineTo(cx + rx - 20, cy - hgt - 230); c.moveTo(cx - rx + 8, cy - hgt - 226); c.lineTo(cx + rx - 8, cy - hgt - 226); c.stroke();
 }
+
+// ---- diegetic HUD (the 'Ginti' counter): small dark pill, label + value; red + chromatic jitter when 'wrong' ----
+export const HUD_SAFE = Object.freeze({ x0: 60, x1: 900, y0: 270, y1: 1440 });
+const HUD_RED = '#ff2a2a', HUD_FONT = '"Noto Sans", sans-serif';
+// text with '→' drawn as a vector arrow (the bundled Noto Sans has no U+2192 glyph and would print a missing-glyph box)
+function richWidth(c, s, size) { return s.split('→').map((p) => c.measureText(p).width).reduce((a, w, i) => a + w + (i ? size * 0.95 : 0), 0); }
+function richDraw(c, s, x, y, size) {
+  const parts = s.split('→'); let cx = x;
+  parts.forEach((p, i) => {
+    if (i) { const a = size * 0.95; c.save(); c.lineWidth = Math.max(2, size * 0.09); c.lineCap = 'round'; c.lineJoin = 'round'; c.beginPath(); c.moveTo(cx + a * 0.14, y); c.lineTo(cx + a * 0.8, y); c.moveTo(cx + a * 0.52, y - size * 0.2); c.lineTo(cx + a * 0.82, y); c.lineTo(cx + a * 0.52, y + size * 0.2); c.stroke(); c.restore(); cx += a; }
+    c.fillText(p, cx, y); cx += c.measureText(p).width;
+  });
+}
+/**
+ * hud(c, {label, value, x=480, y=360, wrong=0..1, t=0, scale=1, a=1, safe=HUD_SAFE, labelSize=24, valueSize=54, seed=1})
+ * A diegetic counter / clock / label: translucent dark pill, small grey label left, big value right. wrong>0 turns the stroke and
+ * value red and splits the value into R/B planes jittering by a seeded function of t (deterministic). (x,y) = pill centre;
+ * the pill is clamped into the safe zone (x 60..900, y 270..1440). Draw it BEFORE the film post so grain/CA treat it like the picture.
+ * Returns the pill rect {x,y,w,h,cx,cy,clamped}. Use label '' for a value-only pill.
+ */
+export function hud(c, o = {}) {
+  const { label = '', value = '', x = 480, y = 360, wrong = 0, t = 0, scale = 1, a = 1, safe = HUD_SAFE, labelSize = 24, valueSize = 54, seed = 1 } = o;
+  const w0 = Math.max(0, Math.min(1, wrong));
+  if (a <= 0) return null;
+  const val = String(value), lab = String(label);
+  c.save(); c.font = `800 ${labelSize}px ${HUD_FONT}`; const lw = lab ? richWidth(c, lab, labelSize) : 0;
+  c.font = `900 ${valueSize}px ${HUD_FONT}`; const vw = richWidth(c, val, valueSize);
+  const padX = 26, gap = lab ? 24 : 0, w = (padX * 2 + lw + gap + vw) * scale, h = (valueSize + 40) * scale;
+  const cx = Math.max(safe.x0 + w / 2, Math.min(safe.x1 - w / 2, x)), cy = Math.max(safe.y0 + h / 2, Math.min(safe.y1 - h / 2, y));
+  const clamped = cx !== x || cy !== y;
+  c.globalAlpha *= a; c.translate(cx, cy); c.scale(scale, scale);
+  const W = w / scale, Hh = h / scale;
+  c.beginPath(); c.roundRect(-W / 2, -Hh / 2, W, Hh, 18); c.fillStyle = 'rgba(6,6,8,0.72)'; c.fill();
+  c.lineWidth = 3; c.strokeStyle = w0 > 0 ? `rgba(224,27,36,${0.55 + 0.45 * w0})` : 'rgba(255,255,255,0.22)'; c.stroke();
+  c.textBaseline = 'middle'; c.textAlign = 'left';
+  let x0 = -W / 2 + padX;
+  if (lab) { c.font = `800 ${labelSize}px ${HUD_FONT}`; c.fillStyle = 'rgba(255,255,255,0.62)'; c.strokeStyle = 'rgba(255,255,255,0.62)'; richDraw(c, lab, x0, 2, labelSize); x0 += lw + gap; }
+  c.font = `900 ${valueSize}px ${HUD_FONT}`;
+  const base = w0 > 0 ? HUD_RED : '#f2ece0';
+  if (w0 > 0) { // seeded chromatic jitter: cyan and red planes slide apart a few px, flicker at ~12 Hz
+    const r = mulberry32(((seed * 7919) ^ Math.floor(t * 12)) >>> 0), j = (3 + 4 * w0) * (0.4 + r());
+    const dx = (r() - 0.5) * 2 * j, dy = (r() - 0.5) * j * 0.5;
+    c.globalCompositeOperation = 'lighter';
+    c.fillStyle = c.strokeStyle = `rgba(0,200,255,${0.5 * w0})`; richDraw(c, val, x0 - dx, 2 - dy, valueSize);
+    c.fillStyle = c.strokeStyle = `rgba(255,20,20,${0.8})`; richDraw(c, val, x0 + dx, 2 + dy, valueSize);
+    c.globalCompositeOperation = 'source-over';
+  }
+  c.fillStyle = c.strokeStyle = base; richDraw(c, val, x0, 2, valueSize);
+  c.restore();
+  return { x: cx - w / 2, y: cy - h / 2, w, h, cx, cy, clamped };
+}

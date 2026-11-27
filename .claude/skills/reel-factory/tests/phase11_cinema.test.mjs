@@ -255,7 +255,7 @@ function synthetic(W, H, frame) {
   return c;
 }
 test('post: every preset runs at 1080x1920 and is a pure function of (frame, seed)', () => {
-  assert.deepEqual(Object.keys(cin.PRESETS).sort(), ['clean-guide', 'horror-day', 'horror-night', 'warm-story']);
+  assert.deepEqual(Object.keys(cin.PRESETS).sort(), ['clean-guide', 'horror-dark-pov', 'horror-day', 'horror-night', 'warm-story']);
   const hashes = {};
   for (const name of Object.keys(cin.PRESETS)) {
     const run = (frame, seed = 1) => { const c = synthetic(1080, 1920, 3); cin.post(c.getContext('2d'), { t: frame / 30, frame, seed }, name); return hashCanvas(c); };
@@ -265,7 +265,7 @@ test('post: every preset runs at 1080x1920 and is a pure function of (frame, see
     assert.notEqual(a, run(7, 2), `${name}: seed changes the film texture`);
     hashes[name] = a;
   }
-  assert.equal(new Set(Object.values(hashes)).size, 4, 'presets are visually distinct');
+  assert.equal(new Set(Object.values(hashes)).size, 5, 'presets are visually distinct');
   assert.throws(() => cin.post(createCanvas(10, 10).getContext('2d'), {}, 'nope'), /unknown cinema preset/);
   // per-call overrides
   const o1 = synthetic(270, 480, 1); cin.post(o1.getContext('2d'), { frame: 1 }, { name: 'horror-night', grain: false, dustScratches: false, flicker: false });

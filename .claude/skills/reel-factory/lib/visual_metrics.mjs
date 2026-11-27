@@ -361,6 +361,8 @@ export const SIMILARITY_HINTS = Object.freeze({
 export function selectTargetsFile(brief = {}) {
   const genre = String(brief.genre || '').toLowerCase();
   const look = String(brief.look || brief.visual?.look || '').toLowerCase();
+  // 'dark-pov': near-black POV look (one motivated light, calibrated on the Ginti reference); explicit look wins over genre
+  if (/^dark[-_ ]?pov$/.test(look)) return 'visual_targets.horror-dark-pov.json';
   const day = /^(day|daylight|noon|bright|sunny|midday)$/.test(look);
   if (genre === 'horror') return day ? 'visual_targets.horror-day.json' : 'visual_targets.horror.json';
   return 'visual_targets.json';

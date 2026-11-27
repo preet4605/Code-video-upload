@@ -1,0 +1,104 @@
+{
+ "voice": "aman",
+ "temperature": 0.7,
+ "lead_s": 0.15,
+ "gap": 0.45,
+ "tail_s": 1.8,
+ "lines": [
+  {
+   "sc": "s1_hook",
+   "hi": "रात की ट्रेन में, सामने वाले अंकल बोले, बेटा, इटारसी आए तो उठा देना।",
+   "hl": "Raat ki train mein, saamne wale uncle bole, beta, Itarsi aaye toh utha dena.",
+   "gap": 0.35,
+   "event": "hook"
+  },
+  {
+   "sc": "s1_hook",
+   "hi": "बारह साल से नहीं उठ पाया।",
+   "hl": "Baarah saal se nahi uth paaya.",
+   "gap": 0.6
+  },
+  {
+   "sc": "s2_coach",
+   "hi": "मैं हँस दिया। मुझे भोपाल उतरना था। सब सो रहे थे।",
+   "hl": "Main hans diya. Mujhe Bhopal utarna tha. Sab so rahe the.",
+   "gap": 0.45
+  },
+  {
+   "sc": "s3_ticket",
+   "hi": "उनके हाथ में कागज़ वाला टिकट था।",
+   "hl": "Unke haath mein kaagaz wala ticket tha.",
+   "gap": 0.25,
+   "event": "clue_ticket"
+  },
+  {
+   "sc": "s3_ticket",
+   "hi": "तारीख, चौदह जून, दो हज़ार चौदह।",
+   "hl": "Tareekh, chaudah June, do hazaar chaudah.",
+   "gap": 0.6
+  },
+  {
+   "sc": "s4_rule",
+   "hi": "अंकल बोले, अपना स्टेशन सोते हुए मत निकालना। कहते हैं, जो निकाल दे, वो इस डिब्बे से नहीं उतरता।",
+   "hl": "Uncle bole, apna station sote hue mat nikaalna. Kehte hain, jo nikaal de, woh is dibbe se nahi utarta.",
+   "gap": 0.6,
+   "event": "rule"
+  },
+  {
+   "sc": "s5_stop",
+   "hi": "रात दो बजे, ट्रेन ऐसी जगह रुकी जहाँ कोई स्टेशन नहीं था।",
+   "hl": "Raat do baje, train aisi jagah ruki jahan koi station nahi tha.",
+   "gap": 0.5,
+   "event": "stop"
+  },
+  {
+   "sc": "s6_eyes",
+   "hi": "अंकल की छाती हिल नहीं रही थी। पर उनकी आँखें मेरे साथ घूम रही थीं।",
+   "hl": "Uncle ki chhaati hil nahi rahi thi. Par unki aankhein mere saath ghoom rahi thi.",
+   "gap": 0.5,
+   "event": "eyes"
+  },
+  {
+   "sc": "s7_tickets",
+   "hi": "हर बर्थ पे लोग लेटे थे। सबके हाथ में वही पुराना टिकट।",
+   "hl": "Har berth pe log lete the. Sabke haath mein wahi purana ticket.",
+   "gap": 0.6,
+   "event": "tickets"
+  },
+  {
+   "sc": "s8_itarsi",
+   "hi": "फिर इटारसी आया। मैंने अंकल को हिलाया। वो मुस्कुराए, और उतर गए।",
+   "hl": "Phir Itarsi aaya. Maine uncle ko hilaaya. Woh muskuraaye, aur utar gaye.",
+   "gap": 0.5,
+   "event": "itarsi"
+  },
+  {
+   "sc": "s9_relief",
+   "hi": "मैंने बस एक पल के लिए आँखें बंद कीं।",
+   "hl": "Maine bas ek pal ke liye aankhein band ki.",
+   "gap": 1.0,
+   "event": "relief"
+  },
+  {
+   "sc": "s10_bhopal",
+   "hi": "आँख खुली, तो खिड़की से भोपाल पीछे छूट रहा था।",
+   "hl": "Aankh khuli, toh khidki se Bhopal peeche chhoot raha tha.",
+   "gap": 0.6,
+   "event": "scare"
+  },
+  {
+   "sc": "s11_ticket2",
+   "hi": "मेरा टिकट अब पीला पड़ चुका है।",
+   "hl": "Mera ticket ab peela pad chuka hai.",
+   "gap": 0.7,
+   "event": "twist"
+  },
+  {
+   "sc": "s12_loop",
+   "hi": "सामने वाली बर्थ पे एक लड़का है। बेटा, भोपाल आए तो उठा देना।",
+   "hl": "Saamne wali berth pe ek ladka hai. Beta, Bhopal aaye toh utha dena.",
+   "gap": 0.0,
+   "event": "loop"
+  }
+ ]
+}

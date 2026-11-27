@@ -1,0 +1,102 @@
+{
+ "mode": "script",
+ "verdict": "workable",
+ "reviewer_note": "Same-model self-critique is biased. A human must read this aloud once and watch it with sound on a phone before posting.",
+ "answers": [
+  {
+   "id": "stranger_test",
+   "score": 4,
+   "evidence": "रात की ट्रेन में, सामने वाले अंकल बोले, बेटा, इटारसी आए तो उठा देना।",
+   "note": "Ordinary request in the first 3 s; the oddness lands only on line 2 ('twelve years'), so the very first second is weaker than a visual shock."
+  },
+  {
+   "id": "myth_grounding",
+   "score": 3,
+   "evidence": "अंकल बोले, अपना स्टेशन सोते हुए मत निकालना। कहते हैं, जो निकाल दे, वो इस डिब्बे से नहीं उतरता।",
+   "note": "Explicit prohibition ('मत निकालना') attributed with 'कहते हैं', labelled invented in brief.belief_label."
+  },
+  {
+   "id": "relatability",
+   "score": 5,
+   "evidence": "मुझे भोपाल उतरना था। सब सो रहे थे।",
+   "note": "Almost every Indian viewer has feared sleeping past their station on an overnight sleeper."
+  },
+  {
+   "id": "violation",
+   "score": 4,
+   "evidence": "मैंने बस एक पल के लिए आँखें बंद कीं।",
+   "note": "The narrator breaks the rule himself with an ordinary, forgivable act."
+  },
+  {
+   "id": "consequence",
+   "score": 4,
+   "evidence": "मेरा टिकट अब पीला पड़ चुका है।",
+   "note": "Physical, visible consequence (the ticket ages); being trapped is implied, not shown."
+  },
+  {
+   "id": "escalation",
+   "score": 4,
+   "evidence": "हर बर्थ पे लोग लेटे थे। सबके हाथ में वही पुराना टिकट।",
+   "note": "Stop with no station -> dead open eyes -> whole coach trapped: each beat widens the threat."
+  },
+  {
+   "id": "withholding",
+   "score": 4,
+   "evidence": "रात दो बजे, ट्रेन ऐसी जगह रुकी जहाँ कोई स्टेशन नहीं था।",
+   "note": "We never see what is outside where the train stops, or how long the narrator has been on the train."
+  },
+  {
+   "id": "specificity",
+   "score": 4,
+   "evidence": "तारीख, चौदह जून, दो हज़ार चौदह।",
+   "note": "Coach S7, the Itarsi-before-Bhopal order, a dated paper ticket in an e-ticket era."
+  },
+  {
+   "id": "the_turn",
+   "score": 4,
+   "evidence": "आँख खुली, तो खिड़की से भोपाल पीछे छूट रहा था।",
+   "note": "Recontextualises the hook: 'twelve years and couldn't wake up' becomes the narrator's future."
+  },
+  {
+   "id": "sound_scare",
+   "score": 3,
+   "evidence": "आँख खुली, तो खिड़की से भोपाल पीछे छूट रहा था।",
+   "note": "Silence then a passing-station scare; designed in sound.json, but nobody has heard it yet."
+  },
+  {
+   "id": "ending_loop",
+   "score": 5,
+   "evidence": "सामने वाली बर्थ पे एक लड़का है। बेटा, भोपाल आए तो उठा देना।",
+   "note": "Echoes the hook word for word with his own station: a true loop."
+  },
+  {
+   "id": "cliche_scan",
+   "score": 3,
+   "evidence": "अंकल की छाती हिल नहीं रही थी। पर उनकी आँखें मेरे साथ घूम रही थीं।",
+   "note": "The 'dead but watching' image is familiar; rewritten so his eyes follow the narrator, which is more specific. Still a known trope."
+  },
+  {
+   "id": "code_visual_feasible",
+   "score": 4,
+   "evidence": "हर बर्थ पे लोग लेटे थे। सबके हाथ में वही पुराना टिकट।",
+   "note": "Coach interior is a corridor-style set; ticket inserts and station boards are simple props. A new sleeper-coach set is needed."
+  },
+  {
+   "id": "bluff_plot_without_adjectives",
+   "score": 4,
+   "evidence": "फिर इटारसी आया। मैंने अंकल को हिलाया। वो मुस्कुराए, और उतर गए।",
+   "note": "Plot survives with adjectives removed (see plot_events).",
+   "plot_events": [
+    "उनके हाथ में कागज़ वाला टिकट था।",
+    "रात दो बजे, ट्रेन ऐसी जगह रुकी जहाँ कोई स्टेशन नहीं था।",
+    "फिर इटारसी आया। मैंने अंकल को हिलाया। वो मुस्कुराए, और उतर गए।",
+    "आँख खुली, तो खिड़की से भोपाल पीछे छूट रहा था।",
+    "सामने वाली बर्थ पे एक लड़का है। बेटा, भोपाल आए तो उठा देना।"
+   ]
+  }
+ ],
+ "weakest_line": {
+  "quote": "मैं हँस दिया। मुझे भोपाल उतरना था। सब सो रहे थे।",
+  "rewrite": "मैं हँस दिया। मुझे भोपाल उतरना था। पूरा डिब्बा सो रहा था।"
+ }
+}

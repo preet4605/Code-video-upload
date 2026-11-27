@@ -1,0 +1,31 @@
+[SCENE id=s1_hook mood=suspense]
+[NARRATOR] रात की ट्रेन में, सामने वाले अंकल बोले, बेटा, इटारसी आए तो उठा देना।
+[NARRATOR] बारह साल से नहीं उठ पाया।
+[SCENE id=s2_coach mood=calm]
+[SFX name=train_rumble]
+[NARRATOR] मैं हँस दिया। मुझे भोपाल उतरना था। सब सो रहे थे।
+[SCENE id=s3_ticket mood=tension]
+[NARRATOR] उनके हाथ में कागज़ वाला टिकट था।
+[NARRATOR] तारीख, चौदह जून, दो हज़ार चौदह।
+[SCENE id=s4_rule mood=tension]
+[NARRATOR] अंकल बोले, अपना स्टेशन सोते हुए मत निकालना। कहते हैं, जो निकाल दे, वो इस डिब्बे से नहीं उतरता।
+[SCENE id=s5_stop mood=suspense]
+[SFX name=brake_screech]
+[NARRATOR] रात दो बजे, ट्रेन ऐसी जगह रुकी जहाँ कोई स्टेशन नहीं था।
+[SCENE id=s6_eyes mood=tension]
+[NARRATOR] अंकल की छाती हिल नहीं रही थी। पर उनकी आँखें मेरे साथ घूम रही थीं।
+[SCENE id=s7_tickets mood=climax]
+[NARRATOR] हर बर्थ पे लोग लेटे थे। सबके हाथ में वही पुराना टिकट।
+[SCENE id=s8_itarsi mood=calm]
+[SFX name=station_bell]
+[NARRATOR] फिर इटारसी आया। मैंने अंकल को हिलाया। वो मुस्कुराए, और उतर गए।
+[SCENE id=s9_relief mood=calm]
+[NARRATOR] मैंने बस एक पल के लिए आँखें बंद कीं।
+[SCENE id=s10_bhopal mood=climax]
+[SILENCE dur=1.0]
+[SCARE name=bhopal_passing]
+[NARRATOR] आँख खुली, तो खिड़की से भोपाल पीछे छूट रहा था।
+[SCENE id=s11_ticket2 mood=suspense]
+[NARRATOR] मेरा टिकट अब पीला पड़ चुका है।
+[SCENE id=s12_loop mood=suspense]
+[NARRATOR] सामने वाली बर्थ पे एक लड़का है। बेटा, भोपाल आए तो उठा देना।

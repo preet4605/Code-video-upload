@@ -8,6 +8,7 @@ export * from './film.mjs';
 export * from './texture.mjs';
 export { hashPixels, pooled, poolSize, frameSeed, easeInOut, easeOut, DW, DH } from './util.mjs';
 import { glow, heatHaze, flushAdd } from './atmos.mjs';
+import { darkMask } from './light.mjs';
 import { snapshot, pooled } from './util.mjs';
 import { grain, vignette, chromaticAberration, gateWeave, flicker, letterbox, dustScratches, grade, whipBlur } from './film.mjs';
 
@@ -25,6 +26,20 @@ export const PRESETS = {
     flicker: { amount: 0.045 },
     grain: { amount: 0.5, size: 1.35 },
     dustScratches: { density: 0.8 },
+  },
+  // near-total darkness: one motivated light (passing sweep, torch, flickering tube) is the only thing that reveals the set.
+  // The LIGHT MASK runs first (frameInfo.lights = design-space lights as for cin.darkMask; none = ambient floor only), so bloom /
+  // split-tone / halation are computed from the already-darkened frame and never lift the unlit areas. Calibrated against the
+  // 'Ginti' reference (references/style-dark-pov.md): mean luma ~20, p5 ~3, lit ~6%, desaturated blue-black, heavy grain.
+  'horror-dark-pov': {
+    lightMask: { ambient: '#0b0f18', glow: 0.26 },
+    grade: { gamma: 0.96, gain: [0.95, 1.0, 1.14], saturation: 0.4, contrast: 0.35, splitTone: { shadows: '#02060c', highlights: '#c9d6ff', shadowStrength: 0.3, highlightStrength: 0.22 } },
+    bloom: { threshold: 0.62, radius: 40, strength: 0.38 },
+    chromaticAberration: { px: 2.2 },
+    vignette: { strength: 0.9, hardness: 0.42 },
+    flicker: { amount: 0.03 },
+    grain: { amount: 0.8, size: 1.5 },
+    dustScratches: { density: 0.45 },
   },
   // harsh noon: hard contrast, bleached colour, heat shimmer, blown highlights bloom - but the darks stay dark.
   'horror-day': {
@@ -54,7 +69,9 @@ const ORDER = ['heatHaze', 'gateWeave', 'chromaticAberration', 'grade', 'glow', 
 /**
  * Apply a post chain to the finished frame, in place. frameInfo: {t, frame, seed=1, cam?} (cam: a camera whose
  * velocity drives automatic whip motion blur). preset: name or {name, <stage>: params|false}.
- * Order: heatHaze, gateWeave (opt-in), CA, grade, bloom+halation (one pass), vignette, flicker, grain, dust, letterbox.
+ * frameInfo.lights (or .light): design-space lights for presets with a `lightMask` stage (applied before everything else).
+ * frameInfo.overlay(ctx): optional callback run right after the light mask (HUD / rim light that must stay visible in the dark).
+ * Order: [lightMask], heatHaze, gateWeave (opt-in), CA, grade, bloom+halation (one pass), vignette, flicker, grain, dust, letterbox.
  */
 export function post(ctx, frameInfo = {}, preset = 'clean-guide') {
   const name = typeof preset === 'string' ? preset : preset.name;
@@ -64,6 +81,13 @@ export function post(ctx, frameInfo = {}, preset = 'clean-guide') {
   if (typeof preset === 'object') for (const [k, v] of Object.entries(preset)) if (k !== 'name') cfg[k] = v === false ? false : { ...(base[k] || {}), ...v };
   const { t = 0, seed = 1 } = frameInfo, frame = frameInfo.frame ?? Math.round(t * 30);
   if (frameInfo.cam) whipBlur(ctx, frameInfo.cam);
+  if (cfg.lightMask) { // one-light dominance: multiply by the light map BEFORE the snapshot so no later stage re-lights the dark
+    const lights = frameInfo.lights ?? (frameInfo.light ? [frameInfo.light] : []);
+    darkMask(ctx, lights, { ambient: cfg.lightMask.ambient, glow: cfg.lightMask.glow, flicker: frameInfo.lightFlicker ?? 1 });
+  }
+  // frameInfo.overlay(ctx): emissive/diegetic elements (HUD, rim light, screens) drawn AFTER the light mask so the dark does not eat
+  // them, but BEFORE grade/CA/grain so they carry the same film look as the picture
+  if (typeof frameInfo.overlay === 'function') frameInfo.overlay(ctx);
   // one quarter-res snapshot of the incoming frame feeds every mask-type stage (split-tone, bloom, halation, CA)
   const need = (cfg.grade && cfg.grade.splitTone) || cfg.bloom || cfg.halation || cfg.chromaticAberration;
   const snap = need ? snapshot(ctx, 0.25, 'cin-snap') : null;

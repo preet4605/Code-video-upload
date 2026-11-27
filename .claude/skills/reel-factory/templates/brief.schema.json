@@ -381,7 +381,7 @@
     },
     "look": {
       "type": "string",
-      "description": "Lighting look; selects visual targets. 'day'|'daylight'|'noon'|'bright'|'sunny'|'midday' use visual_targets.horror-day.json for horror; anything else (e.g. 'night','interior') uses the night template."
+      "description": "Lighting look; selects visual targets. 'day'|'daylight'|'noon'|'bright'|'sunny'|'midday' use visual_targets.horror-day.json for horror; 'dark-pov' uses visual_targets.horror-dark-pov.json (near-black POV, one motivated light; cinema preset 'horror-dark-pov'); anything else (e.g. 'night','interior') uses the night template."
     }
   }
 }
