@@ -1,6 +1,6 @@
 # Posting plan: Upar Wali Berth (dark-POV v4)
 
-Status: planned, NOT posted. Needs the user's go at two points (hosting push, post call).
+Status: POSTED 2026-11-27 (user said 'post now').
 
 ## Files (workspace/reels/upper-berth-darkpov/post/)
 | File | Notes |
@@ -36,4 +36,6 @@ Windsor create_video_post needs a public video_url and cover_url.
 - Record media_id, permalink and post time below.
 
 ## Log
-- (empty)
+- 2026-11-27 ~19:00 UTC: hosted on branch reels-hosting; preflight 200 + sizes matched (video 29256119 B, cover 125369 B).
+- create_video_post timed out after 60 s (outcome unknown); NOT retried. Windsor read then showed the post: media_id 18183413191435829, permalink https://www.instagram.com/reel/DgQYSO_CoRv/ , caption exact, single entry (no double post).
+- Still to confirm in the Instagram app: plays to the end with sound, cover is the face frame, comments on.
