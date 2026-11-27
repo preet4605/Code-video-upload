@@ -1,0 +1,64 @@
+{
+  "platform": "reels",
+  "genre": "horror",
+  "lang": "hi",
+  "viewer": "Hindi-speaking students and young adults, 15-30, who take overnight sleeper trains",
+  "hook": "A stranger on an overnight sleeper asks to be woken at Itarsi, and says he hasn't been able to wake up for twelve years.",
+  "payoff": "Whoever sleeps through their own station never leaves the coach. The narrator wakes the uncle, frees him, falls asleep, misses Bhopal, and becomes the next one asking a stranger to wake him.",
+  "cta": "",
+  "target_duration_s": 62,
+  "loop": true,
+  "sources": [
+    "Original story. Code-drawn visuals, Kalpa Labs TTS (Aman), code-synthesized sound. No third-party footage, images or audio."
+  ],
+  "format": "standalone",
+  "title": "Upar Wali Berth",
+  "look": "night",
+  "belief_label": "Invented story; no real train, coach or incident. Itarsi and Bhopal are real stations on the same line (Itarsi before Bhopal going north).",
+  "story": {
+    "setup": "Overnight sleeper coach S7. The uncle on the opposite berth asks to be woken at Itarsi.",
+    "rule_or_clue": [
+      {
+        "type": "clue",
+        "text": "his paper ticket is dated 14 June 2014, twelve years old",
+        "line": "तारीख, चौदह जून, दो हज़ार चौदह।"
+      },
+      {
+        "type": "rule",
+        "text": "whoever sleeps through their station never leaves this coach",
+        "line": "अंकल बोले, अपना स्टेशन सोते हुए मत निकालना। कहते हैं, जो निकाल दे, वो इस डिब्बे से नहीं उतरता।"
+      }
+    ],
+    "escalation": [
+      {
+        "text": "the train stops where there is no station",
+        "line": "रात दो बजे, ट्रेन ऐसी जगह रुकी जहाँ कोई स्टेशन नहीं था।"
+      },
+      {
+        "text": "the uncle is not breathing but his open eyes watch the narrator",
+        "line": "अंकल की छाती हिल नहीं रही थी। पर उनकी आँखें मेरे साथ घूम रही थीं।"
+      },
+      {
+        "text": "every passenger holds the same old ticket",
+        "line": "हर बर्थ पे लोग लेटे थे। सबके हाथ में वही पुराना टिकट।"
+      }
+    ],
+    "false_relief": {
+      "text": "Itarsi arrives, the uncle wakes, smiles and gets off",
+      "line": "फिर इटारसी आया। मैंने अंकल को हिलाया। वो मुस्कुराए, और उतर गए।"
+    },
+    "twist": {
+      "text": "the narrator slept through Bhopal and his own ticket has yellowed",
+      "line": "मेरा टिकट अब पीला पड़ चुका है।",
+      "explains_hook": true,
+      "how": "The hook's 'twelve years and couldn't wake up' is the rule in action: the uncle slept through his station and was stuck until someone woke him; the narrator closes his eyes for one moment, sleeps past Bhopal, and now his own ticket ages the way the uncle's did."
+    },
+    "ending_image": {
+      "text": "the narrator, now on the opposite berth with a yellowed paper ticket, speaks to a sleepy boy"
+    },
+    "callback": {
+      "text": "the hook's request repeated by the narrator with his own station",
+      "line": "सामने वाली बर्थ पे एक लड़का है। बेटा, भोपाल आए तो उठा देना।"
+    }
+  }
+}

@@ -162,3 +162,13 @@ test('SKILL.md: < 5500 bytes, <= 12 hard rules, every relative link resolves, ho
   for (const l of links) assert.ok(fs.existsSync(path.join(ROOT, l)), `broken link ${l}`);
   assert.ok(fs.existsSync(path.join(ROOT, 'references', 'song-reel-mode.md')));
 });
+
+test('horror_gate: nukta words in setting/rule/folk lists match normalised script text', async () => {
+  const { norm } = await import('../lib/horror_gate.mjs');
+  const src = await import('node:fs').then((fs) => fs.readFileSync(new URL('../lib/horror_gate.mjs', import.meta.url), 'utf8'));
+  const m = src.match(/const DOMESTIC_RX = deNukta\((\/.*\/[a-z]*)\);/);
+  assert.ok(m, 'DOMESTIC_RX must be wrapped in deNukta');
+  const deNukta = (rx) => new RegExp(rx.source.replace(/़/g, ''), rx.flags);
+  const rx = deNukta(eval(m[1]));
+  for (const w of ['खिड़की से भोपाल दिखा', 'दरवाज़ा खुला', 'सीढ़ी पर']) assert.ok(rx.test(norm(w)), `should match: ${w}`);
+});

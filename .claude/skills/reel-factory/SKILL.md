@@ -11,28 +11,28 @@ Runtime: Node >= 22, `@napi-rs/canvas`, ffmpeg/ffprobe. Run `node scripts/doctor
 
 ## Hard rules
 
-1. Story before code: `brief.json` -> `script.txt` -> `shotlist.json`. No audio or scene code before the script is approved.
-2. `script_gate.mjs <dir> --mode script` must pass. Read the script aloud; spoken-friend test; digits spelled out in Devanagari for TTS.
-3. No `Math.random` / `Date.now` in scenes; renders are deterministic.
-4. Safe zone x 60..900, y 270..1440 (see `lib/profiles.mjs`). Nothing important under platform UI.
-5. Voice stays dry: no echo or reverb on narration unless the user asks (`--voice-echo`).
-6. API keys only in `~/.config/code-video-studio/tts.env` (never in the skill folder or chat). Never print a key.
-7. Never ship a `--draft` render. Final = full-size render + `master_and_qa.mjs`.
-8. Horror: the visual loop (`scripts/visual_loop.mjs`) must reach `LOOP PASS`, motion must escalate, pre-scare drop >= 20 dB. Skipped loop or weak escalation = FIX. Waivers only via `qa.json` and must be told to the user.
-9. Song-locked reels: cut on measured hits, never a bar grid; never duck the song.
-10. Max 3 QA fix passes. Then stop and hand the reel to the human with the measured numbers and the `unverified` list.
-11. Never claim fear, humour, quality or "perfect". Report the verdict, the numbers, and what was not verified.
-12. Original work only: no copied creators, characters or lyrics. Clean-room MIT; no AGPL / NonCommercial code (`LICENSES.md`).
+1. Story before code: `brief.json` -> `script.txt` + `lines.json` -> `shotlist.json`. No audio or scene code before the script is approved.
+2. `script_gate` must pass. Read the script aloud; spoken-friend test; Hindi lines in Devanagari, digits spelled out.
+3. Deterministic: no `Math.random` / `Date.now`. Scene and sound timing come from timeline events (`lib/events.mjs`), never hand-typed seconds.
+4. Build scenes from `lib/kit` (sets, figures, props) + `lib/cinema` (camera, light, atmosphere, film). Main subject >= 22% of frame height unless establishing. Safe zone x 60..900, y 270..1440.
+5. Voice stays dry (no echo unless asked). Kalpa per line via `build_vo.mjs`; horror Hindi default voice Aman.
+6. Keys only in env / `~/.config/code-video-studio/tts.env`. Never print a key.
+7. Never ship a `--draft` render. Final = full render + `master_and_qa.mjs`.
+8. Horror: visual loop must reach `LOOP PASS`, motion must escalate, >= 0.5 s relative silence before each sound scare. Waivers only via `qa.json`, told to the user.
+9. Sound is code-only (`sound.json` cues, tier A synthesis). Imported library files need a licence record. Song-locked reels: cut on measured hits, never duck the song.
+10. Max 3 QA fix passes. Then stop and hand over the measured numbers and the `unverified` list.
+11. Never claim fear, humour, quality or "perfect". Report verdict, numbers, and what was not verified.
+12. Original work only: no copied creators, characters or lyrics; no AGPL / NonCommercial code (`LICENSES.md`).
 
-## Workflow (two human checkpoints)
+## Workflow: `scripts/reel.mjs` runs every deterministic stage
 
-1. **Preflight** `doctor.mjs`. **Brief** (genre, lang, duration, story block): [brief schema](templates/brief.schema.json).
-2. **Script** + critique + `script_gate`. **CHECKPOINT 1: user approves the script.** (`--auto` skips it; label output UNREVIEWED.)
-3. **Audio**: `node scripts/audio_timeline.mjs --script <f> --out <dir> --lang <en|hi|hinglish> --genre <g>` -> `timeline.json` with aligned words. Keys: [tts.env.example](templates/tts.env.example).
-4. **Scene code** (`scene.mjs`, `VideoClock.setTime/draw`). Draft: `node scripts/render_and_lint.mjs --project <dir> --draft --json`.
-5. **Visual loop** `node scripts/visual_loop.mjs --project <dir>` -> read the sheet -> write `critique.json` -> fix -> repeat to `LOOP PASS`. **CHECKPOINT 2: user sees the visual result.**
-6. **Final** `render_and_lint.mjs --project <dir> --json`, then `node scripts/master_and_qa.mjs --project <dir> --bgm auto --sfx-auto --preset reel-vocal --audio-mood auto --platform reels --json` (horror: `--bgm horror`). Fix FIX items (rule 10), re-master.
-7. **Human review** with sound on a phone. Caption/hashtags via the `ig-caption` and `ig-human` skills if installed.
+1. `node scripts/reel.mjs init <dir> --genre <g> --lang <hi|en|hinglish>`. Claude writes `brief.json`, `script.txt`, `lines.json`.
+2. `node scripts/reel.mjs run <dir>` gates the script and stops. **CHECKPOINT 1: user approves** -> `reel.mjs approve <dir> script`.
+3. `run` again: per-line Kalpa voice -> `voiceover.wav`, `timeline.json` with `events`.
+4. Claude writes `shotlist.json`, `scene.mjs` and `sound.json`; `node scripts/sound_design.mjs --project <dir>` renders stems.
+5. `run`: plan lint + visual loop (Claude writes `critique.json` per iteration). **CHECKPOINT 2: user sees the sheet** -> `approve <dir> visual`.
+6. `run`: render -> master + QA (stems auto-detected). `--auto` skips checkpoints and marks the run UNREVIEWED.
+7. Human watches with sound on a phone. Caption via `ig-caption` + `ig-human`.
 
 Fast path for existing footage: `node scripts/master_and_qa.mjs --input <video.mp4> --json`.
 
@@ -42,6 +42,10 @@ Fast path for existing footage: `node scripts/master_and_qa.mjs --input <video.m
 - READ [direction-playbook.md](references/direction-playbook.md) WHEN writing the brief, shotlist or choosing a genre style.
 - READ [horror-craft.md](references/horror-craft.md) and [script-critique.md](references/script-critique.md) WHEN genre is horror or a critique is requested.
 - READ [narrative-horror-reels.md](references/narrative-horror-reels.md) WHEN writing EN/HI story scripts, serial or interactive formats.
+- READ [runner.md](references/runner.md) WHEN running stages, approvals, exit codes or resuming.
+- READ [voice-stage.md](references/voice-stage.md) WHEN writing `lines.json`, choosing voices or using timeline events.
+- READ [kit.md](references/kit.md) and [cinema.md](references/cinema.md) WHEN writing scene code.
+- READ [sound.md](references/sound.md) WHEN writing `sound.json`, choosing SFX/music or reading audio QA.
 - READ [visual-loop.md](references/visual-loop.md) WHEN running or interpreting the visual loop.
 - READ [widgets-and-motion.md](references/widgets-and-motion.md) WHEN building scenes, widgets or camera moves.
 - READ [ffmpeg-mastering.md](references/ffmpeg-mastering.md) WHEN loudness, mixing, QA flags or `qa.json` thresholds matter.

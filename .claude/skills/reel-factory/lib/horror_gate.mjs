@@ -50,10 +50,13 @@ export const CLICHES = [
   'little did', 'dark and stormy', 'mysterious', 'bone-chilling', 'shiver down'
 ].map(norm);
 const FEAR_TELLS = ['डर लगा', 'डर गया', 'डर गई', 'घबरा', 'scared', 'terrified', 'afraid', 'frightened', 'fear'].map(norm);
+// norm() strips the nukta (U+093C), so patterns must be matched without it too;
+// otherwise words like खिड़की, दरवाज़ा, सीढ़ी can never match normalised text.
+const deNukta = (rx) => new RegExp(rx.source.replace(/\u093C/g, ''), rx.flags);
 const TIME_RX = /(\d{1,2}[:.]\d{2})|बजकर|मिनट|बजे|आधी रात|midnight|\ba\.?m\b|\bat \d|o'clock|तीन बजे|दो बजे|रात के/;
-const RULE_RX = /मत |कभी न|नियम|रूल|never|don'?t|do not|must not|rule|\bonly\b|सिर्फ़|सिर्फ/;
-const FOLK_RX = /कहा जाता|कहते हैं|कहती थी|कहते थे|मान्यता|नानी|दादी|बुज़ुर्ग|बुजुर्ग|they say|folk|old belief|elders|grandmother|my nani|my dadi|superstition|अंधविश्वास|पुरानी बात|\bnani\b|\bdadi\b|invented (family )?rule|folk belief/;
-const DOMESTIC_RX = /घर|कमरा|रसोई|दरवाज़ा|दरवाजा|बिस्तर|खिड़की|छत|सीढ़ी|सीढ़ियाँ|आँगन|पंखा|room|kitchen|door|bed|window|hallway|stairs|fan|apartment|flat|house|home/;
+const RULE_RX = deNukta(/मत |कभी न|नियम|रूल|never|don'?t|do not|must not|rule|\bonly\b|सिर्फ़|सिर्फ/);
+const FOLK_RX = deNukta(/कहा जाता|कहते हैं|कहती थी|कहते थे|मान्यता|नानी|दादी|बुज़ुर्ग|बुजुर्ग|they say|folk|old belief|elders|grandmother|my nani|my dadi|superstition|अंधविश्वास|पुरानी बात|\bnani\b|\bdadi\b|invented (family )?rule|folk belief/);
+const DOMESTIC_RX = deNukta(/घर|कमरा|रसोई|दरवाज़ा|दरवाजा|बिस्तर|खिड़की|छत|सीढ़ी|सीढ़ियाँ|आँगन|पंखा|room|kitchen|door|bed|window|hallway|stairs|fan|apartment|flat|house|home/);
 
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 
