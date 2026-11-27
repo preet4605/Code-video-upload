@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased: real-recording sound sources
+- `scripts/sfx_fetch.mjs` (explicit fetch: Openverse cc0/pdm/by, your own index, earshot) -> `sound.lock.json` + `audio/library/` + `CREDITS.txt`; `scripts/sfx_index.mjs`; `lib/audio/sources/*`; earshot adapter in `lib/audio/providers.mjs`; file cues loop/trim to `until`, `normalize_rms_db`; audit fails CC BY without a credit line and NC/ND licences. Render stays offline and deterministic. See `references/sound.md`.
+
 ## reel-factory 1.0.0-p0
 - Renamed/installed as `reel-factory`. SKILL.md rewritten (< 5500 B): 12 hard rules, two human checkpoints (script approved, visual loop passed), "READ x WHEN y" pointers. Song-reel detail lives in `references/song-reel-mode.md`; new `references/qa-honesty.md`.
 - QA honesty: `qa_report.json` (and `qa_video.mjs`/`master_and_qa.mjs` output) now carries `contract_version: "1.0"`, `verified: [...]` (measured, with values) and `unverified: [...]` (hook strength, fear/humour, pronunciation, taste, facts, phone playback, plus skipped checks). The CLI summary prints the unverified list. Existing fields unchanged.

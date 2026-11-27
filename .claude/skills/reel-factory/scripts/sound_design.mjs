@@ -8,6 +8,7 @@
 //           <dir>/audio/cue_report.json  every cue's resolved time, source, render cost
 //           <dir>/audio/licences.json    every tier-B/C asset with file + licence (a missing licence is an error)
 //           <dir>/audio/audio_qa.json    with --mix: audio QA of the mastered mix
+// Query cues (source library/earshot) are resolved beforehand by scripts/sfx_fetch.mjs into sound.lock.json; this script never fetches.
 // Tier A (synth) is the default and needs nothing. Tier B/C cues need "file" + "licence" in the sheet (see references/sound.md).
 import fs from 'node:fs';
 import path from 'node:path';

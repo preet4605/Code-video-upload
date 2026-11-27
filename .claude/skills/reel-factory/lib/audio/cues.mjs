@@ -5,8 +5,10 @@ import fs from 'node:fs';
 import { makeClock } from '../events.mjs';
 import { SYNTH_KINDS, LAYERS, AUTOMATION_KINDS, kindNames } from './synth/index.mjs';
 import { REVERB_PRESETS } from './space.mjs';
+import { readLock, applyLock } from './lock.mjs';
+import path from 'node:path';
 
-export const SOURCES = ['synth', 'generated', 'library'];
+export const SOURCES = ['synth', 'generated', 'library', 'earshot'];
 export const BUS_NAMES = ['vo', 'sfx', 'music', 'ambience', 'room'];
 // Default bus trims in dB (applied at the mix; before loudnorm). Overridable in sound.json "buses".
 export const DEFAULT_BUSES = Object.freeze({ vo: 0, sfx: -3, music: -12, ambience: -14, room: -26 });
@@ -14,7 +16,8 @@ export const DEFAULT_BUSES = Object.freeze({ vo: 0, sfx: -3, music: -12, ambienc
 export function loadSound(file) {
   let j;
   try { j = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { throw new Error(`sound.json: cannot read ${file}: ${e.message}`); }
-  return j;
+  // sound.lock.json (written by scripts/sfx_fetch.mjs) supplies file + licence for `query` cues, so render / --check / audit never touch the network.
+  return applyLock(j, readLock(path.dirname(path.resolve(file))));
 }
 
 // Events: the timeline's native `events` (written by build_vo.mjs) win. Only when a timeline has none (older examples) do we derive
@@ -64,7 +67,9 @@ export function resolveCues(sound, timeline, { projectDir = null } = {}) {
     const layer = c.layer ?? def?.layer ?? (isAuto ? 'sfx' : null);
     if (!isAuto && !LAYERS.includes(layer)) errors.push(`${L0}: layer "${layer}" must be one of ${LAYERS.join(', ')}`);
     if (src !== 'synth') {
-      if (!c.file || typeof c.file !== 'string') errors.push(`${L0}: ${src} cue needs "file" (the audio you generated or imported)`);
+      if (c._lock_stale) errors.push(`${L0}: sound.lock.json was fetched for query "${c._lock_stale.locked}" but the cue now says "${c._lock_stale.now}"; run scripts/sfx_fetch.mjs --project <dir> again`);
+      else if ((!c.file || typeof c.file !== 'string') && c.query) errors.push(`${L0}: ${src} cue has query "${c.query}" but no fetched file; run scripts/sfx_fetch.mjs --project <dir> (an explicit step; render never fetches)`);
+      else if (!c.file || typeof c.file !== 'string') errors.push(`${L0}: ${src} cue needs "file" (the audio you generated or imported)`);
       else if (projectDir && !fs.existsSync(resolveFile(projectDir, c.file))) errors.push(`${L0}: file not found: ${c.file}`);
       const lic = c.licence;
       const okLic = (typeof lic === 'string' && lic.trim()) || (lic && typeof lic === 'object' && String(lic.name || lic.id || '').trim());

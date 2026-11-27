@@ -48,9 +48,15 @@
         "fade_in_s": { "type": "number" },
         "fade_out_s": { "type": "number" },
         "tags": { "type": "array", "items": { "type": "string" }, "description": "'scare' = QA requires >= 0.5 s relative silence before it and checks event anchoring; 'accent' = an intended loudness spike; 'phone' = run the phone check on it." },
-        "source": { "enum": ["synth", "generated", "library"], "default": "synth" },
-        "file": { "type": "string", "description": "Required for generated/library: WAV path relative to the project." },
-        "licence": { "oneOf": [{ "type": "string" }, { "type": "object", "properties": { "name": { "type": "string" }, "url": { "type": "string" }, "credit": { "type": "string" }, "proof": { "type": "string" } } }], "description": "Required for generated/library. Missing = error." },
+        "source": { "enum": ["synth", "generated", "library", "earshot"], "default": "synth", "description": "library = a recorded file (yours, or fetched by scripts/sfx_fetch.mjs from a `query`); earshot = rendered locally by the earshot CLI (also generated + provider earshot)." },
+        "provider": { "type": "string", "description": "With source generated: 'earshot' is the only provider wired in." },
+        "query": { "type": "string", "description": "Search words for scripts/sfx_fetch.mjs (Openverse, or your own index when library_index is set) or earshot request words. A cue with a query and no file is an error until sfx_fetch has run; the result lands in sound.lock.json." },
+        "library_index": { "type": "string", "description": "Path (relative to the project) of an index written by scripts/sfx_index.mjs; sfx_fetch then searches it instead of Openverse (no network)." },
+        "licences": { "type": "array", "items": { "enum": ["cc0", "pdm", "by"] }, "description": "Openverse licence allowlist for this cue. Default cc0, pdm, by. Nothing else is accepted (NC, ND, SA, unknown are always rejected)." },
+        "min_dur_s": { "type": "number" }, "max_dur_s": { "type": "number" }, "want_dur_s": { "type": "number", "description": "Preferred clip length for ranking (beds use the at..until span)." },
+        "normalize_rms_db": { "type": "number", "description": "File cues: scale the recording so its RMS (above -60 dBFS) is this many dBFS before gain_db. Library files otherwise play at their own level." },
+        "file": { "type": "string", "description": "Required for generated/library/earshot: WAV path relative to the project (or filled from sound.lock.json when the cue has a query). With `until`, the file is trimmed or crossfade-looped to the span (params.loop_xfade_s, default 0.5)." },
+        "licence": { "oneOf": [{ "type": "string" }, { "type": "object", "properties": { "name": { "type": "string" }, "url": { "type": "string" }, "credit": { "type": "string" }, "proof": { "type": "string" } } }], "description": "Required for generated/library/earshot (filled from sound.lock.json for fetched cues). Missing = error." },
         "note": { "type": "string" }
       }
     }

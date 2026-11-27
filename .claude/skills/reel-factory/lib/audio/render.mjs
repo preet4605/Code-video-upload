@@ -9,6 +9,7 @@ import { resolveCues, resolveFile } from './cues.mjs';
 import { autoTensionFrom } from './music.mjs';
 import { resolveGenerated } from './providers.mjs';
 import { readWav, writeWavFloat } from './wav.mjs';
+import { fitToSpan, normalizeRms } from './fit.mjs';
 
 export function normalizeSynthOut(o) {
   if (o instanceof Float32Array) return { mono: o, pre_s: 0 };
@@ -29,6 +30,12 @@ export function renderCueAudio(cue, sound, timeline, { sr = SR, projectDir = nul
     if (!file) file = resolveGenerated(cue).file;
     const w = readWav(resolveFile(projectDir ?? '.', file));
     out = w.mono ? { mono: resampleLinear(w.L, w.sr, sr), pre_s: 0 } : { L: resampleLinear(w.L, w.sr, sr), R: resampleLinear(w.R, w.sr, sr), pre_s: 0 };
+    // `until` on a file cue = a bed: trim to the span, or loop with an equal-power crossfade when the file is shorter. One-shots play once.
+    if (cue.dur_s) {
+      const n = Math.round(cue.dur_s * sr); const xf = Math.round((cue.params?.loop_xfade_s ?? 0.5) * sr);
+      if (out.mono) out.mono = fitToSpan(out.mono, n, xf); else { out.L = fitToSpan(out.L, n, xf); out.R = fitToSpan(out.R, n, xf); }
+    }
+    if (Number.isFinite(cue.normalize_rms_db)) { const g = normalizeRms(out.mono ? [out.mono] : [out.L, out.R], cue.normalize_rms_db); const sc = (x) => x.map((v) => v * g); if (out.mono) out.mono = sc(out.mono); else { out.L = sc(out.L); out.R = sc(out.R); } }
   }
   let L, R;
   const pan = cue.pan ?? 0;
@@ -74,7 +81,8 @@ export function renderStems(sound, timeline, { sr = SR, projectDir = null, onCue
     const startS = cue.at_s - a.pre_s; const i0 = Math.round(startS * sr); const n = a.L.length;
     const g = dbToLin(cue.gain_db ?? def?.gain_db ?? 0);
     const env = new Float32Array(n).fill(g);
-    const fi = Math.round((cue.fade_in_s ?? (def?.bed ? 0.02 : 0.002)) * sr), fo = Math.round((cue.fade_out_s ?? (def?.bed ? 0.02 : 0.002)) * sr);
+    const bedLike = def?.bed || (cue.source !== 'synth' && cue.dur_s);
+    const fi = Math.round((cue.fade_in_s ?? (bedLike ? 0.02 : 0.002)) * sr), fo = Math.round((cue.fade_out_s ?? (bedLike ? 0.02 : 0.002)) * sr);
     for (let i = 0; i < Math.min(fi, n); i++) env[i] *= i / fi;
     for (let i = 0; i < Math.min(fo, n); i++) env[n - 1 - i] *= i / fo;
     if (cue.gain_curve_resolved.length) { const ce = curveEnv(cue.gain_curve_resolved.map((p) => ({ t: p.t, g: p.db <= -90 ? 0 : dbToLin(p.db) })), n, sr, startS); for (let i = 0; i < n; i++) env[i] *= ce[i]; }
@@ -91,7 +99,7 @@ export function renderStems(sound, timeline, { sr = SR, projectDir = null, onCue
     const ms = performance.now() - t0;
     const aud = n / sr - a.pre_s;
     report.push(entry(cue, { onset: startS, end: cue.at_s + aud, ms }));
-    if (cue.source !== 'synth') licences.push({ id: cue.id, kind: cue.kind, source: cue.source, file: cue.file, licence: cue.licence });
+    if (cue.source !== 'synth') licences.push({ id: cue.id, kind: cue.kind, source: cue.source, file: cue.file, licence: cue.licence, ...(cue.query ? { query: cue.query } : {}) });
     onCue?.(cue, ms);
   }
   const tR = performance.now();

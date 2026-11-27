@@ -6,6 +6,7 @@ import { loadSound, resolveCues, isScareCue } from './cues.mjs';
 import { buildMix, decodeToFloat, voSpans } from './mix.mjs';
 import { AUDIO_QA, voiceClarity, phoneCheck, monoFold, truePeak, shortTermLoudness, loudnessSpikes, preScareSilence, licenceManifest } from './qa.mjs';
 import { SYNTH_KINDS } from './synth/index.mjs';
+import { missingCredits, needsCredit } from './credits.mjs';
 
 export function hasSoundSheet(projectDir) { return Boolean(projectDir) && fs.existsSync(path.join(projectDir, 'sound.json')); }
 
@@ -31,6 +32,21 @@ export function auditProjectAudio({ projectDir, media, ffmpeg = 'ffmpeg', timeli
   if (lic.required === 0) verified.push('licences: all audio is tier-A synthesis (no third-party assets)');
   else if (lic.missing.length) fails.push(`audio: licence manifest incomplete for ${lic.missing.length} of ${lic.required} non-synth cue(s): ${lic.missing.join(', ')}`);
   else verified.push(`licences: manifest complete for ${lic.required} tier-B/C asset(s)`);
+  if (lic.required && !lic.missing.length) {
+    const ents = (manifest?.entries || []);
+    // commercial-OK: NC / ND are never acceptable on a monetised account; SA is flagged (obligations on the finished video are unclear)
+    const lname = (e) => (typeof e.licence === 'string' ? e.licence : `${e.licence?.name || ''} ${e.licence?.id || ''} ${e.licence?.url || ''}`);
+    const nc = ents.filter((e) => /(^|[^a-z])(nc|nd)([^a-z]|$)|non-?commercial|no[- ]?deriv|by-n[cd]/i.test(lname(e)));
+    if (nc.length) fails.push(`audio: non-commercial / no-derivatives licence on ${nc.map((e) => e.id).join(', ')}: not allowed on a monetised account`);
+    const sa = ents.filter((e) => /(^|[^a-z])sa([^a-z]|$)|share-?alike|by-sa/i.test(lname(e)));
+    if (sa.length) warns.push(`audio: ShareAlike licence on ${sa.map((e) => e.id).join(', ')}: check what it requires of the finished video before publishing`);
+    const need = ents.filter((e) => needsCredit(e.licence)); const noCredit = missingCredits(projectDir, ents);
+    values.credits = { by_items: need.length, missing_lines: noCredit };
+    if (noCredit.length) fails.push(`audio: CC BY item(s) without an attribution line in CREDITS.txt: ${noCredit.join(', ')} (run scripts/sfx_fetch.mjs or add the credit; BY requires attribution)`);
+    else if (need.length) verified.push(`credits: ${need.length} CC BY item(s) each have a line in CREDITS.txt (put CREDITS.txt in the post caption / description)`);
+    const prev = ents.filter((e) => e.licence?.quality === 'preview-mp3'); if (prev.length) warns.push(`audio: ${prev.length} library cue(s) are Freesound preview MP3s (lossy, band-limited): ${prev.map((e) => e.id).join(', ')}`);
+    const guess = ents.filter((e) => e.licence?.guessed_pick); if (guess.length) warns.push(`audio: earshot picked a nearest design by guess for ${guess.map((e) => e.id).join(', ')}; set params.sound to a design id and listen`);
+  }
 
   // scare anchoring (stinger within 1 frame of its event)
   const scares = cues.filter(isScareCue);

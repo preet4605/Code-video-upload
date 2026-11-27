@@ -19,7 +19,7 @@ Runtime: Node >= 22, `@napi-rs/canvas`, ffmpeg/ffprobe. Run `node scripts/doctor
 6. Keys only in env / `~/.config/code-video-studio/tts.env`. Never print a key.
 7. Never ship a `--draft` render. Final = full render + `master_and_qa.mjs`.
 8. Horror: visual loop must reach `LOOP PASS`, motion must escalate, >= 0.5 s relative silence before each sound scare. Waivers only via `qa.json`, told to the user.
-9. Sound is code-only (`sound.json` cues, tier A synthesis). Imported library files need a licence record. Song-locked reels: cut on measured hits, never duck the song.
+9. Sound is code-only (`sound.json` cues, tier A synthesis). Real recordings come only through the explicit `scripts/sfx_fetch.mjs` step (cc0/pdm/by, licence record, CREDITS.txt); render never fetches. Song-locked reels: cut on measured hits, never duck the song.
 10. Max 3 QA fix passes. Then stop and hand over the measured numbers and the `unverified` list.
 11. Never claim fear, humour, quality or "perfect". Report verdict, numbers, and what was not verified.
 12. Original work only: no copied creators, characters or lyrics; no AGPL / NonCommercial code (`LICENSES.md`).
