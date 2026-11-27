@@ -99,6 +99,37 @@ test('loop end to end: a flat first draft fails, the next iteration is blocked w
   } finally { fs.rmSync(d, { recursive: true, force: true }); }
 });
 
+test('unchanged picture is refused without consuming an iteration; a changed picture proceeds; same-fix rule holds across changed iterations', async () => {
+  const d = demoCopy('scene.iter01.mjs');
+  try {
+    const r1 = await runVisualLoop({ projectDir: d });
+    assert.equal(r1.iter, 1);
+    const crit = (fix) => JSON.stringify({ shots: ['room', 'door', 'face'].map((id) => good(id, { fix, scores: { subject: 1, depth: 1, detail: 1, light: 2, character: 1, composition: 2 } })) });
+    fs.writeFileSync(path.join(d, 'visual_loop/iter_01/critique.json'), crit('add outlines and set dressing everywhere'));
+    for (let n = 1; n <= 2; n++) {
+      const u = await runVisualLoop({ projectDir: d });
+      assert.equal(u.unchanged, true);
+      assert.match(u.message, /picture unchanged since iteration 1/);
+      assert.match(u.message, /accept_unconverged_loop/);
+      assert.equal(u.attempts, n);
+    }
+    const log = JSON.parse(fs.readFileSync(path.join(d, 'visual_loop/log.json'), 'utf8'));
+    assert.equal(log.iterations.length, 1);
+    assert.equal(log.unchanged_attempts.length, 2);
+    assert.ok(!fs.existsSync(path.join(d, 'visual_loop/iter_02')));
+    // a changed picture proceeds
+    fs.copyFileSync(path.join(DEMO, 'scene.iter02.mjs'), path.join(d, 'scene.mjs'));
+    const r2 = await runVisualLoop({ projectDir: d });
+    assert.equal(r2.iter, 2);
+    assert.ok(!r2.unchanged);
+    // same-fix rule still applies across changed iterations
+    fs.writeFileSync(path.join(d, 'visual_loop/iter_02/critique.json'), crit('add outlines and set dressing everywhere'));
+    const b = await runVisualLoop({ projectDir: d });
+    assert.equal(b.blocked, true);
+    assert.ok(b.errors.some((e) => e.includes('same fix')));
+  } finally { fs.rmSync(d, { recursive: true, force: true }); }
+});
+
 test('the shipped demo log shows the loop improving and converging', () => {
   const log = JSON.parse(fs.readFileSync(path.join(DEMO, 'visual_loop/log.json'), 'utf8'));
   const it = log.iterations;

@@ -24,6 +24,12 @@ aims = median reference. Default targets ship calibrated on four code-made reels
    not dominate, cropped props, style drift.
 3. Apply the fixes in `scene.mjs`, run again. The next iteration refuses to run until the critique is valid; a
    repeated fix for a still-failing shot is rejected; a shot whose score drops needs a `regression_note` or a revert.
+   **Unchanged picture:** every iteration stores a picture fingerprint (hash of the scene.mjs import graph via
+   `sourceFingerprint` + `timeline.json` + the pixels of every rendered keyframe). If it equals the previous
+   iteration's, the run is refused with `picture unchanged since iteration N: apply a fix to the scene first, or stop and
+   escalate / waive via qa.json accept_unconverged_loop`. No new iteration starts, none is consumed, and the attempt is
+   recorded in `log.json` (`unchanged_attempts`). Do not reword a fix or re-run to get a pass: change the scene.
+   The same-fix rule still applies between real (changed) iterations.
 4. Stop at `LOOP PASS` (metrics pass + no critique score below 3), or `LOOP STOPPED` at 6 iterations: change the
    approach (style, framing, assets), do not keep nudging.
 5. `master_and_qa.mjs` reports the loop: not run = warning; run but not converged = FIX, unless qa.json `accept_unconverged_loop` carries a reason (WARN + recorded waiver, see qa-honesty.md).

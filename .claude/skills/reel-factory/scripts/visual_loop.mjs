@@ -9,8 +9,10 @@
 // Protocol: references/visual-loop.md
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { createCanvas, GlobalFonts } from '@napi-rs/canvas';
+import { sourceFingerprint } from '../lib/render_pool.mjs';
 import { frameMetrics, aggregate, deficits, shotFingerprint, reelSimilarity, selectTargetsFile, SIMILARITY_HINTS, DEFAULT_CAPTION_BAND } from '../lib/visual_metrics.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -90,6 +92,17 @@ export function validateCritique(c, shotIds, prev = null, regressed = []) {
   const all = c.shots.flatMap((s) => Object.values(splitScores(s.scores).scored));
   if (all.length >= 12 && new Set(all).size === 1) errs.push('every score is identical: rubber-stamp critique');
   return errs;
+}
+
+// Picture fingerprint: scene source import graph + timeline.json bytes + the pixels of every rendered keyframe.
+// Equal fingerprints between iterations mean the picture did not change, so a new iteration (and a new critique)
+// would be rubber-stamping the same image.
+export function pictureFingerprint(projectDir, shots) {
+  const h = crypto.createHash('sha256');
+  h.update(sourceFingerprint([path.join(projectDir, 'scene.mjs')]).hash);
+  h.update(fs.readFileSync(path.join(projectDir, 'timeline.json')));
+  for (const s of shots) { h.update(String(s.id)); for (const f of s.frames) h.update(f.data); }
+  return h.digest('hex');
 }
 
 export async function renderShots(projectDir, timeline, iterTag) {
@@ -189,6 +202,14 @@ export async function runVisualLoop({ projectDir, targetsPath = null, maxIter = 
   }
   if (iter > maxIter) return { stopped: true, iter, message: `LOOP STOPPED after ${maxIter} iterations without converging: escalate (new style/reference, or human art direction)` };
   const shots = await renderShots(projectDir, timeline, `${iter}_${Date.now()}`);
+  const fingerprint = pictureFingerprint(projectDir, shots);
+  if (prevEntry?.fingerprint && prevEntry.fingerprint === fingerprint) {
+    // Not an iteration: nothing is written under iter_NN, log.iterations is untouched, no iteration is consumed.
+    (log.unchanged_attempts ||= []).push({ at: new Date().toISOString(), since_iter: prevEntry.iter, fingerprint });
+    prevEntry.unchanged_attempts = (prevEntry.unchanged_attempts || 0) + 1;
+    fs.writeFileSync(logPath, JSON.stringify(log, null, 2));
+    return { unchanged: true, iter: prevEntry.iter, attempts: log.unchanged_attempts.length, message: `picture unchanged since iteration ${prevEntry.iter}: apply a fix to the scene first, or stop and escalate / waive via qa.json accept_unconverged_loop (reason, by, date). No iteration was consumed.` };
+  }
   const results = shots.map((s) => {
     const agg = aggregate(s.frames.map((f) => f.m));
     const emptyUnion = [...new Set(s.frames.flatMap((f) => f.m.empty_cells))];
@@ -235,7 +256,7 @@ export async function runVisualLoop({ projectDir, targetsPath = null, maxIter = 
   fs.mkdirSync(iterDir, { recursive: true });
   drawSheet(shots, results, path.join(iterDir, 'sheet.png'), iter, reel);
   const pass = results.every((r) => r.pass);
-  const entry = { iter, pass, reel, mean_score: +(results.reduce((a, r) => a + r.score, 0) / results.length).toFixed(3), regressions, shots: results.map(({ id, pass: p, score, metrics }) => ({ id, pass: p, score, metrics })) };
+  const entry = { iter, pass, fingerprint, reel, mean_score: +(results.reduce((a, r) => a + r.score, 0) / results.length).toFixed(3), regressions, shots: results.map(({ id, pass: p, score, metrics }) => ({ id, pass: p, score, metrics })) };
   fs.writeFileSync(path.join(iterDir, 'report.json'), JSON.stringify({ ...entry, shots: results, targets: T.name, targets_file: path.relative(ROOT, tp) }, null, 2));
   log.iterations.push(entry);
   fs.writeFileSync(logPath, JSON.stringify(log, null, 2));
@@ -255,7 +276,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(fs.realpathSync(process
   const r = await runVisualLoop({ projectDir: path.resolve(proj), targetsPath: get('--targets'), maxIter: Number(get('--max-iter') || 6) });
   if (a.includes('--json')) console.log(JSON.stringify(r, null, 2));
   else if (r.blocked) { console.log('BLOCKED: critique the last iteration first'); r.errors.forEach((e) => console.log(' - ' + e)); console.log(r.hint); }
-  else if (r.converged || r.stopped) console.log(r.message);
+  else if (r.converged || r.stopped || r.unchanged) console.log(r.message);
   else {
     console.log(`ITERATION ${r.iter}: ${r.pass ? 'metrics PASS' : 'FIX'}  mean score ${r.mean_score}`);
     r.regressions.forEach((x) => console.log(' REGRESSION ' + x));
@@ -264,5 +285,5 @@ if (process.argv[1] && import.meta.url === pathToFileURL(fs.realpathSync(process
     (r.waived || []).forEach((f) => console.log(` WAIVED ${f.id} (${Object.keys(f.waivers).filter((k) => f.waivers[k]).join(', ')}): ${f.deficits.join('; ')}`));
     console.log(r.next);
   }
-  process.exit(r.blocked ? 3 : r.converged ? 0 : r.stopped ? 1 : r.pass ? 0 : 1);
+  process.exit(r.blocked || r.unchanged ? 3 : r.converged ? 0 : r.stopped ? 1 : r.pass ? 0 : 1);
 }

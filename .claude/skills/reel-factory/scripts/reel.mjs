@@ -224,6 +224,7 @@ export async function runPipeline(dir, opts = {}, { commands = {}, log = console
       } else {
         run.stages[name] = { ...entry, status: 'waiting', result: j };
         if (j.blocked) return finish(waiting(log, ['[visual_loop] BLOCKED: critique the last iteration first.', ...(j.errors || []).map((e) => ' - ' + e), j.hint || '', `then re-run: node scripts/reel.mjs run ${dir}`]));
+        if (j.unchanged) return finish(waiting(log, [`[visual_loop] REFUSED: ${j.message}`, `(${j.attempts} unchanged attempt(s) recorded in visual_loop/log.json)`, 'Edit scene.mjs so the picture actually changes, or escalate to the human.']));
         if (j.stopped) return finish(waiting(log, [`[visual_loop] ${j.message}`, 'Escalate to the human: new style/reference or art direction.']));
         const failing = (j.failing || []).map((f) => ` FIX ${f.id}: ${f.deficits.join('; ')}`);
         return finish(waiting(log, [`[visual_loop] ITERATION ${j.iter}: ${j.pass ? 'metrics PASS (critique still needed)' : 'FIX'}  mean score ${j.mean_score}`, ...(j.regressions || []).map((r) => ' REGRESSION ' + r), ...failing, `Claude: ${j.next}`, `then re-run: node scripts/reel.mjs run ${dir}`]));
