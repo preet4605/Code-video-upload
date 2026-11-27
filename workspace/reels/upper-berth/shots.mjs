@@ -21,7 +21,7 @@ const lightFor = (P, o = {}) => {
   const sw = P.sweep, col = sw.kind === 'sodium' ? '#ffb050' : sw.kind === 'cool' ? '#9fffd8' : '#dbe9ff', w = cl(sw.i * (o.sweepK ?? 1));
   const lamp = { x: -0.7, y: -0.45 }, win = { x: 0.92, y: -0.12 };
   const dir = { x: lerp(lamp.x, win.x, w), y: lerp(lamp.y, win.y, w) };
-  return { dir, key: w > 0.15 ? col : '#6f9bff', amb: '#1a2a4c', strength: (o.base ?? 0.7) + 0.9 * w, rim: w > 0.15 ? col : '#8fb4ff', rimA: 0.8 + 0.6 * w, hard: false };
+  return { dir, key: w > 0.15 ? col : '#6f9bff', amb: '#1a2a4c', strength: (o.base ?? 0.7) + 0.3 + 0.9 * w, rim: w > 0.15 ? col : '#8fb4ff', rimA: 0.8 + 0.6 * w, hard: false };
 };
 
 // ---------------- shared bay compositions ----------------
@@ -29,9 +29,9 @@ const BAYDEF = (P, extra = {}) => ({ win: C.BAY.win, lamp: C.BAY.lamp, ...extra 
 
 function bayLights(cam, P, W, o = {}) {
   const lp = cam.project(W.lamp[0], W.lamp[1], 3), sw = P.sweep, lights = [
-    { type: 'point', x: lp.sx, y: lp.sy, r: 900, color: '#4d82ff', intensity: (o.lamp ?? 0.85) * (o.lampI ?? 1) },
-    { type: 'point', x: 540, y: 650, r: 1500, color: '#2c4f86', intensity: 0.30 * (o.fill ?? 1) },
-    { type: 'point', x: 540, y: 1500, r: 900, color: '#2a5a66', intensity: 0.16 * (o.fill ?? 1) },
+    { type: 'point', x: lp.sx, y: lp.sy, r: 900, color: '#4d82ff', intensity: (o.lamp ?? 1.1) * (o.lampI ?? 1) },
+    { type: 'point', x: 540, y: 650, r: 1500, color: '#2c4f86', intensity: 0.5 * (o.fill ?? 1) },
+    { type: 'point', x: 540, y: 1500, r: 900, color: '#2a5a66', intensity: 0.4 * (o.fill ?? 1) },
   ];
   if (sw.i > 0.02) { const wp = cam.project(lerp(1250, -250, sw.u), 700, 3), col = sw.kind === 'sodium' ? '#ff9c38' : '#cfe4ff'; lights.push({ type: 'point', x: wp.sx, y: wp.sy, r: 800, color: col, intensity: 0.95 * sw.i * (o.sweepK ?? 1) }); }
   return lights;
@@ -126,23 +126,37 @@ function bgBayBlur(c, b, S) {
   C.bayWall(c, b, S, { win: [520, 260, 460, 760], lamp: [210, 420] });
   c.save(); c.globalCompositeOperation = 'destination-over'; C.drawExterior(c, [520, 260, 460, 760], S); c.restore();
   C.bayBackrest(c, b, S); C.baySeat(c, b, S);
-  c.fillStyle = 'rgba(2,6,14,0.5)'; c.fillRect(b.x0, b.y0, b.w, b.h);
+  c.fillStyle = 'rgba(8,14,26,0.4)'; c.fillRect(b.x0, b.y0, b.w, b.h);
 }
 function ticketShot(ctx, P, o) {
   const cam = cin.createCamera({}), S = { t: P.t, ext: 'night', sweep: P.sweep, lampI: 1 };
   const p = P.lt / P.dur, rack = sm(0.04, 0.82, p);
   cam.update(P.t, cin.pushIn({ t0: P.sc.start_s, dur: P.dur, amount: 0.1 }), cin.handheldMove(6, 0.45));
-  cam.layer(ctx, 3, (c, b) => bgBayBlur(c, b, S), { blur: lerp(3, 11, rack) });
+  cam.layer(ctx, 3, (c, b) => bgBayBlur(c, b, S), { blur: lerp(2, 6, rack) });
   const Lf = lightFor(P, { base: 0.8 }), who = o.who;
   cam.layer(ctx, 1.0, (c) => {
     // ticket first (fingers overlap its right edge), then the giant arm
     c.save(); c.translate(360, 930); c.rotate(-0.11 + Math.sin(P.t * 1.1) * 0.012); drawTicketBig(c, o, P); c.restore();
-    drawFig(c, who, { x: 1560, feet: 3500, height: 3600, facing: -1, pose: 'holdhand', t: P.t, light: Lf, reachR: [610, 1030 + Math.sin(P.t * 1.3) * 5], grip: { R: 0.62 }, look: 2.9, contact: false, expr: 'blank' });
+    pinchHand(c, who, P);
   }, { blur: lerp(8, 0, rack) });
   C.sweepOverlay(ctx, S, { win: [520, 0, 460] }, 0.4);
   cin.fog(ctx, { t: P.t, depthBands: 1, density: 0.05, color: '#4a6080', seed: 6 });
   cam.layer(ctx, 0.6, (c, b) => { chainFg(c, S); }, { blur: 9 });
-  return { cam };
+  return { cam, post: { name: 'horror-night', grade: { contrast: 0.3, saturation: 0.55 } } };
+}
+// a hand pinching the ticket's right edge: thumb across the face of the paper, fingers curled behind, sleeve and forearm from the lower right
+function pinchHand(c, who, P) {
+  const skin = who === 'uncle' ? ['#9a7a62', '#5a4030', '#2a1c14'] : ['#b08a6e', '#6a4a38', '#2a1c14'], sleeve = who === 'uncle' ? ['#cfc6ae', '#6a6454'] : ['#3d5f86', '#1d2f46'];
+  const cap = (x0, y0, x1, y1, w, cols, ink = true) => { c.save(); c.lineCap = 'round'; if (ink) { c.strokeStyle = '#0a0705'; c.lineWidth = w + 9; c.beginPath(); c.moveTo(x0, y0); c.lineTo(x1, y1); c.stroke(); } const g = c.createLinearGradient(x0, y0 - w / 2, x1, y1 + w / 2); g.addColorStop(0, cols[0]); g.addColorStop(1, cols[1]); c.strokeStyle = g; c.lineWidth = w; c.beginPath(); c.moveTo(x0, y0); c.lineTo(x1, y1); c.stroke(); c.restore(); };
+  const hx = 640 + Math.sin(P.t * 1.3) * 4, hy = 1010 + Math.sin(P.t * 1.7) * 5;
+  cap(1500, 2300, 1010, 1560, 330, sleeve);                                    // sleeve
+  c.save(); c.strokeStyle = 'rgba(0,0,0,0.35)'; c.lineWidth = 5; for (let i = 0; i < 4; i++) { c.beginPath(); c.moveTo(1180 + i * 70, 2000 - i * 90); c.quadraticCurveTo(1100 + i * 60, 1850 - i * 80, 1000 + i * 60, 1650 - i * 60); c.stroke(); } c.restore();
+  { const g = c.createLinearGradient(900, 1500, hx, hy); g.addColorStop(0, skin[0]); g.addColorStop(1, skin[1]); c.fillStyle = g; c.strokeStyle = '#0a0705'; c.lineWidth = 5; c.beginPath(); c.moveTo(930, 1660); c.quadraticCurveTo(800, 1330, hx + 20, hy + 20); c.lineTo(hx + 120, hy + 150); c.quadraticCurveTo(1010, 1400, 1130, 1500); c.closePath(); c.fill(); c.stroke();
+    c.strokeStyle = who === 'uncle' ? '#5a5444' : '#1d2f46'; c.lineWidth = 26; c.beginPath(); c.moveTo(960, 1690); c.lineTo(1150, 1520); c.stroke(); }   // tapered forearm + cuff
+  for (const [dy, len] of [[-60, 120], [-20, 130], [24, 120]]) cap(hx + 70, hy + dy, hx + 20, hy + dy + 70 + (dy > 0 ? 25 : 0), 54, skin);   // fingers curled behind (knuckles visible)
+  cap(hx + 60, hy + 100, hx - 40, hy + 50, 66, skin);                          // palm heel
+  cap(hx + 36, hy + 78, hx - 150, hy - 8, 66, ['#a9876c', '#7a5a46']);        // thumb over the paper
+  c.save(); c.fillStyle = 'rgba(235,215,190,0.55)'; c.beginPath(); c.ellipse(hx - 150, hy - 8, 20, 26, 0.3, 0, TAU); c.fill(); c.restore();   // thumbnail
 }
 const chainFg = (c, S) => { C.chain(c, 80, -40, 900, { sway: Math.sin(S.t * 0.9) * 0.7, link: 60, w: 26, col: '#2c3841' }); };
 function drawTicketBig(c, o, P) { C.drawTicket(c, -330, -215, 660, 430, { age: o.age, date: o.date, pnr: o.pnr, route: o.route, name: o.name, berth: o.berth, seed: o.seed }); }
@@ -150,12 +164,12 @@ function drawTicketBig(c, o, P) { C.drawTicket(c, -330, -215, 660, 430, { age: o
 // ------------------------------------------------------------ aisle (s2)
 function aisleShot(ctx, P, o = {}) {
   const cam = cin.createCamera({}), S = { t: P.t, tube: P.tube, sweep: P.sweep, lampI: 1, fanOn: 1 }, k = ctx.canvas.width / 1080;
-  const dolly = (t) => ({ z: 0.16 * sm(P.sc.start_s, P.sc.end_s, t) });
+  const dolly = (t) => ({ z: 0.1 + 0.3 * sm(P.sc.start_s, P.sc.end_s, t) });
   cam.update(P.t, dolly, rumbleMove(P, 5, 1.5), cin.pan({ t0: P.sc.start_s, dur: P.dur, from: -18, to: 22 }));
   cam.layer(ctx, 3, (c, b) => C.drawAisle(c, S), { fullBleed: false });
   cin.fog(ctx, { t: P.t, depthBands: 2, density: 0.1, color: '#3a5578', horizon: 0.45, height: 0.35, seed: 3 });
   cam.layer(ctx, 0.62, (c) => C.aisleFore(c, S), { blur: 10 });
-  return { cam };
+  return { cam, post: { name: 'horror-night', grade: { contrast: 0.9, gain: [1.35, 1.35, 1.45] } } };
 }
 
 // ------------------------------------------------------------ MCU rule (s4)
@@ -164,14 +178,14 @@ function ruleShot(ctx, P) {
   const lean = sm(0.05, 0.75, u), H = lerp(3000, 3500, lean), cx = lerp(640, 560, lean), head = lerp(760, 840, lean), feet = head + 0.9157 * H;
   const light = { ...lightFor(P, { base: 0.8 }), dir: { x: -0.9 * Math.max(0.3, P.sweep.i) - 0.25, y: -0.2 }, rimA: 1.5 };
   const figs = (c) => { const st = { x: cx, feet, height: H, facing: 1, pose: 'stand', t: P.t, light, gaze: [-0.15, 0.1], expr: 'blank', look: 0.0, eyeLight: 0, contact: false, angles: { lean: lerp(-0.02, 0.1, lean), headTilt: lerp(0, 0.06, lean), shL: 0.1, shR: -0.1 } }; drawFig(c, 'uncle', st); shawl(c, joints('uncle', st), H, '#59606a'); };
-  const cam = bayFrame(ctx, P, { W, moves: [cin.pushIn({ t0: P.sc.start_s, dur: P.dur, amount: 0.06 }), cin.handheldMove(5, 0.9)], figs, noSeat: true, upper: false, bgBlur: 7, fg: false, fog: 0.05 });
+  const cam = bayFrame(ctx, P, { W, moves: [cin.pushIn({ t0: P.sc.start_s, dur: P.dur, amount: 0.06 }), cin.handheldMove(5, 0.9)], figs, noSeat: true, upper: false, bgBlur: 3, fg: false, fog: 0.05 });
   return { cam };
 }
 
 // ------------------------------------------------------------ s5 stop: the tubes flicker, the train halts, the window is black fog
 function stopShot(ctx, P) {
   const tube = P.tube, W = { win: [150, 400, 780, 800], lamp: [130, 300] };
-  const figs = (c) => seatedFigure(c, P, { cx: 330, lap: 1300, H: 1800, light: { ...lightFor(P, { base: 0.8 }), strength: 0.6 + 0.6 * tube }, expr: 'blank', gaze: [0.1, 0], who: 'uncle', lean: 0.02 });
+  const figs = (c) => seatedFigure(c, P, { cx: 380, lap: 1380, H: 2350, light: { ...lightFor(P, { base: 0.8 }), strength: 1.3 + 0.6 * tube, rimA: 1.6 }, expr: 'blank', gaze: [0.1, 0], who: 'uncle', lean: 0.02 });
   const fogDrift = (t) => ({});
   const cam = bayFrame(ctx, P, { W, ext: 'fog', noSweep: true, noSeat: false, upper: false, lightK: 0.5 + 0.7 * tube, ambient: '#05080f', figs,
     moves: [cin.pushIn({ t0: P.sc.start_s, dur: P.dur, amount: 0.07 }), rumbleMove(P, 7, 1.4), joltMove(P), cin.handheldMove(9, 0.12)],
@@ -180,21 +194,21 @@ function stopShot(ctx, P) {
       const g = ctx2.createRadialGradient(q.sx, q.sy + 40, 20, q.sx, q.sy + 160, 760 * q.scale); g.addColorStop(0, `rgba(200,225,255,${0.55 * tube})`); g.addColorStop(1, 'rgba(120,160,230,0)'); ctx2.fillStyle = g; ctx2.fillRect(0, 0, 1080, 1100);
       ctx2.globalCompositeOperation = 'source-over'; const w = 640 * q.scale; ctx2.fillStyle = '#0b0f13'; ctx2.fillRect(q.sx - w / 2 - 14, q.sy - 22, w + 28, 62); ctx2.fillStyle = `rgba(${Math.round(150 + 100 * tube)},${Math.round(180 + 70 * tube)},${Math.round(215 + 40 * tube)},${0.25 + 0.75 * tube})`; ctx2.fillRect(q.sx - w / 2, q.sy - 8, w, 34); ctx2.restore();
     } });
-  return { cam };
+  return { cam, clarity: 3.6, post: { name: 'horror-night', grade: { contrast: 0.9, gain: [1.3, 1.3, 1.4] } } };
 }
 
 // ------------------------------------------------------------ s6 eyes: he lies on his side, the camera trucks sideways, his eyes stay on the lens
 function eyesShot(ctx, P) {
   const E = P.E, u = E.clock.between('eyes', P.t), camX = lerp(-170, 170, sm(0, 1, u)), g = P.glint, W = { win: [660, 330, 360, 700], lamp: [150, 480] };
-  const H = 2100, px = 1160, py = 1000, light = { dir: { x: -0.7, y: -0.5 }, key: '#9bb8ff', amb: '#3a4a74', strength: 1.1 + 0.5 * g, rim: '#a8c4ff', rimA: 1.3, hard: false };
+  const H = 2500, px = 1330, py = 960, light = { dir: { x: -0.7, y: -0.5 }, key: '#9bb8ff', amb: '#3a4a74', strength: 1.1 + 0.5 * g, rim: '#a8c4ff', rimA: 1.3, hard: false };
   const gaze = [clampG(-camX / 260), 0.35 * Math.sin(P.t * 0.7)];
   const figs = (c) => {
     c.fillStyle = '#444a50'; c.beginPath(); c.ellipse(px - 0.392 * H + 70, py + 120, 230, 100, 0.05, 0, TAU); c.fill(); c.fillStyle = 'rgba(0,0,0,0.45)'; c.beginPath(); c.ellipse(px - 0.392 * H + 60, py + 150, 190, 60, 0.05, 0, TAU); c.fill();
     c.save(); c.translate(px, py); c.rotate(-Math.PI / 2); c.translate(-px, -py);
     const st = { x: px, feet: py + 0.5236 * H, height: H, facing: 1, pose: 'stand', t: P.t, light, gaze: [0.0, clampG(-camX / 300)], expr: 'blank', look: 0.0, eyeLight: 0.15 + 0.85 * g, contact: false, angles: { lean: 0.0, headTilt: -0.05 } };
-    drawFig(c, 'uncle', st); c.restore();
-    // glint on both eyes (additive), brighter when the lamp catches the wet of them
-    const hd = joints('uncle', st).head; const ex = [[-0.205, -0.045], [0.04, -0.045]];
+    drawFig(c, 'uncle', st);
+    if (g > 0.02) { const hd = joints('uncle', st).head; for (const sx of [-1, 1]) cin.glint(c, hd[0] + sx * 0.03 * H, hd[1] + 0.004 * H, { size: 26 * g, alpha: 0.9 * g, t: P.t }); }
+    c.restore();
   };
   const mid = (c) => { // mattress, pillow and the blanket pulled to his chin
     c.fillStyle = '#10181c'; c.fillRect(-100, 1150, 1300, 120); C.rexineRect(c, -80, 1180, 1240, 120, { r: 16, seams: 4, seed: 5 });
@@ -202,11 +216,8 @@ function eyesShot(ctx, P) {
     c.save(); c.clip(); cin.fillTexture(c, 'fabric', [400, 880, 820, 320], { blend: 'overlay', alpha: 0.7, scale: 1.0, seed: 7 }); c.strokeStyle = 'rgba(0,0,0,0.4)'; c.lineWidth = 4; for (let i = 0; i < 6; i++) { c.beginPath(); c.moveTo(520 + i * 110, 930 + (i % 2) * 14); c.quadraticCurveTo(540 + i * 110, 1060, 500 + i * 110, 1190); c.stroke(); } c.restore();
     
   };
-  const cam = bayFrame(ctx, P, { W, noSweep: true, noSeat: true, upper: true, moves: [cin.pan({ t0: P.sc.start_s, dur: P.dur, from: -170, to: 170 }), cin.pushIn({ t0: P.sc.start_s, dur: P.dur, amount: 0.05 }), cin.handheldMove(4, 0.1)], figs, mid, ext: 'fog', lightK: 1.5 + 0.4 * g, fgChain: false,
-    afterLight: (c2, cam2) => { // the glint itself
-      if (g < 0.02) return; const k = c2.canvas.width / 1080; c2.save(); c2.setTransform(k, 0, 0, k, 0, 0);
-      const st = { x: px, feet: py + 0.5236 * H, height: H }; for (const dy of [-70, 78]) { const q = cam2.project(px - 0.392 * H + 18 + (dy > 0 ? 0 : 0), py + dy - 48, 2.0); cin.glint(c2, q.sx, q.sy, { size: 70 * g * q.scale, alpha: g, t: P.t }); } c2.restore();
-    } });
+  const cam = bayFrame(ctx, P, { W, noSweep: true, noSeat: true, upper: true, moves: [cin.pan({ t0: P.sc.start_s, dur: P.dur, from: -170, to: 170 }), cin.pushIn({ t0: P.sc.start_s, dur: P.dur, amount: 0.05 }), cin.handheldMove(4, 0.1)], figs, mid, ext: 'fog', lightK: 1.5 + 0.4 * g, fgChain: false
+  });
   return { cam };
 }
 const clampG = (v) => Math.max(-1, Math.min(1, v));
@@ -225,14 +236,14 @@ function ticketsShot(ctx, P) {
   }, lights, { ambient: '#0a1020', glow: 0.25 });
   cin.fog(ctx, { t: P.t, depthBands: 2, density: 0.08, color: '#4a6080', seed: 9 });
   cam.layer(ctx, 0.7, (c, b) => { for (let i = Math.floor(b.x0 / 1500) - 1; i <= Math.ceil(b.x1 / 1500); i++) { C.steelBar(c, i * 1500 + 700, -40, i * 1500 + 700, 2000, 46, '#222c33'); C.chain(c, i * 1500 + 760, -40, 760, { sway: Math.sin(P.t + i) * 0.6, link: 54, w: 24, col: '#2c3841' }); } c.fillStyle = '#05090c'; c.fillRect(b.x0, 1830, b.w, 140); }, { blur: 8 });
-  return { cam };
+  return { cam, post: { name: 'horror-night', grade: { contrast: 0.9, gain: [1.4, 1.4, 1.5] } } };
 }
 
 // ------------------------------------------------------------ s8 Itarsi
 function itarsiShot(ctx, P) {
   const E = P.E, u = E.clock.between('itarsi', P.t), W = { win: [150, 300, 840, 900], lamp: [90, 470] };
   const arrive = sm(0.0, 0.26, u), rise = sm(0.52, 0.66, u), walk = sm(0.62, 0.97, u), smile = sm(0.56, 0.7, u);
-  const warm = sm(0.02, 0.3, u) * (1 - 0.2 * sm(0.8, 1, u));
+  const warm = 0.7 * sm(0.02, 0.3, u) * (1 - 0.2 * sm(0.8, 1, u));
   const H = 1850, seatedFeet = 1235 + 0.5236 * H, standFeet = 2040;
   const light = { ...lightFor(P, { base: 0.5 + 0.6 * warm }), key: '#ffd7a0', amb: '#3a2a1e', strength: 0.45 + 0.5 * warm, rim: '#ffe2b0', rimA: 1.0 + warm };
   const figs = (c) => {
@@ -250,23 +261,23 @@ function itarsiShot(ctx, P) {
     extraLights: (cam2) => { const q = cam2.project(560, 760, 3); return [{ type: 'point', x: q.sx, y: q.sy, r: 1400, color: '#ffc078', intensity: 0.7 * warm }, { type: 'cone', x: q.sx, y: q.sy, angle: 1.9, spread: 0.9, length: 1500, color: '#ffd9a0', intensity: 0.4 * warm }]; },
     afterLight: (c2) => { const k = c2.canvas.width / 1080; c2.save(); c2.setTransform(k, 0, 0, k, 0, 0); c2.globalCompositeOperation = 'screen'; const g = c2.createRadialGradient(560, 740, 100, 560, 900, 1250); g.addColorStop(0, `rgba(255,205,140,${0.1 * warm})`); g.addColorStop(1, 'rgba(255,170,90,0)'); c2.fillStyle = g; c2.fillRect(0, 0, 1080, 1920); c2.restore(); },
     sweepStrength: 0.4 });
-  return { cam, post: { name: 'horror-night', grade: { gain: [1 + 0.1 * warm, 1.0, 1.06 - 0.2 * warm], saturation: 0.82 + 0.25 * warm, splitTone: { shadows: '#03121c', highlights: '#ffb26a', shadowStrength: 0.5 - 0.2 * warm, highlightStrength: 0.45 + 0.3 * warm } } } };
+  return { cam, clarity: 1.4, post: { name: 'horror-night', grade: { contrast: 0.3, gain: [0.86 + 0.1 * warm, 0.84, 0.9 - 0.2 * warm], saturation: 0.75 + 0.1 * warm, splitTone: { shadows: '#03121c', highlights: '#ffb26a', shadowStrength: 0.5 - 0.2 * warm, highlightStrength: 0.45 + 0.3 * warm } } } };
 }
 
 // ------------------------------------------------------------ s9 relief: the lids close, the coach dims, black through the silence
 function reliefShot(ctx, P) {
   const E = P.E, u = E.clock.between('relief', P.t), W = { win: [600, 330, 400, 720], lamp: [150, 520] };
-  const close = sm(0.16, 0.86, u), warm = 1 - sm(0.0, 0.5, u), dim = 1 - 0.85 * sm(0.4, 1.0, u);
+  const close = sm(0.34, 0.95, u), warm = 1 - sm(0.0, 0.7, u), dim = 1 - 0.85 * sm(0.55, 1.0, u);
   const figs = (c) => { // the uncle's seat, empty: his shawl folded where he sat, his chappals on the floor
-    c.fillStyle = '#4a4f57'; c.beginPath(); c.moveTo(150, 1240); c.bezierCurveTo(160, 1120, 420, 1090, 560, 1150); c.bezierCurveTo(640, 1190, 660, 1230, 680, 1250); c.closePath(); c.fill(); c.save(); c.clip(); cin.fillTexture(c, 'fabric', [140, 1080, 560, 200], { blend: 'overlay', alpha: 0.8, scale: 1.0, seed: 22 }); c.strokeStyle = 'rgba(0,0,0,0.4)'; c.lineWidth = 4; for (let i = 0; i < 5; i++) { c.beginPath(); c.moveTo(210 + i * 100, 1130); c.quadraticCurveTo(220 + i * 100, 1190, 200 + i * 100, 1245); c.stroke(); } c.restore();
+    c.fillStyle = '#8b9199'; c.strokeStyle = '#0a0705'; c.lineWidth = 5; c.beginPath(); c.moveTo(120, 1245); c.bezierCurveTo(130, 1060, 430, 1020, 600, 1110); c.bezierCurveTo(700, 1170, 720, 1230, 740, 1250); c.closePath(); c.fill(); c.stroke(); c.save(); c.clip(); cin.fillTexture(c, 'fabric', [120, 1040, 640, 220], { blend: 'overlay', alpha: 0.8, scale: 1.0, seed: 22 }); c.strokeStyle = 'rgba(0,0,0,0.4)'; c.lineWidth = 4; for (let i = 0; i < 5; i++) { c.beginPath(); c.moveTo(210 + i * 100, 1130); c.quadraticCurveTo(220 + i * 100, 1190, 200 + i * 100, 1245); c.stroke(); } c.restore();
   };
   const cam = bayFrame(ctx, P, { W, ext: 'station', board: { x01: 1, blur: 0 }, boardOn: false, noSweep: true, figs, lightK: dim * (0.7 + 0.5 * warm), fill: 1, moves: [cin.pushIn({ t0: P.sc.start_s, dur: P.dur, amount: 0.06 }), cin.handheldMove(14, 0.3)],
-    extraLights: (cam2) => { const q = cam2.project(800, 700, 3); return [{ type: 'point', x: q.sx, y: q.sy, r: 1300, color: '#ffbd70', intensity: 0.9 * warm * dim }]; },
+    extraLights: (cam2) => { const q = cam2.project(800, 700, 3), q2 = cam2.project(400, 1150, 2); return [{ type: 'point', x: q.sx, y: q.sy, r: 1300, color: '#ffbd70', intensity: 0.9 * warm * dim }, { type: 'point', x: q2.sx, y: q2.sy, r: 700, color: '#9fb4e8', intensity: 0.9 * dim }]; },
     afterLight: (c2) => { const k = c2.canvas.width / 1080; c2.save(); c2.setTransform(k, 0, 0, k, 0, 0); c2.globalCompositeOperation = 'screen'; const g = c2.createRadialGradient(800, 700, 80, 800, 760, 900); g.addColorStop(0, `rgba(255,190,120,${0.22 * warm})`); g.addColorStop(1, 'rgba(255,160,80,0)'); c2.fillStyle = g; c2.fillRect(0, 0, 1080, 1920); c2.restore(); } });
   return { cam, after: (c2) => {
     eyelids(c2, close);
     // through the closed lids: only the blue night lamp survives as a faint, steady glow
-    const k = c2.canvas.width / 1080; c2.save(); c2.setTransform(k, 0, 0, k, 0, 0); c2.globalCompositeOperation = 'screen'; const a = 0.5 * sm(0.5, 0.9, u); const g = c2.createRadialGradient(170, 540, 0, 170, 540, 260); g.addColorStop(0, `rgba(60,110,230,${a})`); g.addColorStop(1, 'rgba(40,80,200,0)'); c2.fillStyle = g; c2.fillRect(0, 0, 1080, 1100); c2.restore();
+    const k = c2.canvas.width / 1080; c2.save(); c2.setTransform(k, 0, 0, k, 0, 0); c2.globalCompositeOperation = 'screen'; const a = 1.0 * sm(0.5, 0.9, u); const g = c2.createRadialGradient(170, 540, 0, 170, 540, 330); g.addColorStop(0, `rgba(80,130,255,${a})`); g.addColorStop(0.4, `rgba(60,110,240,${a * 0.6})`); g.addColorStop(1, 'rgba(40,80,200,0)'); c2.fillStyle = g; c2.fillRect(0, 0, 1080, 1100); c2.restore();
   } };
 }
 
@@ -274,11 +285,11 @@ function reliefShot(ctx, P) {
 function bhopalShot(ctx, P) {
   const E = P.E, d = P.t - E.scareT; const W = { win: [60, 340, 960, 900], lamp: [900, 500] };
   if (d < 0) { ctx.fillStyle = '#000'; ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height); return { noPost: true, noCaption: true }; }
-  const u = cl(d / 2.4), slide = 1 + 3.2 * Math.pow(u, 1.35), board = { x01: slide, blur: 30 + 190 * Math.pow(sm(0, 0.5, d), 0.8) };
-  const whipX = 520 * Math.exp(-d * 7.5), cam = bayFrame(ctx, P, { W, ext: 'bhopal', boardFrac: 0.3, boardW: 820, board, boardText: ['भोपाल', 'BHOPAL', 'BHOPAL JN'], slideSpeed: 3200, upper: false, noSeat: false, lightK: 1.3, fill: 1.4, sweepStrength: 0.9, fg: true,
-    moves: [(t) => ({ x: whipX, roll: 0.03 * Math.exp(-d * 6) }), cin.handheldMove(15, 1.2)],
+  const u = cl(d / 3.4), slide = 1 + 2.0 * Math.pow(u, 1.15), board = { x01: slide, blur: 26 + 120 * Math.pow(sm(0, 0.8, d), 0.8) };
+  const whipX = 180 * Math.exp(-d * 7.5), cam = bayFrame(ctx, P, { W, ext: 'bhopal', boardFrac: 0.3, boardW: 860, board, boardText: ['भोपाल', 'BHOPAL', 'BHOPAL JN'], slideSpeed: 3200, upper: false, noSeat: false, lightK: 0.9, fill: 0.9, sweepStrength: 0.6, fg: true,
+    moves: [(t) => ({ x: whipX, roll: 0.03 * Math.exp(-d * 6), z: 0.32 }), cin.handheldMove(15, 1.2)],
     figs: (c) => {} });
-  return { cam, after: (c2) => flash(c2, 0.7 * Math.exp(-d * 18)) };
+  return { cam, after: (c2) => flash(c2, 0.45 * Math.exp(-d * 18)) };
 }
 
 // ------------------------------------------------------------ s12 loop: same framing as s1, the narrator sits where the uncle sat

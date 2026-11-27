@@ -87,8 +87,8 @@ export function drawExterior(c, r, S) {
     for (let i = 0; i < 3; i++) { const px = x + w - ((i * 337 + t * 520) % (w + 300)) + 150; c.fillStyle = '#020306'; c.fillRect(px, y, 7 + i * 3, h); }
     for (let k = 0; k < 6; k++) { const yy = y + h * (0.1 + k * 0.14); c.fillStyle = 'rgba(190,210,235,0.06)'; c.fillRect(x, yy + Math.sin(t * 11 + k) * 2, w, 3); }
   } else if (mode === 'fog' || mode === 'dark') {
-    const k = mode === 'dark' ? 0 : 1; c.fillStyle = vgrad(c, y, y + h, [[0, '#04060a'], [1, '#0b0f14']]); c.fillRect(x, y, w, h);
-    const rg = mulberry32(8); for (let i = 0; i < 12; i++) { const fx = x + rg() * w + Math.sin(t * 0.17 + i) * 60, fy = y + rg() * h + Math.cos(t * 0.13 + i * 2) * 40, R = 180 + rg() * 260; ellipseGlow(c, fx, fy, R, R * 0.75, 'rgba(108,126,140,A)', 0.11 * k); }
+    const k = mode === 'dark' ? 0 : 1; c.fillStyle = vgrad(c, y, y + h, [[0, '#1a2128'], [1, '#3a4650']]); c.fillRect(x, y, w, h);
+    const rg = mulberry32(8); for (let i = 0; i < 12; i++) { const fx = x + rg() * w + Math.sin(t * 0.17 + i) * 60, fy = y + rg() * h + Math.cos(t * 0.13 + i * 2) * 40, R = 180 + rg() * 260; ellipseGlow(c, fx, fy, R, R * 0.75, 'rgba(120,140,155,A)', 0.2 * k); }
     c.fillStyle = 'rgba(160,185,200,0.03)'; c.fillRect(x, y + h * 0.5, w, h * 0.5);
   } else if (mode === 'station' || mode === 'bhopal') {
     const warm = mode === 'station', bd = S.board || { x01: 1, blur: 0 };
@@ -318,10 +318,16 @@ export function drawAisle(c, S) {
 }
 const lerpv = (a, b, k) => a + (b - a) * k;
 const clampLag = (k) => 0.15 + 0.7 * k;
-const shade2 = (hex, k) => { const n = parseInt(hex.slice(1), 16), r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255; return `rgb(${Math.round(r * k)},${Math.round(g * k)},${Math.round(b * k)})`; };
-export function aisleFore(c, S) { // near berth post + chain at left, curtain edge at right (out of focus)
-  steelBar(c, 40, -60, 40, 2000, 52, '#2f3a42'); chain(c, 150, -40, 1200, { sway: Math.sin(S.t * 1.1) * 0.7, link: 54, w: 24, col: '#6b7a85' });
-  curtain(c, 880, -40, 260, 2100, { col: '#2a1824', hi: '#5a3348', t: S.t, seed: 5, sway: 0.8, folds: 5 });
+const shade2 = (hex, k0) => { const k = k0 * 0.78; return shade3(hex, k); };
+const shade3 = (hex, k) => { const n = parseInt(hex.slice(1), 16), r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255; return `rgb(${Math.round(r * k)},${Math.round(g * k)},${Math.round(b * k)})`; };
+export function aisleFore(c, S) { // near berth post + chain at left, a curtained berth with two bare feet out of it, curtain edge at right (out of focus)
+  steelBar(c, 40, -60, 40, 2000, 52, '#2f3a42');
+  // the berth beside us: blanket lump, curtain hem, two feet (soles toward the lens)
+  const g = c.createLinearGradient(0, 1250, 0, 1650); g.addColorStop(0, '#4a2438'); g.addColorStop(1, '#1a0c14'); c.fillStyle = g; c.beginPath(); c.moveTo(90, 1620); c.bezierCurveTo(90, 1330, 260, 1230, 470, 1300); c.lineTo(520, 1640); c.closePath(); c.fill();
+  curtain(c, 90, -40, 440, 1330, { col: '#3a2030', hi: '#7a4a62', t: S.t, seed: 4, sway: 0.5, folds: 7 });
+  for (const [fx, rot] of [[250, -0.12], [400, 0.1]]) { c.save(); c.translate(fx, 1480); c.rotate(rot); const sg = c.createLinearGradient(-50, 0, 50, 0); sg.addColorStop(0, '#9a7d68'); sg.addColorStop(1, '#4a3629'); c.fillStyle = sg; c.strokeStyle = '#0a0705'; c.lineWidth = 5; c.beginPath(); c.moveTo(-42, -80); c.quadraticCurveTo(-62, 20, -40, 100); c.quadraticCurveTo(0, 130, 40, 100); c.quadraticCurveTo(62, 20, 42, -80); c.closePath(); c.fill(); c.stroke(); for (let i = 0; i < 5; i++) { c.beginPath(); c.ellipse(-36 + i * 18, -92 + Math.abs(i - 2) * 6, 11 - Math.abs(i - 2), 15, 0, 0, TAU); c.fill(); c.stroke(); } c.restore(); }
+  chain(c, 640, -40, 1100, { sway: Math.sin(S.t * 1.1) * 0.7, link: 54, w: 24, col: '#6b7a85' });
+  curtain(c, 900, -40, 240, 2100, { col: '#2a1824', hi: '#5a3348', t: S.t, seed: 5, sway: 0.8, folds: 5 });
 }
 
 // ============================================================================================================
@@ -360,12 +366,13 @@ export function dangleHand(c, h, S) {
   const sway = Math.sin(S.t * 1.3 + h.r * 6) * 0.05, x = h.x, y = h.y, L = 150 + h.r * 20;
   c.save(); c.translate(x, y); c.rotate(sway); c.scale(1.35, 1.35);
   // sleeve hanging over the edge, then forearm and hand
-  const g = c.createLinearGradient(-40, 0, 40, 0); g.addColorStop(0, '#b9b09a'); g.addColorStop(1, '#4a4638'); c.fillStyle = g; c.beginPath(); c.moveTo(-44, -20); c.quadraticCurveTo(-52, 70, -38, 140); c.lineTo(38, 140); c.quadraticCurveTo(52, 70, 44, -20); c.closePath(); c.fill(); c.strokeStyle = 'rgba(0,0,0,0.6)'; c.lineWidth = 3; c.stroke();
+  const g = c.createLinearGradient(-40, 0, 40, 0); g.addColorStop(0, '#b9b09a'); g.addColorStop(1, '#4a4638'); c.fillStyle = g; c.beginPath(); c.moveTo(-44, -20); c.quadraticCurveTo(-52, 70, -38, 140); c.lineTo(38, 140); c.quadraticCurveTo(52, 70, 44, -20); c.closePath(); c.fill(); c.strokeStyle = 'rgba(0,0,0,0.6)'; c.lineWidth = 3; c.stroke(); for (let i = 0; i < 3; i++) { c.strokeStyle = 'rgba(0,0,0,0.4)'; c.beginPath(); c.moveTo(-30 + i * 28, -10); c.quadraticCurveTo(-26 + i * 28, 60, -24 + i * 22, 135); c.stroke(); } c.fillStyle = '#2a261d'; c.fillRect(-42, 118, 84, 22);
   const sg = c.createLinearGradient(-26, 0, 26, 0); sg.addColorStop(0, '#8a7260'); sg.addColorStop(1, '#3a2c22'); c.fillStyle = sg; c.beginPath(); c.moveTo(-26, 130); c.lineTo(-22, 130 + L * 0.55); c.lineTo(22, 130 + L * 0.55); c.lineTo(26, 130); c.closePath(); c.fill();
-  // hand: palm + curled fingers + thumb
-  c.translate(0, 130 + L * 0.55); c.fillStyle = sg; c.beginPath(); c.moveTo(-24, 0); c.quadraticCurveTo(-34, 50, -22, 86); c.lineTo(22, 86); c.quadraticCurveTo(34, 50, 24, 0); c.closePath(); c.fill(); c.strokeStyle = 'rgba(0,0,0,0.5)'; c.lineWidth = 2; c.stroke();
-  for (let f = 0; f < 4; f++) { const fx = -19 + f * 12.7, fl = 52 + (f === 1 || f === 2 ? 8 : 0) - (f === 3 ? 8 : 0); c.beginPath(); c.moveTo(fx, 78); c.quadraticCurveTo(fx + 2 + sway * 20, 78 + fl * 0.7, fx - 2, 78 + fl); c.lineWidth = 11; c.lineCap = 'round'; c.strokeStyle = '#3a2c22'; c.stroke(); c.lineWidth = 8; c.strokeStyle = sg; c.stroke(); }
+  // hand: palm + four curled fingers + thumb, ink outlined
+  c.translate(0, 130 + L * 0.55); c.fillStyle = sg; c.strokeStyle = '#0a0705'; c.lineWidth = 3; c.beginPath(); c.moveTo(-26, 0); c.quadraticCurveTo(-40, 50, -26, 92); c.lineTo(26, 92); c.quadraticCurveTo(40, 50, 26, 0); c.closePath(); c.fill(); c.stroke();
+  for (let f = 0; f < 4; f++) { const fx = -21 + f * 14, fl = 62 + (f === 1 || f === 2 ? 10 : 0) - (f === 3 ? 12 : 0); c.lineCap = 'round'; c.beginPath(); c.moveTo(fx, 84); c.quadraticCurveTo(fx + 3 + sway * 20, 84 + fl * 0.7, fx - 4, 84 + fl); c.lineWidth = 17; c.strokeStyle = '#0a0705'; c.stroke(); c.lineWidth = 12; c.strokeStyle = '#7a6250'; c.stroke(); }
+  c.beginPath(); c.moveTo(-24, 40); c.quadraticCurveTo(-52, 70, -40, 112); c.lineWidth = 19; c.strokeStyle = '#0a0705'; c.stroke(); c.lineWidth = 14; c.strokeStyle = '#8a7260'; c.stroke();
   // ticket pinched between thumb and fingers
-  const a = S.escal ?? 0; c.save(); c.translate(-4, 80); c.rotate(-0.12 + sway * 2); c.shadowColor = `rgba(255,200,70,${0.2 + 0.5 * a})`; c.shadowBlur = 18 + 24 * a; drawTicket(c, -64, -4, 140, 92, { age: 1, seed: h.i + h.lvl, fade: 0.9 }); c.restore();
+  const a = S.escal ?? 0; c.save(); c.translate(-4, 100); c.rotate(-0.12 + sway * 2); c.shadowColor = `rgba(255,200,70,${0.2 + 0.5 * a})`; c.shadowBlur = 18 + 24 * a; drawTicket(c, -64, -4, 140, 92, { age: 1, seed: h.i + h.lvl, fade: 0.9 }); c.restore();
   c.restore();
 }

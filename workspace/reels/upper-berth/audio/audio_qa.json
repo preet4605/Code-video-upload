@@ -1,0 +1,69 @@
+{
+  "fails": [],
+  "warns": [
+    "audio: bed within 12 dB of the voice at 1 span(s) (worst 10.9 dB)",
+    "audio: loudnorm pass 2 reported \"dynamic\" normalization (measured LRA 4.7, TP 0.17); using one fixed gain + limiter instead so designed silences are preserved"
+  ],
+  "verified": [
+    "licences: all audio is tier-A synthesis (no third-party assets)",
+    "scare cue \"scare_hit\" is anchored to event \"scare\" (offset 0.000 s <= 1 frame); the visual must use the same event",
+    "true peak after encode (decoded, 4x oversampled): -1.84 dBTP (limit -1)",
+    "short-term loudness: max -12.4 LUFS (target -14); 0 intended scare spike(s), 0 unintended",
+    "mono fold-down over 14 spoken span(s) (1-4 kHz of the final mix): worst loss 0.3 dB (limit 3), mean L/R correlation 0.98",
+    "pre-scare silence: 1 scare(s), drops 39.9 dB (need >= 10)",
+    "voice clarity (measured on the stems after bus gain + 5 dB ducking, because VO cannot be separated from the encoded mix): min VO-over-bed 10.9 dB in 1-4 kHz over 14 span(s) (fail < 10, warn < 12)",
+    "phone check (200 Hz high-pass proxy, sfx stem): 2 sub/heartbeat cue(s) keep 150-400 Hz share >= -9.6 dB (limit -20)"
+  ],
+  "unverified": [
+    "whether the sound design is good or scary: only measurable defects are gated; listen with headphones and on a phone speaker"
+  ],
+  "values": {
+    "licences": {
+      "required": 0,
+      "missing": []
+    },
+    "true_peak": {
+      "true_peak_dbtp": -1.84,
+      "sample_peak_dbfs": -1.85,
+      "clipped_samples": 0
+    },
+    "short_term_max_lufs": -12.4,
+    "mono_fold": {
+      "worst_loss_db": 0.3,
+      "mean_corr": 0.98
+    },
+    "pre_scare": [
+      {
+        "id": "scare_hit",
+        "onset_s": 54.07,
+        "surround_db": -18.1,
+        "window_db": -58,
+        "drop_db": 39.9,
+        "pass": true
+      }
+    ],
+    "voice_clarity": {
+      "min_delta_db": 10.9
+    },
+    "phone": [
+      {
+        "id": "heart",
+        "kind": "heartbeat",
+        "t0": 33.59,
+        "t1": 43.93,
+        "band_ratio_db": -9.6,
+        "hp200_dbfs": -41.5,
+        "pass": true
+      },
+      {
+        "id": "scare_sub",
+        "kind": "sub_drop",
+        "t0": 54.32,
+        "t1": 55.52,
+        "band_ratio_db": -9.3,
+        "hp200_dbfs": -26.6,
+        "pass": true
+      }
+    ]
+  }
+}

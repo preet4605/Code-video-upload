@@ -16,6 +16,16 @@ function env(timeline) {
   return ctxCache;
 }
 
+// local-contrast ("clarity") pass: unsharp mask on luma, so lit edges, bars, seams and ink lines hold a hard edge against the dark. Deterministic.
+function clarity(ctx, w, h, amount = 1.4, rad = 7) {
+  const r = Math.max(1, Math.round(rad * w / 1080)), id = ctx.getImageData(0, 0, w, h), d = id.data, n = w * h;
+  let a = new Float32Array(n), b = new Float32Array(n);
+  for (let i = 0, j = 0; i < n; i++, j += 4) a[i] = 0.299 * d[j] + 0.587 * d[j + 1] + 0.114 * d[j + 2];
+  const box = (src, dst, horiz) => { const L = horiz ? w : h, M = horiz ? h : w, st = horiz ? 1 : w, ln = horiz ? w : 1; for (let m = 0; m < M; m++) { const base = m * ln; let acc = 0; for (let k = -r; k <= r; k++) acc += src[base + Math.min(L - 1, Math.max(0, k)) * st]; for (let k = 0; k < L; k++) { dst[base + k * st] = acc / (2 * r + 1); acc += src[base + Math.min(L - 1, k + r + 1) * st] - src[base + Math.max(0, k - r) * st]; } } };
+  box(a, b, true); box(b, a, false); const blur = new Float32Array(n); blur.set(a);
+  for (let i = 0, j = 0; i < n; i++, j += 4) { const l = 0.299 * d[j] + 0.587 * d[j + 1] + 0.114 * d[j + 2], dl = amount * (l - blur[i]); d[j] = Math.max(0, Math.min(255, d[j] + dl)); d[j + 1] = Math.max(0, Math.min(255, d[j + 1] + dl)); d[j + 2] = Math.max(0, Math.min(255, d[j + 2] + dl)); }
+  ctx.putImageData(id, 0, 0);
+}
 export const DURATION = 68.698;
 export const VideoClock = {
   setTime(s) { T = s; },
@@ -27,8 +37,9 @@ export const VideoClock = {
     ctx.fillStyle = '#000'; ctx.fillRect(0, 0, width, height);
     const shot = shots[sc.id] || shots.s1_hook;
     const out = shot(ctx, { t, lt, dur, sc, frame, E, w: width, h: height, tl: timeline, sweep: sweepAt(E.cues, t), glint: glintAt(E.cues, t), tube: t >= E.itarsiT - 0.2 ? 1 : tubeAt(E.cues, t, E.stopT) });
-    const cam = out?.cam, preset = out?.post ?? 'horror-night';
+    const cam = out?.cam, preset = out?.post ?? { name: 'horror-night', grade: { contrast: 0.3 } };
     if (!out?.noPost) cin.post(ctx, { t, frame, seed: 5, cam }, preset);
+    if (!out?.noPost) clarity(ctx, width, height, out?.clarity ?? 3.4, out?.clarityR ?? 4);
     if (out?.after) out.after(ctx);
     if (!out?.noCaption) {
       const s = width / 1080; ctx.save(); ctx.setTransform(s, 0, 0, s, 0, 0);

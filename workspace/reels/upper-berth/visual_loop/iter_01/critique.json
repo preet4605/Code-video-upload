@@ -1,0 +1,196 @@
+{
+ "shots": [
+  {
+   "id": "s1_hook",
+   "seen": "Uncle seated mid-frame in pale kurta and grey shawl, eyes shadowed; barred window at right with passing light; chain at left, knee blurred bottom-left; lower third of the frame is a dark flat berth with the caption.",
+   "problems": [
+    "Frame is very dark and soft: almost no crisp edges, torso is a pale flat triangle, bottom 35% is dead."
+   ],
+   "fix": "Add ink outlines and brighter rexine/berth detail, a clarity pass, lift the lamp pool onto the berth and fill the lower third with seat stitching/bag.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s2_coach",
+   "seen": "One-point aisle with tube lights, side berths, curtains on the left and a green exit lamp; sleepers read as coloured blocks.",
+   "problems": [
+    "Subject (aisle) only ~20% tall, sleepers are boxes, feet are hard to read, contrast low."
+   ],
+   "fix": "Make the aisle taller in frame, give berth blocks darker ink edges and blanket folds, brighter tube pool on the floor.",
+   "scores": {
+    "subject": 2,
+    "depth": 4,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s3_ticket",
+   "seen": "Yellowed ticket with PNR, S7 and 14-06-2014 readable; the hand is a stubby thumb shape on the right that reads more like a foot than fingers.",
+   "problems": [
+    "Hand/arm silhouette is weak; background is soft blur with too many colours."
+   ],
+   "fix": "Reduce colour bins in the blurred bg, outline the hand and sleeve, add visible fingers curling over the ticket edge.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s4_rule",
+   "seen": "Uncle close, head filling the upper half, eyes in shadow, blue lamp bloom behind; body below the chin is nearly black.",
+   "problems": [
+    "Torso invisible, large empty regions, face is soft."
+   ],
+   "fix": "Brighten the kurta/shawl with window rim, add outline, fill background with bars and window.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s5_stop",
+   "seen": "Dim bay with a flickering tube fixture on top, fog window, uncle small and almost invisible.",
+   "problems": [
+    "Subject only ~5% tall: the stillness is felt but the uncle is lost in the dark."
+   ],
+   "fix": "Enlarge and light the uncle, brighten the fog window so the black fog reads, keep the tube flicker.",
+   "scores": {
+    "subject": 1,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 2
+   }
+  },
+  {
+   "id": "s6_eyes",
+   "seen": "Uncle lies on his side under a maroon blanket, head left on a pillow, two glints at the eyes; face is a dark blob.",
+   "problems": [
+    "Face unreadable, glints float, empty upper area."
+   ],
+   "fix": "Light the lying face (key from the lamp), larger head, put glints exactly on the eyes.",
+   "scores": {
+    "subject": 2,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 2
+   }
+  },
+  {
+   "id": "s7_tickets",
+   "seen": "Berth stacks with sleepers and one dangling hand with a yellow ticket per bay; hands small, dark scene.",
+   "problems": [
+    "Only one hand/ticket per frame reads, low contrast."
+   ],
+   "fix": "Scale hands up, brighten tickets, add a second row of hands, more berth outlines.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 2,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s8_itarsi",
+   "seen": "Yellow window with the Itarsi board partly hidden by bars and the uncle; pale flat kurta triangle, warm wash.",
+   "problems": [
+    "Over-warm, board cropped, colours too many."
+   ],
+   "fix": "Move the board up and enlarge, tame the wash, keep bars thin.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s9_relief",
+   "seen": "Dim bay with an empty seat and shawl, then lids closing to black with a faint blue glow.",
+   "problems": [
+    "Last keyframe is almost black by design; first two lack a readable subject."
+   ],
+   "fix": "Make the empty seat and shawl larger and lit in the first half; keep the faint lamp glow in the silence.",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 2,
+    "light": 2,
+    "character": 1,
+    "composition": 2
+   }
+  },
+  {
+   "id": "s10_bhopal",
+   "seen": "Large window with a cool platform and blurred board streaking; frame is wide and noisy in colour.",
+   "problems": [
+    "Board is a blur, too many hues, no strong focal."
+   ],
+   "fix": "Make the BHOPAL board bigger and legible at the hit, reduce palette to blue plus white.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s11_ticket2",
+   "seen": "Same framing as s3, ticket paler then yellowing, hand again stubby.",
+   "problems": [
+    "Same hand problem as s3."
+   ],
+   "fix": "Same hand fix; keep the age animation.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s12_loop",
+   "seen": "Narrator seated like the uncle, dark and soft, matches s1 framing.",
+   "problems": [
+    "Same darkness as s1, face unreadable."
+   ],
+   "fix": "Same brightening as s1; make the narrator's blue shirt visible.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  }
+ ]
+}

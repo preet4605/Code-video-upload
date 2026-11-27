@@ -1,0 +1,863 @@
+{
+  "duration_s": 68.698,
+  "sample_rate": 48000,
+  "frames": 3297504,
+  "seed": 14,
+  "derived_events": false,
+  "warnings": [],
+  "stems": [
+    "sfx",
+    "music",
+    "ambience",
+    "room"
+  ],
+  "cues": [
+    {
+      "id": "clack_a",
+      "kind": "train_clack",
+      "layer": "ambience",
+      "source": "synth",
+      "at": 0,
+      "at_s": 0,
+      "onset_s": 0,
+      "end_s": 26.658,
+      "until_s": 26.658,
+      "gain_db": -2,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "stop"
+      ],
+      "render_ms": 334.36
+    },
+    {
+      "id": "room",
+      "kind": "room_tone",
+      "layer": "room",
+      "source": "synth",
+      "at": 0,
+      "at_s": 0,
+      "onset_s": 0,
+      "end_s": 68.698,
+      "until_s": 68.698,
+      "gain_db": -12,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "loop_end"
+      ],
+      "render_ms": 815.84
+    },
+    {
+      "id": "rumble_a",
+      "kind": "train_rumble",
+      "layer": "ambience",
+      "source": "synth",
+      "at": 0,
+      "at_s": 0,
+      "onset_s": 0,
+      "end_s": 28.658,
+      "until_s": 28.658,
+      "gain_db": -5,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "render_ms": 1093.373
+    },
+    {
+      "id": "sw_hook1",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "hook",
+      "at_s": 1.3,
+      "onset_s": 1.3,
+      "end_s": 2.45,
+      "gain_db": -18,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "hook"
+      ],
+      "render_ms": 27.125
+    },
+    {
+      "id": "sw_hook2",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "hook",
+      "at_s": 3.5,
+      "onset_s": 3.5,
+      "end_s": 4.3,
+      "gain_db": -18,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "hook"
+      ],
+      "render_ms": 13.597
+    },
+    {
+      "id": "sw_hook3",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "hook",
+      "at_s": 4.9,
+      "onset_s": 4.9,
+      "end_s": 6.1,
+      "gain_db": -18.915149811213503,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "hook"
+      ],
+      "render_ms": 10.065
+    },
+    {
+      "id": "sw_coach1",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "line02_start",
+      "at_s": 9.579,
+      "onset_s": 9.579,
+      "end_s": 10.479,
+      "gain_db": -19.93820026016113,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "line02_start"
+      ],
+      "render_ms": 6.412
+    },
+    {
+      "id": "sw_coach2",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "line02_start",
+      "at_s": 11.229,
+      "onset_s": 11.229,
+      "end_s": 12.429,
+      "gain_db": -18.915149811213503,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "line02_start"
+      ],
+      "render_ms": 9.737
+    },
+    {
+      "id": "sw_coach3",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "line02_start",
+      "at_s": 12.729,
+      "onset_s": 12.729,
+      "end_s": 13.429,
+      "gain_db": -19.93820026016113,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "line02_start"
+      ],
+      "render_ms": 6.524
+    },
+    {
+      "id": "rust_clue",
+      "kind": "paper_crinkle",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "clue_ticket",
+      "at_s": 14.055,
+      "onset_s": 14.055,
+      "end_s": 14.955,
+      "gain_db": -8,
+      "pan": 0.1,
+      "tags": [],
+      "events": [
+        "clue_ticket"
+      ],
+      "render_ms": 23.003
+    },
+    {
+      "id": "sw_tick1",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "clue_ticket",
+      "at_s": 14.805,
+      "onset_s": 14.805,
+      "end_s": 15.905,
+      "gain_db": -19.411621485714146,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "clue_ticket"
+      ],
+      "render_ms": 11.46
+    },
+    {
+      "id": "sw_tick2",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "line04_start",
+      "at_s": 17.155,
+      "onset_s": 17.155,
+      "end_s": 18.055,
+      "gain_db": -19.93820026016113,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "line04_start"
+      ],
+      "render_ms": 9.594
+    },
+    {
+      "id": "sw_rule1",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "rule",
+      "at_s": 21.579,
+      "onset_s": 21.579,
+      "end_s": 22.779,
+      "gain_db": -18,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "rule"
+      ],
+      "render_ms": 10.575
+    },
+    {
+      "id": "sw_rule2",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "rule",
+      "at_s": 24.179,
+      "onset_s": 24.179,
+      "end_s": 25.079,
+      "gain_db": -18,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "rule"
+      ],
+      "render_ms": 9.864
+    },
+    {
+      "id": "sw_rule3",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "rule",
+      "at_s": 26.179,
+      "onset_s": 26.179,
+      "end_s": 27.379,
+      "gain_db": -18.915149811213503,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "rule"
+      ],
+      "render_ms": 18.797
+    },
+    {
+      "id": "clack_brake",
+      "kind": "train_clack",
+      "layer": "ambience",
+      "source": "synth",
+      "at": "stop",
+      "at_s": 26.658,
+      "onset_s": 26.658,
+      "end_s": 30.058,
+      "until_s": 30.058,
+      "gain_db": -2,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "render_ms": 54.836
+    },
+    {
+      "id": "brake",
+      "kind": "brake_screech",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "stop",
+      "at_s": 27.508,
+      "onset_s": 27.508,
+      "end_s": 29.008,
+      "gain_db": -4,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "render_ms": 83.425
+    },
+    {
+      "id": "brake_groan",
+      "kind": "train_rumble",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "stop",
+      "at_s": 28.058,
+      "onset_s": 28.058,
+      "end_s": 30.258,
+      "gain_db": -10,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "render_ms": 115.977
+    },
+    {
+      "id": "tube",
+      "kind": "tube_buzz",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "stop",
+      "at_s": 28.158,
+      "onset_s": 28.158,
+      "end_s": 44.126,
+      "until_s": 44.126,
+      "gain_db": -20,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "stop",
+        "itarsi",
+        "stop",
+        "eyes"
+      ],
+      "render_ms": 177.367
+    },
+    {
+      "id": "heart",
+      "kind": "heartbeat",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "eyes",
+      "at_s": 33.594,
+      "onset_s": 33.594,
+      "end_s": 43.926,
+      "until_s": 43.926,
+      "gain_db": -6,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "eyes",
+        "tickets_end"
+      ],
+      "render_ms": 87.048
+    },
+    {
+      "id": "drone",
+      "kind": "hum",
+      "layer": "music",
+      "source": "synth",
+      "at": "eyes",
+      "at_s": 34.094,
+      "onset_s": 34.094,
+      "end_s": 44.926,
+      "until_s": 44.926,
+      "gain_db": -6,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "eyes",
+        "itarsi",
+        "eyes",
+        "tickets",
+        "tickets_end",
+        "itarsi"
+      ],
+      "render_ms": 87.538
+    },
+    {
+      "id": "rust_t1",
+      "kind": "paper_crinkle",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "tickets",
+      "at_s": 39.891,
+      "onset_s": 39.891,
+      "end_s": 40.791,
+      "gain_db": -8,
+      "pan": 0.1,
+      "tags": [],
+      "events": [
+        "tickets"
+      ],
+      "render_ms": 14.582
+    },
+    {
+      "id": "rust_t2",
+      "kind": "paper_crinkle",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "tickets",
+      "at_s": 41.291,
+      "onset_s": 41.291,
+      "end_s": 42.191,
+      "gain_db": -8,
+      "pan": 0.1,
+      "tags": [],
+      "events": [
+        "tickets"
+      ],
+      "render_ms": 18.5
+    },
+    {
+      "id": "clack_arrive",
+      "kind": "train_clack",
+      "layer": "ambience",
+      "source": "synth",
+      "at": "itarsi",
+      "at_s": 42.726,
+      "onset_s": 42.726,
+      "end_s": 46.926,
+      "until_s": 46.926,
+      "gain_db": -4,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "itarsi",
+        "itarsi",
+        "itarsi",
+        "itarsi",
+        "itarsi"
+      ],
+      "render_ms": 40.678
+    },
+    {
+      "id": "rumble_b",
+      "kind": "train_rumble",
+      "layer": "ambience",
+      "source": "synth",
+      "at": "itarsi",
+      "at_s": 42.926,
+      "onset_s": 42.926,
+      "end_s": 47.526,
+      "until_s": 47.526,
+      "gain_db": -8,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "itarsi",
+        "itarsi",
+        "itarsi",
+        "itarsi",
+        "itarsi"
+      ],
+      "render_ms": 193.637
+    },
+    {
+      "id": "sw_itarsi1",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "itarsi",
+      "at_s": 44.626,
+      "onset_s": 44.626,
+      "end_s": 46.026,
+      "gain_db": -18,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "itarsi"
+      ],
+      "render_ms": 10.953
+    },
+    {
+      "id": "bell",
+      "kind": "bell",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "itarsi",
+      "at_s": 44.676,
+      "onset_s": 44.676,
+      "end_s": 47.676,
+      "gain_db": -13,
+      "pan": 0.5,
+      "tags": [],
+      "events": [
+        "itarsi"
+      ],
+      "render_ms": 69.696
+    },
+    {
+      "id": "murmur",
+      "kind": "station_murmur",
+      "layer": "ambience",
+      "source": "synth",
+      "at": "itarsi",
+      "at_s": 44.826,
+      "onset_s": 44.826,
+      "end_s": 53.216,
+      "until_s": 53.216,
+      "gain_db": -10,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "itarsi",
+        "relief_end",
+        "itarsi",
+        "itarsi",
+        "itarsi_end",
+        "relief_end"
+      ],
+      "render_ms": 480.766
+    },
+    {
+      "id": "bell2",
+      "kind": "bell",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "itarsi",
+      "at_s": 45.526,
+      "onset_s": 45.526,
+      "end_s": 48.526,
+      "gain_db": -17,
+      "pan": 0.5,
+      "tags": [],
+      "events": [
+        "itarsi"
+      ],
+      "render_ms": 44.813
+    },
+    {
+      "id": "sw_itarsi2",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "itarsi",
+      "at_s": 45.726,
+      "onset_s": 45.726,
+      "end_s": 46.926,
+      "gain_db": -18,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "itarsi"
+      ],
+      "render_ms": 9.259
+    },
+    {
+      "id": "silence",
+      "kind": "drop",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "relief_end",
+      "at_s": 53.316,
+      "onset_s": 53.316,
+      "end_s": 53.966,
+      "until_s": 53.966,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "relief_end",
+        "scare"
+      ],
+      "render_ms": 0
+    },
+    {
+      "id": "scare_hit",
+      "kind": "stinger",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 54.316,
+      "onset_s": 54.066,
+      "end_s": 57.116,
+      "gain_db": -8,
+      "pan": 0,
+      "tags": [
+        "scare"
+      ],
+      "events": [
+        "scare"
+      ],
+      "render_ms": 67.411
+    },
+    {
+      "id": "scare_sub",
+      "kind": "sub_drop",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 54.316,
+      "onset_s": 54.316,
+      "end_s": 56.516,
+      "gain_db": -3,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "scare"
+      ],
+      "render_ms": 22.021
+    },
+    {
+      "id": "scare_whoosh",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 54.316,
+      "onset_s": 54.316,
+      "end_s": 55.216,
+      "gain_db": -14,
+      "pan": {
+        "from": 0.9,
+        "to": -0.9
+      },
+      "tags": [],
+      "events": [
+        "scare"
+      ],
+      "render_ms": 8.599
+    },
+    {
+      "id": "sw_bhopal1",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 54.316,
+      "onset_s": 54.316,
+      "end_s": 54.866,
+      "gain_db": -14,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "scare"
+      ],
+      "render_ms": 5.202
+    },
+    {
+      "id": "rumble_end",
+      "kind": "train_rumble",
+      "layer": "ambience",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 54.716,
+      "onset_s": 54.716,
+      "end_s": 68.698,
+      "until_s": 68.698,
+      "gain_db": -5,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "scare",
+        "loop_end",
+        "scare",
+        "loop"
+      ],
+      "render_ms": 556.1
+    },
+    {
+      "id": "sw_bhopal2",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 54.766,
+      "onset_s": 54.766,
+      "end_s": 55.366,
+      "gain_db": -14,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "scare"
+      ],
+      "render_ms": 4.161
+    },
+    {
+      "id": "clack_end",
+      "kind": "train_clack",
+      "layer": "ambience",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 54.816,
+      "onset_s": 54.816,
+      "end_s": 68.698,
+      "until_s": 68.698,
+      "gain_db": -4,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "scare",
+        "loop_end",
+        "scare",
+        "twist",
+        "loop"
+      ],
+      "render_ms": 164.202
+    },
+    {
+      "id": "sw_bhopal3",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "scare",
+      "at_s": 55.416,
+      "onset_s": 55.416,
+      "end_s": 56.316,
+      "gain_db": -14,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "scare"
+      ],
+      "render_ms": 6.808
+    },
+    {
+      "id": "rust_twist",
+      "kind": "paper_crinkle",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "twist",
+      "at_s": 58.592,
+      "onset_s": 58.592,
+      "end_s": 59.492,
+      "gain_db": -4,
+      "pan": 0.1,
+      "tags": [],
+      "events": [
+        "twist"
+      ],
+      "render_ms": 6.006
+    },
+    {
+      "id": "sw_loop1",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "loop",
+      "at_s": 62.514,
+      "onset_s": 62.514,
+      "end_s": 63.664,
+      "gain_db": -18,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "loop"
+      ],
+      "render_ms": 9.676
+    },
+    {
+      "id": "sw_loop2",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "loop",
+      "at_s": 64.714,
+      "onset_s": 64.714,
+      "end_s": 65.514,
+      "gain_db": -18,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "loop"
+      ],
+      "render_ms": 7.466
+    },
+    {
+      "id": "sw_loop3",
+      "kind": "whoosh",
+      "layer": "sfx",
+      "source": "synth",
+      "at": "loop",
+      "at_s": 66.014,
+      "onset_s": 66.014,
+      "end_s": 67.214,
+      "gain_db": -18.915149811213503,
+      "pan": {
+        "from": 0.8,
+        "to": -0.8
+      },
+      "tags": [],
+      "events": [
+        "loop"
+      ],
+      "render_ms": 9.545
+    }
+  ]
+}
