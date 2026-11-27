@@ -44,7 +44,7 @@ export function auditProjectAudio({ projectDir, media, ffmpeg = 'ffmpeg', timeli
     values.credits = { by_items: need.length, missing_lines: noCredit };
     if (noCredit.length) fails.push(`audio: CC BY item(s) without an attribution line in CREDITS.txt: ${noCredit.join(', ')} (run scripts/sfx_fetch.mjs or add the credit; BY requires attribution)`);
     else if (need.length) verified.push(`credits: ${need.length} CC BY item(s) each have a line in CREDITS.txt (put CREDITS.txt in the post caption / description)`);
-    const prev = ents.filter((e) => e.licence?.quality === 'preview-mp3'); if (prev.length) warns.push(`audio: ${prev.length} library cue(s) are Freesound preview MP3s (lossy, band-limited): ${prev.map((e) => e.id).join(', ')}`);
+    const prev = ents.filter((e) => /^preview-mp3/.test(e.licence?.quality || '')); if (prev.length) warns.push(`audio: ${prev.length} library cue(s) are Freesound preview MP3s (lossy, band-limited): ${prev.map((e) => e.id).join(', ')}`);
     const guess = ents.filter((e) => e.licence?.guessed_pick); if (guess.length) warns.push(`audio: earshot picked a nearest design by guess for ${guess.map((e) => e.id).join(', ')}; set params.sound to a design id and listen`);
   }
 

@@ -14,6 +14,9 @@ export const API = 'https://api.openverse.org/v1';
 export const DEFAULT_LICENCES = Object.freeze(['cc0', 'pdm', 'by']);
 export const LICENCE_NAMES = Object.freeze({ cc0: 'CC0 1.0', pdm: 'Public Domain Mark 1.0', by: 'CC BY' });
 export const MAX_DOWNLOAD_BYTES = 60 * 1024 * 1024;
+export const MAX_ORIGINAL_BYTES = 25 * 1024 * 1024; // alt_files originals are uncompressed WAV (up to ~88 MB seen); above this the preview is used
+export const QUALITY_PREVIEW = 'preview-mp3-128k';
+export const QUALITY_ORIGINAL = 'original';
 export const QUERY_TTL_S = 7 * 86400;
 
 export class RateLimitError extends Error {
@@ -34,9 +37,22 @@ export function licenceAllowed(r, allow = DEFAULT_LICENCES) {
   return true;
 }
 
-export const isPreview = (r) => /\/previews?\//i.test(String(r?.url ?? '')) || /preview/i.test(String(r?.url ?? ''));
+export const isPreview = (r) => /preview/i.test(String(r?.url ?? ''));
 
-export function licenceRecord(r, { sha256, retrievedAt = new Date().toISOString() } = {}) {
+// An original (lossless) file Openverse lists for Freesound items under alt_files. Its URL is the Freesound API download endpoint,
+// which needs a Freesound OAuth token; sample_rate may be null on the preview itself. Returns null when none is usable.
+export function pickOriginal(r, { maxBytes = MAX_ORIGINAL_BYTES } = {}) {
+  for (const a of Array.isArray(r?.alt_files) ? r.alt_files : []) {
+    let u; try { u = new URL(String(a?.url)); } catch { continue; }
+    if (u.protocol !== 'https:' || !/(^|\.)freesound\.org$/i.test(u.hostname)) continue; // the token is only ever sent to freesound.org
+    if (!/^(wav|flac|aiff?)$/i.test(String(a.filetype ?? ''))) continue;
+    const size = Number(a.filesize); if (Number.isFinite(size) && size > maxBytes) continue;
+    return { url: u.href, filetype: String(a.filetype).toLowerCase(), filesize: Number.isFinite(size) ? size : null, sample_rate: a.sample_rate ?? null, bit_rate: a.bit_rate ?? null };
+  }
+  return null;
+}
+
+export function licenceRecord(r, { sha256, retrievedAt = new Date().toISOString(), original = null } = {}) {
   const id = String(r.license).toLowerCase(); const ver = r.license_version ? String(r.license_version) : '';
   return {
     name: id === 'by' ? `CC BY ${ver}`.trim() : (id === 'cc0' ? LICENCE_NAMES.cc0 : `${LICENCE_NAMES.pdm}`),
@@ -45,7 +61,7 @@ export function licenceRecord(r, { sha256, retrievedAt = new Date().toISOString(
     foreign_landing_url: r.foreign_landing_url || null, detail_url: r.detail_url || null,
     license: id, license_version: ver || null, license_url: r.license_url || null,
     creator: r.creator || null, attribution: r.attribution || null, title: r.title || null,
-    retrieved_at: retrievedAt, quality: isPreview(r) ? 'preview-mp3' : 'original'
+    retrieved_at: retrievedAt, quality: original ? QUALITY_ORIGINAL : QUALITY_PREVIEW, source_sample_rate: original ? (original.sample_rate ?? null) : (r.sample_rate ?? null), source_bit_rate: original ? (original.bit_rate ?? null) : (r.bit_rate ?? null), download_url: original ? original.url : (r.url || null)
   };
 }
 
@@ -54,14 +70,14 @@ const sleepReal = (ms) => new Promise((r) => setTimeout(r, ms));
 const UA = 'reel-factory-sfx-fetch/1 (local video tooling; contact not provided)';
 
 // fetch with 429 handling: honour Retry-After up to maxWaitS (default 60 s); longer -> RateLimitError (a daily quota must not hang a render for hours).
-export async function fetchWithBackoff(url, { fetchImpl = fetch, sleep = sleepReal, retries = 3, maxWaitS = 60, baseS = 2, log = () => {} } = {}) {
+export async function fetchWithBackoff(url, { fetchImpl = fetch, sleep = sleepReal, retries = 3, maxWaitS = 60, baseS = 2, log = () => {}, headers = {} } = {}) {
   for (let attempt = 0; ; attempt++) {
-    const res = await fetchImpl(url, { headers: { 'user-agent': UA, accept: '*/*' }, redirect: 'follow' });
+    const res = await fetchImpl(url, { headers: { 'user-agent': UA, accept: '*/*', ...headers }, redirect: 'follow' });
     if (res.status !== 429) return res;
     const ra = Number(res.headers?.get?.('retry-after'));
     const wait = Number.isFinite(ra) && ra > 0 ? ra : baseS * 2 ** attempt;
     const avail = res.headers?.get?.('x-ratelimit-available-anon_sustained');
-    if (wait > maxWaitS) throw new RateLimitError(`Openverse rate limit (HTTP 429): Retry-After ${Math.round(wait)} s (~${(wait / 3600).toFixed(1)} h)${avail !== undefined && avail !== null ? `, anon_sustained available=${avail}` : ''}. Not waiting; run sfx_fetch again later, or use a registered Openverse client (OPENVERSE_TOKEN) or your own library (sfx_index.mjs).`, wait);
+    if (wait > maxWaitS) throw new RateLimitError(`Openverse rate limit (HTTP 429): Retry-After ${Math.round(wait)} s (~${(wait / 3600).toFixed(1)} h)${avail !== undefined && avail !== null ? `, anon_sustained available=${avail}` : ''}. Anonymous quota is 1000 requests/day shared by every user behind the same IP (cloud sandboxes and CI share one), so it can be spent by others. Not waiting: run sfx_fetch again after the window, register an Openverse OAuth client and set OPENVERSE_TOKEN, or use your own library (sfx_index.mjs).`, wait);
     if (attempt >= retries) throw new RateLimitError(`Openverse still answering 429 after ${retries} retries`, wait);
     log(`429: waiting ${wait}s (attempt ${attempt + 1}/${retries})`);
     await sleep(wait * 1000);
@@ -112,20 +128,21 @@ function probe(ffprobe, file) {
 // Download one result into the cache and convert it to 48 kHz stereo WAV. The raw bytes are hashed; the cache is content-addressed
 // (<sha>.<ext> original, <sha>.wav converted) and urls.json maps url -> sha so a second call needs no network.
 export async function download(r, { cacheDir = defaultCacheDir(), ffmpeg = 'ffmpeg', ffprobe = 'ffprobe', allow = DEFAULT_LICENCES } = {}, deps = {}) {
-  const { fetchImpl = fetch } = deps;
+  const { fetchImpl = fetch, freesoundToken = process.env.FREESOUND_TOKEN } = deps;
   if (!licenceAllowed(r, allow)) throw new Error(`refusing to download "${r?.title}": licence "${r?.license}" is not in ${allow.join('/')}`);
   const url = String(r.url); if (!/^https:\/\//i.test(url)) throw new Error(`refusing non-https download URL: ${url}`);
   fs.mkdirSync(cacheDir, { recursive: true });
-  const idxFile = path.join(cacheDir, 'urls.json'); let idx = {}; try { idx = JSON.parse(fs.readFileSync(idxFile, 'utf8')); } catch { /* none */ }
-  let hash = idx[url]; let cacheHit = false; let ext = null;
-  const find = (h) => fs.readdirSync(cacheDir).find((f) => f.startsWith(`${h}.`) && !f.endsWith('.wav'));
-  if (hash && find(hash) && fs.existsSync(path.join(cacheDir, `${hash}.wav`))) { cacheHit = true; ext = path.extname(find(hash)).slice(1); }
-  else {
-    const res = await fetchWithBackoff(url, deps);
-    if (!res.ok) throw new Error(`download failed: HTTP ${res.status} for ${url}`);
-    const len = Number(res.headers?.get?.('content-length')); if (len > MAX_DOWNLOAD_BYTES) throw new Error(`download too large (${len} bytes)`);
-    const buf = Buffer.from(await res.arrayBuffer()); if (!buf.length) throw new Error('download is empty'); if (buf.length > MAX_DOWNLOAD_BYTES) throw new Error('download too large');
-    hash = sha(buf); ext = (r.filetype || path.extname(new URL(url).pathname).slice(1) || 'bin').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 5) || 'bin';
+  const idxFile = path.join(cacheDir, 'urls.json');
+  const store = async (srcUrl, filetype, headers, maxBytes) => {
+    let idx = {}; try { idx = JSON.parse(fs.readFileSync(idxFile, 'utf8')); } catch { /* none */ }
+    let hash = idx[srcUrl]; let ext = null;
+    const find = (h) => fs.readdirSync(cacheDir).find((f) => f.startsWith(`${h}.`) && !f.endsWith('.wav'));
+    if (hash && find(hash) && fs.existsSync(path.join(cacheDir, `${hash}.wav`))) return { hash, ext: path.extname(find(hash)).slice(1), cacheHit: true };
+    const res = await fetchWithBackoff(srcUrl, { ...deps, fetchImpl, headers });
+    if (!res.ok) throw new Error(`download failed: HTTP ${res.status} for ${new URL(srcUrl).host}`);
+    const len = Number(res.headers?.get?.('content-length')); if (len > maxBytes) throw new Error(`download too large (${len} bytes > ${maxBytes})`);
+    const buf = Buffer.from(await res.arrayBuffer()); if (!buf.length) throw new Error('download is empty'); if (buf.length > maxBytes) throw new Error('download too large');
+    hash = sha(buf); ext = (filetype || path.extname(new URL(srcUrl).pathname).slice(1) || 'bin').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 5) || 'bin';
     const fresh = fs.mkdtempSync(path.join(cacheDir, 'dl-')); // fresh dir: untrusted bytes never land next to anything we execute
     try {
       const tmp = path.join(fresh, `in.${ext}`); fs.writeFileSync(tmp, buf);
@@ -135,9 +152,19 @@ export async function download(r, { cacheDir = defaultCacheDir(), ffmpeg = 'ffmp
       if (c.status !== 0 || (c.stderr || '').trim()) throw new Error(`audio does not decode cleanly: ${(c.stderr || '').trim().slice(0, 200)}`);
       fs.renameSync(tmp, path.join(cacheDir, `${hash}.${ext}`)); fs.renameSync(wavTmp, path.join(cacheDir, `${hash}.wav`));
     } finally { fs.rmSync(fresh, { recursive: true, force: true }); }
-    idx[url] = hash; fs.writeFileSync(idxFile, JSON.stringify(idx, null, 1));
+    idx[srcUrl] = hash; fs.writeFileSync(idxFile, JSON.stringify(idx, null, 1));
+    return { hash, ext, cacheHit: false };
+  };
+  // Original (lossless) only when a Freesound OAuth token is set (header only, never logged); any failure falls back to the preview.
+  let got = null, original = null, originalError = null;
+  const orig = freesoundToken ? pickOriginal(r) : null;
+  if (orig) {
+    try { got = await store(orig.url, orig.filetype, { authorization: `Bearer ${freesoundToken}` }, MAX_ORIGINAL_BYTES); original = orig; }
+    catch (e) { if (e instanceof RateLimitError) throw e; originalError = String(e.message).split(freesoundToken).join('***'); got = null; }
   }
+  if (!got) got = await store(url, r.filetype, {}, MAX_DOWNLOAD_BYTES);
+  const { hash, ext, cacheHit } = got;
   const wav = path.join(cacheDir, `${hash}.wav`); const info = probe(ffprobe, wav);
   if (info.sample_rate !== 48000 || info.channels !== 2) throw new Error(`converted file is ${info.sample_rate} Hz / ${info.channels} ch, expected 48000 / 2`);
-  return { wav, sha256: hash, source_file: path.join(cacheDir, `${hash}.${ext}`), duration_s: info.duration_s, cache_hit: cacheHit, licence: licenceRecord(r, { sha256: hash }) };
+  return { wav, sha256: hash, source_file: path.join(cacheDir, `${hash}.${ext}`), duration_s: info.duration_s, cache_hit: cacheHit, quality: original ? QUALITY_ORIGINAL : QUALITY_PREVIEW, original_error: originalError, licence: licenceRecord(r, { sha256: hash, original }) };
 }

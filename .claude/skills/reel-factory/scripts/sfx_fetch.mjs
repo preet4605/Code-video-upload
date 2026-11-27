@@ -109,7 +109,7 @@ export async function runSfxFetch(o, deps = {}) {
             const d = await ov.download(r.it.raw, { cacheDir, ffmpeg, ffprobe }, deps.net || {});
             const rel = `audio/library/${c.id}_${cands.length}_${d.sha256.slice(0, 8)}.wav`;
             fs.mkdirSync(path.join(dir, 'audio/library'), { recursive: true }); fs.copyFileSync(d.wav, path.join(dir, rel));
-            cands.push(candOf(rel, d.licence, { score: r.score, parts: r.parts, matched: r.matched, duration_s: Math.round(d.duration_s * 1000) / 1000, title: r.it.title, cache_hit: d.cache_hit }));
+            cands.push(candOf(rel, d.licence, { score: r.score, parts: r.parts, matched: r.matched, duration_s: Math.round(d.duration_s * 1000) / 1000, title: r.it.title, cache_hit: d.cache_hit, quality: d.quality, ...(d.original_error ? { original_error: d.original_error } : {}) }));
           } catch (e) { if (e instanceof openverse.RateLimitError) throw e; failed.push({ title: r.it.title, error: e.message }); }
         }
         if (!cands.length) throw new Error(`all ${ranked.length} candidate(s) failed validation/download for "${c.query}": ${JSON.stringify(failed.slice(0, 3))}`);

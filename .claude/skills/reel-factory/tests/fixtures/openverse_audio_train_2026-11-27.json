@@ -1,0 +1,488 @@
+{
+ "result_count": 240,
+ "page_size": 5,
+ "results": [
+  {
+   "id": "c1e0e74b-8832-403c-9633-286bb6e63e42",
+   "title": "Train passing by in the Wirikuta Desert (Mexico, SLP)",
+   "creator": "felix.blume",
+   "creator_url": "https://freesound.org/people/felix.blume",
+   "license": "cc0",
+   "license_version": "1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "provider": "freesound",
+   "source": "freesound",
+   "foreign_landing_url": "https://freesound.org/people/felix.blume/sounds/166086",
+   "detail_url": "https://api.openverse.org/v1/audio/c1e0e74b-8832-403c-9633-286bb6e63e42/",
+   "url": "https://cdn.freesound.org/previews/166/166086_1661766-hq.mp3",
+   "filetype": "mp3",
+   "filesize": 3534576,
+   "tags": [
+    {
+     "name": "Desert",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "Mexico",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "SLP",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "Train",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "Wirikuta",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "blume",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "contact",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "desert",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "felix",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "felixblume",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "horn",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "horns",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "luis",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "mexico",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "passing",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "potosi",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "rail",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "rail-way",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "railway",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "san",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "station",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "train",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "trains",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "transport",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "wagon",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "wuadley",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    }
+   ],
+   "alt_files": [
+    {
+     "url": "https://freesound.org/apiv2/sounds/166086/download/",
+     "bit_rate": 0,
+     "filesize": 88828426,
+     "filetype": "wav",
+     "sample_rate": 96000
+    }
+   ],
+   "attribution": "\"Train passing by in the Wirikuta Desert (Mexico, SLP)\" by felix.blume is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+   "duration": 154214,
+   "bit_rate": 128000,
+   "sample_rate": null
+  },
+  {
+   "id": "d884f4bb-828c-4220-b14f-0bc091c81912",
+   "title": "steam train horn 01",
+   "creator": "eliasheuninck",
+   "creator_url": "https://freesound.org/people/eliasheuninck",
+   "license": "by",
+   "license_version": "4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "provider": "freesound",
+   "source": "freesound",
+   "foreign_landing_url": "https://freesound.org/people/eliasheuninck/sounds/170464",
+   "detail_url": "https://api.openverse.org/v1/audio/d884f4bb-828c-4220-b14f-0bc091c81912/",
+   "url": "https://cdn.freesound.org/previews/170/170464_1407-hq.mp3",
+   "filetype": "mp3",
+   "filesize": 131386,
+   "tags": [
+    {
+     "name": "field-recording",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "flute",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "horn",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "locomotive",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "railroad",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "signal",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "steam",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "train",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "whistle",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    }
+   ],
+   "alt_files": [
+    {
+     "url": "https://freesound.org/apiv2/sounds/170464/download/",
+     "bit_rate": 0,
+     "filesize": 1013308,
+     "filetype": "wav",
+     "sample_rate": 44100
+    }
+   ],
+   "attribution": "\"steam train horn 01\" by eliasheuninck is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+   "duration": 5744,
+   "bit_rate": 128000,
+   "sample_rate": null
+  },
+  {
+   "id": "1b7876e9-cae1-4f6a-86ef-7296a6910d14",
+   "title": "Steam Train 1.wav",
+   "creator": "Benboncan",
+   "creator_url": "https://freesound.org/people/Benboncan",
+   "license": "by",
+   "license_version": "4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "provider": "freesound",
+   "source": "freesound",
+   "foreign_landing_url": "https://freesound.org/people/Benboncan/sounds/94216",
+   "detail_url": "https://api.openverse.org/v1/audio/1b7876e9-cae1-4f6a-86ef-7296a6910d14/",
+   "url": "https://cdn.freesound.org/previews/94/94216_634166-hq.mp3",
+   "filetype": "mp3",
+   "filesize": 3016330,
+   "tags": [
+    {
+     "name": "engine",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "field-recording",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "locomotive",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "machinery",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "steam",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "steam-train",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "stereo",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "train",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "whistle",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "xy",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    }
+   ],
+   "alt_files": [
+    {
+     "url": "https://freesound.org/apiv2/sounds/94216/download/",
+     "bit_rate": 0,
+     "filesize": 23358828,
+     "filetype": "wav",
+     "sample_rate": 44100
+    }
+   ],
+   "attribution": "\"Steam Train 1.wav\" by Benboncan is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+   "duration": 132419,
+   "bit_rate": 128000,
+   "sample_rate": null
+  },
+  {
+   "id": "aefbdb61-146d-47b9-9513-d95647df0668",
+   "title": "Gone Train Blues",
+   "creator": "Freeky Cleen &amp; Dickey F",
+   "creator_url": "https://www.jamendo.com/artist/369146/Freeky_Cleen_Dickey_F",
+   "license": "by-sa",
+   "license_version": "3.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "provider": "jamendo",
+   "source": "jamendo",
+   "foreign_landing_url": "https://www.jamendo.com/track/786940",
+   "detail_url": "https://api.openverse.org/v1/audio/aefbdb61-146d-47b9-9513-d95647df0668/",
+   "url": "https://prod-1.storage.jamendo.com/?trackid=786940&format=mp32",
+   "filetype": "mp32",
+   "filesize": null,
+   "tags": [
+    {
+     "name": "70s",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "electricguitar",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "exciting",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "happy",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "harmonica",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "male",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "speed_medium",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    },
+    {
+     "name": "vocal",
+     "accuracy": null,
+     "unstable__provider": "jamendo"
+    }
+   ],
+   "alt_files": null,
+   "attribution": "\"Gone Train Blues\" by Freeky Cleen &amp; Dickey F is licensed under CC BY-SA 3.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/3.0/.",
+   "duration": 169000,
+   "bit_rate": null,
+   "sample_rate": null
+  },
+  {
+   "id": "c6e44573-5261-46ba-8cc8-9e82bd0e1a7d",
+   "title": "Train Door Beep, B.wav",
+   "creator": "InspectorJ",
+   "creator_url": "https://freesound.org/people/InspectorJ",
+   "license": "by",
+   "license_version": "4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "provider": "freesound",
+   "source": "freesound",
+   "foreign_landing_url": "https://freesound.org/people/InspectorJ/sounds/346572",
+   "detail_url": "https://api.openverse.org/v1/audio/c6e44573-5261-46ba-8cc8-9e82bd0e1a7d/",
+   "url": "https://cdn.freesound.org/previews/346/346572_5121236-hq.mp3",
+   "filetype": "mp3",
+   "filesize": 73048,
+   "tags": [
+    {
+     "name": "Beep",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "Beeps",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "Britain",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "British",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "Door",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "Train",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "Trains",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "beep",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "beeps",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "britain",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "british",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "door",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "train",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    },
+    {
+     "name": "trains",
+     "accuracy": null,
+     "unstable__provider": "freesound"
+    }
+   ],
+   "alt_files": [
+    {
+     "url": "https://freesound.org/apiv2/sounds/346572/download/",
+     "bit_rate": 0,
+     "filesize": 531014,
+     "filetype": "wav",
+     "sample_rate": 44100
+    }
+   ],
+   "attribution": "\"Train Door Beep, B.wav\" by InspectorJ is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+   "duration": 3009,
+   "bit_rate": 128000,
+   "sample_rate": null
+  }
+ ]
+}

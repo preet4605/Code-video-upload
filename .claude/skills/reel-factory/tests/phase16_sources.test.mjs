@@ -69,7 +69,7 @@ test('download: validates, converts to 48 kHz stereo WAV, hashes, writes the lic
   const d = await ov.download(R(), { cacheDir, ffmpeg: FF, ffprobe: FP }, { fetchImpl: f });
   const w = readWav(d.wav); assert.equal(w.sr, 48000); assert.equal(w.mono, false); assert.ok(Math.abs(w.frames / 48000 - 2) < 0.1);
   assert.equal(d.sha256, (await import('node:crypto')).createHash('sha256').update(mp3).digest('hex')); assert.ok(fs.existsSync(path.join(cacheDir, `${d.sha256}.mp3`)));
-  const L = d.licence; assert.equal(L.sha256, d.sha256); assert.equal(L.provider, 'freesound'); assert.equal(L.via, 'openverse'); assert.equal(L.quality, 'preview-mp3'); assert.equal(L.license, 'cc0'); assert.equal(L.creator, 'Jane');
+  const L = d.licence; assert.equal(L.sha256, d.sha256); assert.equal(L.provider, 'freesound'); assert.equal(L.via, 'openverse'); assert.equal(L.quality, 'preview-mp3-128k'); assert.equal(L.license, 'cc0'); assert.equal(L.creator, 'Jane');
   for (const k of ['source', 'foreign_landing_url', 'detail_url', 'license_version', 'license_url', 'attribution', 'retrieved_at', 'name', 'credit', 'proof']) assert.ok(L[k], k);
   assert.ok(!fs.readdirSync(cacheDir).some((x) => x.startsWith('dl-')), 'fresh download dir is cleaned up');
   const f2 = mockFetch([]); const d2 = await ov.download(R(), { cacheDir, ffmpeg: FF, ffprobe: FP }, { fetchImpl: f2 });
@@ -248,4 +248,62 @@ test('rank: duration fit, tag match, cc0 > pdm > by, non-preview preferred', () 
 test('fitToSpan trims, and loops with a crossfade that keeps the level', () => {
   const x = new Float32Array(4800).fill(0.5); assert.equal(fitToSpan(x, 2000, 100).length, 2000);
   const y = fitToSpan(x, 20000, 480); assert.equal(y.length, 20000); let mn = 1; for (const v of y) mn = Math.min(mn, v); assert.ok(mn > 0.45, `seam dip ${mn}`);
+});
+
+// ---- live-response fixture (captured 2026-11-27 from api.openverse.org): previews, alt_files WAV, null sample_rate, Jamendo by-sa ----
+const LIVE = JSON.parse(fs.readFileSync(new URL('./fixtures/openverse_audio_train_2026-11-27.json', import.meta.url), 'utf8')).results;
+
+test('live fixture: allowlist drops the Jamendo by-sa track and keeps cc0 / by Freesound items; null sample_rate is tolerated', async () => {
+  assert.ok(LIVE.some((r) => r.license === 'by-sa' && r.provider === 'jamendo'));
+  const f = mockFetch([[/\/audio\//, () => json({ results: LIVE })]]);
+  const s = await ov.search('train', {}, { fetchImpl: f, cacheDir: tmp() });
+  assert.equal(s.total_returned, 5); assert.equal(s.results.length, 4); assert.deepEqual(s.rejected_licences, { 'by-sa': 1 });
+  assert.ok(s.results.every((r) => ['cc0', 'by'].includes(r.license)));
+  for (const r of s.results) { assert.equal(r.sample_rate, null); assert.ok(ov.isPreview(r)); const rec = ov.licenceRecord(r, { sha256: 'x' }); assert.equal(rec.quality, 'preview-mp3-128k'); assert.equal(rec.source_sample_rate, null); assert.equal(rec.source_bit_rate, 128000); }
+  const by = s.results.find((r) => r.license === 'by'); assert.match(ov.licenceRecord(by, { sha256: 'x' }).credit, /CC BY 4\.0|by /i);
+  assert.equal(ov.licenceRecord(by, { sha256: 'x' }).name, 'CC BY 4.0');
+});
+
+test('pickOriginal: freesound WAV only, https, size-capped (88 MB original is skipped), no alt_files -> null', () => {
+  assert.equal(ov.pickOriginal(LIVE[0]), null, '88 MB WAV exceeds the 25 MB cap');
+  const o = ov.pickOriginal(LIVE[1]); assert.equal(o.filetype, 'wav'); assert.equal(o.sample_rate, 44100); assert.match(o.url, /^https:\/\/freesound\.org\//);
+  assert.equal(ov.pickOriginal(LIVE.find((r) => r.provider === 'jamendo')), null);
+  assert.equal(ov.pickOriginal({ alt_files: [{ url: 'https://evil.test/x.wav', filetype: 'wav', filesize: 10 }] }), null, 'token must only go to freesound.org');
+  assert.equal(ov.pickOriginal({ alt_files: [{ url: 'http://freesound.org/x.wav', filetype: 'wav', filesize: 10 }] }), null);
+});
+
+test('download: without FREESOUND_TOKEN the preview is used and recorded as preview-mp3-128k; the original URL is never requested', async () => {
+  const r = { ...LIVE[1], url: 'https://cdn.freesound.org/previews/170/170464_1407-hq.mp3' };
+  const f = mockFetch([[/cdn\.freesound/, audioRes]]);
+  const d = await ov.download(r, { cacheDir: tmp(), ffmpeg: FF, ffprobe: FP }, { fetchImpl: f, freesoundToken: '' });
+  assert.equal(d.quality, 'preview-mp3-128k'); assert.equal(d.licence.quality, 'preview-mp3-128k'); assert.equal(f.calls.length, 1); assert.ok(!f.calls.some((u) => /apiv2/.test(u)));
+});
+
+test('download: with FREESOUND_TOKEN the original is fetched with a Bearer header (never in the record or errors); failure or oversize falls back to the preview', async () => {
+  const TOKEN = 'sekret-token-123'; const r = { ...LIVE[1] };
+  const wavBytes = (() => { const d = tmp(); const f = path.join(d, 't.wav'); spawnSync(FF, ['-v', 'error', '-f', 'lavfi', '-i', 'sine=frequency=330:duration=1', '-ar', '44100', '-ac', '1', f]); return fs.readFileSync(f); })();
+  const seen = [];
+  const f = async (url, o) => { seen.push({ url: String(url), auth: o?.headers?.authorization }); if (/apiv2/.test(url)) return new Response(wavBytes, { status: 200, headers: { 'content-length': String(wavBytes.length) } }); return audioRes(); };
+  const d = await ov.download(r, { cacheDir: tmp(), ffmpeg: FF, ffprobe: FP }, { fetchImpl: f, freesoundToken: TOKEN });
+  assert.equal(d.quality, 'original'); assert.equal(d.licence.quality, 'original'); assert.equal(d.licence.source_sample_rate, 44100); assert.equal(seen.length, 1);
+  assert.equal(seen[0].auth, `Bearer ${TOKEN}`); assert.ok(!JSON.stringify(d).includes(TOKEN)); assert.ok(Math.abs(d.duration_s - 1) < 0.1);
+  // 401 on the original -> preview, error recorded without the token, preview request carries no auth
+  const seen2 = []; const f2 = async (url, o) => { seen2.push({ url: String(url), auth: o?.headers?.authorization }); return /apiv2/.test(url) ? new Response('no', { status: 401 }) : audioRes(); };
+  const d2 = await ov.download(r, { cacheDir: tmp(), ffmpeg: FF, ffprobe: FP }, { fetchImpl: f2, freesoundToken: TOKEN });
+  assert.equal(d2.quality, 'preview-mp3-128k'); assert.match(d2.original_error, /HTTP 401/); assert.ok(!JSON.stringify(d2).includes(TOKEN)); assert.equal(seen2[1].auth, undefined);
+  // oversize original (88 MB listed): never requested
+  const seen3 = []; const f3 = async (url) => { seen3.push(String(url)); return audioRes(); };
+  const d3 = await ov.download(LIVE[0], { cacheDir: tmp(), ffmpeg: FF, ffprobe: FP }, { fetchImpl: f3, freesoundToken: TOKEN });
+  assert.equal(d3.quality, 'preview-mp3-128k'); assert.ok(!seen3.some((u) => /apiv2/.test(u)));
+  // content-length above the cap is rejected before reading the body
+  const big = async (url) => (/apiv2/.test(url) ? new Response(wavBytes, { status: 200, headers: { 'content-length': String(ov.MAX_ORIGINAL_BYTES + 1) } }) : audioRes());
+  const d4 = await ov.download(r, { cacheDir: tmp(), ffmpeg: FF, ffprobe: FP }, { fetchImpl: big, freesoundToken: TOKEN });
+  assert.equal(d4.quality, 'preview-mp3-128k'); assert.match(d4.original_error, /too large/);
+});
+
+test('429 with a long Retry-After names the shared-IP quota and the OPENVERSE_TOKEN / OAuth remedy; the token is sent as a header only', async () => {
+  const f = mockFetch([[/\/audio\//, () => new Response('', { status: 429, headers: { 'retry-after': '34711', 'x-ratelimit-available-anon_sustained': '0' } })]]);
+  await assert.rejects(ov.search('t', {}, { fetchImpl: f, cacheDir: tmp(), sleep: async () => { throw new Error('must not sleep'); } }), (e) => e instanceof ov.RateLimitError && /shared/.test(e.message) && /OPENVERSE_TOKEN/.test(e.message) && /OAuth/.test(e.message) && /9\.6 h/.test(e.message));
+  let hdr = null; const f2 = async (u, o) => { hdr = o.headers.authorization; return json({ results: [] }); };
+  await ov.search('t2', {}, { fetchImpl: f2, cacheDir: tmp(), token: 'tok-abc' }); assert.equal(hdr, 'Bearer tok-abc');
 });
