@@ -12,7 +12,8 @@ function outline(F, { chest = 0.9, waist = 0.74, hip = 1.5, hemT = 0.02, hemW = 
   const R = [[0.05 * cw + 0.012, 1.0], [shoulderW * 0.82, 0.985], [shoulderW, 0.93], [chestW, 0.76], [waistW, 0.42], [hipW, 0.08]];
   const hw = hemW ?? hipW;
   R.push([hw, hemT]);
-  const toP = ([x, t]) => F.tp(x, t), Rp = R.map(toP), Lp = R.slice().reverse().map(([x, t]) => F.tp(-x, t));
+  const dt = (J.shTilt ?? 0) / B.torso; // uneven shoulders (horror ghost): the sgn=+1 side drops by dt, the other rises
+  const toP = ([x, t], i) => F.tp(x, i === 1 || i === 2 ? t - dt : t), Rp = R.map(toP), Lp = R.slice().reverse().map(([x, t], i) => F.tp(-x, i === 4 || i === 5 ? t + dt : t));
   // the near shoulder gets a rounded deltoid, so the silhouette is not a coat hanger
   return [...Rp, ...Lp];
 }

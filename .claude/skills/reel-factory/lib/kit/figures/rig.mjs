@@ -10,10 +10,26 @@ const RAW = {
 };
 export const AGE_NAMES = Object.keys(RAW);
 
-export function proportions(age = 'adult', sex = 'm') {
-  const r = RAW[age]; if (!r) throw new Error(`unknown age "${age}" (have ${AGE_NAMES.join(', ')})`);
+// horror style: adult-leaning proportions. Smaller heads, longer neck / limbs / hands, narrower build (fractions of height, renormalised).
+const HORROR = {
+  child: { head: 0.2, neck: 0.05, shin: 0.235, thigh: 0.22, torso: 0.26, ua: 0.17, fa: 0.15, hand: 0.062, sw: 0.092, headAsp: 0.78 },
+  adult: { head: 0.134, neck: 0.056, shin: 0.256, thigh: 0.25, torso: 0.292, ua: 0.188, fa: 0.162, hand: 0.066, sw: 0.112, headAsp: 0.7 },
+  elder: { head: 0.136, neck: 0.05, shin: 0.246, thigh: 0.24, torso: 0.278, ua: 0.18, fa: 0.155, hand: 0.064, sw: 0.104, headAsp: 0.7 },
+};
+const FIELD_STYLES = ['illustrated', 'horror'];
+export const STYLE_NAMES = FIELD_STYLES;
+
+/** style: 'illustrated' (default, story / kids) | 'horror' (adult-leaning). ghost (with horror): elongated, narrower, longer neck and arms. */
+export function proportions(age = 'adult', sex = 'm', style = 'illustrated', ghost = false) {
+  if (!FIELD_STYLES.includes(style)) throw new Error(`unknown style "${style}" (have ${FIELD_STYLES.join(', ')})`);
+  let r = RAW[age]; if (!r) throw new Error(`unknown age "${age}" (have ${AGE_NAMES.join(', ')})`);
+  if (style === 'horror') {
+    r = { ...r, ...HORROR[age], w: { ...r.w } };
+    if (ghost) { r.neck *= 1.32; r.ua *= 1.1; r.fa *= 1.12; r.hand *= 1.12; r.sw *= 0.9; r.head *= 0.96; r.w = Object.fromEntries(Object.entries(r.w).map(([a, b]) => [a, b * 0.86])); }
+    else r.w = Object.fromEntries(Object.entries(r.w).map(([a, b]) => [a, b * 0.94]));
+  }
   const tot = r.foot + r.shin + r.thigh + r.torso + r.neck + r.head, k = 1 / tot;
-  const B = { age, sex };
+  const B = { age, sex, style };
   for (const key of ['foot', 'shin', 'thigh', 'torso', 'neck', 'head', 'sw', 'hw', 'ua', 'fa', 'hand', 'fl']) B[key] = r[key] * k;
   B.w = Object.fromEntries(Object.entries(r.w).map(([a, b]) => [a, b * k]));
   B.headAsp = r.headAsp; B.baseLean = r.lean; B.baseKnee = r.knee;
@@ -78,7 +94,7 @@ export function solve(B, a, { crouchDrop = 0, sway = 0, reachR = null, reachL = 
   const lean = a.lean, up = [Math.sin(lean), -Math.cos(lean)], side = [Math.cos(lean), Math.sin(lean)];
   const N = [P[0] + up[0] * B.torso, P[1] + up[1] * B.torso];
   const swx = B.sw * cw, yawShift = Math.sin(a.look) * B.sw * 0.28;
-  const S = (sgn) => [N[0] + side[0] * (swx * sgn * 0.9 + yawShift) + up[0] * -0.062, N[1] + side[1] * (swx * sgn * 0.9 + yawShift) + up[1] * -0.062];
+  const tilt = a.shTilt ?? 0, S = (sgn) => [N[0] + side[0] * (swx * sgn * 0.9 + yawShift) + up[0] * (-0.062 - tilt * sgn), N[1] + side[1] * (swx * sgn * 0.9 + yawShift) + up[1] * (-0.062 - tilt * sgn)];
   const SL = S(-1), SR = S(1);
   const arm = (Sh, ang, el, ik) => {
     if (ik) { const s = armIK(Sh, ik, B.ua, B.fa); ang = s.a; el = s.e; }
@@ -91,7 +107,7 @@ export function solve(B, a, { crouchDrop = 0, sway = 0, reachR = null, reachL = 
   const hl = a.lean + a.headTilt, hup = [Math.sin(hl), -Math.cos(hl)];
   const NT = [N[0] + hup[0] * B.neck, N[1] + hup[1] * B.neck];
   const HH = B.head, HC = [NT[0] + hup[0] * HH * 0.47, NT[1] + hup[1] * HH * 0.47];
-  return { P, N, NT, HC, headTilt: hl, cw, up, side, L, R, AL, AR, look: a.look, lean };
+  return { P, N, NT, HC, headTilt: hl, cw, up, side, L, R, AL, AR, look: a.look, lean, shTilt: tilt };
 }
 
 /** Blink: openness 0..1, deterministic from (seed, t). A blink lasts 0.16 s every ~2.8-5 s. */

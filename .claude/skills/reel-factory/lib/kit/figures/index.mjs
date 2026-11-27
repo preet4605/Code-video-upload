@@ -5,11 +5,11 @@
 // Everything is shaped paths (tapered limb ribbons, garment outlines, hair masses), lit by one light direction through a
 // lit -> terminator -> core shadow -> bounce ramp and a cinema rimLight edge per part. Deterministic in (spec.seed, state).
 import { Path2D, cin, smoothClosed, ribbon, mix, shade, rgba, cl, lerp, TAU, bboxOf, mulberry32, h01 } from '../util.mjs';
-import { proportions, poseAngles, solve, blinkAt, talkAt, POSE_NAMES, AGE_NAMES } from './rig.mjs';
+import { proportions, poseAngles, solve, blinkAt, talkAt, POSE_NAMES, AGE_NAMES, STYLE_NAMES } from './rig.mjs';
 import { drawHead, grad, formStops, EXPR_NAMES, HAIR_STYLES } from './face.mjs';
 import { drawHand } from './hand.mjs';
 import { OUTFITS, OUTFIT_NAMES } from './cloth.mjs';
-export { POSE_NAMES, AGE_NAMES, EXPR_NAMES, HAIR_STYLES, OUTFIT_NAMES };
+export { POSE_NAMES, AGE_NAMES, EXPR_NAMES, HAIR_STYLES, OUTFIT_NAMES, STYLE_NAMES };
 
 export const SKINS = ['#c68b5e', '#b57a4d', '#a2663f', '#8a5434', '#d3a074'];
 /** light presets. dir = from the subject toward the light, in screen space (y down). */
@@ -22,21 +22,42 @@ export const LIGHTS = {
 };
 
 const nullCtx = (() => { const f = function () {}; const p = new Proxy(f, { get: (t, k) => (k === Symbol.toPrimitive ? () => 0 : p), set: () => true, apply: () => p }); return p; })();
+// px-aware line widths: figure parts are authored in local units (height = 1), so a stroke of 0.005 is 15 px on a 3000 px close-up. Above ~900 px tall
+// every lineWidth is capped (smoothly down to ~5.5 px at 3000 px) so close-ups keep fine ink, creases and lashes instead of marker lines.
+const clampCtx = (ctx, H) => {
+  if (H <= 900) return ctx;
+  const cap = Math.max(5.5, 99 - ((H - 900) * (99 - 5.5)) / 2100) / H;
+  return new Proxy(ctx, { get(t, k) { const v = t[k]; return typeof v === 'function' ? v.bind(t) : v; }, set(t, k, v) { t[k] = k === 'lineWidth' ? Math.min(v, cap) : v; return true; } });
+};
 const norm = (v) => { const m = Math.hypot(v.x, v.y) || 1; return { x: v.x / m, y: v.y / m }; };
 
 /**
  * spec: {age:'child'|'adult'|'elder', sex:'m'|'f', outfit, skin, hair:{style,color}, colors:{a,b,c}, seed, variant:'normal'|'ghost',
- *        glasses, bindi, bangles}
+ *        glasses, bindi, bangles, style:'illustrated'|'horror'}
+ * style 'illustrated' (default): big-headed story / kids puppets. style 'horror': adult-leaning proportions (smaller head, longer neck / limbs),
+ * low-key faces (eyes in shadow, no catchlight unless state.eyeLight says a motivated source lights them, no pupils at distance), desaturated skin,
+ * darker cloth, stronger silhouette + rim. horror + variant 'ghost': elongated, wet hair falling over the face, pale grey-green skin with a subsurface
+ * tint (never metallic), uneven shoulders and a tilted head, no shadow of any kind.
  */
 export function createFigure(spec = {}) {
-  const age = spec.age ?? 'adult', sex = spec.sex ?? 'm', seed = spec.seed ?? 1, ghost = spec.variant === 'ghost';
-  const B = proportions(age, sex);
+  const age = spec.age ?? 'adult', sex = spec.sex ?? 'm', seed = spec.seed ?? 1, ghost = spec.variant === 'ghost', style = spec.style ?? 'illustrated', horror = style === 'horror';
+  const B = proportions(age, sex, style, ghost);
   const outfitName = spec.outfit ?? 'shirt', O = OUTFITS[outfitName];
   if (!O) throw new Error(`unknown outfit "${outfitName}" (${OUTFIT_NAMES.join(', ')})`);
   let skin = spec.skin ?? SKINS[Math.floor(h01(seed, 5) * SKINS.length)];
   let colors = { ...O.defaults, ...(spec.colors || {}) };
   const hairSpec = { style: spec.hair?.style ?? (sex === 'f' ? 'bob' : age === 'elder' ? 'baldfringe' : age === 'child' ? 'crop' : 'oiled'), color: spec.hair?.color ?? (age === 'elder' ? '#cfcac0' : '#14100e') };
-  if (ghost) { skin = '#9fa9a8'; hairSpec.style = 'wet'; hairSpec.color = '#0b0d10'; colors = Object.fromEntries(Object.entries(colors).map(([k, v]) => [k, mix(shade(v, -0.18), '#6f7d88', 0.45)])); }
+  if (ghost && !horror) { skin = '#9fa9a8'; hairSpec.style = 'wet'; hairSpec.color = '#0b0d10'; colors = Object.fromEntries(Object.entries(colors).map(([k, v]) => [k, mix(shade(v, -0.18), '#6f7d88', 0.45)])); }
+  if (horror && !ghost) { // desaturated skin, darker and flatter cloth
+    skin = shade(mix(skin, '#7c756e', 0.3), -0.06);
+    colors = Object.fromEntries(Object.entries(colors).map(([k, v]) => [k, mix(shade(v, -0.3), '#4a4744', 0.22)]));
+    hairSpec.color = shade(hairSpec.color, -0.25);
+  }
+  if (horror && ghost) { // pale grey-green, wet dark grey-green cloth, hair plastered over the face
+    skin = '#a4ad9c'; hairSpec.style = 'wetveil'; hairSpec.color = '#090b0b';
+    colors = Object.fromEntries(Object.entries(colors).map(([k, v]) => [k, mix(shade(v, -0.34), '#4a554e', 0.55)]));
+  }
+  const SSS = horror && ghost ? '#6c7b50' : null;
   const asp = B.headAsp;
 
   function build(c, st, dry) {
@@ -50,10 +71,14 @@ export function createFigure(spec = {}) {
     const breath = Math.sin(t * 1.9 + seed) * still, sway = Math.sin(t * 0.7 + seed * 2) * 0.004 * still;
     if (!st.angles?.lean) a.lean += breath * 0.004;
     if (st.look !== undefined) a.look = st.look;
-    if (ghost && !st.angles) a.headTilt += 0.1;
+    if (ghost && !horror && !st.angles) a.headTilt += 0.1;
+    if (horror && ghost && !st.angles) { a.headTilt += 0.17; a.lean += 0.035; a.shTilt = 0.024; a.shL -= 0.04; a.elL += 0.06; a.elR += 0.1; a.handL = 0.45; a.handR = 0.3; }
     const light = st.light ?? LIGHTS.noon, L = norm({ x: light.dir.x * facing, y: light.dir.y });
     const Lf = norm({ x: L.x + (L.x >= 0 ? 0.45 : -0.45), y: L.y * 0.45 });
-    const env = { L, Lf, key: light.key, amb: light.amb, hard: !!light.hard, strength: light.strength ?? 1, rim: light.rim ?? '#ffe3b8', rimA: (light.rimA ?? 1) * (ghost ? 0.6 : 1) };
+    const env = { L, Lf, key: light.key, amb: horror ? shade(light.amb ?? '#27304a', -0.32) : light.amb, hard: !!light.hard && !ghost, strength: (light.strength ?? 1) * (horror ? 1.12 : 1), rim: light.rim ?? '#ffe3b8', rimA: (light.rimA ?? 1) * (ghost ? (horror ? 0.4 : 0.6) : horror ? 1.45 : 1), sss: SSS, horror, ghost };
+    const eyeLight = st.eyeLight ?? (horror ? 0 : 1);
+    const px = H; // screen px per local unit: ink / rim widths are clamped in px so a 3000 px close-up does not get 10 px lines
+    const inkW = cl(0.0034 * px, 0.9, 3.4) / px, rimWpx = (w) => cl(w * px * (horror && !ghost ? 1.25 : 1), 1.2, horror ? 8 : 7) / px;
     // reach targets are given in screen px: convert to local units
     const toLocal = (p) => (p ? [((p[0] - st.x) * facing) / H, (p[1] - st.feet) / H] : null);
     const J = solve(B, a, { sway, reachR: toLocal(st.reachR), reachL: toLocal(st.reachL) });
@@ -71,10 +96,10 @@ export function createFigure(spec = {}) {
         c.save(); c.clip(path);
         if (o.tex) cin.fillTexture(c, 'plaster', [bb[0], bb[1], bb[2] - bb[0], bb[3] - bb[1]], { alpha: ghost ? 0.22 : 0.34, scale: 0.7 / H, ox: 0, oy: 0, seed: 5 });
         if (o.fold) o.fold(c, path);
-        if (ghost) { c.globalCompositeOperation = 'screen'; const g = c.createLinearGradient(bb[0], bb[1], bb[0] + (bb[2] - bb[0]) * 0.4, bb[3]); g.addColorStop(0, rgba('#cfe3f0', 0.2)); g.addColorStop(0.5, rgba('#cfe3f0', 0.02)); g.addColorStop(1, rgba('#cfe3f0', 0.14)); c.fillStyle = g; c.fillRect(bb[0], bb[1], bb[2] - bb[0], bb[3] - bb[1]); c.globalCompositeOperation = 'source-over'; }
+        if (ghost && !horror) { c.globalCompositeOperation = 'screen'; const g = c.createLinearGradient(bb[0], bb[1], bb[0] + (bb[2] - bb[0]) * 0.4, bb[3]); g.addColorStop(0, rgba('#cfe3f0', 0.1)); g.addColorStop(0.5, rgba('#cfe3f0', 0.01)); g.addColorStop(1, rgba('#cfe3f0', 0.07)); c.fillStyle = g; c.fillRect(bb[0], bb[1], bb[2] - bb[0], bb[3] - bb[1]); c.globalCompositeOperation = 'source-over'; }
         c.restore();
-        if (o.ink !== false) { c.strokeStyle = rgba(shade(base, -0.72), 0.7); c.lineWidth = 0.0034; c.lineJoin = 'round'; c.stroke(path); }
-        if (o.rim !== false) cin.rimLight(c, path, env.L, { width: o.rimW ?? 0.009, color: env.rim, alpha: env.rimA * (o.rimA ?? 1), soft: false });
+        if (o.ink !== false) { c.strokeStyle = rgba(shade(base, -0.72), 0.7); c.lineWidth = inkW; c.lineJoin = 'round'; c.stroke(path); }
+        if (o.rim !== false) cin.rimLight(c, path, env.L, { width: rimWpx(o.rimW ?? 0.009), color: env.rim, alpha: env.rimA * (o.rimA ?? 1), soft: ghost });
         return path;
       },
     };
@@ -97,9 +122,9 @@ export function createFigure(spec = {}) {
       }
     };
     const drawLeg = (leg, side) => { legSkin(leg); shoe(leg, O.shoes); O.legCover(F, side, leg); };
-    const armSkin = (arm) => F.part(ribbon([arm.S, arm.E, arm.W], [W.ua * 0.98, W.fa * 1.05, W.fa * 0.7], { n: 8, bulge: 0.07 }), skin, { tex: null });
+    const armSkin = (arm) => F.part(ribbon([[arm.S[0] + (arm.E[0] - arm.S[0]) * 0.1, arm.S[1] + (arm.E[1] - arm.S[1]) * 0.1], arm.E, arm.W], [W.ua * 0.98, W.fa * 1.05, W.fa * 0.7], { n: 8, bulge: 0.07 }), skin, { tex: null });
     const handCurl = (side) => (side < 0 ? a.handL : a.handR);
-    const hand = (arm, side, grip) => { if (dry) return; drawHand(c, { p: arm.W, ang: arm.dirA, size: B.hand * 1.15, curl: grip ?? handCurl(side), spread: 0.3, thumb: 0.4, side: 1, skin, env }); };
+    const hand = (arm, side, grip) => { if (dry) return; const k = side < 0 ? 'L' : 'R'; drawHand(c, { p: arm.W, ang: arm.dirA, size: B.hand * 1.15, curl: grip ?? handCurl(side), curls: st.curls?.[k], thumbTuck: st.thumbTuck?.[k] ?? 0, spread: st.spread ?? 0.3, thumb: 0.4, side: 1, skin, env, px, wet: ghost, sss: SSS }); };
     const bangles = (arm) => { if (!spec.bangles || dry) return; c.strokeStyle = '#d6a43a'; c.lineWidth = 0.007; for (let i = 0; i < 3; i++) { c.beginPath(); c.arc(arm.W[0] - Math.sin(arm.dirA) * 0.008 * i, arm.W[1] - Math.cos(arm.dirA) * 0.008 * i, 0.019, 0, TAU); c.stroke(); } };
     const drawArm = (arm, side) => { armSkin(arm); hand(arm, side, st.grip?.[side < 0 ? 'L' : 'R']); O.sleeve(F, arm); bangles(arm); };
     // contact shadow of an arm on the torso (AO) - painted just before the near arm
@@ -110,7 +135,9 @@ export function createFigure(spec = {}) {
     // soft contact shadows under the feet (grounding)
     if (!dry && st.contact !== false && !ghost) { for (const leg of [farLeg, nearLeg]) { c.save(); c.translate((leg.heel[0] + leg.toe[0]) / 2, 0); const g = c.createRadialGradient(0, 0, 0, 0, 0, 0.11); g.addColorStop(0, rgba('#000', 0.5 * (st.contactA ?? 1))); g.addColorStop(1, rgba('#000', 0)); c.scale(1, 0.18); c.fillStyle = g; c.fillRect(-0.12, -0.12, 0.24, 0.24); c.restore(); } }
     // wet pool for ghosts
-    if (!dry && ghost) { c.save(); const g = c.createRadialGradient(0, 0.004, 0, 0, 0.004, 0.2); g.addColorStop(0, rgba('#0a1014', 0.55)); g.addColorStop(0.7, rgba('#10181d', 0.35)); g.addColorStop(1, rgba('#10181d', 0)); c.scale(1, 0.16); c.fillStyle = g; c.fillRect(-0.22, -0.22, 0.44, 0.44); c.restore(); }
+    if (!dry && ghost && !horror) { c.save(); const g = c.createRadialGradient(0, 0.004, 0, 0, 0.004, 0.2); g.addColorStop(0, rgba('#0a1014', 0.55)); g.addColorStop(0.7, rgba('#10181d', 0.35)); g.addColorStop(1, rgba('#10181d', 0)); c.scale(1, 0.16); c.fillStyle = g; c.fillRect(-0.22, -0.22, 0.44, 0.44); c.restore(); }
+    // horror ghost: no shadow of any kind; only a faint pale sheen of wet floor under the feet, drawn ABOVE the ground line
+    if (!dry && ghost && horror) { c.save(); c.translate(0, -0.004); const g = c.createRadialGradient(0, 0, 0, 0, 0, 0.16); g.addColorStop(0, rgba('#b9c8bd', 0.13)); g.addColorStop(1, rgba('#b9c8bd', 0)); c.scale(1, 0.1); c.fillStyle = g; c.fillRect(-0.18, -0.18, 0.36, 0.18); c.restore(); }
     drawLeg(farLeg, -1);
     drawArm(farArm, -1);
     drawLeg(nearLeg, 1);
@@ -122,7 +149,7 @@ export function createFigure(spec = {}) {
     F.part(ribbon([nb, [J.NT[0], J.NT[1]]], [B.sw * 0.5, B.sw * 0.44], { n: 3, cap: 2 }), skin, { tex: null, rim: false });
     // chin shadow on the neck/collar is painted by the head's own shading; head:
     const hsz = B.head, look = a.look, gaze = st.gaze ?? [0, 0], mouthOpen = st.talk !== undefined ? talkAt(seed, t, st.talk) : null;
-    const headSpec = { c: J.HC, size: hsz, asp, tilt: J.headTilt, look, age, sex, skin, hair: hairSpec, expr: st.expr ?? (ghost ? 'blank' : 'neutral'), blinkOpen: ghost ? 0.92 : blinkAt(seed, t), gaze, mouth: st.mouth ?? mouthOpen ?? undefined, env: { ...env, L: env.L }, ghost, seed, t, glasses: spec.glasses, bindi: spec.bindi };
+    const headSpec = { c: J.HC, size: hsz, asp, tilt: J.headTilt, look, age, sex, skin, hair: hairSpec, horror, headPx: hsz * px, eyeLight, px, sss: SSS, expr: st.expr ?? (ghost ? 'blank' : 'neutral'), blinkOpen: ghost ? 0.92 : blinkAt(seed, t), gaze, mouth: st.mouth ?? mouthOpen ?? undefined, env: { ...env, L: env.L }, ghost, seed, t, glasses: spec.glasses, bindi: spec.bindi };
     // braid hangs from the back of the head over the near shoulder
     if (!dry && hairSpec.style === 'braid') { const a0 = [J.HC[0] - Math.cos(J.headTilt) * hsz * 0.3, J.HC[1] + hsz * 0.25], mid = [a0[0] - 0.02 + Math.sin(t * 1.1) * 0.004 * still, J.N[1] + 0.05], endp = [J.N[0] - 0.04 + Math.sin(t * 1.1 + 1) * 0.008 * still, J.P[1] - 0.02]; const bp = ribbon([a0, mid, endp], [0.05, 0.05, 0.036], { n: 10 }); const path = smoothClosed(bp); c.save(); c.fillStyle = grad(c, bboxOf(bp), env.L, formStops(hairSpec.color, env)); c.fill(path); c.clip(path); c.strokeStyle = rgba('#fff', 0.16); c.lineWidth = 0.006; for (let i = 0; i < 9; i++) { const y = lerp(a0[1], endp[1], i / 9); c.beginPath(); c.moveTo(mid[0] - 0.03, y); c.quadraticCurveTo(mid[0], y + 0.025, mid[0] + 0.03, y); c.stroke(); } c.restore(); c.fillStyle = '#b3241f'; c.beginPath(); c.arc(endp[0], endp[1], 0.02, 0, TAU); c.fill(); }
     parts.push(headPoly(J.HC, hsz, asp, J.headTilt));
@@ -136,12 +163,12 @@ export function createFigure(spec = {}) {
   const headPoly = (c, s, asp_, tilt) => { const o = []; for (let i = 0; i < 12; i++) { const th = (i / 12) * TAU, x = Math.cos(th) * s * asp_ * 0.55, y = Math.sin(th) * s * 0.58; o.push([c[0] + x * Math.cos(tilt) - y * Math.sin(tilt), c[1] + x * Math.sin(tilt) + y * Math.cos(tilt)]); } return o; };
 
   const fig = {
-    spec, B, ghost, age, sex,
+    spec, B, ghost, age, sex, style,
     /** Draw the figure. state: {x, feet, height, facing, pose, t, light, gaze:[-1..1,-1..1], expr, mouth, talk, look, reachR:[px,px], contact} */
     draw(ctx, st) {
       const H = st.height ?? 600, facing = st.facing ?? 1;
       ctx.save(); ctx.translate(st.x, st.feet); ctx.scale(H * facing, H);
-      const r = build(ctx, st, false); ctx.restore(); return r;
+      const r = build(clampCtx(ctx, H), st, false); ctx.restore(); return r;
     },
     /** Joint positions in screen px (design space). */
     joints(st) {
@@ -157,7 +184,7 @@ export function createFigure(spec = {}) {
     bbox(st) { const pts = fig.silhouette(st).flat(); const b = bboxOf(pts); return { x0: b[0], y0: b[1], x1: b[2], y1: b[3], w: b[2] - b[0], h: b[3] - b[1] }; },
     /** Cast shadow on the ground line y=feet. sun: {dir:[dx,dy]} screen px per px of height (|dir|->0 = sun at the zenith) or {x,y,floorY} point light. */
     shadow(ctx, st, sun, o = {}) {
-      if (ghost && o.ghostShadow !== true) return false; // the wrong ones cast nothing
+      if (ghost) return false; // the wrong ones cast nothing, whatever the light
       const { alpha = 0.6, soft = 6, color = '#000', squash = 0.4 } = o, gy = st.feet;
       const parts = fig.silhouette(st), path = new Path2D();
       for (const pts of parts) {
