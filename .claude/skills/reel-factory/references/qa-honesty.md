@@ -18,6 +18,14 @@ In the project `qa.json`:
 ```
 - `require_visual_loop: false` -> "not run" becomes a warning tagged `[waived ...]`.
 - `horror.escalationWeakIsFail: false` -> weak escalation becomes a warning; or lower `horror.escalationWarn` (e.g. 1.2). Other horror thresholds live in `HORROR_VISUAL` (`lib/horror_gate.mjs`); per-scene `scene_allow` and `thresholds` also exist.
+- `accept_unconverged_loop` -> the only way past "visual-loop: not converged" (`require_visual_loop` never does that):
+  ```json
+  { "accept_unconverged_loop": { "reason": "<non-empty: what still fails and why>", "by": "maintainer|user", "date": "YYYY-MM-DD" } }
+  ```
+  The FIX becomes a WARN that prints the reason and the shots still failing (from the last `report.json`). It is never silent:
+  `qa_report.json` gets `waivers: [{ type, reason, by, date, iteration, remaining_failing, ... }]` and an `unverified` line
+  "visual-loop did NOT converge; accepted by waiver". Missing or blank `reason` = still FIX. Use it for known calibration
+  floors (e.g. single-reference targets), not to skip work; the verdict is still "no measured defect beyond the accepted ones".
 A waiver is a decision for the human, not a way to get SHIP.
 
 ## Fix-pass cap

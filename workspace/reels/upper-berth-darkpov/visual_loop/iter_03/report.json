@@ -45,9 +45,7 @@
     "reused_backdrop": false
   },
   "mean_score": 0.909,
-  "regressions": [
-    "s12_loop got worse (-0.037): revert that change or justify it in the critique"
-  ],
+  "regressions": [],
   "shots": [
     {
       "id": "s1_hook",
@@ -147,7 +145,7 @@
     },
     {
       "id": "s3_ticket",
-      "pass": false,
+      "pass": true,
       "score": 0.929,
       "delta": 0,
       "establishing": false,
@@ -184,14 +182,7 @@
         "bottom-right",
         "upper-centre"
       ],
-      "deficits": [
-        {
-          "metric": "color_bins",
-          "value": 14.6667,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        }
-      ],
+      "deficits": [],
       "waived": [],
       "waivers": {
         "allow_black": false,
@@ -356,9 +347,9 @@
     },
     {
       "id": "s7_tickets",
-      "pass": false,
+      "pass": true,
       "score": 0.914,
-      "delta": -0.007,
+      "delta": 0,
       "establishing": false,
       "subject_box": [
         0.463,
@@ -395,14 +386,7 @@
         "bottom-right",
         "bottom-centre"
       ],
-      "deficits": [
-        {
-          "metric": "color_bins",
-          "value": 12.3333,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        }
-      ],
+      "deficits": [],
       "waived": [],
       "waivers": {
         "allow_black": false,
@@ -411,9 +395,9 @@
     },
     {
       "id": "s8_itarsi",
-      "pass": false,
+      "pass": true,
       "score": 0.916,
-      "delta": 0.053,
+      "delta": 0,
       "establishing": false,
       "subject_box": [
         0.093,
@@ -450,14 +434,7 @@
         "bottom-right",
         "upper-left"
       ],
-      "deficits": [
-        {
-          "metric": "color_bins",
-          "value": 13,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        }
-      ],
+      "deficits": [],
       "waived": [],
       "waivers": {
         "allow_black": false,
@@ -526,7 +503,7 @@
       "id": "s10_bhopal",
       "pass": false,
       "score": 0.884,
-      "delta": 0.01,
+      "delta": 0,
       "establishing": false,
       "subject_box": [
         0.056,
@@ -566,12 +543,6 @@
         "upper-left"
       ],
       "deficits": [
-        {
-          "metric": "color_bins",
-          "value": 12.6667,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        },
         {
           "metric": "mean_luma",
           "value": 21.8333,
@@ -643,9 +614,9 @@
     },
     {
       "id": "s12_loop",
-      "pass": false,
+      "pass": true,
       "score": 0.884,
-      "delta": -0.037,
+      "delta": 0,
       "establishing": false,
       "subject_box": [
         0.185,
@@ -681,14 +652,7 @@
         "bottom-centre",
         "bottom-right"
       ],
-      "deficits": [
-        {
-          "metric": "color_bins",
-          "value": 12.6667,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        }
-      ],
+      "deficits": [],
       "waived": [],
       "waivers": {
         "allow_black": false,

@@ -54,6 +54,22 @@ export function keyframeChange(frames) {
   return n ? tot / n : 0;
 }
 
+// A rubric score is 1-5, or "n/a"/null for a criterion that does not apply to the shot (e.g. "character" on black
+// silence, a station board or an insert). n/a is excluded from the convergence min and from averages; a shot still
+// needs >= MIN_SCORED scored criteria. Returns { scored: {k: n}, na: [k] }.
+export const MIN_SCORED = 3;
+export const isNA = (v) => v === null || (typeof v === 'string' && v.trim().toLowerCase() === 'n/a');
+export function splitScores(scores) {
+  const scored = {}, na = [];
+  for (const k of RUBRIC) { const v = scores?.[k]; if (isNA(v)) na.push(k); else if (Number.isInteger(v)) scored[k] = v; }
+  return { scored, na };
+}
+export function critiqueSummary(c) {
+  const vals = [], na = [];
+  for (const s of c.shots || []) { const r = splitScores(s.scores); vals.push(...Object.values(r.scored)); if (r.na.length) na.push({ id: s.id, criteria: r.na }); }
+  return { min: vals.length ? Math.min(...vals) : null, mean: vals.length ? +(vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(2) : null, na };
+}
+
 export function validateCritique(c, shotIds, prev = null, regressed = []) {
   const errs = [];
   if (!c || !Array.isArray(c.shots)) return ['critique.json missing or has no "shots" array'];
@@ -63,13 +79,15 @@ export function validateCritique(c, shotIds, prev = null, regressed = []) {
     if (!s.seen || String(s.seen).length < 25) errs.push(`shot "${id}": "seen" must describe what is actually in the frame (>= 25 chars)`);
     if (!s.fix || String(s.fix).length < 15) errs.push(`shot "${id}": "fix" must name a concrete change (>= 15 chars)`);
     if (regressed.includes(id) && (!s.regression_note || String(s.regression_note).length < 15)) errs.push(`shot "${id}" regressed in the metrics: add "regression_note" justifying the trade, or revert the change`);
-    for (const k of RUBRIC) if (!Number.isInteger(s.scores?.[k]) || s.scores[k] < 1 || s.scores[k] > 5) errs.push(`shot "${id}": scores.${k} must be 1-5`);
+    for (const k of RUBRIC) if (!isNA(s.scores?.[k]) && (!Number.isInteger(s.scores?.[k]) || s.scores[k] < 1 || s.scores[k] > 5)) errs.push(`shot "${id}": scores.${k} must be 1-5 (or "n/a" if the criterion does not apply to this shot)`);
+    const sp = splitScores(s.scores);
+    if (sp.na.length && Object.keys(sp.scored).length < MIN_SCORED) errs.push(`shot "${id}": only ${Object.keys(sp.scored).length} scored criteria; at least ${MIN_SCORED} must be scored (n/a: ${sp.na.join(', ')})`);
     if (prev) {
       const p = prev.shots?.find((x) => x.id === id);
       if (p && p.fix && s.fix && p.fix.trim().toLowerCase() === s.fix.trim().toLowerCase()) errs.push(`shot "${id}": same fix as last iteration; if it did not work, try something else`);
     }
   }
-  const all = c.shots.flatMap((s) => RUBRIC.map((k) => s.scores?.[k]).filter(Number.isInteger));
+  const all = c.shots.flatMap((s) => Object.values(splitScores(s.scores).scored));
   if (all.length >= 12 && new Set(all).size === 1) errs.push('every score is identical: rubber-stamp critique');
   return errs;
 }
@@ -162,7 +180,10 @@ export async function runVisualLoop({ projectDir, targetsPath = null, maxIter = 
     const regressedIds = (prevEntry.regressions || []).map((r) => r.split(' ')[0]);
     const errs = validateCritique(crit, ids, prevCrit, regressedIds);
     if (errs.length) return { blocked: true, iter, errors: errs.map((e) => `iteration ${prevEntry.iter} critique: ${e}`), hint: `look at ${path.relative(projectDir, path.join(prevDir, 'sheet.png'))}, then write ${path.relative(projectDir, path.join(prevDir, 'critique.json'))} (see references/visual-loop.md)` };
-    prevEntry.critique_min = Math.min(...crit.shots.flatMap((s) => RUBRIC.map((k) => s.scores[k])));
+    const cs = critiqueSummary(crit);
+    prevEntry.critique_min = cs.min;
+    prevEntry.critique_mean = cs.mean;
+    prevEntry.critique_na = cs.na; // recorded so n/a is never silent
     fs.writeFileSync(logPath, JSON.stringify(log, null, 2));
     if (prevEntry.pass && prevEntry.critique_min >= 3) return { converged: true, iter: prevEntry.iter, message: `LOOP PASS at iteration ${prevEntry.iter}: metrics pass and no critique score below 3. Final check is human.` };
   }

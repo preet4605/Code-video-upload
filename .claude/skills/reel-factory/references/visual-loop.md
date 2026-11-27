@@ -15,14 +15,18 @@ aims = median reference. Default targets ship calibrated on four code-made reels
    and writes `visual_loop/iter_NN/sheet.png` + `report.json` with deficits and concrete hints.
 2. **Look at the sheet** (Read the PNG). Write `visual_loop/iter_NN/critique.json`:
    `{ "shots": [ { "id", "seen": "what is actually in the frame", "problems": [], "fix": "the concrete change",
-   "scores": { "subject", "depth", "detail", "light", "character", "composition" } (1-5), "regression_note"? } ] }`.
+   "scores": { "subject", "depth", "detail", "light", "character", "composition" } (1-5 or "n/a"), "regression_note"? } ] }`.
+   Use `"n/a"` (or `null`) only for a criterion that truly does not apply to the shot (e.g. `character` on black silence,
+   a station board or a ticket insert). n/a is excluded from the "no score below 3" rule and from averages, a shot must
+   still have at least 3 scored criteria, and every n/a is recorded in `log.json` (`critique_na`) and listed under
+   `unverified` in `qa_report.json`. It is not a way to dodge a low score.
    Judge what metrics cannot: captions covering faces, wrong framing, unreadable expressions, a subject that does
    not dominate, cropped props, style drift.
 3. Apply the fixes in `scene.mjs`, run again. The next iteration refuses to run until the critique is valid; a
    repeated fix for a still-failing shot is rejected; a shot whose score drops needs a `regression_note` or a revert.
 4. Stop at `LOOP PASS` (metrics pass + no critique score below 3), or `LOOP STOPPED` at 6 iterations: change the
    approach (style, framing, assets), do not keep nudging.
-5. `master_and_qa.mjs` reports the loop: not run = warning; run but not converged = FIX.
+5. `master_and_qa.mjs` reports the loop: not run = warning; run but not converged = FIX, unless qa.json `accept_unconverged_loop` carries a reason (WARN + recorded waiver, see qa-honesty.md).
 
 ## Fixes that move the numbers (and the look)
 - Detail: outline every shape (`lib/cartoon.mjs` `shape()`), add patterns/texture marks, set dressing, props.

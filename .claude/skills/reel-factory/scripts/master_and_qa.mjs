@@ -99,8 +99,9 @@ export function finalizeHonesty(ship, projectDir, brief = {}, qaCfg = {}) {
   ship.verified = ship.verified || [];
   ship.unverified = ship.unverified || [];
   const vl = applyVisualLoopGate(ship, projectDir, brief, qaCfg);
-  if (vl.run) ship.verified.push(`visual-loop: ${ship.visual_loop.iterations} iteration(s), last ${ship.visual_loop.last_pass ? 'pass' : 'fail'}, critique min ${ship.visual_loop.critique_min}`);
-  else ship.unverified.push('visual-loop not run: picture composition/depth was not iterated against targets');
+  if (vl.run) ship.verified.push(`visual-loop: ${ship.visual_loop.iterations} iteration(s), last ${ship.visual_loop.last_pass ? 'pass' : 'fail'}, critique min ${ship.visual_loop.critique_min}${ship.visual_loop.waived_unconverged ? ' (UNCONVERGED, waived)' : ''}`);
+  if (vl.run && ship.visual_loop.critique_na?.length) ship.unverified.push(`visual-loop critique: criteria scored n/a (not applicable): ${ship.visual_loop.critique_na.map((x) => `${x.id}[${x.criteria.join(',')}]`).join(' ')}`);
+  if (!vl.run) ship.unverified.push('visual-loop not run: picture composition/depth was not iterated against targets');
   if (ship.horror) {
     const h = ship.horror;
     if (h.visual && h.visual.escalation != null) ship.verified.push(`horror escalation (last/first third motion): ${h.visual.escalation}`);

@@ -417,7 +417,18 @@ export function runHorrorVisualGate({ mp4, projectDir, writeSheet = true }) {
 // ---- Visual-loop enforcement ---------------------------------------------------
 // scripts/visual_loop.mjs writes <project>/visual_loop/log.json. Horror may not SHIP without a converged loop.
 // Escape hatch (explicit): qa.json { "require_visual_loop": false } downgrades "not run" to a warning.
+// qa.json { accept_unconverged_loop: { reason, by, date } } (non-empty reason) downgrades "not converged" to a recorded WARN.
 // smoke_test briefs also downgrade. Non-horror genres: not run = warning (unchanged), unconverged = FIX.
+function remainingFailures(projectDir, last) {
+  const out = [];
+  try {
+    const rep = JSON.parse(fs.readFileSync(path.join(projectDir, 'visual_loop', `iter_${String(last.iter).padStart(2, '0')}`, 'report.json'), 'utf8'));
+    for (const r of rep.shots || []) if (r.pass === false) out.push(`${r.id}: ${(r.deficits || []).map((d) => `${d.metric} ${d.value} (${d.target})`).join(', ') || 'failed'}`);
+  } catch {
+    for (const r of last?.shots || []) if (r.pass === false) out.push(`${r.id}: failed (no report.json)`);
+  }
+  return out;
+}
 export function applyVisualLoopGate(ship, projectDir, brief = {}, qa = {}) {
   const horror = !!brief && brief.genre === 'horror';
   const required = horror && qa.require_visual_loop !== false && brief.smoke_test !== true;
@@ -436,9 +447,23 @@ export function applyVisualLoopGate(ship, projectDir, brief = {}, qa = {}) {
   }
   const last = iters[iters.length - 1];
   ship.visual_loop = { iterations: iters.length, last_pass: last?.pass ?? false, critique_min: last?.critique_min ?? null, mean_score: last?.mean_score ?? null };
+  if (last?.critique_na?.length) ship.visual_loop.critique_na = last.critique_na;
   if (!(last && last.pass && (last.critique_min ?? 0) >= 3)) {
-    ship.fails.push(`visual-loop: not converged (iteration ${last?.iter}: metrics ${last?.pass ? 'pass' : 'fail'}, critique min ${last?.critique_min ?? 'missing'}). Run scripts/visual_loop.mjs until LOOP PASS`);
-    ship.verdict = 'FIX';
+    const msg = `visual-loop: not converged (iteration ${last?.iter}: metrics ${last?.pass ? 'pass' : 'fail'}, critique min ${last?.critique_min ?? 'missing'})`;
+    const w = qa.accept_unconverged_loop;
+    const reason = w && typeof w === 'object' && typeof w.reason === 'string' ? w.reason.trim() : '';
+    if (reason) {
+      const remaining = remainingFailures(projectDir, last);
+      const waiver = { type: 'accept_unconverged_loop', reason, by: w.by ?? null, date: w.date ?? null, iteration: last?.iter ?? null, metrics_pass: !!last?.pass, critique_min: last?.critique_min ?? null, remaining_failing: remaining };
+      ship.waivers = [...(ship.waivers || []), waiver];
+      ship.visual_loop.waived_unconverged = true;
+      ship.warns.push(`${msg} [WAIVED accept_unconverged_loop by ${waiver.by || '?'} ${waiver.date || '?'}: ${reason}] Remaining failing shots: ${remaining.length ? remaining.join('; ') : 'none in metrics (critique min below 3 only)'}`);
+      ship.unverified = ship.unverified || [];
+      ship.unverified.push(`visual-loop did NOT converge; accepted by waiver (${waiver.by || '?'}, ${waiver.date || '?'}): ${reason}. Remaining failing shots: ${remaining.length ? remaining.join('; ') : 'critique only'}`);
+    } else {
+      ship.fails.push(`${msg}. Run scripts/visual_loop.mjs until LOOP PASS${w ? ' (accept_unconverged_loop ignored: "reason" is empty)' : ''}`);
+      ship.verdict = 'FIX';
+    }
   }
   return { run: true, required };
 }

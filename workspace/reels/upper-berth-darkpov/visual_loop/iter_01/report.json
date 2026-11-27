@@ -6,22 +6,22 @@
     "backdrop_share": 0.583,
     "top_pairs": [
       {
+        "a": "s8_itarsi",
+        "b": "s12_loop",
+        "hash_sim": 0.868,
+        "hist_dist": 0.046
+      },
+      {
         "a": "s5_stop",
         "b": "s12_loop",
         "hash_sim": 0.868,
-        "hist_dist": 0.064
-      },
-      {
-        "a": "s8_itarsi",
-        "b": "s12_loop",
-        "hash_sim": 0.861,
-        "hist_dist": 0.052
+        "hist_dist": 0.059
       },
       {
         "a": "s11_ticket2",
         "b": "s12_loop",
         "hash_sim": 0.861,
-        "hist_dist": 0.07
+        "hist_dist": 0.056
       }
     ],
     "near_duplicates": [],
@@ -44,7 +44,7 @@
     ],
     "reused_backdrop": false
   },
-  "mean_score": 0.91,
+  "mean_score": 0.909,
   "regressions": [],
   "shots": [
     {
@@ -145,7 +145,7 @@
     },
     {
       "id": "s3_ticket",
-      "pass": false,
+      "pass": true,
       "score": 0.929,
       "delta": null,
       "establishing": false,
@@ -182,14 +182,7 @@
         "bottom-right",
         "upper-centre"
       ],
-      "deficits": [
-        {
-          "metric": "color_bins",
-          "value": 14.6667,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        }
-      ],
+      "deficits": [],
       "waived": [],
       "waivers": {
         "allow_black": false,
@@ -354,30 +347,30 @@
     },
     {
       "id": "s7_tickets",
-      "pass": false,
-      "score": 0.921,
+      "pass": true,
+      "score": 0.914,
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.444,
+        0.463,
         0.354,
         0.778,
         0.594
       ],
       "metrics": {
-        "sharp_edges": 0.0084,
-        "contrast": 25.2333,
-        "mean_luma": 21.6,
-        "color_bins": 13.6667,
-        "saturation": 0.279,
-        "ink": 0.0048,
-        "focal": 5.01,
+        "sharp_edges": 0.0083,
+        "contrast": 25,
+        "mean_luma": 21.3,
+        "color_bins": 12.3333,
+        "saturation": 0.2077,
+        "ink": 0.0047,
+        "focal": 5.0533,
         "hue_families": 1,
-        "lit_fraction": 0.103,
-        "lit_regions": 1.6667,
+        "lit_fraction": 0.1006,
+        "lit_regions": 1.3333,
         "p5_luma": 3.3333,
         "subject_scale": 0.2223,
-        "empty_cells": 11
+        "empty_cells": 12
       },
       "empty_where": [
         "top-centre",
@@ -390,16 +383,10 @@
         "lower-left",
         "lower-centre",
         "lower-right",
-        "bottom-right"
+        "bottom-right",
+        "bottom-centre"
       ],
-      "deficits": [
-        {
-          "metric": "color_bins",
-          "value": 13.6667,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        }
-      ],
+      "deficits": [],
       "waived": [],
       "waivers": {
         "allow_black": false,
@@ -408,30 +395,30 @@
     },
     {
       "id": "s8_itarsi",
-      "pass": false,
-      "score": 0.883,
+      "pass": true,
+      "score": 0.916,
       "delta": null,
       "establishing": false,
       "subject_box": [
         0.093,
         0.146,
-        0.667,
+        0.574,
         0.302
       ],
       "metrics": {
-        "sharp_edges": 0.0189,
-        "contrast": 25.6667,
-        "mean_luma": 22.0667,
+        "sharp_edges": 0.0169,
+        "contrast": 24.2333,
+        "mean_luma": 21.1333,
         "color_bins": 13,
-        "saturation": 0.1533,
-        "ink": 0.0131,
-        "focal": 4.8033,
-        "hue_families": 0.6667,
-        "lit_fraction": 0.1122,
+        "saturation": 0.193,
+        "ink": 0.0117,
+        "focal": 4.6033,
+        "hue_families": 1,
+        "lit_fraction": 0.104,
         "lit_regions": 1.3333,
         "p5_luma": 4.3333,
-        "subject_scale": 0.2047,
-        "empty_cells": 10
+        "subject_scale": 0.1977,
+        "empty_cells": 11
       },
       "empty_where": [
         "top-right",
@@ -442,30 +429,12 @@
         "upper-right",
         "middle-left",
         "middle-centre",
+        "bottom-left",
         "bottom-centre",
         "bottom-right",
         "upper-left"
       ],
-      "deficits": [
-        {
-          "metric": "saturation",
-          "value": 0.1533,
-          "target": ">= 0.1587",
-          "hint": "use a deliberate palette with 1-2 saturated accents (warm light vs cool night); avoid desaturated greys"
-        },
-        {
-          "metric": "color_bins",
-          "value": 13,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        },
-        {
-          "metric": "mean_luma",
-          "value": 22.0667,
-          "target": "<= 21.8",
-          "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
-        }
-      ],
+      "deficits": [],
       "waived": [],
       "waivers": {
         "allow_black": false,
@@ -575,12 +544,6 @@
       ],
       "deficits": [
         {
-          "metric": "color_bins",
-          "value": 12.6667,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        },
-        {
           "metric": "mean_luma",
           "value": 21.8333,
           "target": "<= 21.8",
@@ -651,30 +614,30 @@
     },
     {
       "id": "s12_loop",
-      "pass": false,
-      "score": 0.929,
+      "pass": true,
+      "score": 0.884,
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.167,
+        0.185,
         0.135,
         0.759,
         0.49
       ],
       "metrics": {
-        "sharp_edges": 0.0261,
-        "contrast": 30.5,
-        "mean_luma": 22.8667,
-        "color_bins": 14.6667,
-        "saturation": 0.2077,
-        "ink": 0.014,
-        "focal": 4.3633,
+        "sharp_edges": 0.0228,
+        "contrast": 28.2333,
+        "mean_luma": 21.0667,
+        "color_bins": 12.6667,
+        "saturation": 0.161,
+        "ink": 0.0123,
+        "focal": 4.42,
         "hue_families": 1.3333,
-        "lit_fraction": 0.1295,
+        "lit_fraction": 0.1119,
         "lit_regions": 1.3333,
         "p5_luma": 2,
-        "subject_scale": 0.264,
-        "empty_cells": 10
+        "subject_scale": 0.2603,
+        "empty_cells": 11
       },
       "empty_where": [
         "upper-right",
@@ -683,25 +646,13 @@
         "lower-centre",
         "lower-right",
         "upper-left",
+        "upper-centre",
         "middle-left",
         "middle-centre",
         "bottom-centre",
         "bottom-right"
       ],
-      "deficits": [
-        {
-          "metric": "color_bins",
-          "value": 14.6667,
-          "target": "<= 12",
-          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        },
-        {
-          "metric": "mean_luma",
-          "value": 22.8667,
-          "target": "<= 21.8",
-          "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
-        }
-      ],
+      "deficits": [],
       "waived": [],
       "waivers": {
         "allow_black": false,

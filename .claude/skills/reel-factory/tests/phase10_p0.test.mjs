@@ -172,3 +172,54 @@ test('horror_gate: nukta words in setting/rule/folk lists match normalised scrip
   const rx = deNukta(eval(m[1]));
   for (const w of ['खिड़की से भोपाल दिखा', 'दरवाज़ा खुला', 'सीढ़ी पर']) assert.ok(rx.test(norm(w)), `should match: ${w}`);
 });
+
+// ---- accept_unconverged_loop waiver ----
+function loopFixture(last, deficitShots = []) {
+  const d = tmp();
+  fs.mkdirSync(path.join(d, 'visual_loop', 'iter_06'), { recursive: true });
+  fs.writeFileSync(path.join(d, 'visual_loop', 'log.json'), JSON.stringify({ iterations: [last] }));
+  fs.writeFileSync(path.join(d, 'visual_loop', 'iter_06', 'report.json'), JSON.stringify({ shots: deficitShots }));
+  return d;
+}
+const WV = (o = {}) => ({ accept_unconverged_loop: { reason: 'single-reference floor misses, reviewed by eye', by: 'maintainer', date: '2026-11-27', ...o } });
+const failing = [{ id: 's6', pass: false, deficits: [{ metric: 'color_bins', value: 41, target: '<= 40' }] }, { id: 's1', pass: true, deficits: [] }];
+
+test('waiver fixture: converged loop needs no waiver and records none', () => {
+  const d = loopFixture({ iter: 6, pass: true, critique_min: 3 });
+  const s = freshShip();
+  applyVisualLoopGate(s, d, { genre: 'horror' }, WV());
+  assert.equal(s.verdict, 'SHIP');
+  assert.ok(!s.waivers);
+});
+
+test('waiver fixture: unconverged, no waiver -> FIX', () => {
+  const d = loopFixture({ iter: 6, pass: false, critique_min: 1 }, failing);
+  const s = freshShip();
+  applyVisualLoopGate(s, d, { genre: 'horror' }, {});
+  assert.equal(s.verdict, 'FIX');
+  assert.ok(s.fails.some((f) => f.includes('not converged')));
+});
+
+test('waiver fixture: unconverged with accept_unconverged_loop -> WARN with reason + failing shots, recorded in waivers/unverified', () => {
+  const d = loopFixture({ iter: 6, pass: false, critique_min: 1 }, failing);
+  const s = freshShip();
+  applyVisualLoopGate(s, d, { genre: 'horror' }, WV());
+  assert.equal(s.verdict, 'SHIP');
+  assert.equal(s.fails.length, 0);
+  const w = s.warns.find((x) => x.includes('not converged'));
+  assert.ok(w && w.includes('single-reference floor misses') && w.includes('s6: color_bins 41') && !w.includes('s1:'), w);
+  assert.equal(s.waivers.length, 1);
+  assert.equal(s.waivers[0].by, 'maintainer');
+  assert.deepEqual(s.waivers[0].remaining_failing.length, 1);
+  assert.ok(s.unverified.some((u) => u.includes('did NOT converge') && u.includes('single-reference')));
+});
+
+test('waiver fixture: empty/blank/missing reason -> still FIX; require_visual_loop=false does not waive unconverged', () => {
+  for (const cfg of [WV({ reason: '' }), WV({ reason: '   ' }), { accept_unconverged_loop: { by: 'user' } }, { require_visual_loop: false }]) {
+    const d = loopFixture({ iter: 6, pass: false, critique_min: 1 }, failing);
+    const s = freshShip();
+    applyVisualLoopGate(s, d, { genre: 'horror' }, cfg);
+    assert.equal(s.verdict, 'FIX', JSON.stringify(cfg));
+    assert.ok(!s.waivers);
+  }
+});

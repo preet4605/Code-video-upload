@@ -45,16 +45,16 @@
     },
     "script": {
       "status": "ok",
-      "at": "2026-11-27T07:11:26.541Z",
+      "at": "2026-11-27T07:27:55.592Z",
       "approved": true,
       "input_hash": "ff8b0862218b332f1efb430c4c8f52be47e703d61b475c4f4aee1aa07990e275"
     },
     "visual_loop": {
       "status": "waiting",
       "input_hash": "6112287b5fd33bc326b73ee5fc9918ab4fefee8ce02aaeb32a6b38772d260c2e",
-      "at": "2026-11-27T07:11:26.623Z",
+      "at": "2026-11-27T07:27:55.675Z",
       "duration_ms": 82,
-      "runs": 16,
+      "runs": 23,
       "result": {
         "stopped": true,
         "iter": 7,
@@ -67,7 +67,7 @@
   "format": "standalone",
   "voice": "aman",
   "unreviewed_reasons": [],
-  "updated_at": "2026-11-27T07:11:26.623Z",
+  "updated_at": "2026-11-27T07:27:55.676Z",
   "failed": {
     "stage": "script_gate",
     "exit_code": 1,

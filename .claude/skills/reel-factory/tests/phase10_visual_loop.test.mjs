@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { frameMetrics, deficits } from '../lib/visual_metrics.mjs';
 import { buildTargets } from '../scripts/style_ref.mjs';
-import { runVisualLoop, validateCritique } from '../scripts/visual_loop.mjs';
+import { runVisualLoop, validateCritique, critiqueSummary } from '../scripts/visual_loop.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DEMO = path.join(ROOT, 'examples/visual-loop-demo');
@@ -62,6 +62,21 @@ test('validateCritique: missing shot, short seen, bad scores, rubber stamp, repe
   const prev = { shots: [good('a', { fix: 'same fix again' })] };
   assert.ok(validateCritique({ shots: [good('a', { fix: 'same fix again' }), good('b'), good('c')] }, ids, prev).some((e) => e.includes('same fix')));
   assert.ok(validateCritique({ shots: [good('a'), good('b'), good('c')] }, ids, null, ['b']).some((e) => e.includes('regression_note')));
+});
+
+test('critique n/a: excluded from min and mean, recorded, needs >= 3 scored criteria', () => {
+  const ids = ['a', 'b'];
+  const na = (extra = {}) => good('b', { scores: { subject: 4, depth: 3, detail: 4, light: 4, character: 'n/a', composition: 4, ...extra } });
+  assert.deepEqual(validateCritique({ shots: [good('a'), na()] }, ids), []);
+  assert.deepEqual(validateCritique({ shots: [good('a'), na({ character: null })] }, ids), []);
+  const sum = critiqueSummary({ shots: [good('a'), na({ character: 'N/A', depth: 5 })] });
+  assert.equal(sum.min, 3); // a.depth=3, a.character=3; b's n/a ignored
+  assert.deepEqual(sum.na, [{ id: 'b', criteria: ['character'] }]);
+  const only2 = na({ subject: 'n/a', depth: 'n/a', detail: 'n/a', light: 'n/a' });
+  assert.ok(validateCritique({ shots: [good('a'), only2] }, ids).some((e) => e.includes('at least 3 must be scored')));
+  assert.ok(validateCritique({ shots: [good('a'), na({ light: 'maybe' })] }, ids).some((e) => e.includes('scores.light')));
+  // a low score is still a low score; n/a does not hide it
+  assert.equal(critiqueSummary({ shots: [na({ light: 1 })] }).min, 1);
 });
 
 test('loop end to end: a flat first draft fails, the next iteration is blocked without a critique, the fixed scene converges', async () => {

@@ -1,205 +1,202 @@
 {
- "shots": [
-  {
-   "id": "s1_hook",
-   "seen": "Uncle's face behind window slats in a faint cold light with the HUD clock pill top-left; the narrator's hand rests on a lit blanket edge at the bottom. Reads, dim and small. [m6: luma 12.3333, focal 6.35, bins 8.6667, sat 0.2403, subj 0.2537, lit_regions 1.3333]",
-   "problems": [
-    "face small and dim",
-    "bottom cloth competes slightly"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 3,
-    "depth": 3,
-    "detail": 3,
-    "light": 3,
-    "character": 3,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s2_coach",
-   "seen": "Curtain slit with a swaying chain and a cold rim light on the berth rail; no face, a blanket and the hand at the bottom. Establishing insert, reads as a coach. [m6: luma 13.6, focal 4.63, bins 9, sat 0.2617, subj 0.2537, lit_regions 2]",
-   "problems": [
-    "focal 5.2: chain is the only busy area",
-    "no human cue"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 2,
-    "depth": 3,
-    "detail": 3,
-    "light": 3,
-    "character": 2,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s3_ticket",
-   "seen": "Warm lit ticket dated 14-06-2014 with barcode and coach S7, sharp print inside a pool; brightest warm accent. Legible. [m6: luma 16.2, focal 5.4267, bins 14.6667, sat 0.226, subj 0.191, lit_regions 1.6667]",
-   "problems": [
-    "bins 14.7 (warm ticket + cold base + red caption)"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 5,
-    "depth": 3,
-    "detail": 5,
-    "light": 4,
-    "character": 3,
-    "composition": 4
-   }
-  },
-  {
-   "id": "s4_rule",
-   "seen": "Uncle half turned, hair rim and one side of the face in a cold slat of light; eyes in shadow. Readable as a head, face is faint between sweeps. [m6: luma 13.4333, focal 4.8867, bins 10, sat 0.3083, subj 0.1807, lit_regions 1.6667]",
-   "problems": [
-    "face under-lit between sweeps",
-    "focal 5.8"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 3,
-    "depth": 3,
-    "detail": 3,
-    "light": 3,
-    "character": 3,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s5_stop",
-   "seen": "Uncle seated, face and shoulders readable in the dying tube plus a low cold rim; the frozen clock pill is red-edged with cream digits. He is no longer lost between flickers. [m6: luma 19.0333, focal 3.7867, bins 10, sat 0.3227, subj 0.2083, lit_regions 1.6667]",
-   "problems": [
-    "focal 4.35 still low: soft flat light, no hard accent"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 4,
-    "depth": 3,
-    "detail": 3,
-    "light": 4,
-    "character": 3,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s6_eyes",
-   "seen": "Sideways bone-pale face lit by a hard narrow beam at the glint: dark sockets with a tracking pinprick, slack mouth, chain behind. Between beams a faint shape with the same sockets; after the last beam the frame is nearly black. [m6: luma 15.3333, focal 8.12, bins 9, sat 0.3457, subj 0.1427, lit_regions 0.6667]",
-   "problems": [
-    "lit_regions 0.67: one of 3 keyframes lands in the dark between beams (by design)",
-    "mouth oval reads slightly like a nose"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 4,
-    "depth": 3,
-    "detail": 4,
-    "light": 5,
-    "character": 5,
-    "composition": 4
-   }
-  },
-  {
-   "id": "s7_tickets",
-   "seen": "A hand holding the old ticket and a striped sleeve in a low cold fill across the berth row; readable, blocky and dim at the edges. [m6: luma 21.3, focal 5.0533, bins 12.3333, sat 0.2077, subj 0.2223, lit_regions 1.3333]",
-   "problems": [
-    "bins 13.7",
-    "hand edge soft"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 3,
-    "depth": 3,
-    "detail": 4,
-    "light": 3,
-    "character": 3,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s8_itarsi",
-   "seen": "Yellow Itarsi board behind bars, the uncle's head and glasses at left, STATION ITARSI pill; busy and readable. [m6: luma 21.1333, focal 4.6033, bins 13, sat 0.193, subj 0.1977, lit_regions 1.3333]",
-   "problems": [
-    "bins 13",
-    "mean_luma 21.97 over 21.8"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 4,
-    "depth": 4,
-    "detail": 4,
-    "light": 3,
-    "character": 3,
-    "composition": 4
-   }
-  },
-  {
-   "id": "s9_relief",
-   "seen": "Near-black frame with a blue lamp bloom and window slats; the calm dip before the scare (allow_black waived). [m6: luma 11.2333, focal 3.8733, bins 8.3333, sat 0.4883, subj 0.2397, lit_regions 1.3333]",
-   "problems": [
-    "very dark by intent"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 2,
-    "depth": 2,
-    "detail": 2,
-    "light": 3,
-    "character": 1,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s10_bhopal",
-   "seen": "BHOPAL board in a warm pool with bars over it and a dark berth below; the scare board reads at once. [m6: luma 21.8333, focal 7.0533, bins 12.6667, sat 0.183, subj 0.2533, lit_regions 1]",
-   "problems": [
-    "bins 12.7",
-    "luma 21.83 vs 21.8"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 4,
-    "depth": 3,
-    "detail": 4,
-    "light": 4,
-    "character": 1,
-    "composition": 4
-   }
-  },
-  {
-   "id": "s11_ticket2",
-   "seen": "Ticket dated 14-06-2026 in a soft pool under the larger BHOPAL -> passed pill (red edge, cream text, legible); the pill is the most salient blob for the metric. [m6: luma 16.9, focal 3.6867, bins 11.3333, sat 0.1467, subj 0.052, lit_regions 2]",
-   "problems": [
-    "subject_scale 0.052: the metric picks small blobs (pill edge) over the ticket",
-    "focal 3.9"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 4,
-    "depth": 3,
-    "detail": 4,
-    "light": 3,
-    "character": 2,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s12_loop",
-   "seen": "Narrator with glasses behind slats in pale cold light; the pill BHOPAL -> passed is legible; hand on the blanket at the bottom. [m6: luma 21.0667, focal 4.42, bins 12.6667, sat 0.161, subj 0.2603, lit_regions 1.3333]",
-   "problems": [
-    "luma 23.3",
-    "bins 14.7"
-   ],
-   "fix": "sixth pass, unchanged: loop cap reached, stopping and handing the per-shot evidence to the maintainer",
-   "scores": {
-    "subject": 4,
-    "depth": 3,
-    "detail": 4,
-    "light": 3,
-    "character": 4,
-    "composition": 3
-   }
-  }
- ]
+  "shots": [
+    {
+      "id": "s1_hook",
+      "seen": "Uncle face behind window slats in faint cold light, HUD clock pill top-left, narrator hand on a lit blanket edge at the bottom. Reads as a berth view, dim and small.",
+      "problems": [
+        "face small and dim",
+        "blanket edge competes"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s1_hook",
+      "scores": {
+        "subject": 3,
+        "depth": 3,
+        "detail": 3,
+        "light": 3,
+        "character": 3,
+        "composition": 3
+      }
+    },
+    {
+      "id": "s2_coach",
+      "seen": "Curtain slit with a swaying chain and cold rim light on the berth rail, hand and blanket at the bottom. No face; reads as a coach interior but only the chain is busy.",
+      "problems": [
+        "no human cue",
+        "only the chain is busy"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s2_coach",
+      "scores": {
+        "subject": 2,
+        "depth": 3,
+        "detail": 3,
+        "light": 3,
+        "character": 2,
+        "composition": 3
+      }
+    },
+    {
+      "id": "s3_ticket",
+      "seen": "Warm lit ticket with barcode and printed date in a light pool, sharp print, brightest warm accent of the reel. Legible, an insert with no figure.",
+      "problems": [
+        "bins 14.7 from warm ticket + cold base + red caption"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s3_ticket",
+      "scores": {
+        "subject": 5,
+        "depth": 3,
+        "detail": 5,
+        "light": 4,
+        "character": "n/a",
+        "composition": 4
+      }
+    },
+    {
+      "id": "s4_rule",
+      "seen": "Uncle half turned, hair rim and one side of the face in a cold slat of light, eyes in shadow. Readable as a head, face faint between sweeps.",
+      "problems": [
+        "face under-lit between sweeps"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s4_rule",
+      "scores": {
+        "subject": 3,
+        "depth": 3,
+        "detail": 3,
+        "light": 3,
+        "character": 3,
+        "composition": 3
+      }
+    },
+    {
+      "id": "s5_stop",
+      "seen": "Uncle seated, face and shoulders readable in the dying tube light with a low cold rim; frozen red-edged clock pill. Soft, flat light.",
+      "problems": [
+        "no hard accent, focal low"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s5_stop",
+      "scores": {
+        "subject": 4,
+        "depth": 3,
+        "detail": 3,
+        "light": 4,
+        "character": 3,
+        "composition": 3
+      }
+    },
+    {
+      "id": "s6_eyes",
+      "seen": "Sideways pale face lit by a narrow beam: dark sockets, tracking pinprick, slack mouth, chain behind. Between beams only a faint shape; one of three keyframes is nearly black (by design).",
+      "problems": [
+        "lit_fraction and lit_regions miss on the dark keyframe",
+        "mouth oval reads slightly like a nose"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s6_eyes",
+      "scores": {
+        "subject": 3,
+        "depth": 3,
+        "detail": 3,
+        "light": 3,
+        "character": 3,
+        "composition": 3
+      }
+    },
+    {
+      "id": "s7_tickets",
+      "seen": "Hand holding the old ticket and a striped sleeve in a low cold fill across the berth row. Readable, blocky, dim at the edges.",
+      "problems": [
+        "bins 12.3 close to ceiling",
+        "hand edge soft"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s7_tickets",
+      "scores": {
+        "subject": 3,
+        "depth": 3,
+        "detail": 4,
+        "light": 3,
+        "character": 3,
+        "composition": 3
+      }
+    },
+    {
+      "id": "s8_itarsi",
+      "seen": "Yellow ITARSI board behind bars, uncle head and glasses at left, station pill. Busy and readable.",
+      "problems": [
+        "luma near the ceiling"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s8_itarsi",
+      "scores": {
+        "subject": 4,
+        "depth": 4,
+        "detail": 4,
+        "light": 3,
+        "character": 3,
+        "composition": 4
+      }
+    },
+    {
+      "id": "s9_relief",
+      "seen": "Near-black frame with a blue lamp bloom and faint window slats; the calm dip before the scare, black by intent, no figure.",
+      "problems": [
+        "very dark by intent",
+        "little depth cue"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s9_relief",
+      "scores": {
+        "subject": 2,
+        "depth": 2,
+        "detail": 2,
+        "light": 3,
+        "character": "n/a",
+        "composition": 3
+      }
+    },
+    {
+      "id": "s10_bhopal",
+      "seen": "BHOPAL board in a warm pool with bars over it and a dark berth below; the scare board reads at once. No figure.",
+      "problems": [
+        "mean luma 21.83 vs ceiling 21.8, a hair over"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s10_bhopal",
+      "scores": {
+        "subject": 4,
+        "depth": 3,
+        "detail": 4,
+        "light": 4,
+        "character": "n/a",
+        "composition": 4
+      }
+    },
+    {
+      "id": "s11_ticket2",
+      "seen": "Second ticket in a soft pool under the larger BHOPAL passed pill with red edge and cream text. Ticket is small in frame and the pill is the most salient blob.",
+      "problems": [
+        "subject scale 0.052 vs 0.14: the ticket is small",
+        "saturation 0.147 vs 0.159"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s11_ticket2",
+      "scores": {
+        "subject": 4,
+        "depth": 3,
+        "detail": 4,
+        "light": 3,
+        "character": "n/a",
+        "composition": 3
+      }
+    },
+    {
+      "id": "s12_loop",
+      "seen": "Narrator with glasses behind slats in pale cold light, BHOPAL passed pill legible, hand on the blanket at the bottom.",
+      "problems": [
+        "luma and bins near their ceilings"
+      ],
+      "fix": "Proposal 6 of 6 (not applied, picture frozen by maintainer decision): brighten the s9 slat texture slightly so the dip keeps depth without losing darkness for s12_loop",
+      "scores": {
+        "subject": 4,
+        "depth": 3,
+        "detail": 4,
+        "light": 3,
+        "character": 4,
+        "composition": 3
+      }
+    }
+  ]
 }

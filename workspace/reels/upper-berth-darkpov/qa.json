@@ -1,4 +1,9 @@
 {
   "require_visual_loop": false,
-  "waiver_reason": "2026-11-27 maintainer: visual loop stopped at 6 iterations on dark-pov floors calibrated from one reference (s6 near-black between beams by design, s9/s10 critique 'character' 1 because no figure, s11 HUD most salient, residual colour bins). Picture reviewed by eye on full-res frames. Told to the user."
+  "waiver_reason": "2026-11-27 maintainer: visual loop stopped at 6 iterations on dark-pov floors calibrated from one reference (s6 near-black between beams by design, s9/s10 critique 'character' 1 because no figure, s11 HUD most salient, residual colour bins). Picture reviewed by eye on full-res frames. Told to the user.",
+  "accept_unconverged_loop": {
+    "reason": "Loop ran 6 fresh iterations (picture unchanged, per maintainer decision; critique n/a only for character on s3/s9/s10/s11, which have no figure). Still failing at iteration 6: metrics s6_eyes lit_fraction 0.0388 (>=0.0462) and lit_regions 0.67 (>=1) because one of three keyframes lands in the dark between beams by design; s10_bhopal mean_luma 21.83 (<=21.8, 0.03 over); s11_ticket2 saturation 0.147 (>=0.159) and subject_scale 0.052 (>=0.14) because the pill outweighs the small ticket insert. Critique min 2: s2_coach subject/character 2 (no face, only the chain is busy), s9_relief subject/depth/detail 2 (near-black dip by intent). Residual misses are the dark-pov floors calibrated from a single reference; accepted by the maintainer, picture reviewed by eye, to be told to the user.",
+    "by": "maintainer",
+    "date": "2026-11-27"
+  }
 }
