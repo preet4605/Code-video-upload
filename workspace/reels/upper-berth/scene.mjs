@@ -37,9 +37,10 @@ export const VideoClock = {
     ctx.fillStyle = '#000'; ctx.fillRect(0, 0, width, height);
     const shot = shots[sc.id] || shots.s1_hook;
     const out = shot(ctx, { t, lt, dur, sc, frame, E, w: width, h: height, tl: timeline, sweep: sweepAt(E.cues, t), glint: glintAt(E.cues, t), tube: t >= E.itarsiT - 0.2 ? 1 : tubeAt(E.cues, t, E.stopT) });
-    const cam = out?.cam, preset = out?.post ?? { name: 'horror-night', grade: { contrast: 0.3 } };
+    const cam = out?.cam, preset = out?.post ?? { name: 'horror-night', grade: { contrast: 0.5, saturation: 0.7, gamma: 0.8 } };
+    // local contrast BEFORE the film pass (grain, scanlines, bloom stay untouched: sharpening them is what made skin and hands crunchy)
+    if (!out?.noPost) clarity(ctx, width, height, out?.clarity ?? 2.0, out?.clarityR ?? 7);
     if (!out?.noPost) cin.post(ctx, { t, frame, seed: 5, cam }, preset);
-    if (!out?.noPost) clarity(ctx, width, height, out?.clarity ?? 3.4, out?.clarityR ?? 4);
     if (out?.after) out.after(ctx);
     if (!out?.noCaption) {
       const s = width / 1080; ctx.save(); ctx.setTransform(s, 0, 0, s, 0, 0);

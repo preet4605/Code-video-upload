@@ -9,19 +9,19 @@
         "a": "s3_ticket",
         "b": "s11_ticket2",
         "hash_sim": 0.931,
-        "hist_dist": 0.04
+        "hist_dist": 0.136
+      },
+      {
+        "a": "s4_rule",
+        "b": "s10_bhopal",
+        "hash_sim": 0.75,
+        "hist_dist": 0.211
       },
       {
         "a": "s1_hook",
         "b": "s12_loop",
-        "hash_sim": 0.847,
-        "hist_dist": 0.08
-      },
-      {
-        "a": "s8_itarsi",
-        "b": "s12_loop",
-        "hash_sim": 0.819,
-        "hist_dist": 0.207
+        "hash_sim": 0.729,
+        "hist_dist": 0.089
       }
     ],
     "near_duplicates": [],
@@ -33,363 +33,403 @@
     ],
     "reused_backdrop": false
   },
-  "mean_score": 0.858,
+  "mean_score": 0.869,
   "regressions": [
-    "s8_itarsi got worse (-0.034): revert that change or justify it in the critique"
+    "s1_hook got worse (-0.034): revert that change or justify it in the critique",
+    "s4_rule got worse (-0.118): revert that change or justify it in the critique",
+    "s6_eyes got worse (-0.127): revert that change or justify it in the critique",
+    "s12_loop got worse (-0.05): revert that change or justify it in the critique"
   ],
   "shots": [
     {
       "id": "s1_hook",
-      "pass": true,
-      "score": 0.906,
-      "delta": 0.019,
-      "establishing": false,
-      "subject_box": [
-        0.019,
-        0.167,
-        0.481,
-        0.448
-      ],
-      "metrics": {
-        "sharp_edges": 0.1162,
-        "contrast": 34.9667,
-        "mean_luma": 36.2,
-        "color_bins": 23.6667,
-        "saturation": 0.515,
-        "ink": 0.0769,
-        "focal": 3.57,
-        "hue_families": 1,
-        "lit_fraction": 0.2518,
-        "lit_regions": 1,
-        "p5_luma": 4.3333,
-        "subject_scale": 0.2847,
-        "empty_cells": 4
-      },
-      "empty_where": [
-        "bottom-left",
-        "bottom-centre",
-        "bottom-right",
-        "top-right"
-      ],
-      "deficits": []
-    },
-    {
-      "id": "s2_coach",
-      "pass": true,
-      "score": 0.92,
-      "delta": 0.286,
-      "establishing": false,
-      "subject_box": [
-        0.389,
-        0.021,
-        0.741,
-        0.625
-      ],
-      "metrics": {
-        "sharp_edges": 0.0672,
-        "contrast": 37.8,
-        "mean_luma": 40.4333,
-        "color_bins": 26.6667,
-        "saturation": 0.4733,
-        "ink": 0.0341,
-        "focal": 3.16,
-        "hue_families": 2.6667,
-        "lit_fraction": 0.289,
-        "lit_regions": 1.6667,
-        "p5_luma": 5.6667,
-        "subject_scale": 0.6213,
-        "empty_cells": 4
-      },
-      "empty_where": [
-        "lower-left",
-        "bottom-right",
-        "bottom-centre",
-        "bottom-left"
-      ],
-      "deficits": []
-    },
-    {
-      "id": "s3_ticket",
       "pass": false,
-      "score": 0.764,
-      "delta": 0.056,
-      "establishing": false,
-      "subject_box": [
-        0.019,
-        0.344,
-        0.704,
-        0.615
-      ],
-      "metrics": {
-        "sharp_edges": 0.0688,
-        "contrast": 56.5,
-        "mean_luma": 47.0333,
-        "color_bins": 25.6667,
-        "saturation": 0.2597,
-        "ink": 0.02,
-        "focal": 4.9167,
-        "hue_families": 1.6667,
-        "lit_fraction": 0.2112,
-        "lit_regions": 2.3333,
-        "p5_luma": 7.6667,
-        "subject_scale": 0.278,
-        "empty_cells": 7
-      },
-      "empty_where": [
-        "top-left",
-        "top-centre",
-        "top-right",
-        "upper-right",
-        "lower-centre",
-        "bottom-left",
-        "bottom-centre"
-      ],
-      "deficits": [
-        {
-          "metric": "empty_cells",
-          "value": 7,
-          "target": "<= 6",
-          "hint": "dead areas at top-left, top-centre, top-right, upper-right, lower-centre, bottom-left, bottom-centre: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
-        }
-      ]
-    },
-    {
-      "id": "s4_rule",
-      "pass": true,
-      "score": 0.806,
-      "delta": 0.151,
-      "establishing": false,
-      "subject_box": [
-        0.426,
-        0.229,
-        0.981,
-        0.552
-      ],
-      "metrics": {
-        "sharp_edges": 0.0475,
-        "contrast": 35.7667,
-        "mean_luma": 37.6,
-        "color_bins": 24.3333,
-        "saturation": 0.5103,
-        "ink": 0.0208,
-        "focal": 4.47,
-        "hue_families": 1.3333,
-        "lit_fraction": 0.2682,
-        "lit_regions": 1.3333,
-        "p5_luma": 3.6667,
-        "subject_scale": 0.2537,
-        "empty_cells": 6
-      },
-      "empty_where": [
-        "top-left",
-        "upper-left",
-        "bottom-left",
-        "bottom-centre",
-        "bottom-right",
-        "top-centre",
-        "lower-right"
-      ],
-      "deficits": []
-    },
-    {
-      "id": "s5_stop",
-      "pass": false,
-      "score": 0.923,
-      "delta": 0.091,
-      "establishing": false,
-      "subject_box": [
-        0.167,
-        0.031,
-        0.815,
-        0.083
-      ],
-      "metrics": {
-        "sharp_edges": 0.093,
-        "contrast": 38.3333,
-        "mean_luma": 37.5667,
-        "color_bins": 24.6667,
-        "saturation": 0.633,
-        "ink": 0.0553,
-        "focal": 2.69,
-        "hue_families": 1,
-        "lit_fraction": 0.2667,
-        "lit_regions": 1,
-        "p5_luma": 3.3333,
-        "subject_scale": 0.052,
-        "empty_cells": 4
-      },
-      "empty_where": [
-        "lower-left",
-        "bottom-left",
-        "bottom-centre",
-        "bottom-right"
-      ],
-      "deficits": [
-        {
-          "metric": "subject_scale",
-          "value": 0.052,
-          "target": ">= 0.22",
-          "hint": "main subject is only 5% of frame height: move camera closer / scale the figure to >= 22% height, or crop the empty wall/sky (tag the shot \"establishing\" in timeline.json only if it truly is a scene-setter)"
-        }
-      ]
-    },
-    {
-      "id": "s6_eyes",
-      "pass": true,
       "score": 0.933,
-      "delta": 0,
-      "establishing": false,
-      "subject_box": [
-        0.019,
-        0.323,
-        0.685,
-        0.615
-      ],
-      "metrics": {
-        "sharp_edges": 0.0929,
-        "contrast": 42.7,
-        "mean_luma": 47,
-        "color_bins": 20.6667,
-        "saturation": 0.5983,
-        "ink": 0.0483,
-        "focal": 2.7333,
-        "hue_families": 1,
-        "lit_fraction": 0.3716,
-        "lit_regions": 1,
-        "p5_luma": 3.3333,
-        "subject_scale": 0.3473,
-        "empty_cells": 4
-      },
-      "empty_where": [
-        "lower-right",
-        "bottom-left",
-        "bottom-centre",
-        "bottom-right"
-      ],
-      "deficits": []
-    },
-    {
-      "id": "s7_tickets",
-      "pass": true,
-      "score": 0.925,
-      "delta": 0.313,
-      "establishing": false,
-      "subject_box": [
-        0.278,
-        0.135,
-        0.87,
-        0.646
-      ],
-      "metrics": {
-        "sharp_edges": 0.0736,
-        "contrast": 35.4333,
-        "mean_luma": 37.6,
-        "color_bins": 25.3333,
-        "saturation": 0.555,
-        "ink": 0.0413,
-        "focal": 3.8567,
-        "hue_families": 2,
-        "lit_fraction": 0.2395,
-        "lit_regions": 2.3333,
-        "p5_luma": 5.6667,
-        "subject_scale": 0.3853,
-        "empty_cells": 3
-      },
-      "empty_where": [
-        "bottom-centre",
-        "lower-left",
-        "bottom-left",
-        "bottom-right"
-      ],
-      "deficits": []
-    },
-    {
-      "id": "s8_itarsi",
-      "pass": false,
-      "score": 0.803,
       "delta": -0.034,
       "establishing": false,
       "subject_box": [
-        0.037,
-        0.146,
-        0.648,
-        0.615
+        0.537,
+        0.156,
+        0.944,
+        0.427
       ],
       "metrics": {
-        "sharp_edges": 0.1475,
-        "contrast": 48.7667,
-        "mean_luma": 53.5,
-        "color_bins": 29.6667,
-        "saturation": 0.1517,
-        "ink": 0.0802,
-        "focal": 3.14,
+        "sharp_edges": 0.078,
+        "contrast": 40.4,
+        "mean_luma": 39.4,
+        "color_bins": 35.3333,
+        "saturation": 0.3577,
+        "ink": 0.043,
+        "focal": 2.8733,
         "hue_families": 3,
-        "lit_fraction": 0.3677,
+        "lit_fraction": 0.2874,
         "lit_regions": 1,
-        "p5_luma": 8.6667,
-        "subject_scale": 0.3923,
-        "empty_cells": 5
+        "p5_luma": 3.3333,
+        "subject_scale": 0.3647,
+        "empty_cells": 4
       },
       "empty_where": [
         "bottom-left",
-        "bottom-centre",
         "bottom-right",
-        "lower-left",
-        "lower-centre"
+        "lower-right",
+        "middle-left"
       ],
       "deficits": [
         {
-          "metric": "saturation",
-          "value": 0.1517,
-          "target": ">= 0.1914",
-          "hint": "use a deliberate palette with 1-2 saturated accents (warm light vs cool night); avoid desaturated greys"
-        },
-        {
           "metric": "color_bins",
-          "value": 29.6667,
+          "value": 35.3333,
           "target": "<= 28",
           "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
         }
       ]
     },
     {
-      "id": "s9_relief",
+      "id": "s2_coach",
       "pass": false,
-      "score": 0.786,
-      "delta": 0.001,
+      "score": 0.933,
+      "delta": 0,
       "establishing": false,
       "subject_box": [
-        0.111,
-        0.542,
-        0.648,
+        0.389,
+        0.01,
+        0.778,
+        0.625
+      ],
+      "metrics": {
+        "sharp_edges": 0.0761,
+        "contrast": 44.3333,
+        "mean_luma": 43.4667,
+        "color_bins": 37,
+        "saturation": 0.455,
+        "ink": 0.0464,
+        "focal": 3.0967,
+        "hue_families": 2.6667,
+        "lit_fraction": 0.3107,
+        "lit_regions": 1.6667,
+        "p5_luma": 5,
+        "subject_scale": 0.615,
+        "empty_cells": 4
+      },
+      "empty_where": [
+        "top-left",
+        "upper-left",
+        "middle-left",
+        "lower-left",
+        "bottom-centre",
+        "bottom-right",
+        "bottom-left"
+      ],
+      "deficits": [
+        {
+          "metric": "color_bins",
+          "value": 37,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        }
+      ]
+    },
+    {
+      "id": "s3_ticket",
+      "pass": false,
+      "score": 0.917,
+      "delta": 0,
+      "establishing": false,
+      "subject_box": [
+        0.056,
+        0.281,
+        0.926,
         0.646
       ],
       "metrics": {
-        "sharp_edges": 0.1075,
-        "contrast": 37.6667,
-        "mean_luma": 31.8667,
-        "color_bins": 22,
-        "saturation": 0.5467,
-        "ink": 0.0449,
-        "focal": 5.1567,
-        "hue_families": 1.3333,
-        "lit_fraction": 0.2576,
+        "sharp_edges": 0.091,
+        "contrast": 52.9667,
+        "mean_luma": 58.6667,
+        "color_bins": 34,
+        "saturation": 0.3903,
+        "ink": 0.0409,
+        "focal": 2.9533,
+        "hue_families": 2.3333,
+        "lit_fraction": 0.3968,
         "lit_regions": 1,
-        "p5_luma": 1.6667,
-        "subject_scale": 0.1387,
-        "empty_cells": 15
+        "p5_luma": 8.3333,
+        "subject_scale": 0.3613,
+        "empty_cells": 5
       },
       "empty_where": [
-        "bottom-left",
-        "bottom-centre",
-        "bottom-right",
         "top-left",
         "top-centre",
         "top-right",
-        "upper-right",
+        "lower-left",
+        "lower-centre"
+      ],
+      "deficits": [
+        {
+          "metric": "color_bins",
+          "value": 34,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        }
+      ]
+    },
+    {
+      "id": "s4_rule",
+      "pass": false,
+      "score": 0.774,
+      "delta": -0.118,
+      "establishing": false,
+      "subject_box": [
+        0.407,
+        0.229,
+        0.944,
+        0.469
+      ],
+      "metrics": {
+        "sharp_edges": 0.038,
+        "contrast": 33.3667,
+        "mean_luma": 28.7667,
+        "color_bins": 22.6667,
+        "saturation": 0.485,
+        "ink": 0.0235,
+        "focal": 3.7133,
+        "hue_families": 1.3333,
+        "lit_fraction": 0.1593,
+        "lit_regions": 1.3333,
+        "p5_luma": 4,
+        "subject_scale": 0.2883,
+        "empty_cells": 6
+      },
+      "empty_where": [
+        "top-left",
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "lower-centre",
+        "bottom-left",
         "lower-right",
+        "lower-left"
+      ],
+      "deficits": [
+        {
+          "metric": "sharp_edges",
+          "value": 0.038,
+          "target": ">= 0.0382",
+          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
+        }
+      ]
+    },
+    {
+      "id": "s5_stop",
+      "pass": false,
+      "score": 0.933,
+      "delta": 0,
+      "establishing": false,
+      "subject_box": [
+        0.074,
+        0.083,
+        0.889,
+        0.594
+      ],
+      "metrics": {
+        "sharp_edges": 0.0994,
+        "contrast": 48.7667,
+        "mean_luma": 57.7667,
+        "color_bins": 33,
+        "saturation": 0.4813,
+        "ink": 0.0481,
+        "focal": 4.1,
+        "hue_families": 1,
+        "lit_fraction": 0.5005,
+        "lit_regions": 1,
+        "p5_luma": 3.3333,
+        "subject_scale": 0.507,
+        "empty_cells": 4
+      },
+      "empty_where": [
+        "lower-left",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "color_bins",
+          "value": 33,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        }
+      ]
+    },
+    {
+      "id": "s6_eyes",
+      "pass": true,
+      "score": 0.823,
+      "delta": -0.127,
+      "establishing": false,
+      "subject_box": [
+        0.037,
+        0.333,
+        0.611,
+        0.625
+      ],
+      "metrics": {
+        "sharp_edges": 0.0383,
+        "contrast": 39.7667,
+        "mean_luma": 36.6333,
+        "color_bins": 19,
+        "saturation": 0.5603,
+        "ink": 0.0259,
+        "focal": 3.48,
+        "hue_families": 1.6667,
+        "lit_fraction": 0.2435,
+        "lit_regions": 1.3333,
+        "p5_luma": 2.6667,
+        "subject_scale": 0.2987,
+        "empty_cells": 6
+      },
+      "empty_where": [
+        "top-centre",
+        "top-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right",
+        "top-left"
+      ],
+      "deficits": []
+    },
+    {
+      "id": "s7_tickets",
+      "pass": false,
+      "score": 0.896,
+      "delta": 0,
+      "establishing": false,
+      "subject_box": [
+        0.296,
+        0.292,
+        0.889,
+        0.646
+      ],
+      "metrics": {
+        "sharp_edges": 0.0611,
+        "contrast": 42.2,
+        "mean_luma": 43.4333,
+        "color_bins": 32.6667,
+        "saturation": 0.4383,
+        "ink": 0.0246,
+        "focal": 3.3933,
+        "hue_families": 2,
+        "lit_fraction": 0.2863,
+        "lit_regions": 3.3333,
+        "p5_luma": 6.6667,
+        "subject_scale": 0.3193,
+        "empty_cells": 4
+      },
+      "empty_where": [
+        "middle-left",
+        "lower-left",
+        "bottom-left",
+        "bottom-right",
+        "top-centre",
+        "bottom-centre"
+      ],
+      "deficits": [
+        {
+          "metric": "color_bins",
+          "value": 32.6667,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        }
+      ]
+    },
+    {
+      "id": "s8_itarsi",
+      "pass": false,
+      "score": 0.818,
+      "delta": 0.007,
+      "establishing": false,
+      "subject_box": [
+        0.037,
+        0.146,
+        0.87,
+        0.542
+      ],
+      "metrics": {
+        "sharp_edges": 0.055,
+        "contrast": 49.1333,
+        "mean_luma": 58.0667,
+        "color_bins": 35,
+        "saturation": 0.2957,
+        "ink": 0.0252,
+        "focal": 4.6367,
+        "hue_families": 3,
+        "lit_fraction": 0.4395,
+        "lit_regions": 1,
+        "p5_luma": 9,
+        "subject_scale": 0.3613,
+        "empty_cells": 7
+      },
+      "empty_where": [
+        "top-left",
+        "lower-left",
+        "lower-centre",
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right",
+        "middle-left"
+      ],
+      "deficits": [
+        {
+          "metric": "color_bins",
+          "value": 35,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 7,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, lower-left, lower-centre, lower-right, bottom-left, bottom-centre, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
+    },
+    {
+      "id": "s9_relief",
+      "pass": false,
+      "score": 0.71,
+      "delta": -0.011,
+      "establishing": false,
+      "subject_box": [
+        0.537,
+        0.219,
+        0.87,
+        0.448
+      ],
+      "metrics": {
+        "sharp_edges": 0.0536,
+        "contrast": 38.5667,
+        "mean_luma": 28.5333,
+        "color_bins": 27,
+        "saturation": 0.539,
+        "ink": 0.018,
+        "focal": 7.8133,
+        "hue_families": 2,
+        "lit_fraction": 0.2069,
+        "lit_regions": 1.6667,
+        "p5_luma": 1,
+        "subject_scale": 0.25,
+        "empty_cells": 15
+      },
+      "empty_where": [
+        "top-left",
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right",
+        "top-centre",
+        "top-right",
         "upper-left",
         "upper-centre",
+        "upper-right",
         "middle-left",
         "middle-centre",
         "middle-right",
@@ -397,12 +437,6 @@
         "lower-centre"
       ],
       "deficits": [
-        {
-          "metric": "subject_scale",
-          "value": 0.1387,
-          "target": ">= 0.22",
-          "hint": "main subject is only 14% of frame height: move camera closer / scale the figure to >= 22% height, or crop the empty wall/sky (tag the shot \"establishing\" in timeline.json only if it truly is a scene-setter)"
-        },
         {
           "metric": "empty_cells",
           "value": 15,
@@ -414,141 +448,139 @@
     {
       "id": "s10_bhopal",
       "pass": false,
-      "score": 0.883,
+      "score": 0.933,
       "delta": 0,
       "establishing": false,
       "subject_box": [
-        0.241,
-        0.156,
-        0.519,
-        0.333
+        0.019,
+        0.146,
+        0.907,
+        0.344
       ],
       "metrics": {
-        "sharp_edges": 0.0847,
-        "contrast": 43.8333,
-        "mean_luma": 41.1,
-        "color_bins": 33.3333,
-        "saturation": 0.4743,
-        "ink": 0.0417,
-        "focal": 3.3867,
-        "hue_families": 1.3333,
-        "lit_fraction": 0.2764,
+        "sharp_edges": 0.0544,
+        "contrast": 52.3333,
+        "mean_luma": 51.6,
+        "color_bins": 36,
+        "saturation": 0.4273,
+        "ink": 0.0325,
+        "focal": 2.91,
+        "hue_families": 2,
+        "lit_fraction": 0.3394,
         "lit_regions": 1,
-        "p5_luma": 5,
-        "subject_scale": 0.2117,
-        "empty_cells": 7
+        "p5_luma": 7,
+        "subject_scale": 0.2607,
+        "empty_cells": 4
       },
       "empty_where": [
         "lower-left",
-        "bottom-left",
-        "bottom-centre",
-        "bottom-right",
-        "middle-left",
         "lower-centre",
+        "middle-left",
         "lower-right"
       ],
       "deficits": [
         {
           "metric": "color_bins",
-          "value": 33.3333,
+          "value": 36,
           "target": "<= 28",
           "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
-        },
-        {
-          "metric": "subject_scale",
-          "value": 0.2117,
-          "target": ">= 0.22",
-          "hint": "main subject is only 21% of frame height: move camera closer / scale the figure to >= 22% height, or crop the empty wall/sky (tag the shot \"establishing\" in timeline.json only if it truly is a scene-setter)"
-        },
-        {
-          "metric": "empty_cells",
-          "value": 7,
-          "target": "<= 6",
-          "hint": "dead areas at middle-left, lower-left, lower-centre, lower-right, bottom-left, bottom-centre, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
         }
       ]
     },
     {
       "id": "s11_ticket2",
       "pass": false,
-      "score": 0.741,
-      "delta": 0.032,
+      "score": 0.917,
+      "delta": 0,
       "establishing": false,
       "subject_box": [
-        0.019,
-        0.344,
-        0.704,
-        0.625
+        0.056,
+        0.281,
+        0.944,
+        0.646
       ],
       "metrics": {
-        "sharp_edges": 0.0663,
-        "contrast": 62.7,
-        "mean_luma": 46.6333,
-        "color_bins": 24.6667,
-        "saturation": 0.227,
-        "ink": 0.0194,
-        "focal": 4.8733,
-        "hue_families": 1.6667,
-        "lit_fraction": 0.2017,
+        "sharp_edges": 0.0915,
+        "contrast": 61.7333,
+        "mean_luma": 58.6333,
+        "color_bins": 31,
+        "saturation": 0.3833,
+        "ink": 0.0362,
+        "focal": 2.8033,
+        "hue_families": 2.3333,
+        "lit_fraction": 0.308,
         "lit_regions": 1,
-        "p5_luma": 5.6667,
-        "subject_scale": 0.2813,
-        "empty_cells": 7
+        "p5_luma": 6,
+        "subject_scale": 0.3647,
+        "empty_cells": 5
       },
       "empty_where": [
         "top-left",
         "top-centre",
         "top-right",
-        "upper-right",
-        "lower-centre",
-        "bottom-left",
-        "bottom-centre"
+        "lower-left",
+        "lower-centre"
       ],
       "deficits": [
         {
-          "metric": "empty_cells",
-          "value": 7,
-          "target": "<= 6",
-          "hint": "dead areas at top-left, top-centre, top-right, upper-right, lower-centre, bottom-left, bottom-centre: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+          "metric": "color_bins",
+          "value": 31,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
         }
       ]
     },
     {
       "id": "s12_loop",
-      "pass": true,
-      "score": 0.9,
-      "delta": 0.033,
+      "pass": false,
+      "score": 0.844,
+      "delta": -0.05,
       "establishing": false,
       "subject_box": [
-        0.019,
-        0.167,
-        0.889,
-        0.479
+        0.037,
+        0.135,
+        0.63,
+        0.646
       ],
       "metrics": {
-        "sharp_edges": 0.1165,
-        "contrast": 42.4333,
-        "mean_luma": 41.3333,
-        "color_bins": 25,
-        "saturation": 0.4567,
-        "ink": 0.0598,
-        "focal": 3.96,
-        "hue_families": 1,
-        "lit_fraction": 0.2771,
+        "sharp_edges": 0.0727,
+        "contrast": 47.8333,
+        "mean_luma": 45.1333,
+        "color_bins": 36.6667,
+        "saturation": 0.311,
+        "ink": 0.0361,
+        "focal": 3.17,
+        "hue_families": 2.6667,
+        "lit_fraction": 0.3163,
         "lit_regions": 1,
-        "p5_luma": 4,
-        "subject_scale": 0.3023,
-        "empty_cells": 6
+        "p5_luma": 3,
+        "subject_scale": 0.4513,
+        "empty_cells": 8
       },
       "empty_where": [
-        "lower-right",
         "bottom-left",
-        "bottom-right",
-        "top-right",
         "bottom-centre",
-        "lower-left"
+        "bottom-right",
+        "lower-right",
+        "top-left",
+        "middle-left",
+        "lower-left",
+        "lower-centre"
       ],
-      "deficits": []
+      "deficits": [
+        {
+          "metric": "color_bins",
+          "value": 36.6667,
+          "target": "<= 28",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        },
+        {
+          "metric": "empty_cells",
+          "value": 8,
+          "target": "<= 6",
+          "hint": "dead areas at top-left, middle-left, lower-left, lower-centre, lower-right, bottom-left, bottom-centre, bottom-right: fill with set dressing (wall decor, window, plants, shelves, stars, pattern) or reframe/zoom so the subject fills them"
+        }
+      ]
     }
   ],
   "targets": "horror-dark",

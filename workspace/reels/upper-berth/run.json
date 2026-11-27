@@ -23,14 +23,14 @@
     },
     "script_gate": {
       "status": "ok",
-      "input_hash": "fe92d0e46896d0bf9d09a83389256f8c1c9e1097aa7647695a1fcda45dd965b2",
-      "at": "2026-11-27T01:03:35.220Z",
-      "duration_ms": 49,
-      "runs": 6
+      "input_hash": "20763ca4d5a1855f3ac9681ad2fb7f6b0d4e85fdd3bcecc740238f2fe68470ac",
+      "at": "2026-11-27T01:36:26.309Z",
+      "duration_ms": 66,
+      "runs": 7
     },
     "script": {
       "status": "ok",
-      "at": "2026-11-27T01:10:56.213Z",
+      "at": "2026-11-27T01:40:24.368Z",
       "approved": true,
       "input_hash": "7cdea5b3c2d06926cb83b9be972aaed5baacac3cdea9bf98aa7e1c6c28228e32"
     },
@@ -43,22 +43,89 @@
     },
     "plan_lint": {
       "status": "ok",
-      "input_hash": "19984832f4e9c060f204b0062ccee733b08e985c4047f8b216e4e53e53fa2ea1",
-      "at": "2026-11-27T01:03:35.229Z",
-      "duration_ms": 6,
-      "runs": 2,
+      "input_hash": "3a79fef64090d29346e2dd9bba965aca9ebcd7535cba9b622fab9a334764afcd",
+      "at": "2026-11-27T01:36:26.317Z",
+      "duration_ms": 4,
+      "runs": 3,
       "warns": []
     },
     "visual_loop": {
       "status": "waiting",
-      "input_hash": "a81534fd66f4dc47ee4a23a1e284e9d5d154d738690f62d97dc626f8e756687b",
-      "at": "2026-11-27T01:10:56.293Z",
-      "duration_ms": 78,
-      "runs": 13,
+      "input_hash": "0908ef4732b886c1486e60186e98ee0c4bb792433946e609ca8c894a894841be",
+      "at": "2026-11-27T01:40:33.578Z",
+      "duration_ms": 9207,
+      "runs": 21,
       "result": {
-        "stopped": true,
-        "iter": 7,
-        "message": "LOOP STOPPED after 6 iterations without converging: escalate (new style/reference, or human art direction)"
+        "iter": 5,
+        "pass": false,
+        "mean_score": 0.873,
+        "regressions": [],
+        "reel_flags": [],
+        "failing": [
+          {
+            "id": "s1_hook",
+            "deficits": [
+              "color_bins 35.3333 (<= 28)"
+            ]
+          },
+          {
+            "id": "s2_coach",
+            "deficits": [
+              "color_bins 37 (<= 28)"
+            ]
+          },
+          {
+            "id": "s3_ticket",
+            "deficits": [
+              "color_bins 34 (<= 28)"
+            ]
+          },
+          {
+            "id": "s5_stop",
+            "deficits": [
+              "color_bins 33 (<= 28)"
+            ]
+          },
+          {
+            "id": "s7_tickets",
+            "deficits": [
+              "color_bins 32.6667 (<= 28)"
+            ]
+          },
+          {
+            "id": "s8_itarsi",
+            "deficits": [
+              "color_bins 35 (<= 28)",
+              "empty_cells 7 (<= 6)"
+            ]
+          },
+          {
+            "id": "s9_relief",
+            "deficits": [
+              "empty_cells 15 (<= 6)"
+            ]
+          },
+          {
+            "id": "s10_bhopal",
+            "deficits": [
+              "color_bins 36 (<= 28)"
+            ]
+          },
+          {
+            "id": "s11_ticket2",
+            "deficits": [
+              "color_bins 31 (<= 28)"
+            ]
+          },
+          {
+            "id": "s12_loop",
+            "deficits": [
+              "color_bins 36.6667 (<= 28)",
+              "empty_cells 8 (<= 6)"
+            ]
+          }
+        ],
+        "next": "LOOK at visual_loop/iter_05/sheet.png, write visual_loop/iter_05/critique.json, fix scene.mjs, run again"
       }
     }
   },
@@ -67,7 +134,7 @@
   "format": "standalone",
   "voice": "aman",
   "unreviewed_reasons": [],
-  "updated_at": "2026-11-27T01:10:56.293Z",
+  "updated_at": "2026-11-27T01:40:33.579Z",
   "failed": {
     "stage": "script_gate",
     "exit_code": 1,

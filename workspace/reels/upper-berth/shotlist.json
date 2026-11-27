@@ -142,7 +142,10 @@
    "motion": "slow sink as lids close",
    "details": [
     "eyelids close, coach dims, black through the silence"
-   ]
+   ],
+   "allow_black": true,
+   "allow_silence": true,
+   "waiver_note": "designed black silence (eyelids closed, coach dimmed): no detail is added on purpose"
   },
   {
    "id": "s10_bhopal",

@@ -2,91 +2,108 @@
  "shots": [
   {
    "id": "s1_hook",
-   "seen": "Uncle in pale kurta and grey shawl centre-left of a blue-lit bay, shadowed eyes, barred window right, chain left; the blue lamp pool sits behind his head; lower third is dark berth.",
+   "seen": "Same uncle frame: grey receding hair, moustache, black eye sockets, placket and shawl; window and bars readable.",
    "problems": [
-    "Lower third still empty and the torso is a plain triangle."
+    "bins high from warm plus cool light",
+    "hair still smooth"
    ],
-   "fix": "Add shawl folds and brighter seat stitching; keep clarity pass.",
+   "fix": "Lower fill to 0.85 and keep the hook framing shared with s12.",
    "scores": {
-    "subject": 3,
-    "depth": 3,
+    "subject": 4,
+    "depth": 4,
     "detail": 3,
     "light": 3,
-    "character": 3,
-    "composition": 3
+    "character": 4,
+    "composition": 4
    }
   },
   {
    "id": "s2_coach",
-   "seen": "Aisle receding to a green exit lamp with tube lights, side berths as coloured blocks, new foreground curtain with two bare feet at left.",
+   "seen": "Aisle with magenta curtain and chain, edges low and left side soft.",
    "problems": [
-    "Berth blocks are crude and the right half is boxy; contrast is low."
+    "blurred foreground kills edges"
    ],
-   "fix": "Raise tube contrast, add post contrast and darker ink on the berth blocks.",
+   "fix": "Reduce foreground blur from 10 to 4 so curtain and chain stay crisp.",
    "scores": {
     "subject": 3,
     "depth": 4,
-    "detail": 2,
+    "detail": 3,
     "light": 3,
-    "character": 2,
+    "character": 3,
     "composition": 3
    }
   },
   {
    "id": "s3_ticket",
-   "seen": "Yellowed ticket with S7 and 14-06-2014 clear, held by a brown stick-like forearm with a thumb; the hand reads but is crude.",
+   "seen": "Ticket with legible PNR, date, SL, S7, creases, torn edge; berth edge under it now fills the bottom.",
    "problems": [
-    "Hand is cartoonish; background has many tints."
+    "hand waxy"
    ],
-   "fix": "Taper the forearm, show the cloth cuff, desaturate the backdrop.",
+   "fix": "Leave the ticket unchanged; only the lower backdrop was added.",
    "scores": {
-    "subject": 3,
+    "subject": 4,
     "depth": 3,
-    "detail": 2,
+    "detail": 4,
     "light": 3,
-    "character": 2,
-    "composition": 3
+    "character": 3,
+    "composition": 4
    }
   },
   {
    "id": "s4_rule",
-   "seen": "Uncle head and shoulders filling frame, eyes in shadow under the brow, blue lamp bloom behind and barred window; clothes are dark.",
+   "seen": "Face with white moustache, deep sockets, creased forehead; edges just under the floor.",
    "problems": [
-    "Torso nearly black, large dark cells."
+    "edges 0.037 vs 0.038"
    ],
-   "fix": "Lift the shawl and kurta with window rim and more bg detail.",
+   "fix": "Raise clarity to 4.4 with radius 6 for this shot.",
    "scores": {
     "subject": 3,
     "depth": 3,
     "detail": 3,
     "light": 3,
-    "character": 3,
+    "character": 4,
     "composition": 3
    }
   },
   {
    "id": "s5_stop",
-   "seen": "Uncle seated in a dim bay with a flickering ceiling tube above and fog-grey window behind; he is large now but low-contrast against the wall.",
+   "seen": "Uncle centred before the fog window, brighter than the look allows.",
    "problems": [
-    "Subject does not separate from the wall."
+    "mean luma 68"
    ],
-   "fix": "Brighten his key and rim, raise window fog so he silhouettes against it.",
+   "fix": "Cut the light multiplier to 0.32 plus 0.5 tube.",
    "scores": {
-    "subject": 2,
-    "depth": 3,
-    "detail": 2,
+    "subject": 4,
+    "depth": 4,
+    "detail": 4,
     "light": 3,
-    "character": 3,
-    "composition": 3
+    "character": 4,
+    "composition": 4
    }
   },
   {
    "id": "s6_eyes",
-   "seen": "Uncle lying on his side facing the lens, head large on a pillow, eyes with small glints, maroon blanket and berth behind.",
+   "seen": "Lying uncle with glints, passes the loop.",
    "problems": [
-    "Glints were oversized crosshairs; face is flat."
+    "small face"
    ],
-   "fix": "Shrink glints to the eye catchlights, add lamp rim on the face.",
+   "fix": "Leave unchanged; the shot passes and the eye glints read.",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 4,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s7_tickets",
+   "seen": "Arms with distinct sleeves and tickets.",
+   "problems": [
+    "hands small"
+   ],
+   "fix": "Leave unchanged this pass; hands read as different people.",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -97,28 +114,12 @@
    }
   },
   {
-   "id": "s7_tickets",
-   "seen": "Berth stacks with a sleeper and one hanging sleeve and hand holding a yellow ticket per bay; steel post in front.",
-   "problems": [
-    "Sleeve reads as a pipe; scene is dark with low contrast."
-   ],
-   "fix": "Fold lines on the sleeve, brighter tickets, higher contrast grade.",
-   "scores": {
-    "subject": 3,
-    "depth": 3,
-    "detail": 2,
-    "light": 2,
-    "character": 2,
-    "composition": 3
-   }
-  },
-  {
    "id": "s8_itarsi",
-   "seen": "Window full of warm platform with a yellow ITARSI board, uncle in pale kurta rising, bars across his face; warm wash over the berth.",
+   "seen": "Warm Itarsi board, uncle in window, bottom rows empty.",
    "problems": [
-    "Palette too wide, mean luma high."
+    "empty cells 7"
    ],
-   "fix": "Cut saturation and warm intensity, keep the board legible.",
+   "fix": "Add bright seat piping lines and lighter ambient on the seat front.",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -130,15 +131,15 @@
   },
   {
    "id": "s9_relief",
-   "seen": "Dim bay, empty seat with the uncle's grey shawl, lids closing from top and bottom; last frame black with a blue lamp glow.",
+   "seen": "Designed fade to black; metrics fail by design.",
    "problems": [
-    "Shawl still faint in the first frame."
+    "waiver unsupported by loop"
    ],
-   "fix": "Brighter seat light on the shawl and slower lid closure.",
+   "fix": "No change; waiver is allow_black in timeline.",
    "scores": {
     "subject": 3,
     "depth": 3,
-    "detail": 3,
+    "detail": 2,
     "light": 3,
     "character": 2,
     "composition": 3
@@ -146,50 +147,50 @@
   },
   {
    "id": "s10_bhopal",
-   "seen": "Platform through a big window with the Bhopal board blurred sideways, cool lamps; flash on the first frame.",
+   "seen": "Readable board, window now full width.",
    "problems": [
-    "Board is a smear; palette wide."
+    "empty cells 7 at bottom"
    ],
-   "fix": "Bigger board at the hit and less colour variety.",
+   "fix": "Add seat piping lines and lighter ambient.",
    "scores": {
-    "subject": 3,
+    "subject": 4,
     "depth": 3,
-    "detail": 2,
-    "light": 3,
-    "character": 2,
+    "detail": 4,
+    "light": 4,
+    "character": 3,
     "composition": 3
    }
   },
   {
    "id": "s11_ticket2",
-   "seen": "Same framing as s3 with a blue-cuffed narrator hand; ticket paler and yellowing across the line.",
+   "seen": "Narrator ticket yellowing with 14-06-2026.",
    "problems": [
-    "Same crude hand as s3."
+    "bins high"
    ],
-   "fix": "Same hand fix; keep ageing.",
+   "fix": "Shift the aged paper colour further to saturated yellow at full age.",
    "scores": {
-    "subject": 3,
+    "subject": 4,
     "depth": 3,
-    "detail": 2,
+    "detail": 4,
     "light": 3,
-    "character": 2,
-    "composition": 3
+    "character": 3,
+    "composition": 4
    }
   },
   {
    "id": "s12_loop",
-   "seen": "Narrator on the uncle's berth in the s1 framing in blue shirt and shawl; matches s1.",
+   "seen": "Aged narrator in shawl, loop to uncle.",
    "problems": [
-    "Dark, face soft."
+    "luma 66"
    ],
-   "fix": "Same brightening as s1.",
+   "fix": "Lower fill to 0.6 for this shot.",
    "scores": {
-    "subject": 3,
-    "depth": 3,
+    "subject": 4,
+    "depth": 4,
     "detail": 3,
     "light": 3,
     "character": 3,
-    "composition": 3
+    "composition": 4
    }
   }
  ]

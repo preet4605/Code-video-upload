@@ -1,0 +1,196 @@
+{
+ "shots": [
+  {
+   "id": "s1_hook",
+   "seen": "Uncle in pale kurta and grey shawl centre-left of a blue-lit bay, shadowed eyes, barred window right, chain left; the blue lamp pool sits behind his head; lower third is dark berth.",
+   "problems": [
+    "Lower third still empty and the torso is a plain triangle."
+   ],
+   "fix": "Add shawl folds and brighter seat stitching; keep clarity pass.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s2_coach",
+   "seen": "Aisle receding to a green exit lamp with tube lights, side berths as coloured blocks, new foreground curtain with two bare feet at left.",
+   "problems": [
+    "Berth blocks are crude and the right half is boxy; contrast is low."
+   ],
+   "fix": "Raise tube contrast, add post contrast and darker ink on the berth blocks.",
+   "scores": {
+    "subject": 3,
+    "depth": 4,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s3_ticket",
+   "seen": "Yellowed ticket with S7 and 14-06-2014 clear, held by a brown stick-like forearm with a thumb; the hand reads but is crude.",
+   "problems": [
+    "Hand is cartoonish; background has many tints."
+   ],
+   "fix": "Taper the forearm, show the cloth cuff, desaturate the backdrop.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s4_rule",
+   "seen": "Uncle head and shoulders filling frame, eyes in shadow under the brow, blue lamp bloom behind and barred window; clothes are dark.",
+   "problems": [
+    "Torso nearly black, large dark cells."
+   ],
+   "fix": "Lift the shawl and kurta with window rim and more bg detail.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s5_stop",
+   "seen": "Uncle seated in a dim bay with a flickering ceiling tube above and fog-grey window behind; he is large now but low-contrast against the wall.",
+   "problems": [
+    "Subject does not separate from the wall."
+   ],
+   "fix": "Brighten his key and rim, raise window fog so he silhouettes against it.",
+   "scores": {
+    "subject": 2,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s6_eyes",
+   "seen": "Uncle lying on his side facing the lens, head large on a pillow, eyes with small glints, maroon blanket and berth behind.",
+   "problems": [
+    "Glints were oversized crosshairs; face is flat."
+   ],
+   "fix": "Shrink glints to the eye catchlights, add lamp rim on the face.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s7_tickets",
+   "seen": "Berth stacks with a sleeper and one hanging sleeve and hand holding a yellow ticket per bay; steel post in front.",
+   "problems": [
+    "Sleeve reads as a pipe; scene is dark with low contrast."
+   ],
+   "fix": "Fold lines on the sleeve, brighter tickets, higher contrast grade.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 2,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s8_itarsi",
+   "seen": "Window full of warm platform with a yellow ITARSI board, uncle in pale kurta rising, bars across his face; warm wash over the berth.",
+   "problems": [
+    "Palette too wide, mean luma high."
+   ],
+   "fix": "Cut saturation and warm intensity, keep the board legible.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s9_relief",
+   "seen": "Dim bay, empty seat with the uncle's grey shawl, lids closing from top and bottom; last frame black with a blue lamp glow.",
+   "problems": [
+    "Shawl still faint in the first frame."
+   ],
+   "fix": "Brighter seat light on the shawl and slower lid closure.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s10_bhopal",
+   "seen": "Platform through a big window with the Bhopal board blurred sideways, cool lamps; flash on the first frame.",
+   "problems": [
+    "Board is a smear; palette wide."
+   ],
+   "fix": "Bigger board at the hit and less colour variety.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s11_ticket2",
+   "seen": "Same framing as s3 with a blue-cuffed narrator hand; ticket paler and yellowing across the line.",
+   "problems": [
+    "Same crude hand as s3."
+   ],
+   "fix": "Same hand fix; keep ageing.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s12_loop",
+   "seen": "Narrator on the uncle's berth in the s1 framing in blue shirt and shawl; matches s1.",
+   "problems": [
+    "Dark, face soft."
+   ],
+   "fix": "Same brightening as s1.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  }
+ ]
+}

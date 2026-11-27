@@ -58,13 +58,17 @@ function hairShapes(style, age, sx) {
       front: S([[0, -0.64], [0.34, -0.59], [0.52, -0.38], [0.56, 0], [0.5, 0.2], [0.44, 0.02], [0.4, -0.12], [0.3, -0.18], [0.12, -0.2], [-0.12, -0.2], [-0.3, -0.18], [-0.4, -0.12], [-0.44, 0.02], [-0.5, 0.2], [-0.56, 0], [-0.52, -0.38], [-0.34, -0.59]]), wet: true };
     case 'wetveil': return { back: S([[0, -0.62], [0.4, -0.56], [0.62, -0.3], [0.7, 0.3], [0.72, 1.0], [0.62, 1.55], [0.46, 1.78], [0.36, 1.2], [0.3, 0.5], [0, 0.35], [-0.3, 0.5], [-0.36, 1.2], [-0.46, 1.78], [-0.62, 1.55], [-0.72, 1.0], [-0.7, 0.3], [-0.62, -0.3], [-0.4, -0.56]]),
       front: S([[0, -0.66], [0.34, -0.6], [0.54, -0.38], [0.58, 0], [0.56, 0.3], [0.46, 0.2], [0.4, -0.12], [0.3, -0.3], [0.1, -0.36], [-0.1, -0.36], [-0.3, -0.3], [-0.4, -0.12], [-0.46, 0.2], [-0.56, 0.3], [-0.58, 0], [-0.54, -0.38], [-0.34, -0.6]]), wet: true, veil: true };
+    // elder with a receding M-shaped hairline: thin crown, a hair mass over the temples and ears, nape hair; the forehead is bare high up
+    case 'receding': { const R = [[0, -0.63], [0.24, -0.59], [0.41, -0.47], [0.49, -0.27], [0.5, -0.04], [0.48, 0.1], [0.45, 0.07], [0.45, -0.1], [0.41, -0.2], [0.35, -0.28], [0.27, -0.36], [0.14, -0.42], [0, -0.4]];
+      return { back: S([[0, -0.63], [0.3, -0.58], [0.46, -0.42], [0.51, -0.12], [0.49, 0.1], [0.43, 0.14], [0.3, 0.06], [0, 0.0], [-0.3, 0.06], [-0.43, 0.14], [-0.49, 0.1], [-0.51, -0.12], [-0.46, -0.42], [-0.3, -0.58]]),
+        front: S([...R, ...R.slice(1, -1).reverse().map(([x, y]) => [-x, y])]), grey: true }; }
     default: throw new Error(`unknown hair style "${style}"`);
   }
 }
-export const HAIR_STYLES = ['crop', 'oiled', 'bob', 'braid', 'bun', 'baldfringe', 'wet', 'wetveil'];
+export const HAIR_STYLES = ['crop', 'oiled', 'bob', 'braid', 'bun', 'baldfringe', 'wet', 'wetveil', 'receding'];
 
 function eye(c, side, o) {
-  const { cx, cy, w, h, open, gaze, tilt, L, iris, ghost, look, ink, sclera, horror = false, headPx = 999, eyeLight = 1 } = o;
+  const { cx, cy, w, h, open, gaze, tilt, L, iris, ghost, look, ink, sclera, horror = false, headPx = 999, eyeLight = 1, sockets = false } = o;
   const cf = Math.max(0, Math.cos(look) + 0.12), squeeze = side === o.nearSide ? 0.55 + 0.45 * Math.min(1, cf * 1.3) : Math.max(0.0, 0.5 * Math.min(1, cf * 1.6));
   if (squeeze < 0.12) return;
   const ew = w * squeeze, oh = h * open;
@@ -84,6 +88,7 @@ function eye(c, side, o) {
   c.fillStyle = '#050403'; c.beginPath(); c.arc(gx, gy, ir * (ghost ? 0.38 : horror ? 0.4 : 0.52), 0, TAU); c.fill();
   const lg = c.createLinearGradient(0, -oh * 1.8, 0, oh * 0.4); lg.addColorStop(0, 'rgba(20,10,6,0.55)'); lg.addColorStop(0.5, 'rgba(20,10,6,0.08)'); lg.addColorStop(1, 'rgba(20,10,6,0)'); c.fillStyle = lg; c.fillRect(-ew, -oh * 2, ew * 2, oh * 3);
   if (horror) { const lg2 = c.createLinearGradient(0, -oh * 1.8, 0, oh); lg2.addColorStop(0, 'rgba(0,0,0,0.6)'); lg2.addColorStop(0.55, 'rgba(0,0,0,0.3)'); lg2.addColorStop(1, 'rgba(0,0,0,0.18)'); c.fillStyle = lg2; c.fillRect(-ew, -oh * 2, ew * 2, oh * 3); }
+  if (sockets) { const dk = 0.78 * (1 - Math.min(1, eyeLight * 1.2)); if (dk > 0.02) { c.fillStyle = rgba('#020202', dk); c.fillRect(-ew, -oh * 2.2, ew * 2, oh * 3.4); } } // deep sockets: the eye is ink until a light hits it
   if (!ghost && open > 0.35 && (!horror || eyeLight > 0.05)) { c.fillStyle = rgba('#fff', 0.95 * (horror ? Math.min(1, eyeLight) : 1)); c.beginPath(); c.arc(gx + (L.x >= 0 ? 1 : -1) * ir * 0.34, gy - ir * 0.36, Math.max(0.006, ir * (horror ? 0.15 : 0.24)), 0, TAU); c.fill(); c.fillStyle = rgba('#fff', horror ? 0 : 0.5); c.beginPath(); c.arc(gx - (L.x >= 0 ? 1 : -1) * ir * 0.3, gy + ir * 0.4, ir * 0.1, 0, TAU); c.fill(); }
   c.restore();
   c.strokeStyle = ink; c.lineCap = 'round'; c.lineWidth = Math.max(0.011, h * 0.36);
@@ -114,6 +119,39 @@ function veil(c, { seed, sx, ox, hairC, env, t, L }) {
     hg.addColorStop(0, rgba(key, 0.2)); hg.addColorStop(1, rgba(key, 0)); c.save(); c.clip(path); c.fillStyle = hg; c.fillRect(mid[0] - 0.1, hy - 0.08, 0.2, 0.16); c.restore();
   }
   c.restore();
+}
+
+
+// heavy elder face planes: bags, crow's feet, frown lines, folds, jowls, cheek hollows (horror close-ups). head units, face centre 0,0.
+function elderCreases(c, o) {
+  const { skin, ox, sx, eyeX, eyeY, nY, mY, L, key } = o, dark = (a) => rgba(shade(skin, -0.8), a), lite = (a) => rgba(mix(skin, key ?? '#fff', 0.5), a);
+  c.lineCap = 'round';
+  for (let i = 0; i < 5; i++) { const y = -0.27 + i * 0.045, br = i % 2 ? 0.05 : 0; c.strokeStyle = dark(0.34 - i * 0.02); c.lineWidth = 0.009; c.beginPath(); c.moveTo(-0.23 * sx + ox, y + br * 0.3); c.quadraticCurveTo(-0.05 * sx + ox, y - 0.016, -0.02 * sx + ox, y - 0.006); c.moveTo(0.03 * sx + ox, y - 0.006); c.quadraticCurveTo(0.12 * sx + ox, y - 0.018, 0.23 * sx + ox, y + br * 0.3); c.stroke(); c.strokeStyle = lite(0.14); c.lineWidth = 0.006; c.beginPath(); c.moveTo(-0.2 * sx + ox, y + 0.012); c.quadraticCurveTo(ox, y - 0.004, 0.2 * sx + ox, y + 0.012); c.stroke(); }
+  c.strokeStyle = dark(0.5); c.lineWidth = 0.013; for (const s of [-1, 1]) { c.beginPath(); c.moveTo(s * 0.035 * sx + ox, eyeY - 0.17); c.quadraticCurveTo(s * 0.045 * sx + ox, eyeY - 0.13, s * 0.03 * sx + ox, eyeY - 0.075); c.stroke(); }
+  for (const s of [-1, 1]) {
+    const ex0 = s * eyeX + ox;
+    c.strokeStyle = dark(0.5); c.lineWidth = 0.011; c.beginPath(); c.moveTo(ex0 - s * 0.07, eyeY + 0.05); c.quadraticCurveTo(ex0, eyeY + 0.092, ex0 + s * 0.09, eyeY + 0.062); c.stroke();           // eye bag edge
+    c.strokeStyle = lite(0.2); c.lineWidth = 0.008; c.beginPath(); c.moveTo(ex0 - s * 0.06, eyeY + 0.076); c.quadraticCurveTo(ex0, eyeY + 0.112, ex0 + s * 0.08, eyeY + 0.084); c.stroke();
+    c.strokeStyle = dark(0.4); c.lineWidth = 0.007; for (let k = 0; k < 3; k++) { c.beginPath(); c.moveTo(ex0 + s * 0.1, eyeY + (k - 1) * 0.012); c.lineTo(ex0 + s * (0.17 + k * 0.01), eyeY + (k - 1) * 0.035); c.stroke(); } // crow's feet
+    c.strokeStyle = dark(0.55); c.lineWidth = 0.016; c.beginPath(); c.moveTo(ox + s * 0.075 * sx, nY + 0.0); c.quadraticCurveTo(ox + s * 0.17 * sx, nY + 0.1, ox + s * 0.14 * sx, mY + 0.05); c.stroke();     // nasolabial fold
+    c.strokeStyle = lite(0.16); c.lineWidth = 0.01; c.beginPath(); c.moveTo(ox + s * 0.1 * sx, nY + 0.02); c.quadraticCurveTo(ox + s * 0.2 * sx, nY + 0.1, ox + s * 0.18 * sx, mY + 0.03); c.stroke();
+    c.strokeStyle = dark(0.4); c.lineWidth = 0.011; c.beginPath(); c.moveTo(ox + s * 0.13 * sx, mY + 0.03); c.quadraticCurveTo(ox + s * 0.15 * sx, mY + 0.12, ox + s * 0.12 * sx, 0.45); c.stroke();                       // jowl / marionette line
+    const g = c.createRadialGradient(s * 0.3 * sx + ox, 0.17, 0, s * 0.3 * sx + ox, 0.17, 0.17); g.addColorStop(0, dark(0.4)); g.addColorStop(1, dark(0)); c.fillStyle = g; c.fillRect(s * 0.3 * sx + ox - 0.2, -0.05, 0.4, 0.45);   // hollow cheek
+    const g2 = c.createRadialGradient(s * 0.37 * sx + ox, -0.04, 0, s * 0.37 * sx + ox, -0.04, 0.13); g2.addColorStop(0, dark(0.3)); g2.addColorStop(1, dark(0)); c.fillStyle = g2; c.fillRect(s * 0.37 * sx + ox - 0.15, -0.2, 0.3, 0.3);   // temple hollow
+  }
+  { const g = c.createRadialGradient(L.x * 0.2 * sx + ox, 0.1, 0, L.x * 0.2 * sx + ox, 0.1, 0.13); g.addColorStop(0, lite(0.26)); g.addColorStop(1, lite(0)); c.fillStyle = g; c.fillRect(-0.4, -0.1, 0.8, 0.4); }   // cheekbone plane catching light
+  c.strokeStyle = dark(0.4); c.lineWidth = 0.011; c.beginPath(); c.moveTo(ox - 0.06, mY + 0.095); c.quadraticCurveTo(ox, mY + 0.115, ox + 0.06, mY + 0.095); c.stroke();   // under-lip crease
+}
+// thick grey moustache: two drooping lobes under the nose, strands combed out and down, shadow underneath
+function moustacheDraw(c, o) {
+  const { ox, sx, y0 = 0.235, y1 = 0.295, color = '#bdb8ae', L, key, thick = 1 } = o, S = (x) => x * sx, tv = thick;
+  const half = [[0, y0], [S(0.07), y0 + 0.004], [S(0.15), y0 + 0.03 * tv], [S(0.2), y1 + 0.04 * tv], [S(0.17), y1 + 0.03 * tv], [S(0.11), y1 + 0.016], [S(0.05), y1 + 0.003], [0, y1 - 0.004]];
+  const pts = [...half, ...half.slice(1, -1).reverse().map(([x, y]) => [-x, y])].map(([x, y]) => [x + ox * 1.1, y]);
+  c.save(); const sh = c.createRadialGradient(ox * 1.1, y1 + 0.03, 0, ox * 1.1, y1 + 0.03, 0.2 * sx); sh.addColorStop(0, rgba('#000', 0.38)); sh.addColorStop(1, rgba('#000', 0)); c.fillStyle = sh; c.fillRect(-0.4, y0, 0.8, 0.3);
+  const p = smoothClosed(pts); const g = c.createLinearGradient(0, y0, 0, y1 + 0.05); g.addColorStop(0, mix(color, key ?? '#fff', 0.1)); g.addColorStop(0.5, color); g.addColorStop(1, shade(color, -0.45)); c.fillStyle = g; c.fill(p);
+  c.save(); c.clip(p); const r = mulberry32(77); c.lineCap = 'round';
+  for (let i = 0; i < 46; i++) { const sd = i % 2 ? 1 : -1, t = r(), x0 = sd * S(0.005 + t * 0.15) + ox * 1.1, ya = y0 + 0.004 + r() * 0.02, x1 = x0 + sd * S(0.025 + r() * 0.03), yb = ya + 0.035 + t * 0.05 + r() * 0.02; c.strokeStyle = i % 3 ? rgba(shade(color, -0.55), 0.38) : rgba(mix(color, '#ffffff', 0.4), 0.4); c.lineWidth = 0.0042; c.beginPath(); c.moveTo(x0, ya); c.quadraticCurveTo((x0 + x1) / 2 - sd * 0.004, (ya + yb) / 2, x1, yb); c.stroke(); }
+  c.restore(); c.strokeStyle = rgba('#000', 0.5); c.lineWidth = 0.004; c.lineJoin = 'round'; c.stroke(p); c.restore();
 }
 
 function mouth(c, o) {
@@ -166,8 +204,9 @@ export function drawHead(c, o) {
   if (front) {
     const k = 1, eyeY = age === 'child' ? 0.075 : 0.035, eyeX = 0.185 * sx, w = (age === 'child' ? 0.098 : 0.088) * (sex === 'f' ? 1.05 : 1) * (horror ? 0.86 : 1), h = (age === 'child' ? 0.055 : 0.044) * (horror ? 0.8 : 1);
     // soft shadow pockets: eye sockets, under nose, under lip, jaw
-    for (const s of [-1, 1]) { const g = c.createRadialGradient(s * eyeX + ox, eyeY - 0.01, 0.01, s * eyeX + ox, eyeY - 0.01, 0.17); g.addColorStop(0, rgba(shade(skin, horror ? -0.85 : -0.6), horror ? (ghost ? 0.62 : 0.55) : ghost ? 0.4 : 0.22 * k)); g.addColorStop(1, rgba(shade(skin, -0.6), 0)); c.fillStyle = g; c.fillRect(s * eyeX + ox - 0.2, eyeY - 0.2, 0.4, 0.4); }
-    if (horror) { const bg = c.createLinearGradient(0, -0.22, 0, 0.16); bg.addColorStop(0, rgba('#000', 0.62)); bg.addColorStop(0.55, rgba('#000', 0.38)); bg.addColorStop(1, rgba('#000', 0)); c.fillStyle = bg; c.fillRect(-0.6, -0.3, 1.2, 0.5); } // brow-ridge shadow: eyes sit in the dark
+    for (const s of [-1, 1]) { const g = c.createRadialGradient(s * eyeX + ox, eyeY - 0.01, 0.01, s * eyeX + ox, eyeY - 0.01, 0.17); g.addColorStop(0, rgba(shade(skin, horror ? -0.85 : -0.6), horror ? (ghost ? 0.62 : o.sockets ? 0.85 : 0.55) : ghost ? 0.4 : 0.22 * k)); g.addColorStop(1, rgba(shade(skin, -0.6), 0)); c.fillStyle = g; c.fillRect(s * eyeX + ox - 0.2, eyeY - 0.2, 0.4, 0.4); }
+    if (horror && o.sockets) { const bg = c.createLinearGradient(0, -0.36, 0, 0.17); bg.addColorStop(0, rgba('#000', 0)); bg.addColorStop(0.3, rgba('#000', 0.5)); bg.addColorStop(0.66, rgba('#000', 0.36)); bg.addColorStop(1, rgba('#000', 0)); c.fillStyle = bg; c.fillRect(-0.6, -0.36, 1.2, 0.53); }
+    else if (horror) { const bg = c.createLinearGradient(0, -0.22, 0, 0.16); bg.addColorStop(0, rgba('#000', 0.62)); bg.addColorStop(0.55, rgba('#000', 0.38)); bg.addColorStop(1, rgba('#000', 0)); c.fillStyle = bg; c.fillRect(-0.6, -0.3, 1.2, 0.5); } // brow-ridge shadow: eyes sit in the dark
     const nY = eyeY + 0.17, mY = age === 'child' ? 0.3 : 0.305;
     c.globalAlpha = k;
     // cheeks blush / hollows
@@ -186,7 +225,7 @@ export function drawHead(c, o) {
       const rp = smoothClosed(ribbon(pts, [age === 'elder' ? 0.03 : 0.036, 0.034, 0.014], { n: 6, cap: 3 })); c.fillStyle = browCol; c.fill(rp);
     }
     // eyes
-    const eyeCommon = { w, h, L, ghost, look, ink, horror, headPx, eyeLight, sclera: ghost ? (horror ? '#aeb6a8' : '#cfd6d2') : horror ? '#aaa395' : '#ece6da', iris: o.eyeColor ?? (ghost ? '#1a1d1f' : '#2b1a0f'), nearSide: sinL >= 0 ? -1 : 1 };
+    const eyeCommon = { w, h, L, ghost, look, ink, horror, headPx, eyeLight, sockets: !!o.sockets, sclera: ghost ? (horror ? '#aeb6a8' : '#cfd6d2') : horror ? '#aaa395' : '#ece6da', iris: o.eyeColor ?? (ghost ? '#1a1d1f' : '#2b1a0f'), nearSide: sinL >= 0 ? -1 : 1 };
     const open = cl(o.blinkOpen * ex.open, 0, 1.4), gz = o.gaze ?? [0, 0];
     for (const s of [-1, 1]) eye(c, s, { ...eyeCommon, cx: s * eyeX + ox, cy: eyeY, open: Math.max(open, 0.04), gaze: [gz[0] + (ghost ? 0 : 0), gz[1]], tilt: ex.tilt });
     // nose: shadow on the side away from the light, tip highlight on the lit side
@@ -198,7 +237,9 @@ export function drawHead(c, o) {
     // mouth
     let m = o.mouth ?? ex.mouth; if (typeof m === 'string' && EXPR[m]) m = EXPR[m].mouth;
     mouth(c, { x: ox * 1.1, y: mY, w: (age === 'child' ? 0.085 : 0.1) * (sex === 'f' ? 0.92 : 1), m, skin, ink, L, ghost, horror });
-    if (age === 'elder') { c.strokeStyle = rgba(shade(skin, -0.6), 0.3); c.lineWidth = 0.009; for (const s of [-1, 1]) { c.beginPath(); c.moveTo(nx + s * 0.07, nY + 0.01); c.quadraticCurveTo(nx + s * 0.13, nY + 0.12, nx + s * 0.1, mY + 0.03); c.stroke(); } }
+    if (o.creased) elderCreases(c, { skin, ox, sx, eyeX, eyeY, nY, mY, L, key: env.key });
+    if (o.moustache) moustacheDraw(c, { ox, sx, color: o.moustache.color, L, key: env.key, thick: o.moustache.thick ?? 1 });
+    if (age === 'elder' && !o.creased) { c.strokeStyle = rgba(shade(skin, -0.6), 0.3); c.lineWidth = 0.009; for (const s of [-1, 1]) { c.beginPath(); c.moveTo(nx + s * 0.07, nY + 0.01); c.quadraticCurveTo(nx + s * 0.13, nY + 0.12, nx + s * 0.1, mY + 0.03); c.stroke(); } }
     if (o.bindi) { c.fillStyle = '#b3241f'; c.beginPath(); c.arc(ox, eyeY - 0.12, 0.016, 0, TAU); c.fill(); }
     if (ghost) { c.fillStyle = rgba('#10181c', 0.28); for (const s of [-1, 1]) { c.beginPath(); c.ellipse(s * eyeX + ox, eyeY + 0.07, 0.1, 0.04, 0, 0, TAU); c.fill(); } }
     if (o.glasses) { c.strokeStyle = '#1b1714'; c.lineWidth = 0.014; for (const s of [-1, 1]) { c.beginPath(); c.roundRect(s * eyeX + ox - 0.13, eyeY - 0.075, 0.26, 0.15, 0.04); c.stroke(); c.fillStyle = rgba('#cfe0ee', 0.1); c.fill(); } c.beginPath(); c.moveTo(ox - 0.05, eyeY - 0.02); c.lineTo(ox + 0.05, eyeY - 0.02); c.stroke(); }
@@ -216,10 +257,16 @@ export function drawHead(c, o) {
     const p = hairFill(pts); c.save(); c.clip(p);
     // strand lines from the crown, light + dark
     const r = mulberry32(seed * 31 + 5); c.lineCap = 'round';
-    for (let i = 0; i < 16; i++) { const a = -0.5 + (i / 15) * 1.0 * Math.PI + 0.0, rr = 0.2 + r() * 0.4, x0 = Math.cos(a - Math.PI / 2) * 0.1, y0 = -0.5 + r() * 0.06; c.strokeStyle = rgba(i % 2 ? shade(hairC, 0.3) : '#000', i % 2 ? 0.16 : 0.2); c.lineWidth = 0.007; c.beginPath(); c.moveTo(x0, y0); c.quadraticCurveTo(Math.cos(a - Math.PI / 2) * rr * 0.9, -0.2, Math.cos(a - Math.PI / 2) * rr * 1.25, 0.0 + r() * 0.1); c.stroke(); }
+    for (let i = 0; i < (hs.grey ? 34 : 16); i++) { const a = -0.5 + (i / (hs.grey ? 33 : 15)) * 1.0 * Math.PI + 0.0, rr = 0.2 + r() * 0.4, x0 = Math.cos(a - Math.PI / 2) * 0.1, y0 = -0.5 + r() * 0.06; c.strokeStyle = rgba(i % 2 ? mix(hairC, '#ffffff', hs.grey ? 0.55 : 0.3) : '#000', hs.grey ? (i % 2 ? 0.42 : 0.5) : (i % 2 ? 0.16 : 0.2)); c.lineWidth = hs.grey ? 0.0055 : 0.007; c.beginPath(); c.moveTo(x0, y0); c.quadraticCurveTo(Math.cos(a - Math.PI / 2) * rr * 0.9, -0.2, Math.cos(a - Math.PI / 2) * rr * 1.25, 0.0 + r() * 0.1); c.stroke(); }
     // sheen band
     c.globalCompositeOperation = 'screen'; const g = c.createLinearGradient(-0.3 * sx, -0.6, 0.35 * sx, -0.2); g.addColorStop(0, rgba('#fff', 0)); g.addColorStop(0.5, rgba(env.key ?? '#fff', hs.wet ? 0.5 : 0.22)); g.addColorStop(1, rgba('#fff', 0)); c.fillStyle = g; c.fillRect(-0.7, -0.8, 1.4, 0.8); c.globalCompositeOperation = 'source-over';
     c.restore();
+    if (hs.grey) { // thin grey hair: wisps combed back from the receded hairline, flyaway strands on the crown and over the ears
+      const wr = mulberry32(seed * 7 + 2); c.lineCap = 'round';
+      const hl = hs.front.slice(Math.floor(hs.front.length / 2) - 5, Math.floor(hs.front.length / 2) + 6);
+      for (let i = 0; i < 38; i++) { const pk = hl[Math.floor(wr() * hl.length)], x0 = pk[0] + (wr() - 0.5) * 0.04, y0 = pk[1] - 0.01, len = 0.03 + wr() * 0.07, bend = (wr() - 0.5) * 0.06; c.strokeStyle = rgba(wr() < 0.5 ? mix(hairC, '#ffffff', 0.55) : shade(hairC, -0.5), 0.5); c.lineWidth = 0.0045; c.beginPath(); c.moveTo(x0, y0); c.quadraticCurveTo(x0 + bend, y0 + len * 0.5, x0 + bend * 1.8, y0 + len); c.stroke(); }
+      for (let i = 0; i < 26; i++) { const a = -2.9 + wr() * 2.65, rr = 0.5 + wr() * 0.05, x0 = Math.cos(a) * rr * sx, y0 = Math.sin(a) * rr * 1.06 - 0.02, l = 0.03 + wr() * 0.05; c.strokeStyle = rgba(mix(hairC, '#ffffff', 0.6), 0.55); c.lineWidth = 0.004; c.beginPath(); c.moveTo(x0, y0); c.quadraticCurveTo(x0 * (1 + l * 0.8), y0 - l * 0.3, x0 * (1 + l * 1.3) + (wr() - 0.5) * 0.03, y0 - l); c.stroke(); }
+    }
     cin.rimLight(c, p, { x: L.x, y: L.y }, { width: 0.02, color: env.rim ?? '#ffe3b8', alpha: 0.85 * (env.rimA ?? 1), soft: true });
   };
   if (hs.bald) { drawFront(hs.front); drawFront(hs.front2); c.save(); c.globalCompositeOperation = 'screen'; const g = c.createRadialGradient(L.x * 0.16, -0.4, 0.01, L.x * 0.16, -0.4, 0.22); g.addColorStop(0, rgba(env.key ?? '#fff', 0.4)); g.addColorStop(1, rgba(env.key ?? '#fff', 0)); c.fillStyle = g; c.fillRect(-0.5, -0.7, 1, 0.5); c.restore(); }

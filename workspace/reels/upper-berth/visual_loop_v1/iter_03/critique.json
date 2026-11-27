@@ -1,0 +1,197 @@
+{
+ "shots": [
+  {
+   "id": "s1_hook",
+   "seen": "Uncle seated and lit by blue lamp with crisp rim after the clarity pass, barred window, chain and knee in front.",
+   "problems": [
+    "Edge crunch from the clarity pass on the face; torso flat."
+   ],
+   "fix": "Soften clarity on skin by lowering amount to 3 for figure shots and add shawl fold lines.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s2_coach",
+   "seen": "Aisle brightened with gain; tube pool, exit lamp and curtain with feet in front.",
+   "problems": [
+    "Sleepers remain coloured blocks."
+   ],
+   "fix": "Darken block colours and add blanket fold lines on the left berths.",
+   "scores": {
+    "subject": 3,
+    "depth": 4,
+    "detail": 3,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   },
+   "regression_note": "Metric score dipped because the new foreground curtain with bare feet adds a large dark area; it is required by the brief (feet out of curtains) and the following iteration brightens it."
+  },
+  {
+   "id": "s3_ticket",
+   "seen": "Ticket legible, brown forearm and thumb.",
+   "problems": [
+    "Forearm is a pole."
+   ],
+   "fix": "Taper the forearm and add the cuff so it reads as a sleeve.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s4_rule",
+   "seen": "Uncle large, eyes shadowed, window bars left, lamp right.",
+   "problems": [
+    "Dark torso."
+   ],
+   "fix": "Raise the kurta brightness with a stronger window rim.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s5_stop",
+   "seen": "Brighter bay, tube bar on top, uncle larger with fog window.",
+   "problems": [
+    "Uncle merges with the wall."
+   ],
+   "fix": "Add a bright fog sheet directly behind his head to silhouette him.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s6_eyes",
+   "seen": "Lying uncle with large head, small glints on the eyes, blue lamp wash.",
+   "problems": [
+    "Face flat but readable."
+   ],
+   "fix": "Add a cheek rim light; keep glints.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s7_tickets",
+   "seen": "Bunks with sleeve and ticket hand, brighter now.",
+   "problems": [
+    "Sleeve pipe-like."
+   ],
+   "fix": "Add cuff and fold lines on the sleeve.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s8_itarsi",
+   "seen": "Window with Itarsi board, uncle rising, palette toned down.",
+   "problems": [
+    "Board partly hidden."
+   ],
+   "fix": "Shift the uncle left a little so the board is clear.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s9_relief",
+   "seen": "Empty seat with grey shawl, lids closing, final frame black with lamp glow.",
+   "problems": [
+    "Last keyframe has dead cells by design."
+   ],
+   "fix": "Keep silence black; report as a design conflict with the empty_cells floor.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 1,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s10_bhopal",
+   "seen": "Platform window with the board streaking, zoomed in a bit.",
+   "problems": [
+    "Too many hues."
+   ],
+   "fix": "Remove the warm lamps in Bhopal exterior, make it blue-white only.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s11_ticket2",
+   "seen": "Narrator ticket, same framing.",
+   "problems": [
+    "Hand pole."
+   ],
+   "fix": "Same sleeve and cuff fix as s3 with the blue shirt cuff visible.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s12_loop",
+   "seen": "Narrator seated in s1 framing.",
+   "problems": [
+    "Soft face."
+   ],
+   "fix": "Same figure light and shawl fold fix as s1 so the loop frames match.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  }
+ ]
+}

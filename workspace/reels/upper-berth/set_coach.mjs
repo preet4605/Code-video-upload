@@ -8,6 +8,7 @@
 //   props: paper ticket, station boards, sweep light overlay, exterior (night, fog, station, Bhopal)
 import * as kit from '../../../.claude/skills/reel-factory/lib/kit/index.mjs';
 import { mulberry32 } from '../../../.claude/skills/reel-factory/lib/kit/util.mjs';
+import { drawHand } from '../../../.claude/skills/reel-factory/lib/kit/figures/hand.mjs';
 
 const { cin } = kit;
 export const TAU = Math.PI * 2;
@@ -102,7 +103,8 @@ export function drawExterior(c, r, S) {
     // platform floor
     c.fillStyle = warm ? 'rgba(40,30,18,0.8)' : 'rgba(5,8,12,0.85)'; c.fillRect(x, y + h * 0.72, w, h * 0.28);
     if (S.boardOn !== false) {
-      const bw = Math.min(w * 0.96, S.boardW ?? 560), bh = bw * 0.36, bx = lerp(x + w + bw * 0.6, x + w / 2, bd.x01), by = y + h * (S.boardFrac ?? 0.42);
+      const bw = Math.min(w * 0.96, S.boardW ?? 560), bh = bw * 0.36, bx = S.boardCx != null ? x + S.boardCx : lerp(x + w + bw * 0.6, x + w / 2, bd.x01), by = y + h * (S.boardFrac ?? 0.42);
+      if (S.boardLit) { const gg = c.createRadialGradient(bx, by, bw * 0.1, bx, by, bw * 0.9); gg.addColorStop(0, `rgba(255,236,170,${0.55 * S.boardLit})`); gg.addColorStop(1, 'rgba(255,220,120,0)'); c.fillStyle = gg; c.fillRect(x, y, w, h); }
       const blur = bd.blur || 0; const taps = blur > 0 ? 11 : 1;
       for (let i = 0; i < taps; i++) { const o = taps > 1 ? (i / (taps - 1) - 0.5) * blur : 0; c.save(); c.globalAlpha = taps > 1 ? (i === (taps >> 1) ? 0.5 : 0.16) : 1; stationBoard(c, bx + o - bw / 2, by - bh / 2, bw, bh, S.boardText ?? ['इटारसी', 'ITARSI', 'ITARSI JN']); c.restore(); }
       // post
@@ -145,11 +147,13 @@ export function bayWall(c, b, S, W = BAY) {
   // window frame
   c.fillStyle = '#1a2025'; rr(c, wx - 34, wy - 34, ww + 68, wh + 68, 22); c.fill(); c.strokeStyle = 'rgba(190,215,235,0.28)'; c.lineWidth = 3; rr(c, wx - 30, wy - 30, ww + 60, wh + 60, 20); c.stroke();
   // hole for the emissive exterior
-  c.save(); c.globalCompositeOperation = 'destination-out'; c.fillStyle = '#000'; c.fillRect(wx, wy, ww, wh); c.restore();
+  // (napi-canvas clips a destination-out fillRect under a scale transform to the unscaled canvas size: at half-res previews / draft the window hole
+  //  came out a quarter of its size and hid the exterior. Punch it in device space instead.)
+  { const m = c.getTransform(); c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = 'destination-out'; c.fillStyle = '#000'; c.fillRect(m.e + wx * m.a, m.f + wy * m.d, ww * m.a, wh * m.d); c.restore(); }
   // glass reflections, bars (vertical) and shutter rails
   c.fillStyle = 'rgba(150,190,230,0.07)'; c.beginPath(); c.moveTo(wx, wy); c.lineTo(wx + ww * 0.45, wy); c.lineTo(wx, wy + wh * 0.5); c.closePath(); c.fill();
-  const n = 5; for (let i = 0; i < n; i++) { const bx = wx + ((i + 0.5) * ww) / n; steelBar(c, bx, wy - 6, bx, wy + wh + 6, 16, '#46525c'); }
-  steelBar(c, wx - 8, wy + wh * 0.34, wx + ww + 8, wy + wh * 0.34, 9, '#3a454e');
+  const n = W.bars ?? 5; for (let i = 0; i < n; i++) { const bx = wx + ((i + 0.5) * ww) / n; steelBar(c, bx, wy - 6, bx, wy + wh + 6, W.barW ?? 16, '#46525c'); }
+  if (W.rail !== false) steelBar(c, wx - 8, wy + wh * 0.34, wx + ww + 8, wy + wh * 0.34, 9, '#3a454e');
   c.fillStyle = '#10151a'; c.fillRect(wx - 34, wy + wh + 30, ww + 68, 40); c.fillStyle = 'rgba(190,220,240,0.22)'; c.fillRect(wx - 34, wy + wh + 30, ww + 68, 4);
   // window curtain, pulled to the side
   curtain(c, wx + ww - 70, wy - 30, 120, wh + 150, { col: '#4a2a44', hi: '#8a5a7c', t: S.t, seed: 11, sway: 0.5 });
@@ -183,7 +187,7 @@ export function baySeat(c, b, S) {
 export function bayUpper(c, b, S) { // underside of the middle / upper berth over our heads, its hanging chain, a ceiling fan
   c.fillStyle = vgrad(c, -20, 330, [[0, '#0d1418'], [0.8, '#2b363c'], [1, '#12191d']]); c.fillRect(b.x0 - 4, -30, b.w + 8, 360);
   tex(c, 'plaster', [b.x0, -30, b.w, 360], { alpha: 0.5, seed: 17, scale: 1.3 });
-  rexineRect(c, -40, 250, 700, 120, { r: 20, seams: 0, hi: '#2f7a76', base: '#1d5252', lo: '#0a1f20', seed: 15 });
+  rexineRect(c, -40, 196, 700, 120, { r: 20, seams: 0, hi: '#2f7a76', base: '#1d5252', lo: '#0a1f20', seed: 15 });
   steelBar(c, 700, 300, 1090, 230, 12, '#44515a'); steelBar(c, -40, 60, 1100, 60, 10, '#303b43');
   chain(c, 96, 360, 820, { sway: Math.sin(S.t * 0.9) * 0.5 }); chain(c, 1030, 300, 700, { sway: Math.sin(S.t * 0.7 + 1) * 0.5 });
   c.fillStyle = '#10161a'; rr(c, 20, 820, 150, 46, 14); c.fill(); // chain hook plate
@@ -220,32 +224,47 @@ export function sweepOverlay(ctx, S, W = BAY, strength = 1) {
 
 // ---------- tickets ----------
 // IR-style computer ticket on aged paper. age 0 = crisp cream, 1 = deeply yellowed with foxing. lines are drawn in dark print.
-export function drawTicket(c, x, y, w, h, { age = 1, date = '14-06-2014', pnr = '4521368790', seed = 1, name = 'RAMESH CHANDRA', berth = 'LB/33', fade = 1, route = 'ITARSI JN  -  DELHI' } = {}) {
-  const r = mulberry32(seed + 77); c.save(); c.translate(x, y);
-  const a = cl(age);
-  const base = [lerp(238, 214, a), lerp(230, 176, a), lerp(205, 96, a)].map((v) => Math.round(v)), edge = [lerp(220, 150, a), lerp(205, 108, a), lerp(170, 44, a)].map((v) => Math.round(v));
-  // drop shadow
-  c.fillStyle = 'rgba(0,0,0,0.45)'; c.beginPath(); c.moveTo(14, h + 8); c.lineTo(w + 20, h + 14); c.lineTo(w + 12, h + 34); c.lineTo(8, h + 28); c.closePath(); c.fill();
-  c.beginPath(); c.moveTo(0, 6); for (let i = 1; i <= 14; i++) c.lineTo((w * i) / 14, (i % 2 ? 2 : 0) + r() * 5); c.lineTo(w, h - 5); for (let i = 14; i >= 0; i--) c.lineTo((w * i) / 14, h - ((i % 2) ? 2 : 0) - r() * 5); c.closePath();
-  const g = c.createRadialGradient(w * 0.45, h * 0.4, 20, w * 0.5, h * 0.5, w * 0.75); g.addColorStop(0, `rgb(${base})`); g.addColorStop(1, `rgb(${edge})`); c.fillStyle = g; c.fill(); c.save(); c.clip();
-  tex(c, 'plaster', [0, 0, w, h], { alpha: 0.45 + 0.3 * a, scale: 0.9, seed: 31 });
-  // foxing, creases and a coffee ring when old
-  for (let i = 0; i < Math.round(26 * a); i++) { const fx = r() * w, fy = r() * h, fr = 4 + r() * 16; const fg = c.createRadialGradient(fx, fy, 0, fx, fy, fr); fg.addColorStop(0, `rgba(120,70,20,${0.28 * a})`); fg.addColorStop(1, 'rgba(120,70,20,0)'); c.fillStyle = fg; c.fillRect(fx - fr, fy - fr, fr * 2, fr * 2); }
-  c.strokeStyle = `rgba(80,50,20,${0.18 + 0.2 * a})`; c.lineWidth = 2; c.beginPath(); c.moveTo(w * 0.34, 0); c.lineTo(w * 0.36, h); c.stroke(); c.beginPath(); c.moveTo(0, h * 0.58); c.lineTo(w, h * 0.55); c.stroke();
-  c.strokeStyle = `rgba(255,250,230,${0.25 - 0.1 * a})`; c.lineWidth = 2; c.beginPath(); c.moveTo(w * 0.34 + 3, 0); c.lineTo(w * 0.36 + 3, h); c.stroke();
-  // print
-  const ink = `rgba(${lerp(24, 70, a)},${lerp(22, 48, a)},${lerp(30, 30, a)},${0.92 * fade})`; c.fillStyle = ink; c.textBaseline = 'alphabetic';
-  c.font = `700 ${h * 0.085}px ${FONT_EN}`; c.textAlign = 'left'; c.fillText('INDIAN RAILWAYS', w * 0.05, h * 0.13);
-  c.font = `600 ${h * 0.05}px ${FONT_EN}`; c.textAlign = 'right'; c.fillText('e-RESERVATION SLIP', w * 0.95, h * 0.13);
-  c.fillRect(w * 0.05, h * 0.165, w * 0.9, 3);
-  c.textAlign = 'left'; c.font = `600 ${h * 0.056}px ${FONT_EN}`; c.fillText('PNR', w * 0.05, h * 0.27); c.font = `800 ${h * 0.1}px "DejaVu Sans Mono", ${FONT_EN}`; c.fillText(pnr, w * 0.05, h * 0.38);
-  c.font = `600 ${h * 0.056}px ${FONT_EN}`; c.fillText('DATE OF JOURNEY', w * 0.58, h * 0.27); c.font = `800 ${h * 0.115}px ${FONT_EN}`; c.fillText(date, w * 0.58, h * 0.395);
-  c.font = `600 ${h * 0.05}px ${FONT_EN}`; c.fillText('CLASS', w * 0.05, h * 0.5); c.fillText('COACH', w * 0.32, h * 0.5); c.fillText('BERTH', w * 0.6, h * 0.5);
-  c.font = `800 ${h * 0.11}px ${FONT_EN}`; c.fillText('SL', w * 0.05, h * 0.62); c.fillText('S7', w * 0.32, h * 0.62); c.fillText(berth, w * 0.6, h * 0.62);
-  c.font = `600 ${h * 0.055}px ${FONT_EN}`; c.fillText('PASSENGER', w * 0.05, h * 0.74); c.font = `700 ${h * 0.066}px ${FONT_EN}`; c.fillText(name, w * 0.05, h * 0.82);
-  c.font = `600 ${h * 0.05}px ${FONT_EN}`; c.fillText(route, w * 0.05, h * 0.92);
-  for (let i = 0; i < 46; i++) { const bw = 1 + r() * 3.2; c.fillRect(w * 0.6 + i * 4.3 - 0, h * 0.7, bw, h * 0.2); }
-  c.restore(); c.restore();
+export function drawTicket(c, x, y, w, h, { age = 1, date = '14-06-2014', pnr = '4521368790', seed = 1, name = 'RAMESH CHANDRA', berth = '33/LB', train = '12615', route = 'ITARSI JN - NEW DELHI', fade = 1, tear = true, shadow = true } = {}) {
+  // Authored on a 640x430 sheet and scaled, so the print stays identical at insert size and at s7's tiny hand-held size.
+  const W = 640, Hh = 430, r = mulberry32(seed + 77), a = cl(age), MONO = '"DejaVu Sans Mono", "Liberation Mono", monospace';
+  c.save(); c.translate(x, y); c.scale(w / W, h / Hh);
+  const base = [lerp(246, 224, a), lerp(240, 180, a), lerp(222, 78, a)].map(Math.round), edge = [lerp(230, 168, a), lerp(218, 120, a), lerp(190, 36, a)].map(Math.round);
+  // outline: straight edges, a torn left edge (random zig-zag with a bite out of it)
+  const outline = () => { c.beginPath(); c.moveTo(6, 4); c.lineTo(W - 4, 2); c.lineTo(W - 2, Hh - 5); c.lineTo(10, Hh - 2);
+    if (tear) { let yy = Hh - 2, i = 0; while (yy > 8) { yy -= 10 + r() * 16; i++; const bite = yy > 120 && yy < 210 ? 22 : 0; c.lineTo(2 + r() * 9 + bite + (i % 2 ? 3 : 0), Math.max(8, yy)); } } else c.lineTo(6, 4); c.closePath(); };
+  if (shadow) { c.save(); c.shadowColor = 'rgba(0,0,0,0.7)'; c.shadowBlur = 26; c.shadowOffsetX = 14; c.shadowOffsetY = 20; outline(); c.fillStyle = '#000'; c.fill(); c.restore(); }
+  outline(); const g = c.createLinearGradient(0, 0, W, Hh); g.addColorStop(0, `rgb(${base})`); g.addColorStop(0.55, `rgb(${base.map((v) => Math.round(v * 0.96))})`); g.addColorStop(1, `rgb(${edge})`); c.fillStyle = g; c.fill(); c.save(); c.clip();
+  // paper fibre (fine) and ageing: foxing spots, edge browning, a faint coffee ring
+  cin.fillTexture(c, 'plaster', [0, 0, W, Hh], { blend: 'multiply', alpha: 0.16 + 0.18 * a, scale: 0.7, seed: 31 });
+  cin.fillTexture(c, 'fabric', [0, 0, W, Hh], { blend: 'overlay', alpha: 0.18, scale: 0.8, seed: 5 });
+  for (let i = 0; i < Math.round(16 * a); i++) { const fx = r() * W, fy = r() * Hh, fr = 5 + r() * 18, fg = c.createRadialGradient(fx, fy, 0, fx, fy, fr); fg.addColorStop(0, `rgba(130,78,22,${0.22 * a})`); fg.addColorStop(1, 'rgba(130,78,22,0)'); c.fillStyle = fg; c.fillRect(fx - fr, fy - fr, fr * 2, fr * 2); }
+  { const eg = c.createRadialGradient(W * 0.5, Hh * 0.5, W * 0.3, W * 0.5, Hh * 0.5, W * 0.72); eg.addColorStop(0, 'rgba(120,70,20,0)'); eg.addColorStop(1, `rgba(120,70,20,${0.12 + 0.42 * a})`); c.fillStyle = eg; c.fillRect(0, 0, W, Hh); }
+  if (a > 0.5) { c.strokeStyle = `rgba(110,60,14,${0.16 * a})`; c.lineWidth = 9; c.beginPath(); c.arc(W * 0.8, Hh * 0.72, 42, 0.3, 5.4); c.stroke(); }
+  // print: charcoal dot-matrix ink, mono for every value so digits are crisp and evenly spaced
+  const ink = `rgba(${Math.round(lerp(26, 52, a))},${Math.round(lerp(24, 36, a))},${Math.round(lerp(30, 24, a))},${0.96 * fade})`, dim = `rgba(${Math.round(lerp(50, 80, a))},${Math.round(lerp(46, 58, a))},${Math.round(lerp(50, 40, a))},${0.82 * fade})`;
+  c.textBaseline = 'alphabetic'; c.textAlign = 'left'; c.fillStyle = ink;
+  c.font = `800 40px ${FONT_EN}`; c.fillText('INDIAN RAILWAYS', 28, 54);
+  c.font = `700 27px ${FONT_HI}`; c.textAlign = 'right'; c.fillText('भारतीय रेल', W - 28, 52); c.textAlign = 'left';
+  c.fillRect(24, 68, W - 48, 4); c.fillRect(24, 76, W - 48, 1.5);
+  c.font = `700 19px ${MONO}`; c.fillStyle = dim; c.fillText('COMPUTERISED RESERVATION SLIP   TRAIN ' + train, 28, 102);
+  c.fillStyle = dim; c.font = `700 21px ${MONO}`; c.fillText('PNR', 28, 146); c.fillStyle = ink; c.font = `800 56px ${MONO}`; c.fillText(pnr, 28, 200);
+  c.fillStyle = dim; c.font = `700 21px ${MONO}`; c.fillText('DATE OF JOURNEY', 28, 244); c.fillStyle = ink; c.font = `800 66px ${MONO}`; c.fillText(date, 28, 308);
+  c.fillStyle = dim; c.font = `700 21px ${MONO}`; c.fillText('CLASS', 28, 346); c.fillText('COACH', 200, 346); c.fillText('BERTH', 372, 346);
+  c.fillStyle = ink; c.font = `800 52px ${MONO}`; c.fillText('SL', 28, 396); c.fillText('S7', 200, 396); c.fillText(berth, 372, 396);
+  c.fillStyle = dim; c.font = `700 19px ${MONO}`; c.fillText(name + '  ' + route, 28, 421);
+  // barcode block, top right
+  c.fillStyle = ink; for (let i = 0, bx = 438; bx < 612; i++) { const bw = 2 + Math.floor(r() * 5); c.fillRect(bx, 118, bw, 84); bx += bw + 2 + Math.floor(r() * 4); }
+  c.fillStyle = dim; c.font = `700 15px ${MONO}`; c.fillText(String(pnr).replace(/(\d{3})(\d+)/, '$1 $2'), 440, 222);
+  // fold creases: a valley fold down the middle and a soft horizontal one (shadow side + lit side + worn white line)
+  const vx = W * 0.5 + (r() - 0.5) * 8;
+  { const cg = c.createLinearGradient(vx - 26, 0, vx + 26, 0); cg.addColorStop(0, 'rgba(255,248,226,0.0)'); cg.addColorStop(0.42, `rgba(0,0,0,${0.12 + 0.1 * a})`); cg.addColorStop(0.5, `rgba(0,0,0,${0.3 + 0.12 * a})`); cg.addColorStop(0.56, 'rgba(255,248,226,0.22)'); cg.addColorStop(1, 'rgba(255,248,226,0)'); c.fillStyle = cg; c.fillRect(vx - 26, 0, 52, Hh); }
+  c.strokeStyle = `rgba(255,250,235,${0.4 - 0.15 * a})`; c.lineWidth = 1.6; c.beginPath(); c.moveTo(vx + 2, 0); c.lineTo(vx + 4, Hh); c.stroke();
+  { const hy = Hh * 0.56, cg = c.createLinearGradient(0, hy - 18, 0, hy + 18); cg.addColorStop(0, 'rgba(0,0,0,0)'); cg.addColorStop(0.5, `rgba(0,0,0,${0.16 + 0.1 * a})`); cg.addColorStop(0.58, 'rgba(255,248,226,0.18)'); cg.addColorStop(1, 'rgba(0,0,0,0)'); c.fillStyle = cg; c.fillRect(0, hy - 18, W, 36); }
+  // torn edge: a pale fibrous strip along the left edge and a lifted bottom-right corner
+  { const tg = c.createLinearGradient(0, 0, 34, 0); tg.addColorStop(0, 'rgba(255,252,240,0.7)'); tg.addColorStop(1, 'rgba(255,252,240,0)'); c.fillStyle = tg; c.fillRect(0, 0, 34, Hh); }
+  { const cg = c.createLinearGradient(W - 80, Hh - 80, W, Hh); cg.addColorStop(0, 'rgba(0,0,0,0)'); cg.addColorStop(1, 'rgba(0,0,0,0.28)'); c.fillStyle = cg; c.fillRect(W - 80, Hh - 80, 80, 80); }
+  c.restore(); outline(); c.strokeStyle = `rgba(70,46,18,${0.45})`; c.lineWidth = 2; c.stroke();
+  c.restore();
 }
 
 // ============================================================================================================
@@ -361,18 +380,39 @@ export function rowBerths(c, b, S) {
   }
   return hands;
 }
-// dangling arm + hand + the same yellow ticket. t drives the slow sway; glow rises with S.escal (0..1)
+// dangling arm + hand + the same yellow ticket: every sleeper is a different person (kurta / checked shirt / sweater / jacket, different skin), the cuff shows, the wrist is bare,
+// the hand is the kit's jointed hand with its fingers curled round the paper. t drives the slow sway; glow rises with S.escal (0..1)
+const SLEEVES = [
+  { kind: 'kurta', col: '#cbc2a8', mid: '#a49b82', dark: '#5e5842', skin: ['#9a6a46', '#5c3a24'] },
+  { kind: 'shirt', col: '#5a7ca4', mid: '#41618a', dark: '#1e3048', skin: ['#b88a64', '#6e4a30'] },
+  { kind: 'sweater', col: '#8a4350', mid: '#6a2f3a', dark: '#2e1218', skin: ['#7e5236', '#442a18'] },
+  { kind: 'kurta', col: '#a9bba9', mid: '#7f917f', dark: '#3e4c3e', skin: ['#a87a56', '#684630'] },
+  { kind: 'jacket', col: '#56564c', mid: '#3c3c34', dark: '#16160f', skin: ['#c49770', '#7c5a3c'] },
+  { kind: 'shirt', col: '#a88c5a', mid: '#80683c', dark: '#3a2c14', skin: ['#8a5e3e', '#503420'] },
+];
 export function dangleHand(c, h, S) {
-  const sway = Math.sin(S.t * 1.3 + h.r * 6) * 0.05, x = h.x, y = h.y, L = 150 + h.r * 20;
+  const sway = Math.sin(S.t * 1.3 + h.r * 6) * 0.05, x = h.x, y = h.y, sp = SLEEVES[((h.i * 5 + h.lvl * 3 + 40) % SLEEVES.length + SLEEVES.length) % SLEEVES.length];
+  const skin = sp.skin, a = S.escal ?? 0;
   c.save(); c.translate(x, y); c.rotate(sway); c.scale(1.35, 1.35);
-  // sleeve hanging over the edge, then forearm and hand
-  const g = c.createLinearGradient(-40, 0, 40, 0); g.addColorStop(0, '#b9b09a'); g.addColorStop(1, '#4a4638'); c.fillStyle = g; c.beginPath(); c.moveTo(-44, -20); c.quadraticCurveTo(-52, 70, -38, 140); c.lineTo(38, 140); c.quadraticCurveTo(52, 70, 44, -20); c.closePath(); c.fill(); c.strokeStyle = 'rgba(0,0,0,0.6)'; c.lineWidth = 3; c.stroke(); for (let i = 0; i < 3; i++) { c.strokeStyle = 'rgba(0,0,0,0.4)'; c.beginPath(); c.moveTo(-30 + i * 28, -10); c.quadraticCurveTo(-26 + i * 28, 60, -24 + i * 22, 135); c.stroke(); } c.fillStyle = '#2a261d'; c.fillRect(-42, 118, 84, 22);
-  const sg = c.createLinearGradient(-26, 0, 26, 0); sg.addColorStop(0, '#8a7260'); sg.addColorStop(1, '#3a2c22'); c.fillStyle = sg; c.beginPath(); c.moveTo(-26, 130); c.lineTo(-22, 130 + L * 0.55); c.lineTo(22, 130 + L * 0.55); c.lineTo(26, 130); c.closePath(); c.fill();
-  // hand: palm + four curled fingers + thumb, ink outlined
-  c.translate(0, 130 + L * 0.55); c.fillStyle = sg; c.strokeStyle = '#0a0705'; c.lineWidth = 3; c.beginPath(); c.moveTo(-26, 0); c.quadraticCurveTo(-40, 50, -26, 92); c.lineTo(26, 92); c.quadraticCurveTo(40, 50, 26, 0); c.closePath(); c.fill(); c.stroke();
-  for (let f = 0; f < 4; f++) { const fx = -21 + f * 14, fl = 62 + (f === 1 || f === 2 ? 10 : 0) - (f === 3 ? 12 : 0); c.lineCap = 'round'; c.beginPath(); c.moveTo(fx, 84); c.quadraticCurveTo(fx + 3 + sway * 20, 84 + fl * 0.7, fx - 4, 84 + fl); c.lineWidth = 17; c.strokeStyle = '#0a0705'; c.stroke(); c.lineWidth = 12; c.strokeStyle = '#7a6250'; c.stroke(); }
-  c.beginPath(); c.moveTo(-24, 40); c.quadraticCurveTo(-52, 70, -40, 112); c.lineWidth = 19; c.strokeStyle = '#0a0705'; c.stroke(); c.lineWidth = 14; c.strokeStyle = '#8a7260'; c.stroke();
-  // ticket pinched between thumb and fingers
-  const a = S.escal ?? 0; c.save(); c.translate(-4, 100); c.rotate(-0.12 + sway * 2); c.shadowColor = `rgba(255,200,70,${0.2 + 0.5 * a})`; c.shadowBlur = 18 + 24 * a; drawTicket(c, -64, -4, 140, 92, { age: 1, seed: h.i + h.lvl, fade: 0.9 }); c.restore();
+  // sleeve hanging over the berth edge: tapered, folded
+  const sl = () => { c.beginPath(); c.moveTo(-50, -24); c.bezierCurveTo(-58, 50, -54, 110, -44, 168); c.lineTo(44, 168); c.bezierCurveTo(54, 110, 58, 50, 50, -24); c.closePath(); };
+  c.save(); sl(); const g = c.createLinearGradient(-50, 0, 50, 0); g.addColorStop(0, sp.col); g.addColorStop(0.55, sp.mid); g.addColorStop(1, sp.dark); c.fillStyle = g; c.fill(); c.clip();
+  tex(c, sp.kind === 'sweater' ? 'fabric' : 'plaster', [-60, -30, 120, 210], { alpha: 0.6, scale: sp.kind === 'sweater' ? 1.1 : 1.0, seed: h.i + 3 });
+  if (sp.kind === 'sweater') { c.strokeStyle = 'rgba(0,0,0,0.3)'; c.lineWidth = 2; for (let i = -9; i <= 9; i++) { c.beginPath(); c.moveTo(i * 6, -24); c.lineTo(i * 6.4, 168); c.stroke(); } }
+  if (sp.kind === 'shirt') { c.strokeStyle = 'rgba(255,255,255,0.14)'; c.lineWidth = 3; for (let i = -4; i <= 4; i++) { c.beginPath(); c.moveTo(i * 22, -24); c.lineTo(i * 22 + 6, 168); c.stroke(); } for (let j = 0; j < 8; j++) { c.beginPath(); c.moveTo(-60, j * 26); c.lineTo(60, j * 26 + 4); c.stroke(); } }
+  for (let i = 0; i < 4; i++) { const fx = -34 + i * 22; c.strokeStyle = 'rgba(0,0,0,0.32)'; c.lineWidth = 6; c.beginPath(); c.moveTo(fx, -10); c.quadraticCurveTo(fx + 6, 70, fx - 4 + (i - 1.5) * 4, 160); c.stroke(); c.strokeStyle = 'rgba(255,240,210,0.12)'; c.lineWidth = 3; c.beginPath(); c.moveTo(fx + 7, -8); c.quadraticCurveTo(fx + 13, 70, fx + 3 + (i - 1.5) * 4, 158); c.stroke(); }
+  c.restore(); c.save(); sl(); c.strokeStyle = 'rgba(8,6,4,0.8)'; c.lineWidth = 3; c.stroke(); c.restore();
+  // cuff: kurta/shirt = stitched band + button; sweater = ribbed band
+  c.save(); c.beginPath(); c.moveTo(-46, 144); c.lineTo(46, 144); c.lineTo(44, 176); c.lineTo(-44, 176); c.closePath(); c.fillStyle = sp.kind === 'sweater' ? sp.dark : sp.mid; c.fill(); c.strokeStyle = 'rgba(8,6,4,0.8)'; c.lineWidth = 3; c.stroke(); c.clip();
+  if (sp.kind === 'sweater') { c.strokeStyle = 'rgba(0,0,0,0.4)'; c.lineWidth = 2; for (let i = -8; i <= 8; i++) { c.beginPath(); c.moveTo(i * 5.6, 144); c.lineTo(i * 5.6, 176); c.stroke(); } c.strokeStyle = 'rgba(255,255,255,0.1)'; for (let i = -8; i <= 8; i++) { c.beginPath(); c.moveTo(i * 5.6 + 2.6, 144); c.lineTo(i * 5.6 + 2.6, 176); c.stroke(); } }
+  else { c.setLineDash([6, 5]); c.strokeStyle = 'rgba(8,6,4,0.55)'; c.lineWidth = 2; c.beginPath(); c.moveTo(-44, 168); c.lineTo(44, 168); c.stroke(); c.setLineDash([]); c.fillStyle = '#e6dfca'; c.strokeStyle = '#1c150c'; c.lineWidth = 2; c.beginPath(); c.arc(26, 158, 5.5, 0, TAU); c.fill(); c.stroke(); }
+  c.restore();
+  // wrist (bare skin), tapered
+  const sg = c.createLinearGradient(-26, 0, 26, 0); sg.addColorStop(0, skin[0]); sg.addColorStop(1, skin[1]); c.fillStyle = sg; c.beginPath(); c.moveTo(-27, 172); c.quadraticCurveTo(-30, 196, -25, 212); c.lineTo(25, 212); c.quadraticCurveTo(30, 196, 27, 172); c.closePath(); c.fill(); c.strokeStyle = 'rgba(8,6,4,0.7)'; c.lineWidth = 2.5; c.stroke();
+  c.strokeStyle = 'rgba(30,14,6,0.35)'; c.lineWidth = 2; c.beginPath(); c.moveTo(-26, 190); c.quadraticCurveTo(0, 196, 26, 190); c.stroke();
+  // the ticket hangs from the pinch (drawn first, the fingers close over its top edge)
+  c.save(); c.translate(-6, 292); c.rotate(-0.08 + sway * 2); c.shadowColor = `rgba(255,200,70,${0.2 + 0.5 * a})`; c.shadowBlur = 18 + 24 * a; drawTicket(c, -78, -34, 156, 105, { age: 1, seed: h.i + h.lvl, fade: 0.9, shadow: false }); c.restore();
+  // the hand: kit hand, fingers down, curled round the paper, thumb across the front
+  c.save(); c.translate(0, 206); c.scale(1000, 1000); drawHand(c, { p: [0, 0], ang: 0 + sway * 0.4, size: 0.2, curl: 0.5, curls: [0.52, 0.6, 0.7, 0.78], spread: 0.15, thumb: 0.4, thumbTuck: 0.45, side: 1, skin: skin[0], env: { L: { x: 0.7, y: -0.6 }, key: '#ffd2a0', amb: '#2a3a60', strength: 1.0, hard: false }, px: 1000 }); c.restore();
   c.restore();
 }

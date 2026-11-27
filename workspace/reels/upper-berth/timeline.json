@@ -501,7 +501,9 @@
       "grain.seed"
      ]
     }
-   ]
+   ],
+   "allow_black": true,
+   "allow_silence": true
   },
   {
    "id": "s10_bhopal",

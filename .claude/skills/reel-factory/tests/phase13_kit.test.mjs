@@ -164,3 +164,17 @@ test("horror ghost: no shadow of any kind (shadow() draws nothing, nothing dark 
   const jt = hw.joints(hs).handR, row = hx.getImageData(Math.round(jt[0]) - 14, Math.round(jt[1]) + 12, 28, 1).data; let lum = []; for (let i = 0; i < 28; i++) lum.push(row[i * 4] + row[i * 4 + 1] + row[i * 4 + 2]);
   assert.ok(Math.max(...lum) - Math.min(...lum) > 40, 'finger band has contrast (fingers separated)');
 });
+
+test('figures: receding grey hair, moustache, creased face, shawl and hands() are opt-in, deterministic and change pixels', () => {
+  const draw = (spec, fn = 'draw') => { const c = createCanvas(480, 480), x = c.getContext('2d'); x.fillStyle = '#102020'; x.fillRect(0, 0, 480, 480); const f = kit.createFigure(spec); f[fn](x, { x: 240, feet: 640, height: 620, facing: 1, pose: 'stand', t: 1, light: kit.LIGHTS.moon, eyeLight: 0.5 }); return hash(c); };
+  const base = { age: 'elder', outfit: 'kurta', style: 'horror', seed: 4 };
+  assert.ok(kit.HAIR_STYLES.includes('receding'));
+  const a = draw(base), b = draw({ ...base, hair: { style: 'receding', color: '#a8a398' } });
+  assert.equal(draw(base), a, 'default elder unchanged and deterministic');
+  assert.notEqual(a, b, 'receding hair differs from baldfringe');
+  assert.equal(draw({ ...base, hair: { style: 'receding', color: '#a8a398' } }), b);
+  const m = draw({ ...base, moustache: { color: '#ccc' } }), cr = draw({ ...base, creased: true, sockets: true }), sh = draw({ ...base, shawl: { color: '#6e5c48' } });
+  assert.equal(new Set([a, m, cr, sh]).size, 4, 'each option changes the render');
+  assert.equal(draw({ ...base, shawl: { color: '#6e5c48' } }), sh);
+  assert.notEqual(draw(base, 'hands'), draw({ ...base, seed: 5 }, 'hands'));
+});
