@@ -1,0 +1,5 @@
+workspace/reels/*/cache/
+workspace/reels/*/out/
+workspace/reels/*/audio/*.wav
+workspace/reels/*/*.wav
+workspace/reels/*/_dev/

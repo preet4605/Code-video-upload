@@ -2,7 +2,17 @@
   "version": 1,
   "created_at": "2026-11-27T00:35:44.517Z",
   "unreviewed": false,
-  "approvals": {},
+  "approvals": {
+    "script": {
+      "sha256": "7cdea5b3c2d06926cb83b9be972aaed5baacac3cdea9bf98aa7e1c6c28228e32",
+      "at": "2026-11-27T00:42:53.300Z",
+      "files": [
+        "lines.json",
+        "brief.json",
+        "script.txt"
+      ]
+    }
+  },
   "stages": {
     "preflight": {
       "status": "ok",
@@ -19,9 +29,25 @@
       "runs": 5
     },
     "script": {
-      "status": "waiting",
-      "at": "2026-11-27T00:38:05.310Z",
-      "reason": "script not approved yet"
+      "status": "ok",
+      "at": "2026-11-27T00:42:53.346Z",
+      "approved": true,
+      "input_hash": "7cdea5b3c2d06926cb83b9be972aaed5baacac3cdea9bf98aa7e1c6c28228e32"
+    },
+    "vo": {
+      "status": "ok",
+      "input_hash": "3cd2fe7ee0332f2cb833fc432eec6da62d8150eba90d0c0ef143e34d60b05ce5",
+      "at": "2026-11-27T00:43:09.172Z",
+      "duration_ms": 15826,
+      "runs": 1
+    },
+    "plan_lint": {
+      "status": "ok",
+      "input_hash": "150009fc52c5a88a59c312b8d28f3e2c18b385e9ddcaef7edfbab112a8daa60e",
+      "at": "2026-11-27T00:43:09.176Z",
+      "duration_ms": 2,
+      "runs": 1,
+      "warns": []
     }
   },
   "genre": "horror",
@@ -29,7 +55,7 @@
   "format": "standalone",
   "voice": "aman",
   "unreviewed_reasons": [],
-  "updated_at": "2026-11-27T00:38:05.310Z",
+  "updated_at": "2026-11-27T00:43:09.176Z",
   "failed": {
     "stage": "script_gate",
     "exit_code": 1,
