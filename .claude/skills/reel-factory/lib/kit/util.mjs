@@ -64,9 +64,9 @@ export function ribbon(pts, ws, { n = 12, bulge = 0, cap = 3 } = {}) {
     const s = i / (P.length - 1), w = (W[i] / 2) * (1 + bulge * Math.sin(Math.PI * s));
     L.push([P[i][0] - ty * w, P[i][1] + tx * w]); R.push([P[i][0] + ty * w, P[i][1] - tx * w]);
   }
-  const arc = (c, w, a0) => { const o = []; for (let k = 1; k < cap; k++) { const a = a0 + (Math.PI * k) / cap; o.push([c[0] + Math.cos(a) * w / 2, c[1] + Math.sin(a) * w / 2]); } return o; };
+  const arc = (c, w, a0) => { const o = []; for (let k = 1; k < cap; k++) { const a = a0 - (Math.PI * k) / cap; o.push([c[0] + Math.cos(a) * w / 2, c[1] + Math.sin(a) * w / 2]); } return o; }; // from the L side round the tip to the R side
   const e = P.length - 1, d1 = Math.atan2(P[e][1] - P[e - 1][1], P[e][0] - P[e - 1][0]), d0 = Math.atan2(P[0][1] - P[1][1], P[0][0] - P[1][0]);
-  return [...L, ...arc(P[e], W[e], d1 - Math.PI / 2), ...R.reverse(), ...arc(P[0], W[0], d0 - Math.PI / 2)];
+  return [...L, ...arc(P[e], W[e], d1 + Math.PI / 2), ...R.reverse(), ...arc(P[0], W[0], d0 + Math.PI / 2)];
 }
 
 // ---- seeded blotches: stains, damp, dirt (cheap radial gradients, no per-pixel work) ----

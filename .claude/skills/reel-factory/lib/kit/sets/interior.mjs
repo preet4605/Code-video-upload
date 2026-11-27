@@ -55,10 +55,10 @@ export function corridor(o = {}) {
 
 // ============================================================ stairwell
 export function stairwell(o = {}) {
-  const variant = opt(o, 'variant', 'flats'), N = 12, rise = 0.17 * UPM, run = 0.3, z0 = 1.25;
+  const variant = opt(o, 'variant', 'flats'), office = variant !== 'flats', N = office ? 9 : 12, rise = (office ? 0.2 : 0.17) * UPM, run = office ? 0.38 : 0.3, z0 = 1.25;
   const def = {
-    name: 'stairwell', palette: opt(o, 'palette', variant === 'flats' ? 'ochre' : 'blue'), W0: 0.95 * UPM, Hc: 1700, zEnd: z0 + N * run + 1.0, n: 5, z0: 1.0, vpY: 800, wear: 0.6,
-    style: { left: 'plain', right: 'plain', dado: variant === 'flats' ? '#6d3b22' : '#35505f', dadoH: 360, fog: 0.9, floor: '#3a352f', tile: 0.5 },
+    name: 'stairwell', tod: opt(o, 'tod', office ? 'day' : 'night'), palette: opt(o, 'palette', office ? 'grey' : 'ochre'), W0: (office ? 1.3 : 0.95) * UPM, Hc: 1700, zEnd: z0 + N * run + 1.0, n: 5, z0: 1.0, vpY: 800, wear: 0.6,
+    style: { left: 'plain', right: 'plain', dado: office ? '#4d6a74' : '#6d3b22', dadoH: office ? 460 : 360, fog: office ? 0.5 : 0.9, floor: office ? '#7b7a74' : '#3a352f', tile: 0.5 },
     end(c, G, S, st, t) {
       const { P, Hf } = G, zE = G.zEnd, y = Hf - N * rise, w = 0.8 * UPM, tl = P(-w, y - 2.1 * UPM, zE), br = P(w, y, zE);
       // landing: a window with a hard shaft of light and a door
@@ -99,7 +99,7 @@ export function stairwell(o = {}) {
 export function room(o = {}) {
   const variant = opt(o, 'variant', 'bedroom');
   const def = {
-    name: 'room', palette: opt(o, 'palette', variant === 'bedroom' ? 'blue' : 'pink'), W0: 1.7 * UPM, Hc: 880, zEnd: 5.4, n: 3, z0: 1.0, vpY: 880, wear: opt(o, 'wear', 0.4),
+    name: 'room', tod: opt(o, 'tod', variant === 'bedroom' ? 'night' : 'day'), palette: opt(o, 'palette', variant === 'bedroom' ? 'blue' : 'pink'), W0: 1.7 * UPM, Hc: 880, zEnd: 5.4, n: 3, z0: 1.0, vpY: 880, wear: opt(o, 'wear', 0.4),
     style: { left: 'plain', right: 'plain', dado: null, fog: 0.4, floor: '#4a3a2c', floorTex: 'wood', tile: 0.9, endColor: null },
     end(c, G, S, st, t) {
       const { P, Hf } = G, zE = G.zEnd, night = S.palette.tod === 'night';
@@ -117,7 +117,7 @@ export function room(o = {}) {
     },
     items({ G, S, r }) {
       const items = [], { P, W0, Hf } = G;
-      items.push({ type: 'window', side: 1, z: 3.1, w: 1.5, h: 1.45, sill: 0.95, moon: true, curtain: opt(o, 'curtain', '#6b3a4a'), dz: 0.05 });
+      items.push({ type: 'window', side: variant === 'bedroom' ? 1 : -1, z: variant === 'bedroom' ? 3.1 : 3.6, w: variant === 'bedroom' ? 1.5 : 1.9, h: variant === 'bedroom' ? 1.45 : 1.25, sill: variant === 'bedroom' ? 0.95 : 1.15, moon: true, curtain: opt(o, 'curtain', '#6b3a4a'), dz: 0.05 });
       items.push({ id: 'bed', type: 'bed', z: 3.3, dz: 0.0, draw(c, G2, S2, t) {
         const night = S2.palette.tod === 'night', X0 = -W0 + 0.08 * UPM, X1 = -W0 + 1.15 * UPM, za = 2.0, zb = 4.6, top = Hf - 0.56 * UPM, base = Hf - 0.25 * UPM;
         const rect = (q, col, tex) => { c.fillStyle = col; c.fill(quadPath(q)); };
@@ -140,7 +140,7 @@ export function room(o = {}) {
       return items;
     },
     lights({ G, items, S }) {
-      const w = items.find((i) => i.type === 'window'), out = [winLight(G, 1, w.z, w.w, w.sill, w.h, '#8aa2ff', 0.85)];
+      const w = items.find((i) => i.type === 'window'), out = [winLight(G, w.side, w.z, w.w, w.sill, w.h, S.palette.tod === 'night' ? '#8aa2ff' : '#fff0d0', 0.85)];
       const a = G.P(-0.9 * UPM, G.Hf - 2.0 * UPM, G.zEnd), b = G.P(0, G.Hf, G.zEnd); out.push({ id: 'doorstrip', kind: 'door', type: 'door', x: a[0], y: a[1], w: b[0] - a[0], h: b[1] - a[1], depth: 1, color: '#ffd58a', intensity: 0.85, spill: 500 });
       const bl = G.P(-1.0 * UPM, G.Hf - 0.9 * UPM, 2.8); out.push({ id: 'bedside', kind: 'lamp', type: 'point', x: bl[0], y: bl[1], depth: 1, r: 420, color: '#ffbf7a', intensity: 0.55, flicker: 0.03, seed: 5 });
       return out;
@@ -155,7 +155,7 @@ export function haveliCorridor(o = {}) {
   const variant = opt(o, 'variant', 'day'), tod = opt(o, 'tod', variant === 'day' ? 'noon' : 'night');
   const def = {
     name: 'haveliCorridor', tod, palette: opt(o, 'palette', variant === 'day' ? 'ochre' : 'pink'), W0: 1.25 * UPM, Hc: 880, zEnd: 9.5, n: 6, z0: 1.0, vpY: 860, wear: opt(o, 'wear', 0.5), forceMask: false,
-    style: { left: 'arcade', right: 'plain', dado: null, arch: 1.55, fog: 0.5, floor: '#b49a74', tile: 0.5, checker: true, wallColor: {} },
+    style: { left: 'arcade', right: 'plain', dado: null, arch: 1.55, fog: 0.5, floor: '#b49a74', floorTex: 'plaster', tile: 0.45, checker: true, tileVar: true, wallColor: {} },
     end(c, G, S, st, t) {
       const { P, Hf } = G, zE = G.zEnd, night = S.palette.tod === 'night', tl = P(-0.7 * UPM, Hf - 2.4 * UPM, zE), br = P(0.7 * UPM, Hf, zE), p = archPath(tl[0], br[0], br[1], tl[1]);
       c.fillStyle = night ? '#101a30' : '#fff7e2'; c.fill(p); c.strokeStyle = rgba('#000', 0.6); c.lineWidth = 4; c.stroke(p);

@@ -1,6 +1,6 @@
 // before/after: render the same three shots (same times, same captions) from the original scene and from v2, run the same
 // visual_metrics pipeline as scripts/visual_loop.mjs (540x960 render -> 270x480 -> frameMetrics, caption band ignored,
-// 3 keyframes per shot) against templates/visual_targets.horror-day.json, write before_after.png + metrics.json.
+// 3 keyframes per shot) against templates/visual_targets.horror-day.json, write before_after.jpg (JPEG q85, the PNG was over 1.5 MB) + metrics.json.
 //   node examples/zero-shadow-day-v2/tools/compare.mjs
 import fs from 'node:fs'; import path from 'node:path'; import { pathToFileURL, fileURLToPath } from 'node:url';
 import { createCanvas, GlobalFonts } from '@napi-rs/canvas';
@@ -33,7 +33,7 @@ const pad = 8, lab = 26, W = 6 * (RW / 2 + pad) + pad, H = 3 * (RH / 2 + lab + p
 s.fillStyle = '#141414'; s.fillRect(0, 0, W, H); s.font = '16px "Noto Sans", sans-serif'; s.fillStyle = '#ddd';
 SHOTS.forEach((id, r) => { const y = pad + r * (RH / 2 + lab + pad); s.fillText(`${id}  BEFORE (original scene.mjs)`, pad, y + 18); s.fillText('AFTER (kit + cinema)', pad + 3 * (RW / 2 + pad), y + 18);
   [...before[id].frames, ...after[id].frames].forEach((f, i) => s.drawImage(f.canvas, pad + i * (RW / 2 + pad), y + lab, RW / 2, RH / 2)); });
-fs.writeFileSync(path.join(V2, 'before_after.png'), sheet.toBuffer('image/png'));
+fs.writeFileSync(path.join(V2, 'before_after.jpg'), sheet.toBuffer('image/jpeg', 85));
 const keys = ['sharp_edges', 'contrast', 'saturation', 'color_bins', 'mean_luma', 'p5_luma', 'lit_fraction', 'lit_regions', 'subject_scale', 'empty_cells'];
 const table = {}; for (const id of SHOTS) table[id] = { before: Object.fromEntries(keys.map((k) => [k, before[id].agg[k]])), after: Object.fromEntries(keys.map((k) => [k, after[id].agg[k]])), deficits_before: before[id].deficits, deficits_after: after[id].deficits };
 fs.writeFileSync(path.join(V2, 'metrics.json'), JSON.stringify({ targets: 'templates/visual_targets.horror-day.json', keys: KEYS, table }, null, 1));

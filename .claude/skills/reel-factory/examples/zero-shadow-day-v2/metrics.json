@@ -20,15 +20,15 @@
     "empty_cells": 9
    },
    "after": {
-    "sharp_edges": 0.0812,
-    "contrast": 65.2,
-    "saturation": 0.201,
-    "color_bins": 43.6667,
-    "mean_luma": 129.9667,
-    "p5_luma": 18.3333,
-    "lit_fraction": 0.8425,
+    "sharp_edges": 0.0789,
+    "contrast": 65.5333,
+    "saturation": 0.1963,
+    "color_bins": 41,
+    "mean_luma": 129.3333,
+    "p5_luma": 18,
+    "lit_fraction": 0.8364,
     "lit_regions": 2,
-    "subject_scale": 0.4757,
+    "subject_scale": 0.455,
     "empty_cells": 1
    },
    "deficits_before": [
@@ -57,23 +57,23 @@
     "empty_cells": 5.67
    },
    "after": {
-    "sharp_edges": 0.0258,
-    "contrast": 56.2,
-    "saturation": 0.4463,
-    "color_bins": 22.3333,
-    "mean_luma": 36.7667,
+    "sharp_edges": 0.0319,
+    "contrast": 74.8333,
+    "saturation": 0.2563,
+    "color_bins": 21.6667,
+    "mean_luma": 51.7333,
     "p5_luma": 3.3333,
-    "lit_fraction": 0.2085,
-    "lit_regions": 1,
-    "subject_scale": 0.344,
-    "empty_cells": 7.67
+    "lit_fraction": 0.2565,
+    "lit_regions": 2,
+    "subject_scale": 0.5313,
+    "empty_cells": 3.33
    },
    "deficits_before": [
     "sharp_edges"
    ],
    "deficits_after": [
     "sharp_edges",
-    "empty_cells"
+    "focal"
    ]
   },
   "s5_hand": {
@@ -90,16 +90,16 @@
     "empty_cells": 11.67
    },
    "after": {
-    "sharp_edges": 0.0346,
-    "contrast": 64.7333,
-    "saturation": 0.1837,
-    "color_bins": 41.3333,
-    "mean_luma": 129.3,
-    "p5_luma": 4.6667,
-    "lit_fraction": 0.8555,
+    "sharp_edges": 0.0214,
+    "contrast": 57.7667,
+    "saturation": 0.1947,
+    "color_bins": 44.3333,
+    "mean_luma": 137.4333,
+    "p5_luma": 37,
+    "lit_fraction": 0.9062,
     "lit_regions": 2,
-    "subject_scale": 0.4933,
-    "empty_cells": 6.33
+    "subject_scale": 0.469,
+    "empty_cells": 7
    },
    "deficits_before": [
     "sharp_edges",
@@ -110,9 +110,9 @@
    ],
    "deficits_after": [
     "sharp_edges",
-    "saturation",
     "color_bins",
-    "hue_families"
+    "hue_families",
+    "empty_cells"
    ]
   }
  }

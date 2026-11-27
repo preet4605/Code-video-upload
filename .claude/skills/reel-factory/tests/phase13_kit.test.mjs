@@ -132,3 +132,35 @@ test('zero-shadow-day-v2: contract, determinism, three shots render at 270x480',
   }
   assert.equal(new Set(hs).size, 3);
 });
+
+test("style:'horror' is deterministic, differs from illustrated, has adult-leaning proportions and rejects unknown styles", () => {
+  const spec = { age: 'child', outfit: 'uniform', seed: 3 }, st = { x: 100, feet: 280, height: 260, pose: 'stand', t: 0.7, light: kit.LIGHTS.lamp };
+  const draw = (s) => { const c = createCanvas(200, 300); kit.createFigure(s).draw(c.getContext('2d'), st); return hash(c); };
+  const a = draw({ ...spec, style: 'horror' }), b = draw({ ...spec, style: 'horror' });
+  assert.equal(a, b, 'horror figure is deterministic');
+  assert.notEqual(a, draw(spec), 'horror differs from illustrated');
+  assert.equal(draw(spec), draw({ ...spec, style: 'illustrated' }), "default style is 'illustrated'");
+  for (const age of ['child', 'adult', 'elder']) assert.ok(kit.createFigure({ age, style: 'horror' }).B.head < kit.createFigure({ age }).B.head * 0.9, `${age}: horror head is smaller`);
+  assert.throws(() => kit.createFigure({ style: 'nope' }), /unknown style/);
+  // eyes: no catchlight unless state.eyeLight asks for one (a lit-from-a-door close-up); the pixels differ when it does
+  const big = (extra) => { const c = createCanvas(300, 300); kit.createFigure({ age: 'adult', outfit: 'shirt', seed: 5, style: 'horror' }).draw(c.getContext('2d'), { x: 150, feet: 1740, height: 1700, pose: 'stand', t: 1, light: kit.LIGHTS.doorway, ...extra }); return hash(c); };
+  assert.equal(big({}), big({ eyeLight: 0 })); assert.notEqual(big({}), big({ eyeLight: 1 }));
+});
+
+test("horror ghost: no shadow of any kind (shadow() draws nothing, nothing dark under the feet), still deterministic; hands are finger-separated", () => {
+  const g = kit.createFigure({ age: 'adult', sex: 'f', outfit: 'saree', seed: 8, variant: 'ghost', style: 'horror' }), st = { x: 120, feet: 200, height: 150, pose: 'stand', t: 0 };
+  const c = createCanvas(240, 240), x = c.getContext('2d');
+  assert.equal(g.shadow(x, st, { dir: [-0.5, 0.4] }, { alpha: 1, soft: 1, ghostShadow: true }), false);
+  assert.equal(g.shadow(x, st, { x: 20, y: 20, floorY: 200 }, { alpha: 1 }), false);
+  const d = x.getImageData(0, 0, 240, 240).data; let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i] > 0) n++; assert.equal(n, 0, 'shadow() left pixels');
+  // draw(): the rows below the feet line stay empty (no contact shadow, no dark wet pool)
+  const c2 = createCanvas(240, 300), x2 = c2.getContext('2d'); g.draw(x2, { ...st, feet: 200, height: 180 });
+  const d2 = x2.getImageData(0, 206, 240, 94).data; let below = 0; for (let i = 3; i < d2.length; i += 4) if (d2[i] > 8) below++; assert.equal(below, 0, `${below} px below the feet`);
+  const h = () => { const cc = createCanvas(240, 300); g.draw(cc.getContext('2d'), { ...st, height: 180, t: 1.3 }); return hash(cc); };
+  assert.equal(h(), h());
+  // a hand at body scale has visible gaps between the fingers (transparent / dark columns across the finger band)
+  const hc = createCanvas(400, 400), hx = hc.getContext('2d'); hx.fillStyle = '#808080'; hx.fillRect(0, 0, 400, 400);
+  const hw = kit.createFigure({ age: 'adult', outfit: 'shirt', seed: 5 }), hs = { x: 200, feet: 390, height: 380, pose: 'stand', t: 0.5, light: kit.LIGHTS.noon }; hw.draw(hx, hs);
+  const jt = hw.joints(hs).handR, row = hx.getImageData(Math.round(jt[0]) - 14, Math.round(jt[1]) + 12, 28, 1).data; let lum = []; for (let i = 0; i < 28; i++) lum.push(row[i * 4] + row[i * 4 + 1] + row[i * 4 + 2]);
+  assert.ok(Math.max(...lum) - Math.min(...lum) > 40, 'finger band has contrast (fingers separated)');
+});

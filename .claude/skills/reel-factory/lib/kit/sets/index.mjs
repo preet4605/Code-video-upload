@@ -13,7 +13,7 @@ export const VARIANTS = {
   corridor: [{ variant: 'hostel', seed: 1 }, { variant: 'school', seed: 3 }],
   stairwell: [{ variant: 'flats', seed: 1 }, { variant: 'office', seed: 2 }],
   roadNight: [{ variant: 'highway', seed: 1 }, { variant: 'rain', seed: 2 }],
-  street: [{ variant: 'wet', seed: 1 }, { variant: 'dry', seed: 2, palette: 'ochre' }],
+  street: [{ variant: 'wet', seed: 1 }, { variant: 'dry', seed: 2, palette: 'ochre', tod: 'dusk' }],
   room: [{ variant: 'bedroom', seed: 1 }, { variant: 'girls', seed: 2, curtain: '#2f6b86' }],
 };
 export function buildSet(name, opts = {}) { const f = SETS[name]; if (!f) throw new Error(`unknown set "${name}" (have ${SET_NAMES.join(', ')})`); return f(opts); }

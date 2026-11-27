@@ -22,13 +22,14 @@ function geometry(o, def) {
 const wq = (G, side, za, zb, ya, yb) => [G.P(side * G.W0, ya, za), G.P(side * G.W0, ya, zb), G.P(side * G.W0, yb, zb), G.P(side * G.W0, yb, za)];
 
 function paintSegment(c, G, S, i, st, t) {
-  const { P, W0, Hf, Hc } = G, pal = S.palette, zf = G.zs[i], zn = Math.max(0.45, G.zs[i - 1] * 0.7), zm = (zf + zn) / 2, night = pal.tod === 'night';
-  const mk = (pts) => ({ pts, path: quadPath(pts), bb: bbox(pts) });
-  const L = mk(wq(G, -1, zn, zf, Hf, -Hc)), R = mk(wq(G, 1, zn, zf, Hf, -Hc));
-  const F = mk([P(-W0, Hf, zn), P(W0, Hf, zn), P(W0, Hf, zf), P(-W0, Hf, zf)]), C = mk([P(-W0, -Hc, zn), P(W0, -Hc, zn), P(W0, -Hc, zf), P(-W0, -Hc, zf)]);
-  const tsc = 1.2 / Math.pow(zm, 0.55), wear = S.wear * 0.6;
+  // Seamless surfaces: every segment layer paints its surfaces from the camera plane (zn) out to its own far edge, with the texture origin / scale / stains
+  // anchored to the WHOLE box (bb of the full quad) and fog as a continuous gradient, so the near layer's far edge never shows a step on a bare ceiling.
+  const { P, W0, Hf, Hc } = G, pal = S.palette, zf = G.zs[i], zn = 0.45, zE = G.zEnd, night = pal.tod === 'night';
+  const mk = (pts, full) => ({ pts, path: quadPath(pts), bb: bbox(full ?? pts) });
+  const L = mk(wq(G, -1, zn, zf, Hf, -Hc), wq(G, -1, zn, zE, Hf, -Hc)), R = mk(wq(G, 1, zn, zf, Hf, -Hc), wq(G, 1, zn, zE, Hf, -Hc));
+  const F = mk([P(-W0, Hf, zn), P(W0, Hf, zn), P(W0, Hf, zf), P(-W0, Hf, zf)], [P(-W0, Hf, zn), P(W0, Hf, zn), P(W0, Hf, zE), P(-W0, Hf, zE)]), C = mk([P(-W0, -Hc, zn), P(W0, -Hc, zn), P(W0, -Hc, zf), P(-W0, -Hc, zf)], [P(-W0, -Hc, zn), P(W0, -Hc, zn), P(W0, -Hc, zE), P(-W0, -Hc, zE)]);
+  const tsc = 0.9, wear = S.wear * 0.6, zm = 2.0;
   const dim = (col, k) => (night ? shade(col, -k) : col);
-  const fogA = cl((zf - 1.5) / 14) * (st.fog ?? 0.5);
   // ceiling (an open-top street shows the sky instead)
   if (!st.openTop) surface(c, C.path, C.bb, { color: dim(st.ceil ?? shade(pal.wall, -0.1), 0.2), tex: 'plaster', texA: 0.3, scale: tsc, seed: S.seed + 2, wear: wear * 0.3, stain: '#2a2016' });
   // floor
@@ -49,8 +50,12 @@ function paintSegment(c, G, S, i, st, t) {
     // skirting
     const sk = mk(wq(G, side, zn, zf, Hf, Hf - 40)); c.fillStyle = rgba('#000', 0.35); c.fill(sk.path);
   }
-  // fog toward the far end
-  if (fogA > 0.01) { c.fillStyle = rgba(st.fogColor ?? pal.sky1, fogA * 0.3); for (const q of st.openTop ? [L, R, F] : [L, R, F, C]) c.fill(q.path); }
+  // fog toward the far end: continuous gradients along depth (alpha follows the depth of each point, so no step between segments)
+  if (st.fog > 0.01 || (st.fog ?? 0.5) > 0.01) {
+    const fa = (z) => cl((z - 1.5) / 14) * (st.fog ?? 0.5) * 0.3, N = 14, col = st.fogColor ?? pal.sky1, zs2 = Array.from({ length: N + 1 }, (_, k) => zn * Math.pow(zf / zn, k / N));
+    const fogQuad = (q, axis, pt) => { const c0 = pt(zn), c1 = pt(zf); if (Math.abs(c1 - c0) < 1) return; const g = axis === 'y' ? c.createLinearGradient(0, c0, 0, c1) : c.createLinearGradient(c0, 0, c1, 0); for (const z of zs2) g.addColorStop(cl((pt(z) - c0) / (c1 - c0)), rgba(col, fa(z))); c.fillStyle = g; c.fill(q.path); };
+    fogQuad(L, 'x', (z) => P(-W0, 0, z)[0]); fogQuad(R, 'x', (z) => P(W0, 0, z)[0]); fogQuad(F, 'y', (z) => P(0, Hf, z)[1]); if (!st.openTop) fogQuad(C, 'y', (z) => P(0, -Hc, z)[1]);
+  }
   // ambient occlusion: wall/floor, wall/ceiling, wall/wall corners
   const ao = (a0, a1, n, w, a) => aoStrip(c, a0, a1, n, w, a);
   const ww = 150 / zm;
@@ -67,24 +72,29 @@ function floorLines(c, G, S, st, zn, zf) {
   const step = st.tile ?? 0.6; // metres
   for (let X = -W0; X <= W0 + 1; X += step * UPM) { const a = P(X, Hf, zn), b = P(X, Hf, zf); c.lineWidth = Math.max(1, 3 / ((zn + zf) / 2)); c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.stroke(); }
   for (let z = Math.ceil(zn / step) * step; z < zf; z += step) { const a = P(-W0, Hf, z), b = P(W0, Hf, z); c.lineWidth = Math.max(1, 4 / z); c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.stroke(); }
+  if (st.tileVar) { for (let ix = 0, X = -W0; X < W0; X += step * UPM, ix++) for (let iz = 0, z = Math.ceil(zn / step) * step - step; z < zf; z += step, iz++) { if (z + step <= zn) continue; const v = h01(ix * 13 + S.seed, iz * 7 + 3), q = [P(X, Hf, Math.max(zn, z)), P(X + step * UPM, Hf, Math.max(zn, z)), P(X + step * UPM, Hf, Math.min(zf, z + step)), P(X, Hf, Math.min(zf, z + step))]; c.fillStyle = v < 0.5 ? rgba('#000', (0.5 - v) * 0.3) : rgba('#fff', (v - 0.5) * 0.18); c.beginPath(); c.moveTo(...q[0]); for (const p of q.slice(1)) c.lineTo(...p); c.closePath(); c.fill(); } }
   if (st.checker) { c.fillStyle = rgba('#000', 0.16); for (let ix = 0, X = -W0; X < W0; X += step * UPM, ix++) for (let iz = 0, z = Math.ceil(zn / step) * step - step; z < zf; z += step, iz++) if ((ix + iz) % 2 === 0) { const q = [P(X, Hf, Math.max(zn, z)), P(X + step * UPM, Hf, Math.max(zn, z)), P(X + step * UPM, Hf, Math.min(zf, z + step)), P(X, Hf, Math.min(zf, z + step))]; if (z + step > zn) { c.beginPath(); c.moveTo(...q[0]); for (const p of q.slice(1)) c.lineTo(...p); c.closePath(); c.fill(); } } }
 }
 
 // haveli arcade: a wall of arches opening onto a bright courtyard; pillars sit on the ring frames
 function arcadeWall(c, G, S, st, side, zn, zf, W) {
   const { P, W0, Hf, Hc } = G, pal = S.palette, night = pal.tod === 'night';
-  surface(c, W.path, W.bb, { color: shade(pal.wall, night ? -0.5 : 0), tex: 'plaster', texA: 0.5, scale: 1.2 / zf, seed: S.seed + 14, wear: S.wear, stain: '#2a2016' });
+  surface(c, W.path, W.bb, { color: shade(pal.wall, night ? -0.5 : 0), tex: 'plaster', texA: 0.5, scale: 0.9, seed: S.seed + 14, wear: S.wear, stain: '#2a2016' });
   const pitch = st.arch ?? 1.5, yS = Hf - 1.45 * UPM, yT = Hf - 2.1 * UPM;      // spring line and crown
   for (let za = Math.floor(zn / pitch) * pitch; za < zf; za += pitch) {
     const a = za + 0.28, b = za + pitch - 0.28; if (b < zn || a > zf) continue;
     const pts = []; pts.push(P(side * W0, Hf, a)); pts.push(P(side * W0, yS, a));
-    for (let k = 1; k < 12; k++) { const u = k / 12; pts.push(P(side * W0, yS - (yS - yT) * Math.sin(Math.PI * u) ** 0.75 * (u < 0.5 ? 1 : 1), lerp(a, b, u))); }
+    for (let k = 1; k < 16; k++) { const u = k / 16, x = Math.abs(2 * u - 1); pts.push(P(side * W0, yS - (yS - yT) * (0.58 * (1 - Math.pow(x, 2.3)) + 0.42 * (1 - x)), lerp(a, b, u))); } // pointed (Mughal) arch: smooth shoulders, a crown with a point
     pts.push(P(side * W0, yS, b)); pts.push(P(side * W0, Hf, b));
     const path = new Path2D(); path.moveTo(pts[0][0], pts[0][1]); for (const p of pts.slice(1)) path.lineTo(p[0], p[1]); path.closePath();
     // beyond the arch: bright courtyard (sun-struck floor and sky), the only emissive thing
     c.save(); c.clip(path); const g = c.createLinearGradient(0, G.vp.y - 380, 0, G.vp.y + 480); g.addColorStop(0, night ? '#10182c' : '#f4efe0'); g.addColorStop(0.5, night ? '#1c2a48' : '#fffaf0'); g.addColorStop(1, night ? '#101018' : '#e8d9b8'); c.fillStyle = g; c.fillRect(-300, -300, DW + 600, DH + 600);
     c.fillStyle = rgba('#000', night ? 0.25 : 0.12); const t0 = P(side * W0 * 1.6, Hf, lerp(a, b, 0.5)); c.beginPath(); c.ellipse(t0[0], t0[1], 160 / zf, 24 / zf, 0, 0, TAU); c.fill(); c.restore();
+    // the wall's thickness: a dark reveal down the near jamb and under the soffit, then a double moulding (dark line, light bead) round the opening
+    c.save(); c.clip(path); const j0 = P(side * W0, yS, a), j1 = P(side * W0, yS, lerp(a, b, 0.14)), rg = c.createLinearGradient(j0[0], 0, j1[0], 0); rg.addColorStop(0, rgba('#000', night ? 0.5 : 0.42)); rg.addColorStop(1, rgba('#000', 0)); c.fillStyle = rg; c.fillRect(Math.min(j0[0], j1[0]) - 4, -300, Math.abs(j1[0] - j0[0]) + 8, DH + 600);
+    const tp0 = P(side * W0, yT, (a + b) / 2), tp1 = P(side * W0, yT + 0.45 * UPM, (a + b) / 2), sg2 = c.createLinearGradient(0, tp0[1], 0, tp1[1]); sg2.addColorStop(0, rgba('#000', 0.38)); sg2.addColorStop(1, rgba('#000', 0)); c.fillStyle = sg2; c.fillRect(Math.min(P(side * W0, yT, a)[0], P(side * W0, yT, b)[0]) - 4, tp0[1], Math.abs(P(side * W0, yT, b)[0] - P(side * W0, yT, a)[0]) + 8, tp1[1] - tp0[1]); c.restore();
     c.strokeStyle = rgba('#000', 0.55); c.lineWidth = Math.max(2, 9 / zf); c.stroke(path);
+    c.strokeStyle = rgba(shade(pal.wall, night ? -0.2 : 0.3), night ? 0.35 : 0.75); c.lineWidth = Math.max(2, 14 / zf); c.save(); c.translate(0, -Math.max(2, 9 / zf)); c.stroke(path); c.restore();
     const m = P(side * W0, yT, (a + b) / 2); c.strokeStyle = rgba(shade(pal.wall, 0.25), 0.7); c.lineWidth = Math.max(1.5, 4 / zf); c.beginPath(); c.moveTo(pts[1][0], pts[1][1]); for (const p of pts.slice(2, -2)) c.lineTo(p[0], p[1]); c.stroke();
   }
 }

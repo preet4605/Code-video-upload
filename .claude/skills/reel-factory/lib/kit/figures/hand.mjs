@@ -12,6 +12,14 @@ export function softStops(base, env, sss) {
   return [[0, lit], [0.28, mix(lit, base, 0.6)], [0.52, base], [0.74, t2], [0.9, core], [1, bounce]];
 }
 
+/** linear gradient ACROSS a limb segment (lit edge first, by the light direction L), so every limb reads as a rounded form whatever its bbox. */
+export function acrossGradient(c, pts, w, L, stops) {
+  const a = pts[0], b = pts[pts.length - 1], dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l, d = nx * L.x + ny * L.y, sg = d >= 0 ? 1 : -1;
+  const m = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], hw = w * 0.62, g = c.createLinearGradient(m[0] + nx * sg * hw, m[1] + ny * sg * hw, m[0] - nx * sg * hw, m[1] - ny * sg * hw);
+  for (const [t, col] of stops) g.addColorStop(t, col);
+  return g;
+}
+
 /**
  * drawHand(c, {p:[x,y], ang, size, curl 0..1, curls?:[i,m,r,l], spread 0..1, thumb 0..1, side:+1|-1, skin, env, px, wet, sss})
  * `ang` is the direction the fingers point, measured from straight down (like arm angles). size = hand length (wrist to fingertip).
@@ -27,17 +35,20 @@ export function drawHand(c, o) {
   const L = rotL(env.L, ang);
   c.save(); c.translate(p[0], p[1]); c.rotate(-ang);
 
-  const palmW = S * 0.56, palmH = S * 0.46, gap = 0.15 * S;
+  const palmW = S * 0.47, palmH = S * 0.5, gap = 0.15 * S;
   const cu = curls ?? [curl, curl, curl, curl];
-  const fl = [0.46, 0.54, 0.5, 0.4], fw = [0.112, 0.118, 0.11, 0.092];
+  const fl = [0.44, 0.5, 0.46, 0.37], fw = [0.1, 0.104, 0.098, 0.082];
   const fan = (0.35 + spread * 2.6) * 0.075;
   // ---- fingers: base on the palm's top edge, three phalanges
   const fingers = [0, 1, 2, 3].map((i) => {
-    const bx = side * (0.215 - i * 0.143) * S, by = palmH * 0.86, cv = cl(cu[i]);
+    const bx = side * (0.172 - i * 0.115) * S, by = palmH * 0.9, cv = cl(cu[i]);
     let a = side * (1.5 - i) * fan + (i === 3 ? -side * 0.03 : 0), x = bx, y = by;
     const pts = [[x, y]], seg = [0.5, 0.3, 0.2].map((f) => f * fl[i] * S * 1.0), bend = [0.5, 1.05, 0.8];
-    const ws = [fw[i] * S * 1.04, fw[i] * S * 0.97, fw[i] * S * 0.86, fw[i] * S * 0.66];
+    const ws = [fw[i] * S * 1.04, fw[i] * S * 0.97, fw[i] * S * 0.86, fw[i] * S * 0.68];
     for (let j = 0; j < 3; j++) { a += cv * bend[j] * side * 0.95; x += Math.sin(a) * seg[j]; y += Math.cos(a) * seg[j] * (1 - 0.18 * cv); pts.push([x, y]); }
+    // fist (palm view): the fingers fold down over the palm, middle phalanges lying toward the wrist; blended in for curl > ~0.4
+    const k = cl((cv - 0.4) / 0.5), kk = k * k * (3 - 2 * k);
+    if (kk > 0) { const fist = [[bx, by], [bx + side * 0.01 * S, by + 0.07 * S], [bx + side * 0.012 * S, by - 0.06 * S], [bx + side * 0.01 * S, by - fl[i] * S * 0.55 - 0.02 * S]]; for (let j = 1; j < 4; j++) pts[j] = [lerp(pts[j][0], fist[j][0], kk), lerp(pts[j][1], fist[j][1], kk)]; }
     return { pts, ws, a, i };
   });
   // darker web between finger bases (so gaps read as shadow, not as a fused mitten)
@@ -48,15 +59,9 @@ export function drawHand(c, o) {
   for (let i = 3; i >= 0; i--) c.lineTo(wb[i][0], wb[i][1] - palmH * 0.1);
   c.closePath(); c.fill();
 
-  const shadeAcross = (pts, w) => { // gradient across a limb segment, lit edge first
-    const a = pts[0], b = pts[pts.length - 1], dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l, d = nx * L.x + ny * L.y, s = d >= 0 ? 1 : -1;
-    const m = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], hw = w * 0.62, k = Math.max(0.25, Math.abs(d)) ;
-    const g = c.createLinearGradient(m[0] + nx * s * hw, m[1] + ny * s * hw, m[0] - nx * s * hw, m[1] - ny * s * hw);
-    for (const [t, col] of stops) g.addColorStop(t, col);
-    return g;
-  };
+  const shadeAcross = (pts, w) => acrossGradient(c, pts, w, L, stops);
   const limb = (pts, ws, { nail = false, creases = true } = {}) => {
-    const path = smoothClosed(ribbon(pts, ws, { n: 5, cap: 3, bulge: 0.04 }));
+    const path = smoothClosed(ribbon(pts, ws, { n: 5, cap: 5, bulge: 0.04 }));
     c.fillStyle = shadeAcross(pts, ws[0]); c.fill(path);
     c.strokeStyle = ink; c.lineWidth = lw; c.lineJoin = 'round'; c.stroke(path);
     if (close && creases) { // joint creases + soft knuckle highlight
@@ -72,18 +77,22 @@ export function drawHand(c, o) {
     return path;
   };
   // far to near: little finger first, index last, so the thumb-side edge overlaps
-  [...fingers].reverse().forEach((f) => limb(f.pts, f.ws, { nail: true }));
+  const folded = (f) => cl(cu[f.i]) > 0.62;
+  [...fingers].reverse().filter((f) => !folded(f)).forEach((f) => limb(f.pts, f.ws, { nail: true }));
 
   // ---- palm (drawn over the finger roots)
-  const palm = smoothClosed([[-palmW * 0.5, 0.0], [palmW * 0.5, 0.0], [palmW * 0.58, palmH * 0.45], [palmW * 0.52, palmH * 0.97], [-palmW * 0.52, palmH * 0.97], [-palmW * 0.58, palmH * 0.45]]);
+  const palm = smoothClosed([[-palmW * 0.42, 0.0], [palmW * 0.42, 0.0], [palmW * 0.55, palmH * 0.42], [palmW * 0.54, palmH * 0.97], [-palmW * 0.54, palmH * 0.97], [-palmW * 0.56, palmH * 0.42]]);
   const bb = [-palmW / 2, 0, palmW / 2, palmH];
   { const cx = 0, cy = palmH / 2, hw = palmW * 0.62, hh = palmH * 0.62, e = Math.abs(L.x) * hw + Math.abs(L.y) * hh + 1e-6, g = c.createLinearGradient(cx + L.x * e, cy + L.y * e, cx - L.x * e, cy - L.y * e); for (const [t, col] of stops) g.addColorStop(t, col); c.fillStyle = g; }
   c.fill(palm); c.strokeStyle = ink; c.lineWidth = lw; c.stroke(palm);
 
+  [...fingers].reverse().filter(folded).forEach((f) => limb(f.pts, f.ws, { nail: true })); // folded fingers lie over the palm
+
   // ---- thumb: two segments out from the palm's thumb side, bends toward the fingers when tucked
-  { const open = cl(thumb) * (1 - thumbTuck), a0 = side * (0.28 + 0.62 * open), a1 = a0 - side * (0.2 + 0.55 * thumbTuck + 0.25 * cl(curl)), b = [side * palmW * 0.44, palmH * 0.22];
-    const m = [b[0] + Math.sin(a0) * S * 0.21, b[1] + Math.cos(a0) * S * 0.21], e = [m[0] + Math.sin(a1) * S * 0.18, m[1] + Math.cos(a1) * S * 0.18];
-    limb([b, m, e], [S * 0.16, S * 0.14, S * 0.115], { nail: true }); }
+  { const open = cl(thumb) * (1 - thumbTuck), a0 = side * (0.28 + 0.62 * open), a1 = a0 - side * (0.2 + 0.55 * thumbTuck + 0.25 * cl(curl)), b = [side * palmW * 0.5, palmH * 0.16];
+    const tk = thumbTuck; let m = [b[0] + Math.sin(a0) * S * 0.2, b[1] + Math.cos(a0) * S * 0.2], e = [m[0] + Math.sin(a1) * S * 0.18, m[1] + Math.cos(a1) * S * 0.18];
+    if (tk > 0) { const t2 = [-side * palmW * 0.1, palmH * 0.72]; m = [lerp(m[0], side * palmW * 0.1, tk), lerp(m[1], palmH * 0.3, tk)]; e = [lerp(e[0], t2[0], tk), lerp(e[1], t2[1], tk)]; }
+    limb([b, m, e], [S * 0.14, S * 0.125, S * 0.1], { nail: true }); }
 
   if (close) {
     // soft knuckle bumps on the palm edge, back-of-hand tendon hints

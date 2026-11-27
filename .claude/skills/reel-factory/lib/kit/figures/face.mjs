@@ -101,7 +101,7 @@ function veil(c, { seed, sx, ox, hairC, env, t, L }) {
   for (let i = 0; i < N; i++) {
     const x0 = -0.5 * sx + ((i + (r() - 0.5) * 0.9) / (N - 1)) * 1.0 * sx, edge = Math.abs(x0) > 0.37 * sx, dg = Math.abs(x0 - gapX), inGap = dg < gapW;
     const len = inGap ? 0.0 + r() * 0.05 : edge ? 0.75 + r() * 0.9 : (0.18 + r() * 0.42) * (dg < 0.17 ? 0.7 : 1.0) + (r() < 0.25 ? 0.25 : 0);
-    strands.push({ x0, y0: -0.62, y1: -0.3 + len + 0.12, bend: (r() - 0.5) * 0.09, w0: 0.07 + r() * 0.07, edge, hr: r() });
+    strands.push({ x0, y0: -0.64 + 0.32 * Math.pow(x0 / (0.55 * sx), 2), y1: -0.3 + len + 0.12, bend: (r() - 0.5) * 0.09, w0: 0.07 + r() * 0.07, edge, hr: r() });
   }
   strands.sort((a, b) => a.y1 - b.y1); // long strands on top of short ones
   c.save();

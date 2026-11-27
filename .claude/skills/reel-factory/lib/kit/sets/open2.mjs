@@ -90,8 +90,8 @@ export function villageAangan(o = {}) {
 export function street(o = {}) {
   const variant = opt(o, 'variant', 'wet'), tod = opt(o, 'tod', 'night');
   const def = {
-    name: 'street', tod, palette: opt(o, 'palette', variant === 'wet' ? 'grey' : 'ochre'), W0: 1.45 * UPM, Hc: 3200, Hf: 665, zEnd: 11, n: 6, z0: 1.0, vpY: 860, wear: opt(o, 'wear', 0.65),
-    style: { openTop: true, left: 'brick', right: 'plain', dado: null, tile: 1.0, floor: variant === 'wet' ? '#2a2c32' : '#6b5a44', fog: 0.9, wallColor: {} },
+    name: 'street', tod, palette: opt(o, 'palette', variant === 'wet' ? 'grey' : 'ochre'), W0: (variant === 'wet' ? 1.45 : 1.15) * UPM, Hc: 3200, Hf: 665, zEnd: 11, n: 6, z0: 1.0, vpY: 860, wear: opt(o, 'wear', 0.65),
+    style: { openTop: true, left: variant === 'wet' ? 'brick' : 'plain', right: variant === 'wet' ? 'plain' : 'brick', dado: null, tile: 1.0, floor: variant === 'wet' ? '#2a2c32' : '#6b5a44', fog: 0.9, wallColor: {} },
     end(c, G, S, st, t) { const { P, Hf } = G, zE = G.zEnd, a = P(-1.3 * UPM, Hf - 8 * UPM, zE), b = P(1.3 * UPM, Hf, zE); c.fillStyle = S.palette.tod === 'night' ? '#0a0e18' : shade(S.palette.wall, -0.3); c.fillRect(a[0], a[1], b[0] - a[0], b[1] - a[1]); const g = c.createRadialGradient(540, G.vp.y + 20, 0, 540, G.vp.y + 20, 220); g.addColorStop(0, rgba(S.palette.tod === 'night' ? '#ffc27a' : '#ffffff', 0.7)); g.addColorStop(1, rgba('#ffc27a', 0)); c.fillStyle = g; c.fillRect(300, G.vp.y - 200, 480, 420); },
     items({ G, S, r, pal }) {
       const { P, W0, Hf } = G, items = [];

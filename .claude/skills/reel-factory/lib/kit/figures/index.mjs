@@ -7,7 +7,7 @@
 import { Path2D, cin, smoothClosed, ribbon, mix, shade, rgba, cl, lerp, TAU, bboxOf, mulberry32, h01 } from '../util.mjs';
 import { proportions, poseAngles, solve, blinkAt, talkAt, POSE_NAMES, AGE_NAMES, STYLE_NAMES } from './rig.mjs';
 import { drawHead, grad, formStops, EXPR_NAMES, HAIR_STYLES } from './face.mjs';
-import { drawHand } from './hand.mjs';
+import { drawHand, softStops, acrossGradient } from './hand.mjs';
 import { OUTFITS, OUTFIT_NAMES } from './cloth.mjs';
 export { POSE_NAMES, AGE_NAMES, EXPR_NAMES, HAIR_STYLES, OUTFIT_NAMES, STYLE_NAMES };
 
@@ -92,7 +92,7 @@ export function createFigure(spec = {}) {
         if (dry) return null;
         const path = o.sharp ? (() => { const p = new Path2D(); p.moveTo(pts[0][0], pts[0][1]); for (let i = 1; i < pts.length; i++) p.lineTo(pts[i][0], pts[i][1]); p.closePath(); return p; })() : smoothClosed(pts);
         const bb = bboxOf(pts);
-        c.fillStyle = grad(c, bb, env.Lf, formStops(base, env)); c.fill(path);
+        c.fillStyle = o.across && (horror || ghost) ? acrossGradient(c, o.across, o.acrossW, env.L, softStops(base, env, SSS)) : grad(c, bb, env.Lf, formStops(base, env)); c.fill(path);
         c.save(); c.clip(path);
         if (o.tex) cin.fillTexture(c, 'plaster', [bb[0], bb[1], bb[2] - bb[0], bb[3] - bb[1]], { alpha: ghost ? 0.22 : 0.34, scale: 0.7 / H, ox: 0, oy: 0, seed: 5 });
         if (o.fold) o.fold(c, path);
@@ -105,7 +105,7 @@ export function createFigure(spec = {}) {
     };
     const W = B.w;
     // ---- pieces
-    const legSkin = (leg) => F.part(ribbon([leg.hip, leg.knee, leg.ank], [W.th, W.sh * 1.08, W.sh * 0.62], { n: 8, bulge: 0.08 }), skin, { tex: null });
+    const legSkin = (leg) => F.part(ribbon([leg.hip, leg.knee, leg.ank], [W.th, W.sh * 1.08, W.sh * 0.62], { n: 8, bulge: 0.08 }), skin, { tex: null, across: [leg.hip, leg.ank], acrossW: W.th });
     const shoe = (leg, kind) => {
       const k = leg.shinA, fwd = [Math.cos(k), -Math.sin(k)], dn = [Math.sin(k), Math.cos(k)], a0 = leg.ank, p = (f, d) => [a0[0] + fwd[0] * f + dn[0] * d, a0[1] + fwd[1] * f + dn[1] * d];
       const fo = B.foot, fl = B.fl;
@@ -122,11 +122,15 @@ export function createFigure(spec = {}) {
       }
     };
     const drawLeg = (leg, side) => { legSkin(leg); shoe(leg, O.shoes); O.legCover(F, side, leg); };
-    const armSkin = (arm) => F.part(ribbon([[arm.S[0] + (arm.E[0] - arm.S[0]) * 0.1, arm.S[1] + (arm.E[1] - arm.S[1]) * 0.1], arm.E, arm.W], [W.ua * 0.98, W.fa * 1.05, W.fa * 0.7], { n: 8, bulge: 0.07 }), skin, { tex: null });
+    const armSkin = (arm) => F.part(ribbon([[arm.S[0] + (arm.E[0] - arm.S[0]) * 0.1, arm.S[1] + (arm.E[1] - arm.S[1]) * 0.1], arm.E, arm.W], [W.ua * 0.98, W.fa * 1.05, W.fa * 0.7], { n: 8, bulge: 0.07 }), skin, { tex: null, across: [arm.S, arm.W], acrossW: W.ua * 1.1 });
     const handCurl = (side) => (side < 0 ? a.handL : a.handR);
     const hand = (arm, side, grip) => { if (dry) return; const k = side < 0 ? 'L' : 'R'; drawHand(c, { p: arm.W, ang: arm.dirA, size: B.hand * 1.15, curl: grip ?? handCurl(side), curls: st.curls?.[k], thumbTuck: st.thumbTuck?.[k] ?? 0, spread: st.spread ?? 0.3, thumb: 0.4, side: 1, skin, env, px, wet: ghost, sss: SSS }); };
     const bangles = (arm) => { if (!spec.bangles || dry) return; c.strokeStyle = '#d6a43a'; c.lineWidth = 0.007; for (let i = 0; i < 3; i++) { c.beginPath(); c.arc(arm.W[0] - Math.sin(arm.dirA) * 0.008 * i, arm.W[1] - Math.cos(arm.dirA) * 0.008 * i, 0.019, 0, TAU); c.stroke(); } };
-    const drawArm = (arm, side) => { armSkin(arm); hand(arm, side, st.grip?.[side < 0 ? 'L' : 'R']); O.sleeve(F, arm); bangles(arm); };
+    const wetSpots = (arm) => { // a few small soft highlights on the lit side of a wet limb (never a band)
+      if (dry || !ghost) return; const dx = arm.W[0] - arm.S[0], dy = arm.W[1] - arm.S[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l, sg = nx * env.L.x + ny * env.L.y >= 0 ? 1 : -1, ang = Math.atan2(dy, dx);
+      for (const [u, len] of [[0.22, 0.05], [0.5, 0.035], [0.74, 0.045]]) { const cx0 = arm.S[0] + dx * u + nx * sg * W.fa * 0.28, cy0 = arm.S[1] + dy * u + ny * sg * W.fa * 0.28; c.save(); c.translate(cx0, cy0); c.rotate(ang); c.scale(1, 0.28); const g = c.createRadialGradient(0, 0, 0, 0, 0, len); g.addColorStop(0, rgba('#eef6ee', 0.42)); g.addColorStop(1, rgba('#eef6ee', 0)); c.fillStyle = g; c.beginPath(); c.arc(0, 0, len, 0, TAU); c.fill(); c.restore(); }
+    };
+    const drawArm = (arm, side) => { armSkin(arm); wetSpots(arm); hand(arm, side, st.grip?.[side < 0 ? 'L' : 'R']); O.sleeve(F, arm); bangles(arm); };
     // contact shadow of an arm on the torso (AO) - painted just before the near arm
     const armAO = (arm, torsoPath) => { if (dry || !torsoPath) return; c.save(); c.clip(torsoPath); c.strokeStyle = rgba('#000', 0.28); c.lineCap = 'round'; c.lineWidth = W.ua * 1.2; c.beginPath(); c.moveTo(arm.S[0] - env.L.x * 0.012, arm.S[1] - env.L.y * 0.012); c.lineTo(arm.E[0] - env.L.x * 0.012, arm.E[1] - env.L.y * 0.012); c.lineTo(arm.W[0] - env.L.x * 0.012, arm.W[1] - env.L.y * 0.012); c.stroke(); c.restore(); };
 
