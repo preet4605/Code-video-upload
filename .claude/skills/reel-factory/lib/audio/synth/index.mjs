@@ -4,9 +4,10 @@ import { KINDS as friction } from './friction.mjs';
 import { KINDS as plucked } from './plucked.mjs';
 import { KINDS as noise } from './noise.mjs';
 import { KINDS as cinematic } from './cinematic.mjs';
+import { KINDS as train } from './train.mjs';
 import { KINDS as music } from '../music.mjs';
 
-export const SYNTH_KINDS = Object.freeze({ ...modal, ...friction, ...plucked, ...noise, ...cinematic, ...music });
+export const SYNTH_KINDS = Object.freeze({ ...modal, ...friction, ...plucked, ...noise, ...cinematic, ...train, ...music });
 export const LAYERS = ['sfx', 'music', 'ambience', 'room'];
 export const AUTOMATION_KINDS = ['drop'];
 export const kindNames = () => [...Object.keys(SYNTH_KINDS), ...AUTOMATION_KINDS];
