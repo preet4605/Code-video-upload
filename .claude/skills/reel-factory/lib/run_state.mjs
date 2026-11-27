@@ -3,6 +3,7 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { sourceFingerprint } from './render_pool.mjs';
 
 export const RUN_FILE = 'run.json';
 export const RUN_VERSION = 1;
@@ -24,7 +25,13 @@ export function hashFiles(dir, files) {
 }
 export const hashString = (s) => sha(Buffer.from(String(s)));
 export const scriptHash = (dir) => hashFiles(dir, SCRIPT_FILES);
-export const visualHash = (dir) => hashFiles(dir, VISUAL_FILES);
+// Scene code that imports local modules (set_coach.mjs, shots.mjs, lib/kit, lib/cinema) must invalidate the
+// visual approval too, not only scene.mjs itself.
+export const sceneSourceHash = (dir) => {
+  const entry = path.join(dir, 'scene.mjs');
+  return fs.existsSync(entry) ? sourceFingerprint([entry]).hash : 'absent';
+};
+export const visualHash = (dir) => hashString(hashFiles(dir, VISUAL_FILES) + ':' + sceneSourceHash(dir));
 
 export function runPath(dir) { return path.join(dir, RUN_FILE); }
 

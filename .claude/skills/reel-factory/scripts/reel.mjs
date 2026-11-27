@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { hashFiles, hashString, scriptHash, visualHash, readRun, writeRun, newRun, approve, SCRIPT_FILES, VISUAL_FILES } from '../lib/run_state.mjs';
+import { hashFiles, hashString, scriptHash, visualHash, sceneSourceHash, readRun, writeRun, newRun, approve, SCRIPT_FILES, VISUAL_FILES } from '../lib/run_state.mjs';
 import { lintPlanProject } from '../lib/plan_lint.mjs';
 import { KALPA_VOICES, pickVoice } from '../lib/voices.mjs';
 
@@ -89,9 +89,9 @@ const DEFS = {
     run: (dir) => spawnNode('visual_loop.mjs', ['--project', dir, '--json'])
   },
   render: {
-    hash: (dir, ctx) => hashString(hashFiles(dir, ['scene.mjs', 'timeline.json', 'brief.json']) + (ctx.draft ? ':draft' : ':full')),
+    hash: (dir, ctx) => hashString(hashFiles(dir, ['scene.mjs', 'timeline.json', 'brief.json']) + ':' + sceneSourceHash(dir) + (ctx.draft ? ':draft' : ':full')),
     outputs: () => ['cache/render_manifest.json'],
-    run: (dir, ctx) => spawnNode('render_and_lint.mjs', ['--project', dir, '--json', ...(ctx.draft ? ['--draft'] : [])])
+    run: (dir, ctx) => spawnNode('render_parallel.mjs', ['--project', dir, '--json', ...(ctx.draft ? ['--draft'] : [])])
   },
   master_qa: {
     hash: (dir, ctx) => hashString(hashFiles(dir, ['cache/render_manifest.json', 'timeline.json', 'brief.json', 'qa.json', 'voiceover.wav']) + ':' + (ctx.run?.stages?.render?.input_hash || '')),

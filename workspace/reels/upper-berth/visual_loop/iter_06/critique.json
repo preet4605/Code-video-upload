@@ -1,0 +1,205 @@
+{
+ "shots": [
+  {
+   "id": "s1_hook",
+   "seen": "Uncle with grey receding hair, thick moustache, black sockets (eyes lit only by sweeps), cream kurta placket with buttons, wool shawl over left shoulder, hands on the lap; window with bars full width.",
+   "problems": [
+    "hair still a smooth cap",
+    "near sleeve is a flat slab",
+    "bins 35"
+   ],
+   "fix": "Next pass: strand-level hair texture and a softer sleeve rim.",
+   "scores": {
+    "subject": 4,
+    "depth": 4,
+    "detail": 3,
+    "light": 3,
+    "character": 4,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s2_coach",
+   "seen": "Aisle one-point view with curtain, chain, tubes and berths; untouched by the uncle work.",
+   "problems": [
+    "bins 37",
+    "flat left curtain"
+   ],
+   "fix": "Add printed berth numbers and seat texture.",
+   "scores": {
+    "subject": 3,
+    "depth": 4,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s3_ticket",
+   "seen": "Ticket about 65 percent of frame width, sharp: PNR, 14-06-2014, SL, S7 legible at 540x960, crease, torn edge, hand with thumb and fingers holding the corner.",
+   "problems": [
+    "hand reads slightly stiff",
+    "holder behind is a faint blur"
+   ],
+   "fix": "Curl the fingers and light the holder face a little.",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s4_rule",
+   "seen": "Face fills the top third with creases, white moustache, black sockets, shoulders dark.",
+   "problems": [
+    "face lines faint at phone size"
+   ],
+   "fix": "Strengthen under-eye bags and brow ridge value.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 4,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s5_stop",
+   "seen": "Uncle centred and larger against the lighter fog window, tube bar on top, subject scale about 0.5.",
+   "problems": [
+    "bins 33"
+   ],
+   "fix": "Add a cool rim on the near shoulder.",
+   "scores": {
+    "subject": 4,
+    "depth": 4,
+    "detail": 4,
+    "light": 3,
+    "character": 4,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s6_eyes",
+   "seen": "Uncle on his side with glints in both eyes, receding hair and moustache readable, passes all metrics.",
+   "problems": [
+    "small head"
+   ],
+   "fix": "Move the camera closer to his face.",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 4,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s7_tickets",
+   "seen": "Hanging arms in a checked shirt, kurta, pink sweater and jacket sleeves with jointed hands and yellow tickets.",
+   "problems": [
+    "hands small and a little waxy",
+    "bins 33"
+   ],
+   "fix": "Enlarge hands and add knuckle detail.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s8_itarsi",
+   "seen": "Warm window with the ITARSI board and the uncle in front, then he leaves; light is balanced now.",
+   "problems": [
+    "empty_cells 7: the lower third (berth top and floor) is a flat dark slab under the uncle",
+    "Itarsi board half hidden behind the uncle's head"
+   ],
+   "fix": "Not fixed in this loop (iteration cap). Next: lower camera so the berth edge and his hands fill the lower third; shift him right so 'इटारसी' reads.",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s9_relief",
+   "seen": "Bare seat and shawl then eyelids to black: silence left empty on purpose and flagged allow_black in the timeline.",
+   "problems": [
+    "designed black silence: empty_cells waived via allow_black (shown as WAIVED, not hidden)"
+   ],
+   "fix": "Add a per-shot exemption in the loop (not done by me).",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 2,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s10_bhopal",
+   "seen": "Flash on the scare, then BHOPAL board readable about 1.4 s sliding left, blur only at exit; window hole bug fixed.",
+   "problems": [
+    "bars cross lettering slightly",
+    "bins 36"
+   ],
+   "fix": "Remove one bar and brighten the platform lamps.",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 4,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s11_ticket2",
+   "seen": "Same framing as s3 with 14-06-2026, yellowing through the shot.",
+   "problems": [
+    "ageing subtle early"
+   ],
+   "fix": "Deepen the aged paper colour.",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s12_loop",
+   "seen": "Aged narrator (grey receding hair, thinner moustache, blue shirt) in the uncle shawl at the s1 framing, morph to the uncle at the end.",
+   "problems": [
+    "empty_cells 8 at the last keyframe: bottom rows are dark berth",
+    "narrator-as-uncle face is almost identical to the uncle, the loop reads mostly via shirt and shawl"
+   ],
+   "fix": "Not fixed in this loop (iteration cap). Next: frame tighter on the end frame, give the aged narrator a distinct feature (no moustache, glasses or the blue shirt collar in light).",
+   "scores": {
+    "subject": 4,
+    "depth": 4,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  }
+ ],
+ "note": "Iteration 6 (cap). Colour-bins cap raised 28 -> 40 by the maintainer this iteration (documented in the template). Remaining: s8 and s12 empty_cells. Escalated to the human at checkpoint 2."
+}

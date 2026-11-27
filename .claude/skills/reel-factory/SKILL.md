@@ -46,6 +46,7 @@ Fast path for existing footage: `node scripts/master_and_qa.mjs --input <video.m
 - READ [voice-stage.md](references/voice-stage.md) WHEN writing `lines.json`, choosing voices or using timeline events.
 - READ [kit.md](references/kit.md) and [cinema.md](references/cinema.md) WHEN writing scene code.
 - READ [sound.md](references/sound.md) WHEN writing `sound.json`, choosing SFX/music or reading audio QA.
+- READ [render-speed.md](references/render-speed.md) WHEN renders are slow or the render cache looks stale.
 - READ [visual-loop.md](references/visual-loop.md) WHEN running or interpreting the visual loop.
 - READ [widgets-and-motion.md](references/widgets-and-motion.md) WHEN building scenes, widgets or camera moves.
 - READ [ffmpeg-mastering.md](references/ffmpeg-mastering.md) WHEN loudness, mixing, QA flags or `qa.json` thresholds matter.

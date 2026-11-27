@@ -41,7 +41,8 @@
   },
   "color_bins": {
     "min": 10,
-    "max": 28
+    "max": 40,
+    "note": "Raised from 28 (2026-11-27, maintainer): 28 was calibrated on flat cartoon reels (10-21 bins); filmic frames with grain and soft gradients measure 31-37 with a disciplined palette (Upper Berth v2). Palette discipline stays enforced by hue_families <= 3."
   },
   "focal": {
     "min": 2.35

@@ -93,6 +93,7 @@ export async function renderShots(projectDir, timeline, iterTag) {
     }
     const tags = [].concat(sc.tags || [], sc.shot_type || [], sc.framing || []).map((x) => String(x).toLowerCase());
     shots.push({ id: sc.id, frames, establishing: sc.establishing === true || tags.includes('establishing'), scale_min: sc.subject_scale_min ?? null,
+      allow_black: sc.allow_black === true, allow_static: sc.allow_static === true,
       fp: shotFingerprint(frames.map((f) => ({ buf: f.data, w: AW, h: AH, ch: 4 })), { ignoreBands: IGNORE }) });
   }
   return shots;
@@ -177,9 +178,17 @@ export async function runVisualLoop({ projectDir, targetsPath = null, maxIter = 
     // keyframes must differ: a shot whose three keys are nearly identical is a still image, not a shot
     const keyDiff = keyframeChange(s.frames);
     if (keyDiff < (T.min_key_change ?? 0.01)) def.push({ metric: 'key_change', value: +keyDiff.toFixed(4), target: `>= ${T.min_key_change ?? 0.01}`, hint: 'the shot does not change between its keyframes: move the camera (push/pan), animate a character (blink, breath, turn) or a light (flicker, sweep)' });
+    // Declared waivers (same flags qa_video honours): a deliberately black / static shot keeps its
+    // measurements, but the matching deficits move to a visible `waived` list instead of failing the loop.
+    const WAIVE_BLACK = new Set(['empty_cells', 'subject_scale', 'lit_fraction', 'lit_regions', 'sharp_edges', 'contrast', 'saturation', 'color_bins', 'focal', 'ink']);
+    const waived = [];
+    for (let i = def.length - 1; i >= 0; i--) {
+      const k = def[i].metric;
+      if ((s.allow_black && WAIVE_BLACK.has(k)) || (s.allow_static && k === 'key_change')) waived.unshift(...def.splice(i, 1));
+    }
     const score = shotScore({ ...agg, empty_cells: worstEmpty.length }, T);
     const prev = prevEntry?.shots?.find((q) => q.id === s.id);
-    return { id: s.id, pass: def.length === 0, score, delta: prev ? +(score - prev.score).toFixed(3) : null, establishing: s.establishing, subject_box: s.frames[1].m.subject_box, metrics: { ...agg, empty_cells: worstEmpty.length }, empty_where: emptyUnion, deficits: def };
+    return { id: s.id, pass: def.length === 0, score, delta: prev ? +(score - prev.score).toFixed(3) : null, establishing: s.establishing, subject_box: s.frames[1].m.subject_box, metrics: { ...agg, empty_cells: worstEmpty.length }, empty_where: emptyUnion, deficits: def, waived, waivers: { allow_black: s.allow_black, allow_static: s.allow_static } };
   });
   // reel-level: near-duplicate adjacent shots and a backdrop shared by > 40% of shots
   const sim = reelSimilarity(shots.map((s) => ({ id: s.id, fp: s.fp })), T.similarity || {});
@@ -212,6 +221,7 @@ export async function runVisualLoop({ projectDir, targetsPath = null, maxIter = 
   return {
     iter, pass, mean_score: entry.mean_score, regressions, reel_flags: flags,
     failing: results.filter((r) => !r.pass).map((r) => ({ id: r.id, deficits: r.deficits.map((d) => `${d.metric} ${d.value} (${d.target})`) })),
+    waived: results.filter((r) => r.waived && r.waived.length).map((r) => ({ id: r.id, waivers: r.waivers, deficits: r.waived.map((d) => `${d.metric} ${d.value} (${d.target})`) })),
     next: `LOOK at ${path.relative(projectDir, path.join(iterDir, 'sheet.png'))}, write ${path.relative(projectDir, path.join(iterDir, 'critique.json'))}, fix scene.mjs, run again`
   };
 }
@@ -230,6 +240,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(fs.realpathSync(process
     r.regressions.forEach((x) => console.log(' REGRESSION ' + x));
     (r.reel_flags || []).forEach((x) => console.log(' REEL ' + x));
     r.failing.forEach((f) => console.log(` FIX ${f.id}: ${f.deficits.join('; ')}`));
+    (r.waived || []).forEach((f) => console.log(` WAIVED ${f.id} (${Object.keys(f.waivers).filter((k) => f.waivers[k]).join(', ')}): ${f.deficits.join('; ')}`));
     console.log(r.next);
   }
   process.exit(r.blocked ? 3 : r.converged ? 0 : r.stopped ? 1 : r.pass ? 0 : 1);

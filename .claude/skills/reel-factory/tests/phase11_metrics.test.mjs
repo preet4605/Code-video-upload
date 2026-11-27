@@ -126,3 +126,10 @@ test('buildTargets carries subject_scale / lit floors only when the references h
   const old = buildTargets([{ file: 'x', agg: { sharp_edges: 0.03, contrast: 30, saturation: 0.4, color_bins: 20, focal: 3, ink: 0.03, empty_cells: 2 } }]);
   assert.equal(old.subject_scale, undefined);
 });
+
+test('visual_loop: allow_black / allow_static waive matching deficits visibly, not silently', () => {
+  const src = fs.readFileSync(new URL('../scripts/visual_loop.mjs', import.meta.url), 'utf8');
+  assert.match(src, /allow_black: sc\.allow_black === true/);
+  assert.match(src, /waived\.unshift\(\.\.\.def\.splice/);
+  assert.match(src, /WAIVED \$\{f\.id\}/);
+});
