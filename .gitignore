@@ -5,3 +5,4 @@ workspace/reels/*/*.wav
 workspace/reels/*/_dev/
 workspace/reels/*/visual_loop*/iter_*/*.png
 workspace/reels/*/audio/library/*.wav
+workspace/reels/*/post/*.mp4
