@@ -1,0 +1,15 @@
+{
+  "design": "subway/arrive",
+  "seed": 1,
+  "dur_s": 8.023,
+  "why": [
+    "named"
+  ],
+  "unknown_words": [
+    "metro",
+    "braking"
+  ],
+  "guessed_pick": false,
+  "checks_ok": true,
+  "sha256": "bb9ee44d6311293e646f0cdb6883e539940794ede67c22f23fc2609035e44100"
+}

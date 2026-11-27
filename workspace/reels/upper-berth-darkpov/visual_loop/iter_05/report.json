@@ -3,46 +3,50 @@
   "pass": false,
   "reel": {
     "flags": [],
-    "backdrop_share": 0.917,
+    "backdrop_share": 0.417,
     "top_pairs": [
-      {
-        "a": "s5_stop",
-        "b": "s8_itarsi",
-        "hash_sim": 0.875,
-        "hist_dist": 0.062
-      },
       {
         "a": "s11_ticket2",
         "b": "s12_loop",
         "hash_sim": 0.875,
-        "hist_dist": 0.075
+        "hist_dist": 0.071
       },
       {
-        "a": "s6_eyes",
-        "b": "s11_ticket2",
+        "a": "s5_stop",
+        "b": "s12_loop",
         "hash_sim": 0.868,
-        "hist_dist": 0.046
+        "hist_dist": 0.064
+      },
+      {
+        "a": "s8_itarsi",
+        "b": "s12_loop",
+        "hash_sim": 0.861,
+        "hist_dist": 0.052
       }
     ],
     "near_duplicates": [],
     "backdrop_clusters": [
       [
-        "s1_hook",
-        "s2_coach",
-        "s3_ticket",
-        "s4_rule",
         "s6_eyes",
         "s7_tickets",
         "s8_itarsi",
-        "s9_relief",
-        "s10_bhopal",
         "s11_ticket2",
         "s12_loop"
+      ],
+      [
+        "s1_hook",
+        "s2_coach",
+        "s3_ticket",
+        "s4_rule"
+      ],
+      [
+        "s9_relief",
+        "s10_bhopal"
       ]
     ],
     "reused_backdrop": false
   },
-  "mean_score": 0.9,
+  "mean_score": 0.902,
   "regressions": [],
   "shots": [
     {
@@ -58,17 +62,17 @@
         0.333
       ],
       "metrics": {
-        "sharp_edges": 0.0086,
-        "contrast": 17.3333,
-        "mean_luma": 10.5333,
+        "sharp_edges": 0.0092,
+        "contrast": 17.3667,
+        "mean_luma": 11.7,
         "color_bins": 8.6667,
-        "saturation": 0.2627,
-        "ink": 0.0053,
-        "focal": 7.91,
+        "saturation": 0.2637,
+        "ink": 0.0059,
+        "focal": 7.7067,
         "hue_families": 0.6667,
-        "lit_fraction": 0.0512,
-        "lit_regions": 1,
-        "p5_luma": 0,
+        "lit_fraction": 0.054,
+        "lit_regions": 1.3333,
+        "p5_luma": 1,
         "subject_scale": 0.257,
         "empty_cells": 14
       },
@@ -79,10 +83,10 @@
         "lower-left",
         "lower-centre",
         "lower-right",
-        "bottom-left",
         "upper-right",
         "middle-centre",
         "middle-right",
+        "bottom-left",
         "bottom-centre",
         "bottom-right",
         "top-centre",
@@ -108,17 +112,17 @@
         0.438
       ],
       "metrics": {
-        "sharp_edges": 0.0099,
-        "contrast": 19.2,
-        "mean_luma": 11.7,
+        "sharp_edges": 0.011,
+        "contrast": 19.3333,
+        "mean_luma": 12.9667,
         "color_bins": 8.6667,
-        "saturation": 0.2853,
-        "ink": 0.0071,
-        "focal": 5.77,
+        "saturation": 0.2803,
+        "ink": 0.0082,
+        "focal": 5.2,
         "hue_families": 1,
-        "lit_fraction": 0.0538,
+        "lit_fraction": 0.057,
         "lit_regions": 1,
-        "p5_luma": 0.6667,
+        "p5_luma": 1.3333,
         "subject_scale": 0.257,
         "empty_cells": 13
       },
@@ -131,16 +135,16 @@
         "lower-left",
         "lower-centre",
         "lower-right",
-        "bottom-left",
         "upper-centre",
         "middle-right",
+        "bottom-left",
         "bottom-centre",
         "bottom-right"
       ],
       "deficits": [
         {
           "metric": "focal",
-          "value": 5.77,
+          "value": 5.2,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         }
@@ -164,17 +168,17 @@
         0.573
       ],
       "metrics": {
-        "sharp_edges": 0.0187,
-        "contrast": 26.9333,
-        "mean_luma": 14.4,
-        "color_bins": 13.6667,
-        "saturation": 0.2383,
-        "ink": 0.0116,
-        "focal": 5.94,
+        "sharp_edges": 0.0191,
+        "contrast": 26.8,
+        "mean_luma": 15.5,
+        "color_bins": 14.6667,
+        "saturation": 0.2377,
+        "ink": 0.0121,
+        "focal": 5.7867,
         "hue_families": 1,
-        "lit_fraction": 0.0742,
+        "lit_fraction": 0.0752,
         "lit_regions": 1,
-        "p5_luma": 2,
+        "p5_luma": 2.3333,
         "subject_scale": 0.191,
         "empty_cells": 12
       },
@@ -188,20 +192,20 @@
         "lower-centre",
         "lower-right",
         "bottom-left",
+        "upper-centre",
         "bottom-centre",
-        "bottom-right",
-        "upper-centre"
+        "bottom-right"
       ],
       "deficits": [
         {
           "metric": "color_bins",
-          "value": 13.6667,
+          "value": 14.6667,
           "target": "<= 12",
           "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
         },
         {
           "metric": "focal",
-          "value": 5.94,
+          "value": 5.7867,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         }
@@ -225,17 +229,17 @@
         0.427
       ],
       "metrics": {
-        "sharp_edges": 0.006,
-        "contrast": 20.3,
-        "mean_luma": 11.5667,
+        "sharp_edges": 0.0068,
+        "contrast": 20.2667,
+        "mean_luma": 12.7667,
         "color_bins": 9.6667,
-        "saturation": 0.3377,
-        "ink": 0.0035,
-        "focal": 6.4033,
+        "saturation": 0.3323,
+        "ink": 0.0042,
+        "focal": 5.83,
         "hue_families": 1,
-        "lit_fraction": 0.0582,
+        "lit_fraction": 0.0601,
         "lit_regions": 1,
-        "p5_luma": 0,
+        "p5_luma": 1,
         "subject_scale": 0.1873,
         "empty_cells": 13
       },
@@ -257,7 +261,7 @@
       "deficits": [
         {
           "metric": "focal",
-          "value": 6.4033,
+          "value": 5.83,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         }
@@ -271,32 +275,31 @@
     {
       "id": "s5_stop",
       "pass": false,
-      "score": 0.898,
+      "score": 0.921,
       "delta": 0,
       "establishing": false,
       "subject_box": [
         0.148,
-        0.083,
+        0.094,
         0.741,
         0.313
       ],
       "metrics": {
-        "sharp_edges": 0.0038,
-        "contrast": 16.2667,
-        "mean_luma": 13.1333,
-        "color_bins": 7.3333,
-        "saturation": 0.344,
-        "ink": 0.0034,
-        "focal": 5.16,
+        "sharp_edges": 0.0091,
+        "contrast": 21.4,
+        "mean_luma": 18.4333,
+        "color_bins": 10,
+        "saturation": 0.3357,
+        "ink": 0.0059,
+        "focal": 4.3533,
         "hue_families": 1,
-        "lit_fraction": 0.062,
+        "lit_fraction": 0.0998,
         "lit_regions": 1,
-        "p5_luma": 1,
-        "subject_scale": 0.2223,
-        "empty_cells": 13
+        "p5_luma": 2.6667,
+        "subject_scale": 0.2083,
+        "empty_cells": 11
       },
       "empty_where": [
-        "top-right",
         "upper-left",
         "middle-left",
         "middle-centre",
@@ -307,13 +310,12 @@
         "bottom-left",
         "bottom-centre",
         "bottom-right",
-        "upper-centre",
-        "upper-right"
+        "top-right"
       ],
       "deficits": [
         {
           "metric": "focal",
-          "value": 5.16,
+          "value": 4.3533,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         }
@@ -327,83 +329,28 @@
     {
       "id": "s6_eyes",
       "pass": false,
-      "score": 0.914,
+      "score": 0.9,
       "delta": 0,
       "establishing": false,
       "subject_box": [
-        0.056,
-        0.396,
-        0.463,
+        0.019,
+        0.417,
+        0.407,
         0.615
       ],
       "metrics": {
-        "sharp_edges": 0.0083,
-        "contrast": 20.3667,
-        "mean_luma": 16.6,
-        "color_bins": 10.3333,
-        "saturation": 0.414,
-        "ink": 0.0046,
-        "focal": 6.1433,
-        "hue_families": 1,
-        "lit_fraction": 0.0678,
-        "lit_regions": 1,
+        "sharp_edges": 0.0061,
+        "contrast": 18.3,
+        "mean_luma": 14.6,
+        "color_bins": 9,
+        "saturation": 0.3477,
+        "ink": 0.0033,
+        "focal": 8.3267,
+        "hue_families": 0.6667,
+        "lit_fraction": 0.0382,
+        "lit_regions": 0.6667,
         "p5_luma": 0.6667,
-        "subject_scale": 0.2083,
-        "empty_cells": 12
-      },
-      "empty_where": [
-        "top-centre",
-        "top-right",
-        "upper-left",
-        "upper-centre",
-        "upper-right",
-        "middle-right",
-        "lower-left",
-        "lower-centre",
-        "lower-right",
-        "bottom-left",
-        "bottom-centre",
-        "bottom-right"
-      ],
-      "deficits": [
-        {
-          "metric": "focal",
-          "value": 6.1433,
-          "target": ">= 6.56",
-          "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
-        }
-      ],
-      "waived": [],
-      "waivers": {
-        "allow_black": false,
-        "allow_static": false
-      }
-    },
-    {
-      "id": "s7_tickets",
-      "pass": true,
-      "score": 0.884,
-      "delta": 0,
-      "establishing": false,
-      "subject_box": [
-        0.444,
-        0.344,
-        0.852,
-        0.594
-      ],
-      "metrics": {
-        "sharp_edges": 0.0031,
-        "contrast": 17.5,
-        "mean_luma": 14.0667,
-        "color_bins": 10.3333,
-        "saturation": 0.3053,
-        "ink": 0.0023,
-        "focal": 6.9833,
-        "hue_families": 1.3333,
-        "lit_fraction": 0.0548,
-        "lit_regions": 1,
-        "p5_luma": 1.6667,
-        "subject_scale": 0.212,
+        "subject_scale": 0.1427,
         "empty_cells": 14
       },
       "empty_where": [
@@ -422,7 +369,82 @@
         "bottom-right",
         "middle-centre"
       ],
-      "deficits": [],
+      "deficits": [
+        {
+          "metric": "lit_fraction",
+          "value": 0.0382,
+          "target": ">= 0.0462",
+          "hint": "add a motivated light pool: a lamp/moon/door-strip/torch cone that lights the subject and a patch of set around it (a dark look still needs a readable lit subject, not a black rectangle)"
+        },
+        {
+          "metric": "lit_regions",
+          "value": 0.6667,
+          "target": ">= 1",
+          "hint": "nothing is lit: add a motivated light pool (lamp, moon through a window, door strip, torch cone) on the subject"
+        }
+      ],
+      "waived": [],
+      "waivers": {
+        "allow_black": false,
+        "allow_static": false
+      }
+    },
+    {
+      "id": "s7_tickets",
+      "pass": false,
+      "score": 0.907,
+      "delta": 0,
+      "establishing": false,
+      "subject_box": [
+        0.426,
+        0.344,
+        0.852,
+        0.594
+      ],
+      "metrics": {
+        "sharp_edges": 0.0072,
+        "contrast": 25.1,
+        "mean_luma": 20.9667,
+        "color_bins": 13.6667,
+        "saturation": 0.2903,
+        "ink": 0.0036,
+        "focal": 5.92,
+        "hue_families": 1,
+        "lit_fraction": 0.0975,
+        "lit_regions": 1.3333,
+        "p5_luma": 3.3333,
+        "subject_scale": 0.229,
+        "empty_cells": 13
+      },
+      "empty_where": [
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "upper-centre",
+        "upper-right",
+        "middle-left",
+        "middle-right",
+        "lower-left",
+        "lower-centre",
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "color_bins",
+          "value": 13.6667,
+          "target": "<= 12",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        },
+        {
+          "metric": "focal",
+          "value": 5.92,
+          "target": ">= 6.56",
+          "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
+        }
+      ],
       "waived": [],
       "waivers": {
         "allow_black": false,
@@ -432,7 +454,7 @@
     {
       "id": "s8_itarsi",
       "pass": false,
-      "score": 0.878,
+      "score": 0.88,
       "delta": 0,
       "establishing": false,
       "subject_box": [
@@ -442,17 +464,17 @@
         0.302
       ],
       "metrics": {
-        "sharp_edges": 0.0177,
-        "contrast": 25.8667,
-        "mean_luma": 20.6,
+        "sharp_edges": 0.0183,
+        "contrast": 25.5667,
+        "mean_luma": 21.6333,
         "color_bins": 13,
-        "saturation": 0.155,
-        "ink": 0.0119,
-        "focal": 5.1333,
+        "saturation": 0.1577,
+        "ink": 0.0125,
+        "focal": 4.9933,
         "hue_families": 0.6667,
-        "lit_fraction": 0.1072,
-        "lit_regions": 1,
-        "p5_luma": 3,
+        "lit_fraction": 0.1094,
+        "lit_regions": 1.3333,
+        "p5_luma": 4.3333,
         "subject_scale": 0.2047,
         "empty_cells": 11
       },
@@ -462,10 +484,10 @@
         "lower-left",
         "lower-centre",
         "lower-right",
-        "bottom-left",
         "upper-right",
         "middle-left",
         "middle-centre",
+        "bottom-left",
         "bottom-centre",
         "bottom-right",
         "upper-left"
@@ -473,7 +495,7 @@
       "deficits": [
         {
           "metric": "saturation",
-          "value": 0.155,
+          "value": 0.1577,
           "target": ">= 0.1587",
           "hint": "use a deliberate palette with 1-2 saturated accents (warm light vs cool night); avoid desaturated greys"
         },
@@ -485,7 +507,7 @@
         },
         {
           "metric": "focal",
-          "value": 5.1333,
+          "value": 4.9933,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         }
@@ -509,17 +531,17 @@
         0.448
       ],
       "metrics": {
-        "sharp_edges": 0.0039,
-        "contrast": 17.7333,
-        "mean_luma": 10.6333,
+        "sharp_edges": 0.0041,
+        "contrast": 17.6,
+        "mean_luma": 11,
         "color_bins": 8,
         "saturation": 0.4913,
-        "ink": 0.0035,
-        "focal": 4.16,
+        "ink": 0.0037,
+        "focal": 4.0567,
         "hue_families": 1,
-        "lit_fraction": 0.0474,
+        "lit_fraction": 0.0477,
         "lit_regions": 1,
-        "p5_luma": 0,
+        "p5_luma": 0.6667,
         "subject_scale": 0.2397,
         "empty_cells": 15
       },
@@ -534,9 +556,9 @@
         "lower-right",
         "bottom-left",
         "bottom-centre",
-        "bottom-right",
         "top-left",
         "top-centre",
+        "bottom-right",
         "upper-centre",
         "upper-right"
       ],
@@ -544,7 +566,7 @@
       "waived": [
         {
           "metric": "focal",
-          "value": 4.16,
+          "value": 4.0567,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         },
@@ -564,7 +586,7 @@
       "id": "s10_bhopal",
       "pass": false,
       "score": 0.884,
-      "delta": -0.001,
+      "delta": 0,
       "establishing": false,
       "subject_box": [
         0.056,
@@ -626,33 +648,31 @@
     {
       "id": "s11_ticket2",
       "pass": false,
-      "score": 0.907,
+      "score": 0.89,
       "delta": 0,
       "establishing": false,
       "subject_box": [
-        0.222,
-        0.396,
-        0.537,
-        0.594
+        0.167,
+        0.156,
+        0.759,
+        0.208
       ],
       "metrics": {
-        "sharp_edges": 0.0147,
-        "contrast": 16.9333,
-        "mean_luma": 14.1667,
-        "color_bins": 10,
-        "saturation": 0.185,
-        "ink": 0.0137,
-        "focal": 5.17,
+        "sharp_edges": 0.0215,
+        "contrast": 20.7333,
+        "mean_luma": 16.2333,
+        "color_bins": 11,
+        "saturation": 0.153,
+        "ink": 0.0182,
+        "focal": 3.9133,
         "hue_families": 0.6667,
-        "lit_fraction": 0.0465,
+        "lit_fraction": 0.0518,
         "lit_regions": 1,
-        "p5_luma": 0,
-        "subject_scale": 0.1807,
-        "empty_cells": 11
+        "p5_luma": 2,
+        "subject_scale": 0.052,
+        "empty_cells": 9
       },
       "empty_where": [
-        "top-right",
-        "upper-left",
         "upper-right",
         "middle-right",
         "lower-left",
@@ -661,14 +681,26 @@
         "bottom-left",
         "bottom-centre",
         "bottom-right",
-        "upper-centre"
+        "upper-left"
       ],
       "deficits": [
         {
+          "metric": "saturation",
+          "value": 0.153,
+          "target": ">= 0.1587",
+          "hint": "use a deliberate palette with 1-2 saturated accents (warm light vs cool night); avoid desaturated greys"
+        },
+        {
           "metric": "focal",
-          "value": 5.17,
+          "value": 3.9133,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
+        },
+        {
+          "metric": "subject_scale",
+          "value": 0.052,
+          "target": ">= 0.14",
+          "hint": "main subject is only 5% of frame height: move camera closer / scale the figure to >= 14% height, or crop the empty wall/sky (tag the shot \"establishing\" in timeline.json only if it truly is a scene-setter)"
         }
       ],
       "waived": [],
@@ -680,56 +712,61 @@
     {
       "id": "s12_loop",
       "pass": false,
-      "score": 0.914,
+      "score": 0.921,
       "delta": 0,
       "establishing": false,
       "subject_box": [
-        0.093,
+        0.167,
         0.135,
-        0.556,
+        0.759,
         0.49
       ],
       "metrics": {
-        "sharp_edges": 0.02,
-        "contrast": 29.1,
-        "mean_luma": 21.2667,
-        "color_bins": 13.6667,
-        "saturation": 0.2337,
-        "ink": 0.0092,
-        "focal": 4.5567,
-        "hue_families": 2,
-        "lit_fraction": 0.125,
-        "lit_regions": 1,
-        "p5_luma": 0,
-        "subject_scale": 0.3057,
-        "empty_cells": 12
+        "sharp_edges": 0.0258,
+        "contrast": 30.4667,
+        "mean_luma": 22.4667,
+        "color_bins": 14.6667,
+        "saturation": 0.2143,
+        "ink": 0.0135,
+        "focal": 4.5133,
+        "hue_families": 1.3333,
+        "lit_fraction": 0.1269,
+        "lit_regions": 1.6667,
+        "p5_luma": 2,
+        "subject_scale": 0.2673,
+        "empty_cells": 11
       },
       "empty_where": [
-        "top-right",
         "upper-right",
         "middle-right",
         "lower-left",
         "lower-centre",
         "lower-right",
-        "bottom-left",
         "upper-left",
         "middle-left",
         "middle-centre",
+        "bottom-left",
         "bottom-centre",
         "bottom-right"
       ],
       "deficits": [
         {
           "metric": "color_bins",
-          "value": 13.6667,
+          "value": 14.6667,
           "target": "<= 12",
           "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
         },
         {
           "metric": "focal",
-          "value": 4.5567,
+          "value": 4.5133,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
+        },
+        {
+          "metric": "mean_luma",
+          "value": 22.4667,
+          "target": "<= 21.8",
+          "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
         }
       ],
       "waived": [],

@@ -1,0 +1,14 @@
+{
+  "design": "paper/ball",
+  "seed": 204,
+  "dur_s": 1.9,
+  "why": [
+    "named"
+  ],
+  "unknown_words": [
+    "crumple"
+  ],
+  "guessed_pick": false,
+  "checks_ok": true,
+  "sha256": "2844bacb5997fb268cc72fb9c0062704af31df12421e1013caf213dbe6107c6b"
+}

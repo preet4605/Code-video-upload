@@ -23,10 +23,10 @@
     },
     "script_gate": {
       "status": "ok",
-      "input_hash": "20763ca4d5a1855f3ac9681ad2fb7f6b0d4e85fdd3bcecc740238f2fe68470ac",
-      "at": "2026-11-27T01:36:26.309Z",
-      "duration_ms": 66,
-      "runs": 7
+      "input_hash": "6261c020f99e3cac20e809f909234b278cad56f233faf03ca3a232b2c6a36a8a",
+      "at": "2026-11-27T06:49:18.088Z",
+      "duration_ms": 43,
+      "runs": 8
     },
     "vo": {
       "status": "ok",
@@ -37,11 +37,29 @@
     },
     "plan_lint": {
       "status": "ok",
-      "input_hash": "3a79fef64090d29346e2dd9bba965aca9ebcd7535cba9b622fab9a334764afcd",
-      "at": "2026-11-27T01:36:26.317Z",
-      "duration_ms": 4,
-      "runs": 3,
+      "input_hash": "8ee0667f06b6cab49c478dbcb9d56ca2fcd65c13088d667741d920013cc17edd",
+      "at": "2026-11-27T06:49:18.093Z",
+      "duration_ms": 3,
+      "runs": 4,
       "warns": []
+    },
+    "script": {
+      "status": "ok",
+      "at": "2026-11-27T06:52:21.295Z",
+      "approved": true,
+      "input_hash": "ff8b0862218b332f1efb430c4c8f52be47e703d61b475c4f4aee1aa07990e275"
+    },
+    "visual_loop": {
+      "status": "waiting",
+      "input_hash": "6112287b5fd33bc326b73ee5fc9918ab4fefee8ce02aaeb32a6b38772d260c2e",
+      "at": "2026-11-27T06:52:21.378Z",
+      "duration_ms": 81,
+      "runs": 8,
+      "result": {
+        "stopped": true,
+        "iter": 7,
+        "message": "LOOP STOPPED after 6 iterations without converging: escalate (new style/reference, or human art direction)"
+      }
     }
   },
   "genre": "horror",
@@ -49,7 +67,7 @@
   "format": "standalone",
   "voice": "aman",
   "unreviewed_reasons": [],
-  "updated_at": "2026-11-27T05:40:27.883Z",
+  "updated_at": "2026-11-27T06:52:21.378Z",
   "failed": {
     "stage": "script_gate",
     "exit_code": 1,

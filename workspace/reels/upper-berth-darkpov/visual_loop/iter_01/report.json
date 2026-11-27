@@ -2,69 +2,56 @@
   "iter": 1,
   "pass": false,
   "reel": {
-    "flags": [
-      "near-duplicate shots s10_bhopal / s11_ticket2",
-      "near-duplicate shots s11_ticket2 / s12_loop",
-      "reused backdrop in 5/12 shots (s1_hook, s2_coach, s3_ticket, s4_rule, s9_relief)"
-    ],
+    "flags": [],
     "backdrop_share": 0.417,
     "top_pairs": [
       {
-        "a": "s8_itarsi",
-        "b": "s11_ticket2",
-        "hash_sim": 0.917,
-        "hist_dist": 0.11
-      },
-      {
-        "a": "s10_bhopal",
-        "b": "s11_ticket2",
-        "hash_sim": 0.903,
-        "hist_dist": 0.164
-      },
-      {
-        "a": "s8_itarsi",
-        "b": "s12_loop",
-        "hash_sim": 0.896,
-        "hist_dist": 0.096
-      }
-    ],
-    "near_duplicates": [
-      {
-        "a": "s10_bhopal",
-        "b": "s11_ticket2",
-        "hash_sim": 0.903,
-        "hist_dist": 0.164
-      },
-      {
         "a": "s11_ticket2",
         "b": "s12_loop",
-        "hash_sim": 0.896,
-        "hist_dist": 0.164
+        "hash_sim": 0.875,
+        "hist_dist": 0.075
+      },
+      {
+        "a": "s8_itarsi",
+        "b": "s12_loop",
+        "hash_sim": 0.868,
+        "hist_dist": 0.053
+      },
+      {
+        "a": "s5_stop",
+        "b": "s12_loop",
+        "hash_sim": 0.868,
+        "hist_dist": 0.066
       }
     ],
+    "near_duplicates": [],
     "backdrop_clusters": [
-      [
-        "s1_hook",
-        "s2_coach",
-        "s3_ticket",
-        "s4_rule",
-        "s9_relief"
-      ],
       [
         "s6_eyes",
         "s7_tickets",
         "s8_itarsi",
-        "s11_ticket2"
+        "s11_ticket2",
+        "s12_loop"
+      ],
+      [
+        "s1_hook",
+        "s2_coach",
+        "s3_ticket",
+        "s4_rule"
+      ],
+      [
+        "s9_relief",
+        "s10_bhopal"
       ]
     ],
-    "reused_backdrop": true
+    "reused_backdrop": false
   },
-  "mean_score": 0.901,
+  "mean_score": 0.903,
   "regressions": [],
   "shots": [
     {
       "id": "s1_hook",
-      "pass": false,
+      "pass": true,
       "score": 0.9,
       "delta": null,
       "establishing": false,
@@ -75,44 +62,37 @@
         0.333
       ],
       "metrics": {
-        "sharp_edges": 0.0131,
-        "contrast": 21.9,
-        "mean_luma": 14.4667,
-        "color_bins": 11.6667,
-        "saturation": 0.4133,
-        "ink": 0.0053,
-        "focal": 8.0367,
-        "hue_families": 1.6667,
-        "lit_fraction": 0.078,
-        "lit_regions": 0.6667,
-        "p5_luma": 0,
-        "subject_scale": 0.2293,
+        "sharp_edges": 0.0092,
+        "contrast": 17.3667,
+        "mean_luma": 11.7,
+        "color_bins": 8.6667,
+        "saturation": 0.2637,
+        "ink": 0.0059,
+        "focal": 7.7067,
+        "hue_families": 0.6667,
+        "lit_fraction": 0.054,
+        "lit_regions": 1.3333,
+        "p5_luma": 1,
+        "subject_scale": 0.257,
         "empty_cells": 14
       },
       "empty_where": [
         "top-right",
+        "upper-left",
         "middle-left",
         "lower-left",
         "lower-centre",
         "lower-right",
-        "bottom-left",
-        "top-centre",
-        "upper-left",
-        "upper-centre",
         "upper-right",
         "middle-centre",
         "middle-right",
+        "bottom-left",
         "bottom-centre",
-        "bottom-right"
+        "bottom-right",
+        "top-centre",
+        "upper-centre"
       ],
-      "deficits": [
-        {
-          "metric": "lit_regions",
-          "value": 0.6667,
-          "target": ">= 1",
-          "hint": "nothing is lit: add a motivated light pool (lamp, moon through a window, door strip, torch cone) on the subject"
-        }
-      ],
+      "deficits": [],
       "waived": [],
       "waivers": {
         "allow_black": false,
@@ -122,64 +102,51 @@
     {
       "id": "s2_coach",
       "pass": false,
-      "score": 0.9,
+      "score": 0.907,
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.148,
-        0.146,
-        0.37,
-        0.208
+        0.574,
+        0.24,
+        0.815,
+        0.438
       ],
       "metrics": {
-        "sharp_edges": 0.0099,
-        "contrast": 20.5667,
-        "mean_luma": 14.3333,
-        "color_bins": 9.6667,
-        "saturation": 0.292,
-        "ink": 0.0063,
-        "focal": 5.9133,
-        "hue_families": 0.6667,
-        "lit_fraction": 0.0806,
-        "lit_regions": 0.6667,
-        "p5_luma": 0.6667,
-        "subject_scale": 0.226,
-        "empty_cells": 14
+        "sharp_edges": 0.011,
+        "contrast": 19.3333,
+        "mean_luma": 12.9667,
+        "color_bins": 8.6667,
+        "saturation": 0.2803,
+        "ink": 0.0082,
+        "focal": 5.2,
+        "hue_families": 1,
+        "lit_fraction": 0.057,
+        "lit_regions": 1,
+        "p5_luma": 1.3333,
+        "subject_scale": 0.257,
+        "empty_cells": 13
       },
       "empty_where": [
         "top-centre",
         "top-right",
         "upper-left",
         "middle-left",
+        "middle-centre",
         "lower-left",
         "lower-centre",
         "lower-right",
-        "bottom-left",
         "upper-centre",
-        "upper-right",
-        "middle-centre",
         "middle-right",
+        "bottom-left",
         "bottom-centre",
         "bottom-right"
       ],
       "deficits": [
         {
           "metric": "focal",
-          "value": 5.9133,
+          "value": 5.2,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
-        },
-        {
-          "metric": "lit_regions",
-          "value": 0.6667,
-          "target": ">= 1",
-          "hint": "nothing is lit: add a motivated light pool (lamp, moon through a window, door strip, torch cone) on the subject"
-        },
-        {
-          "metric": "reused_backdrop",
-          "value": 0.417,
-          "target": "<= 0.4 of shots share a backdrop",
-          "hint": "vary backdrop or camera angle: the same background carries too many shots; change the set (different room/wall/prop layout), the camera angle (low/high/side/over-shoulder) or the lighting set-up so each shot has its own place"
         }
       ],
       "waived": [],
@@ -191,63 +158,56 @@
     {
       "id": "s3_ticket",
       "pass": false,
-      "score": 0.884,
+      "score": 0.914,
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.296,
-        0.354,
-        0.593,
-        0.521
+        0.241,
+        0.375,
+        0.537,
+        0.573
       ],
       "metrics": {
-        "sharp_edges": 0.0089,
-        "contrast": 15.0333,
-        "mean_luma": 10.4,
-        "color_bins": 7,
-        "saturation": 0.254,
-        "ink": 0.0075,
-        "focal": 5.3967,
-        "hue_families": 1.3333,
-        "lit_fraction": 0.0369,
+        "sharp_edges": 0.0191,
+        "contrast": 26.8,
+        "mean_luma": 15.5,
+        "color_bins": 14.6667,
+        "saturation": 0.2377,
+        "ink": 0.0121,
+        "focal": 5.7867,
+        "hue_families": 1,
+        "lit_fraction": 0.0752,
         "lit_regions": 1,
-        "p5_luma": 2,
-        "subject_scale": 0.198,
-        "empty_cells": 13
+        "p5_luma": 2.3333,
+        "subject_scale": 0.191,
+        "empty_cells": 12
       },
       "empty_where": [
         "top-centre",
         "top-right",
         "upper-left",
-        "middle-left",
+        "upper-right",
+        "middle-right",
         "lower-left",
         "lower-centre",
         "lower-right",
         "bottom-left",
-        "bottom-centre",
-        "bottom-right",
         "upper-centre",
-        "upper-right",
-        "middle-right"
+        "bottom-centre",
+        "bottom-right"
       ],
       "deficits": [
         {
+          "metric": "color_bins",
+          "value": 14.6667,
+          "target": "<= 12",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        },
+        {
           "metric": "focal",
-          "value": 5.3967,
+          "value": 5.7867,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
-        },
-        {
-          "metric": "lit_fraction",
-          "value": 0.0369,
-          "target": ">= 0.0462",
-          "hint": "add a motivated light pool: a lamp/moon/door-strip/torch cone that lights the subject and a patch of set around it (a dark look still needs a readable lit subject, not a black rectangle)"
-        },
-        {
-          "metric": "reused_backdrop",
-          "value": 0.417,
-          "target": "<= 0.4 of shots share a backdrop",
-          "hint": "vary backdrop or camera angle: the same background carries too many shots; change the set (different room/wall/prop layout), the camera angle (low/high/side/over-shoulder) or the lighting set-up so each shot has its own place"
         }
       ],
       "waived": [],
@@ -259,35 +219,34 @@
     {
       "id": "s4_rule",
       "pass": false,
-      "score": 0.899,
+      "score": 0.907,
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.148,
-        0.146,
-        0.37,
-        0.198
+        0.333,
+        0.25,
+        0.593,
+        0.427
       ],
       "metrics": {
-        "sharp_edges": 0.0048,
-        "contrast": 16.9,
-        "mean_luma": 11.1667,
-        "color_bins": 9,
-        "saturation": 0.3923,
-        "ink": 0.003,
-        "focal": 8.4867,
-        "hue_families": 1.3333,
-        "lit_fraction": 0.0459,
-        "lit_regions": 0.3333,
-        "p5_luma": 0,
-        "subject_scale": 0.125,
-        "empty_cells": 14
+        "sharp_edges": 0.0068,
+        "contrast": 20.2667,
+        "mean_luma": 12.7667,
+        "color_bins": 9.6667,
+        "saturation": 0.3323,
+        "ink": 0.0042,
+        "focal": 5.83,
+        "hue_families": 1,
+        "lit_fraction": 0.0601,
+        "lit_regions": 1,
+        "p5_luma": 1,
+        "subject_scale": 0.1873,
+        "empty_cells": 13
       },
       "empty_where": [
         "top-centre",
         "top-right",
         "upper-left",
-        "upper-centre",
         "upper-right",
         "middle-left",
         "middle-centre",
@@ -301,28 +260,10 @@
       ],
       "deficits": [
         {
-          "metric": "lit_fraction",
-          "value": 0.0459,
-          "target": ">= 0.0462",
-          "hint": "add a motivated light pool: a lamp/moon/door-strip/torch cone that lights the subject and a patch of set around it (a dark look still needs a readable lit subject, not a black rectangle)"
-        },
-        {
-          "metric": "lit_regions",
-          "value": 0.3333,
-          "target": ">= 1",
-          "hint": "nothing is lit: add a motivated light pool (lamp, moon through a window, door strip, torch cone) on the subject"
-        },
-        {
-          "metric": "subject_scale",
-          "value": 0.125,
-          "target": ">= 0.14",
-          "hint": "main subject is only 13% of frame height: move camera closer / scale the figure to >= 14% height, or crop the empty wall/sky (tag the shot \"establishing\" in timeline.json only if it truly is a scene-setter)"
-        },
-        {
-          "metric": "reused_backdrop",
-          "value": 0.417,
-          "target": "<= 0.4 of shots share a backdrop",
-          "hint": "vary backdrop or camera angle: the same background carries too many shots; change the set (different room/wall/prop layout), the camera angle (low/high/side/over-shoulder) or the lighting set-up so each shot has its own place"
+          "metric": "focal",
+          "value": 5.83,
+          "target": ">= 6.56",
+          "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         }
       ],
       "waived": [],
@@ -334,29 +275,29 @@
     {
       "id": "s5_stop",
       "pass": false,
-      "score": 0.929,
+      "score": 0.921,
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.13,
-        0.063,
+        0.148,
+        0.094,
         0.741,
         0.313
       ],
       "metrics": {
-        "sharp_edges": 0.0053,
-        "contrast": 17.7,
-        "mean_luma": 18.4,
-        "color_bins": 7.3333,
-        "saturation": 0.401,
-        "ink": 0.0047,
-        "focal": 3.8033,
+        "sharp_edges": 0.0091,
+        "contrast": 21.4,
+        "mean_luma": 18.4333,
+        "color_bins": 10,
+        "saturation": 0.3357,
+        "ink": 0.0059,
+        "focal": 4.3533,
         "hue_families": 1,
-        "lit_fraction": 0.0873,
+        "lit_fraction": 0.0998,
         "lit_regions": 1,
-        "p5_luma": 1,
-        "subject_scale": 0.2467,
-        "empty_cells": 10
+        "p5_luma": 2.6667,
+        "subject_scale": 0.2083,
+        "empty_cells": 11
       },
       "empty_where": [
         "upper-left",
@@ -368,12 +309,13 @@
         "lower-right",
         "bottom-left",
         "bottom-centre",
-        "bottom-right"
+        "bottom-right",
+        "top-right"
       ],
       "deficits": [
         {
           "metric": "focal",
-          "value": 3.8033,
+          "value": 4.3533,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         }
@@ -391,87 +333,24 @@
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.056,
-        0.396,
-        0.444,
-        0.604
+        0.019,
+        0.417,
+        0.407,
+        0.615
       ],
       "metrics": {
-        "sharp_edges": 0.0055,
-        "contrast": 18.7,
-        "mean_luma": 20.0667,
-        "color_bins": 7.3333,
-        "saturation": 0.4607,
-        "ink": 0.0029,
-        "focal": 8.52,
-        "hue_families": 1,
-        "lit_fraction": 0.0784,
+        "sharp_edges": 0.0061,
+        "contrast": 18.3,
+        "mean_luma": 14.6,
+        "color_bins": 9,
+        "saturation": 0.3477,
+        "ink": 0.0033,
+        "focal": 8.3267,
+        "hue_families": 0.6667,
+        "lit_fraction": 0.0382,
         "lit_regions": 0.6667,
         "p5_luma": 0.6667,
-        "subject_scale": 0.1387,
-        "empty_cells": 14
-      },
-      "empty_where": [
-        "top-centre",
-        "top-right",
-        "upper-left",
-        "upper-centre",
-        "upper-right",
-        "middle-left",
-        "middle-centre",
-        "middle-right",
-        "lower-left",
-        "lower-centre",
-        "lower-right",
-        "bottom-left",
-        "bottom-centre",
-        "bottom-right"
-      ],
-      "deficits": [
-        {
-          "metric": "lit_regions",
-          "value": 0.6667,
-          "target": ">= 1",
-          "hint": "nothing is lit: add a motivated light pool (lamp, moon through a window, door strip, torch cone) on the subject"
-        },
-        {
-          "metric": "subject_scale",
-          "value": 0.1387,
-          "target": ">= 0.14",
-          "hint": "main subject is only 14% of frame height: move camera closer / scale the figure to >= 14% height, or crop the empty wall/sky (tag the shot \"establishing\" in timeline.json only if it truly is a scene-setter)"
-        }
-      ],
-      "waived": [],
-      "waivers": {
-        "allow_black": false,
-        "allow_static": false
-      }
-    },
-    {
-      "id": "s7_tickets",
-      "pass": false,
-      "score": 0.786,
-      "delta": null,
-      "establishing": false,
-      "subject_box": [
-        0.278,
-        0.292,
-        0.833,
-        0.563
-      ],
-      "metrics": {
-        "sharp_edges": 0.0023,
-        "contrast": 13.7667,
-        "mean_luma": 16.6,
-        "color_bins": 6,
-        "saturation": 0.3953,
-        "ink": 0.0022,
-        "focal": 9.1833,
-        "hue_families": 1,
-        "lit_fraction": 0.0318,
-        "lit_regions": 1.3333,
-        "p5_luma": 1.6667,
-        "subject_scale": 0.2673,
+        "subject_scale": 0.1427,
         "empty_cells": 14
       },
       "empty_where": [
@@ -492,16 +371,78 @@
       ],
       "deficits": [
         {
-          "metric": "sharp_edges",
-          "value": 0.0023,
-          "target": ">= 0.0025",
-          "hint": "add crisp detail: outlines on every shape, texture marks (wood grain, fabric pattern, stitching), small props, background objects"
-        },
-        {
           "metric": "lit_fraction",
-          "value": 0.0318,
+          "value": 0.0382,
           "target": ">= 0.0462",
           "hint": "add a motivated light pool: a lamp/moon/door-strip/torch cone that lights the subject and a patch of set around it (a dark look still needs a readable lit subject, not a black rectangle)"
+        },
+        {
+          "metric": "lit_regions",
+          "value": 0.6667,
+          "target": ">= 1",
+          "hint": "nothing is lit: add a motivated light pool (lamp, moon through a window, door strip, torch cone) on the subject"
+        }
+      ],
+      "waived": [],
+      "waivers": {
+        "allow_black": false,
+        "allow_static": false
+      }
+    },
+    {
+      "id": "s7_tickets",
+      "pass": false,
+      "score": 0.907,
+      "delta": null,
+      "establishing": false,
+      "subject_box": [
+        0.426,
+        0.344,
+        0.852,
+        0.594
+      ],
+      "metrics": {
+        "sharp_edges": 0.0072,
+        "contrast": 25.1,
+        "mean_luma": 20.9667,
+        "color_bins": 13.6667,
+        "saturation": 0.2903,
+        "ink": 0.0036,
+        "focal": 5.92,
+        "hue_families": 1,
+        "lit_fraction": 0.0975,
+        "lit_regions": 1.3333,
+        "p5_luma": 3.3333,
+        "subject_scale": 0.229,
+        "empty_cells": 13
+      },
+      "empty_where": [
+        "top-centre",
+        "top-right",
+        "upper-left",
+        "upper-centre",
+        "upper-right",
+        "middle-left",
+        "middle-right",
+        "lower-left",
+        "lower-centre",
+        "lower-right",
+        "bottom-left",
+        "bottom-centre",
+        "bottom-right"
+      ],
+      "deficits": [
+        {
+          "metric": "color_bins",
+          "value": 13.6667,
+          "target": "<= 12",
+          "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
+        },
+        {
+          "metric": "focal",
+          "value": 5.92,
+          "target": ">= 6.56",
+          "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         }
       ],
       "waived": [],
@@ -513,29 +454,29 @@
     {
       "id": "s8_itarsi",
       "pass": false,
-      "score": 0.929,
+      "score": 0.883,
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.074,
-        0.135,
-        0.741,
-        0.313
+        0.093,
+        0.146,
+        0.667,
+        0.302
       ],
       "metrics": {
-        "sharp_edges": 0.0328,
-        "contrast": 39.8,
-        "mean_luma": 35.0333,
-        "color_bins": 23,
-        "saturation": 0.225,
-        "ink": 0.0173,
-        "focal": 5.2033,
-        "hue_families": 1,
-        "lit_fraction": 0.2178,
-        "lit_regions": 1,
-        "p5_luma": 3,
-        "subject_scale": 0.2397,
-        "empty_cells": 10
+        "sharp_edges": 0.0185,
+        "contrast": 25.5667,
+        "mean_luma": 21.9667,
+        "color_bins": 13,
+        "saturation": 0.16,
+        "ink": 0.0127,
+        "focal": 4.93,
+        "hue_families": 0.6667,
+        "lit_fraction": 0.1112,
+        "lit_regions": 1.3333,
+        "p5_luma": 4.3333,
+        "subject_scale": 0.2047,
+        "empty_cells": 11
       },
       "empty_where": [
         "top-right",
@@ -543,28 +484,30 @@
         "lower-left",
         "lower-centre",
         "lower-right",
-        "bottom-left",
+        "upper-right",
         "middle-left",
         "middle-centre",
+        "bottom-left",
         "bottom-centre",
-        "bottom-right"
+        "bottom-right",
+        "upper-left"
       ],
       "deficits": [
         {
           "metric": "color_bins",
-          "value": 23,
+          "value": 13,
           "target": "<= 12",
           "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
         },
         {
           "metric": "focal",
-          "value": 5.2033,
+          "value": 4.93,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         },
         {
           "metric": "mean_luma",
-          "value": 35.0333,
+          "value": 21.9667,
           "target": "<= 21.8",
           "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
         }
@@ -577,7 +520,7 @@
     },
     {
       "id": "s9_relief",
-      "pass": false,
+      "pass": true,
       "score": 0.893,
       "delta": null,
       "establishing": false,
@@ -585,52 +528,45 @@
         0.519,
         0.208,
         0.889,
-        0.438
+        0.448
       ],
       "metrics": {
-        "sharp_edges": 0.0074,
-        "contrast": 22.5667,
-        "mean_luma": 15.8,
-        "color_bins": 10.6667,
-        "saturation": 0.5257,
-        "ink": 0.006,
-        "focal": 3.45,
+        "sharp_edges": 0.0041,
+        "contrast": 17.6,
+        "mean_luma": 11,
+        "color_bins": 8,
+        "saturation": 0.4913,
+        "ink": 0.0037,
+        "focal": 4.0567,
         "hue_families": 1,
-        "lit_fraction": 0.1095,
-        "lit_regions": 1.3333,
-        "p5_luma": 0,
-        "subject_scale": 0.236,
+        "lit_fraction": 0.0477,
+        "lit_regions": 1,
+        "p5_luma": 0.6667,
+        "subject_scale": 0.2397,
         "empty_cells": 15
       },
       "empty_where": [
+        "top-right",
         "upper-left",
         "middle-left",
         "middle-centre",
+        "middle-right",
         "lower-left",
         "lower-centre",
         "lower-right",
         "bottom-left",
         "bottom-centre",
-        "bottom-right",
         "top-left",
         "top-centre",
-        "top-right",
-        "middle-right",
+        "bottom-right",
         "upper-centre",
         "upper-right"
       ],
-      "deficits": [
-        {
-          "metric": "reused_backdrop",
-          "value": 0.417,
-          "target": "<= 0.4 of shots share a backdrop",
-          "hint": "vary backdrop or camera angle: the same background carries too many shots; change the set (different room/wall/prop layout), the camera angle (low/high/side/over-shoulder) or the lighting set-up so each shot has its own place"
-        }
-      ],
+      "deficits": [],
       "waived": [
         {
           "metric": "focal",
-          "value": 3.45,
+          "value": 4.0567,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         },
@@ -649,60 +585,56 @@
     {
       "id": "s10_bhopal",
       "pass": false,
-      "score": 0.914,
+      "score": 0.884,
       "delta": null,
       "establishing": false,
       "subject_box": [
         0.056,
         0.146,
-        0.556,
+        0.722,
         0.375
       ],
       "metrics": {
-        "sharp_edges": 0.0181,
-        "contrast": 44.8,
-        "mean_luma": 41.2333,
-        "color_bins": 19.3333,
-        "saturation": 0.2433,
-        "ink": 0.0061,
-        "focal": 4.2167,
-        "hue_families": 1.3333,
-        "lit_fraction": 0.2645,
+        "sharp_edges": 0.013,
+        "contrast": 29.0333,
+        "mean_luma": 21.8333,
+        "color_bins": 12.6667,
+        "saturation": 0.183,
+        "ink": 0.0038,
+        "focal": 7.0533,
+        "hue_families": 0.3333,
+        "lit_fraction": 0.1123,
         "lit_regions": 1,
-        "p5_luma": 2,
-        "subject_scale": 0.2953,
-        "empty_cells": 12
+        "p5_luma": 1.6667,
+        "subject_scale": 0.2533,
+        "empty_cells": 14
       },
       "empty_where": [
         "middle-left",
+        "middle-right",
         "lower-left",
         "lower-centre",
         "lower-right",
         "bottom-left",
         "bottom-centre",
         "bottom-right",
+        "top-left",
+        "top-centre",
         "top-right",
         "upper-right",
         "middle-centre",
-        "middle-right",
-        "top-left"
+        "upper-left"
       ],
       "deficits": [
         {
           "metric": "color_bins",
-          "value": 19.3333,
+          "value": 12.6667,
           "target": "<= 12",
           "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
         },
         {
-          "metric": "focal",
-          "value": 4.2167,
-          "target": ">= 6.56",
-          "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
-        },
-        {
           "metric": "mean_luma",
-          "value": 41.2333,
+          "value": 21.8333,
           "target": "<= 21.8",
           "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
         }
@@ -716,58 +648,59 @@
     {
       "id": "s11_ticket2",
       "pass": false,
-      "score": 0.943,
+      "score": 0.89,
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.074,
-        0.125,
-        0.778,
-        0.573
+        0.167,
+        0.156,
+        0.759,
+        0.208
       ],
       "metrics": {
-        "sharp_edges": 0.0314,
-        "contrast": 22.1333,
-        "mean_luma": 22.0333,
-        "color_bins": 10.3333,
-        "saturation": 0.2703,
-        "ink": 0.0291,
-        "focal": 4.58,
-        "hue_families": 1.6667,
-        "lit_fraction": 0.1265,
+        "sharp_edges": 0.0215,
+        "contrast": 20.7333,
+        "mean_luma": 16.2333,
+        "color_bins": 11,
+        "saturation": 0.153,
+        "ink": 0.0182,
+        "focal": 3.9133,
+        "hue_families": 0.6667,
+        "lit_fraction": 0.0518,
         "lit_regions": 1,
-        "p5_luma": 0,
-        "subject_scale": 0.3713,
-        "empty_cells": 8
+        "p5_luma": 2,
+        "subject_scale": 0.052,
+        "empty_cells": 9
       },
       "empty_where": [
-        "top-right",
+        "upper-right",
+        "middle-right",
         "lower-left",
         "lower-centre",
         "lower-right",
         "bottom-left",
         "bottom-centre",
         "bottom-right",
-        "middle-right"
+        "upper-left"
       ],
       "deficits": [
         {
+          "metric": "saturation",
+          "value": 0.153,
+          "target": ">= 0.1587",
+          "hint": "use a deliberate palette with 1-2 saturated accents (warm light vs cool night); avoid desaturated greys"
+        },
+        {
           "metric": "focal",
-          "value": 4.58,
+          "value": 3.9133,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         },
         {
-          "metric": "mean_luma",
-          "value": 22.0333,
-          "target": "<= 21.8",
-          "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
-        },
-        {
-          "metric": "near_duplicate",
-          "value": 0.903,
-          "target": "hash similarity < 0.88 vs s10_bhopal",
-          "hint": "this shot is a near-copy of the previous one: change the camera angle or distance (cut wide to close), the subject position, or the light, so the cut shows something new"
+          "metric": "subject_scale",
+          "value": 0.052,
+          "target": ">= 0.14",
+          "hint": "main subject is only 5% of frame height: move camera closer / scale the figure to >= 14% height, or crop the empty wall/sky (tag the shot \"establishing\" in timeline.json only if it truly is a scene-setter)"
         }
       ],
       "waived": [],
@@ -783,62 +716,56 @@
       "delta": null,
       "establishing": false,
       "subject_box": [
-        0.037,
-        0.125,
-        0.778,
-        0.583
+        0.167,
+        0.135,
+        0.759,
+        0.49
       ],
       "metrics": {
-        "sharp_edges": 0.0371,
-        "contrast": 45.1667,
-        "mean_luma": 40.5333,
-        "color_bins": 22.3333,
-        "saturation": 0.256,
-        "ink": 0.0119,
-        "focal": 3.9067,
-        "hue_families": 1.6667,
-        "lit_fraction": 0.2686,
-        "lit_regions": 1,
-        "p5_luma": 0.3333,
-        "subject_scale": 0.3853,
+        "sharp_edges": 0.0265,
+        "contrast": 30.8,
+        "mean_luma": 23.3,
+        "color_bins": 14.6667,
+        "saturation": 0.2153,
+        "ink": 0.0139,
+        "focal": 4.42,
+        "hue_families": 1.3333,
+        "lit_fraction": 0.1323,
+        "lit_regions": 1.6667,
+        "p5_luma": 2,
+        "subject_scale": 0.281,
         "empty_cells": 10
       },
       "empty_where": [
+        "upper-right",
+        "middle-right",
         "lower-left",
         "lower-centre",
         "lower-right",
-        "bottom-left",
-        "top-right",
+        "upper-left",
         "middle-left",
         "middle-centre",
-        "middle-right",
-        "bottom-centre",
-        "bottom-right"
+        "bottom-left",
+        "bottom-centre"
       ],
       "deficits": [
         {
           "metric": "color_bins",
-          "value": 22.3333,
+          "value": 14.6667,
           "target": "<= 12",
           "hint": "too many colours: restrict to a palette (base, shade, light per material + 1-2 accents)"
         },
         {
           "metric": "focal",
-          "value": 3.9067,
+          "value": 4.42,
           "target": ">= 6.56",
           "hint": "no clear subject: make one area clearly busier/brighter than the rest (character, prop, light)"
         },
         {
           "metric": "mean_luma",
-          "value": 40.5333,
+          "value": 23.3,
           "target": "<= 21.8",
           "hint": "too bright for this look: crush the blacks, keep light only where a motivated source (moon, door strip, lamp) reaches"
-        },
-        {
-          "metric": "near_duplicate",
-          "value": 0.896,
-          "target": "hash similarity < 0.88 vs s11_ticket2",
-          "hint": "this shot is a near-copy of the previous one: change the camera angle or distance (cut wide to close), the subject position, or the light, so the cut shows something new"
         }
       ],
       "waived": [],

@@ -1,0 +1,199 @@
+{
+ "shots": [
+  {
+   "id": "s1_hook",
+   "seen": "Iteration 5 (final of this session): Same as before: blue-lit uncle face behind slats; passes metrics but is dim and small.",
+   "problems": [
+    "face small"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s2_coach",
+   "seen": "Iteration 5 (final of this session): Curtain slit with chain and glowing rings; reads, but its layout echoes s3.",
+   "problems": [
+    "focal 5.4"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s3_ticket",
+   "seen": "Iteration 5 (final of this session): Warm ticket readable, brightest warm accent in the first half.",
+   "problems": [
+    "bins 12.3"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s4_rule",
+   "seen": "Iteration 5 (final of this session): Uncle face oval between sweeps and slatted face at the sweep.",
+   "problems": [
+    "focal 6.40 vs 6.56"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s5_stop",
+   "seen": "Iteration 5 (final of this session): Head outline drifting pool, red clock pill; scary mood, little to read.",
+   "problems": [
+    "focal 5.2"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 3,
+    "depth": 2,
+    "detail": 3,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s6_eyes",
+   "seen": "Iteration 5 (final of this session): Lying uncle with eye glint; the pale reveal key is the strongest frame of the first half.",
+   "problems": [
+    "focal 6.14"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s7_tickets",
+   "seen": "Iteration 5 (final of this session): Hands and tickets readable in a lamp pool.",
+   "problems": [
+    "still small"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s8_itarsi",
+   "seen": "Iteration 5 (final of this session): Station board, warm light, uncle at the window; saturation 0.155 vs bins 13 is a structural trade.",
+   "problems": [
+    "bins 13",
+    "saturation 0.155"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s9_relief",
+   "seen": "Iteration 5 (final of this session): Lids closing, window slats behind a blue glow; slightly more visible; waived black beat.",
+   "problems": [
+    "waived"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s10_bhopal",
+   "seen": "Iteration 5 (final of this session): Bhopal board: scare reads at a glance; slightly over mean cap.",
+   "problems": [
+    "mean 21.83 vs cap 21.8 (0.03 over)"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 4,
+    "character": 3,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s11_ticket2",
+   "seen": "Iteration 5 (final of this session): Yellowed ticket with red passed pill, now above lit floor.",
+   "problems": [
+    "focal 5.2"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s12_loop",
+   "seen": "Iteration 5 (final of this session): Aged narrator under sweep, echoes s1.",
+   "problems": [
+    "bins 13.7",
+    "focal 4.6"
+   ],
+   "fix": "stop loop here: remaining misses are focal/bins vs the one-reference template, documented in the report; human decides",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 4,
+    "composition": 3
+   }
+  }
+ ],
+ "note": "Not re-run through the loop validator: the loop was stopped by the maintainer-less worker after 5 iterations; remaining deficits are listed in the report."
+}

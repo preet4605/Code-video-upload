@@ -1,5 +1,216 @@
 {
   "generated_by": "sound_design.mjs",
   "note": "Every non-synth cue (tier B generated / tier C library) with its file and licence. Tier-A synth cues need none.",
-  "entries": []
+  "entries": [
+    {
+      "id": "rust_clue",
+      "kind": "paper rustle",
+      "source": "earshot",
+      "file": "audio/library/earshot_32c93d7c21e9e84b.wav",
+      "licence": {
+        "name": "rendered output (MIT tool); parts per CREDITS.md",
+        "licence": "rendered output (MIT tool); parts per CREDITS.md",
+        "id": "earshot",
+        "provider": "earshot",
+        "url": "https://github.com/Leonxlnx/earshot",
+        "credit": null,
+        "proof": "https://github.com/Leonxlnx/earshot#licence",
+        "version": "earshot 1.0.0",
+        "request": {
+          "want": "paper crumple",
+          "design": "paper/ball",
+          "seed": 1,
+          "dur_s": null
+        },
+        "request_sha256": "32c93d7c21e9e84bd6b00749217fe342470a9049c182482957092909c8210b76",
+        "design": "paper/ball",
+        "seed": 1,
+        "sha256": "2174af61942e44128e0a300d9863993ac159d8f7a2ea9829dde47736ecd9c91a",
+        "guessed_pick": false,
+        "quality": "rendered",
+        "retrieved_at": "2026-11-27T05:58:53.807Z"
+      },
+      "query": "paper crumple"
+    },
+    {
+      "id": "brake",
+      "kind": "brake squeal",
+      "source": "earshot",
+      "file": "audio/library/earshot_6a4b1dcb1b49b70e.wav",
+      "licence": {
+        "name": "rendered output (MIT tool); parts per CREDITS.md",
+        "licence": "rendered output (MIT tool); parts per CREDITS.md",
+        "id": "earshot",
+        "provider": "earshot",
+        "url": "https://github.com/Leonxlnx/earshot",
+        "credit": null,
+        "proof": "https://github.com/Leonxlnx/earshot#licence",
+        "version": "earshot 1.0.0",
+        "request": {
+          "want": "metro arriving and braking",
+          "design": "subway/arrive",
+          "seed": 1,
+          "dur_s": null
+        },
+        "request_sha256": "6a4b1dcb1b49b70ec5edf0494ee14c33b0b6075e935173f8b835e99278ddd1f9",
+        "design": "subway/arrive",
+        "seed": 1,
+        "sha256": "bb9ee44d6311293e646f0cdb6883e539940794ede67c22f23fc2609035e44100",
+        "guessed_pick": false,
+        "quality": "rendered",
+        "retrieved_at": "2026-11-27T05:58:42.793Z"
+      },
+      "query": "metro arriving and braking"
+    },
+    {
+      "id": "rust_t1",
+      "kind": "paper rustle",
+      "source": "earshot",
+      "file": "audio/library/earshot_0ca6d5940a8d1abe.wav",
+      "licence": {
+        "name": "rendered output (MIT tool); parts per CREDITS.md",
+        "licence": "rendered output (MIT tool); parts per CREDITS.md",
+        "id": "earshot",
+        "provider": "earshot",
+        "url": "https://github.com/Leonxlnx/earshot",
+        "credit": null,
+        "proof": "https://github.com/Leonxlnx/earshot#licence",
+        "version": "earshot 1.0.0",
+        "request": {
+          "want": "paper crumple",
+          "design": "paper/ball",
+          "seed": 2,
+          "dur_s": null
+        },
+        "request_sha256": "0ca6d5940a8d1abedd019fd469d095c531a4f5ddc5898283ca02a99f83f8d2b2",
+        "design": "paper/ball",
+        "seed": 204,
+        "sha256": "2844bacb5997fb268cc72fb9c0062704af31df12421e1013caf213dbe6107c6b",
+        "guessed_pick": false,
+        "quality": "rendered",
+        "retrieved_at": "2026-11-27T05:58:56.055Z"
+      },
+      "query": "paper crumple"
+    },
+    {
+      "id": "coach_door",
+      "kind": "coach door",
+      "source": "earshot",
+      "file": "audio/library/earshot_f085e9543fb4369a.wav",
+      "licence": {
+        "name": "rendered output (MIT tool); parts per CREDITS.md",
+        "licence": "rendered output (MIT tool); parts per CREDITS.md",
+        "id": "earshot",
+        "provider": "earshot",
+        "url": "https://github.com/Leonxlnx/earshot",
+        "credit": null,
+        "proof": "https://github.com/Leonxlnx/earshot#licence",
+        "version": "earshot 1.0.0",
+        "request": {
+          "want": "door closing",
+          "design": "door/shut",
+          "seed": 3,
+          "dur_s": null
+        },
+        "request_sha256": "f085e9543fb4369a0335e93ff3f145915085a294071d5ecdc14d375101e35376",
+        "design": "door/shut",
+        "seed": 3,
+        "sha256": "30db5c2079a1d167043701ac67838581eafc242608cad15cfeb84068d742a2b7",
+        "guessed_pick": false,
+        "quality": "rendered",
+        "retrieved_at": "2026-11-27T05:58:57.844Z"
+      },
+      "query": "door closing"
+    },
+    {
+      "id": "bell",
+      "kind": "station bell",
+      "source": "earshot",
+      "file": "audio/library/earshot_97474370cae16799.wav",
+      "licence": {
+        "name": "rendered output (MIT tool); parts per CREDITS.md",
+        "licence": "rendered output (MIT tool); parts per CREDITS.md",
+        "id": "earshot",
+        "provider": "earshot",
+        "url": "https://github.com/Leonxlnx/earshot",
+        "credit": null,
+        "proof": "https://github.com/Leonxlnx/earshot#licence",
+        "version": "earshot 1.0.0",
+        "request": {
+          "want": "bell ring",
+          "design": "bicycle_bell/ring",
+          "seed": 1,
+          "dur_s": null
+        },
+        "request_sha256": "97474370cae16799096243f1ee54fa8389d2d8f69976ff1843048380ddc421a7",
+        "design": "bicycle_bell/ring",
+        "seed": 1,
+        "sha256": "8fb0ae75c74a29b13df4d3ceab3b1a56d70e845821d91a3c0cfaaa9a4f0339d7",
+        "guessed_pick": false,
+        "quality": "rendered",
+        "retrieved_at": "2026-11-27T05:58:45.178Z"
+      },
+      "query": "bell ring"
+    },
+    {
+      "id": "murmur",
+      "kind": "platform murmur",
+      "source": "earshot",
+      "file": "audio/library/earshot_bb7b4690f6618dac.wav",
+      "licence": {
+        "name": "rendered output (MIT tool); parts per CREDITS.md",
+        "licence": "rendered output (MIT tool); parts per CREDITS.md",
+        "id": "earshot",
+        "provider": "earshot",
+        "url": "https://github.com/Leonxlnx/earshot",
+        "credit": null,
+        "proof": "https://github.com/Leonxlnx/earshot#licence",
+        "version": "earshot 1.0.0",
+        "request": {
+          "want": "busy crowd murmur",
+          "design": "cafe/busy",
+          "seed": 1,
+          "dur_s": 12
+        },
+        "request_sha256": "bb7b4690f6618dac3346df1d03c9114408033269f0a59b1979a58b514f461062",
+        "design": "cafe/busy",
+        "seed": 1,
+        "sha256": "f8dca534d74e9fa1792120512948a33f9bd9390e9a5747843b1a7de958f0d256",
+        "guessed_pick": false,
+        "quality": "rendered",
+        "retrieved_at": "2026-11-27T05:58:51.236Z"
+      },
+      "query": "busy crowd murmur"
+    },
+    {
+      "id": "bell2",
+      "kind": "station bell",
+      "source": "earshot",
+      "file": "audio/library/earshot_8832eb707e6655e9.wav",
+      "licence": {
+        "name": "rendered output (MIT tool); parts per CREDITS.md",
+        "licence": "rendered output (MIT tool); parts per CREDITS.md",
+        "id": "earshot",
+        "provider": "earshot",
+        "url": "https://github.com/Leonxlnx/earshot",
+        "credit": null,
+        "proof": "https://github.com/Leonxlnx/earshot#licence",
+        "version": "earshot 1.0.0",
+        "request": {
+          "want": "bell ring",
+          "design": "bicycle_bell/ring",
+          "seed": 2,
+          "dur_s": null
+        },
+        "request_sha256": "8832eb707e6655e92e6993344fb2d4e084f468c8261d3c1bd5a794cf8380c742",
+        "design": "bicycle_bell/ring",
+        "seed": 2,
+        "sha256": "2dcf92f646290451f0493d82874282ed91000f108da3da917ede0ad76ecfd93e",
+        "guessed_pick": false,
+        "quality": "rendered",
+        "retrieved_at": "2026-11-27T05:58:47.302Z"
+      },
+      "query": "bell ring"
+    }
+  ]
 }

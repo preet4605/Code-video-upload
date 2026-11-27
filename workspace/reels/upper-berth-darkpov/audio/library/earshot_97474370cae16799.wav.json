@@ -1,0 +1,12 @@
+{
+  "design": "bicycle_bell/ring",
+  "seed": 1,
+  "dur_s": 3.928,
+  "why": [
+    "named"
+  ],
+  "unknown_words": [],
+  "guessed_pick": false,
+  "checks_ok": true,
+  "sha256": "8fb0ae75c74a29b13df4d3ceab3b1a56d70e845821d91a3c0cfaaa9a4f0339d7"
+}

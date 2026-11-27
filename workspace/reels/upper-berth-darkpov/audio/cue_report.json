@@ -28,7 +28,7 @@
       "events": [
         "stop"
       ],
-      "render_ms": 334.36
+      "render_ms": 397.377
     },
     {
       "id": "room",
@@ -46,7 +46,7 @@
       "events": [
         "loop_end"
       ],
-      "render_ms": 815.84
+      "render_ms": 861.396
     },
     {
       "id": "rumble_a",
@@ -66,7 +66,7 @@
         "stop",
         "stop"
       ],
-      "render_ms": 1093.373
+      "render_ms": 1327.864
     },
     {
       "id": "sw_hook1",
@@ -86,7 +86,7 @@
       "events": [
         "hook"
       ],
-      "render_ms": 27.125
+      "render_ms": 25.991
     },
     {
       "id": "sw_hook2",
@@ -106,7 +106,7 @@
       "events": [
         "hook"
       ],
-      "render_ms": 13.597
+      "render_ms": 14.743
     },
     {
       "id": "sw_hook3",
@@ -126,7 +126,7 @@
       "events": [
         "hook"
       ],
-      "render_ms": 10.065
+      "render_ms": 11.975
     },
     {
       "id": "sw_coach1",
@@ -146,7 +146,7 @@
       "events": [
         "line02_start"
       ],
-      "render_ms": 6.412
+      "render_ms": 8.13
     },
     {
       "id": "sw_coach2",
@@ -166,7 +166,7 @@
       "events": [
         "line02_start"
       ],
-      "render_ms": 9.737
+      "render_ms": 10.891
     },
     {
       "id": "sw_coach3",
@@ -186,24 +186,25 @@
       "events": [
         "line02_start"
       ],
-      "render_ms": 6.524
+      "render_ms": 5.129
     },
     {
       "id": "rust_clue",
-      "kind": "paper_crinkle",
+      "kind": "paper rustle",
       "layer": "sfx",
-      "source": "synth",
+      "source": "earshot",
       "at": "clue_ticket",
       "at_s": 14.055,
       "onset_s": 14.055,
-      "end_s": 14.955,
+      "end_s": 15.981,
       "gain_db": -8,
       "pan": 0.1,
       "tags": [],
       "events": [
         "clue_ticket"
       ],
-      "render_ms": 23.003
+      "file": "audio/library/earshot_32c93d7c21e9e84b.wav",
+      "render_ms": 26.192
     },
     {
       "id": "sw_tick1",
@@ -223,7 +224,7 @@
       "events": [
         "clue_ticket"
       ],
-      "render_ms": 11.46
+      "render_ms": 9.979
     },
     {
       "id": "sw_tick2",
@@ -243,7 +244,7 @@
       "events": [
         "line04_start"
       ],
-      "render_ms": 9.594
+      "render_ms": 8.073
     },
     {
       "id": "sw_rule1",
@@ -263,7 +264,29 @@
       "events": [
         "rule"
       ],
-      "render_ms": 10.575
+      "render_ms": 13.043
+    },
+    {
+      "id": "brake",
+      "kind": "brake squeal",
+      "layer": "sfx",
+      "source": "earshot",
+      "at": "stop",
+      "at_s": 24.058,
+      "onset_s": 24.058,
+      "end_s": 32.081,
+      "gain_db": -4,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "stop",
+        "stop",
+        "stop",
+        "stop",
+        "stop"
+      ],
+      "file": "audio/library/earshot_6a4b1dcb1b49b70e.wav",
+      "render_ms": 75.02
     },
     {
       "id": "sw_rule2",
@@ -283,7 +306,7 @@
       "events": [
         "rule"
       ],
-      "render_ms": 9.864
+      "render_ms": 8.21
     },
     {
       "id": "sw_rule3",
@@ -303,7 +326,7 @@
       "events": [
         "rule"
       ],
-      "render_ms": 18.797
+      "render_ms": 10.981
     },
     {
       "id": "clack_brake",
@@ -325,28 +348,7 @@
         "stop",
         "stop"
       ],
-      "render_ms": 54.836
-    },
-    {
-      "id": "brake",
-      "kind": "brake_screech",
-      "layer": "sfx",
-      "source": "synth",
-      "at": "stop",
-      "at_s": 27.508,
-      "onset_s": 27.508,
-      "end_s": 29.008,
-      "gain_db": -4,
-      "pan": 0,
-      "tags": [],
-      "events": [
-        "stop",
-        "stop",
-        "stop",
-        "stop",
-        "stop"
-      ],
-      "render_ms": 83.425
+      "render_ms": 40.244
     },
     {
       "id": "brake_groan",
@@ -365,7 +367,7 @@
         "stop",
         "stop"
       ],
-      "render_ms": 115.977
+      "render_ms": 88.228
     },
     {
       "id": "tube",
@@ -386,7 +388,7 @@
         "stop",
         "eyes"
       ],
-      "render_ms": 177.367
+      "render_ms": 169.421
     },
     {
       "id": "heart",
@@ -405,7 +407,7 @@
         "eyes",
         "tickets_end"
       ],
-      "render_ms": 87.048
+      "render_ms": 61.951
     },
     {
       "id": "drone",
@@ -428,24 +430,25 @@
         "tickets_end",
         "itarsi"
       ],
-      "render_ms": 87.538
+      "render_ms": 177.172
     },
     {
       "id": "rust_t1",
-      "kind": "paper_crinkle",
+      "kind": "paper rustle",
       "layer": "sfx",
-      "source": "synth",
+      "source": "earshot",
       "at": "tickets",
       "at_s": 39.891,
       "onset_s": 39.891,
-      "end_s": 40.791,
+      "end_s": 41.791,
       "gain_db": -8,
       "pan": 0.1,
       "tags": [],
       "events": [
         "tickets"
       ],
-      "render_ms": 14.582
+      "file": "audio/library/earshot_0ca6d5940a8d1abe.wav",
+      "render_ms": 21.597
     },
     {
       "id": "rust_t2",
@@ -462,7 +465,7 @@
       "events": [
         "tickets"
       ],
-      "render_ms": 18.5
+      "render_ms": 16.058
     },
     {
       "id": "clack_arrive",
@@ -484,7 +487,7 @@
         "itarsi",
         "itarsi"
       ],
-      "render_ms": 40.678
+      "render_ms": 40.482
     },
     {
       "id": "rumble_b",
@@ -506,7 +509,25 @@
         "itarsi",
         "itarsi"
       ],
-      "render_ms": 193.637
+      "render_ms": 167.087
+    },
+    {
+      "id": "coach_door",
+      "kind": "coach door",
+      "layer": "sfx",
+      "source": "earshot",
+      "at": "tickets_end",
+      "at_s": 44.326,
+      "onset_s": 44.326,
+      "end_s": 46.174,
+      "gain_db": -6,
+      "pan": 0,
+      "tags": [],
+      "events": [
+        "tickets_end"
+      ],
+      "file": "audio/library/earshot_f085e9543fb4369a.wav",
+      "render_ms": 11.377
     },
     {
       "id": "sw_itarsi1",
@@ -526,30 +547,31 @@
       "events": [
         "itarsi"
       ],
-      "render_ms": 10.953
+      "render_ms": 11.938
     },
     {
       "id": "bell",
-      "kind": "bell",
+      "kind": "station bell",
       "layer": "sfx",
-      "source": "synth",
+      "source": "earshot",
       "at": "itarsi",
       "at_s": 44.676,
       "onset_s": 44.676,
-      "end_s": 47.676,
-      "gain_db": -13,
+      "end_s": 48.604,
+      "gain_db": -16.5,
       "pan": 0.5,
       "tags": [],
       "events": [
         "itarsi"
       ],
-      "render_ms": 69.696
+      "file": "audio/library/earshot_97474370cae16799.wav",
+      "render_ms": 28.238
     },
     {
       "id": "murmur",
-      "kind": "station_murmur",
+      "kind": "platform murmur",
       "layer": "ambience",
-      "source": "synth",
+      "source": "earshot",
       "at": "itarsi",
       "at_s": 44.826,
       "onset_s": 44.826,
@@ -566,24 +588,26 @@
         "itarsi_end",
         "relief_end"
       ],
-      "render_ms": 480.766
+      "file": "audio/library/earshot_bb7b4690f6618dac.wav",
+      "render_ms": 57.927
     },
     {
       "id": "bell2",
-      "kind": "bell",
+      "kind": "station bell",
       "layer": "sfx",
-      "source": "synth",
+      "source": "earshot",
       "at": "itarsi",
       "at_s": 45.526,
       "onset_s": 45.526,
-      "end_s": 48.526,
+      "end_s": 48.711,
       "gain_db": -17,
       "pan": 0.5,
       "tags": [],
       "events": [
         "itarsi"
       ],
-      "render_ms": 44.813
+      "file": "audio/library/earshot_8832eb707e6655e9.wav",
+      "render_ms": 30.754
     },
     {
       "id": "sw_itarsi2",
@@ -603,7 +627,7 @@
       "events": [
         "itarsi"
       ],
-      "render_ms": 9.259
+      "render_ms": 10.758
     },
     {
       "id": "silence",
@@ -640,7 +664,7 @@
       "events": [
         "scare"
       ],
-      "render_ms": 67.411
+      "render_ms": 70.326
     },
     {
       "id": "scare_sub",
@@ -657,7 +681,7 @@
       "events": [
         "scare"
       ],
-      "render_ms": 22.021
+      "render_ms": 35.154
     },
     {
       "id": "scare_whoosh",
@@ -677,7 +701,7 @@
       "events": [
         "scare"
       ],
-      "render_ms": 8.599
+      "render_ms": 17.519
     },
     {
       "id": "sw_bhopal1",
@@ -697,7 +721,7 @@
       "events": [
         "scare"
       ],
-      "render_ms": 5.202
+      "render_ms": 4.567
     },
     {
       "id": "rumble_end",
@@ -718,7 +742,7 @@
         "scare",
         "loop"
       ],
-      "render_ms": 556.1
+      "render_ms": 508.562
     },
     {
       "id": "sw_bhopal2",
@@ -738,7 +762,7 @@
       "events": [
         "scare"
       ],
-      "render_ms": 4.161
+      "render_ms": 4.405
     },
     {
       "id": "clack_end",
@@ -760,7 +784,7 @@
         "twist",
         "loop"
       ],
-      "render_ms": 164.202
+      "render_ms": 220.955
     },
     {
       "id": "sw_bhopal3",
@@ -780,7 +804,7 @@
       "events": [
         "scare"
       ],
-      "render_ms": 6.808
+      "render_ms": 8.057
     },
     {
       "id": "rust_twist",
@@ -797,7 +821,7 @@
       "events": [
         "twist"
       ],
-      "render_ms": 6.006
+      "render_ms": 15.963
     },
     {
       "id": "sw_loop1",
@@ -817,7 +841,7 @@
       "events": [
         "loop"
       ],
-      "render_ms": 9.676
+      "render_ms": 9.825
     },
     {
       "id": "sw_loop2",
@@ -837,7 +861,7 @@
       "events": [
         "loop"
       ],
-      "render_ms": 7.466
+      "render_ms": 8.167
     },
     {
       "id": "sw_loop3",
@@ -857,7 +881,7 @@
       "events": [
         "loop"
       ],
-      "render_ms": 9.545
+      "render_ms": 11.626
     }
   ]
 }

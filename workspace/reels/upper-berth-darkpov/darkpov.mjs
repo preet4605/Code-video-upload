@@ -7,6 +7,7 @@ import { Path2D } from '../../../.claude/skills/reel-factory/lib/kit/util.mjs';
 import { sm, lerp, cl } from './set_coach.mjs';
 
 const { cin } = kit;
+const TAU2 = Math.PI * 2;
 
 // Where the light pools sit per scene (design px, 1080x1920): face/lamp pool (where the faint night-lamp floor falls), the height the
 // sweep crosses the frame, and whether the foreground knee is drawn.
@@ -16,7 +17,7 @@ export const SCENE = {
   s3_ticket: { face: [420, 900, 420], sweepY: 900, lamp: '#ffd9a0' },
   s4_rule: { face: [470, 620, 440], sweepY: 700 },
   s5_stop: { face: [500, 420, 420], sweepY: 700 },
-  s6_eyes: { face: [345, 930, 440], sweepY: 930, lying: true },
+  s6_eyes: { face: [345, 930, 440], sweepY: 990, lying: true },
   s7_tickets: { face: [650, 880, 420], sweepY: 880 },
   s8_itarsi: { face: [330, 560, 420], sweepY: 600 },
   s9_relief: { face: [780, 680, 420], sweepY: 680 },
@@ -25,7 +26,8 @@ export const SCENE = {
   s12_loop: { face: [400, 470, 430], sweepY: 700 },
 };
 
-const LAMPBOOST = { s2_coach: 1.8, s3_ticket: 1.5, s4_rule: 1.8, s5_stop: 2.4, s6_eyes: 2.4, s7_tickets: 2.3, s11_ticket2: 1.9, s9_relief: 1.6 };
+export const POST = { s12_loop: { lightMask: { ambient: '#080c14', glow: 0.26 } }, s5_stop: { lightMask: { ambient: '#111827', glow: 0.26 } }, s7_tickets: { lightMask: { ambient: '#141c2e', glow: 0.26 } } };
+const LAMPBOOST = { s2_coach: 1.8, s3_ticket: 1.5, s4_rule: 1.8, s5_stop: 2.4, s6_eyes: 0.9, s7_tickets: 2.3, s11_ticket2: 1.9, s9_relief: 1.6 };
 const SWEEP_COL = { sodium: '#ffc489', white: '#dfe9ff', cool: '#b8ffe6' };
 
 // dying tube from itarsi on: mostly on, drops out in short deterministic stutters (a few per second at most)
@@ -43,6 +45,10 @@ export function darkLights(P, cfgScene) {
   // tiny night-lamp floor (before the tube starts dying): the uncle is a shape in the dark, not a lit subject
   const lampK = P.t < P.E.stopT ? 0.85 : (P.sc.id === 's7_tickets' || P.sc.id === 's8_itarsi' ? 0.7 : 0.45);
   lights.push({ type: 'point', x: c.face[0] + (P.sc.id === 's5_stop' ? 90 * Math.sin(P.t * 1.1) : 0), y: c.face[1], r: c.face[2], color: c.lamp || '#8fb0ff', intensity: lampK * (LAMPBOOST[P.sc.id] ?? 1) * (0.88 + 0.12 * Math.sin(P.t * 1.7)) });
+  // s7: a low cold floor over the row of berths so the hands and tickets stay readable between sweeps (the dying tube is farther away)
+  if (P.sc.id === 's7_tickets') lights.push({ type: 'point', x: 540, y: 1000, r: 760, color: '#7f9ad8', intensity: 0.4 });
+  // s5: the uncle keeps a faint cold rim from the dying tube between flickers
+  if (P.sc.id === 's5_stop') lights.push({ type: 'point', x: 560, y: 560, r: 640, color: '#7f9ad8', intensity: 0.3 });
   // the passing sweep: a pool that travels right -> left behind the window bars, then dies
   if (sw.i > 0.02) {
     const x = lerp(1250, -250, sw.u), col = SWEEP_COL[sw.kind] || '#fff';
@@ -54,12 +60,14 @@ export function darkLights(P, cfgScene) {
     const warm = P.sc.id === 's8_itarsi' ? 0.35 : 0;
     lights.push({ type: 'point', x: 540, y: 240, r: 1000, color: warm ? '#cfe0ff' : '#bcd4ff', intensity: 0.8 * tube * (P.sc.id === 's9_relief' ? 1 - 0.85 * sm(0.55, 1, P.E.clock.between('relief', P.t)) : 1) });
   }
-  // s6: the pale reveal. no sweep cue exists on 'eyes', so the pass rides the three existing glint cues (same event + offset as sound.json)
+  // s6: the pale reveal. no sweep cue exists on 'eyes', so the pass rides the three existing glint cues (same event + offset as sound.json):
+  // a hard narrow beam crosses the frame, is centred on his face exactly at the glint's midpoint, and is gone at the glint's end.
   if (c.lying) {
+    const uS = P.E.clock.between('eyes', P.t), faceX = lerp(430, 235, cl(uS));
     for (const g of P.E.cues.glints) {
       if (P.t < g.t0 || P.t > g.t1) continue;
-      const u = (P.t - g.t0) / (g.t1 - g.t0), big = g === P.E.cues.glints[2] ? 1 : 0.55;
-      lights.push({ type: 'point', x: lerp(1150, -150, u), y: c.sweepY, r: 440, color: '#e9efff', intensity: 2.7 * Math.sin(Math.PI * u) * big });
+      const u = (P.t - g.t0) / (g.t1 - g.t0), big = g === P.E.cues.glints[2] ? 1 : 0.7, env = Math.pow(Math.sin(Math.PI * u), 0.6);
+      lights.push({ type: 'point', x: faceX + (0.5 - u) * 900, y: c.sweepY, r: 330, color: '#eef2ff', intensity: 3.3 * env * big });
     }
   }
   // s10: the Bhopal board is the scare: it carries its own pool for the whole beat
@@ -127,19 +135,36 @@ export function drawForeground(ctx, w, h, P, cfgScene) {
   }
   ctx.restore();
 }
-// rim light on the foreground edges, added after the mask so it stays visible: only as strong as the light that is passing
+// Foreground drawn AFTER the mask (so it is not darkened away): his own raised knee (trouser cloth: centre seam, kneecap sheen, creases
+// radiating from the cap) and the blanket (a checked weave with deep folds). Lit only as much as the light that is passing, with a faint floor.
 export function drawRim(ctx, w, h, P, cfgScene, tube) {
   if (cfgScene.noFg) return;
-  const a = Math.min(0.85, 0.1 + P.sweep.i * 0.75 + tube * 0.22 + (cfgScene.lying ? P.glint * 0.5 : 0));
+  const a = Math.min(0.9, 0.2 + P.sweep.i * 0.7 + tube * 0.25 + (cfgScene.lying ? P.glint * 0.5 : 0));
   const k = w / 1080, { bx, by } = fgPaths(P.t), col = P.sweep.i > 0.05 ? SWEEP_COL[P.sweep.kind] || '#dfe9ff' : '#9bb6ff';
-  ctx.save(); ctx.setTransform(k, 0, 0, k, 0, 0); ctx.globalCompositeOperation = 'screen'; ctx.lineCap = 'round';
+  ctx.save(); ctx.setTransform(k, 0, 0, k, 0, 0); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
   for (const [p, y0] of [[KNEE(bx, by), 1580], [BLANKET(bx, by), 1700]]) {
-    if (cfgScene.lying && y0 === 1580) continue;
-    ctx.save(); ctx.beginPath(); ctx.rect(-200, y0 - 60, 1500, 300); ctx.clip();
-    const gr = ctx.createLinearGradient(0, y0, 0, y0 + 220); gr.addColorStop(0, col); gr.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.save(); ctx.clip(p); ctx.globalAlpha = a * 0.22; ctx.fillStyle = gr; ctx.fillRect(-200, y0 - 40, 1500, 300); ctx.restore();
-    ctx.strokeStyle = col; ctx.globalAlpha = a * 0.25; ctx.lineWidth = 16; ctx.stroke(p);
-    ctx.globalAlpha = a * 0.8; ctx.lineWidth = 3.5; ctx.stroke(p); ctx.restore();
+    const isKnee = y0 === 1580; if (cfgScene.lying && isKnee) continue;
+    ctx.save(); ctx.clip(p);
+    // body of the cloth: a real filled, lit form (dusty blue-grey wool for the blanket, darker trouser cloth for the knee), lit from above
+    ctx.globalCompositeOperation = 'source-over';
+    const cloth = ctx.createLinearGradient(0, y0 - 10, 0, y0 + 330), top = isKnee ? [118, 134, 180] : [128, 144, 188], fa = (0.45 + 0.4 * a) * ((P.sc.id === 's8_itarsi' || P.sc.id === 's10_bhopal' || P.sc.id === 's12_loop') ? 0.7 : 1);
+    cloth.addColorStop(0, `rgba(${top},${fa})`); cloth.addColorStop(0.5, `rgba(${top.map((v) => v * 0.4 | 0)},${fa})`); cloth.addColorStop(1, `rgba(6,8,14,0.92)`);
+    ctx.fillStyle = cloth; ctx.fillRect(-200, y0 - 40, 1500, 460);
+    cin.fillTexture(ctx, 'fabric', [-150, y0 - 20, 1400, 440], { blend: 'overlay', alpha: 0.85, scale: 1.3, seed: 17 });
+    if (isKnee) { // broad sheen on the kneecap, soft shadow-and-highlight wrinkles across the cap, the seam of the trouser leg
+      const cx = 905 + bx, cy = 1665 + by, sh = ctx.createRadialGradient(cx - 30, cy - 30, 10, cx, cy, 230); sh.addColorStop(0, `rgba(190,205,245,${a * 0.5})`); sh.addColorStop(1, 'rgba(190,205,245,0)');
+      ctx.fillStyle = sh; ctx.beginPath(); ctx.ellipse(cx, cy, 230, 130, 0, 0, TAU2); ctx.fill();
+      for (let i = 0; i < 4; i++) { const yy = cy - 70 + i * 34 + by * 0.2; ctx.strokeStyle = 'rgba(3,4,9,0.55)'; ctx.lineWidth = 15; ctx.beginPath(); ctx.moveTo(cx - 150 + i * 14, yy + 18); ctx.quadraticCurveTo(cx, yy - 22, cx + 150 - i * 14, yy + 18); ctx.stroke(); ctx.strokeStyle = `rgba(185,200,240,${a * 0.28})`; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(cx - 140 + i * 14, yy + 3); ctx.quadraticCurveTo(cx, yy - 37, cx + 140 - i * 14, yy + 3); ctx.stroke(); }
+      ctx.strokeStyle = 'rgba(3,4,9,0.5)'; ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(cx + 10, cy + 80); ctx.lineTo(cx - 4, 1990); ctx.stroke();
+    } else { // blanket: wide soft folds (dark trough + light crest) and a knit grain
+      for (let i = 0; i < 4; i++) { const fx = 80 + i * 135 + bx; ctx.strokeStyle = 'rgba(3,4,9,0.55)'; ctx.lineWidth = 34; ctx.beginPath(); ctx.moveTo(fx, y0 + 20); ctx.quadraticCurveTo(fx + 50, y0 + 150 + by, fx - 10, 1995); ctx.stroke(); ctx.strokeStyle = `rgba(185,200,240,${a * 0.3})`; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(fx + 30, y0 + 25); ctx.quadraticCurveTo(fx + 80, y0 + 150 + by, fx + 20, 1995); ctx.stroke(); }
+      ctx.strokeStyle = `rgba(190,205,245,${a * 0.14})`; ctx.lineWidth = 3; ctx.setLineDash([9, 7]); for (let y = y0 + 6; y < 2000; y += 20) { ctx.beginPath(); ctx.moveTo(-120, y + by); ctx.lineTo(600, y + 8 + by); ctx.stroke(); } ctx.setLineDash([]);
+    }
+    ctx.restore();
+    // edge: soft glow then a crisp line
+    ctx.globalCompositeOperation = 'screen'; ctx.save(); ctx.beginPath(); ctx.rect(-200, y0 - 60, 1500, 440); ctx.clip();
+    ctx.strokeStyle = col; ctx.globalAlpha = a * 0.28; ctx.lineWidth = 16; ctx.stroke(p);
+    ctx.globalAlpha = Math.min(1, a * 0.95); ctx.lineWidth = 4; ctx.stroke(p); ctx.restore();
   }
   ctx.restore();
 }
@@ -164,12 +189,15 @@ export function hudState(P) {
   if (t >= E.scareT) o = { label: '', value: '', wrong: 0, a: 0 };
   const twist = E.clock.at('twist');
   const end = P.tl.duration_s, morph = sm(end - 1.5, end - 0.2, t);
-  if (t >= twist - 0.05) { o = { label: 'STATION', value: 'BHOPAL → passed', wrong: 1, a: sm(0, 0.25, t - twist + 0.05) * (1 - morph), small: true }; if (morph > 0.5) o = { label: 'S7', value: '23:52', wrong: 0, a: morph }; }
+  if (t >= twist - 0.05) { o = { label: 'STATION', value: 'BHOPAL → passed', wrong: (t - twist) < 0.5 ? 1 : 0, redEdge: 1, a: sm(0, 0.25, t - twist + 0.05) * (1 - morph), big: true }; if (morph > 0.5) o = { label: 'S7', value: '23:52', wrong: 0, a: morph }; }
   return o;
 }
 export function drawHud(ctx, w, h, P) {
   const o = hudState(P); if (!o.a || o.a <= 0.01) return;
   const k = w / 1080; ctx.save(); ctx.setTransform(k, 0, 0, k, 0, 0);
-  kit.props.hud(ctx, { label: o.label, value: o.value, x: 270, y: 330, scale: 1.15, wrong: o.wrong, a: o.a, t: P.t, valueSize: o.small ? 38 : 54, labelSize: o.small ? 20 : 24, seed: 3 });
+  // steady 'wrong' (frozen clock) is drawn red WITHOUT the chromatic split (the split smears small digits at phone size); the split only fires on glitch beats (wrong = 1)
+  const steady = o.wrong > 0 && o.wrong < 1, bigH = o.big;
+  const r = kit.props.hud(ctx, { label: o.label, value: o.value, x: bigH ? 480 : 270, y: bigH ? 340 : 330, scale: bigH ? 1.1 : 1.15, wrong: steady ? 0 : o.wrong, a: o.a, t: P.t, valueSize: bigH ? 52 : 54, labelSize: bigH ? 26 : 24, seed: 3 });
+  if (r && (steady || o.redEdge && !o.wrong)) { ctx.save(); ctx.globalAlpha = o.a; ctx.strokeStyle = 'rgba(224,27,36,0.9)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.roundRect(r.x, r.y, r.w, r.h, 18 * (bigH ? 1.1 : 1.15)); ctx.stroke(); ctx.restore(); }
   ctx.restore();
 }

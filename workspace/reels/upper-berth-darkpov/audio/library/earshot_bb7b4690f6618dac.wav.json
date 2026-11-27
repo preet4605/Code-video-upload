@@ -1,0 +1,12 @@
+{
+  "design": "cafe/busy",
+  "seed": 1,
+  "dur_s": 12,
+  "why": [
+    "named"
+  ],
+  "unknown_words": [],
+  "guessed_pick": false,
+  "checks_ok": true,
+  "sha256": "f8dca534d74e9fa1792120512948a33f9bd9390e9a5747843b1a7de958f0d256"
+}

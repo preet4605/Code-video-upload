@@ -2,11 +2,12 @@
  "shots": [
   {
    "id": "s1_hook",
-   "seen": "Blue-lit uncle behind slats, readable face, clock top-left, knee/blanket rims at the bottom. Passes metrics.",
+   "seen": "Uncle's face behind window slats, cold blue, faint; HUD 23:52 top-left; blanket and knee fill the bottom edge as lit cloth. Reads, but dim and small. Metrics at iteration 3: luma 11.7, focal 7.7067, bins 8.6667, subject_scale 0.257.",
    "problems": [
-    "hook second still dim"
+    "face small and dim",
+    "bottom cloth competes slightly"
    ],
-   "fix": "no change this pass; metrics pass",
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -18,14 +19,14 @@
   },
   {
    "id": "s2_coach",
-   "seen": "Aisle slit with chain and glowing rings, clearer; rest black. Looks like s3 in dark composition.",
+   "seen": "Dark curtain slit, a hanging chain and a cold lit rim at right; no face. Reads as a coach interior but the subject is a chain, thin. Metrics at iteration 3: luma 12.9667, focal 5.2, bins 8.6667, subject_scale 0.257.",
    "problems": [
-    "near_duplicate 0.889 with s3",
-    "focal 5.4"
+    "focal 5.2: chain is the only busy area",
+    "no human cue"
    ],
-   "fix": "move the s3 ticket pool right (x 620) to separate the two cuts",
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
    "scores": {
-    "subject": 3,
+    "subject": 2,
     "depth": 3,
     "detail": 3,
     "light": 3,
@@ -35,28 +36,28 @@
   },
   {
    "id": "s3_ticket",
-   "seen": "Warm ticket pool recovered: PNR and 2014 readable, warm colour back.",
+   "seen": "Warm lit ticket with date 14-06-2014, barcode, coach S7, sharp print, held in a pool; the brightest warm accent. Reads well by eye. Metrics at iteration 3: luma 15.5, focal 5.7867, bins 14.6667, subject_scale 0.191.",
    "problems": [
-    "bins 12.3",
-    "near duplicate with s2"
+    "bins 14.7 (warm ticket + cold base + red caption)"
    ],
-   "fix": "shift the pool to x 620",
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
    "scores": {
-    "subject": 4,
+    "subject": 5,
     "depth": 3,
-    "detail": 4,
-    "light": 3,
+    "detail": 5,
+    "light": 4,
     "character": 3,
-    "composition": 3
+    "composition": 4
    }
   },
   {
    "id": "s4_rule",
-   "seen": "Uncle face visible as a dim blue oval between sweeps; sweep key shows hair and moustache with slats.",
+   "seen": "Uncle half-turned, only hair rim and a faint side of the face lit by a cold slat; most of him is shadow. Readable as a head, face barely. Metrics at iteration 3: luma 12.7667, focal 5.83, bins 9.6667, subject_scale 0.1873.",
    "problems": [
-    "focal 6.40 just under"
+    "face under-lit between sweeps",
+    "focal 5.8"
    ],
-   "fix": "no change: mood right, accepted miss",
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -68,64 +69,47 @@
   },
   {
    "id": "s5_stop",
-   "seen": "Dark head outline and a red 02:00; mood is right but keys are nearly identical.",
+   "seen": "Uncle seated, face and shoulders now readable in the dying tube plus a low cold fill; was nearly lost before. Knee/blanket read as cloth at the bottom. Metrics at iteration 3: luma 18.4333, focal 4.3533, bins 10, subject_scale 0.2083.",
    "problems": [
-    "key_change 0.0099",
-    "nothing to read"
+    "focal 4.35 still low: soft flat light, no hard accent"
    ],
-   "fix": "drift the pool sideways over time (90 px sine) so the keys differ",
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
    "scores": {
-    "subject": 3,
-    "depth": 2,
-    "detail": 2,
-    "light": 2,
-    "character": 2,
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 3,
     "composition": 3
    }
   },
   {
    "id": "s6_eyes",
-   "seen": "Lying uncle faint, glint key shows eye sparkle and pale face; the reveal is there but small.",
+   "seen": "Reveal frame (glint 2, fading): bone-pale sideways face, eyes are dark sockets with a pinprick tracking the lens, mouth a dark slack oval; between beams the face is a faint shape with the same sockets. The old bright cold blob and star glints are gone. Metrics at iteration 3: luma 14.6, focal 8.3267, bins 9, subject_scale 0.1427.",
    "problems": [
-    "focal 6.1"
+    "lit_regions 0.67: one of 3 keyframes lands in the dark between beams (by design)",
+    "mouth oval reads slightly like a nose"
    ],
-   "fix": "no change this pass",
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
    "scores": {
-    "subject": 3,
+    "subject": 4,
     "depth": 3,
-    "detail": 3,
-    "light": 3,
-    "character": 3,
-    "composition": 3
+    "detail": 4,
+    "light": 5,
+    "character": 5,
+    "composition": 4
    }
   },
   {
    "id": "s7_tickets",
-   "seen": "Hand with ticket readable but small and dim.",
+   "seen": "Row of berths, a hand holding the old ticket and a sleeve readable in a low cold fill; hands were nearly invisible before. Still dim and blocky. Metrics at iteration 3: luma 20.9667, focal 5.92, bins 13.6667, subject_scale 0.229.",
    "problems": [
-    "lit_fraction 0.033"
+    "bins 13.7",
+    "hand edge soft"
    ],
-   "fix": "lamp boost 1.7 to 2.3",
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
    "scores": {
     "subject": 3,
-    "depth": 2,
-    "detail": 3,
-    "light": 2,
-    "character": 3,
-    "composition": 3
-   },
-   "regression_note": "Small dip from the lamp re-aim in iter 2; raising the lamp boost this pass to recover."
-  },
-  {
-   "id": "s8_itarsi",
-   "seen": "Station board and uncle readable in warm light; best-lit non-scare shot.",
-   "problems": [
-    "saturation 0.155",
-    "bins 13"
-   ],
-   "fix": "no change: saturation vs bins conflict is structural",
-   "scores": {
-    "subject": 4,
     "depth": 3,
     "detail": 4,
     "light": 3,
@@ -134,68 +118,84 @@
    }
   },
   {
-   "id": "s9_relief",
-   "seen": "Lids closing with a blue glow: intentional dark.",
+   "id": "s8_itarsi",
+   "seen": "Itarsi board in yellow behind bars, uncle's head and glasses at left, HUD STATION ITARSI. Busy and readable; mean luma slightly over the 21.8 ceiling. Metrics at iteration 3: luma 21.1333, focal 4.8933, bins 12.6667, subject_scale 0.1977.",
    "problems": [
-    "waived"
+    "bins 13",
+    "mean_luma 21.97 over 21.8"
    ],
-   "fix": "raise the s9 lamp boost to 1.6 so the window slats show a little more behind the lids",
-   "scores": {
-    "subject": 3,
-    "depth": 3,
-    "detail": 3,
-    "light": 3,
-    "character": 3,
-    "composition": 3
-   },
-   "regression_note": "Waived black beat; the dip is the fade the story needs."
-  },
-  {
-   "id": "s10_bhopal",
-   "seen": "Board visible through slats, still the clearest scare.",
-   "problems": [
-    "mean 22.97"
-   ],
-   "fix": "board pool 0.55 to 0.48",
+   "fix": "reverted the station ambient trim (it dropped saturation below its floor); accept the bins miss and record it",
    "scores": {
     "subject": 4,
-    "depth": 3,
+    "depth": 4,
     "detail": 4,
-    "light": 4,
+    "light": 3,
     "character": 3,
     "composition": 4
    }
   },
   {
-   "id": "s11_ticket2",
-   "seen": "Yellowed ticket and red BHOPAL passed pill; dim.",
+   "id": "s9_relief",
+   "seen": "Near-black frame with a blue lamp bloom and the window slats; passes. A calm dip before the scare; allow_black waived for this shot. Metrics at iteration 3: luma 11, focal 4.0567, bins 8, subject_scale 0.2397.",
    "problems": [
-    "lit_fraction 0.036",
-    "near dup with s12"
+    "very dark by intent"
    ],
-   "fix": "lamp boost 1.2 to 1.9 and pool lower (y 1000)",
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
    "scores": {
-    "subject": 3,
-    "depth": 3,
-    "detail": 3,
+    "subject": 2,
+    "depth": 2,
+    "detail": 2,
     "light": 3,
-    "character": 3,
+    "character": 1,
     "composition": 3
-   },
-   "regression_note": "Dip from the lamp re-aim; fixing with a larger pool."
+   }
   },
   {
-   "id": "s12_loop",
-   "seen": "Aged narrator with glasses under a sweep; echo of s1.",
+   "id": "s10_bhopal",
+   "seen": "BHOPAL board in a warm pool, bars across it, dark berth below; the scare board reads clearly. Slightly over the luma ceiling at 21.83. Metrics at iteration 3: luma 21.8333, focal 7.0533, bins 12.6667, subject_scale 0.2533.",
    "problems": [
-    "bins 13.7",
-    "near dup 0.882"
+    "bins 12.7",
+    "luma 21.83 vs 21.8"
    ],
-   "fix": "pool lower in s11 separates it",
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
    "scores": {
     "subject": 4,
     "depth": 3,
-    "detail": 3,
+    "detail": 4,
+    "light": 4,
+    "character": 1,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s11_ticket2",
+   "seen": "Ticket dated 2026 in a soft pool with the bigger HUD pill BHOPAL -> passed above; the pill reads at phone size, red edge, no smear after the first glitch half second. Metrics at iteration 3: luma 16.2333, focal 3.9133, bins 11, subject_scale 0.052.",
+   "problems": [
+    "subject_scale 0.052: the metric picks small blobs (pill edge) over the ticket",
+    "focal 3.9"
+   ],
+   "fix": "third pass, frame unchanged: kept as is because the face/ticket/board reads by eye; remaining miss is focal/bins from a one-reference template",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s12_loop",
+   "seen": "Uncle with glasses behind slats, pale cold light, readable face; HUD BHOPAL -> passed legible. Mean luma 23.3 over the ceiling, partly from the new cloth at the bottom. Metrics at iteration 3: luma 22.4667, focal 4.5133, bins 14.6667, subject_scale 0.2673.",
+   "problems": [
+    "luma 23.3",
+    "bins 14.7"
+   ],
+   "fix": "second ambient trim did not move luma enough; accept the miss and record it for the maintainer instead of dimming the face",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
     "light": 3,
     "character": 4,
     "composition": 3

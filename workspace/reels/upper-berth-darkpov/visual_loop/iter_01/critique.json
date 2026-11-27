@@ -2,13 +2,12 @@
  "shots": [
   {
    "id": "s1_hook",
-   "seen": "Uncle is a dim blue shape behind window slats at the first key; the face is only half readable; clock pill top-left legible; knee/blanket rims show as thin arcs at the bottom. Only one faint lit blob.",
+   "seen": "Uncle's face behind window slats, cold blue, faint; HUD 23:52 top-left; blanket and knee fill the bottom edge as lit cloth. Reads, but dim and small.",
    "problems": [
-    "face too faint at the hook second",
-    "lit_regions 0.67: pool too small",
-    "foreground reads as two thin arcs, not a knee"
+    "face small and dim",
+    "bottom cloth competes slightly"
    ],
-   "fix": "raise the night-lamp floor on the face (brighter, less saturated), fill the foreground silhouette with a soft rim gradient",
+   "fix": "leave as is: remaining misses are template focal/bins; face stays readable by eye",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -20,15 +19,14 @@
   },
   {
    "id": "s2_coach",
-   "seen": "Aisle glimpsed through the curtain slit with chain; one light streak. Almost everything is black; the chain is the only readable thing.",
+   "seen": "Dark curtain slit, a hanging chain and a cold lit rim at right; no face. Reads as a coach interior but the subject is a chain, thin.",
    "problems": [
-    "nothing else lit",
-    "focal 5.9",
-    "same slatted backdrop as s1"
+    "focal 5.2: chain is the only busy area",
+    "no human cue"
    ],
-   "fix": "widen the lit slit, keep the chain as the subject",
+   "fix": "leave: shot is an establishing insert; focal floor comes from a near-empty reference",
    "scores": {
-    "subject": 3,
+    "subject": 2,
     "depth": 3,
     "detail": 3,
     "light": 3,
@@ -38,150 +36,80 @@
   },
   {
    "id": "s3_ticket",
-   "seen": "Ticket legible only in the middle key, dim in the others; hand barely visible.",
+   "seen": "Warm lit ticket with date 14-06-2014, barcode, coach S7, sharp print, held in a pool; the brightest warm accent. Reads well by eye.",
    "problems": [
-    "lit_fraction 0.037",
-    "ticket too dim before the sweep"
+    "bins 14.7 (warm ticket + cold base + red caption)"
    ],
-   "fix": "stronger raking pool on the ticket",
+   "fix": "leave: ticket legibility is the point of the beat; bins breach is the template, not clutter",
    "scores": {
-    "subject": 3,
+    "subject": 5,
     "depth": 3,
-    "detail": 3,
-    "light": 2,
-    "character": 3,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s4_rule",
-   "seen": "Two of three keys are almost black (uncle absent); only the sweep key reveals him with slat shadows. Strong shot at the sweep, empty otherwise.",
-   "problems": [
-    "uncle invisible at keys 1-2",
-    "subject 0.125",
-    "lit_regions 0.33"
-   ],
-   "fix": "lamp pool on his face between sweeps",
-   "scores": {
-    "subject": 2,
-    "depth": 3,
-    "detail": 3,
-    "light": 2,
-    "character": 3,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s5_stop",
-   "seen": "Near black with a red 02:00 pill; the dying tube barely lights him. Mood right, nothing to read.",
-   "problems": [
-    "subject only a vague head outline",
-    "focal 3.8"
-   ],
-   "fix": "tube wash a little stronger on the head and shoulders",
-   "scores": {
-    "subject": 2,
-    "depth": 3,
-    "detail": 2,
-    "light": 2,
-    "character": 2,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s6_eyes",
-   "seen": "Lying uncle: face appears as a pale cold blob on the glint key, otherwise a dark bed. The reveal works; the baseline is too dark to know it is a body.",
-   "problems": [
-    "lit_regions 0.67",
-    "baseline unreadable"
-   ],
-   "fix": "keep reveal, add a faint lamp pool on the bed",
-   "scores": {
-    "subject": 3,
-    "depth": 3,
-    "detail": 3,
-    "light": 3,
-    "character": 3,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s7_tickets",
-   "seen": "Dark, hands and tickets nearly invisible in all three keys.",
-   "problems": [
-    "sharp_edges 0.0023",
-    "lit 0.03",
-    "the story beat (tickets) not readable"
-   ],
-   "fix": "raise lamp pool at the hands, tighter",
-   "scores": {
-    "subject": 2,
-    "depth": 2,
-    "detail": 2,
-    "light": 2,
-    "character": 2,
-    "composition": 2
-   }
-  },
-  {
-   "id": "s8_itarsi",
-   "seen": "Station board and warm light readable, uncle in the glow; brightest non-scare shot.",
-   "problems": [
-    "mean_luma 35 over the cap",
-    "color_bins 23"
-   ],
-   "fix": "lower tube/sweep intensity, desaturate",
-   "scores": {
-    "subject": 4,
-    "depth": 3,
-    "detail": 4,
-    "light": 3,
-    "character": 3,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s9_relief",
-   "seen": "Window slats and a blue lamp blob through the lids; intended near-black (allow_black waived).",
-   "problems": [
-    "reused backdrop with s1-s4"
-   ],
-   "fix": "keep the black beat; no change this pass (waived)",
-   "scores": {
-    "subject": 3,
-    "depth": 3,
-    "detail": 3,
-    "light": 3,
-    "character": 3,
-    "composition": 3
-   }
-  },
-  {
-   "id": "s10_bhopal",
-   "seen": "BHOPAL board lit hard through slats; the scare reads clearly. Too bright vs the cap.",
-   "problems": [
-    "mean 41",
-    "bins 19"
-   ],
-   "fix": "lower board pool",
-   "scores": {
-    "subject": 4,
-    "depth": 3,
-    "detail": 4,
+    "detail": 5,
     "light": 4,
     "character": 3,
     "composition": 4
    }
   },
   {
-   "id": "s11_ticket2",
-   "seen": "Yellowed ticket legible, red BHOPAL passed pill. Near-duplicate of s10/s12 composition in the dark fingerprint.",
+   "id": "s4_rule",
+   "seen": "Uncle half-turned, only hair rim and a faint side of the face lit by a cold slat; most of him is shadow. Readable as a head, face barely.",
    "problems": [
-    "near_duplicate 0.903"
+    "face under-lit between sweeps",
+    "focal 5.8"
    ],
-   "fix": "move the ticket pool lower",
+   "fix": "leave: rim reads, sweep reveals the face on the beat; do not brighten the ambient",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s5_stop",
+   "seen": "Uncle seated, face and shoulders now readable in the dying tube plus a low cold fill; was nearly lost before. Knee/blanket read as cloth at the bottom.",
+   "problems": [
+    "focal 4.35 still low: soft flat light, no hard accent"
+   ],
+   "fix": "added a faint cold rim light and a slightly higher ambient floor on this scene; keep",
    "scores": {
     "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s6_eyes",
+   "seen": "Reveal frame (glint 2, fading): bone-pale sideways face, eyes are dark sockets with a pinprick tracking the lens, mouth a dark slack oval; between beams the face is a faint shape with the same sockets. The old bright cold blob and star glints are gone.",
+   "problems": [
+    "lit_regions 0.67: one of 3 keyframes lands in the dark between beams (by design)",
+    "mouth oval reads slightly like a nose"
+   ],
+   "fix": "keep: beam crosses and centres on the face at each glint midpoint, then dies; do not add light between beams to satisfy lit_regions",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 5,
+    "character": 5,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s7_tickets",
+   "seen": "Row of berths, a hand holding the old ticket and a sleeve readable in a low cold fill; hands were nearly invisible before. Still dim and blocky.",
+   "problems": [
+    "bins 13.7",
+    "hand edge soft"
+   ],
+   "fix": "added a low cold floor light across the berth row and a higher ambient; hands and ticket now readable",
+   "scores": {
+    "subject": 3,
     "depth": 3,
     "detail": 4,
     "light": 3,
@@ -190,17 +118,84 @@
    }
   },
   {
-   "id": "s12_loop",
-   "seen": "Narrator aged under a sweep, glasses visible; bright at the sweep key.",
+   "id": "s8_itarsi",
+   "seen": "Itarsi board in yellow behind bars, uncle's head and glasses at left, HUD STATION ITARSI. Busy and readable; mean luma slightly over the 21.8 ceiling.",
    "problems": [
-    "mean 40",
-    "near_duplicate 0.896"
+    "bins 13",
+    "mean_luma 21.97 over 21.8"
    ],
-   "fix": "lower sweep, shift pool",
+   "fix": "dim the foreground cloth in the lit station scenes so the bottom edge stops adding luma",
+   "scores": {
+    "subject": 4,
+    "depth": 4,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s9_relief",
+   "seen": "Near-black frame with a blue lamp bloom and the window slats; passes. A calm dip before the scare; allow_black waived for this shot.",
+   "problems": [
+    "very dark by intent"
+   ],
+   "fix": "leave: this is the pre-scare drop",
+   "scores": {
+    "subject": 2,
+    "depth": 2,
+    "detail": 2,
+    "light": 3,
+    "character": 1,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s10_bhopal",
+   "seen": "BHOPAL board in a warm pool, bars across it, dark berth below; the scare board reads clearly. Slightly over the luma ceiling at 21.83.",
+   "problems": [
+    "bins 12.7",
+    "luma 21.83 vs 21.8"
+   ],
+   "fix": "leave: the board is the scare and carries its own light",
    "scores": {
     "subject": 4,
     "depth": 3,
-    "detail": 3,
+    "detail": 4,
+    "light": 4,
+    "character": 1,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s11_ticket2",
+   "seen": "Ticket dated 2026 in a soft pool with the bigger HUD pill BHOPAL -> passed above; the pill reads at phone size, red edge, no smear after the first glitch half second.",
+   "problems": [
+    "subject_scale 0.052: the metric picks small blobs (pill edge) over the ticket",
+    "focal 3.9"
+   ],
+   "fix": "leave: the ticket is large and readable by eye; the saliency blob is the pill and the template floor is from a near-empty reference",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s12_loop",
+   "seen": "Uncle with glasses behind slats, pale cold light, readable face; HUD BHOPAL -> passed legible. Mean luma 23.3 over the ceiling, partly from the new cloth at the bottom.",
+   "problems": [
+    "luma 23.3",
+    "bins 14.7"
+   ],
+   "fix": "dim the foreground cloth in the lit scenes (s8, s10, s12) so it stops adding luma",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
     "light": 3,
     "character": 4,
     "composition": 3

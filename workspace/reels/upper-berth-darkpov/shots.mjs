@@ -313,9 +313,20 @@ function eyesShot(ctx, P) {
   const figs = (c) => {
     c.fillStyle = '#444a50'; c.beginPath(); c.ellipse(px - 0.392 * H + 70, py + 120, 230, 100, 0.05, 0, TAU); c.fill(); c.fillStyle = 'rgba(0,0,0,0.45)'; c.beginPath(); c.ellipse(px - 0.392 * H + 60, py + 150, 190, 60, 0.05, 0, TAU); c.fill();
     c.save(); c.translate(px, py); c.rotate(-Math.PI / 2); c.translate(-px, -py);
-    const st = { x: px, feet: py + 0.5236 * H, height: H, facing: 1, pose: 'stand', t: P.t, light, gaze: [0.0, clampG(-camX / 300)], expr: 'blank', look: 0.0, eyeLight: 0.15 + 0.85 * g, contact: false, angles: { lean: 0.0, headTilt: -0.05 } };
+    const st = { x: px, feet: py + 0.5236 * H, height: H, facing: 1, pose: 'stand', t: P.t, light, gaze: [0.0, clampG(-camX / 300)], expr: 'blank', look: 0.0, eyeLight: 0, contact: false, angles: { lean: 0.0, headTilt: -0.05 } };
     drawFig(c, 'uncle', st);
-    if (g > 0.02) { const hd = joints('uncle', st).head; for (const sx of [-1, 1]) cin.glint(c, hd[0] + sx * 0.03 * H, hd[1] + 0.004 * H, { size: 26 * g, alpha: 0.9 * g, t: P.t }); }
+    { // dark-pov reveal: no sparkle glints. The face is bone-pale, the eyes are dark sockets with a pinprick that tracks the lens, the mouth hangs slack.
+      const hd = joints('uncle', st).head, tk = clampG(-camX / 170) * 11, ex = 0.03 * H;
+      c.save(); c.globalCompositeOperation = 'screen';
+      const pale = c.createRadialGradient(hd[0], hd[1] + 40, 20, hd[0], hd[1] + 40, 250); pale.addColorStop(0, 'rgba(214,222,240,0.34)'); pale.addColorStop(0.7, 'rgba(190,200,225,0.16)'); pale.addColorStop(1, 'rgba(190,200,225,0)');
+      c.fillStyle = pale; c.beginPath(); c.ellipse(hd[0], hd[1] + 40, 175, 235, 0, 0, TAU); c.fill(); c.restore();
+      for (const sx of [-1, 1]) { const ex0 = hd[0] + sx * ex, ey0 = hd[1] + 0.004 * H;
+        const sock = c.createRadialGradient(ex0, ey0, 4, ex0, ey0, 56); sock.addColorStop(0, 'rgba(1,2,4,1)'); sock.addColorStop(0.62, 'rgba(2,3,6,0.97)'); sock.addColorStop(1, 'rgba(4,6,10,0)');
+        c.fillStyle = sock; c.beginPath(); c.ellipse(ex0, ey0, 48, 62, 0, 0, TAU); c.fill();
+        c.fillStyle = `rgba(225,232,250,${0.25 + 0.45 * g})`; c.beginPath(); c.arc(ex0 + 2, ey0 + tk, 3.2, 0, TAU); c.fill(); }
+      const my = hd[1] + 0.037 * H, mg = c.createRadialGradient(hd[0], my, 4, hd[0], my, 60); mg.addColorStop(0, 'rgba(1,2,4,1)'); mg.addColorStop(0.7, 'rgba(3,4,8,0.96)'); mg.addColorStop(1, 'rgba(4,6,10,0)');
+      c.fillStyle = mg; c.beginPath(); c.ellipse(hd[0], my, 34, 46, 0, 0, TAU); c.fill();
+    }
     c.restore();
   };
   const mid = (c) => { // mattress, pillow and the blanket pulled to his chin

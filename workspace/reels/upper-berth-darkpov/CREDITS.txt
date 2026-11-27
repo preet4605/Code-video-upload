@@ -1,0 +1,13 @@
+# BEGIN sfx_fetch (generated; edit outside this block)
+Sound effects and ambience: attribution required (CC BY)
+- (none)
+
+Optional credit (CC0 / public domain; no attribution required):
+- earshot earshot 1.0.0 design "subway/arrive" seed 1: rendered output of https://github.com/Leonxlnx/earshot (MIT tool; its recordings are CC0 / public domain per the repo's CREDITS.md) [audio/library/earshot_6a4b1dcb1b49b70e.wav]
+- earshot earshot 1.0.0 design "bicycle_bell/ring" seed 1: rendered output of https://github.com/Leonxlnx/earshot (MIT tool; its recordings are CC0 / public domain per the repo's CREDITS.md) [audio/library/earshot_97474370cae16799.wav]
+- earshot earshot 1.0.0 design "bicycle_bell/ring" seed 2: rendered output of https://github.com/Leonxlnx/earshot (MIT tool; its recordings are CC0 / public domain per the repo's CREDITS.md) [audio/library/earshot_8832eb707e6655e9.wav]
+- earshot earshot 1.0.0 design "cafe/busy" seed 1: rendered output of https://github.com/Leonxlnx/earshot (MIT tool; its recordings are CC0 / public domain per the repo's CREDITS.md) [audio/library/earshot_bb7b4690f6618dac.wav]
+- earshot earshot 1.0.0 design "paper/ball" seed 1: rendered output of https://github.com/Leonxlnx/earshot (MIT tool; its recordings are CC0 / public domain per the repo's CREDITS.md) [audio/library/earshot_32c93d7c21e9e84b.wav]
+- earshot earshot 1.0.0 design "paper/ball" seed 204: rendered output of https://github.com/Leonxlnx/earshot (MIT tool; its recordings are CC0 / public domain per the repo's CREDITS.md) [audio/library/earshot_0ca6d5940a8d1abe.wav]
+- earshot earshot 1.0.0 design "door/shut" seed 3: rendered output of https://github.com/Leonxlnx/earshot (MIT tool; its recordings are CC0 / public domain per the repo's CREDITS.md) [audio/library/earshot_f085e9543fb4369a.wav]
+# END sfx_fetch

@@ -1,0 +1,200 @@
+{
+ "shots": [
+  {
+   "id": "s1_hook",
+   "seen": "Same as before: blue-lit uncle face behind slats; passes metrics but is dim and small.",
+   "problems": [
+    "face small"
+   ],
+   "fix": "no change; passes",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s2_coach",
+   "seen": "Curtain slit with chain and glowing rings; reads, but its layout echoes s3.",
+   "problems": [
+    "near_duplicate with s3 0.924",
+    "focal 5.4"
+   ],
+   "fix": "move the s2 slit pool to the top-right (820, 620) away from s3",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s3_ticket",
+   "seen": "Warm ticket readable, brightest warm accent in the first half.",
+   "problems": [
+    "near duplicate with s2 got worse (0.924) after moving right",
+    "bins 12.3"
+   ],
+   "fix": "move the ticket pool to the left (x 420) rather than right",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s4_rule",
+   "seen": "Uncle face oval between sweeps and slatted face at the sweep.",
+   "problems": [
+    "focal 6.40 vs 6.56"
+   ],
+   "fix": "accept: 0.15 miss, a lit-detail trade-off documented in the template",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s5_stop",
+   "seen": "Head outline drifting pool, red clock pill; scary mood, little to read.",
+   "problems": [
+    "focal 5.2"
+   ],
+   "fix": "accept: the dying tube is meant to hide him",
+   "scores": {
+    "subject": 3,
+    "depth": 2,
+    "detail": 3,
+    "light": 3,
+    "character": 2,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s6_eyes",
+   "seen": "Lying uncle with eye glint; the pale reveal key is the strongest frame of the first half.",
+   "problems": [
+    "focal 6.14"
+   ],
+   "fix": "accept the miss; reveal timing is tied to sound cues",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 4,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s7_tickets",
+   "seen": "Hands and tickets readable in a lamp pool.",
+   "problems": [
+    "still small"
+   ],
+   "fix": "no change; passes",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s8_itarsi",
+   "seen": "Station board, warm light, uncle at the window; saturation 0.155 vs bins 13 is a structural trade.",
+   "problems": [
+    "bins 13",
+    "saturation 0.155"
+   ],
+   "fix": "accept: the warm station light is the only relief colour",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s9_relief",
+   "seen": "Lids closing, window slats behind a blue glow; slightly more visible; waived black beat.",
+   "problems": [
+    "waived"
+   ],
+   "fix": "hold the waived black beat; no change",
+   "scores": {
+    "subject": 3,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s10_bhopal",
+   "seen": "Bhopal board: scare reads at a glance; slightly over mean cap.",
+   "problems": [
+    "mean 22.4 vs 21.8"
+   ],
+   "fix": "board pool 0.48 to 0.4",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 4,
+    "character": 3,
+    "composition": 4
+   }
+  },
+  {
+   "id": "s11_ticket2",
+   "seen": "Yellowed ticket with red passed pill, now above lit floor.",
+   "problems": [
+    "focal 5.2"
+   ],
+   "fix": "accept the focal miss; leave the ticket pool unchanged",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 4,
+    "light": 3,
+    "character": 3,
+    "composition": 3
+   }
+  },
+  {
+   "id": "s12_loop",
+   "seen": "Aged narrator under sweep, echoes s1.",
+   "problems": [
+    "bins 13.7",
+    "focal 4.6"
+   ],
+   "fix": "accept: colour count comes from the sodium sweep plus a red pill",
+   "scores": {
+    "subject": 4,
+    "depth": 3,
+    "detail": 3,
+    "light": 3,
+    "character": 4,
+    "composition": 3
+   }
+  }
+ ]
+}
