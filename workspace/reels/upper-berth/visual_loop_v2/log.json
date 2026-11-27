@@ -1,0 +1,1698 @@
+{
+  "targets": "../../../.claude/skills/reel-factory/templates/visual_targets.horror.json",
+  "iterations": [
+    {
+      "iter": 1,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.167,
+        "top_pairs": [
+          {
+            "a": "s3_ticket",
+            "b": "s11_ticket2",
+            "hash_sim": 0.931,
+            "hist_dist": 0.135
+          },
+          {
+            "a": "s4_rule",
+            "b": "s10_bhopal",
+            "hash_sim": 0.757,
+            "hist_dist": 0.178
+          },
+          {
+            "a": "s6_eyes",
+            "b": "s11_ticket2",
+            "hash_sim": 0.736,
+            "hist_dist": 0.35
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s3_ticket",
+            "s11_ticket2"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.831,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": false,
+          "score": 0.948,
+          "metrics": {
+            "sharp_edges": 0.0904,
+            "contrast": 47.3333,
+            "mean_luma": 53.9333,
+            "color_bins": 40.6667,
+            "saturation": 0.3477,
+            "ink": 0.0401,
+            "focal": 2.5467,
+            "hue_families": 3,
+            "lit_fraction": 0.4182,
+            "lit_regions": 1,
+            "p5_luma": 4,
+            "subject_scale": 0.4477,
+            "empty_cells": 3
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.745,
+          "metrics": {
+            "sharp_edges": 0.0344,
+            "contrast": 37.9667,
+            "mean_luma": 41.1333,
+            "color_bins": 27.3333,
+            "saturation": 0.469,
+            "ink": 0.0229,
+            "focal": 3.3667,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.2973,
+            "lit_regions": 1.6667,
+            "p5_luma": 5.6667,
+            "subject_scale": 0.6147,
+            "empty_cells": 8
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.867,
+          "metrics": {
+            "sharp_edges": 0.0886,
+            "contrast": 54.2333,
+            "mean_luma": 56.7,
+            "color_bins": 34,
+            "saturation": 0.3893,
+            "ink": 0.0386,
+            "focal": 3.03,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.3884,
+            "lit_regions": 1,
+            "p5_luma": 7.3333,
+            "subject_scale": 0.3613,
+            "empty_cells": 8
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": false,
+          "score": 0.601,
+          "metrics": {
+            "sharp_edges": 0.0232,
+            "contrast": 37.4667,
+            "mean_luma": 38.4667,
+            "color_bins": 24.3333,
+            "saturation": 0.4913,
+            "ink": 0.0109,
+            "focal": 4.2167,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.2627,
+            "lit_regions": 1,
+            "p5_luma": 5.3333,
+            "subject_scale": 0.2503,
+            "empty_cells": 9
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.1049,
+            "contrast": 54.2333,
+            "mean_luma": 63.8667,
+            "color_bins": 33.3333,
+            "saturation": 0.4667,
+            "ink": 0.0463,
+            "focal": 3.9167,
+            "hue_families": 2,
+            "lit_fraction": 0.532,
+            "lit_regions": 1,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.5173,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": true,
+          "score": 0.914,
+          "metrics": {
+            "sharp_edges": 0.0447,
+            "contrast": 43,
+            "mean_luma": 47.8333,
+            "color_bins": 21.6667,
+            "saturation": 0.57,
+            "ink": 0.0309,
+            "focal": 3.0867,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.3798,
+            "lit_regions": 1,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.3437,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.896,
+          "metrics": {
+            "sharp_edges": 0.0611,
+            "contrast": 42.2,
+            "mean_luma": 43.4333,
+            "color_bins": 32.6667,
+            "saturation": 0.4383,
+            "ink": 0.0246,
+            "focal": 3.3933,
+            "hue_families": 2,
+            "lit_fraction": 0.2863,
+            "lit_regions": 3.3333,
+            "p5_luma": 6.6667,
+            "subject_scale": 0.3193,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.797,
+          "metrics": {
+            "sharp_edges": 0.0495,
+            "contrast": 48.3,
+            "mean_luma": 55.1,
+            "color_bins": 36.3333,
+            "saturation": 0.2863,
+            "ink": 0.0228,
+            "focal": 5.0767,
+            "hue_families": 3,
+            "lit_fraction": 0.4147,
+            "lit_regions": 1,
+            "p5_luma": 9,
+            "subject_scale": 0.3507,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": false,
+          "score": 0.72,
+          "metrics": {
+            "sharp_edges": 0.0552,
+            "contrast": 41,
+            "mean_luma": 35.3,
+            "color_bins": 31,
+            "saturation": 0.535,
+            "ink": 0.0181,
+            "focal": 6.2533,
+            "hue_families": 2,
+            "lit_fraction": 0.2787,
+            "lit_regions": 1,
+            "p5_luma": 2,
+            "subject_scale": 0.2393,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.785,
+          "metrics": {
+            "sharp_edges": 0.041,
+            "contrast": 53.2667,
+            "mean_luma": 48.0667,
+            "color_bins": 34.3333,
+            "saturation": 0.4043,
+            "ink": 0.0205,
+            "focal": 3.68,
+            "hue_families": 1.6667,
+            "lit_fraction": 0.31,
+            "lit_regions": 1,
+            "p5_luma": 5,
+            "subject_scale": 0.264,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.867,
+          "metrics": {
+            "sharp_edges": 0.0885,
+            "contrast": 62.9,
+            "mean_luma": 56.6333,
+            "color_bins": 31,
+            "saturation": 0.3817,
+            "ink": 0.0332,
+            "focal": 2.9,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.3028,
+            "lit_regions": 1,
+            "p5_luma": 4.6667,
+            "subject_scale": 0.3647,
+            "empty_cells": 8
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.904,
+          "metrics": {
+            "sharp_edges": 0.0875,
+            "contrast": 55.2667,
+            "mean_luma": 63.6333,
+            "color_bins": 42.3333,
+            "saturation": 0.3,
+            "ink": 0.033,
+            "focal": 2.7633,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.4624,
+            "lit_regions": 1.3333,
+            "p5_luma": 3.6667,
+            "subject_scale": 0.479,
+            "empty_cells": 4
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 2,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.167,
+        "top_pairs": [
+          {
+            "a": "s3_ticket",
+            "b": "s11_ticket2",
+            "hash_sim": 0.931,
+            "hist_dist": 0.136
+          },
+          {
+            "a": "s4_rule",
+            "b": "s10_bhopal",
+            "hash_sim": 0.771,
+            "hist_dist": 0.188
+          },
+          {
+            "a": "s3_ticket",
+            "b": "s10_bhopal",
+            "hash_sim": 0.736,
+            "hist_dist": 0.192
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s3_ticket",
+            "s11_ticket2"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.877,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": false,
+          "score": 1,
+          "metrics": {
+            "sharp_edges": 0.104,
+            "contrast": 46.1667,
+            "mean_luma": 57.6,
+            "color_bins": 39,
+            "saturation": 0.3637,
+            "ink": 0.048,
+            "focal": 2.3367,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.4554,
+            "lit_regions": 2,
+            "p5_luma": 7.3333,
+            "subject_scale": 0.4547,
+            "empty_cells": 0
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.843,
+          "metrics": {
+            "sharp_edges": 0.0433,
+            "contrast": 38.4333,
+            "mean_luma": 41.5,
+            "color_bins": 28,
+            "saturation": 0.4657,
+            "ink": 0.0295,
+            "focal": 3.1433,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.3007,
+            "lit_regions": 1.6667,
+            "p5_luma": 5.6667,
+            "subject_scale": 0.6147,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.091,
+            "contrast": 52.9667,
+            "mean_luma": 58.6667,
+            "color_bins": 34,
+            "saturation": 0.3903,
+            "ink": 0.0409,
+            "focal": 2.9533,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.3968,
+            "lit_regions": 1,
+            "p5_luma": 8.3333,
+            "subject_scale": 0.3613,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": false,
+          "score": 0.766,
+          "metrics": {
+            "sharp_edges": 0.0373,
+            "contrast": 36.4333,
+            "mean_luma": 42.6,
+            "color_bins": 25.3333,
+            "saturation": 0.4857,
+            "ink": 0.0204,
+            "focal": 3.7433,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.3055,
+            "lit_regions": 1.6667,
+            "p5_luma": 7.3333,
+            "subject_scale": 0.354,
+            "empty_cells": 6
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.1132,
+            "contrast": 52.4667,
+            "mean_luma": 68.2667,
+            "color_bins": 34.3333,
+            "saturation": 0.4887,
+            "ink": 0.0497,
+            "focal": 3.6567,
+            "hue_families": 2,
+            "lit_fraction": 0.5671,
+            "lit_regions": 1,
+            "p5_luma": 4.3333,
+            "subject_scale": 0.5627,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": true,
+          "score": 0.95,
+          "metrics": {
+            "sharp_edges": 0.0523,
+            "contrast": 43.2333,
+            "mean_luma": 51.3,
+            "color_bins": 22,
+            "saturation": 0.564,
+            "ink": 0.0334,
+            "focal": 2.89,
+            "hue_families": 2,
+            "lit_fraction": 0.4418,
+            "lit_regions": 1.6667,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.2637,
+            "empty_cells": 3
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.896,
+          "metrics": {
+            "sharp_edges": 0.0611,
+            "contrast": 42.2,
+            "mean_luma": 43.4333,
+            "color_bins": 32.6667,
+            "saturation": 0.4383,
+            "ink": 0.0246,
+            "focal": 3.3933,
+            "hue_families": 2,
+            "lit_fraction": 0.2863,
+            "lit_regions": 3.3333,
+            "p5_luma": 6.6667,
+            "subject_scale": 0.3193,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.8,
+          "metrics": {
+            "sharp_edges": 0.0525,
+            "contrast": 50.1333,
+            "mean_luma": 59.2,
+            "color_bins": 36.6667,
+            "saturation": 0.2927,
+            "ink": 0.0226,
+            "focal": 4.8267,
+            "hue_families": 3,
+            "lit_fraction": 0.4435,
+            "lit_regions": 1,
+            "p5_luma": 9,
+            "subject_scale": 0.3647,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": false,
+          "score": 0.721,
+          "metrics": {
+            "sharp_edges": 0.0594,
+            "contrast": 40.7667,
+            "mean_luma": 36.0333,
+            "color_bins": 29.6667,
+            "saturation": 0.5373,
+            "ink": 0.0182,
+            "focal": 6.5633,
+            "hue_families": 2,
+            "lit_fraction": 0.288,
+            "lit_regions": 1,
+            "p5_luma": 2,
+            "subject_scale": 0.243,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.796,
+          "metrics": {
+            "sharp_edges": 0.0422,
+            "contrast": 52.4333,
+            "mean_luma": 50.2,
+            "color_bins": 35.3333,
+            "saturation": 0.418,
+            "ink": 0.0214,
+            "focal": 3.6933,
+            "hue_families": 2,
+            "lit_fraction": 0.3221,
+            "lit_regions": 1,
+            "p5_luma": 7,
+            "subject_scale": 0.264,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.0915,
+            "contrast": 61.7333,
+            "mean_luma": 58.6333,
+            "color_bins": 31,
+            "saturation": 0.3833,
+            "ink": 0.0362,
+            "focal": 2.8033,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.308,
+            "lit_regions": 1,
+            "p5_luma": 6,
+            "subject_scale": 0.3647,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.983,
+          "metrics": {
+            "sharp_edges": 0.1,
+            "contrast": 52.8333,
+            "mean_luma": 66.5,
+            "color_bins": 38.3333,
+            "saturation": 0.3217,
+            "ink": 0.0406,
+            "focal": 2.4667,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.5006,
+            "lit_regions": 2,
+            "p5_luma": 7.3333,
+            "subject_scale": 0.469,
+            "empty_cells": 0
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 3,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.167,
+        "top_pairs": [
+          {
+            "a": "s3_ticket",
+            "b": "s11_ticket2",
+            "hash_sim": 0.931,
+            "hist_dist": 0.136
+          },
+          {
+            "a": "s4_rule",
+            "b": "s10_bhopal",
+            "hash_sim": 0.757,
+            "hist_dist": 0.185
+          },
+          {
+            "a": "s6_eyes",
+            "b": "s11_ticket2",
+            "hash_sim": 0.729,
+            "hist_dist": 0.408
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s3_ticket",
+            "s11_ticket2"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.897,
+      "regressions": [
+        "s1_hook got worse (-0.033): revert that change or justify it in the critique",
+        "s12_loop got worse (-0.089): revert that change or justify it in the critique"
+      ],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": false,
+          "score": 0.967,
+          "metrics": {
+            "sharp_edges": 0.0961,
+            "contrast": 44.8,
+            "mean_luma": 54.9,
+            "color_bins": 38.6667,
+            "saturation": 0.3583,
+            "ink": 0.0456,
+            "focal": 2.4733,
+            "hue_families": 3,
+            "lit_fraction": 0.4334,
+            "lit_regions": 2,
+            "p5_luma": 6.3333,
+            "subject_scale": 0.4477,
+            "empty_cells": 2
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0761,
+            "contrast": 44.3333,
+            "mean_luma": 43.4667,
+            "color_bins": 37,
+            "saturation": 0.455,
+            "ink": 0.0464,
+            "focal": 3.0967,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.3107,
+            "lit_regions": 1.6667,
+            "p5_luma": 5,
+            "subject_scale": 0.615,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.091,
+            "contrast": 52.9667,
+            "mean_luma": 58.6667,
+            "color_bins": 34,
+            "saturation": 0.3903,
+            "ink": 0.0409,
+            "focal": 2.9533,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.3968,
+            "lit_regions": 1,
+            "p5_luma": 8.3333,
+            "subject_scale": 0.3613,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": true,
+          "score": 0.892,
+          "metrics": {
+            "sharp_edges": 0.0492,
+            "contrast": 37.2,
+            "mean_luma": 42.8333,
+            "color_bins": 26,
+            "saturation": 0.4817,
+            "ink": 0.0291,
+            "focal": 3.34,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.3092,
+            "lit_regions": 2,
+            "p5_luma": 7,
+            "subject_scale": 0.351,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0994,
+            "contrast": 48.7667,
+            "mean_luma": 57.7667,
+            "color_bins": 33,
+            "saturation": 0.4813,
+            "ink": 0.0481,
+            "focal": 4.1,
+            "hue_families": 1,
+            "lit_fraction": 0.5005,
+            "lit_regions": 1,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.507,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": true,
+          "score": 0.95,
+          "metrics": {
+            "sharp_edges": 0.0523,
+            "contrast": 43.2333,
+            "mean_luma": 51.3,
+            "color_bins": 22,
+            "saturation": 0.564,
+            "ink": 0.0334,
+            "focal": 2.89,
+            "hue_families": 2,
+            "lit_fraction": 0.4418,
+            "lit_regions": 1.6667,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.2637,
+            "empty_cells": 3
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.896,
+          "metrics": {
+            "sharp_edges": 0.0611,
+            "contrast": 42.2,
+            "mean_luma": 43.4333,
+            "color_bins": 32.6667,
+            "saturation": 0.4383,
+            "ink": 0.0246,
+            "focal": 3.3933,
+            "hue_families": 2,
+            "lit_fraction": 0.2863,
+            "lit_regions": 3.3333,
+            "p5_luma": 6.6667,
+            "subject_scale": 0.3193,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.811,
+          "metrics": {
+            "sharp_edges": 0.0563,
+            "contrast": 51.0333,
+            "mean_luma": 60.9667,
+            "color_bins": 36.6667,
+            "saturation": 0.295,
+            "ink": 0.0242,
+            "focal": 4.55,
+            "hue_families": 3,
+            "lit_fraction": 0.4554,
+            "lit_regions": 1,
+            "p5_luma": 9,
+            "subject_scale": 0.375,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": false,
+          "score": 0.721,
+          "metrics": {
+            "sharp_edges": 0.0594,
+            "contrast": 40.7667,
+            "mean_luma": 36.0333,
+            "color_bins": 29.6667,
+            "saturation": 0.5373,
+            "ink": 0.0182,
+            "focal": 6.5633,
+            "hue_families": 2,
+            "lit_fraction": 0.288,
+            "lit_regions": 1,
+            "p5_luma": 2,
+            "subject_scale": 0.243,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0544,
+            "contrast": 52.3333,
+            "mean_luma": 51.6,
+            "color_bins": 36,
+            "saturation": 0.4273,
+            "ink": 0.0325,
+            "focal": 2.91,
+            "hue_families": 2,
+            "lit_fraction": 0.3394,
+            "lit_regions": 1,
+            "p5_luma": 7,
+            "subject_scale": 0.2607,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.0915,
+            "contrast": 61.7333,
+            "mean_luma": 58.6333,
+            "color_bins": 31,
+            "saturation": 0.3833,
+            "ink": 0.0362,
+            "focal": 2.8033,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.308,
+            "lit_regions": 1,
+            "p5_luma": 6,
+            "subject_scale": 0.3647,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.894,
+          "metrics": {
+            "sharp_edges": 0.0857,
+            "contrast": 50.9667,
+            "mean_luma": 59.8667,
+            "color_bins": 38.6667,
+            "saturation": 0.3117,
+            "ink": 0.0362,
+            "focal": 2.82,
+            "hue_families": 3,
+            "lit_fraction": 0.4388,
+            "lit_regions": 1.6667,
+            "p5_luma": 5.6667,
+            "subject_scale": 0.4827,
+            "empty_cells": 5
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 4,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.167,
+        "top_pairs": [
+          {
+            "a": "s3_ticket",
+            "b": "s11_ticket2",
+            "hash_sim": 0.931,
+            "hist_dist": 0.136
+          },
+          {
+            "a": "s4_rule",
+            "b": "s10_bhopal",
+            "hash_sim": 0.75,
+            "hist_dist": 0.211
+          },
+          {
+            "a": "s1_hook",
+            "b": "s12_loop",
+            "hash_sim": 0.729,
+            "hist_dist": 0.089
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s3_ticket",
+            "s11_ticket2"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.869,
+      "regressions": [
+        "s1_hook got worse (-0.034): revert that change or justify it in the critique",
+        "s4_rule got worse (-0.118): revert that change or justify it in the critique",
+        "s6_eyes got worse (-0.127): revert that change or justify it in the critique",
+        "s12_loop got worse (-0.05): revert that change or justify it in the critique"
+      ],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.078,
+            "contrast": 40.4,
+            "mean_luma": 39.4,
+            "color_bins": 35.3333,
+            "saturation": 0.3577,
+            "ink": 0.043,
+            "focal": 2.8733,
+            "hue_families": 3,
+            "lit_fraction": 0.2874,
+            "lit_regions": 1,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.3647,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0761,
+            "contrast": 44.3333,
+            "mean_luma": 43.4667,
+            "color_bins": 37,
+            "saturation": 0.455,
+            "ink": 0.0464,
+            "focal": 3.0967,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.3107,
+            "lit_regions": 1.6667,
+            "p5_luma": 5,
+            "subject_scale": 0.615,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.091,
+            "contrast": 52.9667,
+            "mean_luma": 58.6667,
+            "color_bins": 34,
+            "saturation": 0.3903,
+            "ink": 0.0409,
+            "focal": 2.9533,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.3968,
+            "lit_regions": 1,
+            "p5_luma": 8.3333,
+            "subject_scale": 0.3613,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": false,
+          "score": 0.774,
+          "metrics": {
+            "sharp_edges": 0.038,
+            "contrast": 33.3667,
+            "mean_luma": 28.7667,
+            "color_bins": 22.6667,
+            "saturation": 0.485,
+            "ink": 0.0235,
+            "focal": 3.7133,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.1593,
+            "lit_regions": 1.3333,
+            "p5_luma": 4,
+            "subject_scale": 0.2883,
+            "empty_cells": 6
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0994,
+            "contrast": 48.7667,
+            "mean_luma": 57.7667,
+            "color_bins": 33,
+            "saturation": 0.4813,
+            "ink": 0.0481,
+            "focal": 4.1,
+            "hue_families": 1,
+            "lit_fraction": 0.5005,
+            "lit_regions": 1,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.507,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": true,
+          "score": 0.823,
+          "metrics": {
+            "sharp_edges": 0.0383,
+            "contrast": 39.7667,
+            "mean_luma": 36.6333,
+            "color_bins": 19,
+            "saturation": 0.5603,
+            "ink": 0.0259,
+            "focal": 3.48,
+            "hue_families": 1.6667,
+            "lit_fraction": 0.2435,
+            "lit_regions": 1.3333,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.2987,
+            "empty_cells": 6
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.896,
+          "metrics": {
+            "sharp_edges": 0.0611,
+            "contrast": 42.2,
+            "mean_luma": 43.4333,
+            "color_bins": 32.6667,
+            "saturation": 0.4383,
+            "ink": 0.0246,
+            "focal": 3.3933,
+            "hue_families": 2,
+            "lit_fraction": 0.2863,
+            "lit_regions": 3.3333,
+            "p5_luma": 6.6667,
+            "subject_scale": 0.3193,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.818,
+          "metrics": {
+            "sharp_edges": 0.055,
+            "contrast": 49.1333,
+            "mean_luma": 58.0667,
+            "color_bins": 35,
+            "saturation": 0.2957,
+            "ink": 0.0252,
+            "focal": 4.6367,
+            "hue_families": 3,
+            "lit_fraction": 0.4395,
+            "lit_regions": 1,
+            "p5_luma": 9,
+            "subject_scale": 0.3613,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": false,
+          "score": 0.71,
+          "metrics": {
+            "sharp_edges": 0.0536,
+            "contrast": 38.5667,
+            "mean_luma": 28.5333,
+            "color_bins": 27,
+            "saturation": 0.539,
+            "ink": 0.018,
+            "focal": 7.8133,
+            "hue_families": 2,
+            "lit_fraction": 0.2069,
+            "lit_regions": 1.6667,
+            "p5_luma": 1,
+            "subject_scale": 0.25,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0544,
+            "contrast": 52.3333,
+            "mean_luma": 51.6,
+            "color_bins": 36,
+            "saturation": 0.4273,
+            "ink": 0.0325,
+            "focal": 2.91,
+            "hue_families": 2,
+            "lit_fraction": 0.3394,
+            "lit_regions": 1,
+            "p5_luma": 7,
+            "subject_scale": 0.2607,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.0915,
+            "contrast": 61.7333,
+            "mean_luma": 58.6333,
+            "color_bins": 31,
+            "saturation": 0.3833,
+            "ink": 0.0362,
+            "focal": 2.8033,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.308,
+            "lit_regions": 1,
+            "p5_luma": 6,
+            "subject_scale": 0.3647,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.844,
+          "metrics": {
+            "sharp_edges": 0.0727,
+            "contrast": 47.8333,
+            "mean_luma": 45.1333,
+            "color_bins": 36.6667,
+            "saturation": 0.311,
+            "ink": 0.0361,
+            "focal": 3.17,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.3163,
+            "lit_regions": 1,
+            "p5_luma": 3,
+            "subject_scale": 0.4513,
+            "empty_cells": 8
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 5,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.167,
+        "top_pairs": [
+          {
+            "a": "s3_ticket",
+            "b": "s11_ticket2",
+            "hash_sim": 0.931,
+            "hist_dist": 0.136
+          },
+          {
+            "a": "s4_rule",
+            "b": "s10_bhopal",
+            "hash_sim": 0.75,
+            "hist_dist": 0.209
+          },
+          {
+            "a": "s1_hook",
+            "b": "s12_loop",
+            "hash_sim": 0.729,
+            "hist_dist": 0.089
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s3_ticket",
+            "s11_ticket2"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.873,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.078,
+            "contrast": 40.4,
+            "mean_luma": 39.4,
+            "color_bins": 35.3333,
+            "saturation": 0.3577,
+            "ink": 0.043,
+            "focal": 2.8733,
+            "hue_families": 3,
+            "lit_fraction": 0.2874,
+            "lit_regions": 1,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.3647,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0761,
+            "contrast": 44.3333,
+            "mean_luma": 43.4667,
+            "color_bins": 37,
+            "saturation": 0.455,
+            "ink": 0.0464,
+            "focal": 3.0967,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.3107,
+            "lit_regions": 1.6667,
+            "p5_luma": 5,
+            "subject_scale": 0.615,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": false,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.091,
+            "contrast": 52.9667,
+            "mean_luma": 58.6667,
+            "color_bins": 34,
+            "saturation": 0.3903,
+            "ink": 0.0409,
+            "focal": 2.9533,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.3968,
+            "lit_regions": 1,
+            "p5_luma": 8.3333,
+            "subject_scale": 0.3613,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": true,
+          "score": 0.822,
+          "metrics": {
+            "sharp_edges": 0.0431,
+            "contrast": 34.0333,
+            "mean_luma": 29.0333,
+            "color_bins": 23.3333,
+            "saturation": 0.48,
+            "ink": 0.0272,
+            "focal": 3.5233,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.1617,
+            "lit_regions": 2,
+            "p5_luma": 3.6667,
+            "subject_scale": 0.3023,
+            "empty_cells": 6
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0994,
+            "contrast": 48.7667,
+            "mean_luma": 57.7667,
+            "color_bins": 33,
+            "saturation": 0.4813,
+            "ink": 0.0481,
+            "focal": 4.1,
+            "hue_families": 1,
+            "lit_fraction": 0.5005,
+            "lit_regions": 1,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.507,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": true,
+          "score": 0.823,
+          "metrics": {
+            "sharp_edges": 0.0383,
+            "contrast": 39.7667,
+            "mean_luma": 36.6333,
+            "color_bins": 19,
+            "saturation": 0.5603,
+            "ink": 0.0259,
+            "focal": 3.48,
+            "hue_families": 1.6667,
+            "lit_fraction": 0.2435,
+            "lit_regions": 1.3333,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.2987,
+            "empty_cells": 6
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": false,
+          "score": 0.896,
+          "metrics": {
+            "sharp_edges": 0.0611,
+            "contrast": 42.2,
+            "mean_luma": 43.4333,
+            "color_bins": 32.6667,
+            "saturation": 0.4383,
+            "ink": 0.0246,
+            "focal": 3.3933,
+            "hue_families": 2,
+            "lit_fraction": 0.2863,
+            "lit_regions": 3.3333,
+            "p5_luma": 6.6667,
+            "subject_scale": 0.3193,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.818,
+          "metrics": {
+            "sharp_edges": 0.055,
+            "contrast": 49.1333,
+            "mean_luma": 58.0667,
+            "color_bins": 35,
+            "saturation": 0.2957,
+            "ink": 0.0252,
+            "focal": 4.6367,
+            "hue_families": 3,
+            "lit_fraction": 0.4395,
+            "lit_regions": 1,
+            "p5_luma": 9,
+            "subject_scale": 0.3613,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": false,
+          "score": 0.71,
+          "metrics": {
+            "sharp_edges": 0.0536,
+            "contrast": 38.5667,
+            "mean_luma": 28.5333,
+            "color_bins": 27,
+            "saturation": 0.539,
+            "ink": 0.018,
+            "focal": 7.8133,
+            "hue_families": 2,
+            "lit_fraction": 0.2069,
+            "lit_regions": 1.6667,
+            "p5_luma": 1,
+            "subject_scale": 0.25,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": false,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0544,
+            "contrast": 52.3333,
+            "mean_luma": 51.6,
+            "color_bins": 36,
+            "saturation": 0.4273,
+            "ink": 0.0325,
+            "focal": 2.91,
+            "hue_families": 2,
+            "lit_fraction": 0.3394,
+            "lit_regions": 1,
+            "p5_luma": 7,
+            "subject_scale": 0.2607,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": false,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.0915,
+            "contrast": 61.7333,
+            "mean_luma": 58.6333,
+            "color_bins": 31,
+            "saturation": 0.3833,
+            "ink": 0.0362,
+            "focal": 2.8033,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.308,
+            "lit_regions": 1,
+            "p5_luma": 6,
+            "subject_scale": 0.3647,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.844,
+          "metrics": {
+            "sharp_edges": 0.0727,
+            "contrast": 47.8333,
+            "mean_luma": 45.1333,
+            "color_bins": 36.6667,
+            "saturation": 0.311,
+            "ink": 0.0361,
+            "focal": 3.17,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.3163,
+            "lit_regions": 1,
+            "p5_luma": 3,
+            "subject_scale": 0.4513,
+            "empty_cells": 8
+          }
+        }
+      ],
+      "critique_min": 2
+    },
+    {
+      "iter": 6,
+      "pass": false,
+      "reel": {
+        "flags": [],
+        "backdrop_share": 0.167,
+        "top_pairs": [
+          {
+            "a": "s3_ticket",
+            "b": "s11_ticket2",
+            "hash_sim": 0.931,
+            "hist_dist": 0.136
+          },
+          {
+            "a": "s4_rule",
+            "b": "s10_bhopal",
+            "hash_sim": 0.75,
+            "hist_dist": 0.209
+          },
+          {
+            "a": "s1_hook",
+            "b": "s12_loop",
+            "hash_sim": 0.729,
+            "hist_dist": 0.089
+          }
+        ],
+        "near_duplicates": [],
+        "backdrop_clusters": [
+          [
+            "s3_ticket",
+            "s11_ticket2"
+          ]
+        ],
+        "reused_backdrop": false
+      },
+      "mean_score": 0.873,
+      "regressions": [],
+      "shots": [
+        {
+          "id": "s1_hook",
+          "pass": true,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.078,
+            "contrast": 40.4,
+            "mean_luma": 39.4,
+            "color_bins": 35.3333,
+            "saturation": 0.3577,
+            "ink": 0.043,
+            "focal": 2.8733,
+            "hue_families": 3,
+            "lit_fraction": 0.2874,
+            "lit_regions": 1,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.3647,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s2_coach",
+          "pass": true,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0761,
+            "contrast": 44.3333,
+            "mean_luma": 43.4667,
+            "color_bins": 37,
+            "saturation": 0.455,
+            "ink": 0.0464,
+            "focal": 3.0967,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.3107,
+            "lit_regions": 1.6667,
+            "p5_luma": 5,
+            "subject_scale": 0.615,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s3_ticket",
+          "pass": true,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.091,
+            "contrast": 52.9667,
+            "mean_luma": 58.6667,
+            "color_bins": 34,
+            "saturation": 0.3903,
+            "ink": 0.0409,
+            "focal": 2.9533,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.3968,
+            "lit_regions": 1,
+            "p5_luma": 8.3333,
+            "subject_scale": 0.3613,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s4_rule",
+          "pass": true,
+          "score": 0.822,
+          "metrics": {
+            "sharp_edges": 0.0431,
+            "contrast": 34.0333,
+            "mean_luma": 29.0333,
+            "color_bins": 23.3333,
+            "saturation": 0.48,
+            "ink": 0.0272,
+            "focal": 3.5233,
+            "hue_families": 1.3333,
+            "lit_fraction": 0.1617,
+            "lit_regions": 2,
+            "p5_luma": 3.6667,
+            "subject_scale": 0.3023,
+            "empty_cells": 6
+          }
+        },
+        {
+          "id": "s5_stop",
+          "pass": true,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0994,
+            "contrast": 48.7667,
+            "mean_luma": 57.7667,
+            "color_bins": 33,
+            "saturation": 0.4813,
+            "ink": 0.0481,
+            "focal": 4.1,
+            "hue_families": 1,
+            "lit_fraction": 0.5005,
+            "lit_regions": 1,
+            "p5_luma": 3.3333,
+            "subject_scale": 0.507,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s6_eyes",
+          "pass": true,
+          "score": 0.823,
+          "metrics": {
+            "sharp_edges": 0.0383,
+            "contrast": 39.7667,
+            "mean_luma": 36.6333,
+            "color_bins": 19,
+            "saturation": 0.5603,
+            "ink": 0.0259,
+            "focal": 3.48,
+            "hue_families": 1.6667,
+            "lit_fraction": 0.2435,
+            "lit_regions": 1.3333,
+            "p5_luma": 2.6667,
+            "subject_scale": 0.2987,
+            "empty_cells": 6
+          }
+        },
+        {
+          "id": "s7_tickets",
+          "pass": true,
+          "score": 0.896,
+          "metrics": {
+            "sharp_edges": 0.0611,
+            "contrast": 42.2,
+            "mean_luma": 43.4333,
+            "color_bins": 32.6667,
+            "saturation": 0.4383,
+            "ink": 0.0246,
+            "focal": 3.3933,
+            "hue_families": 2,
+            "lit_fraction": 0.2863,
+            "lit_regions": 3.3333,
+            "p5_luma": 6.6667,
+            "subject_scale": 0.3193,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s8_itarsi",
+          "pass": false,
+          "score": 0.818,
+          "metrics": {
+            "sharp_edges": 0.055,
+            "contrast": 49.1333,
+            "mean_luma": 58.0667,
+            "color_bins": 35,
+            "saturation": 0.2957,
+            "ink": 0.0252,
+            "focal": 4.6367,
+            "hue_families": 3,
+            "lit_fraction": 0.4395,
+            "lit_regions": 1,
+            "p5_luma": 9,
+            "subject_scale": 0.3613,
+            "empty_cells": 7
+          }
+        },
+        {
+          "id": "s9_relief",
+          "pass": true,
+          "score": 0.71,
+          "metrics": {
+            "sharp_edges": 0.0536,
+            "contrast": 38.5667,
+            "mean_luma": 28.5333,
+            "color_bins": 27,
+            "saturation": 0.539,
+            "ink": 0.018,
+            "focal": 7.8133,
+            "hue_families": 2,
+            "lit_fraction": 0.2069,
+            "lit_regions": 1.6667,
+            "p5_luma": 1,
+            "subject_scale": 0.25,
+            "empty_cells": 15
+          }
+        },
+        {
+          "id": "s10_bhopal",
+          "pass": true,
+          "score": 0.933,
+          "metrics": {
+            "sharp_edges": 0.0544,
+            "contrast": 52.3333,
+            "mean_luma": 51.6,
+            "color_bins": 36,
+            "saturation": 0.4273,
+            "ink": 0.0325,
+            "focal": 2.91,
+            "hue_families": 2,
+            "lit_fraction": 0.3394,
+            "lit_regions": 1,
+            "p5_luma": 7,
+            "subject_scale": 0.2607,
+            "empty_cells": 4
+          }
+        },
+        {
+          "id": "s11_ticket2",
+          "pass": true,
+          "score": 0.917,
+          "metrics": {
+            "sharp_edges": 0.0915,
+            "contrast": 61.7333,
+            "mean_luma": 58.6333,
+            "color_bins": 31,
+            "saturation": 0.3833,
+            "ink": 0.0362,
+            "focal": 2.8033,
+            "hue_families": 2.3333,
+            "lit_fraction": 0.308,
+            "lit_regions": 1,
+            "p5_luma": 6,
+            "subject_scale": 0.3647,
+            "empty_cells": 5
+          }
+        },
+        {
+          "id": "s12_loop",
+          "pass": false,
+          "score": 0.844,
+          "metrics": {
+            "sharp_edges": 0.0727,
+            "contrast": 47.8333,
+            "mean_luma": 45.1333,
+            "color_bins": 36.6667,
+            "saturation": 0.311,
+            "ink": 0.0361,
+            "focal": 3.17,
+            "hue_families": 2.6667,
+            "lit_fraction": 0.3163,
+            "lit_regions": 1,
+            "p5_luma": 3,
+            "subject_scale": 0.4513,
+            "empty_cells": 8
+          }
+        }
+      ]
+    }
+  ]
+}

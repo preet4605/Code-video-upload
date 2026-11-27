@@ -9,10 +9,10 @@ const { cin } = kit;
 const SHAWL = { color: '#6e5c48', accent: '#c0904c', side: -1, fringe: 16, drop: 0.27 };
 const SPEC = {
   // the uncle: grey receding hair, thick grey moustache, deep sockets (black until a light hits them), creased face, cotton kurta with a stitched placket, wool shawl over one shoulder
-  uncle: { age: 'elder', sex: 'm', outfit: 'kurta', style: 'horror', seed: 4, headScale: 1.16, skin: '#b87c50', skinGrey: 0.1, hair: { style: 'receding', color: '#a8a398' }, moustache: { color: '#cfcac0', thick: 1 }, creased: true, sockets: true, browColor: '#85817a', colors: { a: '#ffeec8', b: '#8a8068', c: '#9a9080' }, shawl: SHAWL },
+  uncle: { age: 'elder', sex: 'm', outfit: 'kurta', style: 'horror', seed: 4, headScale: 1.16, skin: '#b87c50', skinGrey: 0.1, hair: { style: 'receding', color: '#a8a398', strands: true }, moustache: { color: '#cfcac0', thick: 1 }, creased: true, sockets: true, browColor: '#85817a', colors: { a: '#ffeec8', b: '#8a8068', c: '#9a9080' }, shawl: SHAWL },
   narrator: { age: 'adult', sex: 'm', outfit: 'shirt', style: 'horror', seed: 9, skin: '#b07e58', skinGrey: 0.1, colors: { a: '#3a5a7a', b: '#222a33', c: '#555' } },
   // the narrator in s12: same shirt, same skin, same build, thirty years on: grey receding hair, a thinner moustache, creases, and the uncle's shawl
-  narratorAged: { age: 'elder', sex: 'm', outfit: 'shirt', style: 'horror', seed: 9, headScale: 1.16, skin: '#b07e58', skinGrey: 0.1, hair: { style: 'receding', color: '#b9b5ab' }, moustache: { color: '#c4c0b6', thick: 0.7 }, creased: true, sockets: true, browColor: '#85817a', colors: { a: '#3a5a7a', b: '#222a33', c: '#555' }, shawl: SHAWL },
+  narratorAged: { age: 'elder', sex: 'm', outfit: 'shirt', style: 'horror', seed: 9, headScale: 1.16, skin: '#a88a70', skinGrey: 0.38, hair: { style: 'receding', color: '#d4d6d8', strands: 1.3 }, glasses: { color: '#9aa6b2', lens: '#9fc4e8' }, creased: true, sockets: true, browColor: '#85817a', colors: { a: '#3a5a7a', b: '#222a33', c: '#555' }, shawl: SHAWL },
   boy: { age: 'child', sex: 'm', outfit: 'shirt', style: 'horror', seed: 12, colors: { a: '#6a3a2a', b: '#222', c: '#555' } },
 };
 const HOOK_H = 1900;
@@ -36,6 +36,52 @@ const uncleLights = (cx, hy, o = {}) => (cam) => {
 };
 // the hook framing (s1 start == s12 end): a dolly-in on the uncle, head in the upper third, lap and hands below the caption line
 const hookBase = () => ({ z: 0.4, y: -230 });
+
+// ---------------- lower-third dressing (berth front: shins, chappals, lit floor tiles, steel trunk). Shared by s1, s8 and s12 so the loop frames match.
+const LEG = { uncle: { cloth: ['#b7b09b', '#4e493c'], skin: '#8a6a4c', shoe: '#2a1a10' }, narratorAged: { cloth: ['#566c8c', '#1c2736'], skin: '#8d7660', shoe: '#14181e' } };
+function lowerDressing(c, o) {
+  const cx = o.cx ?? 400, a = o.a ?? 1, who = o.who ?? 'uncle', L = LEG[who], x0 = -80, x1 = 1160;
+  // floor: lit tiles receding to a vanishing point, under the berth
+  if (o.floor !== false) {
+    c.save(); const g = c.createLinearGradient(0, 1700, 0, 2000); g.addColorStop(0, '#0d1a1c'); g.addColorStop(0.5, '#233f42'); g.addColorStop(1, '#16282b'); c.fillStyle = g; c.fillRect(x0, 1700, x1 - x0, 320);
+    c.beginPath(); c.rect(x0, 1700, x1 - x0, 320); c.clip(); c.strokeStyle = 'rgba(150,200,205,0.30)'; c.lineWidth = 3;
+    for (const y of [1738, 1790, 1860, 1960]) { c.beginPath(); c.moveTo(x0, y); c.lineTo(x1, y); c.stroke(); }
+    for (let i = -6; i <= 6; i++) { c.beginPath(); c.moveTo(540 + i * 56, 1700); c.lineTo(540 + i * 210, 2020); c.stroke(); }
+    c.strokeStyle = 'rgba(0,0,0,0.5)'; c.lineWidth = 6; for (const y of [1744, 1796, 1866, 1966]) { c.beginPath(); c.moveTo(x0, y + 4); c.lineTo(x1, y + 4); c.stroke(); }
+    cin.fillTexture(c, 'plaster', [x0, 1700, x1 - x0, 320], { blend: 'overlay', alpha: 0.5, scale: 1.4, seed: 31 });
+    c.restore();
+  }
+  // steel trunk under the berth, right: corner guards, hasp, a padlock
+  { c.save(); const tx = 760, ty = 1690, tw = 330, th = 190; c.fillStyle = '#26323a'; c.strokeStyle = 'rgba(10,8,5,0.85)'; c.lineWidth = 4; c.beginPath(); c.roundRect(tx, ty, tw, th, 14); c.fill(); c.stroke(); c.clip();
+    const g2 = c.createLinearGradient(tx, ty, tx, ty + th); g2.addColorStop(0, 'rgba(160,190,205,0.40)'); g2.addColorStop(0.3, 'rgba(160,190,205,0.06)'); g2.addColorStop(1, 'rgba(0,0,0,0.5)'); c.fillStyle = g2; c.fillRect(tx, ty, tw, th);
+    c.strokeStyle = 'rgba(0,0,0,0.5)'; c.lineWidth = 5; for (const k of [0.3, 0.7]) { c.beginPath(); c.moveTo(tx + tw * k, ty); c.lineTo(tx + tw * k, ty + th); c.stroke(); } c.strokeStyle = 'rgba(190,215,230,0.35)'; c.lineWidth = 3; for (const k of [0.3, 0.7]) { c.beginPath(); c.moveTo(tx + tw * k + 5, ty + 4); c.lineTo(tx + tw * k + 5, ty + th); c.stroke(); }
+    c.fillStyle = '#b38a3c'; c.strokeStyle = '#1a1208'; c.lineWidth = 3; c.beginPath(); c.roundRect(tx + tw / 2 - 18, ty + 70, 36, 42, 8); c.fill(); c.stroke(); c.beginPath(); c.arc(tx + tw / 2, ty + 70, 14, Math.PI, 0); c.stroke();
+    for (const [dx, dy] of [[16, 16], [tw - 16, 16], [16, th - 16], [tw - 16, th - 16]]) { c.fillStyle = '#9aa8b0'; c.beginPath(); c.arc(tx + dx, ty + dy, 7, 0, TAU); c.fill(); c.strokeStyle = '#10161a'; c.lineWidth = 2; c.stroke(); }
+    c.restore(); }
+  // shins and chappals
+  if (a > 0.01) {
+    c.save(); c.globalAlpha = a;
+    for (const sd of [-1, 1]) {
+      const lx = cx + sd * 150, p = new Path2D(); p.moveTo(lx - 118, 1250); p.lineTo(lx + 118, 1250); p.bezierCurveTo(lx + 108, 1400, lx + 82, 1600, lx + 50, 1796); p.lineTo(lx - 50, 1796); p.bezierCurveTo(lx - 82, 1600, lx - 108, 1400, lx - 118, 1250); p.closePath();
+      const g3 = c.createLinearGradient(lx - 90, 0, lx + 90, 0); g3.addColorStop(0, L.cloth[1]); g3.addColorStop(0.4, L.cloth[0]); g3.addColorStop(1, L.cloth[1]); c.fillStyle = g3; c.fill(p); c.save(); c.clip(p);
+      cin.fillTexture(c, 'fabric', [lx - 100, 1290, 200, 520], { blend: 'overlay', alpha: 0.55, scale: 1.3, seed: 41 + sd });
+      c.strokeStyle = 'rgba(0,0,0,0.38)'; c.lineWidth = 6; for (let i = 0; i < 4; i++) { c.beginPath(); c.moveTo(lx - 50 + i * 30, 1400 + (i % 2) * 20); c.quadraticCurveTo(lx - 44 + i * 30, 1600, lx - 30 + i * 22, 1790); c.stroke(); }
+      c.strokeStyle = 'rgba(255,240,210,0.16)'; c.lineWidth = 4; for (let i = 0; i < 3; i++) { c.beginPath(); c.moveTo(lx - 36 + i * 30, 1410); c.quadraticCurveTo(lx - 30 + i * 30, 1600, lx - 18 + i * 22, 1786); c.stroke(); }
+      c.fillStyle = 'rgba(0,0,0,0.3)'; c.fillRect(lx - 100, 1770, 200, 30); const kg = c.createRadialGradient(lx - 14, 1330, 6, lx - 14, 1330, 100); kg.addColorStop(0, 'rgba(255,245,220,0.28)'); kg.addColorStop(1, 'rgba(255,245,220,0)'); c.fillStyle = kg; c.fillRect(lx - 100, 1290, 200, 140); c.strokeStyle = 'rgba(0,0,0,0.45)'; c.lineWidth = 5; c.beginPath(); c.moveTo(lx - 100, 1300); c.quadraticCurveTo(lx, 1330, lx + 100, 1300); c.stroke(); c.restore(); c.strokeStyle = 'rgba(10,8,5,0.85)'; c.lineWidth = 4; c.lineJoin = 'round'; c.stroke(p);
+      // ankle + foot + chappal (toes toward the camera)
+      c.fillStyle = L.skin; c.strokeStyle = 'rgba(14,8,4,0.8)'; c.lineWidth = 3; c.beginPath(); c.roundRect(lx - 40, 1792, 80, 46, 14); c.fill(); c.stroke();
+      c.fillStyle = L.shoe; c.beginPath(); c.ellipse(lx, 1858, 92, 30, 0, 0, TAU); c.fill(); c.stroke(); c.strokeStyle = 'rgba(190,150,100,0.5)'; c.lineWidth = 3; c.beginPath(); c.ellipse(lx, 1853, 80, 22, 0, Math.PI * 1.05, Math.PI * 1.95); c.stroke();
+      c.fillStyle = 'rgba(255,230,190,0.2)'; c.beginPath(); c.ellipse(lx - 30, 1846, 34, 8, 0, 0, TAU); c.fill();
+    }
+    // the dhoti / trouser cloth falling over the knees: a scalloped hem that hides the shin tops
+    { const hw = 430, base = who === 'uncle' ? '#b9ae94' : '#3a4a60', hp = new Path2D(); hp.moveTo(cx - hw, 1240); hp.lineTo(cx + hw, 1240); hp.lineTo(cx + hw, 1352); for (let i = 8; i >= -8; i--) { const px = cx + i * (hw / 8); hp.quadraticCurveTo(px + hw / 16, 1372 + (i % 2) * 8, px, 1358 - (i % 3) * 4); } hp.closePath();
+      const g4 = c.createLinearGradient(0, 1250, 0, 1400); g4.addColorStop(0, base); g4.addColorStop(1, L.cloth[1]); c.fillStyle = g4; c.fill(hp); c.save(); c.clip(hp); cin.fillTexture(c, 'fabric', [cx - hw, 1240, hw * 2, 170], { blend: 'overlay', alpha: 0.6, scale: 2.2, seed: 8 });
+      c.strokeStyle = 'rgba(10,8,5,0.45)'; c.lineWidth = 4; for (let i = 0; i < 9; i++) { const fx = cx - hw + 40 + i * ((hw * 2 - 80) / 8); c.beginPath(); c.moveTo(fx, 1250); c.quadraticCurveTo(fx + 10, 1320, fx - 6 + (i - 4) * 4, 1380); c.stroke(); }
+      c.restore(); c.strokeStyle = 'rgba(10,8,5,0.8)'; c.lineWidth = 4; c.lineJoin = 'round'; c.stroke(hp); }
+    c.restore();
+  }
+}
+const lowerLights = (cx, k = 1, wk = 1) => (cam) => { const a = cam.project(cx, 1500, 1.8), b = cam.project(cx + 330, 1450, 1.8); return [{ type: 'point', x: a.sx, y: a.sy, r: 760, color: '#a8d0dc', intensity: 1.25 * k }, { type: 'point', x: b.sx, y: b.sy, r: 520, color: '#ffb070', intensity: 0.5 * k * wk }]; };
 // ---------------- shared bay compositions ----------------
 const BAYDEF = (P, extra = {}) => ({ win: C.BAY.win, lamp: C.BAY.lamp, ...extra });
 
@@ -60,7 +106,17 @@ function seatedFigure(c, P, o) {
   const light = o.light ?? uncleLight(P);
   const st = { x: o.cx, feet, height: H, facing: 1, pose: 'stand', t: P.t, light, gaze: o.gaze ?? [-0.3, 0.05], expr: o.expr ?? 'blank', talk: o.talkK ?? 0, look: o.look ?? 0.12, eyeLight: o.eyeLight ?? cl(P.sweep.i * 1.15), contact: false,
     angles: { lean: o.lean ?? -0.02, headTilt: o.tilt ?? 0.0, shL: 0.1, shR: -0.1, elL: 0.55, elR: 0.5 }, reachL: [o.cx - H * 0.2, o.lap - H * 0.075], reachR: [o.cx + H * 0.2, o.lap - H * 0.07], grip: { L: 0.3, R: 0.34 } };
-  c.save(); c.beginPath(); c.rect(-400, -400, 1900, o.lap + 400 - H * 0.03); c.clip(); drawFig(c, who, st); c.restore();
+  c.save(); c.beginPath(); c.rect(-400, -400, 1900, o.lap + 400 - H * 0.03); c.clip(); drawFig(c, who, st);
+  if (o.collar) { // the blue shirt collar: two pointed flaps at the throat, the sweep light catching their edges (identity cue for the aged narrator)
+    const [nx, ny] = joints(who, st).neck, a = o.collar, sw = cl(P.sweep.i), W = H * 0.027, ga = c.globalAlpha;
+    for (const sd of [-1, 1]) {
+      const p = new Path2D(); p.moveTo(nx + sd * W * 0.45, ny - W * 0.4); p.lineTo(nx + sd * W * 1.9, ny - W * 0.1); p.lineTo(nx + sd * W * 1.3, ny + W * 1.0); p.lineTo(nx + sd * W * 0.4, ny + W * 0.25); p.closePath();
+      const g = c.createLinearGradient(nx, ny, nx + sd * W * 1.3, ny + W); g.addColorStop(0, '#4f7aa8'); g.addColorStop(1, '#22364f'); c.globalAlpha = ga * a; c.fillStyle = g; c.fill(p);
+      c.strokeStyle = `rgba(${Math.round(150 + 90 * sw)},${Math.round(190 + 50 * sw)},255,${0.55 + 0.4 * sw})`; c.lineWidth = 3.5; c.lineJoin = 'round'; c.stroke(p);
+      c.strokeStyle = 'rgba(10,14,22,0.7)'; c.lineWidth = 2; c.beginPath(); c.moveTo(nx + sd * W * 0.5, ny + W * 0.2); c.lineTo(nx + sd * W * 0.3, ny + W * 0.9); c.stroke(); c.globalAlpha = ga;
+    }
+  }
+  c.restore();
   // lap: cloth over the thighs, foreshortened toward the camera
   const lw = H * 0.46, x0 = o.cx - lw, x1 = o.cx + lw, y0 = o.lap - H * 0.05;
   const base = o.lapCol ?? '#b9ae94';
@@ -294,12 +350,12 @@ function ticketsShot(ctx, P) {
 // ------------------------------------------------------------ s8 Itarsi
 function itarsiShot(ctx, P) {
   const E = P.E, u = E.clock.between('itarsi', P.t), W = { win: [150, 300, 840, 900], lamp: [90, 470] };
-  const arrive = sm(0.0, 0.26, u), rise = sm(0.52, 0.66, u), walk = sm(0.62, 0.97, u), smile = sm(0.56, 0.7, u);
+  const arrive = sm(0.0, 0.17, u), rise = sm(0.52, 0.66, u), walk = sm(0.62, 0.97, u), smile = sm(0.56, 0.7, u);
   const warm = 0.7 * sm(0.02, 0.3, u) * (1 - 0.2 * sm(0.8, 1, u));
   const H = 1850, seatedFeet = 1235 + 0.5236 * H, standFeet = 2040;
   const light = { ...lightFor(P, { base: 0.5 + 0.6 * warm }), key: '#ffd7a0', amb: '#3a2a1e', strength: 0.45 + 0.5 * warm, rim: '#ffe2b0', rimA: 1.0 + warm };
   const figs = (c) => {
-    const feet = lerp(seatedFeet, standFeet, rise), cx = lerp(520, -330, walk), hh = H * lerp(1, 0.82, walk);
+    const feet = lerp(seatedFeet, standFeet, rise), cx = lerp(230, -330, walk), hh = H * lerp(1, 0.82, walk);
     const st = { x: cx, feet: lerp(feet, standFeet - 90, walk), height: hh, facing: walk > 0.02 ? -1 : 1, pose: walk > 0.02 ? 'walk' : 'stand', t: P.t, light, gaze: [-0.2, 0], expr: smile > 0.3 ? 'happy' : 'blank', look: 0.1, eyeLight: 0.3 + 0.6 * warm, contact: false, phase: P.t * 5.2,
       angles: walk > 0.02 ? undefined : { lean: lerp(-0.02, 0.0, rise), shL: 0.1, shR: -0.1, elL: lerp(0.55, 0.15, rise), elR: lerp(0.5, 0.15, rise) } };
     c.save(); c.beginPath(); c.rect(-600, -400, 2400, lerp(1235 - 0.03 * H + 400, 3000, rise)); c.clip(); drawFig(c, 'uncle', st); c.restore();
@@ -307,12 +363,12 @@ function itarsiShot(ctx, P) {
   };
   const board = { x01: lerp(-0.9, 1.0, 1 - Math.pow(1 - arrive, 2.4)), blur: 40 * (1 - arrive) };
   const sweepSpeed = (1 - arrive) * 900 + 40;
-  const cam = bayFrame(ctx, P, { W, ext: 'station', board, boardText: ['इटारसी', 'ITARSI', 'ITARSI JN'], slideSpeed: sweepSpeed, upper: false, seatLines: true, ambient: '#0a1420', fill: 1 + 0.4 * warm, lightK: 0.9 + 0.1 * warm, figs, boardFrac: 0.26, boardW: 720,
+  const cam = bayFrame(ctx, P, { W, ext: 'station', board, boardText: ['इटारसी', 'ITARSI', 'ITARSI JN'], slideSpeed: sweepSpeed, upper: false, seatLines: true, ambient: '#0a1420', fill: 0.95 + 0.3 * warm, lightK: 0.82 + 0.1 * warm, fg: false, figs, boardFrac: 0.26, boardW: 500, boardCx: lerp(1050, 585, 1 - Math.pow(1 - arrive, 2.4)), mid: (c) => lowerDressing(c, { cx: 230, who: 'uncle', a: 1 - sm(0.5, 0.64, u) }),
     moves: [cin.pushIn({ t0: P.sc.start_s, dur: P.dur, amount: 0.07 }), rumbleMove(P, 11, 1.2 * (1 - arrive) + 0.3), cin.handheldMove(12, 0.3)],
-    extraLights: (cam2) => { const q = cam2.project(560, 760, 3); return [{ type: 'point', x: q.sx, y: q.sy, r: 1400, color: '#ffc078', intensity: 0.42 * warm }, { type: 'cone', x: q.sx, y: q.sy, angle: 1.9, spread: 0.9, length: 1500, color: '#ffd9a0', intensity: 0.22 * warm }]; },
+    extraLights: (cam2) => { const q = cam2.project(660, 760, 3), lo = lowerLights(230, 0.35, 0)(cam2); return [...lo, { type: 'point', x: q.sx, y: q.sy, r: 1400, color: '#ffc078', intensity: 0.42 * warm }, { type: 'cone', x: q.sx, y: q.sy, angle: 1.9, spread: 0.9, length: 1500, color: '#ffd9a0', intensity: 0.22 * warm }]; },
     afterLight: (c2) => { const k = c2.canvas.width / 1080; c2.save(); c2.setTransform(k, 0, 0, k, 0, 0); c2.globalCompositeOperation = 'screen'; const g = c2.createRadialGradient(560, 740, 100, 560, 900, 1250); g.addColorStop(0, `rgba(255,205,140,${0.1 * warm})`); g.addColorStop(1, 'rgba(255,170,90,0)'); c2.fillStyle = g; c2.fillRect(0, 0, 1080, 1920); c2.restore(); },
     sweepStrength: 0.4 });
-  return { cam, clarity: 1.0, post: { name: 'horror-night', grade: { contrast: 0.3, gain: [0.86 + 0.1 * warm, 0.84, 0.9 - 0.2 * warm], saturation: 0.75 + 0.1 * warm, splitTone: { shadows: '#03121c', highlights: '#ffb26a', shadowStrength: 0.5 - 0.2 * warm, highlightStrength: 0.45 + 0.3 * warm } } } };
+  return { cam, clarity: 1.0, post: { name: 'horror-night', grade: { contrast: 0.3, gain: [0.86 + 0.1 * warm, 0.84, 0.9 - 0.2 * warm], saturation: 0.62 + 0.1 * warm, splitTone: { shadows: '#03121c', highlights: '#ffb26a', shadowStrength: 0.5 - 0.2 * warm, highlightStrength: 0.45 + 0.3 * warm } } } };
 }
 
 // ------------------------------------------------------------ s9 relief: the lids close, the coach dims, black through the silence
@@ -353,12 +409,13 @@ function loopShot(ctx, P) {
   const light = uncleLight(P, { base: 0.85 });
   const figs = (c) => {
     const base = { cx: 400, lap: 1235, H: HOOK_H, light, gaze: [0.1, 0], expr: 'blank' };
-    if (morph < 0.99) { c.save(); c.globalAlpha = 1 - morph; seatedFigure(c, P, { ...base, who: 'narratorAged', lapCol: '#3a4a60', look: 0.12, talkK, expr: 'blank' }); c.restore(); }
+    if (morph < 0.99) { c.save(); c.globalAlpha = 1 - morph; seatedFigure(c, P, { ...base, who: 'narratorAged', lapCol: '#3a4a60', look: 0.12, talkK, expr: 'blank', collar: 1 }); c.restore(); }
     if (morph > 0.01) { c.save(); c.globalAlpha = morph; seatedFigure(c, P, { ...base, who: 'uncle' }); c.restore(); }
   };
   // pull back from a close push to the s1 start state; handheld phase lands on 0 at the last frame
   const dEnd = P.t - end;
-  const cam = bayFrame(ctx, P, { fill: 0.6, moves: [hookBase, (t) => ({ z: 0.1 * (1 - sm(0, 1, back)) }), (t) => cin.handheld(3, 0.7, dEnd)], figs, extraLights: uncleLights(400, 450) });
+  const mid = (c) => { lowerDressing(c, { cx: 400, who: 'narratorAged', a: 1 - morph }); if (morph > 0.01) lowerDressing(c, { cx: 400, who: 'uncle', a: morph, floor: false }); };
+  const cam = bayFrame(ctx, P, { fill: 0.6 + 0.25 * morph, moves: [hookBase, (t) => ({ z: 0.1 * (1 - sm(0, 1, back)) }), (t) => cin.handheld(3, 0.7, dEnd)], figs, mid, extraLights: (cm) => [...uncleLights(400, 450)(cm), ...lowerLights(400, 0.45 + 0.4 * (1 - morph))(cm)] });
   return { cam };
 }
 
@@ -366,7 +423,7 @@ export const shots = {
   s1_hook(ctx, P) {
     const lineStart = P.E.clock.at('line01_start'), closer = sm(lineStart - 0.2, lineStart + 1.6, P.t);
     const light = uncleLight(P, { base: 0.85 * (1 - 0.3 * closer) });
-    const cam = bayFrame(ctx, P, { fill: 0.85, moves: [hookBase, cin.pushIn({ t0: 0, dur: P.dur, amount: 0.1 }), () => ({ z: 0.08 * closer }), cin.handheldMove(3, 0.7)], figs: (c) => seatedFigure(c, P, { cx: 400, lap: 1235, H: HOOK_H, light, expr: 'blank', gaze: [0.1, 0], who: 'uncle' }), extraLights: uncleLights(400, 450) });
+    const cam = bayFrame(ctx, P, { fill: 0.85, moves: [hookBase, cin.pushIn({ t0: 0, dur: P.dur, amount: 0.1 }), () => ({ z: 0.08 * closer }), cin.handheldMove(3, 0.7)], figs: (c) => seatedFigure(c, P, { cx: 400, lap: 1235, H: HOOK_H, light, expr: 'blank', gaze: [0.1, 0], who: 'uncle' }), mid: (c) => lowerDressing(c, { cx: 400, who: 'uncle' }), extraLights: (cm) => [...uncleLights(400, 450)(cm), ...lowerLights(400, 0.45)(cm)] });
     return { cam };
   },
   s2_coach: (ctx, P) => aisleShot(ctx, P),

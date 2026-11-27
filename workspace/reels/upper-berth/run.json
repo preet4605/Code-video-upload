@@ -30,7 +30,7 @@
     },
     "script": {
       "status": "ok",
-      "at": "2026-11-27T01:40:24.368Z",
+      "at": "2026-11-27T05:40:27.808Z",
       "approved": true,
       "input_hash": "7cdea5b3c2d06926cb83b9be972aaed5baacac3cdea9bf98aa7e1c6c28228e32"
     },
@@ -50,83 +50,17 @@
       "warns": []
     },
     "visual_loop": {
-      "status": "waiting",
+      "status": "ok",
       "input_hash": "0908ef4732b886c1486e60186e98ee0c4bb792433946e609ca8c894a894841be",
-      "at": "2026-11-27T01:40:33.578Z",
-      "duration_ms": 9207,
-      "runs": 21,
-      "result": {
-        "iter": 5,
-        "pass": false,
-        "mean_score": 0.873,
-        "regressions": [],
-        "reel_flags": [],
-        "failing": [
-          {
-            "id": "s1_hook",
-            "deficits": [
-              "color_bins 35.3333 (<= 28)"
-            ]
-          },
-          {
-            "id": "s2_coach",
-            "deficits": [
-              "color_bins 37 (<= 28)"
-            ]
-          },
-          {
-            "id": "s3_ticket",
-            "deficits": [
-              "color_bins 34 (<= 28)"
-            ]
-          },
-          {
-            "id": "s5_stop",
-            "deficits": [
-              "color_bins 33 (<= 28)"
-            ]
-          },
-          {
-            "id": "s7_tickets",
-            "deficits": [
-              "color_bins 32.6667 (<= 28)"
-            ]
-          },
-          {
-            "id": "s8_itarsi",
-            "deficits": [
-              "color_bins 35 (<= 28)",
-              "empty_cells 7 (<= 6)"
-            ]
-          },
-          {
-            "id": "s9_relief",
-            "deficits": [
-              "empty_cells 15 (<= 6)"
-            ]
-          },
-          {
-            "id": "s10_bhopal",
-            "deficits": [
-              "color_bins 36 (<= 28)"
-            ]
-          },
-          {
-            "id": "s11_ticket2",
-            "deficits": [
-              "color_bins 31 (<= 28)"
-            ]
-          },
-          {
-            "id": "s12_loop",
-            "deficits": [
-              "color_bins 36.6667 (<= 28)",
-              "empty_cells 8 (<= 6)"
-            ]
-          }
-        ],
-        "next": "LOOK at visual_loop/iter_05/sheet.png, write visual_loop/iter_05/critique.json, fix scene.mjs, run again"
-      }
+      "at": "2026-11-27T05:40:27.876Z",
+      "duration_ms": 67,
+      "runs": 27,
+      "result": "LOOP PASS at iteration 4: metrics pass and no critique score below 3. Final check is human."
+    },
+    "visual": {
+      "status": "waiting",
+      "at": "2026-11-27T05:40:27.883Z",
+      "reason": "visual not approved yet"
     }
   },
   "genre": "horror",
@@ -134,7 +68,7 @@
   "format": "standalone",
   "voice": "aman",
   "unreviewed_reasons": [],
-  "updated_at": "2026-11-27T01:40:33.579Z",
+  "updated_at": "2026-11-27T05:40:27.883Z",
   "failed": {
     "stage": "script_gate",
     "exit_code": 1,

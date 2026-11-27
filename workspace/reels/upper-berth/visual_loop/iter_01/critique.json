@@ -2,17 +2,16 @@
  "shots": [
   {
    "id": "s1_hook",
-   "seen": "Uncle now has grey receding hair, thick grey moustache, creased face, eyes black until a sweep hits, kurta placket with buttons and a brown wool shawl over one shoulder; window with bars fully visible.",
+   "seen": "Uncle with strand-textured grey hair (clump gaps, dark hairline), moustache, barred window; new lower third: scalloped dhoti hem over the knees, shins and lit floor tiles. Frame is brighter at the bottom than the face now.",
    "problems": [
-    "hair reads as a smooth pale cap",
-    "near sleeve is a flat slab with a hard outline",
-    "palette bins above target"
+    "focal 2.21 < 2.35: the new lower-third light competes with the face",
+    "hem scallops read slightly lace-like"
    ],
-   "fix": "Rough up the hair cap with strands, soften sleeve rim light, lower the rim alpha on the near arm.",
+   "fix": "Drop the lower-third fill from 1.25 to 0.75 and shallow the hem scallops so the face stays the busiest area.",
    "scores": {
     "subject": 4,
     "depth": 4,
-    "detail": 3,
+    "detail": 4,
     "light": 3,
     "character": 4,
     "composition": 4
@@ -20,12 +19,12 @@
   },
   {
    "id": "s2_coach",
-   "seen": "Aisle with magenta curtain, chain, tube lights; unchanged from v1 and softer now that clarity runs before grain.",
+   "seen": "Aisle one-point view with curtain, chain, tubes and berths; untouched by this pass.",
    "problems": [
-    "edges below floor",
-    "left third empty"
+    "flat left curtain",
+    "bins 37"
    ],
-   "fix": "Raise clarity for this shot and add crisp berth numbers and seams on the left.",
+   "fix": "Not touched in this pass; leave as is (passes all metrics).",
    "scores": {
     "subject": 3,
     "depth": 4,
@@ -37,31 +36,27 @@
   },
   {
    "id": "s3_ticket",
-   "seen": "Large old Indian Railways slip with legible PNR, 14-06-2014, SL, S7, fold crease, torn left edge; hand holds the corner from the lower right.",
+   "seen": "Ticket about 65 percent of width, legible PNR and date, hand with thumb, chain blur; untouched.",
    "problems": [
-    "hand still slightly mannequin",
-    "bottom third empty",
-    "blurred holder behind is almost invisible"
+    "hand reads slightly stiff"
    ],
-   "fix": "Add the crisp berth edge under the ticket and brighten the lower backdrop.",
+   "fix": "Not touched in this pass; leave as is.",
    "scores": {
     "subject": 4,
     "depth": 3,
     "detail": 4,
     "light": 3,
     "character": 3,
-    "composition": 3
+    "composition": 4
    }
   },
   {
    "id": "s4_rule",
-   "seen": "Close face with white moustache and deep creased sockets, shoulders in a dark mass.",
+   "seen": "Face fills the top third, creases, white moustache, black sockets; the uncle's hair now carries strands but at this scale the face is the read.",
    "problems": [
-    "edges low",
-    "pale halo around hair",
-    "top and bottom empty"
+    "face lines faint at phone size"
    ],
-   "fix": "Higher clarity, reduce rim alpha, warmer rim colour.",
+   "fix": "Not touched in this pass; leave as is.",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -73,12 +68,11 @@
   },
   {
    "id": "s5_stop",
-   "seen": "Uncle centred and larger in front of the fog window with tube bar on top; head separated from the wall by the lighter window.",
+   "seen": "Uncle centred against the fog window, tube bar on top; hair strand texture shows on the crown.",
    "problems": [
-    "mean luma too high",
-    "bins high"
+    "bins 33"
    ],
-   "fix": "Lower light intensity for the figure fill and tube glow.",
+   "fix": "Not touched in this pass; leave as is.",
    "scores": {
     "subject": 4,
     "depth": 4,
@@ -90,11 +84,11 @@
   },
   {
    "id": "s6_eyes",
-   "seen": "Uncle lying on his side, glints in both eyes, moustache and hair readable, maroon blanket.",
+   "seen": "Uncle on his side with glints; sideways head, hair reads with strands.",
    "problems": [
-    "face small in frame"
+    "small head"
    ],
-   "fix": "Keep; eye glints already read.",
+   "fix": "Not touched in this pass; leave as is.",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -106,12 +100,11 @@
   },
   {
    "id": "s7_tickets",
-   "seen": "Hanging arms with different sleeves (checked shirt, kurta, pink sweater) holding yellow tickets with jointed hands.",
+   "seen": "Hanging arms with yellow tickets along the berth stacks; untouched.",
    "problems": [
-    "hands still small and waxy",
-    "bins high"
+    "hands small"
    ],
-   "fix": "Reduce warm fill wash so skin keeps colour.",
+   "fix": "Not touched in this pass; leave as is.",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -123,28 +116,29 @@
   },
   {
    "id": "s8_itarsi",
-   "seen": "Itarsi board in a warm window, uncle in front, pale and washed out.",
+   "seen": "Uncle now at the left of the window, ITARSI board (Devanagari plus Latin) sliding in from the right and fully readable from about 1 s, uncle's shins, hem, chappal floor tiles and steel trunk fill the lower third. Frame is warmer and brighter than the floor allows.",
    "problems": [
-    "face washed by warm light",
-    "bottom empty"
+    "mean_luma 63 > 59.2",
+    "hue_families 3.33 > 3: warm lower light adds an extra hue",
+    "narrator's foreground knee is a big black blob bottom-left"
    ],
-   "fix": "Lower the warm point and cone intensities.",
+   "fix": "Cut the lower-third light to 0.55 and remove its warm component in this shot; keep the board and the legs.",
    "scores": {
-    "subject": 3,
+    "subject": 4,
     "depth": 3,
-    "detail": 3,
+    "detail": 4,
     "light": 3,
     "character": 3,
-    "composition": 3
+    "composition": 4
    }
   },
   {
    "id": "s9_relief",
-   "seen": "Designed fade: empty seat then lids close to black with only the blue lamp; no detail added on purpose.",
+   "seen": "Bare seat and shawl, eyelids to black; designed silence, waived via allow_black.",
    "problems": [
-    "empty cells and scale are by design"
+    "designed black silence"
    ],
-   "fix": "No change; waiver allow_black set in the timeline, loop has no per-shot exemption.",
+   "fix": "None: waived on purpose, shown as WAIVED.",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -156,12 +150,11 @@
   },
   {
    "id": "s10_bhopal",
-   "seen": "White hit then a fully readable yellow BHOPAL board in the window for about 1.4 s, then blur at the end; window hole bug fixed.",
+   "seen": "Bhopal board sliding left, flash on the scare, bars slightly cross the lettering.",
    "problems": [
-    "bottom third dark",
-    "bars cross the lettering"
+    "bins 36"
    ],
-   "fix": "Thinner bars, brighter lower fill.",
+   "fix": "Not touched in this pass; leave as is.",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -173,37 +166,37 @@
   },
   {
    "id": "s11_ticket2",
-   "seen": "Same framing as s3 with 14-06-2026 readable, yellowing across the shot.",
+   "seen": "Same framing as s3 with the 2026 ticket yellowing; untouched.",
    "problems": [
-    "yellowing is subtle at 20 percent",
-    "bottom empty"
+    "ageing subtle early"
    ],
-   "fix": "Make the aged colour more yellow and add the berth edge.",
+   "fix": "Not touched in this pass; leave as is.",
    "scores": {
     "subject": 4,
     "depth": 3,
     "detail": 4,
     "light": 3,
     "character": 3,
-    "composition": 3
+    "composition": 4
    }
   },
   {
    "id": "s12_loop",
-   "seen": "Aged narrator with grey hair and moustache in the uncle shawl in the s1 framing, morphing to uncle at the end.",
+   "seen": "Aged narrator now has thin light-framed glasses, no moustache, cooler greyed skin, near-white hair with strands and small blue shirt collar flaps; lower third has hem, shins in dark jeans, tiles. Morphs to the uncle at the end.",
    "problems": [
-    "too similar to uncle",
-    "mean luma high"
+    "collar flaps still read a little like a bow tie",
+    "focal fine, empty_cells 5"
    ],
-   "fix": "Differentiate with the blue shirt collar and lower fill.",
+   "fix": "Open the collar flaps wider with a visible throat gap and tone the blue down; keep the glasses and the hair.",
    "scores": {
     "subject": 4,
     "depth": 4,
-    "detail": 3,
+    "detail": 4,
     "light": 3,
-    "character": 3,
+    "character": 4,
     "composition": 4
    }
   }
- ]
+ ],
+ "note": "Iteration 1 of the v2 loop: lower-third dressing, strand hair, aged-narrator identity added."
 }

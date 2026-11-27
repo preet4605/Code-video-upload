@@ -55,7 +55,7 @@ export function createFigure(spec = {}) {
   if (!O) throw new Error(`unknown outfit "${outfitName}" (${OUTFIT_NAMES.join(', ')})`);
   let skin = spec.skin ?? SKINS[Math.floor(h01(seed, 5) * SKINS.length)];
   let colors = { ...O.defaults, ...(spec.colors || {}) };
-  const hairSpec = { style: spec.hair?.style ?? (sex === 'f' ? 'bob' : age === 'elder' ? 'baldfringe' : age === 'child' ? 'crop' : 'oiled'), color: spec.hair?.color ?? (age === 'elder' ? '#cfcac0' : '#14100e') };
+  const hairSpec = { style: spec.hair?.style ?? (sex === 'f' ? 'bob' : age === 'elder' ? 'baldfringe' : age === 'child' ? 'crop' : 'oiled'), color: spec.hair?.color ?? (age === 'elder' ? '#cfcac0' : '#14100e'), ...(spec.hair?.strands ? { strands: spec.hair.strands } : {}) };
   if (ghost && !horror) { skin = '#9fa9a8'; hairSpec.style = 'wet'; hairSpec.color = '#0b0d10'; colors = Object.fromEntries(Object.entries(colors).map(([k, v]) => [k, mix(shade(v, -0.18), '#6f7d88', 0.45)])); }
   if (horror && !ghost) { // desaturated skin, darker and flatter cloth
     skin = shade(mix(skin, '#7c756e', spec.skinGrey ?? 0.3), -0.06);

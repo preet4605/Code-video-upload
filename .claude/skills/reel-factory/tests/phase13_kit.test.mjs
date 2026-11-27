@@ -178,3 +178,13 @@ test('figures: receding grey hair, moustache, creased face, shawl and hands() ar
   assert.equal(draw({ ...base, shawl: { color: '#6e5c48' } }), sh);
   assert.notEqual(draw(base, 'hands'), draw({ ...base, seed: 5 }, 'hands'));
 });
+
+test('figures: hair.strands and glasses:{...} are opt-in, deterministic, change pixels; defaults unchanged', () => {
+  const draw = (spec) => { const c = createCanvas(480, 480), x = c.getContext('2d'); x.fillStyle = '#102020'; x.fillRect(0, 0, 480, 480); kit.createFigure(spec).draw(x, { x: 240, feet: 640, height: 620, facing: 1, pose: 'stand', t: 1, light: kit.LIGHTS.moon, eyeLight: 0.5 }); return hash(c); };
+  const base = { age: 'elder', outfit: 'kurta', style: 'horror', seed: 4, hair: { style: 'receding', color: '#a8a398' } };
+  const a = draw(base), s = draw({ ...base, hair: { ...base.hair, strands: true } }), g = draw({ ...base, glasses: true }), g2 = draw({ ...base, glasses: { color: '#c8d0d8' } });
+  assert.equal(draw(base), a, 'default hair unchanged and deterministic');
+  assert.equal(new Set([a, s, g, g2]).size, 4, 'strands, plain glasses and styled glasses each change the render');
+  assert.equal(draw({ ...base, hair: { ...base.hair, strands: true } }), s, 'strands deterministic');
+  assert.notEqual(draw({ ...base, hair: { ...base.hair, strands: 2 } }), s, 'strands density param');
+});

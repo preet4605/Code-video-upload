@@ -2,16 +2,16 @@
  "shots": [
   {
    "id": "s1_hook",
-   "seen": "Same uncle frame: grey receding hair, moustache, black eye sockets, placket and shawl; window and bars readable.",
+   "seen": "Uncle with strand hair (clump gaps, dark hairline), moustache, window bars; the lower third now has hem, shins and floor tiles at lower intensity. Focal passes at 2.41, empty_cells 3.",
    "problems": [
-    "bins high from warm plus cool light",
-    "hair still smooth"
+    "bottom-right of the lower third still dim",
+    "near sleeve flat"
    ],
-   "fix": "Lower fill to 0.85 and keep the hook framing shared with s12.",
+   "fix": "Add a faint rim on the near sleeve in the next pass if needed; metrics pass now.",
    "scores": {
     "subject": 4,
     "depth": 4,
-    "detail": 3,
+    "detail": 4,
     "light": 3,
     "character": 4,
     "composition": 4
@@ -19,11 +19,12 @@
   },
   {
    "id": "s2_coach",
-   "seen": "Aisle with magenta curtain and chain, edges low and left side soft.",
+   "seen": "Aisle one-point view with curtain, chain, tubes and berths; untouched by this pass.",
    "problems": [
-    "blurred foreground kills edges"
+    "flat left curtain",
+    "bins 37"
    ],
-   "fix": "Reduce foreground blur from 10 to 4 so curtain and chain stay crisp.",
+   "fix": "Break up the flat left curtain with folds (not done in this pass).",
    "scores": {
     "subject": 3,
     "depth": 4,
@@ -35,11 +36,11 @@
   },
   {
    "id": "s3_ticket",
-   "seen": "Ticket with legible PNR, date, SL, S7, creases, torn edge; berth edge under it now fills the bottom.",
+   "seen": "Ticket about 65 percent of width, legible PNR and date, hand with thumb, chain blur; untouched.",
    "problems": [
-    "hand waxy"
+    "hand reads slightly stiff"
    ],
-   "fix": "Leave the ticket unchanged; only the lower backdrop was added.",
+   "fix": "Soften the thumb contact shadow (not done here).",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -51,11 +52,11 @@
   },
   {
    "id": "s4_rule",
-   "seen": "Face with white moustache, deep sockets, creased forehead; edges just under the floor.",
+   "seen": "Face fills the top third, creases, white moustache, black sockets; the uncle's hair now carries strands but at this scale the face is the read.",
    "problems": [
-    "edges 0.037 vs 0.038"
+    "face lines faint at phone size"
    ],
-   "fix": "Raise clarity to 4.4 with radius 6 for this shot.",
+   "fix": "Add a subtle shoulder rim (not done here).",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -67,11 +68,11 @@
   },
   {
    "id": "s5_stop",
-   "seen": "Uncle centred before the fog window, brighter than the look allows.",
+   "seen": "Uncle centred against the fog window, tube bar on top; hair strand texture shows on the crown.",
    "problems": [
-    "mean luma 68"
+    "bins 33"
    ],
-   "fix": "Cut the light multiplier to 0.32 plus 0.5 tube.",
+   "fix": "Add condensation streaks on the fog window (not done here).",
    "scores": {
     "subject": 4,
     "depth": 4,
@@ -83,11 +84,11 @@
   },
   {
    "id": "s6_eyes",
-   "seen": "Lying uncle with glints, passes the loop.",
+   "seen": "Uncle on his side with glints; sideways head, hair reads with strands.",
    "problems": [
-    "small face"
+    "small head"
    ],
-   "fix": "Leave unchanged; the shot passes and the eye glints read.",
+   "fix": "Add a pillow crease highlight (not done here).",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -99,11 +100,11 @@
   },
   {
    "id": "s7_tickets",
-   "seen": "Arms with distinct sleeves and tickets.",
+   "seen": "Hanging arms with yellow tickets along the berth stacks; untouched.",
    "problems": [
     "hands small"
    ],
-   "fix": "Leave unchanged this pass; hands read as different people.",
+   "fix": "Vary sleeve colours further (not done here).",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -115,27 +116,29 @@
   },
   {
    "id": "s8_itarsi",
-   "seen": "Warm Itarsi board, uncle in window, bottom rows empty.",
+   "seen": "Uncle at left, ITARSI board right and readable, legs and tiles lower third; still too bright overall and the black foreground knee blob in bottom-left counts as empty.",
    "problems": [
-    "empty cells 7"
+    "mean_luma 60.9 > 59.2",
+    "hue_families 3.33",
+    "black knee blob bottom-left = dead cells"
    ],
-   "fix": "Add bright seat piping lines and lighter ambient on the seat front.",
+   "fix": "Remove the foreground knee layer (fg:false), pull saturation to 0.62 and lightK to 0.82 so luma and hue families drop.",
    "scores": {
-    "subject": 3,
+    "subject": 4,
     "depth": 3,
-    "detail": 3,
+    "detail": 4,
     "light": 3,
     "character": 3,
-    "composition": 3
+    "composition": 4
    }
   },
   {
    "id": "s9_relief",
-   "seen": "Designed fade to black; metrics fail by design.",
+   "seen": "Bare seat and shawl, eyelids to black; designed silence, waived via allow_black.",
    "problems": [
-    "waiver unsupported by loop"
+    "designed black silence"
    ],
-   "fix": "No change; waiver is allow_black in timeline.",
+   "fix": "None: waived on purpose, still designed silence.",
    "scores": {
     "subject": 3,
     "depth": 3,
@@ -147,11 +150,11 @@
   },
   {
    "id": "s10_bhopal",
-   "seen": "Readable board, window now full width.",
+   "seen": "Bhopal board sliding left, flash on the scare, bars slightly cross the lettering.",
    "problems": [
-    "empty cells 7 at bottom"
+    "bins 36"
    ],
-   "fix": "Add seat piping lines and lighter ambient.",
+   "fix": "Widen the board glow bloom (not done here).",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -163,11 +166,11 @@
   },
   {
    "id": "s11_ticket2",
-   "seen": "Narrator ticket yellowing with 14-06-2026.",
+   "seen": "Same framing as s3 with the 2026 ticket yellowing; untouched.",
    "problems": [
-    "bins high"
+    "ageing subtle early"
    ],
-   "fix": "Shift the aged paper colour further to saturated yellow at full age.",
+   "fix": "Add a faint coffee-stain to the 2026 ticket (not done here).",
    "scores": {
     "subject": 4,
     "depth": 3,
@@ -179,19 +182,22 @@
   },
   {
    "id": "s12_loop",
-   "seen": "Aged narrator in shawl, loop to uncle.",
+   "seen": "Aged narrator with glasses, no moustache, greyed skin and blue collar flaps; lower third shows dark jeans, so bottom rows are dark again (empty_cells 7, down from 5).",
    "problems": [
-    "luma 66"
+    "empty_cells 7 > 6: dark jeans and hem under the aged narrator",
+    "collar flaps slightly bow-tie like"
    ],
-   "fix": "Lower fill to 0.6 for this shot.",
+   "fix": "Lighten the aged narrator's trouser and hem tones to blue-grey and raise the lower light while he is still the narrator (fade it with the morph).",
    "scores": {
     "subject": 4,
     "depth": 4,
-    "detail": 3,
+    "detail": 4,
     "light": 3,
-    "character": 3,
+    "character": 4,
     "composition": 4
-   }
+   },
+   "regression_note": "s12 dropped 0.033 because lowering the lower-third light for the s1 focal fix also dimmed s12's bottom rows; the loop frame must match s1 so only the aged half is brightened."
   }
- ]
+ ],
+ "note": "Iteration 2."
 }

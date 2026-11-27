@@ -175,6 +175,28 @@ function mouth(c, o) {
   c.restore();
 }
 
+// opt-in (hair.strands): strand-level hair on a grey 'receding' mass. Dark gaps between clumps, light strands combed from the crown to the
+// hairline, a darkened band at the hairline and a dark scalp line where hair meets forehead. Deterministic (seeded).
+function hairStrands(c, { p, hs, seed, sx, hairC, L, key, k = 1 }) {
+  const r = mulberry32(seed * 53 + 11), n = Math.round(150 * k), F = hs.front;
+  c.save(); c.clip(p); c.lineCap = 'round';
+  // clump gaps: long dark curves from the crown, then bright strands, then fine flyaways
+  const target = () => { const q = F[Math.floor(r() * F.length)]; return [q[0] + (r() - 0.5) * 0.03, q[1] + (r() - 0.5) * 0.03]; };
+  for (let i = 0; i < n; i++) {
+    const dark = i % 3 === 0, [x1, y1] = target(), x0 = x1 * 0.38 + (r() - 0.5) * 0.05, y0 = -0.62 + Math.abs(x0) * 0.2 + r() * 0.03, bend = (r() - 0.5) * 0.03;
+    c.strokeStyle = dark ? rgba(shade(hairC, -0.7), 0.62) : rgba(mix(hairC, '#ffffff', 0.5 + r() * 0.3), 0.5 + r() * 0.2);
+    c.lineWidth = dark ? 0.006 : 0.003 + r() * 0.002; c.beginPath(); c.moveTo(x0, y0); c.quadraticCurveTo((x0 + x1) / 2 + bend, (y0 + y1) / 2 - 0.02, x1, y1); c.stroke();
+  }
+  // hairline: darkened band and the scalp line
+  const hl = F.slice(7, 18); c.strokeStyle = rgba('#07090c', 0.42); c.lineWidth = 0.05; c.beginPath(); hl.forEach((q, i) => (i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1]))); c.stroke();
+  c.strokeStyle = rgba('#08070a', 0.9); c.lineWidth = 0.011; c.beginPath(); hl.forEach((q, i) => (i ? c.lineTo(q[0], q[1] + 0.004) : c.moveTo(q[0], q[1] + 0.004))); c.stroke();
+  c.restore();
+  // loose strands lifting off the hairline onto the bare forehead (a few, light)
+  c.save(); c.lineCap = 'round'; const fr = mulberry32(seed * 17 + 3);
+  for (let i = 0; i < Math.round(14 * k); i++) { const q = F[7 + Math.floor(fr() * 11)], len = 0.02 + fr() * 0.04, b = (fr() - 0.5) * 0.05; c.strokeStyle = rgba(mix(hairC, '#ffffff', 0.5), 0.5); c.lineWidth = 0.003; c.beginPath(); c.moveTo(q[0], q[1] + 0.004); c.quadraticCurveTo(q[0] + b * 0.5, q[1] + len * 0.5, q[0] + b, q[1] + len); c.stroke(); }
+  c.restore();
+}
+
 /**
  * Draw the head. o: {c:[x,y], size, asp, tilt, look, age, sex, skin, hair:{style,color}, expr, blinkOpen, gaze:[x,y]|null, mouth,
  * env:{L:{x,y}, key, amb, hard, strength, rim, rimW}, ghost, seed, t, ink, eyeColor, glasses, bindi, wetDrip}
@@ -242,7 +264,7 @@ export function drawHead(c, o) {
     if (age === 'elder' && !o.creased) { c.strokeStyle = rgba(shade(skin, -0.6), 0.3); c.lineWidth = 0.009; for (const s of [-1, 1]) { c.beginPath(); c.moveTo(nx + s * 0.07, nY + 0.01); c.quadraticCurveTo(nx + s * 0.13, nY + 0.12, nx + s * 0.1, mY + 0.03); c.stroke(); } }
     if (o.bindi) { c.fillStyle = '#b3241f'; c.beginPath(); c.arc(ox, eyeY - 0.12, 0.016, 0, TAU); c.fill(); }
     if (ghost) { c.fillStyle = rgba('#10181c', 0.28); for (const s of [-1, 1]) { c.beginPath(); c.ellipse(s * eyeX + ox, eyeY + 0.07, 0.1, 0.04, 0, 0, TAU); c.fill(); } }
-    if (o.glasses) { c.strokeStyle = '#1b1714'; c.lineWidth = 0.014; for (const s of [-1, 1]) { c.beginPath(); c.roundRect(s * eyeX + ox - 0.13, eyeY - 0.075, 0.26, 0.15, 0.04); c.stroke(); c.fillStyle = rgba('#cfe0ee', 0.1); c.fill(); } c.beginPath(); c.moveTo(ox - 0.05, eyeY - 0.02); c.lineTo(ox + 0.05, eyeY - 0.02); c.stroke(); }
+    if (o.glasses) { const gl = typeof o.glasses === 'object' ? o.glasses : null; c.strokeStyle = gl?.color ?? '#1b1714'; c.lineWidth = gl ? (gl.width ?? 0.011) : 0.014; for (const s of [-1, 1]) { c.beginPath(); c.roundRect(s * eyeX + ox - 0.13, eyeY - 0.075, 0.26, 0.15, 0.04); c.stroke(); c.fillStyle = rgba(gl?.lens ?? '#cfe0ee', gl ? 0.12 : 0.1); c.fill(); if (gl) { c.save(); c.clip(); c.strokeStyle = rgba('#ffffff', 0.5); c.lineWidth = 0.012; c.beginPath(); c.moveTo(s * eyeX + ox - 0.09, eyeY + 0.07); c.lineTo(s * eyeX + ox - 0.02, eyeY - 0.08); c.stroke(); c.restore(); c.strokeStyle = gl.color; c.lineWidth = gl.width ?? 0.011; } } c.beginPath(); c.moveTo(ox - 0.05, eyeY - 0.02); c.lineTo(ox + 0.05, eyeY - 0.02); c.stroke(); }
     c.globalAlpha = 1;
   } else {
     // back of the head: just a darker skin tone under the hair
@@ -267,6 +289,7 @@ export function drawHead(c, o) {
       for (let i = 0; i < 38; i++) { const pk = hl[Math.floor(wr() * hl.length)], x0 = pk[0] + (wr() - 0.5) * 0.04, y0 = pk[1] - 0.01, len = 0.03 + wr() * 0.07, bend = (wr() - 0.5) * 0.06; c.strokeStyle = rgba(wr() < 0.5 ? mix(hairC, '#ffffff', 0.55) : shade(hairC, -0.5), 0.5); c.lineWidth = 0.0045; c.beginPath(); c.moveTo(x0, y0); c.quadraticCurveTo(x0 + bend, y0 + len * 0.5, x0 + bend * 1.8, y0 + len); c.stroke(); }
       for (let i = 0; i < 26; i++) { const a = -2.9 + wr() * 2.65, rr = 0.5 + wr() * 0.05, x0 = Math.cos(a) * rr * sx, y0 = Math.sin(a) * rr * 1.06 - 0.02, l = 0.03 + wr() * 0.05; c.strokeStyle = rgba(mix(hairC, '#ffffff', 0.6), 0.55); c.lineWidth = 0.004; c.beginPath(); c.moveTo(x0, y0); c.quadraticCurveTo(x0 * (1 + l * 0.8), y0 - l * 0.3, x0 * (1 + l * 1.3) + (wr() - 0.5) * 0.03, y0 - l); c.stroke(); }
     }
+    if (o.hair.strands && hs.grey) hairStrands(c, { p, hs, seed, sx, hairC, L, key: env.key, k: o.hair.strands === true ? 1 : o.hair.strands });
     cin.rimLight(c, p, { x: L.x, y: L.y }, { width: 0.02, color: env.rim ?? '#ffe3b8', alpha: 0.85 * (env.rimA ?? 1), soft: true });
   };
   if (hs.bald) { drawFront(hs.front); drawFront(hs.front2); c.save(); c.globalCompositeOperation = 'screen'; const g = c.createRadialGradient(L.x * 0.16, -0.4, 0.01, L.x * 0.16, -0.4, 0.22); g.addColorStop(0, rgba(env.key ?? '#fff', 0.4)); g.addColorStop(1, rgba(env.key ?? '#fff', 0)); c.fillStyle = g; c.fillRect(-0.5, -0.7, 1, 0.5); c.restore(); }
